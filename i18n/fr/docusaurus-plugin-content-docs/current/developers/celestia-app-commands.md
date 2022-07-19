@@ -1,4 +1,4 @@
-# Helpful CLI commands
+# Commandes CLI utiles
 
 View all options:
 
@@ -41,7 +41,7 @@ celestia-appd config keyring-backend test
 
 `keyring-backend` configures the keyring's backend, where the keys are stored.
 
-Options are: `os|file|kwallet|pass|test|memory`.
+Les options sont: `os|file|kwallet|pass|test|memory`.
 
 ## Key management
 
