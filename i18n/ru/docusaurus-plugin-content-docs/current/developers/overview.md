@@ -4,6 +4,6 @@ This section contains all things developer-related for building on top of Celest
 
 It includes:
 
-* Setting Up Your Node and Developer Environment
-* Installing Celestia App and Celestia Node
-* Interacting with the Data Availability API as a Tutorial
+* How to set up your development environment
+* Installing celestia-app and celestia-node
+* A tutorial on interacting with the Data Availability API
