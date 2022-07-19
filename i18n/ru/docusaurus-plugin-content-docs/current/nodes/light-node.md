@@ -1,23 +1,23 @@
 # Setting Up A Celestia Light Node
 
-This tutorial will guide you through setting up a Celestia Light Node, which can allow you to do data-sampling on the Data Availability (DA) network.
+This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
+
+> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
 
 ## Overview of Light Nodes
 
-Light nodes (CLN) ensure data availability. This is the most common way to interact with the Celestia network.
-
-> Note: In future implementations, Light Nodes can also publish transactions ([see ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-004-state-interaction.md)), though in Mamaki, transactions are left to Bridge Nodes.
+Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light Nodes have the following properties:
+Light nodes have the following behavior:
 
-1. Listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia Nodes of new block headers and relevant DA metadata.
-2. Perform data availability sampling (DAS) on the received headers
+1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
+2. They perform data availability sampling (DAS) on the received headers
 
 ## Hardware Requirements
 
-The following hardware minimum requirements are recommended for running the light node:
+The following minimum hardware requirements are recommended for running a light node:
 
 * Memory: 2 GB RAM
 * CPU: Single Core
@@ -26,7 +26,7 @@ The following hardware minimum requirements are recommended for running the ligh
 
 ## Setting Up Your Light Node
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
 ### Setup The Dependencies
 
@@ -34,9 +34,7 @@ Follow the tutorial on setting up your dependencies [here](../developers/environ
 
 ## Install Celestia Node
 
-> Note: Make sure that you have at least 5+ Gb of free space for Celestia Light Node
-
-Follow the tutorial on installing Celestia Node [here](../developers/celestia-node.md)
+Follow the tutorial on installing Celestia node [here](../developers/celestia-node.md)
 
 ### Initialize the Light Node
 
@@ -46,9 +44,20 @@ Run the following command:
 celestia light init
 ```
 
+You should see output like:
+
+<!-- markdownlint-disable MD013 -->
+```output
+$ celestia light init
+2022-07-18T02:22:09.449Z INFO node node/init.go:26 Initializing Light Node Store over '/home/ec2-user/.celestia-light'
+2022-07-18T02:22:09.449Z INFO node node/init.go:62 Saving config {"path": "/home/ec2-user/.celestia-light/config.toml"}
+2022-07-18T02:22:09.449Z INFO node node/init.go:67 Node Store initialized
+```
+<!-- markdownlint-enable MD013 -->
+
 ### Start the Light Node
 
-Start the Light Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
 > NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
 
@@ -85,4 +94,4 @@ Follow the tutorial on setting up the light node as a background process with Sy
 
 ## Data Availability Sampling (DAS)
 
-With your Light Node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
