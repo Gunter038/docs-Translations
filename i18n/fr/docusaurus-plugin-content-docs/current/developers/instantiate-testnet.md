@@ -1,3 +1,7 @@
+- - -
+sidebar_label : Create A Celestia Testnet
+- - -
+
 # Celestia App Network Instantiation Guide
 
 This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
