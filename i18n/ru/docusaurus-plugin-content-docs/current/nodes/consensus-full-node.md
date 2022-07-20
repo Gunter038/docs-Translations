@@ -1,3 +1,7 @@
+- - -
+sidebar_label : Consensus Full Node
+- - -
+
 # Setting Up A Celestia Consensus Full Node
 <!-- markdownlint-disable MD013 -->
 
