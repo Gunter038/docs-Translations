@@ -1,3 +1,7 @@
+---
+sidebar_label : Celestia App
+---
+
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
