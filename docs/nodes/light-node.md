@@ -1,3 +1,7 @@
+---
+sidebar_label : Light Node
+---
+
 # Setting Up A Celestia Light Node
 
 This tutorial will guide you through setting up a Celestia light node, which
