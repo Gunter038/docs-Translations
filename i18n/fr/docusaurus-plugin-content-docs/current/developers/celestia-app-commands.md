@@ -1,3 +1,7 @@
+- - -
+sidebar_label : Helpful CLI commands
+- - -
+
 # Commandes CLI utiles
 
 Voir les options:
