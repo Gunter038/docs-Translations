@@ -1,3 +1,7 @@
+---
+sidebar_label : SystemD
+---
+
 # Setting Up Your Node As A Background Process With SystemD
 
 SystemD is a daemon service useful for running applications as background processes.
