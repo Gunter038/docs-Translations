@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Calendar
+侧边栏标签: 日历
 - - -
 
-# Community Calendar
+# 社区日历
 
-The Celestia Community Calendar is available for finding all the different community call events happening in Celestia's community.
+Celestia社区日历可以用来查找Celestia不同语言社区中发生的所有电话活动。
 
-You can add the Community Calendar to your personal calendar [here](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+您可以在[这里](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)将社区日历添加到您的个人日历中。
