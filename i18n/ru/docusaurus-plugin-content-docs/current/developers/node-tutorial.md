@@ -1,7 +1,13 @@
+- - -
+sidebar_label : Node Tutorial
+- - -
+
 # Getting and Sending Transactions with Celestia Node
 <!-- markdownlint-disable MD013 -->
 
 In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+
+> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
 
 ## Hardware Requirements
 

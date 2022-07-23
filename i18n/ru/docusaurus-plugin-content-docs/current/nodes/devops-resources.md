@@ -1,3 +1,7 @@
+- - -
+sidebar_label : Devops Resources
+- - -
+
 # DevOps Resources
 
 This section will be provide an overview of different available resources for Developers and Node Operators looking to test out Celestia architecture.

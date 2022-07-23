@@ -1,3 +1,7 @@
+- - -
+sidebar_label : Traductions de Docs
+- - -
+
 # Community Translation Support
 
 If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.

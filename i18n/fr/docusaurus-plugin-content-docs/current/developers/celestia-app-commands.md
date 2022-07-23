@@ -1,6 +1,10 @@
-# Helpful CLI commands
+- - -
+sidebar_label : Helpful CLI commands
+- - -
 
-View all options:
+# Commandes CLI utiles
+
+Voir les options:
 
 ```console
 $ celestia-appd --help
@@ -33,7 +37,7 @@ Available Commands:
   version             Print the application binary version information
 ```
 
-## Creating a wallet
+## Créer un wallet
 
 ```sh
 celestia-appd config keyring-backend test
@@ -41,9 +45,9 @@ celestia-appd config keyring-backend test
 
 `keyring-backend` configures the keyring's backend, where the keys are stored.
 
-Options are: `os|file|kwallet|pass|test|memory`.
+Les options sont: `os|file|kwallet|pass|test|memory`.
 
-## Key management
+## Gestion des clés
 
 ```sh
 # listing keys
@@ -59,7 +63,7 @@ celestia-appd keys delete <KEY_NAME>
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### Importation et exportation des clés
 
 Import an encrypted and ASCII-armored private key into the local keybase.
 
@@ -101,7 +105,7 @@ To see all options:
 celestia-appd q --help
 ```
 
-## Token management
+## Gestion des tokens
 
 Get token balances:
 
