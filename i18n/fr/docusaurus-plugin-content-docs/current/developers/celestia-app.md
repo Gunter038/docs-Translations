@@ -5,11 +5,11 @@ sidebar_label : Celestia App
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
-This tutorial will guide you through building Celestia App. This tutorial presumes you completed the steps in setting up your own environment [here](./environment.md).
+Ce didacticiel vous guidera dans l'installation de Celestia App. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
 
-## Install Celestia App
+## Installer Celestia App
 
-The steps below will create a binary file named `celestia-appd` inside `$HOME/go/bin` folder which will be used later to run the node.
+Les étapes ci-dessous créeront un fichier binaire nommé `celestia-appd` à l'intérieur du dossier `$HOME/go/bin` qui sera utilisé plus tard pour exécuter le node.
 
 ```sh
 cd $HOME
@@ -23,13 +23,13 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-To check if the binary was successfully compiled you can run the binary using the `--help` flag:
+Pour vérifier si le binaire a été compilé avec succès, vous pouvez exécuter le binaire en utilisant l'option `--help`:
 
 ```sh
 celestia-appd --help
 ```
 
-You should see a similar output (with helpful example commands):
+Vous devriez voir une sortie similaire (avec des exemples de commandes utiles):
 
 ```text
 Start celestia app
