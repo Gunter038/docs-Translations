@@ -10,10 +10,10 @@ Voir les options:
 $ celestia-appd --help
 Start celestia app
 
-Usage:
+Utilisation:
   celestia-appd [command]
 
-Available Commands:
+Commandes disponibles:
   add-genesis-account Add a genesis account to genesis.json
   collect-gentxs      Collect genesis txs and output a genesis.json file
   config              Create or query an application CLI configuration file
