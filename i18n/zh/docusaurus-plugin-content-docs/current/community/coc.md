@@ -2,49 +2,49 @@
 sidebar_label : Code of Conduct
 - - -
 
-# Celestia.org Code of Conduct
+# Celestia.org行为守则
 
-## Our Pledge
+## 我们的誓言
 
 We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+我们承诺致力于建设开放、友善、多元、包容、健康的社区环境。
 
-## Our Standards
+## 我们的准则
 
-Examples of behavior that contributes to a positive environment for our community include:
+有助于促进社区积极环境的行为包括但不限于：
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
+* 表现出对他人的同理心和善意
+* 尊重不同的意见、观点和经验
 * Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* 面对过失，承担责任、认真道歉、从中学习
+* 关注社区共同诉求，而非一己私利
 
-Examples of unacceptable behavior include:
+不当行为包括但不限于：
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* 发布与性有关的言论或图像，以及任何形式的性关注或引诱
+* 挑衅行为、侮辱或贬损的言论、人身及政治攻击
+* 公开或私下的骚扰
+* 未经明确许可，发布他人的私人信息，如住址或电子邮箱
+* 不符合专业语境的其它行为。
 
-## Enforcement Responsibilities
+## 执法责任
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+社区管理员有责任诠释何谓“妥当行为”，并据此准则，妥善公正地认定与处置不当、威胁、冒犯及有害的行为。
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+社区管理员有权利和责任删除、编辑或拒绝与本行为准则不一致的评论、提交、代码、wiki 编辑、问题和其他贡献，如有必要，需告知采取措施之理由。
 
-## Scope
+## 适用范围
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+本行为守则适用于所有社区空间，当 个人在公共场所正式代表社区时，也适用。 代表本社区的情形包括但不限于：使用官方电子邮件与社交平台、作为指定代表参与在线或线下活动。
 
-## Enforcement
+## 执 法
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+辱骂、骚扰或其他不可正当的行为可在Discord上向负责执法的社区管理员反馈。所有投诉都会得到及时和公平的审查与调查。 管理员将迅速审议并调查全部投诉。
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+社区全体管理员有义务保密举报者信息。
 
-## Enforcement Guidelines
+## 执法准则
 
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
