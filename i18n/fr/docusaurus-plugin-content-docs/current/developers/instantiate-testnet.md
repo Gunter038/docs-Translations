@@ -69,13 +69,13 @@ Ici `$VALIDATOR_NAME` est le même nom de clé qu'avant ; et `$AMOUNT` est quelq
 
 Si d'autres participants de votre réseau test veulent également être des validateurs, répétez la commande ci-dessus avec le montant spécifique pour leurs clés publiques.
 
-Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
+Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. Vous avez besoin de le partager avec tous les autres validateurs de votre testnet afin que tout le monde puisse passer à l'étape suivante.
 
-You can find the `genesis.json` at `$HOME/.celestia-appd/config/genesis.json`
+Vous pouvez trouver le `genesis.json` dans `$HOME/.celestia-appd/config/genesis.json`
 
-### Create the Genesis Transaction For New Chain
+### Créer la transaction Genesis pour la nouvelle chaîne
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 STAKING_AMOUNT=1000000000utia
@@ -83,55 +83,55 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
   --keyring-backend test
 ```
 
-This will create the genesis transaction for your new chain. Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you provide too much or too little, you will encounter an error when starting your node.
+Cela créera la transaction Genesis pour votre nouvelle chaîne. Ici, `$STAKING_AMOUNT` doit être au moins égal à `1000000000utia`. Si vous fournissez trop ou trop peu, vous rencontrerez une erreur lors du démarrage de votre Node.
 
-You will find the generated gentx JSON file inside `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
+Vous trouverez le fichier JSON gentx généré dans `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
 
-> Note: If you have other validators in your network, they need to also run the above command with the `genesis.json` file you shared with them in the previous step.
+> Remarque : Si vous avez d'autres validateurs dans votre réseau, ils doivent également exécuter la commande ci-dessus avec le fichier `genesis.json` que vous avez partagé avec eux à l'étape précédente.
 
-### Creating the Genesis JSON File
+### Création du fichier JSON Genesis
 
-Once all participants have submitted their gentx JSON files to you, you will pull all those gentx files inside the following directory: `$HOME/.celestia-appd/config/gentx` and use them to create the final `genesis.json` file.
+Une fois que tous les participants vous ont soumis leurs fichiers gentx JSON, vous allez mettre tous ces fichiers gentx dans le répertoire suivant : `$HOME/. elestia-appd/config/gentx` et utilisez-les pour créer le fichier final `genesis.json`.
 
-Once you added the gentx files of all the particpants, run the following command:
+Une fois que vous avez ajouté les fichiers gentx de tous les particpants, lancez la commande suivante :
 
 ```sh
 celestia-appd collect-gentxs 
 ```
 
-This command will look for the gentx files in this repo which should be moved to the following directory `$HOME/.celestia-app/config/gentx`.
+Cette commande va rechercher les fichiers gentx de ce dépôt qui devrait être déplacé dans le répertoire suivant `$HOME/.celestia-app/config/gentx`.
 
-It will update the `genesis.json` file after in this location `$HOME/.celestia-app/config/genesis.json` which now includes the gentx of other participants.
+Elle mettra à jour le fichier `genesis.json` dans cet emplacement `$HOME/. elestia-app/config/genesis.json` qui inclut maintenant le gentx des autres participants.
 
-You should then share this final `genesis.json` file with all the other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+Vous devriez ensuite partager ce fichier `genesis.json` final avec tous les autres participants qui doivent l'ajouter à leur dossier `$HOME/.celestia-app/config`.
 
-Everyone must ensure that they replace their existing `genesis.json` file with this new one created.
+Tout le monde doit s'assurer de remplacer le fichier `genesis.json` existant par ce nouveau fichier créé.
 
-### Modify Your Config File
+### Modifiez votre fichier de configuration
 
-Open the following file `$HOME/.celestia-app/config/config.toml` to modify it.
+Ouvrez le fichier suivant `$HOME/.celestia-app/config/config.toml` pour le modifier.
 
-Inside the file, add the other participants by modifying the following line to include other participants as persistent peers:
+À l'intérieur du fichier, ajoutez les autres participants en modifiant la ligne suivante pour inclure d'autres participants en tant que pairs persistants:
 
 ```text
 # Comma separated list of nodes to keep persistent connections to
 persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-You can find `validator_address` by running the following command:
+Vous pouvez trouver `validator_address` en exécutant la commande suivante:
 
 ```sh
 celestia-appd tendermint show-node-id
 ```
 
-The output will be the hex-encoded `validator_address`. The default `port` is 26656.
+La sortie sera le code hexadécimal `validator_address`. Par défaut, le `port` est 26656.
 
-### Instantiate the Network
+### Instancier le réseau
 
-You can start your node by running the following command:
+Vous pouvez commencer à synchroniser votre node en exécutant la commande suivante :
 
 ```sh
 celestia-appd start
 ```
 
-Now you have a new Celestia Testnet to play around with!
+Maintenant vous avez un nouveau réseau test Celestia avec lequel jouer !
