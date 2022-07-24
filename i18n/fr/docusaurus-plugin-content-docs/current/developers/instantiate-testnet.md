@@ -1,38 +1,38 @@
 - - -
-sidebar_label : Create A Celestia Testnet
+sidebar_label : Créer un Testnet Celestia
 - - -
 
-# Celestia App Network Instantiation Guide
+# Guide d'instanciation du réseau Celestia App
 
-This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
+Ce guide est destiné à aider à instancier un nouveau réseau de test et à suivre les étapes correctes pour le faire avec Celestia-App. Vous ne devriez suivre que ce guide si vous voulez expérimenter avec votre propre réseau test Celestia ou si vous voulez tester de nouvelles fonctionnalités à développer en tant que développeur.
 
-## Hardware Requirements
+## Hardware Requis
 
-You can follow hardware requirements [here](../nodes/validator-node.md#hardware-requirements).
+Vous pouvez suivre les exigences matérielles [ici](../nodes/validator-node.md#hardware-requirements).
 
-## Setup Dependencies
+## Configurer les dépendances
 
-You can setup dependencies by following the guide [here](./environment.md).
+Vous pouvez configurer les dépendances en suivant le guide [ici](./environment.md).
 
-## Celestia App Installation
+## Installation de Celestia App
 
-You can install Celestia App by following the guide [here](./celestia-app.md).
+Vous pouvez installer Celestia App en suivant le guide [ici](./celestia-app.md).
 
 ## Spin Up A Celestia Testnet
 
-If you want to spin up a quick testnet with your friends, you can follow these steps. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
+Si vous souhaitez créer un réseau test rapide avec vos amis, vous pouvez suivre ces étapes. Sauf indication contraire, chaque étape doit être effectuée par tous ceux qui veulent participer à ce réseau test.
 
-### Optional: Reset Working Directory
+### Optionnel: Réinitialiser le répertoire de travail
 
-If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. You can do so by running the following command:
+Si vous avez déjà initialisé un répertoire de travail pour `celestia-appd` dans le passé, vous devez le nettoyer avant de réinitialiser un nouveau répertoire. Vous pouvez le faire en exécutant la commande suivante :
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Initialize A Working Directory
+### Initialiser un répertoire de travail
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -40,36 +40,36 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* The value we will use for `$VALIDATOR_NAME` is `validator1` but you should choose your own node name.
-* The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must remain the same for everyone participating in this network.
+* La valeur que nous utiliserons pour `$VALIDATOR_NAME` est `validator1` mais vous devriez choisir votre propre nom de node.
+* La valeur que nous utiliserons pour `$CHAIN_ID` est `testnet`. La `$CHAIN_ID` doit rester la même pour tous ceux qui participent à ce réseau.
 
-### Create A New Key
+### Créer une nouvelle clé
 
-Next, run the following command:
+Ensuite, exécutez la commande suivante:
 
 ```sh
 KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-This will create a new key, with a name of your choosing. Save the output of this command somewhere; you'll need the address generated here later. Here, we set the value of our key `$KEY_NAME` to `validator` for demonstration.
+Cela créera une nouvelle clé, avec un nom de votre choix. Enregistrez la sortie de cette commande quelque part ; vous aurez besoin de l'adresse générée ici plus tard. Ici, nous fixons la valeur de notre clé `$KEY_NAME` à `validator` pour la démonstration.
 
-### Add Genesis Account KeyName
+### Ajouter le nom de clé du compte Genesis
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 CELES_AMOUNT="10000000000000000000000000utia"
 celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 ```
 
-Here `$VALIDATOR_NAME` is the same key name as before; and `$AMOUNT` is something like `10000000000000000000000000utia`.
+Ici `$VALIDATOR_NAME` est le même nom de clé qu'avant ; et `$AMOUNT` est quelque chose comme `10000000000000000000000000utia`.
 
-### Optional: Adding Other Validators
+### Facultatif : Ajouter d'autres validateurs
 
-If other participants in your testnet also want to be validators, repeat the command above with the specific amount for their public keys.
+Si d'autres participants de votre réseau test veulent également être des validateurs, répétez la commande ci-dessus avec le montant spécifique pour leurs clés publiques.
 
-Once all the validators are added, the `genesis.json` file is created. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
+Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
 
 You can find the `genesis.json` at `$HOME/.celestia-appd/config/genesis.json`
 
