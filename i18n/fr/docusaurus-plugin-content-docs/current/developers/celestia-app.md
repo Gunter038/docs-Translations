@@ -32,12 +32,12 @@ celestia-appd --help
 Vous devriez voir une sortie similaire (avec des exemples de commandes utiles):
 
 ```text
-Start celestia app
+Démarrer l'application Celestia 
 
-Usage:
+Utilisation:
   celestia-appd [command]
 
-Available Commands:
+Commandes disponibles :
   add-genesis-account Add a genesis account to genesis.json
   collect-gentxs      Collect genesis txs and output a genesis.json file
   config              Create or query an application CLI configuration file
@@ -65,5 +65,5 @@ Flags:
       --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
       --trace               print out full stack trace on errors
 
-Use "celestia-appd [command] --help" for more information about a command.
+Utilisez "celestia-appd [command] --help" pour plus d'informations à propos d'une commande.
 ```
