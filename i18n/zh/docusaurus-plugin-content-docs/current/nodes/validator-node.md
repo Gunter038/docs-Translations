@@ -1,49 +1,49 @@
 - - -
-sidebar_label : Validator Node
+sidebar_label : 验证者节点
 - - -
 
-# Setting Up A Celestia Validator Node
+# 设置Celestia验证者节点
 
-Validator nodes allow you to participate in consensus in the Celestia network.
+验证者节点允许您参与Celestia网络中的共识。
 
-## Hardware Requirements
+## 硬件要求
 
-The following hardware minimum requirements are recommended for running the validator node:
+为运行验证者节点，推荐以下最低硬件配置：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 硬盘： 250 GB SSD
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting Up Your Validator Node
+## 设置您的验证者节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+以下教程基于运行Ubuntu Linux 20.04 (LTS) x64的主机。
 
-### Setup The Dependencies
+### 设置依赖项
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+请按照[这里](../developers/environment.md)的步骤安装依赖项
 
-## Deploying The Celestia App
+## 部署Celestia App
 
-This section describes part 1 of Celestia Validator Node setup: running a Celestia App daemon with an internal Celestia Core node.
+本节介绍Celestia验证者节点设置的第1部分： 运行内置Celestia Core节点的Celestia App服务。
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> 注意：请确保您至少有100+ GB可用空间来安全安装+运行验证者节点。
 
-### Install Celestia App
+### 安装Celestia App
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+请按照 [这里](../developers/celestia-app.md)的教程来安装Celestia App。
 
-### Setup the P2P Networks
+### 设置P2P网络
 
-For this section of the guide, select the network you want to connect to:
+对于指南的这一部分，请选择您想要连接的网络：
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+之后，您可以继续本教程的其余部分。
 
-### Configure Pruning
+### 配置剪枝参数
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+为降低硬盘空间的使用，我们建议按下面的参数来设置剪枝。 如果您想要： 根据情况，您可以将此更改为自己的剪枝参数：
 
 ```sh
 PRUNING="custom"
@@ -57,29 +57,29 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure Validator Mode
+### 配置验证者模式
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset Network
+### 重置网络
 
-This will delete all data folders so we can start fresh:
+这将删除所有数据文件夹，以便我们全新开始：
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: Quick-Sync with Snapshot
+### 可选：通过快照快速同步
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+根据您的硬件，从元初状态开始同步，可能需要很长时间。 使用场景 可以通过下载区块链的近期快照，来快速地同步您的Celestia节点。 如果你想要从元初状态同步，你可以跳过这一部分。
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+如果您要使用快照，请从下面的列表，选择您要同步的网络：
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the Celestia-App with SystemD
+### 通过SystemD启动Celestia-App
 
 Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
 
