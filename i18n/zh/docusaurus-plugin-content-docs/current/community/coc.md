@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label : 行为准则
 - - -
 
 # Celestia.org行为守则
@@ -46,7 +46,7 @@ sidebar_label : Code of Conduct
 
 ## 执法准则
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+社区负责人将依据下列事项判断并处置违反社区基本准则的行为：
 
 ### 1. Correction
 
