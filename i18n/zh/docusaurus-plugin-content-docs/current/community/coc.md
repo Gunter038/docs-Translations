@@ -6,7 +6,7 @@ sidebar_label : Code of Conduct
 
 ## 我们的誓言
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+身为Celestia.org成员、贡献者、负责人，我们保证参与此社区的每个人都不受骚扰，不论其年龄、体型、身体条件、民族、性征、性别认同与表现、经验水平、教育程度、社会地位、国籍、相貌、种族、宗教信仰及性取向如何。
 
 我们承诺致力于建设开放、友善、多元、包容、健康的社区环境。
 
@@ -16,7 +16,7 @@ We as Celestia.org members, contributors, and leaders pledge to make participati
 
 * 表现出对他人的同理心和善意
 * 尊重不同的意见、观点和经验
-* Giving and gracefully accepting constructive feedback
+* 提出或得体地接受建设性的意见
 * 面对过失，承担责任、认真道歉、从中学习
 * 关注社区共同诉求，而非一己私利
 
