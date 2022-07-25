@@ -120,41 +120,41 @@ celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 
 请按照[这里](../developers/celestia-node.md)的教程来安装Celestia节点。
 
-### Initialize the Bridge Node
+### 初始化桥接节点
 
-Run the following:
+运行以下命令：
 
 ```sh
 celestia bridge init --core.remote <ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果您需要一个RPC终结点列表来连接，您可以从邮件列表[中查看](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the Bridge Node
+### 运行桥接节点
 
-Run the following:
+运行以下命令：
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: Start the Bridge Node with SystemD
+### 可选：通过SystemD启动桥接节点
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+请按照[这里](./systemd.md#celestia-bridge-node)的教程，通过SystemD，将桥接节点设置为后台进程。
 
-You have successfully set up a bridge node that is syncing with the network.
+您已成功地设置了与网络同步的桥接节点。
 
-## Run a Validator Node
+## 运行验证者节点
 
-After completing all the necessary steps, you are now ready to run a validator! In order to create your validator on-chain, follow the instructions below. Keep in mind that these steps are necessary ONLY if you want to participate in the consensus.
+完成所有必要步骤后，您已经准备好运行验证者！ 为了在链上创建您的验证者，请遵循下面的说明。 请记住，只有你想要参加共识时，这些步骤才是必要的。
 
-Pick a `moniker` name of your choice! This is the validator name that will show up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you defined previously. Parameter `--min-self-delegation=1000000` defines the amount of tokens that are self delegated from your validator wallet.
+选择一个`昵称`！ 这是在公共仪表板和浏览器中显示的验证者名称。 `VALIDATOR_WALLET` 必须与先前定义的相同。 参数`--min-self-delegation=10000`定义了您的验证者钱包自行抵押的代币数量。
 
-Now, connect to the network of your choice.
+现在，连接到您选择的网络。
 
-You have the following option of connecting to list of networks shown below:
+您有以下网络列表可供选择：
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in to complete the validator setup process.
+在您想要验证的网络中，执行相应（以上）步骤，以完成验证者设置过程。
