@@ -2,41 +2,41 @@
 sidebar_label : Bridge Node
 - - -
 
-# Setting Up A Celestia Bridge Node
+# Configurer un Bridge Node Celestia
 
-This tutorial will go over the steps to setting up your Celestia Bridge node.
+Ce tutoriel passera en revue les étapes de configuration de votre Bridge node Celestia (Noeud Pont).
 
-Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
+Les Bridge nodes connectent la couche de disponibilité des données et la couche de consensus tout en offrant la possibilité de devenir validateur.
 
-## Overview of Bridge Nodes
+## Présentation des Bridge Nodes
 
-A Celestia bridge node has the following properties:
+Un Bridge node Celestia a les propriétés suivantes:
 
-1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
-2. Validate and erasure code the “raw” blocks
-3. Supply block shares with data availability headers to Light Nodes in the DA network. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+1. Importez et traitez les en-têtes et blocs "bruts" à partir d'un processus Core de confiance (c'est-à-dire une connexion RPC de confiance à un node celestia-core) dans le Réseau consensuel. Les bridge nodes peuvent exécuter ce processus principal en interne (intégré) ou se connecter simplement à un terminal distant. Les bridge nodes offrent aussi la possibilité d'être un validateur actif dans le consensus du réseau .
+2. Valider et effacer le code des blocs « bruts »
+3. Fournir des parts de blocs avec des en-têtes de disponibilité des données aux Light Nodes du réseau DA (Data availabilty, disponibilité des données). ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
-From an implementation perspective, Bridge Nodes run two separate processes:
+Du point de vue de l'implémentation, les Bridge nodes exécutent deux processus distincts:
 
-1. Celestia App with Celestia Core ([see repo](https://github.com/celestiaorg/celestia-app))
+1. Celestia App avec Celestia Core ([voir le repo](https://github.com/celestiaorg/celestia-app))
 
-    * **Celestia App** is the state machine where the application and the proof-of-stake logic is run. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
-    * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Celestia App** est la machine où l'application et la logique de Proof-of-Stake (Preuve d'enjeu) sont exécutées. L'application Celestia est construite sur le [Cosmos SDK](https://docs.cosmos.network/) et englobe également **Celestia Core**.
+    * **Celestia Core** est l'interaction d'état, le consensus et la couche de production de blocs. Celestia Core est construite sur [Tendermint Core](https://docs.tendermint.com/), modifié pour stocker des racines de données d'erasure block coding parmi d'autres changements ([voir ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
-2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
+2. Celestia Node ([voir le repo](https://github.com/celestiaorg/celestia-node))
 
-    * **Celestia Node** augments the above with a separate libp2p network that serves data availability sampling requests. The team sometimes refer to this as the “halo” network.
+    * **Celestia Node** augmente ce qui précède avec un réseau libp2p séparé qui sert des demandes d'échantillonnage de la disponibilité des données. L'équipe appelle parfois ceci le réseau « halo ».
 
-## Hardware Requirements
+## Hardware Requis
 
-The following hardware minimum requirements are recommended for running the bridge node:
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le Bridge node :
 
-* Memory: 8 GB RAM
+* Mémoire: 8 Go de RAM
 * CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Disque: 250 Go de stockage SSD
+* Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting Up Your Bridge Node
+## Configuration de votre Bridge node
 
 The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
