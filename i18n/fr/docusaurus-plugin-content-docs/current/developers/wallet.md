@@ -1,10 +1,10 @@
 ---
-sidebar_label : Creating A Wallet
+sidebar_label : Créer un Wallet
 ---
 
 # Wallet
 
-## Créer un Wallet (Portefeuille)
+## Créer un wallet (Portefeuille)
 
 Tout d'abord, créez un fichier de configuration d'application CLI :
 
@@ -28,7 +28,7 @@ Pour vérifier tous vos wallets, vous pouvez exécuter :
 celestia-appd keys list
 ```
 
-## Financer un Wallet
+## Financer un wallet
 
 Pour l'adresse publique Celestia, vous pouvez financer le
 wallet créé précédemment via Discord en envoyant
