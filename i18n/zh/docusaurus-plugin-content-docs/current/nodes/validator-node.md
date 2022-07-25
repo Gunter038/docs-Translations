@@ -31,7 +31,7 @@ sidebar_label : 验证者节点
 
 ### 安装Celestia App
 
-请按照 [这里](../developers/celestia-app.md)的教程来安装Celestia App。
+请按照[这里](../developers/celestia-app.md)的教程来安装Celestia App。
 
 ### 设置P2P网络
 
@@ -79,46 +79,46 @@ celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### 通过SystemD启动Celestia-App
+### 通过SystemD启动Celestia-Appd
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+请按照[这里](./systemd.md#start-the-celestia-app-with-systemd)的教程，通过SystemD，将Celestia-App设置为后台进程。
 
-### Wallet
+### 钱包
 
-Follow the tutorial on creating a wallet [here](../developers/wallet.md).
+请按照[这里](../developers/wallet.md)的教程来创建钱包。
 
-### Delegate Stake to a Validator
+### 向验证者提供抵押
 
-Create an environment variable for the address:
+为地址创建环境变量：
 
 ```sh
 VALIDATOR_WALLET=<validator-address>
 ```
 
-If you want to delegate more stake to any validator, including your own you will need the `celesvaloper` address of the validator in question. You can either check it using the block explorer mentioned above or you can run the command below to get the `celesvaloper` of your local validator wallet in case you want to delegate more to it:
+如果您想要将更多的抵押提供给验证者， 包括您自己的验证者，您需要验证者的`celesvaloper`地址。 当您想要抵押更多时，可以用上文提到的区块浏览器或执行以下命令来得到你本地钱包中的`celesvaloper`地址。
 
 ```sh
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a
 ```
 
-After entering the wallet passphrase you should see a similar output:
+输入钱包密码后，你应该看到一个类似的输出：
 
 ```sh
 Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+接下来，选择您想要给验证者抵押的网络：
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the Celestia Node
+## 部署Celestia节点
 
-This section describes part 2 of Celestia Validator Node setup: running a Celestia Bridge Node daemon.
+本节介绍Celestia验证者节点设置的第2部分：运行Celestia桥节点服务。
 
-### Install Celestia Node
+### 安装Celestia节点
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+请按照[这里](../developers/celestia-node.md)的教程来安装Celestia节点。
 
 ### Initialize the Bridge Node
 
