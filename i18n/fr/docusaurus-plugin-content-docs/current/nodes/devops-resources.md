@@ -1,11 +1,11 @@
 - - -
-sidebar_label : Devops Resources
+sidebar_label : Ressources Devops
 - - -
 
-# DevOps Resources
+# Ressources DevOps
 
-This section will be provide an overview of different available resources for Developers and Node Operators looking to test out Celestia architecture.
+Cette section fournira un aperçu des différentes ressources disponibles pour les développeurs et les opérateurs de Nodes cherchant à tester l'architecture de Celestia.
 
 ## Docker Compose
 
-* One resource for playing with Docker Compose for Celestia infrastructure is the [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster) repository. This repository provides infrastructure for doing integration testings for development by running a Docker Compose instance of Celestia devnet. It is not recommended to be used as-is for running nodes individually.
+* Une ressource pour jouer avec Docker Compose et l'infrastructure Celestia est dans le dépôt [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster). Ce dépôt fournit une infrastructure pour faire l'intégration test pour le développement en exécutant une instance Docker Compose pour le devnet Celestia. Il n'est pas recommandé de l'utiliser tel quel pour exécuter des nodes individuellement.
