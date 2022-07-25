@@ -1,6 +1,6 @@
-***
+---
 sidebar_label : Calendar
-***
+---
 
 # Community Calendar
 
