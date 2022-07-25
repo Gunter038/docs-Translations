@@ -38,65 +38,65 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 
 ## Configuration de votre Bridge node
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup The Dependencies
+### Configurer les dépendances
 
-Follow the tutorial here installing the dependencies [here](../developers/environment.md).
+Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Deploy the Celestia Bridge Node
+## Deployer le Bridge node Celestia
 
-### Install Celestia Node
+### Installer Celestia node
 
-Install the Celestia Node binary, which will be used to run the Bridge Node.
+Installez le binaire Celestia Node, qui sera utilisé pour exécuter le Bridge node.
 
-Follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md).
+Suivez le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md).
 
-### Initialize the Bridge Node
+### Initialiser le Bridge node
 
-Run the following:
+Exécutez les commandes suivantes:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip-address>:26657 
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the Bridge Node
+### Exécutez le Bridge node
 
 Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
+> REMARQUE : Pour accéder à la possibilité d'obtenir/de soumettre des informations relatives à l'état, telles que la possibilité de soumettre des transactions PayForData ou d'interroger solde du compte du node, un point de terminaison gRPC d'un node validateur doit être transmis comme ci-dessous
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Vous pouvez créer votre clé pour votre node en suivant les instructions `cel-key` [ici](./keys.md)
 
-Once you start the Bridge Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Une fois que vous aurez démarré le Bridge Node, une clé de wallet sera générée pour vous. Vous aurez besoin de financer cette adresse avec les jetons du Testnet Mamaki pour payer transactions PayForData. Vous pouvez trouver l'adresse en exécutant la commande suivante:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Les tokens du Testnet Mamaki peuvent être demandés [ici](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-#### Optional: Run the Bridge Node with a Custom Key
+#### Facultatif : Exécuter le Bridge Node avec une clé personnalisée
 
-In order to run a bridge node using a custom key:
+Afin d'exécuter un Bridge node en utilisant une clé personnalisée:
 
-1. The custom key must exist inside the celestia bridge node directory at the correct path (default: `~/.celestia-bridge/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. La clé personnalisée doit exister dans le répertoire du Bridge Node Celestia au bon chemin (default: `~/.celestia-bridge/keys/keyring-test`)
+2. Le nom de la clé personnalisée doit être transmis lors de `start`, comme ceci:
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: Start the Bridge Node with SystemD
+### Facultatif : Démarrez le Bridge Node avec SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Vous avez configuré avec succès un Bridge node qui se synchronise avec le réseau.
