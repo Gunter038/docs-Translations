@@ -48,9 +48,9 @@ sidebar_label : 行为准则
 
 社区负责人将依据下列事项判断并处置违反社区基本准则的行为：
 
-### 1. Correction
+### 1. 修正
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**社区影响**：用语不当、举止不符合职业道德或不受社区欢迎。
 
 **Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
 
