@@ -51,7 +51,7 @@ systemctl start celestia-appd
 systemctl status celestia-appd
 ```
 
-实时监控后台进程日志：
+实时查看后台进程日志：
 
 ```sh
 journalctl -u celestia-appd.service -f
@@ -201,4 +201,4 @@ systemctl status celestia-lightd
 journalctl -u celestia-lightd.service -f
 ```
 
-Now, the Celestia Light Node will start syncing headers. After sync is finished, Light Node will do Data Availability Sampling (DAS) from the Bridge Node.
+现在，Celestia轻节点将开始同步区块头。 同步完成后，轻节点将通过桥接节点进行数据采样(DAS)。
