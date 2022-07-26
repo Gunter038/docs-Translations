@@ -18,35 +18,35 @@ sidebar_label : Guide Config.toml
 
 Veuillez vous assurer que vous avez installé et initialisé Celestia Node
 
-## Understanding config.toml
+## Comprendre config.toml
 
-After initialization, for any type of node, you will find a `config.toml` in the following path (default location):
+Après l'initialisation, pour n'importe quel type de node, vous trouverez un `config.toml` dans le chemin suivant (emplacement par défaut):
 
-- `$HOME/.celestia-bridge/config.toml` for bridge node
-- `$HOME/.celestia-light/config.toml` for light node
+- `$HOME/.celestia-bridge/config.toml` pour un Bridge node
+- `$HOME/.celestia-light/config.toml` pour un light node
 
-Let's break down some of the most used sections.
+Nous allons décomposer certaines des sections les plus utilisées.
 
 ### [Core]
 
-This section is needed for the Celestia Bridge Node. By default, `Remote = false`. Still for devnet, we are going to use the remote core option and this can also be set by the command line flag `--core.remote`.
+Cette section est nécessaire pour le Bridge Node Celestia. Par défaut, `Remote = false`. Toujours pour un devnet, nous allons utiliser l'option remote core, cela peut également être défini avec la ligne de commande `--core.remote`.
 
 ### [P2P]
 
 #### Bootstrap
 
-Bootstrappers help new nodes to find peers faster in the network. By default, the `Bootstrapper = false` and the `BootstrapPeers` is empty. If you want your node to be a bootstrapper, then activate `Bootstrapper = true`. `BootstrapPeers` are already provided by default during initialisation. If you want to add your own manually, you need to provide the multiaddresses of the peers.
+Les bootstrappers aident les nouveaux nœuds à trouver des pairs plus rapidement dans le réseau. Par défaut, le `Bootstrapper = false` et le `BootstrapPeers` est vide. Si vous voulez que votre node soit un "bootstrapper", activez `Bootstrapper = true`. Les `BootstrapPeers` sont déjà fournis par défaut lors de l'initialisation. Si vous souhaitez ajouter les vôtres manuellement, vous devez fournir le multiadresse des pairs.
 
-#### Mutual Peers
+#### Peers mutuels
 
-The purpose of this config is to set up a bidirectional communication. This is usually the case for Celestia Bridge Nodes. In addition, you need to change the field `PeerExchange` from false to true.
+Le but de cette configuration est de mettre en place une communication bidirectionnelle. C'est généralement le cas pour les Bridge Node Celestia. De plus, vous aurez besoin de changer le champ `PeerExchange` de faux à vrai.
 
 ### [Services]
 
-#### TrustedHash and TrustedPeer
+#### TrustedHash et TrustedPeer
 
-`TrustedHash` is needed to properly initialize a Celestia Bridge Node with an already-running `Remote` Celestia Core node. Celestia Light Node will take a genesis hash as the trusted one, if no hash is manually provided during initialization phase.
+`TrustedHash` est nécessaire pour initialiser correctement un Bridge node Celestia avec un Node Celestia Core `Distant` déjà en cours d'exécution. Celestia Light Node Celestia prendra un hash Genesis comme celui de confiance, s'il n'y a pas de hash fourni manuellement lors de la phase d'initialisation.
 
-`TrustedPeers` is the array of Bridge Nodes' peers that Celestia Light Node trusts. By default, bootstrap peers becomes trusted peers for Celestia Light Nodes if a user is not setting the trusted peer params in config file.
+`Les TrustedPeers` sont la table des pairs de Bridge Nodes auxquels les lights nodes Celestia font confiance. Par défaut les pairs bootstrap deviennent des pairs de confiance pour les Light Nodes Celestia si un utilisateur ne définit pas les paramètres des pairs de confiance dans le fichier de configuration.
 
-Any Celestia Bridge Node can be a trusted peer for the Light one. However, the Light node by design can not be a trusted peer for another Light Node.
+Tout Bridge Node Celestia peut être un pair de confiance pour un Light. Toutefois, par son architecture, un Light Node ne peut pas être un trusted peer pour un autre Light Node.
