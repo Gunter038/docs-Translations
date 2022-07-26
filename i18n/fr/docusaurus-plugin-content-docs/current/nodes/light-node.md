@@ -63,39 +63,39 @@ $ celestia light init
 
 Démarre le Light node avec une connexion au point de terminaison gRPC d'un node de validateur (qui est généralement exposé sur le port 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
+> REMARQUE : Pour avoir accès à la possibilité d'obtenir/de soumettre des informations relatives à l'état, telles que la possibilité de soumettre des transactions PayForData ou d'interroger solde de compte du node, un point de terminaison gRPC d'un Node Validateur (core) doit être transmis comme montré ci-dessous.
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Vous pouvez créer votre clé pour votre node en suivant les instructions `cel-key` [ici](./keys.md)
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Une fois que vous démarrez le Light Node, une clé de wallet sera générée pour vous. Vous aurez besoin de financer cette adresse avec les jetons du Testnet Mamaki pour payer des transactions PayForData. Vous pouvez trouver l'adresse en exécutant la commande suivante:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Les tokens du Testnet Mamaki peuvent être demandés [ici](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-### Optional: Run the Light Node with a Custom Key
+### Facultatif : Exécuter le Light Node avec une clé personnalisée
 
-In order to run a light node using a custom key:
+Afin d'exécuter un Light Node en utilisant une clé personnalisée :
 
-1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. La clé personnalisée doit exister dans le répertoire du Light Node Celestia au bon chemin (default: `~/.celestia-light/keys/keyring-test`)
+2. Le nom de la clé personnalisée doit être transmis lors de `start`, comme ceci:
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: Start Light Node with SystemD
+### Facultatif : Démarrer un Light Node avec SystemD
 
-Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
+Suivez le tutoriel sur la configuration du Light Node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-light-node).
 
-## Data Availability Sampling (DAS)
+## Échantillonnage de la disponibilité des données (DAS)
 
-With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+Avec votre light node en cours d'exécution, vous pouvez consulter ce tutoriel sur la soumission de transactions `PayForData` [ici](../developers/node-tutorial.md).
