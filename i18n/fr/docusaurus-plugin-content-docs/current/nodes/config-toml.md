@@ -1,22 +1,22 @@
 - - -
-sidebar_label : Config.toml Guide
+sidebar_label : Guide Config.toml
 - - -
 
-# Config.toml breakdown
+# Décomposition de Config.toml
 
-- [Config.toml breakdown](#configtoml-breakdown)
-  - [Pre-Requisites](#pre-requisites)
-  - [Understanding config.toml](#understanding-configtoml)
+- [Décomposition de Config.toml](#configtoml-breakdown)
+  - [Pré-requis](#pre-requisites)
+  - [Comprendre config.toml](#understanding-configtoml)
     - [[Core]](#core)
     - [[P2P]](#p2p)
       - [Bootstrap](#bootstrap)
-      - [Mutual Peers](#mutual-peers)
+      - [Peers mutuels](#mutual-peers)
     - [[Services]](#services)
-      - [TrustedHash and TrustedPeer](#trustedhash-and-trustedpeer)
+      - [TrustedHash et TrustedPeer](#trustedhash-and-trustedpeer)
 
-## Pre-Requisites
+## Pré-requis
 
-Please, make sure that you have installed and initialized celestia node
+Veuillez vous assurer que vous avez installé et initialisé Celestia Node
 
 ## Understanding config.toml
 
