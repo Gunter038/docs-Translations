@@ -40,7 +40,7 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Newer Entries",
+    "message": "最新文章",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
@@ -48,11 +48,11 @@
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1分钟阅读时长\n主题.博客.发表.阅读时长.多元\n''{阅读时长}分钟的阅读时长''的多元化标签.\n使用尽可能多的多元形式（用''｜''分离）来支持你的语言。（比如这种：https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）\n文件：code.json\n",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "摘录中所有博客文章链接的ARIA标签。\n文档：code.json",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readMore": {
