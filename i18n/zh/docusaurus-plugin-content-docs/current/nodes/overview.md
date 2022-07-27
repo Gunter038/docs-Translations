@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Overview
+sidebar_labar : 概览
 - - -
 
-# Overview to Running Nodes on Celestia
+# Celestia运行节点概览
 
-There are many ways you can participate in the Celestia network.
+您可以通过多种方式参与Celestia网络。
 
 Celestia node operators can run several options on the network.
 
