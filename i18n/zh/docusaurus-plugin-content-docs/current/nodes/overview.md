@@ -6,19 +6,19 @@ sidebar_labar : 概览
 
 您可以通过多种方式参与Celestia网络。
 
-Celestia node operators can run several options on the network.
+Celestia节点运营者在网络上有多种选择。
 
-Consensus:
+共识
 
-* [Validator Node](./validator-node.md): Node operators who run a Bridge Node have the option to also participate in Consensus by becoming a Validator.
-* [Consensus Full Node](./consensus-full-node.md): A Celestia-App Full Node to sync blockchain history.
+* [验证者节点](./validator-node.md): 节点运营者运行桥接节点，通过成为验证者来参与共识。
+* [共识全节点](./consensus-full-node.md): Celestia-Appd全节点来同步区块链历史。
 
-Data Availability:
+数据可用性
 
-* [Bridge Node](./bridge-node.md): This node bridges blocks between the Data-Availability network and the Consensus network.
-* [Full Storage Node](./full-storage-node.md): This node stores all the data but does not connect to Consensus.
-* [Light Node](./light-node.md): Light clients conduct data availability sampling on the Data Availability network.
+* [桥接节点](./bridge-node.md): 此节点连在数据可用性网络和共识网络之间桥接区块。
+* [存储全节点](./full-storage-node.md): 此节点存储所有数据，但没有连接到共识网络。
+* [轻节点](./light-node.md): 轻节点在数据可用性网络中产生数据可用性采样。
 
-You can learn more about how to setup each different node by going through each tutorial guide.
+您可以透过各个教程，了解如何设置不同的节点。
 
-Please provide any feedback on the tutorials and guides. If you notice a bug or issue, feel free to make a Pull Request or write up a Github Issue ticket!
+欢迎供关于教程和指南的任何反馈意见。 如果您注意到问题或错误，请随时PR或写一个 Github问题单！
