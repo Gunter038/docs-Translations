@@ -15,7 +15,7 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque: 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting Up Your Full Storage Node
+## Configuration de votre Full Storage Node
 
 The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
