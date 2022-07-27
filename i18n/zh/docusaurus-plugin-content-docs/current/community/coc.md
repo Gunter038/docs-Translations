@@ -52,7 +52,7 @@ sidebar_label : 行为准则
 
 **社区影响**：用语不当、举止不符合职业道德或不受社区欢迎。
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+**后果**：社区领导发出的私人书面警告，提供明确违规行为的性质，并解释违规原因 行为不当。 可能会要求公开道歉。
 
 ### 2. Warning
 
