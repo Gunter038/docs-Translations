@@ -1,15 +1,15 @@
 - - -
-sidebar_label : Mamaki Testnet
+sidebar_label : Testnet Mamaki
 - - -
 
-# Mamaki Testnet
+# Testnet Mamaki
 <!-- markdownlint-disable MD013 -->
 
 ![mamaki-testnet](/img/mamaki.png)
 
-This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Ce guide contient les sections pertinentes pour savoir comment se connecter à Mamaki, selon le type de nœud que vous exécutez. Mamaki est une étape importante pour Celestia, permettant à chacun de tester les fonctionnalités de base du réseau. Lire l'annonce [ici](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
-Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+Votre meilleure approche pour participer est de déterminer d'abord quel nœud vous aimeriez exécuter. Chaque guide de node sera lié au réseau concerné afin de vous montrer comment vous y connecter.
 
 You have a list of options on the type of nodes you can run in order to participate in Mamaki:
 
