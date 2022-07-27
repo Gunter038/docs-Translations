@@ -2,18 +2,18 @@
 sidebar_label : Full Storage Node
 - - -
 
-# Setting Up A Celestia Full Storage Node
+# Configuration d'un Full Storage Node Celestia
 
 This tutorial will guide you through setting up a Celestia Full Storage Node, which is a Celestia node that doesn't connect to Celestia App (hence not a full node) but stores all the data.
 
-## Hardware Requirements
+## Hardware Requis
 
-The following hardware minimum requirements are recommended for running the full storage node:
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le full storage node :
 
-* Memory: 8 GB RAM
+* Mémoire: 8 Go de RAM
 * CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Disque: 250 Go de stockage SSD
+* Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
 ## Setting Up Your Full Storage Node
 
