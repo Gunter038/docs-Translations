@@ -1,12 +1,12 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label : 行为准则
 - - -
 
 # Celestia.org行为守则
 
 ## 我们的誓言
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+身为Celestia.org成员、贡献者、负责人，我们保证参与此社区的每个人都不受骚扰，不论其年龄、体型、身体条件、民族、性征、性别认同与表现、经验水平、教育程度、社会地位、国籍、相貌、种族、宗教信仰及性取向如何。
 
 我们承诺致力于建设开放、友善、多元、包容、健康的社区环境。
 
@@ -16,7 +16,7 @@ We as Celestia.org members, contributors, and leaders pledge to make participati
 
 * 表现出对他人的同理心和善意
 * 尊重不同的意见、观点和经验
-* Giving and gracefully accepting constructive feedback
+* 提出或得体地接受建设性的意见
 * 面对过失，承担责任、认真道歉、从中学习
 * 关注社区共同诉求，而非一己私利
 
@@ -46,13 +46,13 @@ We as Celestia.org members, contributors, and leaders pledge to make participati
 
 ## 执法准则
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+社区负责人将依据下列事项判断并处置违反社区基本准则的行为：
 
-### 1. Correction
+### 1. 修正
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**社区影响**：用语不当、举止不符合职业道德或不受社区欢迎。
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+**后果**：社区领导发出的私人书面警告，提供明确违规行为的性质，并解释违规原因 行为不当。 可能会要求公开道歉。
 
 ### 2. Warning
 

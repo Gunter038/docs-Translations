@@ -2,19 +2,19 @@
 sidebar_label : SystemD
 - - -
 
-# Setting Up Your Node As A Background Process With SystemD
+# 通过SystemD设置您的节点为后台进程
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD是一个后台进程管理服务，能方便地使应用程序运行为后台进程。
 
-## Consensus Nodes
+## 共识节点
 
-If you are running a validator or consensus full node, here are the steps to setting up `celestia-appd` as a background process.
+如果您正在运行验证者或者说参与共识的全节点，以下是将`celestia-appd`设置为后台进程的步骤。
 
-### Start the Celestia-App with SystemD
+### 通过SystemD启动Celestia-Appd
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD是一个后台进程管理服务，能方便地使应用程序运行为后台进程。
 
-Create Celestia-App systemd file:
+创建Celestia-Appd的systemd文件：
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-appd.service
@@ -32,44 +32,44 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+如果文件被成功创建，您将能够看到它的内容：
 
 ```sh
 cat /etc/systemd/system/celestia-appd.service
 ```
 
-Enable and start celestia-appd daemon:
+启用并启动celestia-appd后台进程：
 
 ```sh
 systemctl enable celestia-appd
 systemctl start celestia-appd
 ```
 
-Check if daemon has been started correctly:
+检查后台进程是否已正确启动：
 
 ```sh
 systemctl status celestia-appd
 ```
 
-Check daemon logs in real time:
+实时查看后台进程日志：
 
 ```sh
 journalctl -u celestia-appd.service -f
 ```
 
-To check if your node is in sync before going forward:
+在继续之前，请检查您的节点是否已完成同步：
 
 ```sh
 curl -s localhost:26657/status | jq .result | jq .sync_info
 ```
 
-Make sure that you have `"catching_up": false`, otherwise leave it running until it is in sync.
+请确保您看到`"catching_up": false`, 否则请等待它运行，直至达到同步状态。
 
-## Data Availability Nodes
+## 数据可用节点
 
-### Celestia Full Storage Node
+### Celestia存储全节点
 
-Create Celestia Full Storage Node systemd file:
+创建Celestia存储全节点systemd文件：
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-full.service
@@ -89,13 +89,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+如果文件被成功创建，您将能够看到它的内容：
 
 ```sh
 cat /etc/systemd/system/celestia-full.service
 ```
 
-Enable and start celestia-full daemon:
+启用并启动全节点的后台进程：
 
 ```sh
 systemctl enable celestia-full
@@ -103,11 +103,11 @@ systemctl start celestia-full && journalctl -u \
 celestia-full.service -f
 ```
 
-You should be seeing logs coming through of the full storage node syncing.
+您应该能看到存储全节点整个同步过程的日志。
 
-### Celestia Bridge Node
+### Celestia桥接节点
 
-Create Celestia Bridge systemd file:
+创建桥接节点的systemd文件：
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-bridge.service
@@ -127,13 +127,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+如果文件被成功创建，您将能够看到它的内容：
 
 ```sh
 cat /etc/systemd/system/celestia-bridge.service
 ```
 
-Enable and start celestia-bridge daemon:
+启用并启动桥接节点后台进程：
 
 ```sh
 systemctl enable celestia-bridge
@@ -141,22 +141,22 @@ systemctl start celestia-bridge && journalctl -u \
 celestia-bridge.service -f
 ```
 
-Now, the Celestia bridge node will start syncing headers and storing blocks from Celestia application.
+现在，Celestia桥接节点将开始，从Celestia应用程序同步区块头，并存储区块。
 
-> Note: At startup, we can see the `multiaddress` from Celestia Bridge Node. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
+> 注意：我们可以从Celestia桥接节点看到`multiaddress`。 这是**未来的轻节点的需求**，用于链接桥接节点并通信。
 
-Example:
+示例：
 
 ```sh
 NODE_IP=<ip-address>
 /ip4/$NODE_IP/tcp/2121/p2p/12D3KooWD5wCBJXKQuDjhXFjTFMrZoysGVLtVht5hMoVbSLCbV22
 ```
 
-You should be seeing logs coming through of the bridge node syncing.
+您应该能看到桥接节点整个同步过程的日志。
 
-### Celestia Light Node
+### Celestia轻节点
 
-Start the Light Node as daemon process in the background
+把轻节点作为后台进程启动
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
@@ -176,29 +176,29 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created succesfully you will be able to see its content:
+如果文件被成功创建，您将能够看到它的内容：
 
 ```sh
 cat /etc/systemd/system/celestia-lightd.service
 ```
 
-Enable and start celestia-lightd daemon:
+启用并启动轻节点的后台进程：
 
 ```sh
 systemctl enable celestia-lightd
 systemctl start celestia-lightd
 ```
 
-Check if daemon has been started correctly:
+检查后台进程是否已正确启动：
 
 ```sh
 systemctl status celestia-lightd
 ```
 
-Check daemon logs in real time:
+实时查看后台进程日志：
 
 ```sh
 journalctl -u celestia-lightd.service -f
 ```
 
-Now, the Celestia Light Node will start syncing headers. After sync is finished, Light Node will do Data Availability Sampling (DAS) from the Bridge Node.
+现在，Celestia轻节点将开始同步区块头。 同步完成后，轻节点将通过桥接节点进行数据采样(DAS)。

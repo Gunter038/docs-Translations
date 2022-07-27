@@ -1,49 +1,49 @@
 - - -
-sidebar_label : Validator Node
+sidebar_label : 验证者节点
 - - -
 
-# Setting Up A Celestia Validator Node
+# 设置Celestia验证者节点
 
-Validator nodes allow you to participate in consensus in the Celestia network.
+验证者节点允许您参与Celestia网络中的共识。
 
-## Hardware Requirements
+## 硬件要求
 
-The following hardware minimum requirements are recommended for running the validator node:
+为运行验证者节点，推荐以下最低硬件配置：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 硬盘： 250 GB SSD
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting Up Your Validator Node
+## 设置您的验证者节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+以下教程基于运行Ubuntu Linux 20.04 (LTS) x64的主机。
 
-### Setup The Dependencies
+### 设置依赖项
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+请按照[这里](../developers/environment.md)的步骤安装依赖项
 
-## Deploying The Celestia App
+## 部署Celestia App
 
-This section describes part 1 of Celestia Validator Node setup: running a Celestia App daemon with an internal Celestia Core node.
+本节介绍Celestia验证者节点设置的第1部分： 运行内置Celestia Core节点的Celestia App服务。
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> 注意：请确保您至少有100+ GB可用空间来安全安装+运行验证者节点。
 
-### Install Celestia App
+### 安装Celestia App
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+请按照[这里](../developers/celestia-app.md)的教程来安装Celestia App。
 
-### Setup the P2P Networks
+### 设置P2P网络
 
-For this section of the guide, select the network you want to connect to:
+对于指南的这一部分，请选择您想要连接的网络：
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+之后，您可以继续本教程的其余部分。
 
-### Configure Pruning
+### 配置剪枝参数
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+为降低硬盘空间的使用，我们建议按下面的参数来设置剪枝。 如果您想要： 根据情况，您可以将此更改为自己的剪枝参数：
 
 ```sh
 PRUNING="custom"
@@ -57,104 +57,104 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure Validator Mode
+### 配置验证者模式
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset Network
+### 重置网络
 
-This will delete all data folders so we can start fresh:
+这将删除所有数据文件夹，以便我们全新开始：
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: Quick-Sync with Snapshot
+### 可选：通过快照快速同步
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+根据您的硬件，从元初状态开始同步，可能需要很长时间。 使用场景 可以通过下载区块链的近期快照，来快速地同步您的Celestia节点。 如果你想要从元初状态同步，你可以跳过这一部分。
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+如果您要使用快照，请从下面的列表，选择您要同步的网络：
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the Celestia-App with SystemD
+### 通过SystemD启动Celestia-Appd
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+请按照[这里](./systemd.md#start-the-celestia-app-with-systemd)的教程，通过SystemD，将Celestia-App设置为后台进程。
 
-### Wallet
+### 钱包
 
-Follow the tutorial on creating a wallet [here](../developers/wallet.md).
+请按照[这里](../developers/wallet.md)的教程来创建钱包。
 
-### Delegate Stake to a Validator
+### 向验证者提供抵押
 
-Create an environment variable for the address:
+为地址创建环境变量：
 
 ```sh
 VALIDATOR_WALLET=<validator-address>
 ```
 
-If you want to delegate more stake to any validator, including your own you will need the `celesvaloper` address of the validator in question. You can either check it using the block explorer mentioned above or you can run the command below to get the `celesvaloper` of your local validator wallet in case you want to delegate more to it:
+如果您想要将更多的抵押提供给验证者， 包括您自己的验证者，您需要验证者的`celesvaloper`地址。 当您想要抵押更多时，可以用上文提到的区块浏览器或执行以下命令来得到你本地钱包中的`celesvaloper`地址。
 
 ```sh
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a
 ```
 
-After entering the wallet passphrase you should see a similar output:
+输入钱包密码后，你应该看到一个类似的输出：
 
 ```sh
 Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+接下来，选择您想要给验证者抵押的网络：
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the Celestia Node
+## 部署Celestia节点
 
-This section describes part 2 of Celestia Validator Node setup: running a Celestia Bridge Node daemon.
+本节介绍Celestia验证者节点设置的第2部分：运行Celestia桥节点服务。
 
-### Install Celestia Node
+### 安装Celestia节点
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+请按照[这里](../developers/celestia-node.md)的教程来安装Celestia节点。
 
-### Initialize the Bridge Node
+### 初始化桥接节点
 
-Run the following:
+运行以下命令：
 
 ```sh
 celestia bridge init --core.remote <ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果您需要一个RPC终结点列表来连接，您可以从邮件列表[中查看](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the Bridge Node
+### 运行桥接节点
 
-Run the following:
+运行以下命令：
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: Start the Bridge Node with SystemD
+### 可选：通过SystemD启动桥接节点
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+请按照[这里](./systemd.md#celestia-bridge-node)的教程，通过SystemD，将桥接节点设置为后台进程。
 
-You have successfully set up a bridge node that is syncing with the network.
+您已成功地设置了与网络同步的桥接节点。
 
-## Run a Validator Node
+## 运行验证者节点
 
-After completing all the necessary steps, you are now ready to run a validator! In order to create your validator on-chain, follow the instructions below. Keep in mind that these steps are necessary ONLY if you want to participate in the consensus.
+完成所有必要步骤后，您已经准备好运行验证者！ 为了在链上创建您的验证者，请遵循下面的说明。 请记住，只有你想要参加共识时，这些步骤才是必要的。
 
-Pick a `moniker` name of your choice! This is the validator name that will show up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you defined previously. Parameter `--min-self-delegation=1000000` defines the amount of tokens that are self delegated from your validator wallet.
+选择一个`昵称`！ 这是在公共仪表板和浏览器中显示的验证者名称。 `VALIDATOR_WALLET` 必须与先前定义的相同。 参数`--min-self-delegation=10000`定义了您的验证者钱包自行抵押的代币数量。
 
-Now, connect to the network of your choice.
+现在，连接到您选择的网络。
 
-You have the following option of connecting to list of networks shown below:
+您有以下网络列表可供选择：
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in to complete the validator setup process.
+在您想要验证的网络中，执行相应（以上）步骤，以完成验证者设置过程。

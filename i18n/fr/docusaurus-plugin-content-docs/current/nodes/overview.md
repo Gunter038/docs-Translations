@@ -1,24 +1,24 @@
 - - -
-sidebar_label : Overview
+sidebar_label : Aperçu
 - - -
 
-# Overview to Running Nodes on Celestia
+# Présentation des Nodes en cours d'exécution sur Celestia
 
-There are many ways you can participate in the Celestia network.
+Il y a plusieurs façons de participer au réseau Celestia.
 
-Celestia node operators can run several options on the network.
+Les opérateurs de nodes Celestia peuvent exécuter plusieurs options sur le réseau.
 
 Consensus:
 
-* [Validator Node](./validator-node.md): Node operators who run a Bridge Node have the option to also participate in Consensus by becoming a Validator.
-* [Consensus Full Node](./consensus-full-node.md): A Celestia-App Full Node to sync blockchain history.
+* [Node Validateur](./validator-node.md): Les opérateurs de Node qui gèrent un Bridge node ont la possibilité de participer également au consensus en devenant validateur.
+* [Consensus Full Node](./consensus-full-node.md): Un full node Celestia-App pour synchroniser l'historique de la blockchain.
 
-Data Availability:
+Disponibilité des données :
 
-* [Bridge Node](./bridge-node.md): This node bridges blocks between the Data-Availability network and the Consensus network.
-* [Full Storage Node](./full-storage-node.md): This node stores all the data but does not connect to Consensus.
-* [Light Node](./light-node.md): Light clients conduct data availability sampling on the Data Availability network.
+* [Bridge Node](./bridge-node.md): Ce node relie les blocs entre le Réseau Data-Availability (Dispnibilité des données) et le réseau de Consensus.
+* [Full Storage Node](./full-storage-node.md): Ce node stocke toutes les données mais ne se connecte pas au Consensus.
+* [Light Node](./light-node.md): Les clients légers effectuent un échantillonnage de la disponibilité des données sur le réseau de disponibilité des données (Data Availability Sampling).
 
-You can learn more about how to setup each different node by going through each tutorial guide.
+Vous pouvez en apprendre plus sur la façon de configurer chaque node à travers les tutoriels.
 
-Please provide any feedback on the tutorials and guides. If you notice a bug or issue, feel free to make a Pull Request or write up a Github Issue ticket!
+N'hésitez pas à fournir des commentaires sur les didacticiels et les guides. Si vous remarquez un bug ou un problème, n'hésitez pas à faire une Pull Request sur Github ou à rédiger ou à émettre un ticket "issue" sur Github !

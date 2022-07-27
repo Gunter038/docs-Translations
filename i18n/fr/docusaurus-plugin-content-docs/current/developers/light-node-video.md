@@ -1,16 +1,16 @@
 - - -
-sidebar_label : Node Video Tutorial
+sidebar_label : Tutoriel vidéo du node
 - - -
 
-# Node Video Tutorial
+# Tutoriel Vidéo du node
 <!-- markdownlint-disable MD033 -->
 
-This video will guide you through setting up a Celestia Light Node, which can allow you to do data-sampling on the Data Availability (DA) network.
+Cette vidéo vous guidera à travers la mise en place d'un Light Node Celestia, qui peut vous permettre de faire de l'échantillonnage de données sur le réseau de Disponibilité de Données (Data Availability).
 
 <div class="youtube-wrapper">
   <iframe
      class="youtube-video"
-     title="Running a Celestia Light Node"
+     title="Exécuter un Light Node Celestia"
      src="https://www.youtube.com/embed/9uL3jZe4mTY"
      allowfullscreen
 >
