@@ -10,7 +10,7 @@ Cette vidéo vous guidera à travers la mise en place d'un Light Node Celestia, 
 <div class="youtube-wrapper">
   <iframe
      class="youtube-video"
-     title="Exécuter un Light Node Celestia"
+     title="Running a Celestia Light Node"
      src="https://www.youtube.com/embed/9uL3jZe4mTY"
      allowfullscreen
 >
