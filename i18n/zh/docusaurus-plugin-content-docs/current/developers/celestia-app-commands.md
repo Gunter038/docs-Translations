@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Helpful CLI commands
+sidebar_labar: 有用的 CLI 命令
 - - -
 
-# Helpful CLI commands
+# 有用的 CLI 命令
 
-View all options:
+查看所有选项
 
 ```console
 CLI 命令
@@ -59,17 +59,17 @@ Available Commands:   可用的命令。
   版本 打印应用程序的二进制版本信息
 ```
 
-## Creating a wallet
+## 创建一个钱包
 
 ```sh
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configures the keyring's backend, where the keys are stored.
+`keyring-backend` 配置存储密钥的密钥环的后端。
 
-Options are: `os|file|kwallet|pass|test|memory`.
+选项是:`os|file|kwallet|pass|test|memory`。
 
-## Key management
+## 密钥管理
 
 ```sh
 # listing keys
@@ -85,7 +85,7 @@ celestia-appd keys delete <KEY_NAME>
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### 导入和导出
 
 Import an encrypted and ASCII-armored private key into the local keybase.
 

@@ -120,7 +120,7 @@ celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transférer des tokens d'un portefeuille vers un autre:
+Transférer des tokens d'un wallet vers un autre:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \

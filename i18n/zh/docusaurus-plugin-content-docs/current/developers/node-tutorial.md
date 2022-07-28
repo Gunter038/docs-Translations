@@ -1,19 +1,19 @@
 - - -
-sidebar_label : Node Tutorial
+sidebar_label : 节点教程
 - - -
 
-# Getting and Sending Transactions with Celestia Node
+# 使用Celestia节点获取和发送交易
 <!-- markdownlint-disable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> 要查看设置Celestia Light 节点的视频教程，请点击 [这里](./light-node-video.md)
 
-## Hardware Requirements
+## 硬件要求
 
-You can find hardware requirements [here](../nodes/light-node.md#hardware-requirements).
+您可以在[这里](../nodes/light-node.md#hardware-requirements)找到硬件要求。
 
-## Setting Up Dependencies
+## 设置依赖项
 
 You can follow the tutorial for setting up the dependencies [here](./environment.md).
 
