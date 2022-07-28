@@ -1,38 +1,38 @@
 - - -
-sidebar_label : Create A Celestia Testnet
+sidebar_label : 创建 Celestia 测试网
 - - -
 
-# Celestia App Network Instantiation Guide
+# Celestia App 网络实例指南
 
-This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
+本指南旨在帮助实例化一个新的测试网络，并遵循正确的步骤来使用 Celestia-App。 如果您想试验自己的 Celestia 测试网络，或者如果您想测试新功能以作为核心开发人员构建，您应该只遵循本指南。
 
-## Hardware Requirements
+## 硬件要求
 
-You can follow hardware requirements [here](../nodes/validator-node.md#hardware-requirements).
+您可以在[这里](../nodes/validator-node.md#hardware-requirements)找到硬件要求。
 
-## Setup Dependencies
+## 设置依赖项
 
-You can setup dependencies by following the guide [here](./environment.md).
+您可以按照[这里](./environment.md)的指南设置依赖项。
 
-## Celestia App Installation
+## Celestia App 安装
 
-You can install Celestia App by following the guide [here](./celestia-app.md).
+您可以按照[这里](./celestia-app.md)的指南安装 Celestia App。
 
-## Spin Up A Celestia Testnet
+## 启动 Celestia 测试网
 
-If you want to spin up a quick testnet with your friends, you can follow these steps. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
+如果您想与您的朋友建立一个快速测试网，您可以按照以下步骤进行操作。 除非另有说明，否则每一步都必须由想要参与此测试网的每个人完成。
 
-### Optional: Reset Working Directory
+### 可选：重置工作目录
 
-If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. You can do so by running the following command:
+如果您过去已经为 `celestia-appd` 初始化了一个工作目录， 您必须先清理才能重新初始化一个新目录。 您可以通过运行以下命令来执行此操作：
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Initialize A Working Directory
+### 初始工作目录
 
-Run the following command:
+运行以下命令：
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -40,8 +40,8 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* The value we will use for `$VALIDATOR_NAME` is `validator1` but you should choose your own node name.
-* The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must remain the same for everyone participating in this network.
+* 我们将使用`$VALIDATOR_NAME`都值是`validator1`但您应该选择自己的节点名称。
+* 我们将用于 `$CHAIN_ID` 的值是 `testnet`。 The `$CHAIN_ID` must remain the same for everyone participating in this network.
 
 ### Create A New Key
 
