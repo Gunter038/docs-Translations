@@ -1,14 +1,14 @@
 - - -
-sidebar_label : Docs Translations
+sidebar_label : 文档翻译
 - - -
 
-# Community Translation Support
+# 社区翻译支持
 
-If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
+如果您是一位热情的 Celestia 社区成员，并且愿意为翻译文档页面做出贡献，那么这就是您的指南。
 
-## Fork the Celestia Documentation Repository
+## 派遣Celestia文档库
 
-Go to the Docs Repository [here](https://github.com/celestiaorg/docs).
+转到文档资源库 [这里](https://github.com/celestiaorg/docs)。
 
 Fork the repository to have your own fork of it. Now, with your own fork, you can start working on the translation steps.
 

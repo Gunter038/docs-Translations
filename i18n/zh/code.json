@@ -167,77 +167,77 @@
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "message": "最新版本，请参阅{latestVersionLink}（{versionLabel}）。",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "latest version",
+    "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Edit this page",
+    "message": "编辑此页",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Direct link to heading",
+    "message": "回到标题",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " on {date}",
+    "message": "时间：{date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " by {user}",
+    "message": "编辑：{user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Last updated{atDate}{byUser}",
+    "message": "最后更新：{byUser}, {atDate}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← 返回主菜单",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "版本",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "跳至主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags:",
+    "message": "标签：",
     "description": "The label alongside a tag list"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "语言",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "标签",
     "description": "The title of the tag list page"
   },
   "'Build Modular'": {
-    "message": "'Build Modular'"
+    "message": "'构建模块'"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
-    "message": "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract."
+    "message": "Celestia是第一个模块化区块链网络，它使开发者能够像部署新的智能合约一样，轻松地部署自己的区块链。"
   },
   "'Run Different Nodes'": {
-    "message": "'Run Different Nodes'"
+    "message": "'运行不同的节点'"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
-    "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
+    "message": "Celestia使您通过运行验证节点、桥接节点或轻客户端来支持网络。"
   },
   "'Power-up with Data Availability Layer'": {
-    "message": "'Power-up with Data Availability Layer'"
+    "message": "'从数据可用层获得力量'"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
-    "message": "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need."
+    "message": "Celestia介绍了所谓的数据可用层，以便能够有效地扩展，并允许L2 Rollup对它们所需要的交易进行数据取样。"
   }
 }
