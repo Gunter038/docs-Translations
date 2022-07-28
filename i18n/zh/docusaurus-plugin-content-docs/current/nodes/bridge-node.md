@@ -1,16 +1,16 @@
 - - -
-sidebar_label : Bridge Node
+sidebar_label : 桥接节点
 - - -
 
-# Setting Up A Celestia Bridge Node
+# 设置Celestia桥接节点
 
-This tutorial will go over the steps to setting up your Celestia Bridge node.
+本教程将介绍如何设置 Celestia 桥接节点。
 
-Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
+桥接节点连接数据可用性层和共识层，同时还可以选择成为验证者。
 
-## Overview of Bridge Nodes
+## 桥接节点概述
 
-A Celestia bridge node has the following properties:
+Celestia桥接节点具有以下属性：
 
 1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
 2. Validate and erasure code the “raw” blocks
