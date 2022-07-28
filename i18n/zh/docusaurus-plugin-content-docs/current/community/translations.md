@@ -6,16 +6,16 @@ sidebar_label : 文档翻译
 
 如果您是一位热情的 Celestia 社区成员，并且愿意为翻译文档页面做出贡献，那么这就是您的指南。
 
-## 派遣Celestia文档库
+## 分叉 Celestia 文档
 
-转到文档资源库 [这里](https://github.com/celestiaorg/docs)。
+打开[此处](https://github.com/celestiaorg/docs)文档存储库 。
 
-Fork the repository to have your own fork of it. Now, with your own fork, you can start working on the translation steps.
+分叉存储库以拥有自己的分叉。 现在，您可以使用自己的分叉开始翻译。
 
-## Specify the Language You Want to Translate To
+## 指定您想要翻译的语言
 
-Here, you need to select the language you want to translate to.
+在这里，您需要选择您想要翻译的语言。
 
-Once you decide that, you can follow the tutorial that Docusaurus has outlined in order to begin your translation journey.
+一旦你确定了这一点，你可以遵循Docusaurus 概述的教程来开始翻译旅程。
 
-The tutorial is found [here](https://docusaurus.io/docs/i18n/tutorial).
+教程在[这里](https://docusaurus.io/docs/i18n/tutorial)找到 。
