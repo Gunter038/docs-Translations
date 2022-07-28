@@ -1,16 +1,16 @@
 - - -
-sidebar_label : Setting Up Environment
+sidebar_label : 设置环境
 - - -
 
-# Development Environment
+# 开发环境
 
-This tutorial will go over setting up your development environment to run Celestia software. This environment can be used for development, building binaries, and running nodes.
+本教程将介绍如何设置您的开发环境以运行 Celestia 软件。 此环境可用于开发、构建二进制文件和运行节点。
 
-## Install Dependencies
+## 安装依赖项
 
-Once you have setup your instance, ssh into the instance to begin installing the dependencies needed to run a node.
+设置好实例后，通过 ssh 进入实例以开始安装运行节点所需的依赖项。
 
-First, make sure to update and upgrade the OS:
+首先，确保更新和升级操作系统：
 
 ```sh
 # If you are using the APT package manager
@@ -19,7 +19,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+这些是执行许多任务（如下载文件、编译和监控节点）所必需的基本包：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -30,9 +30,9 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Install Golang
+## 安装 Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app 和 celestia-node 是用[Golang](https://go.dev/)编写的，所以我们必须安装 Golang 来构建和运行它们。
 
 ```sh
 ver="1.18.2"
@@ -43,20 +43,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+现在我们需要将 `/usr/local/go/bin` 目录添加到 `$PATH`
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+要检查 Go 是否安装正确，请运行：
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+输出应该是安装的版本：
 
 ```sh
 go version go1.18.2 linux/amd64
