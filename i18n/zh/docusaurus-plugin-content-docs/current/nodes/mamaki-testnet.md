@@ -189,7 +189,7 @@ confirm transaction before signing and broadcasting [y/N]: y
 ```
 
 
-Inputting `y` should provide an output similar to:
+输入`y`应该出现类似于以下输出：
 
 
 
@@ -209,4 +209,4 @@ txhash: <tx-hash>
 ```
 
 
-You should now be able to see your validator from a block explorer like [here](https://celestia.explorers.guru/)
+您现在应该能够从取块浏览器中，看到您的验证者，就像[在这里](https://celestia.explorers.guru/)
