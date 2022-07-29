@@ -43,7 +43,7 @@ Available Commands:
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` 配置存储密钥的密钥环的后端。
+`keyring-backend`配置存储密钥的keyring的后台实现。
 
 选项是:`os|file|kwallet|pass|test|memory`。
 
@@ -105,9 +105,9 @@ celestia-appd q <FLAGS> | <COMMAND>
 celestia-appd q --help
 ```
 
-## Token 管理
+## 代币管理
 
-获取token余额：
+获取代币余额：
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
