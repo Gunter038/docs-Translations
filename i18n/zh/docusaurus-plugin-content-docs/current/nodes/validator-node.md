@@ -129,7 +129,7 @@ celestia bridge init --core.remote <ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
-如果您需要一个RPC终结点列表来连接，您可以从邮件列表[中查看](./mamaki-testnet.md#rpc-endpoints)
+如果您需要一个RPC端点列表来连接，您可以从邮件列表[中查看](./mamaki-testnet.md#rpc-endpoints)
 
 ### 运行桥接节点
 
