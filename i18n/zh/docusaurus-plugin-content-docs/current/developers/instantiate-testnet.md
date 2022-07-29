@@ -4,7 +4,7 @@ sidebar_label : 创建 Celestia 测试网
 
 # Celestia App 网络实例指南
 
-本指南旨在帮助实例化一个新的测试网络，并遵循正确的步骤来使用 Celestia-App。 如果您想试验自己的 Celestia 测试网络，或者如果您想测试新功能以作为核心开发人员构建，您应该只遵循本指南。
+本指南旨在帮助实例化一个新的测试网络，并遵循正确的步骤来使用 Celestia-App。 如果您想试验自己的 Celestia 测试网络，或者如果您想测试新功能，就像核心开发人员那样构建，您应该只遵循本指南。
 
 ## 硬件要求
 
@@ -30,7 +30,7 @@ sidebar_label : 创建 Celestia 测试网
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### 初始工作目录
+### 初始化工作目录
 
 运行以下命令：
 
@@ -40,8 +40,8 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* 我们将使用`$VALIDATOR_NAME`都值是`validator1`但您应该选择自己的节点名称。
-* 我们将用于 `$CHAIN_ID` 的值是 `testnet`。 对于`$CHAIN_ID`参与此网络的每个人来说，必须保持不变。
+* 我们将使用的`$VALIDATOR_NAME`的值是`validator1`，但您应该选择自己的节点名称。
+* 我们将用于 `$CHAIN_ID` 的值是 `testnet`。 对于`$CHAIN_ID`参与此网络的每个人来说，必须保持一致。
 
 ### 创建一个新密钥
 
@@ -52,7 +52,7 @@ KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-这将创建一个具有您选择的名称的新密钥。 将此命令的输出内容保存到某处；您将需要 此后生成的地址。 在这里，我们将我们 的key `$KEY_NAME` 设置为 `validator` 用于演示。
+这将创建一个具有您选择的名称的新密钥。 将此命令的输出内容保存到某处；后续您将需要这里生成的地址。 在这里，我们将我们的密钥名称`$KEY_NAME`设置为`validator`用于演示。
 
 ### 添加创世账户密钥名
 
@@ -63,15 +63,15 @@ CELES_AMOUNT="10000000000000000000000000utia"
 celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 ```
 
-这里 `$VALIDATOR_NAME` 与以前相同的密钥名称; 和`$AMOUNT` 类似于 `100000000000000000000000utia`。
+这里`$VALIDATOR_NAME`是与之前相同的密钥名称; 而`$AMOUNT`形如`100000000000000000000000utia`。
 
-### 可选：添加其他Validators
+### 可选：添加其他验证者
 
-如果您的测试网中的其他参与者也想要成为validators，用指定数量重复上面的命令来获取他们的公钥。
+如果您的测试网中的其他参与者也想要成为验证者，重复上面的命令来获取他们具有一定余额的公钥。
 
-一旦添加了所有validators， `genesis.json` 文件就被创建。 您需要与测试网中的所有其他validators共享它，以便每个人都继续执行以下步骤。
+添加了所有验证者后，`genesis.json`文件就被创建好了。 您需要与测试网中的所有其他验证者共享它，以便每个人都继续执行以下步骤。
 
-你可以找到`genesis.json`在`$HOME/.celestia-appd/config/genesis.json`
+你可以在`$HOME/.celestia-appd/config/genesis.json`找到`genesis.json`
 
 ### 为新链创建创世交易
 
@@ -87,11 +87,11 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
 
 您会在 `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json` 中找到生成的 gentx JSON 文件。
 
-> 注意：如果您在您的网络中有其他validators 他们也需要 运行上述命令与您在上一步中分享了 `genesis.json`文件。
+> 注意：如果在您的网络中有其他验证者，他们也需要基于您在上一步中分享的`genesis.json`文件，运行上述命令。
 
-### 创建 Genesis JSON 文件
+### 创建创世JSON文件
 
-一旦所有参与者都向您提交了他们的 gentx JSON 文件， 您将把所有这些 gentx 文件拉到以下目录中： `$HOME/.celestia-appd/config/gentx`并使用它们来创建最终`genesis.json` 文件。
+所有参与者都向您提交了他们的 gentx JSON 文件后，您需要把所有这些 gentx 文件放入以下目录中： `$HOME/.celestia-appd/config/gentx` 并使用它们来创建最终`genesis.json`文件。
 
 添加所有参与者的 gentx 文件后，运行以下命令：
 
@@ -99,11 +99,11 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
 celestia-appd collect-gentxs 
 ```
 
-此命令将查找此仓库中的 gentx 文件，应该将 移动到以下目录 `$HOME/.celestia-app/config/gentx`
+此命令将查找此目录中的gentx文件，应该将此目录移动到以下位置`$HOME/.celestia-app/config/gentx`
 
 它将在`genesis.json` 文件这个位置后更新 `$HOME/.elestia-app/config/genesis.json` 现在包括其他参与者的 gentx。 。
 
-You should then share this final `genesis.json` file with all the other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+然后你应该分享这个最终的`genesis.json<code>。所有其他参与者都必须将其添加到他们的<0>$HOME/.celestia-app/config`目录下。
 
 每个人都必须确保将他们现有的 `genesis.json` 文件替换为 这个新的文件。
 
@@ -111,7 +111,7 @@ You should then share this final `genesis.json` file with all the other particpa
 
 打开以下文件`$HOME/.celestia-app/config/config.toml`进行修改。
 
-在文件中，通过修改以下行来添加其他参与者，以将其他参与者包括为持久对等点：
+在文件中，通过修改以下行来添加其他参与者，以将其他参与者标记为持久对等点：
 
 ```text
 # Comma separated list of nodes to keep persistent connections to
@@ -126,7 +126,7 @@ celestia-appd tendermint show-node-id
 
 输出将是十六进制编码的 `validator_address`。 默认的 `port` 是 26656。
 
-### 初始化网络
+### 启动网络
 
 您可以通过运行以下命令来启动节点：
 
