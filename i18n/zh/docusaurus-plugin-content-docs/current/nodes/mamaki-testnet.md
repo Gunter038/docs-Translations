@@ -1,8 +1,8 @@
 - - -
-sidebar_label : Mamaki Testnet
+sidebar_label : Mamaki测试网
 - - -
 
-# Mamaki Testnet
+# Mamaki测试网
 <!-- markdownlint-disable MD013 -->
 
 ![mamaki-testnet](/img/mamaki.png)
