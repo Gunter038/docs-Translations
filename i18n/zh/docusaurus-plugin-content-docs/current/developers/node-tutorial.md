@@ -49,31 +49,31 @@ $request <Wallet-Address>
 
 您的钱包有了资金，您可以继续下一步。
 
-### Connect To A Public Core Endpoint
+### 连接到公共端点
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+现在让我们运行 Celestia Light 节点，并通过 GRPC 连接到示例公共端点。
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](../nodes/mamaki-testnet#rpc-endpoints)
+> 注意：我们还鼓励您找到社区中运行的 API 端点，Discord 中有几个端点。 这一个用于演示目的， 您可以在[这里](../nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点列表。
 
-Here we are starting a light node with a connection to a Core endpoint and also telling the light node to use the `developer` key we generated as its default account.
+在这里，我们启动一个连接到核心端点的轻节点，并告诉轻节点使用`developer`生成我们的密钥作为其默认账户。
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090 --keyring.accname developer
 ```
 
-## Node API Calls
+## 节点 API 调用
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+打开另一个终端窗口以开始查询 API。 默认情况下`celestia-node` 在端口 `26658` 上显示其RPC 端点。
 
-### Balance
+### 余额
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+现在，让我们查询我们的节点的默认账户余额 (这是我们先前生成的 `developer` 密钥关联的账户)：
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+它将输出以下内容：
 
 ```json
 {
@@ -82,19 +82,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+这显示钱包中的余额。
 
-### Get Block Header
+### 获取块头
 
-Now, let's get the block header information.
+现在，让我们获取块头信息。
 
-Here we will get the header from Block 1:
+在这里，我们将从块 1 中获取块头：
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+它将输出如下内容：
 
 ```json
 {
@@ -266,23 +266,23 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### 提交PFD交易
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+在此示例中，我们将向节点的`/submit_pfd` 端点提交 PayForData 交易。
 
-Some things to consider:
+注意事项：
 
-* PFD is a PayForData Message.
-* The endpoint also takes in a `namespace_id` and `data` values.
-* Namespace ID should be 8 bytes.
-* Data is in hex-encoded bytes of the raw message.
-* `gas_limit` is the limit of gas to use for the transaction
+* PFD 是一个 PayForData 消息
+* 端点也需要使用 `命名空间的 id` 和 `数据` 值
+* 命名空间 ID 应为8字节
+* 数据是原始消息的十六进制编码字节
+* `gas_limit` 是用于交易的气体限制
 
-We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+我们使用以下`namespace_id`和`0000010000000100`的`data` 值 `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`。
 
-You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+您可以在[这里](https://go.dev/play/p/7ltvaj8lhRl)生成自己`namespace_id`值和数据值，我们创建的有用的 Golang Playground。
 
-We run the following:
+运行以下命令：
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -290,7 +290,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 60000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+我们得到以下输出：
 
 ```json
 {
