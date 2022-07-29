@@ -7,7 +7,7 @@ sidebar_label : 节点教程
 
 在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
-> 要查看设置Celestia Light 节点的视频教程，请点击 [这里](./light-node-video.md)
+> 点击 [这里](./light-node-video.md)查看设置Celestia Light 节点的视频教程。
 
 ## 硬件要求
 
@@ -45,9 +45,9 @@ celestia light init
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+当您创建钱包时，其中`<Wallet-Address>`地址生成是`celestia1******`。
 
-With your wallet funded, you can move on to the next step.
+您的钱包有了资金，您可以继续下一步。
 
 ### Connect To A Public Core Endpoint
 
