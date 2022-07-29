@@ -15,31 +15,31 @@ sidebar_label : 节点教程
 
 ## 设置依赖项
 
-You can follow the tutorial for setting up the dependencies [here](./environment.md).
+您可以按照[这里](./environment.md)教程设置依赖项。
 
-## Celestia Node
+## Celestia 节点
 
-### Install Celestia Node
+### 安装Celestia节点
 
-You can follow the tutorial for building Celestia Node [here](./celestia-node.md)
+请按照[这里](./celestia-node.md)的教程来安装Celestia节点。
 
-### Instantiate Celestia Light Node
+### 实例化Celestia Light 节点
 
-Now, let's instantiate a Celestia Light node:
+现在，让我们实例化一个Celestia Light 节点：
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> 注意：RPC 端点暴露在所有 Celestia 节点类型中，例如 Light、Bridge 和 Full Nodes。
 
 ```sh
 celestia light init
 ```
 
-### Generate A Wallet
+### 生成新钱包
 
-You can follow the tutorial for generating a Wallet with Celestia Light Node [here](../nodes/keys.md#steps-for-generating-light-node-keys).
+您可以按照[这里](../nodes/keys.md#steps-for-generating-light-node-keys)的教程来进行生成 Celestia Light 节点钱包。
 
-Now, head over to the Celestia Discord channel `#faucet`.
+现在，前往 Celestia Discord的`水龙头`频道。
 
-You can request funds to your wallet address using the following command in Discord:
+您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
 ```console
 $request <Wallet-Address>
