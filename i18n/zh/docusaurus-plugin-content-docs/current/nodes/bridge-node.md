@@ -12,15 +12,15 @@ sidebar_label : 桥接节点
 
 Celestia桥接节点具有以下属性：
 
-1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
-2. Validate and erasure code the “raw” blocks
-3. Supply block shares with data availability headers to Light Nodes in the DA network. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+1. 从共识网络中的受信任核心进程（意味着与 celestia-core 节点的受信RPC 连接）导入和处理“原始”区块头和块。 桥接节点可以在内部（嵌入式）运行此核心进程，也可以简单地连接到远程端点。 桥接节点还可以选择成为共识网络中的活跃验证者, 向 DA 网络中的轻节点提供带有数据可用性标头的块共享
+2. 验证和擦除“原始”块的代码
+3. 向 DA 网络中的轻节点提供带有数据可用性标头的块共享 ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
-From an implementation perspective, Bridge Nodes run two separate processes:
+从实现的角度来看，桥接节点运行两个独立的进程：
 
-1. Celestia App with Celestia Core ([see repo](https://github.com/celestiaorg/celestia-app))
+1. 带有 Celestia Core 的 Celestia 应用程序（[参见 repo](https://github.com/celestiaorg/celestia-app)）
 
-    * **Celestia App** is the state machine where the application and the proof-of-stake logic is run. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
+    * Celestia App是运行应用程序和权益证明逻辑的状态机。**Celestia App** 基于 Cosmos SDK构建，还包含 Celestia Core。 Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
     * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
 2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
