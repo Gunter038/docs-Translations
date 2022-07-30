@@ -14,89 +14,89 @@ Celestia桥接节点具有以下属性：
 
 1. 从共识网络中的受信任核心进程（意味着与 celestia-core 节点的受信RPC 连接）导入和处理“原始”区块头和块。 桥接节点可以在内部（嵌入式）运行此核心进程，也可以简单地连接到远程端点。 桥接节点还可以选择成为共识网络中的活跃验证者, 向 DA 网络中的轻节点提供带有数据可用性标头的块共享
 2. 验证和擦除“原始”块的代码
-3. 向 DA 网络中的轻节点提供带有数据可用性标头的块共享 ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+3. 向 DA 网络中的轻节点提供带有数据可用性标头的块共享 ![桥接节点图](/img/nodes/BridgeNodes.png)
 
 从实现的角度来看，桥接节点运行两个独立的进程：
 
 1. 带有 Celestia Core 的 Celestia 应用程序（[参见 repo](https://github.com/celestiaorg/celestia-app)）
 
-    * Celestia App是运行应用程序和权益证明逻辑的状态机。**Celestia App** 基于 Cosmos SDK构建，还包含 Celestia Core。 Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
-    * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Celestia App**是运行应用程序和权益证明逻辑的状态机。 Celestia App 基于 [Cosmos SDK](https://docs.cosmos.network/)构建，还包含**Celestia Core**。
+    * **Celestia Core**是状态交互、共识和区块生产层。 Celestia Core 基于[Tendermint Core](https://docs.tendermint.com/)构建，经过修改以存储纠删码块的数据根以及其他更改（[请参阅 ADR](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)）。
 
-2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
+2. Celestia 节点（[见 repo](https://github.com/celestiaorg/celestia-node)）
 
-    * **Celestia Node** augments the above with a separate libp2p network that serves data availability sampling requests. The team sometimes refer to this as the “halo” network.
+    * **Celestia Node**通过一个单独的 libp2p 网络对上述内容进行了扩充，该网络服务于数据可用性采样请求， 该团队有时将其称为“光环”网络。
 
-## Hardware Requirements
+## 硬件要求
 
-The following hardware minimum requirements are recommended for running the bridge node:
+建议使用以下硬件最低要求来运行桥接节点：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 磁盘：250 GB SSD 存储
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting Up Your Bridge Node
+## 设置您的桥接节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+以下教程是在 Ubuntu Linux 20.04 (LTS) x64 实例机器上完成的。
 
-### Setup The Dependencies
+### 设置依赖项
 
-Follow the tutorial here installing the dependencies [here](../developers/environment.md).
+请按照[这里](../developers/environment.md)的步骤安装依赖项
 
-## Deploy the Celestia Bridge Node
+## 部署Celestia桥接节点
 
-### Install Celestia Node
+### 安装 Celestia 节点
 
-Install the Celestia Node binary, which will be used to run the Bridge Node.
+安装 Celestia Node 二进制文件，它将用于运行 Bridge 节点。
 
-Follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md).
+请按照[这里](../developers/celestia-node.md)的教程来安装Celestia节点。
 
-### Initialize the Bridge Node
+### 初始化桥接节点
 
-Run the following:
+运行以下命令：
 
 ```sh
 celestia bridge init --core.remote tcp://<ip-address>:26657 
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
-### Run the Bridge Node
+### 运行桥接节点
 
-Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+启动桥接节点并连接到验证器节点的 gRPC 端点 (通常在端口 9090上显示)：
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
+> 注意：为了获得获取/提交状态相关信息的能力，例如提交 PayForData 交易或查询节点账户余额的能力，验证者（核心）节点的 gRPC 端点必须按指示传递如下
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+您可以按照[这里](./keys.md)的`cel-key`指示步骤为您的节点创建密钥
 
-Once you start the Bridge Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+启动桥接节点后，将为您生成一个钱包密钥。 您需要使用Mamaki 测试网代币来支付 PayForData 交易费用。 您可以通过运行以下命令找到地址：
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+可以在这里请求 [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)测试网代币
 
-#### Optional: Run the Bridge Node with a Custom Key
+#### 可选：使用自定义密钥运行桥接节点
 
-In order to run a bridge node using a custom key:
+要使用自定义密钥运行桥接节点：
 
-1. The custom key must exist inside the celestia bridge node directory at the correct path (default: `~/.celestia-bridge/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. 自定义密钥必须存在于 celestia 桥接节点目录中的正确路径(默认: `~/.celestia-bridge/keys/keyring-test`)
+2. 自定义密钥的名称必须在 `开始`时传递，就像这样：
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: Start the Bridge Node with SystemD
+### 可选：通过SystemD启动桥接节点
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+请按照[这里](./systemd.md#celestia-bridge-node)的教程，通过SystemD，将桥接节点设置为后台进程。
 
-You have successfully set up a bridge node that is syncing with the network.
+您已成功地设置了与网络同步的桥接节点。
