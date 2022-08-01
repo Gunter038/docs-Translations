@@ -1,5 +1,5 @@
 - - -
-sidebar_label : 创建一个钱包
+sidebar_label : 创建钱包
 - - -
 
 # 钱包
@@ -26,15 +26,15 @@ celestia-appd keys add validator
 celestia-appd keys list
 ```
 
-## 获取水龙头
+## 给钱包充值
 
-复制您的celestia 地址，然后将地址发送到官方的Discord 水龙头频道，为之前创建的钱包获取代币。
+复制您的celestia 地址，然后将地址发送到官方的Discord #faucet频道，为之前创建的钱包充值代币。
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-请等待您确认 令牌已成功发送。 要检查代币是否已成功到达您的钱包运行下面的命令，以您自己的公共地址替换:
+请等待确认代币已成功发送的消息。 要检查代币是否已成功到达您的钱包，运行下面的命令。注意替换为您自己的公共地址:
 
 ```sh
 celestia-appd q bank balances celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

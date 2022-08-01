@@ -1,15 +1,15 @@
 - - -
-sidebar_label : Celestia 应用程序
+sidebar_label: Celestia App
 - - -
 
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
-本教程将指导您构建 Celestia App。 本教程假设您在[这里](./environment.md)设置完成了自己的环境步骤。
+本教程将指导您构建 Celestia App。 本教程假设您已经完成了[这里](./environment.md)的环境设置步骤。
 
 ## 安装Celestia App
 
-下面的步骤将在 `$HOME/go/bin` 文件夹中创建一个名为 `celestia-appd` 的二进制文件，此文件稍后将用于运行节点。
+下面的步骤将在 `$HOME/go/bin` 文件夹中创建一个名为 `celestia-appd`的二进制文件，此文件稍后将用于运行节点。
 
 ```sh
 cd $HOME
@@ -23,7 +23,7 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-要检查二进制文件是否成功编译，您可以使用 `--help` 标志运行二进制文件 ：
+要检查二进制文件是否成功编译，您可以使用 `--help` 标志运行二进制文件：
 
 ```sh
 celestia-appd --help

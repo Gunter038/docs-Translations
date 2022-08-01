@@ -26,9 +26,9 @@ sidebar_label : Mamaki测试网
 
 选择你想运行的节点类型，然后按照各个对应颜面的指示操作。 每当这些指南询问你想连接的网络时，请选择这些页面上的`Mamaki`相关内容，以便连接到Mamki。
 
-## RPC终结点
+## RPC端点
 
-可用于连接Mamaki测试网的RPC终结点列表：
+可用于连接Mamaki测试网的RPC端点列表：
 
 * [https://rpc-mamaki.pops.one](https://rpc-mamaki.pops.one)
 * [https://rpc-1.celestia.nodes.guru](https://rpc-1.celestia.nodes.guru)

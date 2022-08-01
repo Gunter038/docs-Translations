@@ -7,7 +7,7 @@ sidebar_label : 节点教程
 
 在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
-> 点击 [这里](./light-node-video.md)查看设置Celestia Light 节点的视频教程。
+> 点击 [这里](./light-node-video.md)查看设置Celestia轻节点的视频教程。
 
 ## 硬件要求
 
@@ -23,11 +23,11 @@ sidebar_label : 节点教程
 
 请按照[这里](./celestia-node.md)的教程来安装Celestia节点。
 
-### 实例化Celestia Light 节点
+### 实例化Celestia轻节点
 
-现在，让我们实例化一个Celestia Light 节点：
+现在，让我们实例化一个Celestia轻节点：
 
-> 注意：RPC 端点暴露在所有 Celestia 节点类型中，例如 Light、Bridge 和 Full Nodes。
+> 注意：所有Celestia节点类型都会暴露RPC端点，包括但不限于轻节点、桥接结点和全节点。
 
 ```sh
 celestia light init
@@ -35,9 +35,9 @@ celestia light init
 
 ### 生成新钱包
 
-您可以按照[这里](../nodes/keys.md#steps-for-generating-light-node-keys)的教程来进行生成 Celestia Light 节点钱包。
+您可以按照[这里](../nodes/keys.md#steps-for-generating-light-node-keys)的教程来进行生成Celestia轻节点的钱包。
 
-现在，前往 Celestia Discord的`水龙头`频道。
+现在，前往 Celestia Discord的`#faucet`频道。
 
 您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
@@ -45,15 +45,15 @@ celestia light init
 $request <Wallet-Address>
 ```
 
-当您创建钱包时，其中`<Wallet-Address>`地址生成是`celestia1******`。
+当您创建钱包时，生成的`<Wallet-Address>`地址形如`celestia1******`。
 
 您的钱包有了资金，您可以继续下一步。
 
-### 连接到公共端点
+### 连接到公共核心端点
 
-现在让我们运行 Celestia Light 节点，并通过 GRPC 连接到示例公共端点。
+现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> 注意：我们还鼓励您找到社区中运行的 API 端点，Discord 中有几个端点。 这一个用于演示目的， 您可以在[这里](../nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点列表。
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 您可以在[这里](../nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点列表。
 
 在这里，我们启动一个连接到核心端点的轻节点，并告诉轻节点使用`developer`生成我们的密钥作为其默认账户。
 
@@ -63,7 +63,7 @@ celestia light start --core.grpc http://<ip-address>:9090 --keyring.accname deve
 
 ## 节点 API 调用
 
-打开另一个终端窗口以开始查询 API。 默认情况下`celestia-node` 在端口 `26658` 上显示其RPC 端点。
+打开另一个终端窗口以开始查询 API。 默认情况下`celestia-node`在端口`26658`上打开其RPC端点。
 
 ### 余额
 
@@ -88,7 +88,7 @@ curl -X GET http://127.0.0.1:26658/balance
 
 现在，让我们获取块头信息。
 
-在这里，我们将从块 1 中获取块头：
+在这里，我们获取块1的块头：
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
@@ -272,15 +272,15 @@ curl -X GET http://127.0.0.1:26658/header/1
 
 注意事项：
 
-* PFD 是一个 PayForData 消息
-* 端点也需要使用 `命名空间的 id` 和 `数据` 值
-* 命名空间 ID 应为8字节
-* 数据是原始消息的十六进制编码字节
-* `gas_limit` 是用于交易的气体限制
+* PFD指PayForData 消息
+* 端点将`namespace_id`和`data`值作为输入。
+* 命名空间 ID 应为8字节。
+* 数据是原始消息的十六进制编码字节。
+* `gas_limit`是用于交易的燃料限制
 
-我们使用以下`namespace_id`和`0000010000000100`的`data` 值 `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`。
+我们假定`namespace_id`为`0000010000000100`，以及`data`值为`f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`。
 
-您可以在[这里](https://go.dev/play/p/7ltvaj8lhRl)生成自己`namespace_id`值和数据值，我们创建的有用的 Golang Playground。
+您可以在[这里](https://go.dev/play/p/7ltvaj8lhRl)生成自己的`namespace_id`值和data值，我们创建了一个可用的Golang试验场。
 
 运行以下命令：
 
@@ -507,18 +507,18 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 }
 ```
 
-If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
+请您注意到上述输出， 它返回`高度`为`2452`，我们将它用于下一个命令。
 
-### Get Namespaced Shares by Block Height
+### 按区块高度获取命名空间相关的数据片段
 
-After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
+在提交您的 PFD 交易后，该节点会返回包含PFD 交易的 块高度。 然后，您可以使用该块高度和您提交 PFD 交易时使用的命名空间 ID 来将您的消息片段返回给您。 在这个例子中，我们得到的块高度是2452，我们将在下面的命令中使用它。
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+我们得到以下输出：
 
 ```json
 {
@@ -529,4 +529,4 @@ Will generate the following output:
 }
 ```
 
-The output here is base64-encoded.
+这里的输出是base64编码数据。

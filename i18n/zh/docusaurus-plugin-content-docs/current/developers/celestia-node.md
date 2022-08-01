@@ -4,7 +4,7 @@ sidebar_label : Celestia 节点
 
 # Celestia 节点
 
-本教程介绍了构建和安装 celestia-node。 本教程假设您在[这里](./environment.md)完成了设置开发环境的步骤。
+本教程介绍了构建和安装 celestia-node。 本教程假设您完成了[这里](./environment.md)的开发环境设置步骤。
 
 ## 安装 Celestia 节点
 
