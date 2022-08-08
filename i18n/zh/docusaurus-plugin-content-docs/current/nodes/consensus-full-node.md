@@ -1,28 +1,28 @@
 - - -
-sidebar_label : Consensus Full Node
+sidebar_label : 共识全节点
 - - -
 
-# Setting Up A Celestia Consensus Full Node
+# 建立一个Celestia共识全节点
 <!-- markdownlint-disable MD013 -->
 
-Consensus Full Nodes allow you to sync blockchain history in the Celestia Consensus Layer.
+共识全节点允许你在 Celestia 共识层同步区块链历史。
 
-## Hardware Requirements
+## 硬件要求
 
-The following hardware minimum requirements are recommended for running the Consensus Full Node:
+为运行验证者节点，推荐以下最低硬件配置：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 磁盘：250 GB SSD 存储
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting Up Your Consensus Full Node
+## 建立一个Celestia共识全节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+以下教程基于运行Ubuntu Linux 20.04 (LTS) x64的主机。
 
-### Setup The Dependencies
+### 设置依赖项
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+请按照[这里](../developers/environment.md)的步骤安装依赖项
 
 ## Deploying The Celestia App
 
