@@ -1,5 +1,5 @@
 - - -
-sidebar_label : 日历
+sidebar_label : Community Calendar
 - - -
 
 # 社区日历
