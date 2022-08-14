@@ -2,7 +2,7 @@
 sidebar_label : Aperçu
 - - -
 
-# Présentation des Nodes en cours d'exécution sur Celestia
+# Overview to running nodes on Celestia
 
 Il y a plusieurs façons de participer au réseau Celestia.
 
@@ -10,7 +10,7 @@ Les opérateurs de nodes Celestia peuvent exécuter plusieurs options sur le ré
 
 Consensus:
 
-* [Node Validateur](./validator-node.md): Les opérateurs de Node qui gèrent un Bridge node ont la possibilité de participer également au consensus en devenant validateur.
+* [Validator Node](./validator-node.md): This type of node participates in consensus by producing and voting on blocks.
 * [Consensus Full Node](./consensus-full-node.md): Un full node Celestia-App pour synchroniser l'historique de la blockchain.
 
 Disponibilité des données :
