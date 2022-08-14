@@ -4,7 +4,7 @@ sidebar_label : 创建 Celestia 测试网
 
 # Celestia App 网络实例指南
 
-本指南旨在帮助实例化一个新的测试网络，并遵循正确的步骤来使用 Celestia-App。 如果您想试验自己的 Celestia 测试网络，或者如果您想测试新功能，就像核心开发人员那样构建，您应该只遵循本指南。
+本指南旨在帮助实例化一个新的测试网络，并遵循正确的步骤来使用 Celestia-App。 This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
 
 ## 硬件要求
 
@@ -41,7 +41,7 @@ celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
 * 我们将使用的`$VALIDATOR_NAME`的值是`validator1`，但您应该选择自己的节点名称。
-* 我们将用于 `$CHAIN_ID` 的值是 `testnet`。 对于`$CHAIN_ID`参与此网络的每个人来说，必须保持一致。
+* 我们将用于 `$CHAIN_ID` 的值是 `testnet`。 The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must remain the same for everyone participating in this network.
 
 ### 创建一个新密钥
 
@@ -52,7 +52,7 @@ KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-这将创建一个具有您选择的名称的新密钥。 将此命令的输出内容保存到某处；后续您将需要这里生成的地址。 在这里，我们将我们的密钥名称`$KEY_NAME`设置为`validator`用于演示。
+这将创建一个具有您选择的名称的新密钥。 将此命令的输出内容保存到某处；后续您将需要这里生成的地址。 This will create a new key, with a name of your choosing. Save the output of this command somewhere; you'll need the address generated here later. Here, we set the value of our key `$KEY_NAME` to `validator` for demonstration.
 
 ### 添加创世账户密钥名
 
@@ -69,7 +69,7 @@ celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 
 如果您的测试网中的其他参与者也想要成为验证者，重复上面的命令来获取他们具有一定余额的公钥。
 
-添加了所有验证者后，`genesis.json`文件就被创建好了。 您需要与测试网中的所有其他验证者共享它，以便每个人都继续执行以下步骤。
+添加了所有验证者后，`genesis.json`文件就被创建好了。 Once all the validators are added, the `genesis.json` file is created. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
 
 你可以在`$HOME/.celestia-appd/config/genesis.json`找到`genesis.json`
 
