@@ -2,13 +2,15 @@
 sidebar_label : Bridge Node
 - - -
 
-# Configurer un Bridge Node Celestia
+# Setting up a Celestia Bridge Node
 
 Ce tutoriel passera en revue les étapes de configuration de votre Bridge node Celestia (Noeud Pont).
 
 Les Bridge nodes connectent la couche de disponibilité des données et la couche de consensus tout en offrant la possibilité de devenir validateur.
 
-## Présentation des Bridge Nodes
+Validators do not have to run bridge nodes, but are encouraged to in order to relay blocks to the data availability network.
+
+## Overview of bridge nodes
 
 Un Bridge node Celestia a les propriétés suivantes:
 
@@ -27,7 +29,7 @@ Du point de vue de l'implémentation, les Bridge nodes exécutent deux processus
 
     * **Celestia Node** augmente ce qui précède avec un réseau libp2p séparé qui sert des demandes d'échantillonnage de la disponibilité des données. L'équipe appelle parfois ceci le réseau « halo ».
 
-## Hardware Requis
+## Hardware requirements
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter le Bridge node :
 
@@ -36,33 +38,33 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque: 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Configuration de votre Bridge node
+## Setting up your bridge node
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Configurer les dépendances
+### Setup the dependencies
 
 Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Deployer le Bridge node Celestia
+## Deploy the Celestia bridge node
 
-### Installer Celestia node
+### Install Celestia node
 
 Installez le binaire Celestia Node, qui sera utilisé pour exécuter le Bridge node.
 
 Suivez le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md).
 
-### Initialiser le Bridge node
+### Initialize the bridge node
 
 Exécutez les commandes suivantes:
 
 ```sh
-celestia bridge init --core.remote tcp://<ip-address>:26657 
+celestia bridge init --core.remote tcp://<ip-address>:26657
 ```
 
 Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-### Exécutez le Bridge node
+### Run the bridge node
 
 Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
@@ -84,7 +86,7 @@ Une fois que vous aurez démarré le Bridge Node, une clé de wallet sera géné
 
 Les tokens du Testnet Mamaki peuvent être demandés [ici](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-#### Facultatif : Exécuter le Bridge Node avec une clé personnalisée
+#### Optional: run the bridge node with a custom key
 
 Afin d'exécuter un Bridge node en utilisant une clé personnalisée:
 
@@ -95,7 +97,7 @@ Afin d'exécuter un Bridge node en utilisant une clé personnalisée:
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Facultatif : Démarrez le Bridge Node avec SystemD
+### Optional: start the bridge node with SystemD
 
 Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
