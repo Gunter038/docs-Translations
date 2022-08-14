@@ -42,5 +42,9 @@
   "copyright": {
     "message": "版权所有 © 2022 Celestia Org 与 Docusaurus 一起构建。",
     "description": "The footer copyright"
+  },
+  "link.item.label.Community": {
+    "message": "Community",
+    "description": "The label of footer link with label=Community linking to /community/overview"
   }
 }
