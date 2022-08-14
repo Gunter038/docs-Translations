@@ -15,6 +15,7 @@ sidebar_label : 设置环境
 ```sh
 # If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
+
 # If you are using the YUM package manager
 sudo yum update
 ```
@@ -25,6 +26,7 @@ sudo yum update
 ```sh
 # If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+
 # If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
