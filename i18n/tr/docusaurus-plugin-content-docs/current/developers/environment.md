@@ -15,6 +15,7 @@ First, make sure to update and upgrade the OS:
 ```sh
 # If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
+
 # If you are using the YUM package manager
 sudo yum update
 ```
@@ -25,6 +26,7 @@ These are essential packages that are necessary to execute many tasks like downl
 ```sh
 # If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+
 # If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
