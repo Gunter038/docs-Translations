@@ -2,11 +2,11 @@
 sidebar_label : Full Storage Node
 - - -
 
-# Configuration d'un Full Storage Node Celestia
+# Setting up a Celestia Full Storage Node
 
 Ce tutoriel vous guidera à travers la mise en place d'un Full Storage Node Celestia, qui est un node Celestia qui ne se connecte pas à Celestia App (donc pas un full node) mais stocke toutes les données.
 
-## Hardware Requis
+## Hardware requirements
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter le full storage node :
 
@@ -15,23 +15,23 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque: 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Configuration de votre Full Storage Node
+## Setting up your full storage node
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Configurer les dépendances
+### Setup the dependencies
 
 Vous pouvez suivre le tutoriel pour configurer les dépendances [ici](../developers/environment.md)
 
-## Installer Celestia Node
+## Install Celestia node
 
 > Remarque : Assurez-vous que vous disposez d'au moins 250 Go d'espace libre pour un Full Storage Node Celestia
 
 Vous pouvez suivre le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md)
 
-### Démarrer le Full Storage Node
+### Run the full storage node
 
-#### Initialiser le Full Storage Node
+#### Initialize the full storage node
 
 Exécutez la commande suivante :
 
@@ -39,7 +39,7 @@ Exécutez la commande suivante :
 celestia full init
 ```
 
-#### Démarrer le Full Storage Node
+#### Start the full storage node
 
 Démarrez le Full storage node avec une connexion au point de terminaison gRPC d'un validator node (qui est généralement exposé sur le port 9090):
 
@@ -61,7 +61,7 @@ Une fois que vous démarrez le Node, une clé de wallet sera générée pour vou
 
 Les tokens du Testnet Mamaki peuvent être demandés [ici](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-### Facultatif : Exécuter le Full Storage Node avec une clé personnalisée
+### Optional: run the full storage node with a custom key
 
 Afin d'exécuter un Full Storage Node en utilisant une clé personnalisée :
 
@@ -72,7 +72,7 @@ Afin d'exécuter un Full Storage Node en utilisant une clé personnalisée :
 celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Facultatif : Démarrez le Full Storage Node avec SystemD
+### Optional: start the full storage node with SystemD
 
 Suivez le tutoriel sur la configuration du full storage node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-full-storage-node).
 
