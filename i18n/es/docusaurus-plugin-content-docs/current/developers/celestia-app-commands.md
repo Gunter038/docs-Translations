@@ -82,8 +82,7 @@ Export a private key from the local keyring in encrypted and ASCII-armored forma
 ```sh
 celestia-appd keys export <KEY_NAME>
 
-# you will then be prompted to set a password for the encrypted private key:
-Enter passphrase to encrypt the exported key:
+# you will then be prompted to set a password for the encrypted private key: Enter passphrase to encrypt the exported key:
 ```
 
 After you set a password, your encrypted key will be displayed.
