@@ -34,8 +34,8 @@ celestia-appd keys list
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-请等待确认代币已成功发送的消息。 要检查代币是否已成功到达您的钱包，运行下面的命令。注意替换为您自己的公共地址:
+请等待确认代币已成功发送的消息。 Wait to see if you get a confirmation that the tokens have been successfully sent. To check if tokens have arrived successfully to the destination wallet run the command below replacing the public address with your own:
 
 ```sh
-celestia-appd q bank balances celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+celestia-appd query bank balances celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
