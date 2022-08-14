@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Celestia 节点
+sidebar_label : Installing Celestia Node
 - - -
 
 # Celestia 节点
 
-本教程介绍了构建和安装 celestia-node。 本教程假设您完成了[这里](./environment.md)的开发环境设置步骤。
+本教程介绍了构建和安装 celestia-node。 This tutorial goes over building and installing celestia-node. This tutorial assumes you completed the steps in setting up your development environment [here](./environment.md).
 
 ## 安装 Celestia 节点
 
