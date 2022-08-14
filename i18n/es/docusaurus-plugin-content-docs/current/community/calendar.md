@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Calendar
+sidebar_label : Community Calendar
 - - -
 
 # Community Calendar
