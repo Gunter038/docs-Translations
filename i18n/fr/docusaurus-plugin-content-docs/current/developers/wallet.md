@@ -37,5 +37,5 @@ $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Attendez de voir si vous obtenez une confirmation que les tokens (jetons) ont été envoyés avec succès. Pour vérifier si les tokens sont arrivés avec succès à destination du wallet exécutez la commande ci-dessous en remplaçant l'adresse publique avec la vôtre :
 
 ```sh
-celestia-appd q bank balances celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+celestia-appd query bank balances celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
