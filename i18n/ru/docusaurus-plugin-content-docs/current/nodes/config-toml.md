@@ -14,7 +14,7 @@ sidebar_label : Config.toml Guide
     - [[Services]](#services)
       - [TrustedHash and TrustedPeer](#trustedhash-and-trustedpeer)
 
-## Pre-Requisites
+## Pre-requisites
 
 Please, make sure that you have installed and initialized celestia node
 
@@ -37,7 +37,7 @@ This section is needed for the Celestia Bridge Node. By default, `Remote = false
 
 Bootstrappers help new nodes to find peers faster in the network. By default, the `Bootstrapper = false` and the `BootstrapPeers` is empty. If you want your node to be a bootstrapper, then activate `Bootstrapper = true`. `BootstrapPeers` are already provided by default during initialisation. If you want to add your own manually, you need to provide the multiaddresses of the peers.
 
-#### Mutual Peers
+#### Mutual peers
 
 The purpose of this config is to set up a bidirectional communication. This is usually the case for Celestia Bridge Nodes. In addition, you need to change the field `PeerExchange` from false to true.
 
