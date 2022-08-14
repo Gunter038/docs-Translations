@@ -2,11 +2,11 @@
 sidebar_label : Validator Node
 - - -
 
-# Configurer un Validator Node Celestia
+# Setting up a Celestia Validator Node
 
 Les Validator nodes vous permettent de participer au consensus sur le réseau Céleste.
 
-## Hardware Requis
+## Hardware requirements
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter le validator node: :
 
@@ -15,25 +15,25 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque : 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Configuration de votre Node validateur
+## Setting up your validator node
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Configurer les dépendances
+### Setup the dependencies
 
 Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Déploiement de Celestia App
+## Deploying the celestia-app
 
 Cette section décrit la première partie de l'installation d'un Validator Node Celestia: exécutant un daemon Celestia App avec un node Celestia Core interne.
 
 > Remarque : Assurez-vous de disposer d'au moins 100 Go d'espace de libre pour installer et exécuter en toute sécurité le Validator node .
 
-### Installer Celestia App
+### Install celestia-app
 
 Suivez le tutoriel d'installation de Celestia App [ici](../developers/celestia-app.md).
 
-### Configurer les réseaux P2P
+### Setup the P2P networks
 
 Pour cette section du guide, sélectionnez le réseau auquel vous souhaitez vous connecter :
 
@@ -41,7 +41,7 @@ Pour cette section du guide, sélectionnez le réseau auquel vous souhaitez vous
 
 Après cela, vous pouvez continuer avec le reste du tutoriel.
 
-### Configurer le Pruning
+### Configure pruning
 
 Pour une utilisation réduite de l'espace disque, nous vous recommandons de configurer le pruning à l'aide de la configurations ci-dessous. Vous pouvez changer cela pour vos propres configurations de pruning, si vous le désirez:
 
@@ -57,13 +57,13 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configurer le mode Validateur
+### Configure validator mode
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Réinitialiser le réseau
+### Reset network
 
 Cela supprimera tous les dossiers de données afin de pouvoir recommencer à zéro :
 
@@ -71,7 +71,7 @@ Cela supprimera tous les dossiers de données afin de pouvoir recommencer à zé
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Facultatif : Synchronisation rapide avec Snapshot
+### Optional: quick-sync with snapshot
 
 La synchronisation depuis le Genesis peut prendre beaucoup de temps, selon votre matériel. Utiliser cette méthode vous permet de synchroniser votre node Celestia très rapidement en téléchargeant un Snapshot récent de la blockchain. Si vous souhaitez synchroniser depuis le Genesis, alors vous pouvez ignorer cette partie.
 
@@ -79,7 +79,7 @@ Si vous souhaitez utiliser un Snapshot, déterminez le réseau auquel vous souha
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Démarrer Celestia-App avec SystemD
+### Start the celestia-app with SystemD
 
 Suivez le tutoriel sur la configuration du Light Node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#start-the-celestia-app-with-systemd).
 
@@ -87,7 +87,7 @@ Suivez le tutoriel sur la configuration du Light Node en tant que processus d'ar
 
 Suivez le tutoriel sur la création d'un wallet [ici](../developers/wallet.md).
 
-### Delegate Stake to a Validator
+### Delegate stake to a validator
 
 Créer une variable d'environnement pour l'adresse:
 
@@ -112,26 +112,26 @@ Ensuite, sélectionnez le réseau que vous souhaitez utiliser pour déléguer à
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deployer le Node Celestia
+## Deploy the celestia-node
 
 Cette section décrit la partie 2 de l'installation d'un node validateur Celestia : exécuter Celestia Bridge NodeCelestia daemon.
 
-### Installer Celestia Node
+### Install celestia-node
 
 Vous pouvez suivre le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md)
 
-### Initialiser le Bridge node
+### Initialize the bridge node
 
 Exécutez ce qui suit :
 
 ```sh
-celestia bridge init --core.remote <ip:port of celestia-app> \
+celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
 Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-### Exécuter le Bridge node
+### Run the bridge node
 
 Exécutez ce qui suit :
 
@@ -139,13 +139,13 @@ Exécutez ce qui suit :
 celestia bridge start
 ```
 
-### Optional: Start the Bridge Node with SystemD
+### Optional: start the bridge node with SystemD
 
 Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
 Vous avez configuré avec succès un Bridge node qui se synchronise avec le réseau.
 
-## Exécuter un Node Validator
+## Run a validator node
 
 Après avoir terminé toutes les étapes nécessaires, vous êtes maintenant prêt à exécuter un validateur ! Afin de créer votre validateur sur la chaîne, suivez les instructions ci-dessous. Gardez à l'esprit que ces étapes sont nécessaires UNIQUEMENT si vous souhaitez participer au consensus.
 
