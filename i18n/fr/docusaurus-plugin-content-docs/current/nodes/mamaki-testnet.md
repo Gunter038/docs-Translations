@@ -26,7 +26,7 @@ Disponibilité des données :
 
 Sélectionnez le type de nœud que vous souhaitez exécuter et suivez les instructions sur chaque page respective. À chaque fois que l'on vous demande de sélectionner le type de réseau auquel vous voulez vous connecter dans ces guides, sélectionnez `Mamaki` afin de vous référer aux instructions correctes sur cette page sur la façon de vous connecter à Mamaki.
 
-## Points de terminaison RPC
+## RPC endpoints
 
 Il y a une liste des terminaux RPC que vous pouvez utiliser pour vous connecter au Testnet Mamaki:
 
@@ -36,14 +36,14 @@ Il y a une liste des terminaux RPC que vous pouvez utiliser pour vous connecter 
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
 
-## Faucet du Testnet Mamaki
+## Mamaki Testnet faucet
 
 > L'UTILISATION DE CE FAUCET NE VOUS DONNERA PAS LE DROIT À UNE AUTRE DISTRIBUTION DE TOKENS DU MAINNET CELESTIA. LES JETONS DU MAINNET CELESTIA N'EXISTENT ACTUELLEMENT PAS ET IL N'Y A AUCUNE VENTE PUBLIQUE OU AUTRE DISTRIBUTION DE TOKENS DU MAINNET CELESTIA.
 
 Vous pouvez demander au Faucet du Testnet Mamaki sur le canal #faucet du serveur Discord de Celestia avec la commande suivante:
 
 ```text
-$request <CELESTIA-ADDRESS> 
+$request <CELESTIA-ADDRESS>
 ```
 
 Où `<CELESTIA-ADDRESS>` est une adresse générée par `céleste1******`.
@@ -57,7 +57,7 @@ Il y a plusieurs explorateurs que vous pouvez utiliser pour Mamaki:
 * [https://celestia.explorers.guru/](https://celestia.explorers.guru/)
 * [https://celestiascan.vercel.app/](https://celestiascan.vercel.app/)
 
-## Setup P2P Network
+## Setup P2P network
 
 Maintenant, nous allons configurer les réseaux P2P en clonant le référentiel réseau:
 
@@ -92,7 +92,7 @@ Remarque : Vous pouvez trouver plus de peers [ici](https://github.com/celestiaor
 
 Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](validator-node.md#configure-pruning)
 
-## Synchronisation rapide avec Snapshot
+## Quick-sync with snapshot
 
 Exécutez la commande suivante pour synchroniser rapidement à partir d'un snapshot pour `mamaki`:
 
@@ -108,7 +108,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](./validator-node.md#start-the-celestia-app-with-systemd)
 
-## Déléguer à un Validateur
+## Delegate to a validator
 
 Pour déléguer des tokens au validateur `celestiavaloper` , par exemple, vous pouvez exécuter:
 
@@ -139,7 +139,7 @@ Vous pouvez vérifier si le TX hash a été effectué en utilisant l'explorateur
 
 Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](./validator-node#deploy-the-celestia-node)
 
-## Connecter un Validateur
+## Connect validator
 
 Pour continuer le tutoriel de Validateur, voici les étapes pour connecter votre validateur à Mamaki:
 
