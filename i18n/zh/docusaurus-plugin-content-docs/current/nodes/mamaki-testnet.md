@@ -7,9 +7,9 @@ sidebar_label : Mamaki测试网
 
 ![mamaki-testnet](/img/mamaki.png)
 
-本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 Mamaki是Celestia的一个里程碑，它使得任何人都可以在网络中测试核心的功能。 公告在[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)。
+本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/). 公告在[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)。
 
-您参与的最佳方式取决于首先确定的您想运行的节点类型。 每种节点的指南都将链接到相关的网络，以便向您展示如何连接它们。
+您参与的最佳方式取决于首先确定的您想运行的节点类型。 Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
 
 关于您可以运行的节点类型，就Mamaki而言，选项列表为：
 
@@ -24,9 +24,9 @@ sidebar_label : Mamaki测试网
 * [存储全节点](./full-storage-node.md)
 * [轻节点](./light-node.md)
 
-选择你想运行的节点类型，然后按照各个对应颜面的指示操作。 每当这些指南询问你想连接的网络时，请选择这些页面上的`Mamaki`相关内容，以便连接到Mamki。
+选择你想运行的节点类型，然后按照各个对应颜面的指示操作。 Select the type of node you would like to run and follow the instructions on each respective page. Whenever you are asked to select the type of network you want to connect to in those guides, select `Mamaki` in order to refer to the correct instructions on this page on how to connect to Mamaki.
 
-## RPC端点
+## RPC endpoints
 
 可用于连接Mamaki测试网的RPC端点列表：
 
@@ -36,14 +36,14 @@ sidebar_label : Mamaki测试网
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
 
-## Mamki测试网水龙头
+## Mamaki Testnet faucet
 
-> 这个水龙头与主网上的Celestia代币空投没有任何关系。 主网上的Celestia代码目前还不存在，也没有任何公开销售或分配的计划。
+> USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS. 主网上的Celestia代码目前还不存在，也没有任何公开销售或分配的计划。
 
 您可以通过Celestia的Discord服务器上的#faucet频道，向Mamaki测试网水龙头发出以下申请：
 
 ```text
-$request <CELESTIA-ADDRESS> 
+$request <CELESTIA-ADDRESS>
 ```
 
 `<CELESTIA-ADDRESS>`是一个形如`celestia1****`的地址。
@@ -57,7 +57,7 @@ $request <CELESTIA-ADDRESS>
 * [https://celestia.explorers.guru/](https://celestia.explorers.guru/)
 * [https://celestiascan.vercel.app/](https://celestiascan.vercel.app/)
 
-## 设置P2P网络
+## Setup P2P network
 
 现在我们将通过克隆网上的代码库来设置P2P网络：
 
@@ -67,13 +67,13 @@ rm -rf networks
 git clone https://github.com/celestiaorg/networks.git
 ```
 
-要初始化网络，请选择一个描述您的节点的“节点名称”。 我们在此使用的--chain-id参数是 `mamaki`。 请注意，如果部署了新的测试网，这可能会改变。
+To initialize the network pick a "node-name" that describes your node. The --chain-id parameter we are using here is `mamaki`. Keep in mind that this might change if a new testnet is deployed. 我们在此使用的--chain-id参数是 `mamaki`。 请注意，如果部署了新的测试网，这可能会改变。
 
 ```sh
 celestia-appd init "node-name" --chain-id mamaki
 ```
 
-复制`genesis.json`文件。 对于Mamaki，我们使用：
+Copy the `genesis.json` file. For mamaki we are using: 对于Mamaki，我们使用：
 
 ```sh
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
@@ -96,7 +96,7 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 
 
 
-## 通过快照来快速同步
+## Quick-sync with snapshot
 
 运行下面的命令，从快照快速同步`mamaki`：
 
@@ -117,7 +117,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 
 
-## 向验证者提供抵押
+## Delegate to a validator
 
 要将代币委派给`celestiavaloper`验证者，作为示例，您可以运行：
 
@@ -156,7 +156,7 @@ txhash: <tx-hash>
 
 
 
-## 连接验证
+## Connect validator
 
 继续验证者教程，这是将您的验证者连接到Mamaki的步骤：
 
