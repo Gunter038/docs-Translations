@@ -36,11 +36,11 @@ sidebar_label : 行为准则
 
 ## 适用范围
 
-此行为标准适用于本社区全部场合，以及在其他场合代表本社区的个人。 代表本社区的情形包括但不限于：使用官方电子邮件与社交平台、作为指定代表参与在线或线下活动。
+This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. 代表本社区的情形包括但不限于：使用官方电子邮件与社交平台、作为指定代表参与在线或线下活动。
 
 ## 管理执法
 
-辱骂、骚扰或其他不可正当的行为可在Discord上向负责执法的社区管理员反馈。所有投诉都会得到及时和公平的审查与调查。 管理员将迅速审议并调查全部投诉。
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly. 管理员将迅速审议并调查全部投诉。
 
 社区全体管理员有义务保密举报者信息。
 
@@ -48,25 +48,25 @@ sidebar_label : 行为准则
 
 社区管理员将依据下列事项判断并处置违反社区基本准则的行为：
 
-### 1. 纠正
+### 1. 1. Correction
 
 **社区影响**：使用不恰当的语言或在其他社区中被认为不专业或不受欢迎的行为。
 
-**后果**：面临来自社区管理员的私下书面警告，明确违规性质并解释行为不当的原因， 可能会要求公开道歉。
+**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested. 可能会要求公开道歉。
 
-### 2. 警告
+### 2. 2. Warning
 
 **社区影响**: 通过单个事件或一系列 行动的违反行为。
 
-**后果**: 对持续行为产生后果的警告。 在指定的时间段内，不得与相关人员互动， 包括主动与执法管理员互动，这包括避免在社区场所以及社交媒体等外部渠道中进行互动。 违反这些社区准则可能导致暂时或永久性的 封禁。
+**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban. 在指定的时间段内，不得与相关人员互动， 包括主动与执法管理员互动，这包括避免在社区场所以及社交媒体等外部渠道中进行互动。 违反这些社区准则可能导致暂时或永久性的 封禁。
 
-### 3. 临时封禁
+### 3. 3. Temporary Ban
 
 **社区影响**: 严重违反社区准则的行为，包括 持续存在不当行为。
 
-**后果**指定时间段内暂时禁止与社区进行任何形式的互动或公开交流。 在此期间，不得与相关人员进行公开或私下互动，包括主动与执行《行为准则》的管理员互动。 违反这些规定可能导致永久封禁。
+**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban. 在此期间，不得与相关人员进行公开或私下互动，包括主动与执行《行为准则》的管理员互动。 违反这些规定可能导致永久封禁。
 
-### 4. 永久封禁
+### 4. 4. Permanent Ban
 
 **社区影响**：典型违纪行为，例如屡教不改、骚扰某个人、敌对或贬低某个群体。
 
@@ -78,7 +78,7 @@ sidebar_label : 行为准则
 
 社区影响指南的灵感来自[Mozilla 的行为准则执行阶梯][Mozilla CoC]
 
-有关此行为准则的常见问题的答案，请参阅[https://www.contributor-covenant.org/faq][FAQ]。 翻译可在[https://www.contributor-covenant.org/translations][translations] 上查阅。
+For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations]. 翻译可在[https://www.contributor-covenant.org/translations][translations] 上查阅。
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
