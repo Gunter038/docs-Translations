@@ -1,11 +1,11 @@
 - - -
-sidebar_label: Celestia App
+sidebar_label : Installing Celestia App
 - - -
 
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
-本教程将指导您构建 Celestia App。 本教程假设您已经完成了[这里](./environment.md)的环境设置步骤。
+本教程将指导您构建 Celestia App。 This tutorial will guide you through building Celestia App. This tutorial presumes you completed the steps in setting up your own environment [here](./environment.md).
 
 ## 安装Celestia App
 
