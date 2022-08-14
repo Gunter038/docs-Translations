@@ -7,21 +7,95 @@ sidebar_label : 节点教程
 
 在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
+This tutorial was assumes you are working in a Linux environment.
+
 > 点击 [这里](./light-node-video.md)查看设置Celestia轻节点的视频教程。
 
 ## 硬件要求
 
-您可以在[这里](../nodes/light-node.md#hardware-requirements)找到硬件要求。
+The following minimum hardware requirements are recommended for running a light node:
+
+- Memory: 2 GB RAM
+- CPU: Single Core
+- Disk: 5 GB SSD Storage
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
 ## 设置依赖项
 
-您可以按照[这里](./environment.md)教程设置依赖项。
+First, make sure to update and upgrade the OS:
+
+```sh
+# If you are using the APT package manager
+sudo apt update && sudo apt upgrade -y
+
+# If you are using the YUM package manager
+sudo yum update
+```
+
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+
+```sh
+# If you are using the APT package manager
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+
+# If you are using the YUM package manager
+sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+```
+
+### Install Golang
+
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+
+```sh
+ver="1.18.2"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+```
+
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+
+```sh
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
+To check if Go was installed correctly run:
+
+```sh
+go version
+```
+
+The output should be the version installed:
+
+```sh
+go version go1.18.2 linux/amd64
+```
 
 ## Celestia 节点
 
 ### 安装Celestia节点
 
-请按照[这里](./celestia-node.md)的教程来安装Celestia节点。
+Install the celestia-node binary by running the following commands:
+
+```sh
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node/
+git checkout tags/v0.3.0-rc2
+make install
+```
+
+Verify that the binary is working and check the version with the celestia version command:
+
+```sh
+$ celestia version
+Semantic version: v0.3.0-rc2
+Commit: 89892d8b96660e334741987d84546c36f0996fbe
+```
 
 ### 实例化Celestia轻节点
 
@@ -33,11 +107,39 @@ sidebar_label : 节点教程
 celestia light init
 ```
 
-### 生成新钱包
+### 连接到公共核心端点
 
-您可以按照[这里](../nodes/keys.md#steps-for-generating-light-node-keys)的教程来进行生成Celestia轻节点的钱包。
+现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-现在，前往 Celestia Discord的`#faucet`频道。
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 您可以在[这里](../nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点列表。
+
+```sh
+celestia light start --core.grpc http://<ip-address>:9090
+```
+
+For example, your command along with an RPC endpoint might look like this:
+
+```sh
+celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+```
+
+### Keys and wallets
+
+You can create your key for your node by running the following command:
+
+```sh
+make cel-key
+```
+
+Once you start the Light Node, a wallet key will be generated for you. Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
+
+```sh
+./cel-key list --node.type light --keyring-backend test
+```
+
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
 
 您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
@@ -49,21 +151,9 @@ $request <Wallet-Address>
 
 您的钱包有了资金，您可以继续下一步。
 
-### 连接到公共核心端点
-
-现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
-
-> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 您可以在[这里](../nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点列表。
-
-在这里，我们启动一个连接到核心端点的轻节点，并告诉轻节点使用`developer`生成我们的密钥作为其默认账户。
-
-```sh
-celestia light start --core.grpc http://<ip-address>:9090 --keyring.accname developer
-```
-
 ## 节点 API 调用
 
-打开另一个终端窗口以开始查询 API。 默认情况下`celestia-node`在端口`26658`上打开其RPC端点。
+打开另一个终端窗口以开始查询 API。 Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
 ### 余额
 
@@ -272,11 +362,11 @@ curl -X GET http://127.0.0.1:26658/header/1
 
 注意事项：
 
-* PFD指PayForData 消息
-* 端点将`namespace_id`和`data`值作为输入。
-* 命名空间 ID 应为8字节。
-* 数据是原始消息的十六进制编码字节。
-* `gas_limit`是用于交易的燃料限制
+- PFD指PayForData 消息
+- 端点将`namespace_id`和`data`值作为输入。
+- 命名空间 ID 应为8字节。
+- 数据是原始消息的十六进制编码字节。
+- `gas_limit`是用于交易的燃料限制
 
 我们假定`namespace_id`为`0000010000000100`，以及`data`值为`f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`。
 
@@ -511,7 +601,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 
 ### 按区块高度获取命名空间相关的数据片段
 
-在提交您的 PFD 交易后，该节点会返回包含PFD 交易的 块高度。 然后，您可以使用该块高度和您提交 PFD 交易时使用的命名空间 ID 来将您的消息片段返回给您。 在这个例子中，我们得到的块高度是2452，我们将在下面的命令中使用它。
+在提交您的 PFD 交易后，该节点会返回包含PFD 交易的 块高度。 After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command. 在这个例子中，我们得到的块高度是2452，我们将在下面的命令中使用它。
 
 ```sh
 curl -X GET \
