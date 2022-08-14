@@ -7,21 +7,95 @@ sidebar_label : Tutoriel du node
 
 Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur identifiant d'espace de noms.
 
+This tutorial was assumes you are working in a Linux environment.
+
 > Pour voir un tutoriel vidéo pour la mise en place d'un Celestia Light Node, cliquez sur [ici](./light-node-video.md)
 
 ## Hardware Requis
 
-Vous pouvez trouver les exigences matérielles [ici](../nodes/light-node.md#hardware-requirements).
+The following minimum hardware requirements are recommended for running a light node:
+
+- Memory: 2 GB RAM
+- CPU: Single Core
+- Disk: 5 GB SSD Storage
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
 ## Configuration des dépendances
 
-Vous pouvez suivre le tutoriel pour configurer les dépendances [ici](./environment.md).
+First, make sure to update and upgrade the OS:
+
+```sh
+# If you are using the APT package manager
+sudo apt update && sudo apt upgrade -y
+
+# If you are using the YUM package manager
+sudo yum update
+```
+
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+
+```sh
+# If you are using the APT package manager
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+
+# If you are using the YUM package manager
+sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+```
+
+### Install Golang
+
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+
+```sh
+ver="1.18.2"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+```
+
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+
+```sh
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
+To check if Go was installed correctly run:
+
+```sh
+go version
+```
+
+The output should be the version installed:
+
+```sh
+go version go1.18.2 linux/amd64
+```
 
 ## Node Celestia
 
 ### Installer Celestia node
 
-Vous pouvez suivre le tutoriel pour la construction de Celestia Node [ici](./celestia-node.md)
+Install the celestia-node binary by running the following commands:
+
+```sh
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node/
+git checkout tags/v0.3.0-rc2
+make install
+```
+
+Verify that the binary is working and check the version with the celestia version command:
+
+```sh
+$ celestia version
+Semantic version: v0.3.0-rc2
+Commit: 89892d8b96660e334741987d84546c36f0996fbe
+```
 
 ### Instancier un Light Node Celestia
 
@@ -33,11 +107,39 @@ Maintenant, instancions un Light node Celestia:
 celestia light init
 ```
 
-### Générer un Wallet
+### Se connecter à un point de terminaison public principal
 
-Vous pouvez suivre le tutoriel pour générer un Wallet avec un Light Node Celestia [ici](../nodes/keys.md#steps-for-generating-light-node-keys).
+Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau.
 
-Maintenant, rendez-vous sur le canal Discord Celestia `#faucet`.
+> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points de terminaison RPC [ici](../nodes/mamaki-testnet#rpc-endpoints)
+
+```sh
+celestia light start --core.grpc http://<ip-address>:9090
+```
+
+For example, your command along with an RPC endpoint might look like this:
+
+```sh
+celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+```
+
+### Keys and wallets
+
+You can create your key for your node by running the following command:
+
+```sh
+make cel-key
+```
+
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
+
+```sh
+./cel-key list --node.type light --keyring-backend test
+```
+
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
 
 Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord:
 
@@ -48,18 +150,6 @@ $request <Wallet-Address>
 Où `<Wallet-Address>` est l'adresse `celestia1******` générée à la création du wallet.
 
 Une fois que tout est configuré, vous pouvez passer à l'étape suivante.
-
-### Se connecter à un point de terminaison public principal
-
-Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau.
-
-> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points de terminaison RPC [ici](../nodes/mamaki-testnet#rpc-endpoints)
-
-Ici, nous commençons un nœud léger avec une connexion à un point de terminaison Core et indiquant également au nœud léger d'utiliser la clé `developer` que nous avons générée comme compte par défaut.
-
-```sh
-celestia light start --core.grpc http://<ip-address>:9090 --keyring.accname developer
-```
 
 ## Requête d'API Node
 
@@ -272,11 +362,11 @@ Dans cet exemple, nous soumettrons une transaction PayForData au point de termin
 
 Quelques éléments à prendre en considération :
 
-* PFD est un message PayForData.
-* Le point de terminaison prend également les valeurs `namespace_id` et `data`.
-* L'identifiant de l'espace de noms doit être de 8 octets.
-* Les données sont en octets codées en hexadécimal du message brut.
-* `gas_limit` est la limite de gaz à utiliser pour la transaction.
+- PFD est un message PayForData.
+- Le point de terminaison prend également les valeurs `namespace_id` et `data`.
+- L'identifiant de l'espace de noms doit être de 8 octets.
+- Les données sont en octets codées en hexadécimal du message brut.
+- `gas_limit` est la limite de gaz à utiliser pour la transaction.
 
 Nous utilisons le `namespace_id suivant` de `0000010000000100` et les `données` valeur de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
