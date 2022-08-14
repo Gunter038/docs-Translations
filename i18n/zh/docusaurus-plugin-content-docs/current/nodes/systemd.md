@@ -2,15 +2,15 @@
 sidebar_label : SystemD
 - - -
 
-# 通过SystemD设置您的节点为后台进程
+# Setting up your node as a background process with SystemD
 
 SystemD是一个后台进程管理服务，能方便地使应用程序运行为后台进程。
 
-## 共识节点
+## Consensus nodes
 
 如果您正在运行验证者或者说参与共识的全节点，以下是将`celestia-appd`设置为后台进程的步骤。
 
-### 通过SystemD启动Celestia-Appd
+### Start the celestia-app with SystemD
 
 SystemD是一个后台进程管理服务，能方便地使应用程序运行为后台进程。
 
@@ -65,9 +65,9 @@ curl -s localhost:26657/status | jq .result | jq .sync_info
 
 请确保您看到`"catching_up": false`, 否则请等待它运行，直至达到同步状态。
 
-## 数据可用节点
+## Data availability nodes
 
-### Celestia存储全节点
+### Celestia full storage node
 
 创建Celestia存储全节点systemd文件：
 
@@ -105,7 +105,7 @@ celestia-full.service -f
 
 您应该能看到存储全节点整个同步过程的日志。
 
-### Celestia桥接节点
+### Celestia bridge node
 
 创建桥接节点的systemd文件：
 
@@ -143,7 +143,7 @@ celestia-bridge.service -f
 
 现在，Celestia桥接节点将开始，从Celestia应用程序同步区块头，并存储区块。
 
-> 注意：我们可以从Celestia桥接节点看到`multiaddress`。 这是**未来的轻节点的需求**，用于链接桥接节点并通信。
+> 注意：我们可以从Celestia桥接节点看到`multiaddress`。 Note: At startup, we can see the `multiaddress` from Celestia Bridge Node. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
 
 示例：
 
@@ -154,7 +154,7 @@ NODE_IP=<ip-address>
 
 您应该能看到桥接节点整个同步过程的日志。
 
-### Celestia轻节点
+### Celestia light node
 
 把轻节点作为后台进程启动
 
@@ -201,4 +201,4 @@ systemctl status celestia-lightd
 journalctl -u celestia-lightd.service -f
 ```
 
-现在，Celestia轻节点将开始同步区块头。 同步完成后，轻节点将通过桥接节点进行数据采样(DAS)。
+现在，Celestia轻节点将开始同步区块头。 Now, the Celestia Light Node will start syncing headers. After sync is finished, Light Node will do Data Availability Sampling (DAS) from the Bridge Node.
