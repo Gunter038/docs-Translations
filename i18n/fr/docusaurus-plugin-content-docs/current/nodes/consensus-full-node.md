@@ -2,12 +2,12 @@
 sidebar_label : Consensus Full Node
 - - -
 
-# Setting Up A Celestia Consensus Full Node
+# Setting up a Celestia Consensus Full Node
 <!-- markdownlint-disable MD013 -->
 
 Consensus Full Nodes allow you to sync blockchain history in the Celestia Consensus Layer.
 
-## Hardware Requirements
+## Hardware requirements
 
 The following hardware minimum requirements are recommended for running the Consensus Full Node:
 
@@ -16,25 +16,25 @@ The following hardware minimum requirements are recommended for running the Cons
 * Disk: 250 GB SSD Storage
 * Bandwidth: 1 Gbps for Download/100 Mbps for Upload
 
-## Setting Up Your Consensus Full Node
+## Setting up your consensus full node
 
 The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
-### Setup The Dependencies
+### Setup the dependencies
 
 Follow the instructions on installing the dependencies [here](../developers/environment.md).
 
-## Deploying The Celestia App
+## Deploying the celestia-app
 
-This section describes part 1 of Celestia Validator Node setup: running a Celestia App daemon with an internal Celestia Core node.
+This section describes part 1 of Celestia consensus full node setup: running a Celestia App daemon with an internal Celestia Core node.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> Note: Make sure you have at least 100+ Gb of free space to safely install + run the consensus full node.
 
-### Install Celestia App
+### Install celestia-app
 
 Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
 
-### Setup the P2P Networks
+### Setup the P2P networks
 
 For this section of the guide, select the network you want to connect to:
 
@@ -42,7 +42,7 @@ For this section of the guide, select the network you want to connect to:
 
 After that, you can proceed with the rest of the tutorial.
 
-### Configure Pruning
+### Configure pruning
 
 For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
 
@@ -58,7 +58,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Reset Network
+### Reset network
 
 This will delete all data folders so we can start fresh:
 
@@ -66,7 +66,7 @@ This will delete all data folders so we can start fresh:
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: Quick-Sync with Snapshot
+### Optional: quick-sync with snapshot
 
 Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
 
@@ -74,7 +74,7 @@ If you want to use snapshot, determine the network you would like to sync to fro
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the Celestia App
+### Start the celestia-app
 
 In order to start your consensus full node, run the following:
 
@@ -84,7 +84,7 @@ celestia-appd start
 
 This will let you sync the Celestia blockchain history.
 
-### Optional: Configure For RPC Endpoint
+### Optional: configure for RPC endpoint
 
 You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
 
@@ -100,6 +100,6 @@ sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/confi
 
 Restart `celestia-appd` in the previous step to load those configs.
 
-### Start the Celestia-App with SystemD
+### Start the celestia-app with SystemD
 
 Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
