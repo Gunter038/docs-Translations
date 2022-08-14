@@ -13,9 +13,10 @@ Une fois que vous avez configuré votre instance, ssh dans l'instance pour comme
 Tout d'abord, assurez-vous de mettre à jour le système d'exploitation:
 
 ```sh
-# Si vous utilisez le gestionnaire de packages APT
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
-# Si vous utilisez le gestionnaire de packages YUM
+
+# If you are using the YUM package manager
 sudo yum update
 ```
 
@@ -25,6 +26,7 @@ Ce sont des paquets essentiels qui sont nécessaires pour exécuter de nombreuse
 ```sh
 # If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+
 # If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
