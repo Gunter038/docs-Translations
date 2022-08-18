@@ -241,30 +241,30 @@
     "message": "Celestia介绍了所谓的数据可用层，以便能够有效地扩展，并允许L2 Rollup对它们所需要的交易进行数据取样。"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "首页",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "面包屑",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
+    "message": "查看全部 {count} 条结果"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "搜索",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
+    "message": "找到一篇文档|总共找到 {count} 篇文档",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
+    "message": "\"{query}\" 的搜索结果",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
