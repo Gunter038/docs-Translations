@@ -1,12 +1,12 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: Представляємо “Modular Fellows”
 ---
 
-# Modular Fellows
+# Представляємо “Modular Fellows”
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows is a program designed to empower modular builders with the right resources to build the future of scalable and sovereign blockchain networks.
+Програма, розроблена для того, щоб надати модульним розробникам потрібні ресурси для побудови майбутнього масштабованих і самостійних блокчейн-мереж.
 
 Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
 
