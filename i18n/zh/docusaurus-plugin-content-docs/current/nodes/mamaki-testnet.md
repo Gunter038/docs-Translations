@@ -90,17 +90,9 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 
 注意：您可以在[这里](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt)找到更多对等节点。
 
-您可以点击
-
-这里<0>来返回离开桥接节点指南时的位置</p> 
-
-
-
 ## Quick-sync with snapshot
 
 运行下面的命令，从快照快速同步`mamaki`：
-
-
 
 ```sh
 cd $HOME
@@ -112,16 +104,9 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
 
-
-您可以点击这里<0>来返回离开桥接节点指南时的位置</p> 
-
-
-
 ## Delegate to a validator
 
 要将代币委派给`celestiavaloper`验证者，作为示例，您可以运行：
-
-
 
 ```sh
 celestia-appd tx staking delegate \
@@ -129,10 +114,7 @@ celestia-appd tx staking delegate \
     --from=$VALIDATOR_WALLET --chain-id=mamaki
 ```
 
-
 如果成功，您应该看到类似的输出为：
-
-
 
 ```console
 code: 0
@@ -149,18 +131,11 @@ tx: null
 txhash: <tx-hash>
 ```
 
-
 您可以通过在区块浏览器中，输入返回的`txhash` ID，来检查TX是否执行顺利。
-
-您可以点击这里<0>来返回离开桥接节点指南时的位置</p> 
-
-
 
 ## Connect validator
 
 继续验证者教程，这是将您的验证者连接到Mamaki的步骤：
-
-
 
 ```sh
 MONIKER="your_moniker"
@@ -179,19 +154,13 @@ celestia-appd tx staking create-validator \
     --keyring-backend=test
 ```
 
-
 您将被提示确认该交易：
-
-
 
 ```console
 confirm transaction before signing and broadcasting [y/N]: y
 ```
 
-
 输入`y`应该出现类似于以下输出：
-
-
 
 ```console
 code: 0
@@ -207,6 +176,5 @@ timestamp: ""
 tx: null
 txhash: <tx-hash>
 ```
-
 
 您现在应该能够从取块浏览器中，看到您的验证者，就像[在这里](https://celestia.explorers.guru/)
