@@ -42,68 +42,68 @@ sidebar_label: Представляємо “Modular Fellows”
 
 - Нові рівні виконання, наприклад Move rollup.
 - Сервіси rollup інфраструктури, наприклад одним клацанням миші розгорнути rollup секвенсор
-- Modular interoperability solutions, e.g. settlement layers or bridges
-- Modular versions of the following
-  - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+- Рішення модульної сумісності, наприклад рівні врегулювання або мости.
+- Модульні версії наступні:
+  - Популярні програми DeFi, наприклад AMM та протоколи кредитування.
+  - NFT платформи
+  - Іменні сервіси, наприклад [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Соціальні графіки, такі як [Lens Protoco](https://lens.xyz/)
 
-## Support
+## Підтримка
 
-1. **Weekly office hours**
+1. **Щотижневий робочий час**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *Потрібна додаткова зустріч, для запитань, допомоги та отримання відгуку.*
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    Щосереди поперемінно о 8:00 або 18:00 за центральним часом США.
 
-2. **Lessons & tutorials**
+2. **Уроки та туторіали**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *Презентації від членів команди Celestia Labs і наставників, які пояснюють ключові поняття або дають туторіали щодо конкретних інструментів.*
 
-3. **Demos from participants**
+3. **Демо від учасників**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *Презентації стипендіатів про те, над чим вони працюють для зворотного зв’язку.*
 
-4. **Communication**
+4. **Спілкування**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *Стипендіати будуть разом в Telegram групі з іншими модульними стипендіатами та наставниками Modular.*
 
-5. **Monthly stipend**
+5. **Щомісячна стипендія**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *Стипендіати отримуватимуть $3000 на місяць після завершення кожного етапу.*
 
-## Continuation
+## Продовження
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+Хоча програма триває лише 3 місяці, ми надамо вам постійну підтримку наступними способами.
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- **Гранти та фінансування –** Ми допоможемо вам у зборі коштів або подачі заявки на отримання гранту, щоб ви могли продовжувати розбудову свого проєкту.
+- **Мережа випускників** – Ви будете введені в мережу випускників Modular Fellows, де ви зможете підтримувати зв’язок з іншими колишніми та майбутніми стипендіатами Modular.
 
-### Modular Mentors
+### Модульні наставники
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+Стипендіати “Modular Fellows” будуть тісно співпрацювати з командою Celestia Labs і групою підібраних модульних наставників, які допомагатимуть розв'язувати інженерні проблеми та надавати відгуки про основні етапи.
 
-These are the Mentors for the first cohort:
+Наставниками для першої когорти є:
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi
-- [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
-- [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
-- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- [Вей Дай](https://twitter.com/_weidai) - партнер-дослідник Bain Capital Crypto
+- [Кан Гурел](https://twitter.com/CannnGurel) - дослідник Delphi Digital
+- [Ерік Уолл](https://twitter.com/ercwl) - блокчейн дослідник
+- [Ілій Кренцке](https://twitter.com/eKRENZKE) - партнер дослідницької групи Polychain
+- [Закі Манян](https://twitter.com/zmanian) - співзасновник Sommelier, співзасновник iqlusion, допоміг побудувати екосистему Cosmos, зокрема запустити першу публічний тестнет Cosmos
+- [Марко Баричевич](https://twitter.com/mark0baricevic) - керівник Cosmos-sdk і засновник binary holdings.
+- [Морган Беллер](https://twitter.com/beller) – генеральний партнер NFX, початкового фонду венчурного капіталу, до цього. був керівником відділу стратегії Facebook у Novі
+- [Джон Адлер](https://twitter.com/jadler0) - генеральний директор з доходів Celestia Labs
+- [Мустафа Аль-Бассам](https://twitter.com/musalbas) - генеральний директор Celestia Labs
+- [Ісмаїл Хоффі](https://twitter.com/KreuzUQuer) - технічний директор Celestia Labs
+- [Еван Форбс](https://twitter.com/evansforbes) - інженер-програміст Celestia Labs
 
-## How to apply
+## Як подати заявку
 
-If you would like to join the program, complete **[this](https://celestia-intake.typeform.com/to/RB5FgXt2)** application form.
+Якщо ви хочете приєднатися до програми, заповніть **[цю](https://celestia-intake.typeform.com/to/RB5FgXt2)** анкету.
 
-The program is targeted for creative engineers who possess a strong understanding of modular blockchains and have a track record of building. Please share links to any relevant engineering work on github and written content that demonstrates your understanding of modular chains.
+Програма призначена для креативних інженерів, які добре розуміють модульні блокчейни та мають досвід розробки. Будь ласка, поділіться посиланнями на будь-яку відповідну роботу на github і письмовим вмістом, який демонструє ваше розуміння модульних чейнів.
 
-## Contact
+## Як з нами зв’язатися
 
-For any questions, reach out to Nader Dabit via email nader@celestia.org or Telegram @naderdabit.
+З будь-якими запитаннями звертайтеся до Надера Дабіта за електронною поштою - nader@celestia.org або через Telegram - @naderdabit.
