@@ -90,8 +90,6 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 
 Remarque : Vous pouvez trouver plus de peers [ici](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
-Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](validator-node.md#configure-pruning)
-
 ## Quick-sync with snapshot
 
 Exécutez la commande suivante pour synchroniser rapidement à partir d'un snapshot pour `mamaki`:
@@ -105,8 +103,6 @@ SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | \
 wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
-
-Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](./validator-node.md#start-the-celestia-app-with-systemd)
 
 ## Delegate to a validator
 
@@ -136,8 +132,6 @@ txhash: <tx-hash>
 ```
 
 Vous pouvez vérifier si le TX hash a été effectué en utilisant l'explorateur de bloc en saisissant l'ID `txhash` qui a été retourné.
-
-Vous pouvez revenir à l'endroit où vous vous êtes arrêté dans le guide des Bridge nodes [ici](./validator-node#deploy-the-celestia-node)
 
 ## Connect validator
 
