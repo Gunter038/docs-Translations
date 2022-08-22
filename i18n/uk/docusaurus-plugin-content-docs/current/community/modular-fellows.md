@@ -2,46 +2,46 @@
 sidebar_label: Представляємо “Modular Fellows”
 ---
 
-# Представляємо “Modular Fellows”
+# Презентуємо Modular Fellows
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
 Програма, розроблена для того, щоб надати модульним розробникам потрібні ресурси для побудови майбутнього масштабованих і самостійних блокчейн-мереж.
 
-Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
+Протягом тримісячної програми стипендіати Modular Fellows отримають інженерну підтримку, наставництво та щомісячну стипендію в розмірі $3,000 для створення проєкту на свій вибір. Після закінчення програми стипендіатам буде надано продовжену підтримку у вигляді допомоги у зборі коштів та грантів.
 
-Applications are now open [here](https://celestia-intake.typeform.com/to/RB5FgXt2). Read on for more details.
+[Тут](https://celestia-intake.typeform.com/to/RB5FgXt2) відкриті заявки Читайте далі, щоб дізнатися більше.
 
-## Overview
+## Огляд
 
-### Milestones
+### Етапи
 
-Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
+Щомісяця стипендіати завершуватимуть певний етап проєкту, кульмінацією якого стане демонстраційна презентація.
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- **Місяць 1** - Навчання та дослідження (почніть будувати, коли будете готові)
 
-  In this month, you will immerse yourself in modular blockchains to come up with ideas of protocols, tools or applications to build during the rest of the program.
+  У цьому місяці ви зануритесь у модульні блокчейни, щоб придумати ідеї щодо протоколів, інструментів або додатків для створення протягом решти програми.
 
-  - *Milestone - present an idea that you want to pursue*
+  - *Етап - презентуйте ідею, яку ви хочете реалізувати*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- **Місяць 2** - Розробка та впровадження базового прототипу
 
-  In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
+  У цьому місяці ви розробите та реалізуєте базовий прототип ідеї, яку ви вибрали протягом першого місяця.
 
-  - *Milestone - present the prototype for feedback*
+  - *Етап - представити прототип для відгуку*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- **Місяць 3** – перетворення прототипу на функціональний продукт
 
-  In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
+  У цьому місяці ви розширите свій прототип, щоб створити функціональний продукт, який ви продемонструєте та поясните з описом.
 
-  - *Milestone - demo, write up of product*
+  - *Етап - демо, запис продукту*
 
-## Project ideas
+## Ідеї проєкту
 
-Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
+Стипендіатам не обов’язково мати конкретну ідею для проєкту на початку програми, але вам потрібно буде визначитися з нею до кінця першого місяця. Немає правильних чи неправильних ідей, але ось кілька над якими варто задуматися:
 
-- New execution layers, e.g. a Move rollup
-- Rollup infrastructure services, e.g. one click deploy rollup sequencers
+- Нові рівні виконання, наприклад Move rollup.
+- Сервіси rollup інфраструктури, наприклад одним клацанням миші розгорнути rollup секвенсор
 - Modular interoperability solutions, e.g. settlement layers or bridges
 - Modular versions of the following
   - Popular DeFi apps e.g. AMMs & lending protocols
