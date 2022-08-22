@@ -599,6 +599,17 @@ Nous obtenons la sortie suivante :
 
 Si vous remarquez sur la sortie ci-dessus, elle renvoie une `height` de `2452` que nous utiliserons pour la prochaine commande.
 
+#### Troubleshooting
+
+If you encounter an error like:
+
+```console
+$ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
+"rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
+```
+
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+
 ### Obtenir des partages d'espace de noms par hauteur de bloc
 
 Après avoir soumis votre transaction PFD, en cas de succès, le node retournera la hauteur de bloc pour laquelle la transaction PFD a été incluse. Vous pouvez ensuite utiliser cette hauteur de bloc et l'ID d'espace de noms avec lesquels vous avez soumis votre transaction PFD pour que vos partages de messages vous soient retournés. Dans cet exemple, la hauteur de bloc que nous avons obtenue était de 589, que nous utiliserons pour la commande suivante.
