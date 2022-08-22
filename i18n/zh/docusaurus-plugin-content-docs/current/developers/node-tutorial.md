@@ -599,6 +599,17 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 
 请您注意到上述输出， 它返回`高度`为`2452`，我们将它用于下一个命令。
 
+#### Troubleshooting
+
+If you encounter an error like:
+
+```console
+$ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
+"rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
+```
+
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+
 ### 按区块高度获取命名空间相关的数据片段
 
 在提交您的 PFD 交易后，该节点会返回包含PFD 交易的 块高度。 After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command. 在这个例子中，我们得到的块高度是2452，我们将在下面的命令中使用它。
