@@ -71,7 +71,7 @@ celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 
 添加了所有验证者后，`genesis.json`文件就被创建好了。 Once all the validators are added, the `genesis.json` file is created. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
 
-你可以在`$HOME/.celestia-appd/config/genesis.json`找到`genesis.json`
+You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
 
 ### 为新链创建创世交易
 
@@ -96,7 +96,7 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
 添加所有参与者的 gentx 文件后，运行以下命令：
 
 ```sh
-celestia-appd collect-gentxs 
+celestia-appd collect-gentxs
 ```
 
 此命令将查找此目录中的gentx文件，应该将此目录移动到以下位置`$HOME/.celestia-app/config/gentx`
