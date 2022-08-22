@@ -71,7 +71,7 @@ Si d'autres participants de votre réseau test veulent également être des vali
 
 Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. Vous avez besoin de le partager avec tous les autres validateurs de votre testnet afin que tout le monde puisse passer à l'étape suivante.
 
-Vous pouvez trouver le `genesis.json` dans `$HOME/.celestia-appd/config/genesis.json`
+You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
 
 ### Créer la transaction Genesis pour la nouvelle chaîne
 
@@ -96,7 +96,7 @@ Une fois que tous les participants vous ont soumis leurs fichiers gentx JSON, vo
 Une fois que vous avez ajouté les fichiers gentx de tous les particpants, lancez la commande suivante :
 
 ```sh
-celestia-appd collect-gentxs 
+celestia-appd collect-gentxs
 ```
 
 Cette commande va rechercher les fichiers gentx de ce dépôt qui devrait être déplacé dans le répertoire suivant `$HOME/.celestia-app/config/gentx`.
