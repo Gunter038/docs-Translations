@@ -1,18 +1,17 @@
----
-sidebar_label : Node Tutorial
----
+- - -
+sidebar_label : Tutoriel du node
+- - -
 
-# Getting and Sending Transactions with Celestia Node
+# Obtenir et envoyer des transactions avec Celestia node
 <!-- markdownlint-disable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and
-retrieve messages from the Data Availability Layer by their namespace ID.
+Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur identifiant d'espace de noms.
 
 This tutorial was assumes you are working in a Linux environment.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> Pour voir un tutoriel vidéo pour la mise en place d'un Celestia Light Node, cliquez sur [ici](./light-node-video.md)
 
-## Hardware Requirements
+## Hardware Requis
 
 The following minimum hardware requirements are recommended for running a light node:
 
@@ -21,7 +20,7 @@ The following minimum hardware requirements are recommended for running a light 
 - Disk: 5 GB SSD Storage
 - Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Setting Up Dependencies
+## Configuration des dépendances
 
 First, make sure to update and upgrade the OS:
 
@@ -75,9 +74,9 @@ The output should be the version installed:
 go version go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Node Celestia
 
-### Install Celestia Node
+### Installer Celestia node
 
 Install the celestia-node binary by running the following commands:
 
@@ -98,25 +97,21 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-### Instantiate Celestia Light Node
+### Instancier un Light Node Celestia
 
-Now, let's instantiate a Celestia Light node:
+Maintenant, instancions un Light node Celestia:
 
-> Note: RPC Endpoints are exposed in all Celestia Node types
-  such as Light, Bridge and Full Nodes.
+> Note: Les points de terminaison RPC sont exposés dans tous les types de Nodes Celestia, tels que Light, Bridge et Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### Se connecter à un point de terminaison public principal
 
-Let's now run the Celestia Light node with a GRPC connection to
-an example public Core Endpoint.
+Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau.
 
-> Note: You are also encouraged to find a community-run API endpoint
-  and there are several in the Discord. This one is used for demonstration
-  purposes. You can find a list of RPC endpoints [here](../nodes/mamaki-testnet#rpc-endpoints)
+> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points de terminaison RPC [ici](../nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
@@ -146,32 +141,29 @@ You can find the address by running the following command in the `celestia-node`
 
 If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
 
-You can request funds to your wallet address using the following command in Discord:
+Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated
-when you created the wallet.
+Où `<Wallet-Address>` est l'adresse `celestia1******` générée à la création du wallet.
 
-With your wallet funded, you can move on to the next step.
+Une fois que tout est configuré, vous pouvez passer à l'étape suivante.
 
-## Node API Calls
+## Requête d'API Node
 
-Open up another terminal window in order to begin querying the API.
-`celestia-node` exposes its RPC endpoint on port `26658` by default.
+Ouvrez une autre fenêtre de terminal afin de commencer à interroger l'API. `celestia-node` expose son point de terminaison RPC sur le port `26658` par défaut.
 
-### Balance
+### Solde
 
-Now, let's query our node for the balance of its default account
-(which is the account associated with the `developer` key we generated earlier):
+Maintenant, interrogeons notre Node pour connaître le solde de son compte par défaut (qui est le compte associé avec la clé `developer` générée plus tôt):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+Il produira ce qui suit :
 
 ```json
 {
@@ -180,19 +172,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+Cela vous montre le solde de ce portefeuille.
 
-### Get Block Header
+### Obtenir l'en-tête du bloc
 
-Now, let's get the block header information.
+Maintenant, récupérons les informations de l'en-tête de bloc.
 
-Here we will get the header from Block 1:
+Ici nous allons obtenir l'en-tête du bloc 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+Vous verrez quelque chose comme ceci :
 
 ```json
 {
@@ -364,26 +356,23 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### Soumettre une transaction PFD
 
-In this example, we will be submitting a PayForData
-transaction to the node's `/submit_pfd` endpoint.
+Dans cet exemple, nous soumettrons une transaction PayForData au point de terminaison `/submit_pfd` du node.
 
-Some things to consider:
+Quelques éléments à prendre en considération :
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- PFD est un message PayForData.
+- Le point de terminaison prend également les valeurs `namespace_id` et `data`.
+- L'identifiant de l'espace de noms doit être de 8 octets.
+- Les données sont en octets codées en hexadécimal du message brut.
+- `gas_limit` est la limite de gaz à utiliser pour la transaction.
 
-We use the following `namespace_id` of `0000010000000100` and
-the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+Nous utilisons le `namespace_id suivant` de `0000010000000100` et les `données` valeur de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-You can generate your own `namespace_id` and data values using this
-useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+Vous pouvez générer vos propres `namespace_id` et valeurs de données en utilisant ce terrain de jeu Golang utile que nous avons créé [ici](https://go.dev/play/p/7ltvaj8lhRl).
 
-We run the following:
+Exécutez ce qui suit :
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -391,7 +380,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 60000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+Nous obtenons la sortie suivante :
 
 ```json
 {
@@ -608,8 +597,7 @@ We get the following output:
 }
 ```
 
-If you notice from the above output, it returns a `height` of
-`2452` which we will use for the next command.
+Si vous remarquez sur la sortie ci-dessus, elle renvoie une `height` de `2452` que nous utiliserons pour la prochaine commande.
 
 #### Troubleshooting
 
@@ -620,24 +608,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
 
-It is possible that the account you are trying to submit a PayForData from
-doesn't have testnet tokens yet. Ensure the testnet faucet has funded your
-account with tokens and then try again.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
-### Get Namespaced Shares by Block Height
+### Obtenir des partages d'espace de noms par hauteur de bloc
 
-After submitting your PFD transaction, upon success, the node will return
-the block height for which the PFD transaction was included. You can then
-use that block height and the namespace ID with which you submitted your
-PFD transaction to get your message shares returned to you. In this example,
-the block height we got was 589 which we will use for the following command.
+Après avoir soumis votre transaction PFD, en cas de succès, le node retournera la hauteur de bloc pour laquelle la transaction PFD a été incluse. Vous pouvez ensuite utiliser cette hauteur de bloc et l'ID d'espace de noms avec lesquels vous avez soumis votre transaction PFD pour que vos partages de messages vous soient retournés. Dans cet exemple, la hauteur de bloc que nous avons obtenue était de 589, que nous utiliserons pour la commande suivante.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+Génèrera cette sortie :
 
 ```json
 {
@@ -648,4 +630,4 @@ Will generate the following output:
 }
 ```
 
-The output here is base64-encoded.
+La sortie ici est encodée en base64.
