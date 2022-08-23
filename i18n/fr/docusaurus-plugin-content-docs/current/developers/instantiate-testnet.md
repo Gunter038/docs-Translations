@@ -1,45 +1,38 @@
----
-sidebar_label : Create A Celestia Testnet
----
+- - -
+sidebar_label : Créer un Testnet Celestia
+- - -
 
-# Celestia App Network Instantiation Guide
+# Guide d'instanciation du réseau Celestia App
 
-This guide is for helping instantiate a new testnetwork and following the
-correct steps to do so with Celestia-App. You should only follow this guide
-if you want to experiment with your own Celestia Testnetwork or if you want
-to test out new features to build as a core developer.
+Ce guide est destiné à aider à instancier un nouveau réseau de test et à suivre les étapes correctes pour le faire avec Celestia-App. Vous ne devriez suivre que ce guide si vous voulez expérimenter avec votre propre réseau test Celestia ou si vous voulez tester de nouvelles fonctionnalités à développer en tant que développeur.
 
-## Hardware Requirements
+## Hardware Requis
 
-You can follow hardware requirements [here](../nodes/validator-node.md#hardware-requirements).
+Vous pouvez suivre les exigences matérielles [ici](../nodes/validator-node.md#hardware-requirements).
 
-## Setup Dependencies
+## Configurer les dépendances
 
-You can setup dependencies by following the guide [here](./environment.md).
+Vous pouvez configurer les dépendances en suivant le guide [ici](./environment.md).
 
-## Celestia App Installation
+## Installation de Celestia App
 
-You can install Celestia App by following the guide [here](./celestia-app.md).
+Vous pouvez installer Celestia App en suivant le guide [ici](./celestia-app.md).
 
 ## Spin Up A Celestia Testnet
 
-If you want to spin up a quick testnet with your friends, you can follow these steps.
-Unless otherwise noted, every step must be done by everyone who wants to
-participate in this testnet.
+Si vous souhaitez créer un réseau test rapide avec vos amis, vous pouvez suivre ces étapes. Sauf indication contraire, chaque étape doit être effectuée par tous ceux qui veulent participer à ce réseau test.
 
-### Optional: Reset Working Directory
+### Optionnel: Réinitialiser le répertoire de travail
 
-If you have already initialized a working directory for `celestia-appd` in the past,
-you must clean up before reinitializing a new directory. You can do so by running
-the following command:
+Si vous avez déjà initialisé un répertoire de travail pour `celestia-appd` dans le passé, vous devez le nettoyer avant de réinitialiser un nouveau répertoire. Vous pouvez le faire en exécutant la commande suivante :
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Initialize A Working Directory
+### Initialiser un répertoire de travail
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -47,51 +40,42 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* The value we will use for `$VALIDATOR_NAME` is `validator1` but you should choose
-  your own node name.
-* The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must
-  remain the same for everyone participating in this network.
+* La valeur que nous utiliserons pour `$VALIDATOR_NAME` est `validator1` mais vous devriez choisir votre propre nom de node.
+* La valeur que nous utiliserons pour `$CHAIN_ID` est `testnet`. La `$CHAIN_ID` doit rester la même pour tous ceux qui participent à ce réseau.
 
-### Create A New Key
+### Créer une nouvelle clé
 
-Next, run the following command:
+Ensuite, exécutez la commande suivante:
 
 ```sh
 KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-This will create a new key, with a name of your choosing.
-Save the output of this command somewhere; you'll need
-the address generated here later. Here, we set the value of our
-key `$KEY_NAME` to `validator` for demonstration.
+Cela créera une nouvelle clé, avec un nom de votre choix. Enregistrez la sortie de cette commande quelque part ; vous aurez besoin de l'adresse générée ici plus tard. Ici, nous fixons la valeur de notre clé `$KEY_NAME` à `validator` pour la démonstration.
 
-### Add Genesis Account KeyName
+### Ajouter le nom de clé du compte Genesis
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 CELES_AMOUNT="10000000000000000000000000utia"
 celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 ```
 
-Here `$VALIDATOR_NAME` is the same key name as before; and `$AMOUNT`
-is something like `10000000000000000000000000utia`.
+Ici `$VALIDATOR_NAME` est le même nom de clé qu'avant ; et `$AMOUNT` est quelque chose comme `10000000000000000000000000utia`.
 
-### Optional: Adding Other Validators
+### Facultatif : Ajouter d'autres validateurs
 
-If other participants in your testnet also want to be validators,
-repeat the command above with the specific amount for their public keys.
+Si d'autres participants de votre réseau test veulent également être des validateurs, répétez la commande ci-dessus avec le montant spécifique pour leurs clés publiques.
 
-Once all the validators are added, the `genesis.json` file is created. You need
-to share it with all other validators in your testnet in order for everyone to
-proceed with the following step.
+Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. Vous avez besoin de le partager avec tous les autres validateurs de votre testnet afin que tout le monde puisse passer à l'étape suivante.
 
 You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
 
-### Create the Genesis Transaction For New Chain
+### Créer la transaction Genesis pour la nouvelle chaîne
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 STAKING_AMOUNT=1000000000utia
@@ -99,69 +83,55 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
   --keyring-backend test
 ```
 
-This will create the genesis transaction for your new chain.
-Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you
-provide too much or too little, you will encounter an error
-when starting your node.
+Cela créera la transaction Genesis pour votre nouvelle chaîne. Ici, `$STAKING_AMOUNT` doit être au moins égal à `1000000000utia`. Si vous fournissez trop ou trop peu, vous rencontrerez une erreur lors du démarrage de votre Node.
 
-You will find the generated gentx JSON file inside `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
+Vous trouverez le fichier JSON gentx généré dans `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
 
-> Note: If you have other validators in your network, they need to also
-  run the above command with the `genesis.json` file you shared with
-  them in the previous step.
+> Remarque : Si vous avez d'autres validateurs dans votre réseau, ils doivent également exécuter la commande ci-dessus avec le fichier `genesis.json` que vous avez partagé avec eux à l'étape précédente.
 
-### Creating the Genesis JSON File
+### Création du fichier JSON Genesis
 
-Once all participants have submitted their gentx JSON files to you,
-you will pull all those gentx files inside the following directory:
-`$HOME/.celestia-appd/config/gentx` and use them to create the final
-`genesis.json` file.
+Une fois que tous les participants vous ont soumis leurs fichiers gentx JSON, vous allez mettre tous ces fichiers gentx dans le répertoire suivant : `$HOME/. elestia-appd/config/gentx` et utilisez-les pour créer le fichier final `genesis.json`.
 
-Once you added the gentx files of all the particpants, run the following command:
+Une fois que vous avez ajouté les fichiers gentx de tous les particpants, lancez la commande suivante :
 
 ```sh
 celestia-appd collect-gentxs
 ```
 
-This command will look for the gentx files in this repo which should
-be moved to the following directory `$HOME/.celestia-app/config/gentx`.
+Cette commande va rechercher les fichiers gentx de ce dépôt qui devrait être déplacé dans le répertoire suivant `$HOME/.celestia-app/config/gentx`.
 
-It will update the `genesis.json` file after in this location
-`$HOME/.celestia-app/config/genesis.json` which now includes the gentx
-of other participants.
+Elle mettra à jour le fichier `genesis.json` dans cet emplacement `$HOME/. elestia-app/config/genesis.json` qui inclut maintenant le gentx des autres participants.
 
-You should then share this final `genesis.json` file with all the
-other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+Vous devriez ensuite partager ce fichier `genesis.json` final avec tous les autres participants qui doivent l'ajouter à leur dossier `$HOME/.celestia-app/config`.
 
-Everyone must ensure that they replace their existing `genesis.json` file with
-this new one created.
+Tout le monde doit s'assurer de remplacer le fichier `genesis.json` existant par ce nouveau fichier créé.
 
-### Modify Your Config File
+### Modifiez votre fichier de configuration
 
-Open the following file `$HOME/.celestia-app/config/config.toml` to modify it.
+Ouvrez le fichier suivant `$HOME/.celestia-app/config/config.toml` pour le modifier.
 
-Inside the file, add the other participants by modifying the following line to
-include other participants as persistent peers:
+À l'intérieur du fichier, ajoutez les autres participants en modifiant la ligne suivante pour inclure d'autres participants en tant que pairs persistants:
 
 ```text
 # Comma separated list of nodes to keep persistent connections to
 persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-You can find `validator_address` by running the following command:
+Vous pouvez trouver `validator_address` en exécutant la commande suivante:
 
 ```sh
 celestia-appd tendermint show-node-id
 ```
 
-The output will be the hex-encoded `validator_address`. The default `port` is 26656.
+La sortie sera le code hexadécimal `validator_address`. Par défaut, le `port` est 26656.
 
-### Instantiate the Network
+### Instancier le réseau
 
-You can start your node by running the following command:
+Vous pouvez commencer à synchroniser votre node en exécutant la commande suivante :
 
 ```sh
 celestia-appd start
 ```
 
-Now you have a new Celestia Testnet to play around with!
+Maintenant vous avez un nouveau réseau test Celestia avec lequel jouer !
