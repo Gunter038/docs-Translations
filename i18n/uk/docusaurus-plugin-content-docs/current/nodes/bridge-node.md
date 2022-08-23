@@ -2,67 +2,67 @@
 sidebar_label : Bridge Node
 - - -
 
-# Setting up a Celestia Bridge Node
+# Налаштування Мостової Ноди Celestia
 
-This tutorial will go over the steps to setting up your Celestia Bridge node.
+У цьому туторіалі описано кроки з налаштування вашої ноди для мосту Celestia.
 
-Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
+Мостові ноди з’єднують рівень доступності даних і рівень консенсусу, а також мають можливість стати валідатором.
 
-Validators do not have to run bridge nodes, but are encouraged to in order to relay blocks to the data availability network.
+Валідатори не повинні запускати мостові ноди, але це рекомендується, щоб передавати блоки в мережу доступності даних.
 
-## Overview of bridge nodes
+## Огляд мостових нод
 
-A Celestia bridge node has the following properties:
+Мостова нода Celestia має такі властивості:
 
-1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
-2. Validate and erasure code the “raw” blocks
-3. Supply block shares with data availability headers to Light Nodes in the DA network. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+1. Імпортуйте та обробляйте «необроблені» заголовки та блоки з надійного основного процесу (тобто надійного RPC-з’єднання з нодою celestia-core) у мережі консенсусу. Мостові ноди можуть запускати цей основний процес внутрішньо (вбудовано) або просто підключатися до віддаленої кінцевої точки. Мостові ноди також мають можливість бути активним валідатором у мережі консенсусу.
+2. Перевіряйте та видаляйте код «необроблених» блоків
+3. Надавайте спільні блоки із заголовками доступності даних для легких нод у мережі DA. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
-From an implementation perspective, Bridge Nodes run two separate processes:
+З точки зору реалізації, мостові ноди запускають два окремих процеси:
 
-1. Celestia App with Celestia Core ([see repo](https://github.com/celestiaorg/celestia-app))
+1. Додаток Celestia з Celestia Core ([репозиторій](https://github.com/celestiaorg/celestia-app))
 
-    * **Celestia App** is the state machine where the application and the proof-of-stake logic is run. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
-    * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Додаток Celestia** — це кінцевий механізм, у якому запускається програма та логіка proof-of-stake. Додаток Celestia створено на основі [Cosmos SDK](https://docs.cosmos.network/), а також містить **Celestia Core**.
+    * **Celestia Core** — це рівень взаємодії стану, консенсусу та блокового виробництва. Celestia Core побудовано на [Tendermint Core](https://docs.tendermint.com/), модифікованому для зберігання коренів даних блоків із кодом стирання серед інших змін ([див. ADR](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
-2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
+2. Нода Celestia ([репозиторій](https://github.com/celestiaorg/celestia-node))
 
-    * **Celestia Node** augments the above with a separate libp2p network that serves data availability sampling requests. The team sometimes refer to this as the “halo” network.
+    * **Нода Celestia** доповнює вищезазначене за допомогою окремої мережі libp2p, яка обслуговує запити на вибірку доступності даних. Команда іноді називає це мережею «halo».
 
-## Hardware requirements
+## Вимоги до обладнання
 
-The following hardware minimum requirements are recommended for running the bridge node:
+Для роботи мостової ноди є мінімальні вимоги до обладнання:
 
-* Memory: 8 GB RAM
+* Пам’ять: 8 GB RAM
 * CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Розмір пам’яті на диску: 250 GB SSD
+* Пропускна здатність: 1 Gbps для скачування/100 Mbps для загрузки
 
-## Setting up your bridge node
+## Налаштування вашої мостової ноди
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Цей туторіал виконано на машині Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Налаштування залежностей
 
-Follow the tutorial here installing the dependencies [here](../developers/environment.md).
+Дотримуйтеся [цього](../developers/environment.md) туторіалу по установці залежностей.
 
-## Deploy the Celestia bridge node
+## Запуск мостової ноди Celestia
 
-### Install Celestia node
+### Установка ноди Celestia
 
-Install the Celestia Node binary, which will be used to run the Bridge Node.
+Встановіть бінарний файл ноди Celestia, який використовуватиметься для запуску мостової ноди.
 
-Follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md).
+Дотримуйтеся туторіалу зі встановлення ноди Celestia [тут](../developers/celestia-node.md).
 
-### Initialize the bridge node
+### Ініціалізація мостової ноди
 
-Run the following:
+Пропишіть наступне:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip-address>:26657
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете побачити список [тут](./mamaki-testnet.md#rpc-endpoints)
 
 ### Run the bridge node
 
