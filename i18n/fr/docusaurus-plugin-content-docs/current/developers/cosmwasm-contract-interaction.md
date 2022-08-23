@@ -1,16 +1,13 @@
 ---
-sidebar_label : Contract Interaction
+sidebar_label: Contract Interaction
 ---
 
 # Contract Interaction on CosmWasm with Celestia
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an
-environment variable for later use.
+In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
 
-Because of the longer time periods of submitting transactions via Optimint
-due to waiting on Celestia's Data Availability Layer to confirm block inclusion,
-we will need to query our  tx hash directly to get information about it.
+Because of the longer time periods of submitting transactions via Optimint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
 ## Contract Querying
 
@@ -23,8 +20,7 @@ echo $CODE_ID
 
 This will give us back the Code ID of the deployed contract.
 
-In our case, since it's the first contract deployed on our local network,
-the value is `1`.
+In our case, since it's the first contract deployed on our local network, the value is `1`.
 
 Now, we can take a look at the contracts instantiated by this Code ID:
 
@@ -40,9 +36,7 @@ We get the following output:
 
 ## Contract Instantiation
 
-We start instantiating the contract by writing up the following `INIT` message
-for nameservice contract. Here, we are specifying that `purchase_price` of a name
-is `100uwasm` and `transfer_price` is `999uwasm`.
+We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
@@ -62,8 +56,7 @@ wasmd query wasm contract $CONTRACT $NODE
 wasmd query bank balances $CONTRACT $NODE
 ```
 
-This allows us to see the contract address, contract details, and
-bank balances.
+This allows us to see the contract address, contract details, and bank balances.
 
 Now, let's register a name to the contract for our wallet address:
 
@@ -76,5 +69,4 @@ NAME_QUERY='{"resolve_record": {"name": "fred"}}'
 wasmd query wasm contract-state smart $CONTRACT "$NAME_QUERY" $NODE --output json
 ```
 
-With that, we have instantiated and interacted with the CosmWasm nameservice
-smart contract using Celestia!
+With that, we have instantiated and interacted with the CosmWasm nameservice smart contract using Celestia!
