@@ -64,41 +64,41 @@ celestia bridge init --core.remote tcp://<ip-address>:26657
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете побачити список [тут](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Запуск мостової ноди
 
-Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Запустіть мостову ноду із підключенням до кінцевої точки gRPC ноди валідатора (яка зазвичай доступна на порту 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
+> ПРИМІТКА. Для отримання доступу до можливості отримати/надсилати інформацію, пов’язану зі станом, наприклад можливість надсилати транзакції PayForData або запитувати баланс рахунку ноди, кінцеву точку gRPC ноди валідатора (основного) потрібно передати відповідно до вказівок нижче._
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете побачити список [тут](./mamaki-testnet.md#rpc-endpoints)
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Ви можете створити свій ключ для своєї ноди, дотримуючись інструкцій `cel-key` [тут](./keys.md)
 
-Once you start the Bridge Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Після запуску мостової ноди для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів тестнету Mamaki для оплати транзакцій PayForData. Ви можете знайти адресу, виконавши наступну команду:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Токени тестнету Mamaki можна запитати [тут](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-#### Optional: run the bridge node with a custom key
+#### Додатково: запустіть мостову ноду за допомогою нетиповго ключа
 
-In order to run a bridge node using a custom key:
+Щоб запустити мостову ноду за допомогою нетипового ключа:
 
-1. The custom key must exist inside the celestia bridge node directory at the correct path (default: `~/.celestia-bridge/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. Нетиповий ключ має існувати в каталозі мостової ноди celestia за правильним шляхом (за замовчуванням: ~/.celestia-bridge/keys/keyring-test)
+2. Ім'я нетипового ключа має бути передано під час `запуску`, наприклад:
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the bridge node with SystemD
+### Додатково: запустіть мостову ноду за допомогою SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Дотримуйтеся туторіала з налаштування мостової ноди як фонового процесу з SystemD [тут](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Ви успішно налаштували мостову ноду, яка синхронізується з мережею.
