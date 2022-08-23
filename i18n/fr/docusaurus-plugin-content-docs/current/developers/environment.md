@@ -1,19 +1,16 @@
----
-sidebar_label : Setting Up Environment
----
+- - -
+sidebar_label : Configuration de l'environnement
+- - -
 
-# Development Environment
+# Environnement de développement
 
-This tutorial will go over setting up your development environment to run
-Celestia software. This environment can be used for development, building
-binaries, and running nodes.
+Ce tutoriel va passer en revue la configuration de votre environnement de développement pour exécuter le logiciel Celestia. Cet environnement peut être utilisé pour le développement, la construction de binaires et l'exécution de nodes.
 
-## Install Dependencies
+## Installation des dépendances
 
-Once you have setup your instance, ssh into the instance to begin installing the
-dependencies needed to run a node.
+Une fois que vous avez configuré votre instance, ssh dans l'instance pour commencer à installer les dépendances nécessaires pour exécuter un node.
 
-First, make sure to update and upgrade the OS:
+Tout d'abord, assurez-vous de mettre à jour le système d'exploitation:
 
 ```sh
 # If you are using the APT package manager
@@ -23,8 +20,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like
-downloading files, compiling, and monitoring the node:
+Ce sont des paquets essentiels qui sont nécessaires pour exécuter de nombreuses tâches telles que le téléchargement de fichiers, la compilation et la surveillance du node :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -36,10 +32,9 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Install Golang
+## Installation de Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we
-must install Golang to build and run them.
+Celestia-app et Celestia-node sont écrits en [Golang](https://go.dev/), il faut donc installer Golang pour les construire et les exécuter.
 
 ```sh
 ver="1.18.2"
@@ -50,20 +45,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Maintenant nous devons ajouter le répertoire `/usr/local/go/bin` à `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Pour vérifier que Go a été installé correctement, exécutez:
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+La sortie doit être la version installée :
 
 ```sh
 go version go1.18.2 linux/amd64
