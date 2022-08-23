@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "Celestia Docs",
+    "message": "Celestia 文档",
     "description": "The title in the navbar"
   },
   "item.label.Run A Node": {
-    "message": "Run A Node",
+    "message": "运行一个节点",
     "description": "Navbar item with label Run A Node"
   },
   "item.label.Developers": {
-    "message": "Developers",
+    "message": "开发人员",
     "description": "Navbar item with label Developers"
   },
   "item.label.GitHub": {
