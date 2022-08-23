@@ -1,11 +1,9 @@
----
-sidebar_label : Overview
----
+- - -
+sidebar_label : Aperçu
+- - -
 
-# Community Overview
+# Aperçu de la communauté
 
-This section will highlight all the different resources and activities
-for the Celestia Community.
+Cette section mettra en évidence toutes les différentes ressources et activités de la communauté de Celestia.
 
-Here you will find links to our community calendar, Code of Conduct
-and other community-related resources.
+Vous trouverez ici des liens vers notre calendrier communautaire, notre code de conduite et d'autres ressources liées à la communauté.
