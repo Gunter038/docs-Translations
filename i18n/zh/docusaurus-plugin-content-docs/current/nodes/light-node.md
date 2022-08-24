@@ -1,32 +1,27 @@
----
+- - -
 sidebar_label : Light Node
----
+- - -
 
 # Setting up a Celestia Light Node
 
-This tutorial will guide you through setting up a Celestia light node, which
-will allow you to perform data availability sampling on the data
-availability (DA) network.
+This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
 
 > To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
 
 ## Overview of light nodes
 
-Light nodes ensure data availability. This is the most common
-way to interact with the Celestia network.
+Light nodes ensure data availability. Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
 
 ![light-node](/img/nodes/LightNodes.png)
 
 Light nodes have the following behavior:
 
-1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify
-   Celestia nodes of new block headers and relevant DA metadata.
+1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
 2. They perform data availability sampling (DAS) on the received headers
 
 ## Hardware requirements
 
-The following minimum hardware requirements are recommended for running
-a light node:
+The following minimum hardware requirements are recommended for running a light node:
 
 * Memory: 2 GB RAM
 * CPU: Single Core
@@ -49,8 +44,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading
-files, compiling, and monitoring the node:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 ```sh
 # If you are using the APT package manager
@@ -64,8 +58,7 @@ git make ncdu -y
 
 ### Install Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must
-install Golang to build and run them.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.18.2"
@@ -108,8 +101,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the
-celestia version command:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -138,13 +130,9 @@ $ celestia light init
 
 ### Start the light node
 
-Start the light node with a connection to a validator node's gRPC endpoint (which
-is usually exposed on port 9090):
+Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information,
-  such as the ability to submit PayForData transactions, or query for the node's
-  account balance, a gRPC endpoint of a validator (core) node must be passed as
-  directed below.
+> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090
@@ -166,12 +154,9 @@ You can create your key for your node by running the following command:
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you.
-You will need to fund that address with Mamaki Testnet tokens to pay for
-PayForData transactions.
+Once you start the Light Node, a wallet key will be generated for you. Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
 
-You can find the address by running the following command in the
-`celestia-node` directory:
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
@@ -183,8 +168,7 @@ Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet
 
 In order to run a light node using a custom key:
 
-1. The custom key must exist inside the celestia light node directory at the
-   correct path (default: `~/.celestia-light/keys/keyring-test`)
+1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
 2. The name of the custom key must be passed upon `start`, like so:
 
 ```sh
@@ -193,10 +177,8 @@ celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_cus
 
 ### Optional: start light node with SystemD
 
-Follow the tutorial on setting up the light node as a background
-process with SystemD [here](./systemd.md#celestia-light-node).
+Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
 
 ## Data availability sampling (DAS)
 
-With your light node running, you can check out this tutorial on
-submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).

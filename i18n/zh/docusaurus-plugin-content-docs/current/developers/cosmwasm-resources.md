@@ -1,13 +1,10 @@
 ---
-sidebar_label : CosmWasm Resources
+sidebar_label: CosmWasm Resources
 ---
 
 # CosmWasm Resources
 
-For more resources on getting started building
-smart contracts with CosmWasm that you can then
-deploy on Celestia, check out the list of resources
-in this section.
+For more resources on getting started building smart contracts with CosmWasm that you can then deploy on Celestia, check out the list of resources in this section.
 
 ## Tokens
 

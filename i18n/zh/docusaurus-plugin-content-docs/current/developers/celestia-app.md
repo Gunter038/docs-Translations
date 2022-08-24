@@ -1,18 +1,15 @@
----
+- - -
 sidebar_label : Installing Celestia App
----
+- - -
 
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
-This tutorial will guide you through building Celestia App. This
-tutorial presumes you completed the steps in setting up your
-own environment [here](./environment.md).
+本教程将指导您构建 Celestia App。 This tutorial will guide you through building Celestia App. This tutorial presumes you completed the steps in setting up your own environment [here](./environment.md).
 
-## Install Celestia App
+## 安装Celestia App
 
-The steps below will create a binary file named `celestia-appd`
-inside `$HOME/go/bin` folder which will be used later to run the node.
+下面的步骤将在 `$HOME/go/bin` 文件夹中创建一个名为 `celestia-appd`的二进制文件，此文件稍后将用于运行节点。
 
 ```sh
 cd $HOME
@@ -26,14 +23,13 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-To check if the binary was successfully compiled you can run the binary
-using the `--help` flag:
+要检查二进制文件是否成功编译，您可以使用 `--help` 标志运行二进制文件：
 
 ```sh
 celestia-appd --help
 ```
 
-You should see a similar output (with helpful example commands):
+你应该看到一个类似的输出(带有帮助的示例命令)：
 
 ```text
 Start celestia app
