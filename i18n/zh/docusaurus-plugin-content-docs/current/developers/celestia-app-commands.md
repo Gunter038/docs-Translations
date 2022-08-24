@@ -1,5 +1,5 @@
 - - -
-sidebar_labar: 有用的 CLI 命令
+sidebar_label: 有用的 CLI 命令
 - - -
 
 # 有用的 CLI 命令

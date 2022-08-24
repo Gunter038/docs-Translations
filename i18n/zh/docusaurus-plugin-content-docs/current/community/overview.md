@@ -1,5 +1,5 @@
 - - -
-sidebar_labar : 概述
+sidebar_label : 概述
 - - -
 
 # 社区概述
