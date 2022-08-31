@@ -10,12 +10,12 @@
 
 Ми зобов’язуємося діяти та взаємодіяти таким чином, щоб сприяти створенню відкритої, привітної, різноманітної, інклюзивної та здорової спільноти.
 
-## Our Standards
+## Наші Стандарти
 
-Examples of behavior that contributes to a positive environment for our community include:
+Приклади поведінки, яка сприяє створенню позитивного середовища для нашої спільноти, включають:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
+* Демонстраційна емпатія та привітність до інших людей
+* Брати до уваги точки зору і досвід, який відрізняються від власних
 * Giving and gracefully accepting constructive feedback
 * Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the overall community
