@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Community Calendar
+Lịch làm việc của cộng đồng Lịch làm việc của cộng đồng Celestia giúp cho bạn tìm kiếm tất cả các cuộc trò chuyện khác nhau diễn ra trong cộng đồng Celestia Bạn có thể thêm lịch làm việc của cộng đồng Celestia vào lịch làm việc của bạn ở đây
 - - -
 
-# Community Calendar
+# Lịch làm việc của cộng đồng
 
-The Celestia Community Calendar is available for finding all the different community call events happening in Celestia's community.
+Lịch làm việc của cộng đồng Celestia giúp cho bạn tìm kiếm tất cả các cuộc trò chuyện khác nhau diễn ra trong cộng đồng Celestia
 
-You can add the Community Calendar to your personal calendar [here](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+Bạn có thể thêm lịch làm việc của cộng đồng Celestia vào lịch làm việc của bạn <a>ở đây</a>
