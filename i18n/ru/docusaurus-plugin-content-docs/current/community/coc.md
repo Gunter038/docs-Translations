@@ -44,21 +44,21 @@ sidebar_label : Кодекс поведения
 
 Все лидеры сообщества обязаны уважать конфиденциальность и безопасность сообщившего о любом инциденте.
 
-## Enforcement Guidelines
+## Руководство по правоприменению
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+Лидеры сообщества будут следовать этим руководящим принципам воздействия на сообщество при определении последствий любых действий, которые они считают нарушением настоящего кодекса поведения:
 
-### 1. Correction
+### 1. Исправление
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**Влияние сообщества**: использование непристойного языка или другого поведения, считающегося непрофессиональным или ненадлежащим в сообществе.
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+** Последствия**: Личное письменное предупреждение от лидеров сообщества, содержащее ясность в отношении характера нарушения и объяснение того, почему поведение было неуместным. Может быть потребовано публичное извинение.
 
-### 2. Warning
+### 2. Предупреждение
 
-**Community Impact**: A violation through a single incident or series of actions.
+**Влияние на общество**: Нарушение в результате одного инцидента или серии случаев.
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**Следствие**: Предупреждение с последствиями для дальнейшего поведения. Отсутствие взаимодействия с вовлеченными лицами, включая нежелательную связь с лицами, обеспечивающими соблюдение кодекса поведения, в течение определенного периода времени. Это включает в себя отказ от взаимодействия на просторах сообщества, а также во внешних каналах, таких как социальные сети. Violating these terms may lead to a temporary or permanent ban.
 
 ### 3. Temporary Ban
 
