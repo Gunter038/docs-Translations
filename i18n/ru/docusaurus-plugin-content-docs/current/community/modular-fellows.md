@@ -42,16 +42,16 @@ sidebar_label: Modular Fellows
 
 - Новые исполнительные слои, например развертывание на Move
 - Развертывание инфраструктурных сервисов, например один клик развернуть последовательности
-- Modular interoperability solutions, e.g. settlement layers or bridges
-- Modular versions of the following
-  - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+- Решения для модульной совместимости, например расчетные слои или мосты
+- Модульные версии нижеперечисленных
+  - Популярные приложения DeFi, например AMM & кредитных протоколов
+  - NFT платформы
+  - Сервисы имён, как [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Социальные графы такие как [Lens Protocol](https://lens.xyz/)
 
-## Support
+## Поддержка
 
-1. **Weekly office hours**
+1. **Еженедельные офисные часы**
 
     *An optional meeting to ask questions, get help and receive feedback.*
 
