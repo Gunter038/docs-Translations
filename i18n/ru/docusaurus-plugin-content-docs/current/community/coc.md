@@ -50,7 +50,7 @@ sidebar_label : Кодекс поведения
 
 ### 1. Исправление
 
-**Влияние сообщества**: использование непристойного языка или другого поведения, считающегося непрофессиональным или ненадлежащим в сообществе.
+**Влияние на сообщества**: использование непристойного языка или другого поведения, считающегося непрофессиональным или ненадлежащим в сообществе.
 
 ** Последствия**: Личное письменное предупреждение от лидеров сообщества, содержащее ясность в отношении характера нарушения и объяснение того, почему поведение было неуместным. Может быть потребовано публичное извинение.
 
@@ -58,27 +58,27 @@ sidebar_label : Кодекс поведения
 
 **Влияние на общество**: Нарушение в результате одного инцидента или серии случаев.
 
-**Следствие**: Предупреждение с последствиями для дальнейшего поведения. Отсутствие взаимодействия с вовлеченными лицами, включая нежелательную связь с лицами, обеспечивающими соблюдение кодекса поведения, в течение определенного периода времени. Это включает в себя отказ от взаимодействия на просторах сообщества, а также во внешних каналах, таких как социальные сети. Violating these terms may lead to a temporary or permanent ban.
+**Последствия**: Предупреждение с последствиями для дальнейшего поведения. Отсутствие взаимодействия с вовлеченными лицами, включая нежелательную связь с лицами, обеспечивающими соблюдение кодекса поведения, в течение определенного периода времени. Это включает в себя отказ от взаимодействия на просторах сообщества, а также во внешних каналах, таких как социальные сети. Нарушение этих условий может привести к временной или постоянной блокировке.
 
-### 3. Temporary Ban
+### 3. Временная блокировка
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**Влияние на сообщество**: Серьезное нарушение стандартов сообщества, включая продолжительное неподобающее поведение.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+** Последствия**: Временный запрет на любое взаимодействие или публичное общения с сообществом на определенный период времени. Никакого публичного или частного взаимодействие с вовлеченными лицами, включая незапрашиваемое взаимодействие с лицами, обеспечивающими соблюдение кодекса поведения, в этот период не допускается. Нарушение этих условий может привести к перманентной блокировке.
 
-### 4. Permanent Ban
+### 4. Перманентная блокировка
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**Влияние на общество**: Демонстрация последовательности нарушения стандартов сообщества, включая постоянное неподобающее поведение, издевательство над человеком, агрессию по отношению к группам людей или унижение их достоинства.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+** Последствия**: Перманентная блокировка на любое публичное взаимодействие в рамках сообщества.
 
-## Attribution
+## Атрибуция
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+Этот Кодекс поведения адаптирован к [Пакту участника][homepage], версии 2.1, доступной [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Руководство по влиянию на сообщество было вдохновлено [Кодексом поведения Mozilla:][Mozilla CoC].
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+Ответы на общие вопросы об этом кодексе поведения см. в FAQ [https://www.contributor-covenant.org/faq][FAQ]. Переводы доступны на [https://www.contributor-covenant.org/translations][translations].
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
