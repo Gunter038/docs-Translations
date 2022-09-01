@@ -1,14 +1,14 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: Модульные стипендиаты
 ---
 
-# Модульные разработчики
+# Модульные стипендиаты
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Модульные приятели — это программа, предназначенная для расширения возможностей модульных разработчиков с необходимыми ресурсами для построения будущего масштабируемых и суверенных сетей блокчейна.
+Модульные стипендиаты — это программа, предназначенная для расширения возможностей модульных разработчиков с необходимыми ресурсами для построения будущего масштабируемых и суверенных сетей блокчейна.
 
-В течение трехмесячной программы модульные разработчики получат техническую поддержку, наставничество и ежемесячную выплату стипендий в размере $3000 для того, чтобы построить проект на свой выбор. После этой программы будет доступна дальнейшая поддержка разработчиков в виде помощи по сбору средств и грантов.
+В течение трехмесячной программы модульные стипендиаты получат техническую поддержку, наставничество и ежемесячную выплату стипендий в размере $3000 для того, чтобы построить проект на свой выбор. После этой программы будет доступна дальнейшая поддержка стипендиатов в виде помощи по сбору средств и грантов.
 
 В настоящее время заявки закрыты. Следите за подробностями о будущих группах.
 
@@ -16,7 +16,7 @@ sidebar_label: Modular Fellows
 
 ### Этапы
 
-Каждый месяц разработчики будут завершать этап проекта, что приведет к презентационному демо-дню.
+Каждый месяц стипендиаты будут завершать этап проекта, что приведет к презентационному демо-дню.
 
 - **1-ый месяц** - Обучение и Исследование (начните разработку, когда будете готовы)
 
@@ -24,7 +24,7 @@ sidebar_label: Modular Fellows
 
   - *Этап - представьте идею, которую вы хотите продолжить*
 
-- **2-ой месяц** - Разработка & Внедрение основного прототипа
+- **2-ой месяц** - Разработка и Внедрение основного прототипа
 
   В этом месяце вы будете разрабатывать и осуществлять базовый прототип идеи, которую вы определили в течение первого месяца.
 
@@ -38,7 +38,7 @@ sidebar_label: Modular Fellows
 
 ## Идеи проекта
 
-У разработчиков нет необходимости иметь конкретную идею проекта в начале программы, но вам нужно будет определиться к концу первого месяца. Не существует правильных или неправильных идей, но вот несколько идей, чтобы вы думали:
+У стипендиатов нет необходимости иметь конкретную идею проекта в начале программы, но вам нужно будет определиться к концу первого месяца. Не существует правильных или неправильных идей, но вот несколько идей, чтобы вы думали:
 
 - Новые исполнительные слои, например развертывание на Move
 - Развертывание инфраструктурных сервисов, например один клик развернуть последовательности
@@ -46,54 +46,54 @@ sidebar_label: Modular Fellows
 - Модульные версии нижеперечисленных
   - Популярные приложения DeFi, например AMM & кредитных протоколов
   - NFT платформы
-  - Сервисы имён, как [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Сервисы имен, как [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
   - Социальные графы такие как [Lens Protocol](https://lens.xyz/)
 
 ## Поддержка
 
 1. **Еженедельные офисные часы**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *Дополнительная встреча, чтобы задать вопросы, получить помощь и обратную связь.*
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    Среда чередуется в 8:00 утра, или в 18:00 в центральное время США.
 
-2. **Lessons & tutorials**
+2. **Уроки и руководства**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *Презентации членов команды Celestia Labs & наставников, объясняющих ключевые концепции или дающих уроки по конкретным инструментам.*
 
-3. **Demos from participants**
+3. **Демонстрации от участников**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *Презентации стипендиатов о том, что они работают для обратной связи.*
 
-4. **Communication**
+4. **Коммуникация**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *У стипендиатов будет общая группа в Telegram с другими модульными стипендиатами и наставниками.*
 
-5. **Monthly stipend**
+5. **Ежемесячная стипендия**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *Стипендиаты будут получать $3,000.00 в месяц, выплачиваемые по завершении каждого этапа.*
 
-## Continuation
+## Продолжение
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+Хотя программа длится всего 3 месяца, мы предоставим вам дальнейшую поддержку следующим образом.
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- **Гранты & Финансирование -** Мы поможем вам в сборе средств или подаче заявки на грант, чтобы вы могли продолжить разработку вашего проекта.
+- **Сеть выпускников** — Вы будете вовлечены в сеть выпускников модульных стипендиатов, где вы сможете поддерживать связь с другими прошлыми и будущими модульными стипендиатами.
 
-### Modular Mentors
+### Модульные наставники
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+Модульные стипендиаты будут работать в тесном контакте с командой Celestia Labs и группой отобранных модульных наставников, которые помогут решить инженерные проблемы и дать обратную связь по этапам.
 
-These are the Mentors for the first cohort:
+Это наставники для первой группы:
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi
-- [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
-- [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
-- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- [Wei Dai](https://twitter.com/_weidai) - Партнер по исследованиям в Bain Capital Crypto
+- [Can Gurel](https://twitter.com/CannnGurel) - Исследователь в Delphi Digital
+- [Eric Wall](https://twitter.com/ercwl) - Блокчейн Исследователь
+- [Eli Krenzke](https://twitter.com/eKRENZKE) - Исследовательский партнер Polychain
+- [Zaki Manian](https://twitter.com/zmanian) - Соучредитель Sommelier, соучредитель iqlusion, помог построить экосистему Cosmos, включая запуск первой публичной тестовой сети Cosmos
+- [Marko Baricevic](https://twitter.com/mark0baricevic) - руководитель Cosmos-sdk и основатель binary holdings works.
+- [Morgan Beller](https://twitter.com/beller) - генеральный партнер NFX, венчурного фонда посевной стадии. Венчурного фонда, ранее. Руководитель отдела стратегии Facebook в Novi
+- [John Adler](https://twitter.com/jadler0) - Директор по исследованиям, Celestia Labs
+- [Mustafa Al-Bassam](https://twitter.com/musalbas) - Главный исполнительный директор, Celestia Labs
+- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - Технический директор, Celestia Labs
+- [Evan Forbes](https://twitter.com/evansforbes) - Инженер программного обеспечения, Celestia Labs
