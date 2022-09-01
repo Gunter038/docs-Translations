@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Документація Celestia",
+    "description": "The title in the navbar"
+  },
+  "item.label.Run A Node": {
+    "message": "Запустити ноду",
+    "description": "Navbar item with label Run A Node"
+  },
+  "item.label.Developers": {
+    "message": "Розробники",
+    "description": "Navbar item with label Developers"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Community": {
+    "message": "Спільнота",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Concepts": {
+    "message": "Поняття",
+    "description": "Navbar item with label Concepts"
+  }
+}
