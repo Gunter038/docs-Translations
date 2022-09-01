@@ -38,11 +38,11 @@
 
 Цей Кодекс поведінки застосовується в усіх просторах спільноти, а також у випадках, коли особа офіційно представляє спільноту в публічному просторі. Приклади представлення проєкту або спільноти охоплюють користування офіційною електронною поштою проєкту, публікування інформації через офіційні канали соціальних медіа або під час представлення спільноти онлайн або офлайн.
 
-## Enforcement
+## Інформування
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+Про випадки образ, домагань чи іншої неприйнятної поведінки можна повідомляти лідерам спільноти, відповідальним за дотримання правил, на сайті Celestia.org та в Discord. Усі скарги буде розглянуто й негайно та справедливо розслідувано.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Всі лідери спільноти зобов’язані поважати конфіденційність і безпеку оповісника будь-якого інциденту.
 
 ## Enforcement Guidelines
 
