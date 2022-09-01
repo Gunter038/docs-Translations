@@ -16,27 +16,27 @@
 
 * Демонстраційна емпатія та привітність до інших людей
 * Брати до уваги точки зору і досвід, який відрізняються від власних
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* Давати та витончено приймати конструктивні відгуки
+* Брати на себе відповідальність і перепрошувати у постраждалих від наших помилок та вчитися на досвіді
+* Фокусуватися на тому, що є найкращим не тільки для нас як особистостей, але і для загальної спільноти
 
-Examples of unacceptable behavior include:
+Приклади неприйнятної поведінки членів спільноти:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* Використання слів або зворотів, які вказують на стать, а також непотрібне звертання уваги на стать чи пропозиція статевих відносин
+* Тролінг, образливі/зневажливі коментарі, особисті або політичні нападки
+* Публічне або персональне переслідування
+* Публікування особистої інформації третіх осіб без їхньої очевидної згоди. Наприклад, оприлюднення фізичної або електронної адреси
+* Інша поведінка, яка може вважатися недоречною в ділових відносинах
 
-## Enforcement Responsibilities
+## Обов'язки щодо виконання
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Лідери спільноти є відповідальними за роз'яснення та забезпечення дотримання наших стандартів прийнятної поведінки та вживатимуть відповідних і справедливих корективних заходів у відповідь на будь-яку поведінку, яку вони вважають недоречною, загрозливою, образливою чи шкідливою.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Лідери спільноти мають право та зобов’язані видаляти, редагувати або відхиляти коментарі, коміти, код, редагування вікі, запитання та інші матеріали, які не відповідають цьому Кодексу поведінки, і повідомлятимуть причини модераційних рішень, коли це буде доречно.
 
-## Scope
+## Область застосування
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Цей Кодекс поведінки застосовується в усіх просторах спільноти, а також у випадках, коли особа офіційно представляє спільноту в публічному просторі. Приклади представлення проєкту або спільноти охоплюють користування офіційною електронною поштою проєкту, публікування інформації через офіційні канали соціальних медіа або під час представлення спільноти онлайн або офлайн.
 
 ## Enforcement
 
