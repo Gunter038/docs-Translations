@@ -8,41 +8,41 @@ sidebar_label : Кодекс поведения
 
 Мы, как члены, участники и лидеры Celestia.org, обязуемся сделать участие в нашем сообществе свободным от домогательств для всех, независимо от возраста, размера тела, видимой или невидимой инвалидности, этнической принадлежности, половых характеристик, гендерной идентичности и самовыражения, уровня опыта, образования, социально-экономического статуса, национальности, внешнего вида, расы, касты, цвета кожи, религии или сексуальной идентичности и ориентации.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+Мы обязуемся действовать и взаимодействовать таким образом, чтобы способствовать созданию открытого, гостеприимного, разнообразного, инклюзивного и здорового сообщества.
 
-## Our Standards
+## Наши стандарты
 
-Examples of behavior that contributes to a positive environment for our community include:
+Примеры поведения, которое способствует созданию благоприятной среды для нашего сообщества, включают:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* Демонстрация сочувствия и доброты по отношению к другим людям
+* Уважительное отношение к различным мнениям, точкам зрения и опыту
+* Давать и вежливо принимать конструктивную обратную связь
+* Принятие ответственности и приносить извинения тем, кого затронули наши ошибки, и учиться на этом опыте
+* Сосредоточение внимания на том, что лучше не только для, но и для всего сообщества
 
-Examples of unacceptable behavior include:
+Примерами неприемлемого поведения являются:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* Использование сексуализированного языка или образов, а также сексуальное внимание или приставания любого рода
+* Издевательства, оскорбительные или уничижительные комментарии, а также личные или политические нападки
+* Публичное или личное домогательство
+* Публикация личной информации других людей, такой как физический адрес или адрес электронной почты, без их явного разрешения
+* Другое поведение, которое можно обоснованно считать неуместным в профессиональной среде
 
-## Enforcement Responsibilities
+## Ответственность за исполнение
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Лидеры сообщества несут ответственность за разъяснение и обеспечение соблюдения наших стандартов приемлемого поведения и будут принимать соответствующие и справедливые корректирующие меры в ответ на любое поведение, которое они считают неуместным, угрожающим, оскорбительным или вредным.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Лидеры сообщества имеют право и ответственность на удаление, редактирование или отклонение комментариев, коммитов, кода, правок в вики, вопросов и других материалов, которые не соответствуют этому кодексу поведения, и будут сообщать причины решений о модерации, когда это необходимо.
 
-## Scope
+## Область применения
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Данный Кодекс поведения действует на всех пространствах сообщества, а также применяется, когда человек официально представляет сообщество в общественных местах. Примерами представления нашего сообщества являются использование официального адреса электронной почты, публикация через официальный аккаунт в социальных сетях или выступление в качестве назначенного представителя на онлайн- или офлайн-мероприятии.
 
-## Enforcement
+## Правоприменение
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+О случаях оскорбительного, притесняющего или иным образом неприемлемого поведения можно сообщать лидерам сообщества, ответственным за соблюдение правил в Celestia.org Discord. Все жалобы будут рассмотрены и расследованы быстро и справедливо.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Все лидеры сообщества обязаны уважать конфиденциальность и безопасность сообщившего о любом инциденте.
 
 ## Enforcement Guidelines
 
