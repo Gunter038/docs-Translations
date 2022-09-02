@@ -29,7 +29,7 @@ sidebar_label : Celestia的数据可用层
 
 轻节点通过DA网络连接Celestia节点，监听被扩展的区块头（由区块头和DA元数据组成，比如4K个中间默克尔根），然后针对收到的区块头执行DAS（请求随机的数据块）
 
-Note that although it is recommended, performing DAS is optional -- light nodes could just trust that the data corresponding to the commitments in the block headers was indeed made available by the Celestia DA layer. In addition, light nodes can also submit transactions to the Celestia App, i.e., `PayForData` transactions.
+请注意，虽然被推荐，但执行DAS是可选的——轻节点可以简单地相信，区块头中的摘要对应的数据，确实在Celestia DA层中是可用的。 另外，轻节点也可以向Celestia App提交交易（就是`PayForData`交易）。
 
 While performing DAS for a block header, every light node queries Celestia Nodes for a number of random data chunks from the extended matrix and the corresponding Merkle proofs. If all the queries are successful, then the light node accepts the block header as valid (from a DA perspective).
 
