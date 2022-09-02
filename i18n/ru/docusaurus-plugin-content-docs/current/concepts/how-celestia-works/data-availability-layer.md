@@ -12,13 +12,13 @@ Celestia - это слой доступности данных (DA), котор�
 
 В общем, легкие узлы загружают только заголовки блоков, которые содержат коммиты (т.е. корни Меркла) данных блока (т.е. список транзакций).
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+Чтобы сделать DAS возможным, Celestia использует двухмерную схему Reed-Solomon кодирования для кодирования данных блока: каждый блок данных разделяется на k × k, в матрице k × k, и расширяется с чётностью данных в 2k × 2k расширенную матрицы путем многократного использования кодирования Reed-Solomon.
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+Затем вычисляются 4k отдельных корней Меркла для строк и столбцов расширенной матрицы; корень Меркла из этих корней Меркла используется в качестве обязательства данных блока в заголовке блока.
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+Чтобы убедиться в наличии данных, легкие узлы Celestia делают выборку фрагмента данных размером 2k × 2k.
 
 Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
 
