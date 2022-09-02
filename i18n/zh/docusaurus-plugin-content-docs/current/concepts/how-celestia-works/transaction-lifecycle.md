@@ -10,7 +10,7 @@ sidebar_label : Celestia的数据可用层
 
 因此，区块数据由划分到命名空间下面的数据和可执行交易组成。 请注意，区块被提交之后Celestia的状态机只会执行这种特定的交易。
 
-![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
+![Celestia App交易的生命周期](/img/concepts/tx-lifecycle.png)
 
 接下来，区块生产者把区块数据的摘要添加到区块头中。 就像[这里](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data)说的一样，这个摘要是4K个中间默克尔根（对应于扩展矩阵的一行或一列）的默克尔根。 为了计算这个摘要，区块生产者会执行以下操作：
 
@@ -23,7 +23,7 @@ sidebar_label : Celestia的数据可用层
 
 ## 数据可用性的检查
 
-![DA network](/img/concepts/consensus-da.png)
+![DA网络](/img/concepts/consensus-da.png)
 
 为增强连接性，Celestia的节点通过一个单独的libp2p网络和Celestia App连接，这被称为_DA网络_，它响应DAS（数据可用性采样）请求。
 
@@ -31,10 +31,10 @@ sidebar_label : Celestia的数据可用层
 
 请注意，虽然被推荐，但执行DAS是可选的——轻节点可以简单地相信，区块头中的摘要对应的数据，确实在Celestia DA层中是可用的。 另外，轻节点也可以向Celestia App提交交易（就是`PayForData`交易）。
 
-While performing DAS for a block header, every light node queries Celestia Nodes for a number of random data chunks from the extended matrix and the corresponding Merkle proofs. If all the queries are successful, then the light node accepts the block header as valid (from a DA perspective).
+对区块头执行DAS时，每个轻节点都向Celestia节点查询，扩展后的方阵中的，一定数量的随机数据块和对应的默克尔证明。 如果所有的查询都成功了，轻节点就认为区块头是有效的（从DA的角度）。
 
-If at least one of the queries fails (i.e., either the data chunk is not received or the Merkle proof is invalid), then the light node rejects the block header and tries again later. The retrial is necessary to deal with false negatives, i.e., block headers being rejected although the block data is available. This may happen due to network congestion for example.
+如果有至少一个查询失败（比如没有收到数据块或者默克尔证明无效），轻节点拒绝这个区块头，并且稍后再重试。 重试对处理错误的拒绝是必要的，有可能区块头被拒绝了，但区块数据是有效的。 比如在网络拥堵时，这可能会发生。
 
-Alternatively, light nodes may accept a block header although the data is not available, i.e., a _false positive_. This is possible since the soundness property (i.e., if an honest light node accepts a block as available, then at least one honest full node will eventually have the entire block data) is probabilistically guaranteed (for more details, take a look at the [original paper](https://arxiv.org/abs/1809.09044)).
+另外，轻节点也可能在数据不可用的情况下接受区块，比如一次_错误的接受_。 因为健壮性（如果轻节点接受一个区块是可用的，那么至少有一个诚实的全节点最终将拥有整个区块数据）是概率性保证的，这是可能的。
 
-By fine tuning Celestia's parameters (e.g., the number of data chunks sampled by each light node) the likelihood of false positives can be sufficiently reduced such that block producers have no incentive to withhold the block data.
+通过正确调整Celestia的参数（比如每个轻节点采样的数据块的数量），错误的接受的可能性可以被有效地减低，使得区块生产者扣留区块数据的动机不足。
