@@ -4,15 +4,15 @@ sidebar_label : Code of Conduct
 
 # Chuẩn mực hành vi của Celestia.org
 
-## Our Pledge
+## Cam kết của chúng tôi
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+Chúng tôi với tư cách là thành viên, cộng tác viên và các nhà lãnh đạo của Celestia.org cam kết tất cả mọi thành viên  tham gia vào cộng đồng của chúng tôi, một trải nghiệm không bị quấy rối cho tất cả mọi người, bất kể tuổi tác, kích thước cơ thể, khuyết tật có thể nhìn thấy hoặc không nhìn thấy, dân tộc,đặc điểm giới tính, bản dạng giới và biểu hiện, mức độ kinh nghiệm,trình độ học vấn, tình trạng kinh tế xã hội, quốc tịch, ngoại hình cá nhân, chủng tộc,giai cấp, màu da, tôn giáo, định hướng và xu hướng tình dục.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+Chúng tôi cam kết sẽ hành động và tương tác theo những cách khác nhau góp phần tạo ra một cộng đồng đa dạng, hòa nhập và lành mạnh.
 
-## Our Standards
+## Quy chuẩn của chúng tôi
 
-Examples of behavior that contributes to a positive environment for our community include:
+Ví dụ về hành vi góp phần tạo ra một môi trường tích cực cho cộng đồng bao gồm :
 
 * Demonstrating empathy and kindness toward other people
 * Being respectful of differing opinions, viewpoints, and experiences
