@@ -2,7 +2,7 @@
 sidebar_label : Code of Conduct
 - - -
 
-# Celestia.org Code of Conduct
+# Chuẩn mực hành vi của Celestia.org
 
 ## Our Pledge
 
