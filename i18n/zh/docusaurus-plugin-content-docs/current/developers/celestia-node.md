@@ -1,16 +1,14 @@
----
-sidebar_label : Installing Celestia Node
----
+- - -
+sidebar_label : 安装Celestia Node
+- - -
 
-# Celestia Node
+# Celestia 节点
 
-This tutorial goes over building and installing celestia-node. This
-tutorial assumes you completed the steps in setting up your development
-environment [here](./environment.md).
+本教程介绍了构建和安装 celestia-node。 本教程假设您完成了[这里](./environment.md)的开发环境设置步骤。
 
-## Install Celestia Node
+## 安装 Celestia 节点
 
-Install the celestia-node binary by running the following commands:
+通过运行以下命令安装 celestia-node 二进制文件：
 
 ```sh
 cd $HOME
@@ -21,8 +19,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+验证二进制文件是否正常工作并使用以下`celestia version` 命令检查版本：
 
 ```console
 $ celestia version
