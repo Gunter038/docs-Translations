@@ -46,33 +46,33 @@
 
 ## Enforcement Guidelines
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+Лідери спільноти дотримуватимуться цих Правил впливу на спільноту, визначаючи наслідки будь-яких дій, які, на їхню думку, порушують цей Кодекс поведінки:
 
-### 1. Correction
+### 1. Виправлення
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**Вплив на спільноту**: Використання неприйнятної мови або інша поведінка, які вважаються непрофесійними або небажаними у спільноті.
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+** Наслідки**: Приватне письмове попередження від лідерів спільноти з роз'ясненням характеру порушення та поясненням, чому поведінка є неприйнятною. Можна вимагати публічного вибачення.
 
-### 2. Warning
+### 2. Попередження
 
-**Community Impact**: A violation through a single incident or series of actions.
+**Вплив на спільноту**: Одиничне або вчинене через низку дій порушення.
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**Послідовність**: Попередження з наслідками для подальшої поведінки. Забороняється взаємодіяти з залученими людьми, включно з тими, хто відповідає за дотримання Кодексу поведінки, протягом визначеного періоду. Це включає уникнення взаємодії в спільнотах, а також зовнішніх каналах, таких як соціальні мережі. Порушення цих правил може призвести до тимчасового чи постійного бану.
 
-### 3. Temporary Ban
+### 3. Тимчасовий бан
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**Вплив на спільноту**: Серйозне порушення стандартів спільноти, включаючи постійну невідповідну поведінку.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+**Наслідки**: Тимчасова заборона будь-якої взаємодії чи публічного спілкування зі спільнотою протягом певного періоду. У цей період не допускається жодної публічної або приватної взаємодії із залученими особами, включаючи небажану взаємодію з особами, які забезпечують дотримання Кодексу поведінки. Порушення цих правил може призвести до тимчасового чи постійного бану.
 
-### 4. Permanent Ban
+### 4. Постійний бан
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**Вплив на спільноту**: Демонстрація моделі порушення стандартів спільноти, включаючи постійну неналежну поведінку, переслідування людини, агресію щодо груп людей або приниження їхньої гідності.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+**Наслідки**: Постійна заборона будь-якої публічної взаємодії всередині спільноти.
 
-## Attribution
+## Атрибуція
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
