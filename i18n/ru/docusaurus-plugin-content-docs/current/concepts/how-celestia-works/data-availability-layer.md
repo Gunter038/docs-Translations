@@ -20,7 +20,7 @@ Celestia - это слой доступности данных (DA), котор�
 
 Чтобы убедиться в наличии данных, легкие узлы Celestia делают выборку фрагмента данных размером 2k × 2k.
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+Каждый легкий узел случайным образом выбирает набор уникальных координат в расширенной матрице и запрашивает полные узлы для получения блоков данных и соответствующие доказательства Меркла в этих координатах. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
 
 Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
 
