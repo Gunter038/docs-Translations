@@ -28,11 +28,11 @@
     "description": "The label for category Celestia App in sidebar developers"
   },
   "sidebar.developers.category.Celestia Node": {
-    "message": "Celestia Node",
+    "message": "Нода Celestia",
     "description": "The label for category Celestia Node in sidebar developers"
   },
   "sidebar.developers.category.Optimint": {
-    "message": "Optimint",
+    "message": "Оптимізація",
     "description": "The label for category Optimint in sidebar developers"
   },
   "sidebar.developers.category.Wordle": {
