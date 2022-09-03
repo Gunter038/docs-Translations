@@ -144,15 +144,15 @@
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Toggle the collapsible sidebar category '{label}'",
+    "message": "Перемкнути стан бічної панелі, «{label}»",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "Один документ із тегами|{count} документів із тегами",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "{nDocsTagged} містять тег \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
@@ -226,10 +226,10 @@
     "message": "'Build Modular'"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
-    "message": "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract."
+    "message": "Celestia - це перша модульна блокчейн-мережа, яка дає змогу розробникам розгорнути власний блокчейн так само легко, як і новий смартконтракт."
   },
   "'Run Different Nodes'": {
-    "message": "'Run Different Nodes'"
+    "message": "'Запустити різні ноди'"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
     "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
@@ -238,10 +238,10 @@
     "message": "'Power-up with Data Availability Layer'"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
-    "message": "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need."
+    "message": "Celestia запроваджує те, що називається \"Рівень доступності даних\", для забезпечення ефективного масштабування та використання ролапів другого рівня та дозволяє проводити вибірку даних для транзакцій."
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "Домашня сторінка",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -249,30 +249,30 @@
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "Увімкнути переніс слів",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
+    "message": "Переглянути всі {count} результатів"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "Пошук",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
+    "message": "Знайдено один документ|Знайдено {count} документи|Знайдено {count} документів|Знайдено {count} документа",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
+    "message": "Результати пошуку для \"{query}\"",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
+    "message": "Пошук документації",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Type your search here",
+    "message": "Введіть тут ваш пошуковий запит",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
