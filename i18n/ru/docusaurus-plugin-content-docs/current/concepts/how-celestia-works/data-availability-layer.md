@@ -34,7 +34,7 @@ DAS позволяет Celestia масштабировать слой DA. DAS м
 
 Для размера блока данных n байт это означает, что каждый легкий узел должен загрузить O(n) байт. Таким образом, любое улучшение пропускной способности легких узлов Celestia имеет квадратичный эффект на пропускную способность DA слоя.
 
-### Fraud Proofs of Incorrectly Extended Data
+### Доказательства мошенничества с неверно распространенными данными
 
 The requirement of downloading the 4k intermediate Merkle roots is a consequence of using a 2-dimensional Reed-Solomon encoding scheme. Alternatively, DAS could be designed with a standard (i.e., 1-dimensional) Reed-Solomon encoding, where the original data is split into k  chunks and extended with k additional chunks of parity data. Since the block data commitment is the Merkle root of the 2k resulting data chunks, light nodes no longer need to download O(n) bytes to validate block headers.
 
