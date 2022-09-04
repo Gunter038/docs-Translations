@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Validator Node
+sidebar_label : nodo validador
 - - -
 
 # Configurar un nodo Validador en Celestia
@@ -27,7 +27,7 @@ Sigue las instrucciones para instalar las dependencias [aquí](../developers/env
 
 Esta sección describe la parte 1 de la configuración del nodo validador de Celestia: ejecutando un daemon de la aplicación Celestia con un nodo interno Core de Celestia.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> Nota: Asegúrate de tener al menos 100+ Gb de espacio libre para instalar y ejecutar de forma segura el nodo validador.
 
 ### Instalar celestia-app
 
@@ -108,53 +108,53 @@ Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+A continuación, selecciona la red que desea utilizar para delegar a un validador:
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the celestia-node
+## Despliega el nodo celestia
 
-This section describes part 2 of Celestia Validator Node setup: running a Celestia Bridge Node daemon.
+Esta sección describe la parte 2 de la configuración del Nodo Validador de Celestia: ejecutar un daemon del Nodo Bridge Celestia.
 
-### Install celestia-node
+### Instala celestia-node
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Puedes seguir el tutorial para instalar Celestia Node [aquí](../developers/celestia-node.md)
 
-### Initialize the bridge node
+### Inicializar el nodo de bridge
 
-Run the following:
+Ejecuta las siguientes instrucciones:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Ejecutar el nodo bridge
 
-Run the following:
+Ejecuta las siguientes instrucciones:
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: start the bridge node with SystemD
+### Opcional: iniciar el nodo bridge con SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo plano con SystemD [aquí](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Has configurado con éxito un nodo bridge que está sincronizando con la red.
 
-## Run a validator node
+## Ejecutar un nodo validador
 
-After completing all the necessary steps, you are now ready to run a validator! In order to create your validator on-chain, follow the instructions below. Keep in mind that these steps are necessary ONLY if you want to participate in the consensus.
+Después de completar todos los pasos necesarios, ¡ya estás listo para ejecutar un validador! Para crear tu validador on-chain, sigue las instrucciones que se indican a continuación. Ten en cuenta que estos pasos son necesarios SOLO si quieres participar en el consenso.
 
-Pick a `moniker` name of your choice! Pick a `moniker` name of your choice! This is the validator name that will show up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you defined previously. Parameter `--min-self-delegation=1000000` defines the amount of tokens that are self delegated from your validator wallet.
+¡Elige un nombre de `moniker` a tu elección! Este es el nombre del validador que se mostrará en los paneles públicos y exploradores. `VALIDATOR_WALLET` debe ser el mismo que definiste anteriormente. El parámetro `--min-self-delegation=1000000` define la cantidad de tokens que se delegan de tu wallet de validador.
 
-Now, connect to the network of your choice.
+Ahora, conéctate a la red de tu elección.
 
-You have the following option of connecting to list of networks shown below:
+Tienes la siguiente opción de conectar a la lista de redes mostrada a continuación:
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in to complete the validator setup process.
+Completa las instrucciones en la red respectiva que quieres validar en para completar el proceso de configuración del validador.
