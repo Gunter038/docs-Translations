@@ -40,11 +40,11 @@ DAS позволяет Celestia масштабировать слой DA. DAS м
 
 Недостатком стандартного кодирования Рида-Соломона является работа со злонамеренными производителями блоков, которые неправильно генерируют увеличенные данные.
 
-This is possible as __Celestia does not require a majority of the consensus (i.e., block producers) to be honest to guarantee data availability.__ Thus, if the extended data is invalid, the original data might not be recoverable, even if the light nodes are sampling sufficient unique chunks (i.e., at least k for a standard encoding and k × k for a 2-dimensional encoding).
+Это возможно, поскольку __Celestia не требует, чтобы большинство участников консенсуса (т.е. производителей блоков) были честными, чтобы гарантировать доступность данных.__ Таким образом, если увеличенные данные недействительны, исходные данные могут не подлежать восстановлению, даже если легкие узлы производят выборку достаточного количества уникальных фрагментов (т.е., по крайней мере, k для стандартного кодирования и k × k для двумерного кодирования).
 
-As a solution, _Fraud Proofs of Incorrectly Generated Extended Data_ enable light nodes to reject blocks with invalid extended data. Such proofs require reconstructing the encoding and verifying the mismatch. With standard Reed-Solomon encoding, this entails downloading the original data, i.e., O(n) bytes. Contrastingly, with 2-dimensional Reed-Solomon encoding, only O(n ) bytes are required as it is sufficient to verify only one row or one column of the extended matrix.
+В качестве решения _Доказательства мошенничества в отношении неверно сгенерированных расширенных данных_ позволяют легким узлам отклонять блоки с недействительными расширенными данными. Такие доказательства требуют восстановления кодировки и проверки несоответствия. При стандартном кодировании Рида-Соломона это требует загрузки исходных данных, т.е. O(n) байт. Напротив, при двумерном кодировании Рида-Соломона требуется только O(n ) байт, поскольку достаточно проверить только одну строку или один столбец расширенной матрицы.
 
-## Namespaced Merkle Trees (NMTs)
+## Деревья Меркла с указанием имен (NMT)
 
 Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
 
