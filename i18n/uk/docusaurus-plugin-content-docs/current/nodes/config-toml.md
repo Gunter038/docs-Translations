@@ -39,14 +39,14 @@ Bootstrap допомагає новим нодам швидше знаходит
 
 #### Взаємні однорангові ноди
 
-Метою цієї конфігурації є встановлення двонапрямного зв’язку. Зазвичай це стосується мостових нод Celestia. In addition, you need to change the field `PeerExchange` from false to true.
+Метою цієї конфігурації є встановлення двонапрямного зв’язку. Зазвичай це стосується мостових нод Celestia. Крім того, потрібно змінити поле `PeerExchange` з false на true.
 
-### [Services]
+### [Сервіси]
 
-#### TrustedHash and TrustedPeer
+#### TrustedHash і TrustedPeer
 
-`TrustedHash` is needed to properly initialize a Celestia Bridge Node with an already-running `Remote` Celestia Core node. Celestia Light Node will take a genesis hash as the trusted one, if no hash is manually provided during initialization phase.
+`TrustedHash` необхідний для належної ініціалізації мостової ноди Celestia з вже запущеною нодою `Remote` Celestia Core. Легка нода Celestia візьме хеш генезису як надійний, якщо хеш не буде надано вручну на етапі ініціалізації.
 
-`TrustedPeers` is the array of Bridge Nodes' peers that Celestia Light Node trusts. By default, bootstrap peers becomes trusted peers for Celestia Light Nodes if a user is not setting the trusted peer params in config file.
+`TrustedPeers` — це масив однорангових мостових нод, яким довіряє легка нода Celestia. За замовчуванням однорангові початкові ноди стають довіреними одноранговими нодами легких нод Celestia, якщо користувач не встановлює параметри довірених однорангових нод у файлі конфігурації(config).
 
-Any Celestia Bridge Node can be a trusted peer for the Light one. However, the Light node by design can not be a trusted peer for another Light Node.
+Будь-яка мостова нода Celestia може бути надійним однорангом для легкої. Однак легка нода за дизайном не може бути надійним однорангом для іншої легкої ноди.
