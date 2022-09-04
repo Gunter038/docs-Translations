@@ -16,21 +16,21 @@ Ví dụ về hành vi góp phần tạo ra một môi trường tích cực cho
 
 * Thể hiện sự đồng cảm và tử tế đối với người khác
 * Tôn trọng các ý kiến, quan điểm và kinh nghiệm khác nhau
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* Đưa ra và chấp nhận một cách khéo léo những phản hồi mang tính xây dựng
+* Nhận trách nhiệm và xin lỗi những người bị ảnh hưởng bởi những sai lầm của chúng tôi, và học hỏi từ kinh nghiệm
+* Tập trung vào những gì tốt nhất không chỉ cho cá nhân chúng ta, mà cho cả cộng đồng
 
-Examples of unacceptable behavior include:
+Ví dụ về hành vi không được chấp nhận bao gồm:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* Việc sử dụng ngôn ngữ hoặc hình ảnh khiêu dâm và sự chú ý tình dục hoặc những hành vi hơn thế nữa
+* Trêu đùa, bình luận xúc phạm hoặc vi phạm quyền lợi và tấn công cá nhân hoặc chính trị
+* Quấy rối người khác một cách công khai hoặc riêng tư
+* Công bố thông tin cá nhân của người khác, ví dụ địa chỉ nơi ở hoặc địa chỉ email, mà không có sự cho phép rõ ràng
+* Tất cả những hành vi có thể được coi là không phù hợp trong một môi trường chuyên nghiệp
 
-## Enforcement Responsibilities
+## Trách nhiệm tuân theo
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Các nhà lãnh đạo cộng đồng có trách nhiệm làm rõ và thực thi các tiêu chuẩn của chúng tôi về hành vi có thể chấp nhận được và sẽ thực hiện hành động thích hợp và công bằng để phản ứng với bất kỳ hành vi nào mà họ cho là không phù hợp, đe dọa,  xúc phạm, hoặc có hại.
 
 Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
 
