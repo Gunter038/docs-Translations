@@ -12,11 +12,11 @@ You can follow hardware requirements [here](../nodes/validator-node.md#hardware-
 
 ## Налаштування залежностей
 
-You can setup dependencies by following the guide [here](./environment.md).
+Ви можете налаштувати залежності, дотримуючись інструкції [тут](./environment.md).
 
 ## Celestia App Installation
 
-You can install Celestia App by following the guide [here](./celestia-app.md).
+Ви можете встановити додаток Celestia за інструкцією [тут](./celestia-app.md).
 
 ## Spin Up A Celestia Testnet
 
@@ -24,15 +24,15 @@ If you want to spin up a quick testnet with your friends, you can follow these s
 
 ### Optional: Reset Working Directory
 
-If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. You can do so by running the following command:
+If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. Ви можете зробити це, виконавши таку команду:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Initialize A Working Directory
+### Ініціалізувати Робочий каталог
 
-Run the following command:
+Запустіть таку команду:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -40,42 +40,42 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* The value we will use for `$VALIDATOR_NAME` is `validator1` but you should choose your own node name.
-* The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must remain the same for everyone participating in this network.
+* Значення, яке ми будемо використовувати для `$VALIDATOR_NAME`, це `validator1`, але вам слід вибрати власну назву ноди.
+* Значення, яке ми використовуватимемо для `$CHAIN_ID` є `testnet`. `$CHAIN_ID` має залишатися незмінним для всіх учасників цієї мережі.
 
-### Create A New Key
+### Створити новий ключ
 
-Next, run the following command:
+Далі запустіть таку команду:
 
 ```sh
 KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-This will create a new key, with a name of your choosing. Save the output of this command somewhere; you'll need the address generated here later. Here, we set the value of our key `$KEY_NAME` to `validator` for demonstration.
+Це створить новий ключ із назвою, яку ви оберете. Збережіть десь вивід цієї команди; згенерована тут адреса знадобиться вам пізніше. Тут ми задаємо значення нашого ключа `$KEY_NAME` у `validator` для демонстрації.
 
-### Add Genesis Account KeyName
+### Додати ім'я облікового запису Genesis
 
-Run the following command:
+Запустіть таку команду:
 
 ```sh
 CELES_AMOUNT="10000000000000000000000000utia"
 celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 ```
 
-Here `$VALIDATOR_NAME` is the same key name as before; and `$AMOUNT` is something like `10000000000000000000000000utia`.
+Тут `$VALIDATOR_NAME` має таке ж ключове ім'я, як і раніше; і `$AMOUNT` це щось на зразок `1000000000000000000000utia`.
 
-### Optional: Adding Other Validators
+### Необов'язково: Додавання інших валідаторів
 
-If other participants in your testnet also want to be validators, repeat the command above with the specific amount for their public keys.
+Якщо інші учасники вашого тесту також хочуть бути валідаторами, повторіть наведену вище команду із зазначенням конкретної суми для їх відкритих ключів.
 
-Once all the validators are added, the `genesis.json` file is created. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
+Після додавання всіх валідаторів буде створено файл `genesis.json`. Вам потрібно поділитися ним з усіма іншими валідаторами у вашій тестовій мережі, щоб усі могли виконати наступний крок.
 
-You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
+Ви можете знайти `genesis.json` в `$HOME/.celestia-app/config/genes.json`
 
-### Create the Genesis Transaction For New Chain
+### Створіть транзакцію Genesis для нового ланцюга
 
-Run the following command:
+Запустіть таку команду:
 
 ```sh
 STAKING_AMOUNT=1000000000utia
@@ -83,17 +83,17 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
   --keyring-backend test
 ```
 
-This will create the genesis transaction for your new chain. Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you provide too much or too little, you will encounter an error when starting your node.
+Це створить транзакцію Genesis для вашого нового ланцюга. Тут `$STAKING_AMOUNT` має бути як мінімум `1000000000utia`. Якщо ви надасте занадто багато або занадто мало, ви зіткнетеся з помилкою під час запуску вашої ноди.
 
-You will find the generated gentx JSON file inside `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
+Ви знайдете згенерований файл gentx JSON всередині `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
 
-> Note: If you have other validators in your network, they need to also run the above command with the `genesis.json` file you shared with them in the previous step.
+> Примітка: Якщо у вашій мережі є інші валідатори, їм також потрібно виконати наведену вище команду з файлом `genesis.json`, доступ до якого ви надали їм у попередньому кроці.
 
-### Creating the Genesis JSON File
+### Створення файлу Genesis JSON
 
-Once all participants have submitted their gentx JSON files to you, you will pull all those gentx files inside the following directory: `$HOME/.celestia-appd/config/gentx` and use them to create the final `genesis.json` file.
+Після того, як усі учасники надішлють вам свої файли gentx JSON, ви затягнете всі ці файли gentx у такий каталог: `$HOME/.celestia-appd/config/gentx` і використаєте їх для створення остаточного файлу `genesis.json`.
 
-Once you added the gentx files of all the particpants, run the following command:
+Додавши файли gentx усіх учасників, виконайте таку команду:
 
 ```sh
 celestia-appd collect-gentxs
