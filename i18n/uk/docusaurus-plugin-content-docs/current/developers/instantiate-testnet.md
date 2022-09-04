@@ -99,19 +99,19 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
 celestia-appd collect-gentxs
 ```
 
-This command will look for the gentx files in this repo which should be moved to the following directory `$HOME/.celestia-app/config/gentx`.
+Ця команда шукатиме у цьому сховищі файли gentx, які слід перемістити до наступного каталогу `$HOME/.celestia-app/config/gentx`.
 
-It will update the `genesis.json` file after in this location `$HOME/.celestia-app/config/genesis.json` which now includes the gentx of other participants.
+Це оновить файл `genesis.json` у цьому місці `$HOME/.celestia-app/config/genesis.json`, яке тепер містить gentx інших учасників.
 
-You should then share this final `genesis.json` file with all the other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+Потім вам слід поділитися цим остаточним файлом `genesis.json` з усіма іншими учасниками, які мають додати його до свого каталогу `$HOME/.celestia-app/config`.
 
-Everyone must ensure that they replace their existing `genesis.json` file with this new one created.
+Кожен повинен переконатися, що вони замінили свій наявний файл `genesis.json` новим створеним.
 
-### Modify Your Config File
+### Змінити ваш файл конфігурації
 
-Open the following file `$HOME/.celestia-app/config/config.toml` to modify it.
+Відкрийте файл `$HOME/.celestia-app/config/config.toml`, щоб модифікувати його.
 
-Inside the file, add the other participants by modifying the following line to include other participants as persistent peers:
+Всередині файлу додайте інших учасників, змінивши наступний рядок, щоб увімкнути інших учасників як постійних:
 
 ```text
 # Comma separated list of nodes to keep persistent connections to
