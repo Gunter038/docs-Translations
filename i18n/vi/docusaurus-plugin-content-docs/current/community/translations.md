@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Docs Translations
+sidebar_label: Bản dịch Tài liệu
 - - -
 
-# Community Translation Support
+# Hỗ trợ dịch thuật cộng đồng
 
-If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
+Nếu bạn là một thành viên cộng đồng Celestia đầy nhiệt huyết muốn đóng góp dịch các trang tài liệu, thì đây là hướng dẫn dành cho bạn.
 
 ## Visit our Crowdin project
 
