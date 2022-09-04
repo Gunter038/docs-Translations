@@ -14,8 +14,8 @@ Chúng tôi cam kết sẽ hành động và tương tác theo những cách kh�
 
 Ví dụ về hành vi góp phần tạo ra một môi trường tích cực cho cộng đồng bao gồm :
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
+* Thể hiện sự đồng cảm và tử tế đối với người khác
+* Tôn trọng các ý kiến, quan điểm và kinh nghiệm khác nhau
 * Giving and gracefully accepting constructive feedback
 * Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the overall community
