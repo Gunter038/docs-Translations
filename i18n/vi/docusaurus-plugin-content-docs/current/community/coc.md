@@ -1,5 +1,5 @@
 - - -
-sidebar_label: Quy tắc thực hiện
+sidebar_label: Quy tắc ứng xử
 - - -
 
 # Chuẩn mực hành vi của Celestia.org
@@ -40,45 +40,45 @@ Quy tắc Ứng xử này áp dụng cho tất cả các thành viên nói riên
 
 ## Thực thi
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+Các trường hợp lạm dụng, quấy rối hoặc các hành vi không thể chấp nhận được báo cáo cho các quản lý cộng đồng chịu trách nhiệm thực thi trong Celestia.org Discord. Tất cả các khiếu nại sẽ được xem xét và điều tra một cách nhanh chóng và công bằng.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Tất cả các nhà quản lý cộng đồng có nghĩa vụ tôn trọng quyền riêng tư và bảo mật cho những người báo cáo các sự cố bất kỳ.
 
-## Enforcement Guidelines
+## Nguyên tắc thực thi
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+Các nhà quản lý cộng đồng sẽ tuân theo các Nguyên tắc về tác động cộng đồng trong việc xác định kết quả cho bất kỳ hành động nào mà họ cho là vi phạm Quy tắc Ứng xử này:
 
-### 1. Correction
+### 1. Sửa lỗi
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+** Tác động cộng đồng **: Sử dụng ngôn ngữ không phù hợp hoặc hành vi khác được coi là không chuyên nghiệp hoặc không được chào đón trong cộng đồng.
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+** Hậu quả **: Một cảnh cáo riêng, bằng văn bản từ các nhà quản lý cộng đồng, cung cấp sự minh bạchquanh tính chất của vi phạm và giải thích lý do tại sao hành vi không phù hợp. Có thể được yêu cầu một lời xin lỗi công khai.
 
-### 2. Warning
+### 2. Cánh báo
 
-**Community Impact**: A violation through a single incident or series of actions.
+** Tác động đến cộng đồng **: Vi phạm thông qua một sự cố riêng lẻ hoặc một loạt các hành động.
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+** Hậu quả **: Cảnh báo về hậu quả nếu tiếp tục hành vi. Không tương tác với những người liên quan, gồm cả tương tác không mong muốn với những người thực thi Quy tắc Ứng xử, trong một khoảng thời gian nhất định. Bao gồm việc tránh các tương tác trong cộng đồng cũng như các kênh bên ngoài như phương tiện truyền thông xã hội. Việc vi phạm các điều khoản này có thể dẫn đến việc cấm tạm thời hoặc vĩnh viễn.
 
-### 3. Temporary Ban
+### 3. Cấm tạm thời
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+** Tác động cộng đồng **: Vi phạm nghiêm trọng các tiêu chuẩn cộng đồng, bao gồm hành vi không phù hợp trong thời gian dài.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+** Hậu quả **: Cấm tạm thời đối với bất kỳ giao tiếp tương tác hoặc công khai nào với cộng đồng trong một khoảng thời gian xác định. Không tương tác với những người liên quan, gồm cả tương tác không mong muốn với những người thực thi Quy tắc Ứng xử, trong một khoảng thời gian nhất định. Việc vi phạm các điều khoản này có thể dẫn đến việc cấm tạm thời hoặc vĩnh viễn.
 
-### 4. Permanent Ban
+### 4. Cấm vĩnh viễn
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+** Tác động đến cộng đồng **: Thể hiện qua việc vi phạm các tiêu chuẩn cộng đồng, bao gồm hành vi không phù hợp kéo dài, quấy rối một cá nhân, hoặc gây hấn hoặc miệt thị với các người khác.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+** Hậu quả **: Cấm vĩnh viễn đối với bất kỳ tương tác công khai nào trong cộng đồng.
 
-## Attribution
+## Đóng góp
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+Quy tắc ứng xử này được điều chỉnh từ [ Giao ước của cộng tác viên đóng góp ][homepage], phiên bản 2.1, có tại [ https://www.contributor-covenant.org/version/2/1/code_of_conduct.html ][v2.1].
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Nguyên tắc về tác động cộng đồng được lấy cảm hứng từ [ Bậc thang thực thi quy tắc ứng xử của Mozilla ][Mozilla CoC].
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+Để có câu trả lời cho các câu hỏi phổ biến về quy tắc ứng xử này, hãy xem Câu hỏi thường gặp tại [ https://www.contributor-covenant.org/faq ][FAQ]. Bản dịch có sẵn tại [ https://www.contributor-covenant.org/translations ][translations].
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
