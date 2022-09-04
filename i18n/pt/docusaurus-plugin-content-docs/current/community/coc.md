@@ -23,10 +23,10 @@ Exemplos de comportamentos que contribuem para um ambiente positivo para a nossa
 Exemplos de comportamento inaceitável:
 
 * O uso de linguagem ou imagens sensualizadas, e atenção sexual ou avanços de qualquer tipo
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* Trollar, fazer comentários insultuosos ou depreciativos e ataques políticos ou pessoais
+* Assédio público ou privado
+* Publicar informações privadas de terceiros, como um endereço físico ou de e-mail, sem a sua permissão explícita
+* Outras condutas que poderiam ser consideradas inapropriadas num ambiente profissional
 
 ## Enforcement Responsibilities
 
