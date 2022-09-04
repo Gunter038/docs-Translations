@@ -114,24 +114,23 @@ celestia-appd collect-gentxs
 Всередині файлу додайте інших учасників, змінивши наступний рядок, щоб увімкнути інших учасників як постійних:
 
 ```text
-# Comma separated list of nodes to keep persistent connections to
-persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
+# Розділений комами список нод для підтримки постійних з’єднань з persistent_peers  = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-You can find `validator_address` by running the following command:
+Ви можете знайти `validator_address`, запустивши таку команду:
 
 ```sh
 celestia-appd tendermint show-node-id
 ```
 
-The output will be the hex-encoded `validator_address`. The default `port` is 26656.
+Вихідний результат буде шістнадцятковим `validator_address`. За замовчуванням `port` дорівнює 26656.
 
-### Instantiate the Network
+### Створення мережі
 
-You can start your node by running the following command:
+Ви можете запустити свою ноду, виконавши таку команду:
 
 ```sh
 celestia-appd start
 ```
 
-Now you have a new Celestia Testnet to play around with!
+Тепер ви маєте новий Celestia Testnet, з яким можна пограти!
