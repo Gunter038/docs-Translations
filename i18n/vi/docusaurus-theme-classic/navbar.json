@@ -4,11 +4,11 @@
     "description": "The title in the navbar"
   },
   "item.label.Run A Node": {
-    "message": "Run A Node",
+    "message": "Chạy Một Node",
     "description": "Navbar item with label Run A Node"
   },
   "item.label.Developers": {
-    "message": "Developers",
+    "message": "Nhà phát triển",
     "description": "Navbar item with label Developers"
   },
   "item.label.GitHub": {
@@ -16,11 +16,11 @@
     "description": "Navbar item with label GitHub"
   },
   "item.label.Community": {
-    "message": "Community",
+    "message": "Cộng đồng",
     "description": "Navbar item with label Community"
   },
   "item.label.Concepts": {
-    "message": "Concepts",
+    "message": "Khái niệm",
     "description": "Navbar item with label Concepts"
   }
 }
