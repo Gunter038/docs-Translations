@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label: Quy tắc thực hiện
 - - -
 
 # Chuẩn mực hành vi của Celestia.org
@@ -32,13 +32,13 @@ Ví dụ về hành vi không được chấp nhận bao gồm:
 
 Các nhà lãnh đạo cộng đồng có trách nhiệm làm rõ và thực thi các tiêu chuẩn của chúng tôi về hành vi có thể chấp nhận được và sẽ thực hiện hành động thích hợp và công bằng để phản ứng với bất kỳ hành vi nào mà họ cho là không phù hợp, đe dọa,  xúc phạm, hoặc có hại.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Đội ngũ quản trị dự án có toàn quyền và nghĩa vụ loại bỏ, chỉnh sửa, hoặc từ chối các bình luận, cam kết, mã nguồn, chỉnh sửa wiki, vấn đề và tất cả các đóng góp không tuân theo bản Quy tắc ứng xử chung. Đội ngũ quản trị dự án có thể cấm tạm thời hoặc vĩnh viễn bất kì thành viên nào có những hành vi được cho là không phù hợp, mang tính đe dọa, xúc phạm hoặc có hại cho cộng đồng.
 
-## Scope
+## Phạm vi
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Quy tắc Ứng xử này áp dụng cho tất cả các thành viên nói riêng và cũng áp dụng khi một cá nhân chính thức đại diện cho cộng đồng nói chung. Các ví dụ về đại diện cho dự án hoặc cộng đồng của dự án bao gồm: sử dụng một địa chỉ email chính thức của dự án, viết bài trên mạng xã hội với tài khoản chính thức của dự án, hoặc được chính thức bổ nhiệm thành đại diện tại một sự kiện trực tuyến hoặc trực tiếp.
 
-## Enforcement
+## Thực thi
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
 
