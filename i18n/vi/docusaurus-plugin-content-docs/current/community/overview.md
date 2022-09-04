@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Overview
+sidebar_label: Tổng quan
 - - -
 
-# Community Overview
+# Tổng quan về cộng đồng
 
-This section will highlight all the different resources and activities for the Celestia Community.
+Phần này sẽ nêu bật tất cả các nguồn thông tin và hoạt động khác nhau dành cho Cộng đồng Celestia.
 
-Here you will find links to our community calendar, Code of Conduct and other community-related resources.
+Tại đây, bạn sẽ tìm thấy các liên kết đến lịch hoạt động cộng đồng, Quy tắc ứng xử và các nguồn thông tin khác liên quan đến cộng đồng của chúng tôi.
