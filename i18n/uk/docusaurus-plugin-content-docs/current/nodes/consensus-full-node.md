@@ -24,27 +24,27 @@ sidebar_label : Consensus Full Node
 
 Дотримуйтесь інструкцій щодо встановлення залежностей [тут](../developers/environment.md).
 
-## Deploying the celestia-app
+## Запуск додатку celestia
 
-This section describes part 1 of Celestia consensus full node setup: running a Celestia App daemon with an internal Celestia Core node.
+У цьому розділі описано першу частину налаштування повної ноди консенсусу Celestia: запуск Celestia App daemon із внутрішньою нодою Celestia Core.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install + run the consensus full node.
+> Примітка. Переконайтеся, що у вас є принаймні 100+ Гб вільного місця для безпечного встановлення та запуску повної ноди консенсусу.
 
-### Install celestia-app
+### Встановлення додатку celestia
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Дотримуйтесь туторіала зі встановлення додатку Celestia [тут](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Налаштування мережі P2P
 
-For this section of the guide, select the network you want to connect to:
+Для цього розділу туторіала виберіть мережу, до якої потрібно підключитися:
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Після цього, ви можете продовжити йти по туторіалу.
 
-### Configure pruning
+### Налаштування стиснення даних
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+Для меншого використання дискового простору ми рекомендуємо налаштувати стиснення даних за допомогою наведених нижче конфігурацій. Ви можете змінити це на власні конфігурації стиснення даних, якщо хочете:
 
 ```sh
 PRUNING="custom"
@@ -58,39 +58,39 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Reset network
+### Перезавантаження мережі
 
-This will delete all data folders so we can start fresh:
+Це видалить усі папки з даними, щоб ми могли почати заново:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Додатково: швидка синхронізація із snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+Синхронізація з Genesis може зайняти багато часу, в залежності від вашого обладнання. Використовуючи цей метод, ви можете дуже швидко синхронізувати свою ноду Celestia, завантаживши останній snapshot блокчейну. Якщо ви хочете синхронізувати з Genesis, ви можете пропустити цю частину.
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+Якщо ви хочете використовувати snapshot, визначте мережу, з якою ви бажаєте синхронізувати, зі списку нижче:
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app
+### Запуск celestia-app
 
-In order to start your consensus full node, run the following:
+Щоб запустити повну ноду консенсусу, виконайте наступне:
 
 ```sh
 celestia-appd start
 ```
 
-This will let you sync the Celestia blockchain history.
+Це дозволить вам синхронізувати історію блокчейну Celestia.
 
-### Optional: configure for RPC endpoint
+### Додатково: налаштуйте кінцеву точку RPC
 
-You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
+Ви можете налаштувати повну ноду консенсусу як загальнодоступну кінцеву точку RPC і прослуховувати будь-які підключення від нод доступності даних, щоб обслуговувати запити для API доступності даних [тут](../developers/node-tutorial.md).
 
-Note that you would need to ensure port 9090 is open for this.
+Будьте уважні, для цього потрібно переконатися, що порт 9090 відкритий.
 
-Run the following commands:
+Виконайте такі команди:
 
 ```sh
 EXTERNAL_ADDRESS=$(wget -qO- eth0.me)
@@ -98,8 +98,8 @@ sed -i.bak -e "s/^external-address = \"\"/external-address = \"$EXTERNAL_ADDRESS
 sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/config/config.toml
 ```
 
-Restart `celestia-appd` in the previous step to load those configs.
+Перезапустіть `celestia-appd` на попередньому кроці, щоб завантажити ці конфігурації.
 
-### Start the celestia-app with SystemD
+### Запуск додатку Celestia за допомогою SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Дотримуйтеся [цього](./systemd.md#start-the-celestia-app-with-systemd) туторіала з налаштування додатку Celestia як фонового процесу за допомогою SystemD.
