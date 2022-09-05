@@ -2,25 +2,25 @@
 sidebar_label: Modular Fellows
 ---
 
-# Modular Fellows
+# Thành viên mô hình mô-đun
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows is a program designed to empower modular builders with the right resources to build the future of scalable and sovereign blockchain networks.
+Thành viên mô hình mô-đun là một chương trình được thiết kế để trao quyền cho các nhà xây dựng mô-đun vớicác nguồn lực phù hợp để xây dựng tương lai của các mạng blockchain có thể mở rộng và có chủ quyền.
 
-Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
+Trong suốt chương trình ba tháng, Thành viên mô hình mô-đun sẽ nhận được kỹ thuật hỗ trợ, cố vấn và trợ cấp hàng tháng 3.000 đô la để xây dựng một dự án của họ sự lựa chọn. Sau chương trình, sẽ tiếp tục hỗ trợ cho thành viên trong hình thức giúp đỡ và tài trợ gây quỹ.
 
-Applications are currently closed. Check back for details about future cohorts.
+Đơn xin tham gia vào chương trình tạm thời đóng. Kiểm tra lại chi tiết về các nhóm tiếp theo trong tương lai.
 
-## Overview
+## Tổng quan
 
-### Milestones
+### Các mốc quan trọng
 
-Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
+Mỗi tháng, các thành viên sẽ hoàn thành một mốc quan trọng của dự án, có thể phải trình diễn demo trong ngày.
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- ** Tháng 1 ** - Học hỏi và Khám phá (bắt đầu xây dựng bất cứ khi nào bạn sẵn sàng)
 
-  In this month, you will immerse yourself in modular blockchains to come up with ideas of protocols, tools or applications to build during the rest of the program.
+  Trong tháng này, bạn sẽ đắm mình trong các chuỗi khối mô-đun để đưa ra với các ý tưởng về giao thức, công cụ hoặc ứng dụng để xây dựng trong phần còn lại của chương trình.
 
   - *Milestone - present an idea that you want to pursue*
 
