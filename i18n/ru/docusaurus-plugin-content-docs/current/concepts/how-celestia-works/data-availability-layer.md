@@ -48,9 +48,9 @@ DAS позволяет Celestia масштабировать слой DA. DAS м
 
 Celestia разделяет данные блока на несколько пространств имен, по одному для каждого приложения (например, rollup), использующего слой DA. В результате каждое приложение должно загружать только свои собственные данные и может игнорировать данные других приложений.
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Для того чтобы это работало, слой DA должен быть в состоянии доказать, что предоставленные данные являются завершёнными, т.е. все предоставленные данные для пространства имён возвращены. Для этого Celestia использует Namespaced Merkle Trees (NMTs).
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+NMT - это дерево Меркла, листья которого упорядочены идентификаторами пространства имен, а хэш-функция изменена таким образом, что каждый узел дерева включает диапазон пространства имен всех своих потомков. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
 
 ![Namespaced Merkle Tree](/img/concepts/nmt.png)
 
