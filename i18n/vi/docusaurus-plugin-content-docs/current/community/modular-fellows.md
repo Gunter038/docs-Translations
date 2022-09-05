@@ -73,7 +73,7 @@ Thành viên không cần phải có ý tưởng dự án cụ thể khi bắt �
 
     *Thành viên sẽ nhận được 3.000 USD mỗi tháng được trả sau khi hoàn thành mỗi cột mốc quan trọng.*
 
-## Continuation
+## Tiếp tục
 
 Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
 
