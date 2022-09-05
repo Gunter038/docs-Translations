@@ -1,87 +1,85 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label : 行動規範
 - - -
 
-# Celestia.org Code of Conduct
+# Celestia.org 行動規範
 
-## Our Pledge
+## 私たちの誓い
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+私たちは、Celestia.orgのメンバー、貢献者、およびリーダーとして、以下のことを誓約します。 私たちのコミュニティへの参加は、誰にとってもハラスメントのない体験となります。 年齢、体格、目に見える障害、見えない障害、民族性、性別、経験、レベルなどに関係なく、すべての人がハラスメントのない体験をすることを誓います。 性特性、性自認および性表現、経験のレベル、教育、社会経済的地位、国籍に関係なく、すべての人がハラスメントのない経験をすることを誓います。 教育、社会経済的状況、国籍、容姿、人種、カースト、肌の色、宗教、またはその他の要素に関係なく、すべての人がハラスメントのない経験をすることができます。 人種、カースト、肌の色、宗教、性自認、性的指向に関係なく、ハラスメントのない体験を提供します。
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+私たちは、オープンで、歓迎され、多様性を受け入れ、健全なコミュニティに貢献するように行動し、交流することを誓います。 健全な社会を実現するために、行動し、交流することを誓います。
 
-## Our Standards
+## 私たちの基準
 
-Examples of behavior that contributes to a positive environment for our community include:
+私たちのコミュニティのために良い環境に貢献する行動の例は、次のとおりです。 以下のようなものがあります。
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* 他者への共感と優しさの発揮
+* 異なる意見、視点、経験を尊重すること。
+* 建設的なフィードバックを与え、それを潔く受け入れる
+* 自分のミスで影響を受けた人たちに責任を認め、謝罪すること。 そして、その経験から学びます。
+* 個人としてだけでなく、社会全体にとって何がベストなのかを考えること。 コミュニティ
 
-Examples of unacceptable behavior include:
+容認できない行為の例としては、以下のようなものがあります。
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* 性的な言葉やイメージの使用、および性的な注目や誘いかけ。 あらゆる種類の
+* 荒らし、侮辱的または軽蔑的なコメント、および個人的または政治的な攻撃。
+* 公・私的なハラスメント
+* 他人の身体や電子メールアドレスなどの個人情報を公開すること。 本人の明示的な許可なく
+* その他、職業上不適切と合理的にみなされる行為 プロフェッショナルな場において
 
-## Enforcement Responsibilities
+## 執行責任
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+コミュニティーのリーダーは、私たちの行動規範を明確にし、実施する責任があります。 また、不適切な行動、脅迫的な行動、攻撃的な行動と見なされる行動に対しては、適切かつ公正な是正措置を取ります。 また、不適切、脅迫的、攻撃的、有害と判断される行動に対しては、適切かつ公正な是正措置を講じます。 または有害であると判断した場合には、適切かつ公正な措置を講じます。
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+コミュニティ リーダーは、以下のようなコメントを削除、編集、拒否する権利と責任を有します。 コメント、コミット、コード、Wiki の編集、課題、およびその他の貢献のうち、この行動規範に沿わないものを削除し、編集し、拒否する権利があります。 コミュニティリーダーは、この行動規範に沿わないコメント、コミット、コード、Wiki編集、課題、その他の貢献を削除、編集、拒否する権利があり、適切な場合には、モデレーションの判断理由を伝えます。 また、適切な場合には、その理由を説明します。
 
-## Scope
+## 対象範囲
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+この行動規範は、すべてのコミュニティスペースで適用され、以下の場合にも適用されます。 また、公共スペースでコミュニティを公式に代表している場合にも適用されます。 コミュニティを代表する例として、公式メールアドレスの使用。 ソーシャルメディアの公式アカウントで投稿したり、オンラインまたはオフラインのイベントにおいて オンラインまたはオフラインのイベントでの代表として行動することです。
 
-## Enforcement
+## 施行
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+虐待、ハラスメント、その他容認できない行為があった場合は、セレスティア・オーガニックのディスコードで Celestia.orgのDiscordで、執行を担当するコミュニティリーダーに報告してください。 すべての苦情は、迅速かつ公正に検討・調査されます。
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+すべてのコミュニティ・リーダーは、いかなる事件の報告者のプライバシーと安全性を尊重する義務があります。 を尊重する義務があります。
 
-## Enforcement Guidelines
+## 実施ガイドライン
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+コミュニティ・リーダーは、以下の「コミュニティへの影響に関するガイドライン」に従って、この行動規範に違反すると思われる行為の結果を決定します。 この行動規範に反すると判断した場合には、その結果を決定する際に、コミュニティ・インパクト・ガイドラインに従います。
 
-### 1. Correction
+### 1. 修正
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**コミュニティへの影響**: 不適切な言葉の使用や、プロフェッショナルでない、またはコミュニティで歓迎されないとみなされるその他の行動。
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+**結果**: コミュニティ・リーダーからの私的な警告書。 違反の内容を明確にし、なぜその行動が不適切であったかを説明する。 を説明する。 公開謝罪が求められる場合があります。
 
-### 2. Warning
+### 2. 警告
 
-**Community Impact**: A violation through a single incident or series of actions.
+**コミュニティへの影響**。1つの事件または一連の行動による違反 行為。
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**結果**: 行動を継続した場合の結果を示す警告です。 いいえ 行動規範を実施する関係者との未承諾のやりとりを含む、関係者とのやりとりを一定期間禁止する。 行動規範を実施する人々との未承諾の交流も含め、一定期間、関係者との交流がないこと。 これには、ソーシャルメディアなどの外部チャネルだけでなく、コミュニティスペースでのやり取りを避けることも含まれます。 これらの条件に違反した場合、一時的または永久的なアクセス禁止につながる可能性があります。
 
-### 3. Temporary Ban
+### 3. 一時的な禁止
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**コミュニティへの影響**。コミュニティ基準に対する重大な違反。 不適切な行為の継続。
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+**結果**: 一定期間、コミュニティとのあらゆる交流や公的なコミュニケーションが禁止されます。一定期間、コミュニティとの交流や公的なコミュニケーションが禁止されます。 公的または私的な交流を行わない この期間中は、関係者との公私にわたる交流（行動規範の実施者との未承諾の交流も含む）を禁止します。この期間中は、行動規範を実施する者との公私にわたる交流は禁止されています。 これらの条件に違反した場合、永久追放される可能性があります。
 
-### 4. Permanent Ban
+### 4. 永久禁止
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**コミュニティへの影響**: 持続的な不適切な行動、個人への嫌がらせ、個人クラスへの攻撃や蔑視など、コミュニティ基準への違反のパターンを示すこと。
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+**結果**: コミュニティ内でのあらゆる種類の公的な交流が永久に禁止されます。コミュニティでの一切の交流を禁止する。
 
-## Attribution
+## アトリビュート
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+この行動規範は、[投稿者規約][homepage]から引用しています。 バージョン2.1、以下から入手可能[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1] にあります。
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+コミュニティインパクトガイドラインは、以下のものから着想を得ています。 [Mozillaの行動規範の施行はしご][Mozilla CoC]に触発されたものです。
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+この行動規範に関する一般的な質問に対する回答は、以下のFAQをご覧ください。https://www.contributor-covenant.org/faq<0>をご覧ください。 翻訳はhttps://www.contributor-covenant.org/translations<0>でご覧いただけます。</p>
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 [Mozilla CoC]: https://github.com/mozilla/diversity
-[FAQ]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
