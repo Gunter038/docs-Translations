@@ -1,12 +1,11 @@
 ---
-sidebar_label : Setup Network Environment
+sidebar_label: Setup Network Environment
 ---
 
 # Setting Up Your Environment for CosmWasm on Celestia
 <!-- markdownlint-disable MD013 -->
 
-Now the `wasmd` binary is built, we need to setup a local network
-that communicates between `wasmd` and Optimint.
+Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Optimint.
 
 ## Building the Wasmd Network
 
@@ -27,8 +26,7 @@ KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated
-for later reference if needed.
+Make you sure you store the output of the wallet generated for later reference if needed.
 
 Now, let's add a genesis account and use it to update our genesis file:
 
@@ -53,12 +51,15 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 We can run the following to start the `wasmd` network:
 
 ```sh
-wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000,"namespace_id":[0,0,0,0,0,0,255,255]}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height 21380
+wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address
-  to the `base_url` that has an account with Mamaki testnet tokens. Follow
-  the tutorial for setting up a Celestia Light Node and creating a wallet
-  with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+Please consider:
+
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+
+Also please consider:
+
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Mamaki Testnet for `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 With that, we have kickstarted our `wasmd` network!
