@@ -42,17 +42,5 @@
   "sidebar.developers.category.CosmWasm": {
     "message": "CosmWasm",
     "description": "The label for category CosmWasm in sidebar developers"
-  },
-  "sidebar.concepts.category.How Celestia Works": {
-    "message": "How Celestia Works",
-    "description": "The label for category How Celestia Works in sidebar concepts"
-  },
-  "sidebar.concepts.link.Learn Modular": {
-    "message": "Learn Modular",
-    "description": "The label for link Learn Modular in sidebar concepts, linking to https://celestia.org/learn/"
-  },
-  "sidebar.concepts.link.Glossary": {
-    "message": "Glossary",
-    "description": "The label for link Glossary in sidebar concepts, linking to https://celestia.org/glossary/"
   }
 }
