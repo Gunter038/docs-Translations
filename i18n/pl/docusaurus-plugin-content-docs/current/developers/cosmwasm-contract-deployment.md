@@ -35,7 +35,7 @@ CosmWasm team provides a tool called `rust-optimizer` which we need Docker for i
 Run the following command:
 
 ```sh
-docker run --rm -v "$(pwd)":/code \
+sudo docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
   cosmwasm/rust-optimizer:0.12.6
