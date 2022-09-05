@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Celestia Docs</ShortName>
-  <Description>Search Celestia Docs</Description>
+  <ShortName>Build Modular.</ShortName>
+  <Description>Search Build Modular.</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://docs.celestia.org/img/favicon.ico</Image>
   <Url type="text/html" method="get" template="https://docs.celestia.org/search?q={searchTerms}"/>

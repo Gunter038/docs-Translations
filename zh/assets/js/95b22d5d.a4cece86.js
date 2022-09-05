@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcelestia_docs=self.webpackChunkcelestia_docs||[]).push([[2847],{9548:function(e){e.exports=JSON.parse('{"title":"Resources","slug":"/category/resources","permalink":"/zh/category/resources","navigation":{"previous":{"title":"Mamaki Testnet","permalink":"/zh/nodes/mamaki-testnet"},"next":{"title":"SystemD","permalink":"/zh/nodes/systemd"}}}')}}]);

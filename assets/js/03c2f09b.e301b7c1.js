@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcelestia_docs=self.webpackChunkcelestia_docs||[]).push([[5038],{5038:function(e){e.exports=JSON.parse('{"title":"How Celestia Works","slug":"/category/how-celestia-works","permalink":"/category/how-celestia-works","navigation":{"next":{"title":"Introduction","permalink":"/concepts/how-celestia-works/introduction"}}}')}}]);
