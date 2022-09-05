@@ -222,20 +222,20 @@
     "message": "Теги",
     "description": "The title of the tag list page"
   },
-  "'Build Modular'": {
-    "message": "'Build Modular'"
+  "Build Modular": {
+    "message": "Build Modular"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
     "message": "Celestia - це перша модульна блокчейн-мережа, яка дає змогу розробникам розгорнути власний блокчейн так само легко, як і новий смартконтракт."
   },
-  "'Run Different Nodes'": {
-    "message": "'Запустити різні ноди'"
+  "Run Different Nodes": {
+    "message": "Run Different Nodes"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
     "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
   },
-  "'Power-up with Data Availability Layer'": {
-    "message": "'Power-up with Data Availability Layer'"
+  "Power-up with Data Availability Layer": {
+    "message": "Power-up with Data Availability Layer"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
     "message": "Celestia запроваджує те, що називається \"Рівень доступності даних\", для забезпечення ефективного масштабування та використання ролапів другого рівня та дозволяє проводити вибірку даних для транзакцій."
