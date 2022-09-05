@@ -1,10 +1,6 @@
-- - -
-sidebar_label : Introduction
-- - -
-
 # Введення
 
-Celestia - це модульна блокчейн-мережа, метою якої є створення масштабованого рівня [доступності даних](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/), що дозволяє створити наступне покоління масштабованих блокчейн-архітектур. [ модульні блокчейни](https://celestia.org/learn/). Celestia масштабується за рахунок [ від'єднання виконання від консенсусу](https://arxiv.org/abs/1905.09274) та запровадження нового примітиву, [ вибірка доступності даних](https://arxiv.org/abs/1809.09044).
+Celestia is a modular blockchain network whose goal is to build a scalable [data availability layer](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/), enabling the next generation of scalable blockchain architectures - [modular blockchains](https://celestia.org/learn/). Celestia масштабується за рахунок [ від'єднання виконання від консенсусу](https://arxiv.org/abs/1905.09274) та запровадження нового примітиву, [ вибірка доступності даних](https://arxiv.org/abs/1809.09044).
 
 Перше передбачає, що Celestia відповідає лише за впорядкування транзакцій та гарантію доступності даних; це схоже на [зведення консенсусу до атомарної трансляції](https://en.wikipedia.org/wiki/Atomic_broadcast#Equivalent_to_Consensus).
 
