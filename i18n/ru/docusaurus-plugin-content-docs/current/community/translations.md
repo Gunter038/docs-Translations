@@ -8,31 +8,36 @@ sidebar_label : Перевод документов
 
 ## Посетите наш проект Crowdin
 
-Перейдите к проекту Crowdin [здесь](https://crowdin.com/project/celestia-docs).
+To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
 
 Вам нужно будет создать учетную запись, а затем вы сможете присоединиться к проекту для начала вашего путешествия по переводу.
 
-Если вы не видите свой язык, не стесняйтесь спросить о нем в discord, [здесь](https://discord.gg/celestiacommunity).
+If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
 
-На Crowdin вы можете переводить, комментировать переводы, а также повышать и понижать голоса переводов. Оставьте свое мнение!
+On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
 
-# Советы
+Give your opinion on existing translations to ensure it is correct!
+
+## Советы
 
 Вот несколько советов, которые помогут вам во время вашего перевода.
 
-## Документация Crowdin
+### Документация Crowdin
 
 Официальная документация Crowdin доступна [здесь](https://support.crowdin.com/online-editor).
 
-## Руководство
+### Руководство
 
-### Код
+#### Код
 
 Некоторые страницы содержат метаданные и программный код.
 
-Важно помнить, что Уильям Шекспир был англоговорящим... Как и Алан Тьюринг! Поэтому не следует переводить части кода "от себя". Например, если вы видите метаданные типа `sidebar_label : Hello World`, перевод на французский язык будет `sidebar_label : Salut tout le monde`.
+It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
 
-Давайте рассмотрим еще один пример, здесь вам не придется ничего переводить:
+For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+
+Let's take another example, you wouldn't have to translate anything here:
+
 ```sh
 cd $HOME
 rm -rf celestia-app
@@ -45,9 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Вам не нужно переводить URL-адреса на ваш язык.
+Furthermore, you do not have to translate URLs into your local language.
 
-### Особые слова
+#### Особые слова
 
-Поскольку вы будете переводить инновационные понятия, такие как Data Availability Sampling, не стесняйтесь обсуждать лучший перевод с другими участниками сообщества. Также будьте осторожны с порядком дат, точкой и запятыми при переводе чисел с одного языка на другой. 
+As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
 
+Also, be careful with date order, period and commas regarding numbers from a language to another.
