@@ -1,26 +1,26 @@
 - - -
-sidebar_label : Create A Celestia Testnet
+sidebar_label: Tạo Celestia Testnet
 - - -
 
-# Celestia App Network Instantiation Guide
+# Hướng dẫn cài đặt mạng ứng dụng Celestia
 
-This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
+Hướng dẫn này giúp khởi tạo một mạng thử nghiệm mới và thực hiện các bước chính xác như vậy với Celestia-App. Bạn chỉ nên làm theo hướng dẫn này, nếu bạn muốn thử nghiệm với Celestia Testnetwork riêng hoặc nếu bạn muốn thử nghiệm các tính năng mới nhằm xây dựng như là nhà phát triển cốt lõi.
 
-## Hardware Requirements
+## Các yêu cầu phần cứng
 
-You can follow hardware requirements [here](../nodes/validator-node.md#hardware-requirements).
+Bạn có thể làm theo các yêu cầu về phần cứng [ tại đây ](../nodes/validator-node.md#hardware-requirements).
 
-## Setup Dependencies
+## Thiết lập các phần phụ thuộc
 
-You can setup dependencies by following the guide [here](./environment.md).
+Bạn có thể thiết lập các phần phụ thuộc bằng cách làm theo hướng dẫn [ tại đây ](./environment.md).
 
-## Celestia App Installation
+## Cài đặt ứng dụng Celestia
 
-You can install Celestia App by following the guide [here](./celestia-app.md).
+Bạn có thể cài đặt Ứng dụng Celestia bằng cách làm theo hướng dẫn [ tại đây ](./celestia-app.md).
 
 ## Spin Up A Celestia Testnet
 
-If you want to spin up a quick testnet with your friends, you can follow these steps. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
+Nếu bạn muốn tạo một testnet nhanh với bạn bè của mình, bạn có thể làm theo các bước sau. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
 
 ### Optional: Reset Working Directory
 
