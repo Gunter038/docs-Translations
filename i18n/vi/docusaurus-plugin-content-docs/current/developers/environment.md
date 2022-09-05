@@ -34,7 +34,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ## Install Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app và celestia-node được viết bằng [ Golang ](https://go.dev/) do vậy chúng tôi phải cài đặt Golang để thiết lập và chạy nó.
 
 ```sh
 ver="1.18.2"
@@ -45,21 +45,21 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Hiện tại chúng tôi cần thêm `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Kiểm tra xem Go đã được cài đặt để chạy đúng chưa:
 
 ```sh
-go version
+phiên bản
 ```
 
-The output should be the version installed:
+Đầu ra phải là phiên bản được cài đặt:
 
 ```sh
-go version go1.18.2 linux/amd64
+vào phiên bản go1.18.2 linux/amd64
 ```
