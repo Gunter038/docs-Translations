@@ -22,56 +22,56 @@ Mỗi tháng, các thành viên sẽ hoàn thành một mốc quan trọng của
 
   Trong tháng này, bạn sẽ đắm mình trong các chuỗi khối mô-đun để đưa ra với các ý tưởng về giao thức, công cụ hoặc ứng dụng để xây dựng trong phần còn lại của chương trình.
 
-  - *Milestone - present an idea that you want to pursue*
+  - *Cột mốc quan trọng - trình bày một ý tưởng mà bạn muốn theo đuổi*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- ** Tháng 2 ** - Thiết kế & Triển khai một nguyên mẫu cơ bản
 
-  In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
+  Trong tháng này, bạn sẽ thiết kế và triển khai một nguyên mẫu cơ bản của ý tưởng rằng bạn đã lên ý tưởng trong tháng đầu tiên.
 
-  - *Milestone - present the prototype for feedback*
+  - *Cột mốc quan trọng - trình bày nguyên mẫu để phản hồi*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- ** Tháng 3 ** - Xây dựng Nguyên mẫu thành Sản phẩm Chức năng
 
-  In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
+  Trong tháng này, bạn sẽ mở rộng trên nguyên mẫu của mình để xây dựng một chức năng sản phẩm mà bạn sẽ demo và giải thích bằng một bài viết.
 
-  - *Milestone - demo, write up of product*
+  - *Cột mốc quan trọng - demo, viết một bài viết về sản phẩm của bạn*
 
-## Project ideas
+## Ý tưởng dự án
 
-Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
+Thành viên không cần phải có ý tưởng dự án cụ thể khi bắt đầu chương trình, nhưng bạn sẽ cần phải đăng ký một ý tưởng vào cuối tháng đầu tiên. Không có ý kiến ​​đúng hoặc sai, nhưng đây là một số ý kiến ​​giúp bạn suy nghĩ:
 
-- New execution layers, e.g. a Move rollup
-- Rollup infrastructure services, e.g. one click deploy rollup sequencers
-- Modular interoperability solutions, e.g. settlement layers or bridges
+- Các lớp thực thi mới, ví dụ: một bản tổng hợp Move
+- Dịch vụ cơ sở hạ tầng tổng hợp, ví dụ: một cú nhấp chuột triển khai trình tự cuộn lên
+- Các giải pháp tương tác mô-đun, ví dụ: lớp dàn xếp hoặc cầu
 - Modular versions of the following
-  - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+  - Các ứng dụng DeFi phổ biến, ví dụ: AMM & giao thức cho vay
+  - Nền tảng NFT
+  - Đặt tên cho các dịch vụ như [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Biểu đồ xã hội như [ Lens Protocol](https://lens.xyz/)
 
-## Support
+## Trợ giúp
 
-1. **Weekly office hours**
+1. **Giờ làm việc hàng tuần**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *Một cuộc họp tùy chọn để đặt câu hỏi, nhận trợ giúp và nhận phản hồi. *
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    Thứ Tư luân phiên lúc 8 giờ sáng hoặc 6 giờ chiều theo giờ Trung Mỹ.
 
-2. **Lessons & tutorials**
+2. **Bài học & hướng dẫn**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *Bài thuyết trình của các thành viên trong nhóm Celestia Labs & người cố vấn giải thích chìa khóa khái niệm hoặc đưa ra hướng dẫn về các công cụ cụ thể.*
 
-3. **Demos from participants**
+3. **Bản trình diễn từ những người tham gia**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *Bài thuyết trình của các thành viên về những gì họ đang làm để lấy ý kiến ​​phản hồi.*
 
-4. **Communication**
+4. **Liên lạc**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *Thành viên sẽ chia sẻ một nhóm Telegram với các thành viên khác và Người cố vấn.*
 
-5. **Monthly stipend**
+5. **Phụ cấp hàng tháng**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *Thành viên sẽ nhận được 3.000 USD mỗi tháng được trả sau khi hoàn thành mỗi cột mốc quan trọng.*
 
 ## Continuation
 
