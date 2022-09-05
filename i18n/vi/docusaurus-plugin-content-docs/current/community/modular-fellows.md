@@ -1,10 +1,10 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: Thành viên mô hình mô-đun
 ---
 
 # Thành viên mô hình mô-đun
 
-![Modular Fellows](/img/modular_fellows.jpg)
+![Thành viên mô hình mô-đun](/img/modular_fellows.jpg)
 
 Thành viên mô hình mô-đun là một chương trình được thiết kế để trao quyền cho các nhà xây dựng mô-đun vớicác nguồn lực phù hợp để xây dựng tương lai của các mạng blockchain có thể mở rộng và có chủ quyền.
 
@@ -43,7 +43,7 @@ Thành viên không cần phải có ý tưởng dự án cụ thể khi bắt �
 - Các lớp thực thi mới, ví dụ: một bản tổng hợp Move
 - Dịch vụ cơ sở hạ tầng tổng hợp, ví dụ: một cú nhấp chuột triển khai trình tự cuộn lên
 - Các giải pháp tương tác mô-đun, ví dụ: lớp dàn xếp hoặc cầu
-- Modular versions of the following
+- Các phiên bản mô-đun sau
   - Các ứng dụng DeFi phổ biến, ví dụ: AMM & giao thức cho vay
   - Nền tảng NFT
   - Đặt tên cho các dịch vụ như [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
@@ -75,25 +75,25 @@ Thành viên không cần phải có ý tưởng dự án cụ thể khi bắt �
 
 ## Tiếp tục
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+Mặc dù chương trình chỉ kéo dài 3 tháng, chúng tôi sẽ cung cấp cho bạn việc tiếp tục hỗ trợ theo những cách sau.
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- ** Tài trợ & gây quỹ - ** Chúng tôi sẽ hỗ trợ bạn trong việc gây quỹ hoặc đăng ký xin hỗ trợ để bạn có thể tiếp tục xây dựng dự án của mình.
+- ** Mạng lưới cựu sinh viên ** - Bạn sẽ được giới thiệu vào mạng lưới cựu thành viên nơi bạn có thể giữ liên lạc với các thành viên khác trong quá khứ và tương lai.
 
-### Modular Mentors
+### Người cố vấn mô-đun
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+Thành viên mô-đun sẽ hợp tác chặt chẽ với nhóm Celestia Labs và một nhóm cố vấn mô-đun được chọn lọc kỹ càng, những người sẽ giúp giải quyết các vấn đề kỹ thuật và cung cấp phản hồi về các cột mốc quan trọng.
 
-These are the Mentors for the first cohort:
+Đây là những người cố vấn cho nhóm đầu tiên:
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi
-- [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
+- [ Wei Dai ](https://twitter.com/_weidai) - Đối tác nghiên cứu tại Bain Capital Crypto
+- [ Can Gurel ](https://twitter.com/CannnGurel) - Nhà nghiên cứu tại Delphi Digital
+- [ Eric Wall ](https://twitter.com/ercwl) - Nhà nghiên cứu chuỗi khối
+- [ Eli Krenzke ](https://twitter.com/eKRENZKE) - Đối tác nhóm nghiên cứu tại Polychain
+- [ Zaki Manian ](https://twitter.com/zmanian) - Người đồng sáng lập Sommelier, Người đồng sáng lập của iqlusion, đã giúp xây dựng hệ sinh thái Cosmos, bao gồm cả việc khởi chạy mạng thử nghiệm Cosmos công cộng
+- [ Marko Baricevic ](https://twitter.com/mark0baricevic) - Trưởng nhóm Cosmos-sdk và người sáng lập nắm giữ nhị phân hoạt động.
+- [ Morgan Beller ](https://twitter.com/beller) - Đối tác chung tại NFX, giai đoạn hạt giống quỹ đầu tư mạo hiểm, trước đây. Trưởng bộ phận chiến lược Novi của Facebook
+- [ John Adler ](https://twitter.com/jadler0) - CRO, Celestia Labs
 - [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
 - [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- [ Evan Forbes ](https://twitter.com/evansforbes) - Kỹ sư phần mềm, Celestia Labs
