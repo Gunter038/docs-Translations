@@ -20,19 +20,19 @@ Bạn có thể cài đặt Ứng dụng Celestia bằng cách làm theo hướn
 
 ## Spin Up A Celestia Testnet
 
-Nếu bạn muốn tạo một testnet nhanh với bạn bè của mình, bạn có thể làm theo các bước sau. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
+Nếu bạn muốn tạo một testnet nhanh với bạn bè của mình, bạn có thể làm theo các bước sau. Trừ khi có ghi chú khác, những người muốn tham gia vào testnet này phải thực hiện đủ các bước.
 
-### Optional: Reset Working Directory
+### Tùy chọn: Đặt lại thư mục làm việc
 
-If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. You can do so by running the following command:
+Nếu trước đây bạn đã khởi tạo một thư mục làm việc cho ` celestia-appd `, bạn phải dọn sạch trước khi khởi tạo lại một thư mục mới. Bạn có thể làm vậy bằng cách chạy lệnh sau:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Initialize A Working Directory
+### Khởi tạo một thư mục làm việc
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -40,23 +40,23 @@ CHAIN_ID=testnet
 celestia-appd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-* The value we will use for `$VALIDATOR_NAME` is `validator1` but you should choose your own node name.
-* The value we will use for `$CHAIN_ID` is `testnet`. The `$CHAIN_ID` must remain the same for everyone participating in this network.
+* Giá trị chúng tôi sẽ sử dụng cho ` $ VALIDATOR_NAME ` là ` validator1 ` nhưng bạn nên chọn tên node của riêng mình.
+* Giá trị chúng tôi sẽ sử dụng cho `$CHAIN_ID` is `testnet`. ` $ CHAIN_ID ` phải giữ nguyên cho tất cả mọi người tham gia vào mạng lưới này.
 
-### Create A New Key
+### Tạo ra một Key mới
 
-Next, run the following command:
+Tiếp theo, chạy câu lệnh sau:
 
 ```sh
 KEY_NAME=validator
 celestia-appd keys add $KEY_NAME --keyring-backend test
 ```
 
-This will create a new key, with a name of your choosing. Save the output of this command somewhere; you'll need the address generated here later. Here, we set the value of our key `$KEY_NAME` to `validator` for demonstration.
+Thao tác này sẽ tạo một key, mới với tên do bạn chọn. Lưu kết quả của lệnh này ở đâu đó; có thể sau này bạn sẽ cần địa chỉ được tạo ra từ đây. Ở đây, chúng tôi đặt giá trị của key ` $ KEY_NAME ` to ` validator ` để minh họa.
 
-### Add Genesis Account KeyName
+### Thêm KeyName cho tài khoản Genesis
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 CELES_AMOUNT="10000000000000000000000000utia"
@@ -65,17 +65,17 @@ celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 
 Here `$VALIDATOR_NAME` is the same key name as before; and `$AMOUNT` is something like `10000000000000000000000000utia`.
 
-### Optional: Adding Other Validators
+### Tùy chọn: Thêm các validators khác
 
-If other participants in your testnet also want to be validators, repeat the command above with the specific amount for their public keys.
+Nếu những người tham gia khác trong testnet của bạn cũng muốn làm validators, lặp lại lệnh trên với số tiền cụ thể với các keys công khai của chúng.
 
-Once all the validators are added, the `genesis.json` file is created. You need to share it with all other validators in your testnet in order for everyone to proceed with the following step.
+Sau khi tất cả validators được thêm, tệp ` genesis.json ` sẽ được tạo. Bạn cần phải chia sẻ nó với tất cả các validators khác trong testnet để mọi người tiến hành bước sau.
 
-You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
+Bạn có thể tìm `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
 
-### Create the Genesis Transaction For New Chain
+### Tạo giao dịch Genesis cho chuỗi mới
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 STAKING_AMOUNT=1000000000utia
@@ -83,7 +83,7 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
   --keyring-backend test
 ```
 
-This will create the genesis transaction for your new chain. Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you provide too much or too little, you will encounter an error when starting your node.
+Điều này sẽ tạo giao dịch genesis cho chuỗi mới của bạn. Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you provide too much or too little, you will encounter an error when starting your node.
 
 You will find the generated gentx JSON file inside `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
 
