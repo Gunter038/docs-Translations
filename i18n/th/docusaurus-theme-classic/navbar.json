@@ -18,9 +18,5 @@
   "item.label.Community": {
     "message": "Community",
     "description": "Navbar item with label Community"
-  },
-  "item.label.Concepts": {
-    "message": "Concepts",
-    "description": "Navbar item with label Concepts"
   }
 }
