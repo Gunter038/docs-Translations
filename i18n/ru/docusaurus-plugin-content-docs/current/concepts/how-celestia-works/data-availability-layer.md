@@ -44,9 +44,9 @@ DAS позволяет Celestia масштабировать слой DA. DAS м
 
 В качестве решения _Доказательства мошенничества в отношении неверно сгенерированных расширенных данных_ позволяют легким узлам отклонять блоки с недействительными расширенными данными. Такие доказательства требуют восстановления кодировки и проверки несоответствия. При стандартном кодировании Рида-Соломона это требует загрузки исходных данных, т.е. O(n) байт. Напротив, при двумерном кодировании Рида-Соломона требуется только O(n ) байт, поскольку достаточно проверить только одну строку или один столбец расширенной матрицы.
 
-## Деревья Меркла с указанием имен (NMT)
+## Деревья Меркла с пространством имен (NMT)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia разделяет данные блока на несколько пространств имен, по одному для каждого приложения (например, rollup), использующего слой DA. В результате каждое приложение должно загружать только свои собственные данные и может игнорировать данные других приложений.
 
 For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
 
