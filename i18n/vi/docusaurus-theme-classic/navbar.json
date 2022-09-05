@@ -18,9 +18,5 @@
   "item.label.Community": {
     "message": "Cộng đồng",
     "description": "Navbar item with label Community"
-  },
-  "item.label.Concepts": {
-    "message": "Khái niệm",
-    "description": "Navbar item with label Concepts"
   }
 }
