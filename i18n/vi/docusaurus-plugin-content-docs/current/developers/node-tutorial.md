@@ -76,9 +76,9 @@ go version go1.18.2 linux/amd64
 
 ## Celestia Node
 
-### Install Celestia Node
+### Cài đặt Node Celestia
 
-Install the celestia-node binary by running the following commands:
+Cài đặt celestia-node binary bằng cách chạy các lệnh sau:
 
 ```sh
 cd $HOME
