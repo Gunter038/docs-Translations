@@ -89,7 +89,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Xác minh rằng binary đang hoạt động và kiểm tra phiên bản bằng lệnh celestia:
 
 ```sh
 $ celestia version
@@ -97,73 +97,73 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-### Instantiate Celestia Light Node
+### Khởi tạo Light Node Celestia
 
-Now, let's instantiate a Celestia Light node:
+Bây giờ, hãy khởi tạo một node Celestia Light:
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> Lưu ý: Điểm cuối RPC được hiển thị trong tất cả các loại Node Celestia chẳng hạn như Light, Bridge và Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### Kết nối với điểm cuối Public Core
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+Bây giờ chúng ta hãy chạy node Celestia Light với kết nối GRPC cho một ví dụ về Điểm cuối Public Core.
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](../nodes/mamaki-testnet#rpc-endpoints)
+> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. Bạn có thể tìm thấy danh sách các điểm cuối RPC [ tại đây ](../nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
 ```
 
-For example, your command along with an RPC endpoint might look like this:
+Ví dụ: lệnh của bạn cùng với điểm cuối RPC có thể trông giống như sau:
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### Mã khóa và ví
 
-You can create your key for your node by running the following command:
+Bạn có thể tạo mã khóa cho node của mình bằng cách chạy lệnh sau:
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ ví đó bằng mã thông báo Mamaki Testnet nhằm thanh toán cho các giao dịch PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục ` celestia-node `:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
+Nếu bạn muốn nạp vào ví của mình với mã thông báo testnet, hãy truy cập kênh Discord của Celestia ` #faucet `.
 
-You can request funds to your wallet address using the following command in Discord:
+Bạn có thể yêu cầu nạp tiền vào địa chỉ ví của mình bằng lệnh sau trong Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Where ` <Wallet-Address> ` is the ` celestia1 ****** ` được xuất ra khi bạn tạo ví.
 
-With your wallet funded, you can move on to the next step.
+Với ví được nạp tiền, bạn có thể chuyển sang bước tiếp theo.
 
 ## Node API Calls
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+Mở một cửa sổ đầu cuối khác để bắt đầu truy vấn API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Balance
+### Số dư
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+Bây giờ, hãy truy vấn nodes của chúng ta để biết số dư trong tài khoản mặc định (là tài khoản được liên kết với khóa ` developer ` mà chúng ta đã tạo ra trước đó):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+Nó sẽ xuất ra như sau:
 
 ```json
 {
@@ -172,19 +172,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+Nó cho bạn thấy số dư trong ví đó.
 
-### Get Block Header
+### Nhận tiêu đề khối
 
-Now, let's get the block header information.
+Bây giờ, hãy lấy thông tin tiêu đề khối.
 
-Here we will get the header from Block 1:
+Ở đây chúng ta sẽ lấy tiêu đề từ Khối 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+Nó sẽ xuất ra như thế này:
 
 ```json
 {
@@ -354,17 +354,21 @@ It will output something like this:
       ]
    }
 }
+ 
+Text
+XPath: /pre[18]/code
+File: node-tutorial.md
 ```
 
-### Submit a PFD Transaction
+### Gửi giao dịch PFD
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+Trong ví dụ này, chúng tôi sẽ gửi một giao dịch PayForData tới điểm cuối ` / submit_pfd ` của node.
 
-Some things to consider:
+Một số điều cần xem xét:
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
+- PFD là một thông điệp PayForData.
+- Điểm cuối cũng nhận các giá trị ` namespace_id ` và ` data `.
+- ID Namespace nên là là 8 byte.
 - Data is in hex-encoded bytes of the raw message.
 - `gas_limit` is the limit of gas to use for the transaction
 
