@@ -8,92 +8,92 @@ sidebar_label: Modular Fellows
 
 Modular Fellows est un programme conçu pour donner aux constructeurs modulaires les ressources appropriées pour construire l'avenir des réseaux blockchain évolutifs et souverains.
 
-Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
+Au cours du programme de trois mois, les Modular Fellows bénéficieront d'un soutien en ingénierie et une allocation mensuelle de 3 000 $ pour construire un projet de leur choix. choix. Après le programme, un soutien continu sera disponible pour les Fellows sous la forme d'une aide à la collecte de fonds et de subventions.
 
-Applications are currently closed. Check back for details about future cohorts.
+Les candidatures sont actuellement fermées. Revenez nous voir pour plus de détails sur les futures cohortes.
 
-## Overview
+## Vue d'ensemble
 
-### Milestones
+### Étapes importantes
 
-Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
+Chaque mois, les Fellows achèveront une étape importante du projet, qui débouchera sur une présentation lors d'une journée de démonstration.
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- **Mois 1** - Apprendre et Explorer (commencez à construire dès que vous êtes prêt)
 
-  In this month, you will immerse yourself in modular blockchains to come up with ideas of protocols, tools or applications to build during the rest of the program.
+  Dans ce mois, vous vous immergerez dans des blockchains modulaires pour trouver des idées de protocoles, outils ou applications à construire pendant le reste du programme.
 
-  - *Milestone - present an idea that you want to pursue*
+  - *Important - présentez une idée que vous souhaitez poursuivre*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- **Mois 2** - Conception & Implémentation d'un Prototype de base
 
-  In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
+  Au cours de ce mois, vous concevrez et mettrez en œuvre un prototype de base de l'idée que vous avez retenue au cours du premier mois.
 
-  - *Milestone - present the prototype for feedback*
+  - *Important - présentez le prototype pour obtenir un feedback*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- **Mois 3** - Construire le Prototype dans un Produit Fonctionnel
 
-  In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
+  Au cours de ce mois, vous développerez votre prototype pour construire un produit fonctionnel dont vous ferez la démonstration et que vous expliquerez par écrit.
 
-  - *Milestone - demo, write up of product*
+  - *Important - démonstration, rédaction du produit*
 
-## Project ideas
+## Idées de projet
 
-Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
+Il n'est pas nécessaire que les Fellows aient une idée de projet spécifique au début du programme, mais vous devrez en choisir une à la fin du premier mois. Il n'y a pas de bonnes ou mauvaises idées, mais voici quelques-unes pour vous faire réfléchir:
 
-- New execution layers, e.g. a Move rollup
-- Rollup infrastructure services, e.g. one click deploy rollup sequencers
-- Modular interoperability solutions, e.g. settlement layers or bridges
-- Modular versions of the following
-  - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+- Des nouveaux layers d'execution, par exemple, un rollup Move
+- Des services d'infrastructure de rollup, par exemple, le déploiement en un clic de séquenceurs de rollup
+- Solutions d'interopérabilité modulaires, par exemple, des layers de settlement ou des bridges
+- Des versions modulaires des éléments suivants
+  - Des applications DeFi populaires, par exemple des AMM & des protocoles de prêt
+  - Des plateformes NFT
+  - Des services de nom de domaine comme [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Des réseaux sociaux comme [Lens Protocol](https://lens.xyz/)
 
-## Support
+## Soutien
 
-1. **Weekly office hours**
+1. **Heures de bureau hebdomadaires**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *Une réunion facultative pour poser des questions, obtenir de l'aide et recevoir des commentaires.*
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    Les mercredis en alternance à 8h00 ou 18h00 heure du centre des États-Unis.
 
-2. **Lessons & tutorials**
+2. **Leçons & tutoriels**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *Présentations des membres de l'équipe & des mentors de Celestia Labs expliquant les concepts clés ou donnant des tutoriels sur des outils spécifiques.*
 
-3. **Demos from participants**
+3. **Démos des participants**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *Présentations des Fellows sur ce sur quoi ils travaillent pour obtenir des commentaires.*
 
 4. **Communication**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *Les Fellows partageront un groupe Telegram avec d'autres Modular Fellows et Modular Mentors.*
 
-5. **Monthly stipend**
+5. **Indemnité mensuelle**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *Les Fellows recevront 3 000,00 $ par mois payés à la fin de chaque étape.*
 
-## Continuation
+## Poursuite
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+Bien que le programme ne dure que 3 mois, nous vous fournirons une assistance continue de la manière suivante.
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- **Subventions & financement **- Nous vous aiderons à collecter des fonds ou à demander une subvention afin que vous puissiez continuer à développer votre projet.
+- **Réseau d'anciens élèves** - Vous serez admis dans le réseau d'anciens élèves de Modular Fellows, où vous pourrez rester en contact avec d'autres anciens et futurs élèves de Modular Fellows.
 
 ### Modular Mentors
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+Les Modular Fellows travailleront en étroite collaboration avec l'équipe de Celestia Labs et un groupe de Modular Mentors triés sur le volet qui les aideront à résoudre des problèmes d'ingénierie et leur fourniront un retour d'information sur les étapes clés.
 
-These are the Mentors for the first cohort:
+Voici les Mentors pour la première cohorte :
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi
+- [Wei Dai](https://twitter.com/_weidai) - Partenaire de recherche à Bain Capital Crypto
+- [Peut Gurel](https://twitter.com/CannnGurel) - Chercheur chez Delphi Digital
+- [Eric Wall](https://twitter.com/ercwl) - Chercheur Blockchain
+- [Eli Krenzke](https://twitter.com/eKRENZKE) - Partenaire de l'équipe de recherche chez Polychain
+- [Zaki Manian](https://twitter.com/zmanian) - Cofondateur de Sommelier, cofondateur d'iqlusion, a aidé à construire l'écosystème Cosmos, y compris le lancement du premier testnet public Cosmos
+- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead et fondateur de binary holdings works.
+- [Morgan Beller](https://twitter.com/beller) - Partenaire général à NFX, un fonds de capital-risque. Responsable de la stratégie pour Novi de Facebook
 - [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
 - [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
 - [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- [Evan Forbes](https://twitter.com/evansforbes) - Ingénieur logiciel, Celestia Labs
