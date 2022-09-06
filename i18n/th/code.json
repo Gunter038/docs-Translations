@@ -4,11 +4,11 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "ลองอีกครั้ง",
     "description": "The label of the button to try again when the page crashed"
   },
   "theme.NotFound.title": {
-    "message": "Page Not Found",
+    "message": "ไม่พบหน้าที่ค้นหา",
     "description": "The title of the 404 page"
   },
   "theme.NotFound.p1": {
@@ -24,7 +24,7 @@
     "description": "The ARIA label for the back to top button"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Close",
+    "message": "ปิด",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.archive.title": {
@@ -132,7 +132,7 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Next",
+    "message": "ถัดไป",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
@@ -195,7 +195,7 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "กลับสู่เมนูหลัก",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -219,7 +219,7 @@
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "แท็ก",
     "description": "The title of the tag list page"
   },
   "Build Modular": {
@@ -256,7 +256,7 @@
     "message": "See all {count} results"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "ค้นหา",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.documentsFound.plurals": {
@@ -276,7 +276,7 @@
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "Search",
+    "message": "ค้นหา",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
