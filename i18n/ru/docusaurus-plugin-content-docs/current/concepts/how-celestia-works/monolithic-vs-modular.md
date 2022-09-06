@@ -4,17 +4,17 @@ sidebar_label : Монолитные и Модульные блокчейны
 
 # Монолитные и Модульные блокчейны
 
-Blockchains instantiate [replicated state machines](https://dl.acm.org/doi/abs/10.1145/98163.98167): the nodes in a permissionless distributed network apply an ordered sequence of deterministic transactions to an initial state resulting in a common final state. This means blockchains require the following four functions:
+Блокчейны создают экземпляры [реплицированных конечных автоматов](https://dl.acm.org/doi/abs/10.1145/98163.98167): узлы в распределенной сети без разрешений применяют упорядоченную последовательность детерминированных транзакций в начальном состоянии, приводящее к общему конечному состоянию. Это означает, что блокчейны требуют следующих четырех функций:
 
-- __Execution__ entails executing transactions that update the state correctly. Thus, execution must ensure that only valid transactions are executed, i.e., transactions that result in valid state machine transitions.
-- __Settlement__ entails an environment for execution layers to verify proofs, resolve fraud disputes, and bridge between other execution layers.
-- __Consensus__ entails agreeing on the order of the transactions.
-- __Data Availability__ (DA) entails making the transaction data available. Note that execution, settlement, and consensus require DA.
+- __Выполнение__ требует выполнения транзакций, которые корректно обновляют состояние. Таким образом, выполнение должно гарантировать, что выполняются только допустимые транзакции, т.е, транзакции, которые приводят к действительным переходам конечного автомата.
+- __Урегулирование__ подразумевает среду для уровней исполнения для проверки доказательств, разрешать споры о мошенничестве и устанавливать мосты между другими уровнями исполнения.
+- __Консенсусы__ подразумевают согласование порядка транзакций.
+- __Доступность данных__ (DA) подразумевает предоставление данных о транзакциях. Обратите внимание, что исполнение, урегулирование и консенсус требуют DA.
 
-Traditional blockchains, i.e. _monolithic blockchains_, implement all four functions together in a single base consensus layer. The problem with monolithic blockchains is that the consensus layer must perform a lot of different tasks and it cannot be optimized for only one of these functions. As a result, the monolithic paradigm limits the throughput of the system.
+Традиционные блокчейны, то есть _монолитные блокчейны_, реализуют все четыре функции вместе, в едином базовом консенсусном слое. Проблема с монолитными блокчейнами заключается в том, что консенсусный слой должен выполнять множество различных задач и не может быть оптимизирован только для одной из этих функций. В результате монолитная парадигма ограничивает пропускную способность системы.
 
-![Modular VS Monolithic](/img/concepts/monolithic-modular.png)
+![Модульные и Монолитные](/img/concepts/monolithic-modular.png)
 
-As a solution, modular blockchains decouple these functions among multiple specialized layers as part of a modular stack. Due to the flexibility that specialization provides, there are many possibilities in which that stack can be arranged. For example, one such arrangement is the separation of the four functions into three specialized layers.
+Как решение, модульные блокчейны распаковывают эти функции среди нескольких специализированных слоёв как часть модульного стека. Благодаря гибкости, предоставляемой специализацией, существует много возможностей, в которых может быть организован этот стек. Например, одной из таких схем является разделение четырех функций на три специализированных слоя.
 
-The base layer consists of DA and consensus and thus, is referred to as the Consensus and DA layer (or for brevity, the DA layer), while both settlement and execution are moved on top in their own layers. As a result, every layer can be specialized to optimally perform only its function and thus, increase the throughput of the system. Furthermore, this modular paradigm enables multiple execution layers, i.e., [rollups](https://vitalik.ca/general/2021/01/05/rollup.html), to use the same settlement and DA layers.
+Базовый слой состоит из доступности данных и консенсуса, поэтому именуется как консенсус и слой доступности данных (или для краткости, слой DA), в то время как расчет и исполнение перемещаются наверх в собственных слоях. В результате каждый слой может быть специализированным, чтобы оптимально выполнять только свою функцию, таким образом увеличивая пропускную способность системы. Более того, эта модульная парадигма позволяет нескольким слоям исполнения, т.е. [rollups](https://vitalik.ca/general/2021/01/05/rollup.html)использовать одни и те же слои DA и расчетов.
