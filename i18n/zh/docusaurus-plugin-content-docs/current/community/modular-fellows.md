@@ -1,64 +1,52 @@
 ---
-sidebar_label : Modular Fellows
+sidebar_label: 模块化研究员
 ---
 
-# Modular Fellows
+# 模块化研究员
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows is a program designed to empower modular builders with the
-right resources to build the future of scalable and sovereign blockchain networks.
+模块化研究员是一个旨在为模块化构建者提供正确资源的计划，以构建可扩展和主权区块链网络的未来。
 
-Over the course of the three month program, Modular Fellows will receive engineering
-support, mentorship, and a monthly stipend of $3,000 to build a project of their
-choice. After the program, continuing support will be available for Fellows in the
-form of fundraising help and grants.
+在为期三个月的计划中，模块化研究员将获得工程支持、指导和每月 3,000 美元的津贴，以构建他们选择的项目。 计划结束后，将继续以筹款帮助和赠款的形式为研究员提供支持。
 
-Applications are now open [here](https://celestia-intake.typeform.com/to/RB5FgXt2).
-Read on for more details.
+申请目前已关闭， 请回来查看有关未来队伍的详细信息。
 
-## Overview
+## 概述
 
-### Milestones
+### 里程碑
 
-Each month, the Fellows will complete a project milestone, culminating in a
-demo-day presentation.
+每个月，研究员将完成一个项目里程碑，最后演示介绍。
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- **第 1 个月** - 学习和探索(准备就绪时开始构建)
 
-  In this month, you will immerse yourself in modular blockchains to come up
-with ideas of protocols, tools or applications to build during the rest
-of the program.
+  在这个月里，您将沉浸在模块化区块链中，提出协议、工具或应用程序的想法，以便在项目的其余部分构建。
 
-  - *Milestone - present an idea that you want to pursue*
+  - *里程碑 - 提出你想要追求的想法*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- **第 2 个月** - 设计和实现基本原型
 
-  In this month, you will design and implement a basic prototype of the
-idea that you settled on during the first month.
+  在这个本月里，您将设计和实施您在第一个月确定的想法的基本原型。
 
-  - *Milestone - present the prototype for feedback*
+  - *里程碑 - 展示原型以获取反馈*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- **第 3 个月** - 将原型构建成功能性产品
 
-  In this month, you will expand on your prototype to build a functional
-product which you will demo and explain with a write up.
+  在这个月里，您将扩展您的产品原型以构建一个功能性产品，然后对其进行演示并写一篇文章解释。
 
-  - *Milestone - demo, write up of product*
+  - *里程碑 - 演示，产品编写*
 
-## Project ideas
+## 项目构想
 
-Fellows do not need to have a specific project idea at the start of the program,
-but you will need to settle on one by the end of the first month. There are no
-right or wrong ideas, but here are a few to get you thinking:
+研究员在项目开始时不需要有特定的项目想法， 但是您需要在第一个月底之前确定一个。 没有正确或错误的想法，但这里有一些可以让您思考：
 
-- New execution layers, e.g. a Move rollup
-- Rollup infrastructure services, e.g. one click deploy rollup sequencers
-- Modular interoperability solutions, e.g. settlement layers or bridges
-- Modular versions of the following
+- 新的执行层，例如 Move Rollup
+- Rollup 基础设施服务，例如一键部署 Rollup 排序器
+- 模块化互操作性解决方案，例如结算层或桥梁
+- 以下的模块化版本
   - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - NFT 平台
+  - [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)等命名服务
   - Social graphs like [Lens Protocol](https://lens.xyz/)
 
 ## Support
@@ -71,11 +59,10 @@ right or wrong ideas, but here are a few to get you thinking:
 
 2. **Lessons & tutorials**
 
-    *Presentations from Celestia Labs team members & mentors explaining key
-    concepts or giving tutorials on specific tools.*
+    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
 
 3. **Demos from participants**
-  
+
     *Presentations from fellows about what they are working on for feedback.*
 
 4. **Communication**
@@ -88,19 +75,14 @@ right or wrong ideas, but here are a few to get you thinking:
 
 ## Continuation
 
-Though the program lasts only 3 months, we will provide you with continuing
-support in the following ways.
+Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a
-  grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network
-  where where you can keep in touch with other past and future Modular Fellows.
+- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
+- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
 
 ### Modular Mentors
 
-Modular Fellows will work closely with the Celestia Labs team and a group of
-hand-picked Modular Mentors who will help solve engineering problems and provide
-feedback on milestones.
+Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
 
 These are the Mentors for the first cohort:
 
@@ -108,29 +90,10 @@ These are the Mentors for the first cohort:
 - [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
 - [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
 - [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder
-  of iqlusion, helped build the Cosmos ecosystem, including launching the first
-  public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and
-  founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage
-  venture capital fund, prev. Head of Strategy for Facebook's Novi
+- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
+- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
+- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi Head of Strategy for Facebook's Novi
 - [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
 - [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
 - [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
 - [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
-
-## How to apply
-
-If you would like to join the program, complete
-**[this](https://celestia-intake.typeform.com/to/RB5FgXt2)** application form.
-
-The program is targeted for creative engineers who possess a strong understanding
-of modular blockchains and have a track record of building. Please share links to
-any relevant engineering work on github and written content that demonstrates your
-understanding of modular chains.
-
-## Contact
-
-For any questions, reach out to Nader Dabit via email nader@celestia.org or
-Telegram @naderdabit.
