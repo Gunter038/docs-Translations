@@ -76,21 +76,21 @@ celestia bridge start --core.grpc http://<ip>:9090
 
 Nếu bạn cần danh sách các endponit RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Once you start the Bridge Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Khi bạn khởi động Bridge Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ ví bằng mã thông báo Mamaki Testnet để thanh toán cho Giao dịch PayForData. Bạn có thể tìm thấy địa chỉ ví bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Có thể yêu cầu mã thông báo Mamaki Testnet [ here ](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-#### Optional: run the bridge node with a custom key
+#### Tùy chọn: chạy bridge node bằng khóa tùy chỉnh
 
-In order to run a bridge node using a custom key:
+Để chạy một bridge node bằng cách sử dụng khóa tùy chỉnh:
 
-1. The custom key must exist inside the celestia bridge node directory at the correct path (default: `~/.celestia-bridge/keys/keyring-test`)
+1. Khóa tùy chỉnh phải tồn tại trong thư mục celestia bridge node tại đúng đường dẫn (default: ` ~ /.celestia-bridge / keys / keyring-test `)
 2. The name of the custom key must be passed upon `start`, like so:
 
 ```sh
