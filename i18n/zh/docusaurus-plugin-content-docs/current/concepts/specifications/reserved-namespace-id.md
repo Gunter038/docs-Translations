@@ -1,9 +1,9 @@
-# Reserved Namespace IDs
+# 保留命名空间 IDs
 
-This is a table of reserved namespace IDs on the Celestia Network.
+这是 Celestia 网络上保留的命名空间 IDs 表。
 
 <!-- markdownlint-disable MD013 -->
-| name                                    | type          | value                | description                                                                                |
+| 名称                                      | 类型            | 值                    | 说明                                                                                         |
 | --------------------------------------- | ------------- | -------------------- | ------------------------------------------------------------------------------------------ |
 | `TRANSACTION_NAMESPACE_ID`              | `NamespaceID` | `0x0000000000000001` | Transactions: requests that modify the state.                                              |
 | `INTERMEDIATE_STATE_ROOT_NAMESPACE_ID`  | `NamespaceID` | `0x0000000000000002` | Intermediate state roots, committed after every transaction.                               |
