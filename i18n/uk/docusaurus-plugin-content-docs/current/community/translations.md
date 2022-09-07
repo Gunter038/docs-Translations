@@ -8,15 +8,15 @@
 
 ## Відвідайте наш проект Crowdin
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Перейдіть до проекту Crowdin [тут](https://crowdin.com/project/celestia-docs).
 
 Вам потрібно створити обліковий запис, а потім ви зможете приєднатися до проекту для того, щоб почати подорож по перекладам.
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+Якщо ви не бачите своєї мови, ви можете попросити про неї в діскорді проекту, [тут](https://discord.gg/celestiacommunity).
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+В Crowdin ви можете перекладати, коментувати переклади, та також віддавати голоси і знижувати голоси за переклади.
 
-Give your opinion on existing translations to ensure it is correct!
+Дайте свою думку щодо існуючих перекладів, щоб переконатися, що вона правильна!
 
 ## Рекомендації
 
@@ -50,7 +50,7 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+Крім того, вам не потрібно перекладати URL на вашу локальну мову.
 
 #### Специфічні слова
 
