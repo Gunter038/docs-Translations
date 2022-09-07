@@ -8,73 +8,73 @@ This tutorial will go over the steps to setting up your Celestia Bridge node.
 
 Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
 
-Validators do not have to run bridge nodes, but are encouraged to in order to relay blocks to the data availability network.
+Validators không phải chạy các nodes cầu nối, nhưng được khuyến khích để để chuyển tiếp các khối tới mạng dữ liệu khả dụng.
 
-## Overview of bridge nodes
+## Tổng quan về các bridge nodes
 
-A Celestia bridge node has the following properties:
+Một node Celestia bridge có các thuộc tính sau:
 
-1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
-2. Validate and erasure code the “raw” blocks
-3. Supply block shares with data availability headers to Light Nodes in the DA network. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+1. Nhập và xử lý tiêu đề "raw" & amp; blocks từ một quy trình Core tin cậy (có nghĩa là một kết nối RPC đáng tin cậy với một nút lõi celestia) trong mạng đồng thuận. Các nodes bridge có thể chạy quy trình cốt lõi này  nội bộ (embedded) hoặc chỉ cần kết nối với một điểm cuối từ xa. Bridge Nodes cũng có tùy chọn trở thành valodators tích cực trong mạng đồng thuận.
+2. Xác thực và xóa code các khối "raw"
+3. Supply blocks chia sẻ với các headers về tính khả dụng của dữ liệu với các Nodes Light trong mạng DA.![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
-From an implementation perspective, Bridge Nodes run two separate processes:
+Từ góc độ triển khai, các Bridge Nodes chạy hai quy trình riêng biệt:
 
 1. Celestia App with Celestia Core ([see repo](https://github.com/celestiaorg/celestia-app))
 
-    * **Celestia App** is the state machine where the application and the proof-of-stake logic is run. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
-    * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * ** Ứng dụng Celestia ** là trạng thái máy mà ứng dụng và proof-of-stake logic được chạy. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
+    * ** Celestia Core ** là layer tương tác trạng thái, đồng thuận và tạo ra khối. Celestia Core được xây dựng trên [ Tendermint Core ](https://docs.tendermint.com/), được sửa đổi để lưu trữ data roots của các khối được mã hóa xóa trong các thay đổi khác ([ see ADRs ](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
 2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
 
-    * **Celestia Node** augments the above with a separate libp2p network that serves data availability sampling requests. The team sometimes refer to this as the “halo” network.
+    * ** Celestia Node ** tăng cường phần trên với một mạng libp2p riêng biệt phục vụ các yêu cầu lấy mẫu về tính khả dụng của dữ liệu. Team đôi khi xem nó như là mạng "halo".
 
-## Hardware requirements
+## Yêu cầu phần cứng
 
-The following hardware minimum requirements are recommended for running the bridge node:
+Các yêu cầu tối thiểu về phần cứng sau đây được khuyến nghị để chạy bridge node:
 
-* Memory: 8 GB RAM
+* Bộ nhớ: 8 GB RAM
 * CPU: Quad-Core
-* Disk: 250 GB SSD Storage
+* Ổ đĩa: 250 GB SSD Storage
 * Bandwidth: 1 Gbps for Download/100 Mbps for Upload
 
-## Setting up your bridge node
+## Thiết lập bridge node của bạn
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Hướng dẫn sau được thực hiện trên máy tính phiên bản Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Thiết lập các phụ thuộc
 
-Follow the tutorial here installing the dependencies [here](../developers/environment.md).
+Làm theo hướng dẫn tại đây để cài đặt các phần phụ thuộc [ here ](../developers/environment.md).
 
-## Deploy the Celestia bridge node
+## Triển khai Celestia bridge node
 
-### Install Celestia node
+### Cài đặt Node Celestia
 
-Install the Celestia Node binary, which will be used to run the Bridge Node.
+Cài đặt binary Celestia Node, chúng sẽ được sử dụng để chạy Bridge Node.
 
-Follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md).
+Làm theo hướng dẫn cài đặt Celestia Node [ here ](../developers/celestia-node.md).
 
-### Initialize the bridge node
+### Khởi tạo bridge node
 
-Run the following:
+Chạy lệnh sau:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip-address>:26657
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Nếu bạn cần danh sách các endpoints RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Chạy bridge node
 
-Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Khởi động Bridge Node bằng kết nối với endpoint của node's gRPC validator (thường được hiển thị trên cổng 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
+> LƯU Ý: Để có quyền truy cập vào khả năng nhận / gửi thông tin liên quan đến trạng thái, chẳng hạn như khả năng gửi các giao dịch PayForData hoặc truy vấn số dư tài khoản các nodes, một endpoint gRPC của validator (core) phải được chuyển như chỉ dẫn bên dưới._
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Nếu bạn cần danh sách các endponit RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
 You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
 
