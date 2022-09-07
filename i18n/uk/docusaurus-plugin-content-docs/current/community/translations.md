@@ -32,11 +32,11 @@
 
 На деяких сторінках містяться метадані та комп'ютерний код.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+Важливо пам"ятати, що Вільям Шекспір був англомовним оратором. Отже, був Алан Торінг! Саме тому не варто перекладати частини коду "itslef".
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Наприклад, якщо ви бачите такі метадані, як `sidebar_label : Привіт світ`, французький переклад буде `sidebar_label : Salut tout le monde`.
 
-Let's take another example, you wouldn't have to translate anything here:
+Візьмемо інший приклад, вам не доведеться перекладати наступний текст:
 
 ```sh
 cd $HOME
@@ -54,6 +54,6 @@ make install
 
 #### Специфічні слова
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+Як ви будете перекладати інноваційні концепції, такі як "Доступність даних" "Самплінг", не соромтеся обговорювати найкращий варіант перекладу зі спільнотою.
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+Також будьте обережні з датами, періодами та комами щодо чисел від однієї мови до іншої.
