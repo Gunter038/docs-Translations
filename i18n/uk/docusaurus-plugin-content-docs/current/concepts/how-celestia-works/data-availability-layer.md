@@ -16,7 +16,7 @@ Celestia - це рівень доступності даних (DA), який з
 
 Потім для рядків і стовпців розширеної матриці обчислюються 4k окремих коренів Меркла; корінь Меркла з цих коренів Меркла використовується як зобов'язання даних блоку в заголовку блоку.
 
-![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
+![2D кодування Ріда-Соломана (RS).](/img/concepts/reed-solomon-encoding.png)
 
 Щоб переконатися, що дані доступні, легкі вузли Celestia беруть вибірку з фрагментів даних 2k × 2k.
 
@@ -52,31 +52,31 @@ Celestia розділяє дані блоку на кілька просторі
 
 NMT - це дерево Меркла, листя якого впорядковано за ідентифікаторами простору імен та хеш-функцією, модифікованою таким чином, що кожен вузол дерева містити діапазон просторів імен всіх своїх нащадків. На наступному малюнку показано приклад NMT з висотою три (тобто вісім блоків даних). Дані розділені на три простори імен.
 
-![Namespaced Merkle Tree](/img/concepts/nmt.png)
+![Просторові дерева Меркла (NMT)](/img/concepts/nmt.png)
 
 Коли програма запитує дані для простору імен 2, рівень DA має надати блоки даних `D3`, `D4`, `D5` і `D6 ` і вузли `N2`, `N8` і `N7` як доказ (зверніть увагу, що програма вже має корінь `N14` із заголовка блоку).
 
 В результаті додаток має можливість перевірити, що надані дані є частиною даних блоку. Крім того, програма може перевірити, що всі дані для простору імен 2 були надані. Якщо рівень DA надає, наприклад, тільки фрагменти даних `D4` і `D5`, він також повинен надати вузли `N12` і `N11` як докази. Однак програма може визначити, що дані неповні, перевіривши діапазон простору імен двох вузлів, тобто обидва `N12` і `N11` мають нащадкову частину простору імен 2.
 
-For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
+Щоб дізнатися більше про NMT, перегляньте [оригінальний документ](https://arxiv.org/abs/1905.09274).
 
-## Building a PoS Blockchain for DA
+## Створення PoS Блокчейну для DA
 
-### Providing Data Availability
+### Забезпечення доступності даних
 
-The Celestia DA layer consists of a PoS blockchain. Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+Шар Celestia DA складається з блокчейну PoS. Celestia називає цей блокчейн як [Celestia App](https://github.com/celestiaorg/celestia-app), додаток, який забезпечує транзакції для полегшення роботи рівня DA і побудований з використанням [Cosmos SDK](https://docs.cosmos.network/v0.44/). На наступному малюнку показані основні компоненти програми Celestia App.
 
-![Main components of Celestia App](/img/concepts/celestia-app.png)
+![Основні компоненти Celestia App](/img/concepts/celestia-app.png)
 
-Celestia App is built on top of [Celestia Core](https://github.com/celestiaorg/celestia-core), a modified version of the [Tendermint consensus algorithm](https://arxiv.org/abs/1807.04938). Among the more important changes to vanilla Tendermint, Celestia Core:
+Додаток Celestia побудований на основі [Celestia Core](https://github.com/celestiaorg/celestia-core), модифікованої версії [Tendermint алгоритму консенсусу](https://arxiv.org/abs/1807.04938). Серед більш важливих змін у vanilla Tendermint, Celestia Core:
 
-- Enables the erasure coding of block data (using the 2-dimensional Reed-Solomon encoding scheme).
-- Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
+- Вмикає кодування стирання блокових даних (з використанням двовимірної схеми кодування Ріда-Соломона).
+- Замінює звичайне дерево Merkle, яке використовується Tendermint для зберігання блокових даних, на [дерево Merkle з простором імен](https://github.com/celestiaorg/nmt), яке дає змогу зазначеним вище рівням (тобто виконанню та розрахунку) завантажувати лише необхідні дані (додаткову інформацію див. у розділі нижче з описом випадків використання).
 
-For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
+Для отримання більш детальної інформації про зміни в Tendermint, ознайомтеся з [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Зверніть увагу, що вузли Celestia Core все ще використовують p2p-мережу Tendermint.
 
-Similarly to Tendermint, Celestia Core is connected to the application layer (i.e., the state machine) by [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), a major evolution of [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
+Подібно до Tendermint, Celestia Core підключено до прикладного рівня (тобто машини стану) за допомогою [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), основної еволюції [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
 
-The Celestia App state machine is necessary to execute the PoS logic and to enable the governance of the DA layer.
+Машина стану Celestia App необхідна для виконання логіки PoS і для управління рівнем DA.
 
-However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
+Однак програма Celestia не залежить від даних — машина стану не перевіряє та не зберігає дані, які надає програма Celestia.
