@@ -5,7 +5,7 @@ sidebar_label : Config.toml Guide
 # Config.toml breakdown
 
 - [Config.toml breakdown](#configtoml-breakdown)
-  - [Pre-Requisites](#pre-requisites)
+  - [Điều kiện tiên quyết](#pre-requisites)
   - [Understanding config.toml](#understanding-configtoml)
     - [[Core]](#core)
     - [[P2P]](#p2p)
@@ -14,22 +14,22 @@ sidebar_label : Config.toml Guide
     - [[Services]](#services)
       - [TrustedHash and TrustedPeer](#trustedhash-and-trustedpeer)
 
-## Pre-requisites
+## Điều kiện tiên quyết
 
-Please, make sure that you have installed and initialized celestia node
+Vui lòng đảm bảo rằng bạn đã cài đặt và khởi chạy node celestia
 
 ## Understanding config.toml
 
-After initialization, for any type of node, you will find a `config.toml` in the following path (default location):
+Sau khi khởi tạo, đối với bất kỳ loại nút nào, bạn sẽ thấy ` config.toml ` trong đường dẫn sau (vị trí mặc định):
 
 - `$HOME/.celestia-bridge/config.toml` for bridge node
 - `$HOME/.celestia-light/config.toml` for light node
 
-Let's break down some of the most used sections.
+Hãy chia nhỏ một số phần được sử dụng nhiều nhất.
 
 ### [Core]
 
-This section is needed for the Celestia Bridge Node. By default, `Remote = false`. Still for devnet, we are going to use the remote core option and this can also be set by the command line flag `--core.remote`.
+Phần này cần thiết cho Celestia Bridge Node. By default, `Remote = false`. Still for devnet, we are going to use the remote core option and this can also be set by the command line flag `--core.remote`.
 
 ### [P2P]
 
