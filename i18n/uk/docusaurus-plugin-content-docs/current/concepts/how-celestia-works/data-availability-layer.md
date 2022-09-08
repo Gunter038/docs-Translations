@@ -10,25 +10,25 @@ Celestia - це рівень доступності даних (DA), який з
 
 ## Вибірка Доступності Даних (DAS)
 
-In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
+В цілому, легкі вузли завантажують тільки заголовки блоків, які містять зобов'язання (тобто корені Меркла) даних блоку (тобто список транзакцій).
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+Щоб зробити DAS можливим, Celestia використовує 2-вимірну схему кодування Ріда-Соломона для кодування блокових даних: кожен блок даних розбивається на k × k фрагментів, розташованих у матриці k × k, і розширюється за допомогою парності даних у розширену матрицю 2k × 2k шляхом багаторазового застосування кодування Ріда-Соломона.
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+Потім для рядків і стовпців розширеної матриці обчислюються 4k окремих коренів Меркла; корінь Меркла з цих коренів Меркла використовується як зобов'язання даних блоку в заголовку блоку.
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+Щоб переконатися, що дані доступні, легкі вузли Celestia беруть вибірку з фрагментів даних 2k × 2k.
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+Кожен легкий вузол випадковим чином вибирає набір унікальних координат у розширеній матриці і запитує повні вузли для отримання фрагментів даних і відповідних доведень Меркла за цими координатами. Якщо легкі вузли отримують дійсну відповідь на кожен запит вибірки, то існує [високоймовірна гарантія](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) що дані всього блоку доступні.
 
-Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
+Крім того, кожен отриманий фрагмент даних з коректним доказом Меркла передається в мережу. В результаті, поки легкі вузли Селестії вибирають разом достатньо блоків даних (тобто, принаймні, k × k унікальних блоків), повний блок може бути відновлений чесними повними вузлами.
 
-For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
+Для отримання більш детальної інформації про DAS ознайомтеся з [оригінальним документом](https://arxiv.org/abs/1809.09044).
 
-### Scalability
+### Масштабованість
 
-DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+DAS дозволяє Селестії масштабувати шар DA. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
 
 This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
 
