@@ -6,9 +6,9 @@ sidebar_label : Слой доступности данных Celestia
 
 Пользователи запрашивают приложение Celestia для того, чтобы сделать данные доступными, отправив `PayForData` транзакции. Каждая такая транзакция состоит из идентификатора отправителя, данных, которые должны быть доступны, также называется сообщением, размер данных, идентификатор пространства имен и подпись. Каждый производитель блоков собирает несколько `PayForData` транзакций в блок.
 
-Before proposing the block though, the producer passes it to the state machine via ABCI++, where each `PayForData` transaction is split into a namespaced message (denoted by `Msg` in the figure below), i.e., the data together with the namespace ID, and an executable transaction (denoted by `e-Tx` in the figure below) that does not contain the data, but only a commitment that can be used at a later time to prove that the data was indeed made available.
+Однако прежде чем предложить блок, производитель передает его в конечный автомат через ABCI++, где каждая транзакция `PayForData` разделяется на сообщение с пространством имен (обозначенное `Msg` на рисунке ниже), т.е. на данные вместе с идентификатором пространства имен, и исполняемую транзакцию (обозначенную `e-Tx` на рисунке ниже), которая не содержит данные, а только обязательство, которое может быть использовано позже, чтобы доказать, что данные действительно были доступны.
 
-Thus, the block data consists of data partitioned into namespaces and executable transactions. Note that only these transactions are executed by the Celestia state machine once the block is committed.
+Таким образом, данные блоков состоят из данных, разделенных на пространства имен и исполняемые транзакции. Обратите внимание, что только эти транзакции выполняются конечным автоматом Celestia после совершения блока.
 
 ![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
 
