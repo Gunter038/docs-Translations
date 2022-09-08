@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Celestia's Data Availability Layer
+sidebar_label : Рівень доступності даних Celestia
 - - -
 
 # Рівень доступності даних Celestia
@@ -28,35 +28,35 @@ Celestia - це рівень доступності даних (DA), який з
 
 ### Масштабованість
 
-DAS дозволяє Селестії масштабувати шар DA. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+DAS дозволяє Селестії масштабувати шар DA. DAS може виконуватися за допомогою обмежених в ресурсах легких вузлів, оскільки кожен легкий вузол відбирає лише невелику частину даних блоку. Чим більше легких вузлів в мережі, тим більше даних вони можуть колективно завантажувати і зберігати.
 
-This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
+Це означає, що збільшення кількості легких вузлів, які виконують DAS, дозволяє створювати більші блоки (тобто з більшою кількістю транзакцій), водночас зберігаючи DAS можливим для легких вузлів з обмеженими ресурсами. Однак, щоб перевірити заголовки блоків, легкі вузли Celestia повинні завантажити проміжні корені Merkle 4k.
 
-For a block data size of n bytes, this means that every light node must download O(n) bytes. Therefore, any improvement in the bandwidth capacity of Celestia light nodes has a quadratic effect on the throughput of Celestia's DA layer.
+Для блоку даних розміром n байт це означає, що кожен легкий вузол повинен завантажити O(n) байт. Тому будь-яке поліпшення пропускної здатності легких вузлів Celestia має квадратичний ефект на пропускну здатність DA-шару Celestia.
 
-### Fraud Proofs of Incorrectly Extended Data
+### Докази шахрайства щодо неправильно розширених даних
 
-The requirement of downloading the 4k intermediate Merkle roots is a consequence of using a 2-dimensional Reed-Solomon encoding scheme. Alternatively, DAS could be designed with a standard (i.e., 1-dimensional) Reed-Solomon encoding, where the original data is split into k  chunks and extended with k additional chunks of parity data. Since the block data commitment is the Merkle root of the 2k resulting data chunks, light nodes no longer need to download O(n) bytes to validate block headers.
+Вимога завантаження 4k проміжних коренів Меркла є наслідком використання двовимірної схеми кодування Ріда-Соломона. Альтернативно, DAS може бути розроблена зі стандартним (тобто, одновимірним) кодуванням Ріда-Соломона, де вихідні дані розбиваються на k частин і доповнюються k додатковими k додатковими блоками даних парності. Оскільки зобов'язання блочних даних - це корінь Меркла з 2k отриманих блоків даних, легким вузлам більше не потрібно завантажувати O(n) байт для перевірки заголовків блоків.
 
-The downside of the standard Reed-Solomon encoding is dealing with malicious block producers that generate the extended data incorrectly.
+Недоліком стандартного кодування Ріда-Соломона є боротьба зі зловмисними виробниками блоків, які некоректно генерують розширені дані.
 
-This is possible as __Celestia does not require a majority of the consensus (i.e., block producers) to be honest to guarantee data availability.__ Thus, if the extended data is invalid, the original data might not be recoverable, even if the light nodes are sampling sufficient unique chunks (i.e., at least k for a standard encoding and k × k for a 2-dimensional encoding).
+Це можливо, оскільки __Celestia не потребує чесності більшості консенсусу (тобто виробників блоків), щоб гарантувати доступність даних.__Таким чином, якщо розширені дані недійсні, вихідні дані можуть бути невідновленими, навіть якщо легкі вузли відбирають достатню кількість унікальних фрагментів (тобто принаймні k для стандартного кодування та k × k для 2-вимірного кодування).
 
-As a solution, _Fraud Proofs of Incorrectly Generated Extended Data_ enable light nodes to reject blocks with invalid extended data. Such proofs require reconstructing the encoding and verifying the mismatch. With standard Reed-Solomon encoding, this entails downloading the original data, i.e., O(n) bytes. Contrastingly, with 2-dimensional Reed-Solomon encoding, only O(n ) bytes are required as it is sufficient to verify only one row or one column of the extended matrix.
+Як рішення, _Докази шахрайства некоректно згенерованих розширених даних_ дозволяють легким вузлам відкидати блоки з недійсними розширеними даними. Такі докази вимагають реконструкції кодування та перевірки невідповідності. При стандартному кодуванні Ріда-Соломона це тягне за собою завантаження вихідних даних, тобто O(n) байт. На відміну від цього, при двовимірному кодуванні Ріда-Соломона потрібно лише O(n) байт оскільки достатньо перевірити лише один рядок або один стовпець розширеної матриці.
 
-## Namespaced Merkle Trees (NMTs)
+## Просторові дерева Меркла (NMT)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia розділяє дані блоку на кілька просторів імен, по одному для кожного додатку (наприклад, роллапу) за допомогою шару DA. В результаті, кожен додаток повинен завантажувати тільки свої дані й може ігнорувати дані інших додатків.
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Для того, щоб це працювало, рівень DA повинен мати можливість довести, що надані дані є повними, тобто повернуті всі дані для даного простору імен. З цією метою Celestia використовує іменовані дерева Меркла (NMT).
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+NMT - це дерево Меркла, листя якого впорядковано за ідентифікаторами простору імен та хеш-функцією, модифікованою таким чином, що кожен вузол дерева містити діапазон просторів імен всіх своїх нащадків. На наступному малюнку показано приклад NMT з висотою три (тобто вісім блоків даних). Дані розділені на три простори імен.
 
 ![Namespaced Merkle Tree](/img/concepts/nmt.png)
 
-When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
+Коли програма запитує дані для простору імен 2, рівень DA має надати блоки даних `D3`, `D4`, `D5` і `D6 ` і вузли `N2`, `N8` і `N7` як доказ (зверніть увагу, що програма вже має корінь `N14` із заголовка блоку).
 
-As a result, the application is able to check that the provided data is part of the block data. Furthermore, the application can verify that all the data for namespace 2 was provided. If the DA layer provides for example only the data chunks `D4` and `D5`, it must also provide nodes `N12` and `N11` as proofs. However, the application can identify that the data is incomplete by checking the namespace range of the two nodes, i.e., both `N12` and `N11` have descendants part of namespace 2.
+В результаті додаток має можливість перевірити, що надані дані є частиною даних блоку. Крім того, програма може перевірити, що всі дані для простору імен 2 були надані. Якщо рівень DA надає, наприклад, тільки фрагменти даних `D4` і `D5`, він також повинен надати вузли `N12` і `N11` як докази. Однак програма може визначити, що дані неповні, перевіривши діапазон простору імен двох вузлів, тобто обидва `N12` і `N11` мають нащадкову частину простору імен 2.
 
 For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
 
