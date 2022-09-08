@@ -12,7 +12,7 @@ sidebar_label : Слой доступности данных Celestia
 
 ![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
 
-Next, the block producer adds to the block header a commitment of the block data. As described [here](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), the commitment is the Merkle root of the 4k intermediate Merkle roots (i.e., one for each row and column of the extended matrix). To compute this commitment, the block producer performs the following operations:
+Далее производитель блока добавляет к заголовку блока обязательство данных блока. Как описано [здесь](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), обязательство является корнем Меркла из 4k промежуточных корней Меркла (т.е. по одному для каждой строки и столбца расширенной матрицы). To compute this commitment, the block producer performs the following operations:
 
 - It splits the executable transactions and the namespaced data into shares. Every share consists of some bytes prefixed by a namespace ID. To this end, the executable transactions are associated with a reserved namespace.
 - It arranges these shares into a square matrix (row-wise). Note that the shares are padded to the next power of two. The outcome square of size k × k is referred to as the original data.
