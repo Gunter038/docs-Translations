@@ -91,14 +91,14 @@ Có thể yêu cầu mã thông báo Mamaki Testnet [ here ](./mamaki-testnet.md
 Để chạy một bridge node bằng cách sử dụng khóa tùy chỉnh:
 
 1. Khóa tùy chỉnh phải tồn tại trong thư mục celestia bridge node tại đúng đường dẫn (default: ` ~ /.celestia-bridge / keys / keyring-test `)
-2. The name of the custom key must be passed upon `start`, like so:
+2. Tên của khóa tùy chỉnh phải được chuyển theo ` start `, như sau:
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the bridge node with SystemD
+### Tùy chọn: bắt đầu bridge node với SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Theo hướng dẫn về cách thiết lập bridge node làm quy trình nền với SystemD [ here ](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Bạn đã thiết lập thành công một bridge node đồng bộ với mạng.
