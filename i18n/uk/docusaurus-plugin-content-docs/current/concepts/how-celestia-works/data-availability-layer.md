@@ -4,11 +4,11 @@ sidebar_label : Celestia's Data Availability Layer
 
 # Рівень доступності даних Celestia
 
-Celestia is a data availability (DA) layer that provides a scalable solution to the [data availability problem](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
+Celestia - це рівень доступності даних (DA), який забезпечує масштабоване рішення [проблеми доступності даних](https://coinmarketcap.com/alexandria/article/what-is-data-availability). У зв'язку з бездозвільною природою блокчейн мереж, рівень DA повинен забезпечувати механізм для рівнів виконання та розрахунків для перевірки з мінімізованою довірою, чи дані транзакцій дійсно доступні.
 
-Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+Дві ключові особливості шару DA Celestia - це [вибірка доступності даних](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) та [Дерева Меркла, розміщені в просторі імен](https://github.com/celestiaorg/nmt) (NMT). Обидві функції є новими рішеннями для масштабування блокчейну: DAS дозволяє легким вузлам перевіряти наявність даних без необхідності завантажувати весь блок; NMT дозволяє рівням виконання і розрахунків на Celestia завантажувати транзакції, які мають відношення тільки до них.
 
-## Data Availability Sampling (DAS)
+## Вибірка Доступності Даних (DAS)
 
 In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
 
