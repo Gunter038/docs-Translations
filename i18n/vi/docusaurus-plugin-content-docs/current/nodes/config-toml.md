@@ -29,24 +29,24 @@ Hãy chia nhỏ một số phần được sử dụng nhiều nhất.
 
 ### [Core]
 
-Phần này cần thiết cho Celestia Bridge Node. By default, `Remote = false`. Still for devnet, we are going to use the remote core option and this can also be set by the command line flag `--core.remote`.
+Phần này cần thiết cho Celestia Bridge Node. By default, `Remote = false`. Vẫn dành cho devnet, chúng tôi sẽ sử dụng tùy chọn chính từ xa và điều này cũng có thể được thiết lập bằng dòng lệnh ` --core.remote `.
 
 ### [P2P]
 
 #### Bootstrap
 
-Bootstrappers help new nodes to find peers faster in the network. By default, the `Bootstrapper = false` and the `BootstrapPeers` is empty. If you want your node to be a bootstrapper, then activate `Bootstrapper = true`. `BootstrapPeers` are already provided by default during initialisation. If you want to add your own manually, you need to provide the multiaddresses of the peers.
+Bootstrappers giúp các nodes mới tìm thấy các đối tác trong mạng nhanh hơn. By default, the `Bootstrapper = false` and the `BootstrapPeers` is empty. Nếu bạn muốn node của mình là một bootstrapper, hãy kích hoạt ` Bootstrapper = true `. ` BootstrapPeers ` được cung cấp mặc định trong quá trình khởi tạo. Nếu bạn muốn thêm riêng của mình theo cách thủ công, bạn cần cung cấp nhiều địa chỉ ví của các đối tác.
 
-#### Mutual peers
+#### Đối tác của nhau
 
-The purpose of this config is to set up a bidirectional communication. This is usually the case for Celestia Bridge Nodes. In addition, you need to change the field `PeerExchange` from false to true.
+Mục đích của cấu hình này là thiết lập giao tiếp hai chiều. Điều này thường xảy ra đối với các Celestia Bridge Nodes. Ngoài ra, bạn cần thay đổi trường ` PeerExchange ` từ false thành true.
 
 ### [Services]
 
 #### TrustedHash and TrustedPeer
 
-`TrustedHash` is needed to properly initialize a Celestia Bridge Node with an already-running `Remote` Celestia Core node. Celestia Light Node will take a genesis hash as the trusted one, if no hash is manually provided during initialization phase.
+` TrustedHash ` là cần thiết để khởi tạo Celestia Bridge Node đúng cách với một node Celestia Core ` Remote ` đã chạy. Celestia Light Node sẽ lấy một mã genesis hash tin cậy, nếu không có hàm hash được cung cấp thủ công trong giai đoạn khởi tạo.
 
-`TrustedPeers` is the array of Bridge Nodes' peers that Celestia Light Node trusts. By default, bootstrap peers becomes trusted peers for Celestia Light Nodes if a user is not setting the trusted peer params in config file.
+` TrustedPeers ` là mảng của các đối tác Bridge Nodes mà Celestia Light Node tin tưởng. Theo mặc định, các bootstrap trở thành các đối tác đáng tin cậy đối với Celestia Light Nodes nếu người dùng không đặt thông số ngang hàng tin cậy trong tệp cấu hình.
 
-Any Celestia Bridge Node can be a trusted peer for the Light one. However, the Light node by design can not be a trusted peer for another Light Node.
+Bất kỳ Celestia Bridge Node nào cũng có thể là một ứng dụng ngang hàng đáng tin cậy cho Light. Tuy nhiên, Light Node theo thiết kế không thể là một ứng dụng ngang hàng đáng tin cậy cho một Light Node khác.
