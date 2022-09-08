@@ -2,12 +2,12 @@
 sidebar_label : Consensus Full Node
 - - -
 
-# Setting up a Celestia Consensus Full Node
+# Thiết lập node đồng thuận Celestia đầy đủ
 <!-- markdownlint-disable MD013 -->
 
-Consensus Full Nodes allow you to sync blockchain history in the Celestia Consensus Layer.
+Các nodes đồng thuận đầy đủ cho phép bạn đồng bộ hóa lịch sử blockchain trong lớp đồng thuận của Celestia.
 
-## Hardware requirements
+## Yêu cầu phần cứng
 
 The following hardware minimum requirements are recommended for running the Consensus Full Node:
 
