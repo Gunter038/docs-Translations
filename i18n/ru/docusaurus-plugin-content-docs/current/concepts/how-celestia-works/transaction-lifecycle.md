@@ -14,14 +14,14 @@ sidebar_label : Слой доступности данных Celestia
 
 Далее производитель блока добавляет к заголовку блока обязательство данных блока. Как описано [здесь](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), обязательство является корнем Меркла из 4k промежуточных корней Меркла (т.е. по одному для каждой строки и столбца расширенной матрицы). Для расчета этого обязательства, производитель блоков выполняет следующие операции:
 
-- It splits the executable transactions and the namespaced data into shares. Every share consists of some bytes prefixed by a namespace ID. To this end, the executable transactions are associated with a reserved namespace.
-- It arranges these shares into a square matrix (row-wise). Note that the shares are padded to the next power of two. The outcome square of size k × k is referred to as the original data.
-- It extends the original data to a 2k × 2k square matrix using the 2-dimensional Reed-Solomon encoding scheme described above. The extended shares (i.e., containing erasure data) are associated with another reserved namespace.
-- It computes a commitment for every row and column of the extended matrix using the NMTs described above.
+- Он разделяет исполняемые транзакции и данные с именами на части. Каждая часть состоит из нескольких байт, начинающихся с идентификатора пространства имен. Для этого исполняемые транзакции ассоциируются с зарезервированным пространством имен.
+- Он упорядочивает эти части в квадратную матрицу (по строкам). Обратите внимание, что части дополняются до следующей степени двойки. Итоговый квадрат размером k × k называется исходными данными.
+- Он расширяет исходные данные до квадратной матрицы 2k × 2k, используя 2-мерную систему кодирования Рида-Соломона, описанную выше. Расширенные части (т.е. содержащие данные об удалении) ассоциируются с другим зарезервированным пространством имен.
+- Он вычисляет обязательство для каждой строки и столбца расширенной матрицы, используя NMT, описанное выше.
 
-Thus, the commitment of the block data is the root of a Merkle tree with the leaves the roots of a forest of Namespaced Merkle subtrees, one for every row and column of the extended matrix.
+Таким образом, фиксация данных блока является корнем дерева Меркла с листьями, корнями леса поддеревьев Меркла с пространством имен по одному на каждую строку и столбец расширенной матрицы.
 
-## Checking Data Availability
+## Проверка доступности данных
 
 ![DA network](/img/concepts/consensus-da.png)
 
