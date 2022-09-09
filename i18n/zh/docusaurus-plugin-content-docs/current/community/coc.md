@@ -62,7 +62,7 @@ sidebar_label : 行为准则
 
 ### 3. 临时封禁
 
-**社区影响**: 严重违反社区准则的行为，包括 持续存在不当行为。
+**社区影响**: 严重违反社区准则的行为，包括持续性存在的不当行为。
 
 **后果**: 指定时间段内暂时禁止与社区进行任何形式的互动或公开交流。 在此期间，不得与相关人员进行公开或私下互动，包括主动与执行《行为准则》的管理员互动。 违反这些规定可能导致永久封禁。
 
@@ -78,7 +78,7 @@ sidebar_label : 行为准则
 
 社区影响指南的灵感来自[Mozilla 的行为准则执行阶梯][Mozilla CoC]
 
-有关此行为准则的常见问题的答案，请参阅[https://www.contributor-covenant.org/faq][FAQ]。 翻译可在[https://www.contributor-covenant.org/translations][translations] 上查阅。
+有关此行为准则的常见问题答案，请参阅[https://www.contributor-covenant.org/faq][FAQ]。 翻译可在[https://www.contributor-covenant.org/translations][translations] 上查阅。
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
