@@ -4,13 +4,13 @@ sidebar_label : Рівень доступності даних Celestia
 
 # Життєвий цикл транзакції програми Celestia
 
-Користувачі роблять запит до програми Celestia, щоб зробити дані доступними надсилаючи транзакції `PayForDataі`. Кожна така транзакція складається з ідентифікації відправника, даних, які будуть доступні, які також називаються повідомленням, розміру даних, ідентифікатору простору імен і підпису. Кожен виробник блоків об’єднує кілька транзакцій `PayForData` в один блок.
+Користувачі роблять запит до програми Celestia, щоб зробити дані доступними надсилаючи транзакції `PayForData`. Кожна така транзакція складається з ідентифікації відправника, даних, які будуть доступні, які також називаються повідомленням, розміру даних, ідентифікатору простору імен і підпису. Кожен виробник блоків об’єднує кілька транзакцій `PayForData` в один блок.
 
 Перш ніж запропонувати блок, виробник передає його до кінцевого автомату через ABCI++, де кожна транзакція `PayForData` розбивається на повідомлення простору імен (позначене `Msg` на малюнку нижче), тобто дані разом з ідентифікатором простору імен і виконуваною транзакцією (позначеною `e-Tx` на малюнку нижче), яка не містить даних, але лише зобов’язання, яке можна використати пізніше, щоб довести, що дані дійсно були доступні.
 
 Таким чином, дані блоку складаються з даних, розділених на простори імен, і виконуваних транзакцій. Зверніть увагу, що тільки ці транзакції виконуються кінцевим автоматом Celestia як тільки блок буде зафіксовано.
 
-![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
+![Життєвий цикл транзакції програми Celestia](/img/concepts/tx-lifecycle.png)
 
 Далі виробник блоку додає до заголовка блоку зобов’язання щодо даних блоку. Як описано [тут](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), зобов’язанням є корінь Меркла з 4k проміжних коренів Меркла (тобто по одному для кожного рядка та стовпця розширеної матриці). Щоб обчислити це зобов’язання, виробник блоку виконує такі операції:
 
@@ -23,18 +23,18 @@ sidebar_label : Рівень доступності даних Celestia
 
 ## Перевірка наявності даних
 
-![DA network](/img/concepts/consensus-da.png)
+![DA мережа](/img/concepts/consensus-da.png)
 
-To enhance connectivity, the Celestia Node augments the Celestia App with a separate libp2p network, i.e., the so-called _DA network_, that serves DAS requests.
+Щоб покращити підключення, нода Celestia доповнює програму Celestia з окремою мережею libp2p, тобто так званою _ DA network_, яка обслуговує запити DAS.
 
-Light nodes connect to a Celestia Node in the DA network, listen to extended block headers (i.e., the block headers together with the relevant DA metadata, such as the 4k intermediate Merkle roots), and perform DAS on the received headers (i.e., ask for random data chunks).
+Легкі вузли підключаються до вузла Celestia в мережі DA, щоб слухати розширені заголовки блоків (тобто заголовки блоків разом із відповідними метаданими DA, такими як проміжні корені Merkle 4k), і виконувати DAS над отриманими заголовками (тобто запитувати випадкові фрагменти даних).
 
-Note that although it is recommended, performing DAS is optional -- light nodes could just trust that the data corresponding to the commitments in the block headers was indeed made available by the Celestia DA layer. In addition, light nodes can also submit transactions to the Celestia App, i.e., `PayForData` transactions.
+Зауважте, що, попри те, що це рекомендовано, виконання DAS є необов’язковим — легкі вузли можуть просто повірити, що дані, які відповідають зобов’язанням у заголовках блоків, дійсно були доступні Celestia DA рівнем. Крім того, легкі вузли також можуть надсилати транзакції в програму Celestia, тобто транзакції `PayForData`.
 
-While performing DAS for a block header, every light node queries Celestia Nodes for a number of random data chunks from the extended matrix and the corresponding Merkle proofs. If all the queries are successful, then the light node accepts the block header as valid (from a DA perspective).
+Під час виконання DAS для заголовка блоку кожен легкий вузол запитує вузли Celestia щодо ряду випадкових фрагментів даних із розширеної матриці та відповідних доказів Merkle. Якщо всі запити виконані успішно, то легкий вузол приймає заголовок блоку як дійсний (з точки зору DA).
 
-If at least one of the queries fails (i.e., either the data chunk is not received or the Merkle proof is invalid), then the light node rejects the block header and tries again later. The retrial is necessary to deal with false negatives, i.e., block headers being rejected although the block data is available. This may happen due to network congestion for example.
+Якщо принаймні один із запитів зазнає невдачі (тобто фрагмент даних не отримано, або доказ Merkle недійсний), тоді легкий вузол відхиляє заголовок блоку та повторює спробу пізніше. Повторний розгляд необхідний, щоб мати справу з помилковими негативними результатами, тобто відхиленням заголовків блоку, хоча дані блоку доступні. Це може статися, наприклад, через перевантаження мережі.
 
-Alternatively, light nodes may accept a block header although the data is not available, i.e., a _false positive_. This is possible since the soundness property (i.e., if an honest light node accepts a block as available, then at least one honest full node will eventually have the entire block data) is probabilistically guaranteed (for more details, take a look at the [original paper](https://arxiv.org/abs/1809.09044)).
+Альтернативно, легкі вузли можуть приймати заголовок блоку, хоча дані недоступні, тобто _false positive_. Це можливо, оскільки властивість надійності (тобто, якщо чесний легкий вузол приймає блок як доступний, то принаймні один чесний повний вузол зрештою матиме всі дані блоку) імовірнісне гарантовано (щоб дізнатися більше, подивіться на < [original paper](https://arxiv.org/abs/1809.09044)).
 
-By fine tuning Celestia's parameters (e.g., the number of data chunks sampled by each light node) the likelihood of false positives can be sufficiently reduced such that block producers have no incentive to withhold the block data.
+Завдяки точному налаштуванню параметрів Celestia (наприклад, кількості фрагментів даних, що відбираються кожним легким вузлом), ймовірність помилкових спрацьовувань може бути достатньо зменшена, щоб виробники блоків не мали стимулу приховувати дані блоків.
