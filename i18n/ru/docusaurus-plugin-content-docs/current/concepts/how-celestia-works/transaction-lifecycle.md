@@ -10,7 +10,7 @@ sidebar_label : Слой доступности данных Celestia
 
 Таким образом, данные блоков состоят из данных, разделенных на пространства имен и исполняемые транзакции. Обратите внимание, что только эти транзакции выполняются конечным автоматом Celestia после совершения блока.
 
-![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
+![Жизненный цикл транзакции приложения Celestia](/img/concepts/tx-lifecycle.png)
 
 Далее производитель блока добавляет к заголовку блока обязательство данных блока. Как описано [здесь](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), обязательство является корнем Меркла из 4k промежуточных корней Меркла (т.е. по одному для каждой строки и столбца расширенной матрицы). Для расчета этого обязательства, производитель блоков выполняет следующие операции:
 
@@ -23,18 +23,18 @@ sidebar_label : Слой доступности данных Celestia
 
 ## Проверка доступности данных
 
-![DA network](/img/concepts/consensus-da.png)
+![Сеть доступности данных](/img/concepts/consensus-da.png)
 
-To enhance connectivity, the Celestia Node augments the Celestia App with a separate libp2p network, i.e., the so-called _DA network_, that serves DAS requests.
+Для расширения возможностей связи узел Celestia дополняет приложение Celestia отдельной сетью libp2p, т.е. так называемой _DA-сетью_, которая обслуживает запросы DAS.
 
-Light nodes connect to a Celestia Node in the DA network, listen to extended block headers (i.e., the block headers together with the relevant DA metadata, such as the 4k intermediate Merkle roots), and perform DAS on the received headers (i.e., ask for random data chunks).
+Легкие узлы подключаются к узлу Celestia в сети DA, просматривают расширенные заголовки блоков (т.е. заголовки блоков вместе с соответствующими метаданными DA, такими как промежуточные корни Меркла в формате 4k), и реализуют DAS на полученных заголовках (т.е. запрашивают случайные фрагменты данных).
 
-Note that although it is recommended, performing DAS is optional -- light nodes could just trust that the data corresponding to the commitments in the block headers was indeed made available by the Celestia DA layer. In addition, light nodes can also submit transactions to the Celestia App, i.e., `PayForData` transactions.
+Обратите внимание, несмотря на то, что это рекомендуется, выполнение DAS является необязательным - легкие узлы могут просто доверять тому, что данные, соответствующие обязательствам в заголовках блоков действительно были предоставлены слоем Celestia DA. Кроме того, легкие узлы могут отправлять транзакции в приложение Celestia, т.е. транзакции `PayForData`.
 
-While performing DAS for a block header, every light node queries Celestia Nodes for a number of random data chunks from the extended matrix and the corresponding Merkle proofs. If all the queries are successful, then the light node accepts the block header as valid (from a DA perspective).
+Во время выполнения DAS для заголовка блока, каждый легкий узел запрашивает у узлов Celestia несколько случайных фрагментов данных из расширенной матрицы и соответствующие доказательства Меркла. Если все запросы успешны, то легкий узел принимает заголовок блока как достоверный (с точки зрения DA).
 
-If at least one of the queries fails (i.e., either the data chunk is not received or the Merkle proof is invalid), then the light node rejects the block header and tries again later. The retrial is necessary to deal with false negatives, i.e., block headers being rejected although the block data is available. This may happen due to network congestion for example.
+Если хотя бы один из запросов не выполняется (т.е. либо фрагмент данных не был получен, либо доказательство Меркла недействительно), то легкий узел отвергает заголовок блока и повторяет попытку позже. Повторная проверка необходима для борьбы с ложными отрицаниями, т.е. заголовки блоков отклоняются, хотя данные блока доступны. Это может произойти в результате перегруженности сети.
 
-Alternatively, light nodes may accept a block header although the data is not available, i.e., a _false positive_. This is possible since the soundness property (i.e., if an honest light node accepts a block as available, then at least one honest full node will eventually have the entire block data) is probabilistically guaranteed (for more details, take a look at the [original paper](https://arxiv.org/abs/1809.09044)).
+В качестве альтернативы, легкие узлы могут принять заголовок блока, хотя данные недоступны, т.е. _ложноположительный ответ_. Это возможно, поскольку свойство надежности (т.е. если честный легкий узел принимает блок как доступный, то по крайней мере один честный полный узел в конечном итоге будет иметь все данные блока) вероятностно гарантировано (для получения более подробной информации посмотрите на [оригинальную статью](https://arxiv.org/abs/1809.09044)).
 
-By fine tuning Celestia's parameters (e.g., the number of data chunks sampled by each light node) the likelihood of false positives can be sufficiently reduced such that block producers have no incentive to withhold the block data.
+Путем точной настройки параметров Celestia (например, количество блоков данных, отбираемых каждым легким узлом) вероятность ложных срабатываний может быть в достаточной степени чтобы у производителей блоков не было стимула скрывать данные о блоках.
