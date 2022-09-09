@@ -2,7 +2,7 @@
 sidebar_label : Celestia's Data Availability Layer
 - - -
 
-# Життєвий цикл Celestia App Transaction
+# Життєвий цикл транзакції програми Celestia
 
 Users request the Celestia App to make data available by sending `PayForData` transactions. Every such transaction consists of the identity of the sender, the data to be made available, also referred to as the message, the data size, the namespace ID, and a signature. Every block producer batches multiple `PayForData` transactions into a block.
 
