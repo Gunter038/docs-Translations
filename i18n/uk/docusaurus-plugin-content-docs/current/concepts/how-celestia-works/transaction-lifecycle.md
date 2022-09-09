@@ -1,27 +1,27 @@
 - - -
-sidebar_label : Celestia's Data Availability Layer
+sidebar_label : Рівень доступності даних Celestia
 - - -
 
 # Життєвий цикл транзакції програми Celestia
 
-Users request the Celestia App to make data available by sending `PayForData` transactions. Every such transaction consists of the identity of the sender, the data to be made available, also referred to as the message, the data size, the namespace ID, and a signature. Every block producer batches multiple `PayForData` transactions into a block.
+Користувачі роблять запит до програми Celestia, щоб зробити дані доступними надсилаючи транзакції `PayForDataі`. Кожна така транзакція складається з ідентифікації відправника, даних, які будуть доступні, які також називаються повідомленням, розміру даних, ідентифікатору простору імен і підпису. Кожен виробник блоків об’єднує кілька транзакцій `PayForData` в один блок.
 
-Before proposing the block though, the producer passes it to the state machine via ABCI++, where each `PayForData` transaction is split into a namespaced message (denoted by `Msg` in the figure below), i.e., the data together with the namespace ID, and an executable transaction (denoted by `e-Tx` in the figure below) that does not contain the data, but only a commitment that can be used at a later time to prove that the data was indeed made available.
+Перш ніж запропонувати блок, виробник передає його до кінцевого автомату через ABCI++, де кожна транзакція `PayForData` розбивається на повідомлення простору імен (позначене `Msg` на малюнку нижче), тобто дані разом з ідентифікатором простору імен і виконуваною транзакцією (позначеною `e-Tx` на малюнку нижче), яка не містить даних, але лише зобов’язання, яке можна використати пізніше, щоб довести, що дані дійсно були доступні.
 
-Thus, the block data consists of data partitioned into namespaces and executable transactions. Note that only these transactions are executed by the Celestia state machine once the block is committed.
+Таким чином, дані блоку складаються з даних, розділених на простори імен, і виконуваних транзакцій. Зверніть увагу, що тільки ці транзакції виконуються кінцевим автоматом Celestia як тільки блок буде зафіксовано.
 
 ![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
 
-Next, the block producer adds to the block header a commitment of the block data. As described [here](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), the commitment is the Merkle root of the 4k intermediate Merkle roots (i.e., one for each row and column of the extended matrix). To compute this commitment, the block producer performs the following operations:
+Далі виробник блоку додає до заголовка блоку зобов’язання щодо даних блоку. Як описано [тут](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), зобов’язанням є корінь Меркла з 4k проміжних коренів Меркла (тобто по одному для кожного рядка та стовпця розширеної матриці). Щоб обчислити це зобов’язання, виробник блоку виконує такі операції:
 
-- It splits the executable transactions and the namespaced data into shares. Every share consists of some bytes prefixed by a namespace ID. To this end, the executable transactions are associated with a reserved namespace.
-- It arranges these shares into a square matrix (row-wise). Note that the shares are padded to the next power of two. The outcome square of size k × k is referred to as the original data.
-- It extends the original data to a 2k × 2k square matrix using the 2-dimensional Reed-Solomon encoding scheme described above. The extended shares (i.e., containing erasure data) are associated with another reserved namespace.
-- It computes a commitment for every row and column of the extended matrix using the NMTs described above.
+- Він розділяє виконувані транзакції та дані простору імен на спільні частки. Кожна частка складається з деяких байтів, попередньо визначених ідентифікатором простору імен. З цією метою виконувані операції пов'язані із зарезервованим простором імен.
+- Він розбудовує ці частки на квадратну матрицю (по рядках). Зверніть увагу, що частки доповнюються до наступного ступеня двійки. Квадрат результату розміром k × k називають вихідними даними.
+- Він розширює оригінальні дані до квадратної матриці 2k × 2k за допомогою двовимірної схеми кодування Ріда-Соломона, описаної вище. Розширені частки (тобто з помилковими даними) пов’язані з іншим зарезервованим простором імен.
+- Він обчислює зобов’язання для кожного рядка та стовпця розширеної матриці, використовуючи вищезгадані NMT.
 
-Thus, the commitment of the block data is the root of a Merkle tree with the leaves the roots of a forest of Namespaced Merkle subtrees, one for every row and column of the extended matrix.
+Таким чином, зобов’язання даних блоку є коренем дерева Merkle з листям і корінням лісу піддерев Merkle з простором імен, по одному для кожного рядка та стовпця розширеної матриці.
 
-## Checking Data Availability
+## Перевірка наявності даних
 
 ![DA network](/img/concepts/consensus-da.png)
 
