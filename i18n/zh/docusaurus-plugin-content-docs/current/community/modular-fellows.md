@@ -44,47 +44,47 @@ sidebar_label: 模块化研究员
 - Rollup 基础设施服务，例如一键部署 Rollup 排序器
 - 模块化互操作性解决方案，例如结算层或桥梁
 - 以下的模块化版本
-  - Popular DeFi apps e.g. AMMs & lending protocols
+  - 热门的 DeFi 应用程序，例如 AMM 和借贷协议
   - NFT 平台
   - [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)等命名服务
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+  - [Lens Protocol](https://lens.xyz/)等社交图谱
 
-## Support
+## 支持
 
-1. **Weekly office hours**
+1. **每周办公时间**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *一个可选的会议，用于提问、获得帮助和接收反馈。*
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    星期三在美国中部时间上午 8:00 或下午 6:00 交替进行。
 
-2. **Lessons & tutorials**
+2. **课程和教程**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *Celestia Labs 团队成员和导师的演示文稿解释关键概念或提供有关特定工具的教程。*
 
-3. **Demos from participants**
+3. **参与者的演示**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *研究员介绍他们正在做什么以获得帮助反馈。*
 
-4. **Communication**
+4. **交流**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *研究员将与其他模块化研究员和模块化导师共享一个电报组。*
 
-5. **Monthly stipend**
+5. **每月津贴**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *每个里程碑完成后，研究员每月将收到3 000.00美元。*
 
-## Continuation
+## 继续
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+虽然该程序仅持续3个月，但我们将以以下方式继续为您提供 支持。
 
 - **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
 - **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
 
-### Modular Mentors
+### 模块化导师
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+模块化研究员将与 Celestia Labs 团队和一组精心挑选的模块化导师密切合作，他们将帮助解决工程问题并提供里程碑反馈。
 
-These are the Mentors for the first cohort:
+这些是第一批的导师：
 
 - [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
 - [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
