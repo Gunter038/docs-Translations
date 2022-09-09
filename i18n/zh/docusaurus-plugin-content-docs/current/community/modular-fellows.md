@@ -4,7 +4,7 @@ sidebar_label: 模块化研究员
 
 # 模块化研究员
 
-![Modular Fellows](/img/modular_fellows.jpg)
+![模块化研究员](/img/modular_fellows.jpg)
 
 模块化研究员是一个旨在为模块化构建者提供正确资源的计划，以构建可扩展和主权区块链网络的未来。
 
@@ -75,10 +75,10 @@ sidebar_label: 模块化研究员
 
 ## 继续
 
-虽然该程序仅持续3个月，但我们将以以下方式继续为您提供 支持。
+虽然该程序仅持续3个月，但我们将以以下方式继续为您提供支持。
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- **赠款和资金** - 我们将协助您筹款或申请赠款，以便您可以继续构建您的项目。
+- **校友网络** - 您将被引入模块化研究员校友网络，在那里您可以与其他过去和未来的模块化研究员保持联系。
 
 ### 模块化导师
 
@@ -86,14 +86,14 @@ sidebar_label: 模块化研究员
 
 这些是第一批的导师：
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi Head of Strategy for Facebook's Novi
-- [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
-- [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
-- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- [Wei Dai](https://twitter.com/_weidai) - Bain Capital Crypto 的研究合伙人
+- [Can Gurel](https://twitter.com/CannnGurel) -Delphi Digital 研究员
+- [Eric Wall](https://twitter.com/ercwl) -区块链研究员
+- [Eli Krenzke](https://twitter.com/eKRENZKE) - Polychain 的研究团队合作伙伴
+- [Zaki Manian](https://twitter.com/zmanian) - Sommelier 的联合创始人，iqlusion 的联合创始人，帮助建立 Cosmos 生态系统，包括启动第一个公共 Cosmos 测试网
+- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk 的负责人和二元控股公司的创始人
+- [Morgan Beller](https://twitter.com/beller) - 上一个是NFX 的普通合伙人，种子阶段风险投资基金， 目前是Facebook 的 Novi 战略主管
+- [John Adler](https://twitter.com/jadler0) - Celestia Labs 首席风险官
+- [Mustafa Al-Bassam](https://twitter.com/musalbas) - Celestia Labs 首席执行官
+- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - Celestia Labs 首席技术官
+- [Evan Forbes](https://twitter.com/evansforbes) - Celestia Labs 软件工程师
