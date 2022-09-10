@@ -2,27 +2,27 @@
 sidebar_label : Keys
 - - -
 
-# Using the cel-key utility
+# Sử dụng tiện ích cel-key
 
-Inside the celestia-node repository is a utility called `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general.
+Trong kho lưu trữ node của celestia là một tiện ích được gọi ` cel-key ` sử dụng tiện ích chính do Cosmos-SDK cung cấp. Tiện ích có thể được sử dụng để ` add `, ` delete ` và quản lý khóa cho bất kỳ node DA nào, gõ ` (bridge || full || light) `, hoặc chỉ các phím nói chung.
 
-## Installation
+## Cài đặt
 
-You need to first pull down the `celestia-node` repository:
+Đầu tiên, bạn cần phải kéo xuống kho lưu trữ ` celestia-node `:
 
 ```sh
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
 ```
 
-It can be built using either of the following commands:
+Nó có thể được tạo bằng một trong các lệnh sau:
 
 ```sh
 # dumps binary in current working directory, accessible via `./cel-key`
 make cel-key
 ```
 
-or
+hay
 
 ```sh
 # installs binary in GOBIN path, accessible via `cel-key`
