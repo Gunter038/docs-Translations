@@ -2,7 +2,7 @@
 sidebar_label : Full Storage Node
 - - -
 
-# Setting up a Celestia Full Storage Node
+# Thiết lập node lưu trữ đầy đủ của Celestia
 
 This tutorial will guide you through setting up a Celestia Full Storage Node, which is a Celestia node that doesn't connect to Celestia App (hence not a full node) but stores all the data.
 
