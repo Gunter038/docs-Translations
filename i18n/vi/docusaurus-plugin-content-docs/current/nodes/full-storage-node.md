@@ -4,76 +4,76 @@ sidebar_label : Full Storage Node
 
 # Thiết lập node lưu trữ đầy đủ của Celestia
 
-This tutorial will guide you through setting up a Celestia Full Storage Node, which is a Celestia node that doesn't connect to Celestia App (hence not a full node) but stores all the data.
+Tài liệu này sẽ hướng dẫn bạn cách thiết lập một Node lưu trữ đầy đủ của Celestia, là một node Celestia không kết nối với Ứng dụng Celestia (vì vậy không phải là một nút đầy đủ) nhưng lưu trữ tất cả dữ liệu.
 
-## Hardware requirements
+## Yêu cầu phần cứng
 
-The following hardware minimum requirements are recommended for running the full storage node:
+Các yêu cầu tối thiểu về phần cứng sau đây được khuyến nghị để chạy node lưu trữ đầy đủ:
 
 * Memory: 8 GB RAM
 * CPU: Quad-Core
 * Disk: 250 GB SSD Storage
 * Bandwidth: 1 Gbps for Download/100 Mbps for Upload
 
-## Setting up your full storage node
+## Thiết lập node lưu trữ đầy đủ của bạn
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Hướng dẫn sau được thực hiện trên máy phiên bản Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Thiết lập các thành phần phụ thuộc
 
-You can follow the tutorial for setting up your dependencies [here](../developers/environment.md)
+Bạn có thể làm theo hướng dẫn để thiết lập các phần phụ thuộc của mình [ here ](../developers/environment.md)
 
-## Install Celestia node
+## Cài đặt Node Celestia
 
-> Note: Make sure that you have at least 250+ Gb of free space for Celestia Full Storage Node
+> Lưu ý: Đảm bảo rằng bạn có ít nhất 250 Gb dung lượng trống cho Node lưu trữ đầy đủ của Celestia
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Bạn có thể làm theo hướng dẫn cài đặt Node Celestia [ here ](../developers/celestia-node.md)
 
-### Run the full storage node
+### Chạy node lưu trữ đầy đủ
 
-#### Initialize the full storage node
+#### Khởi tạo node lưu trữ đầy đủ
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 celestia full init
 ```
 
-#### Start the full storage node
+#### Chạy node lưu trữ đầy đủ
 
-Start the Full Storage Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Khởi động node lưu trữ đầy đủ với kết nối với điểm cuối gRPC của node validator (thường được hiển thị trên cổng 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
+> LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi liên quan đến tình trạng thông tin, chẳng hạn như khả năng gửi các giao dịch PayForData, hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
 
 ```sh
 celestia full start --core.grpc http://<ip addr of core node>:9090
 ```
 
-If you would like to find example RPC endpoints, check out the list of resources [here](./mamaki-testnet.md#rpc-endpoints).
+Nếu bạn muốn tìm ví dụ các điểm cuối RPC, hãy xem danh sách tài nguyên [ here ](./mamaki-testnet.md#rpc-endpoints).
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Once you start the Full Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Khi bạn khởi động Full Node, một khóa ví sẽ được xuất cho bạn. Bạn sẽ cần nạp tiền cho địa chỉ đó bằng mã thông báo Mamaki Testnet để thanh toán cho Giao dịch PayForData. Bạn có thể tìm địa chỉ bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Yêu cầu mã thông báo Mamaki Testnet tại [here](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-### Optional: run the full storage node with a custom key
+### Tùy chọn: chạy toàn bộ node lưu trữ bằng khóa tùy chỉnh
 
-In order to run a full storage node using a custom key:
+Để chạy một node lưu trữ đầy đủ bằng cách sử dụng khóa tùy chỉnh:
 
-1. The custom key must exist inside the celestia full storage node directory at the correct path (default: `~/.celestia-full/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. Khóa tùy chỉnh phải tồn tại trong thư mục node lưu trữ đầy đủ của celestia tại đúng đường dẫn (default: ` ~ /.celestia-full / keys / keyring-test `)
+2. Tên của khóa tùy chỉnh phải được chuyển khi ` start `, như sau:
 
 ```sh
 celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the full storage node with SystemD
+### Tùy chọn: khởi động node lưu trữ đầy đủ với SystemD
 
-Follow the tutorial on setting up the full storage node as a background process with SystemD [here](./systemd.md#celestia-full-storage-node).
+Làm theo hướng dẫn về cách thiết lập node lưu trữ đầy đủ như quy trình xử lý nền với SystemD [ here ](./systemd.md#celestia-full-storage-node).
 
-With that, you are now running a Celestia Full Storage Node.
+Như vậy, hiện tại bạn đang chạy Node lưu trữ đầy đủ của Celestia.
