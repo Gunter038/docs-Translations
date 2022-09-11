@@ -10,33 +10,33 @@ sidebar_label : 文档翻译
 
 要开始使用，请转到[此处](https://crowdin.com/project/celestia-docs)的 Crowdin 项目。
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+您必须创建一个账号，然后才能加入该项目以开始您的翻译之旅。
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+如果您没有看到您的语言，请随时在[ Discord](https://discord.gg/celestiacommunity) 上的`#translations`频道上询问。
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+在 Crowdin 上，您可以翻译、评论翻译，还可以对现有翻译投赞成票和反对票。
 
-Give your opinion on existing translations to ensure it is correct!
+对现有翻译发表您的意见，以确保它是正确的！
 
-## Tips
+## 提示
 
-Here are few tips to help you during your translation.
+这里有一些提示可以在您的翻译过程中为您提供帮助。
 
-### Crowdin documentation
+### Crowdin 文档
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+Crowdin 的官方文档可在[此处](https://support.crowdin.com/online-editor)获得。
 
-### Guide
+### 指南
 
-#### Code
+#### 代码
 
-Some pages contain metadata and computer code.
+一些页面包含元数据和计算机代码。
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+记住这一点很重要，威廉·莎士比亚是一个 说英语的人......艾伦·图灵也是！ 这就是为什么你不应该翻译代码中的部分“本身”。
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+例如，如果您看到类似的元数据`sidebar_label : Hello World`，则法语翻译将是`sidebar_label : Salut tout le monde`。
 
-Let's take another example, you wouldn't have to translate anything here:
+让我们再举一个例子，你不需要翻译这里的任何东西：
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+此外，您无需将网址翻译成您的本地语言。
 
-#### Specific words
+#### 特定词
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+当您将翻译创新概念（如数据可用性采样）时，请随时与社区其他成员讨论最佳翻译。
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+此外，对于从一种语言到另一种语言的数字，请注意日期顺序、句点和逗号。
