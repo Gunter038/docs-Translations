@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Celestia's Data Availability Layer
+Lớp dữ liệu sẵn sàng của Celestia
 - - -
 
-# Celestia's Data Availability Layer
+# Lớp dữ liệu sẵn sàng của Celestia
 
-Celestia is a data availability (DA) layer that provides a scalable solution to the [data availability problem](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
+Lớp dữ liệu sẵn sàng của Celestia cung cấp giải pháp mở rộng cho [ vấn đề dữ liệu có sẵn ](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
 
 Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
 
