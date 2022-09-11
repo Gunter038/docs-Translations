@@ -76,21 +76,21 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Để kiểm tra xem Go đã được cài đặt để chạy đúng chưa:
 
 ```sh
-go version
+phiên bản
 ```
 
-The output should be the version installed:
+Đầu ra phải là phiên bản được cài đặt:
 
 ```sh
-go version go1.18.2 linux/amd64
+vào phiên bản go1.18.2 linux/amd64
 ```
 
-### Install Celestia node
+### Cài đặt node Celestia
 
-Install the celestia-node binary by running the following commands:
+Cài đặt binary nodes celestia bằng cách chạy các lệnh sau:
 
 ```sh
 cd $HOME
@@ -101,7 +101,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Xác minh rằng binary đang hoạt động và kiểm tra phiên bản với lệnh phiên bản celestia:
 
 ```sh
 $ celestia version
@@ -109,15 +109,15 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Initialize the light node
+## Khởi tạo light node
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 celestia light init
 ```
 
-You should see output like:
+Bạn sẽ thấy kết quả sau:
 
 <!-- markdownlint-disable MD013 -->
 ```output
@@ -128,57 +128,57 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Start the light node
+### Khởi động light node
 
-Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Khởi động Bridge Node bằng kết nối với điểm cuối gRPC của node valiator (thường được hiển thị trên cổng 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
+> LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi thông tin liên quan đến trạng thái, chẳng hạn như gửi các giao dịch PayForData hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Nếu bạn cần danh sách các điểm cuối RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+Ví dụ: lệnh của bạn có thể trông giống như sau:
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### Mã khóa và ví
 
-You can create your key for your node by running the following command:
+Bạn có thể tạo mã khóa cho node của mình bằng cách chạy lệnh sau:
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ đó bằng mã thông báo Mamaki Testnet để thanh toán cho Giao dịch PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục ` celestia-node `:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Yêu cầu mã thông báo Mamaki Testnet tại [here](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-### Optional: run the light node with a custom key
+### Tùy chọn: chạy light node bằng khóa tùy chỉnh
 
-In order to run a light node using a custom key:
+Để chạy một light node bằng khóa tùy chỉnh:
 
-1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. Khóa tùy chỉnh phải tồn tại bên trong thư mục celestia bridge node tại đúng đường dẫn (default: ` ~ /.celestia-light / keys / keyring-test `)
+2. Tên của khóa tùy chỉnh phải được chuyển khi ` start `, như sau:
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start light node with SystemD
+### Tùy chỉnh: bắt đầu light node với SystemD
 
-Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
+Làm theo hướng dẫn về cách thiết lập light node làm quy trình nền với SystemD [ here](./systemd.md#celestia-light-node).
 
-## Data availability sampling (DAS)
+## Mẫu tính khả dụng của dữ liệu (DAS)
 
-With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+Khi light node đang chạy, bạn có thể xem hướng dẫn này trong việc gửi ` PayForData ` transaction [ here ](../developers/node-tutorial.md).
