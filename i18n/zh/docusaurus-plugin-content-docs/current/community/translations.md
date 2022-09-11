@@ -6,9 +6,9 @@ sidebar_label : 文档翻译
 
 如果您是一位热情的 Celestia 社区成员，并且愿意为翻译文档页面做出贡献，那么这就是您的指南。
 
-## Visit our Crowdin project
+## 访问我们的 Crowdin 项目
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+要开始使用，请转到[此处](https://crowdin.com/project/celestia-docs)的 Crowdin 项目。
 
 You will have to create an account and then you will be able to join the project in order to begin your translation journey.
 
