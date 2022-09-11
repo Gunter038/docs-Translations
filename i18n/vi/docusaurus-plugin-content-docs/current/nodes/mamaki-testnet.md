@@ -7,13 +7,13 @@ sidebar_label : Mamaki Testnet
 
 ![mamaki-testnet](/img/mamaki.png)
 
-This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki là một cột mốc quan trọng trong Celestia, cho phép mọi người kiểm tra các chức năng cốt lõi trên mạng. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
-Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+Cách tốt nhất để tham gia là trước tiên xác định bạn muốn chạy node nào. Mỗi hướng dẫn node sẽ liên kết đến mạng liên quan để hướng dẫn bạn cách kết nối với chúng.
 
-You have a list of options on the type of nodes you can run in order to participate in Mamaki:
+Bạn có một danh sách các tùy chọn về loại node bạn có thể chạy để tham gia Mamaki:
 
-Consensus:
+Đồng thuận:
 
 * [Validator Node](./validator-node.md)
 * [Consensus Full Node](./consensus-full-node.md)
