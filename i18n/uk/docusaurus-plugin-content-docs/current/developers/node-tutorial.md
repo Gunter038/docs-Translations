@@ -20,9 +20,9 @@ sidebar_label : Інструкція для ноди
 - Диск: 5 Гб SSD сховища
 - Пропускна здатність: 56 Gbps для скачування/56 Mbps для вивантаження
 
-## Setting Up Dependencies
+## Налаштування залежностей
 
-First, make sure to update and upgrade the OS:
+Спочатку переконайтеся, що бажаєте оновити та покращити ОС:
 
 ```sh
 # Якщо ви використовуєте менеджер пакетів APT
@@ -99,71 +99,71 @@ Commit: 89892d8b96660e334741987d84546c36f0996fbe
 
 ### Створення екземпляра слабкої ноди Celestia
 
-Now, let's instantiate a Celestia Light node:
+Тепер давайте запустимо слабку ноду Celestia:
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> Примітка: RPC Endpoints в усіх типах нод Celestia, таких як Light, Bridge і Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### Під'єднатися до Public Core Endpoint
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](../nodes/mamaki-testnet#rpc-endpoints)
+> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. Ви можете знайти список кінцевих точок RPC [тут](../nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
 ```
 
-For example, your command along with an RPC endpoint might look like this:
+Наприклад, ваша команда разом з кінцевою точкою RPC може виглядати так:
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### Ключі та гаманці
 
-You can create your key for your node by running the following command:
+Ви можете створити ключ для вашої ноди, запустивши таку команду:
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Після запуску ноди Light для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів тестнету Mamaki для оплати транзакцій PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Ви можете знайти адресу, запустивши таку команду в каталозі `elestia-node`:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
+Якщо ви хочете поповнити ваш гаманець тестовими токенами, перейдіть до каналу Discord Celestia `#faucet`.
 
-You can request funds to your wallet address using the following command in Discord:
+Ви можете попросити кошти на адресу гаманця за допомогою такої команди в Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Там, де `<Wallet-Address>` є `celestia1******` адресою, що генерується, коли ви створюєте гаманець.
 
-With your wallet funded, you can move on to the next step.
+Поповнивши гаманець, ви можете переходити до наступного кроку.
 
-## Node API Calls
+## Виклики ноди API
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+Відкрийте інше вікно терміналу, щоб розпочати запит API. `celestia-node` викриває кінцеву точку RPC на порту `26658` за замовчуванням.
 
-### Balance
+### Баланс
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+Тепер дайте запит на нашу ноду для балансу його облікового запису за замовчуванням (який є рахунком, пов'язаним із ключем `` розробника </code>, який ми створили раніше):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+Виведеться таким чином:
 
 ```json
 {
@@ -172,19 +172,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+Це покаже ваш баланс на цьому гаманці.
 
-### Get Block Header
+### Отримати заголовок блоку
 
-Now, let's get the block header information.
+Тепер відправмо інформацію про блок у заголовку.
 
-Here we will get the header from Block 1:
+Тут ми отримаємо заголовок від блоку 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+Виведеться щось таке:
 
 ```json
 {
@@ -356,23 +356,23 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### Відправлення PFD транзакції
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+У цьому прикладі ми надішлемо транзакцію PayForData до кінцевої точки ноди `/submit_pfd`.
 
-Some things to consider:
+Кілька речей, які слід врахувати:
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- PFD - це повідомлення PayForData.
+- Кінцева точка також приймає значення `namespace_id` і `data`.
+- Ідентифікатор простору імен повинен бути 8 байтів.
+- Дані містяться в байтах із шістнадцятковим кодуванням необробленого повідомлення.
+- `gas_limit` - це ліміт використання газу для транзакції
 
-We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+Ми використовуємо наступні значення `namespace_id` з `0000010000000100` та `data` `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+Ви можете згенерувати власний `namespace_id` і значення даних, використовуючи цей корисний ігровий майданчик Golang, який ми створили, [тут](https://go.dev/play/p/7ltvaj8lhRl).
 
-We run the following:
+Ми виконаємо такі дії:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -380,7 +380,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 60000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+Ми отримаємо такий вивід:
 
 ```json
 {
@@ -597,37 +597,33 @@ We get the following output:
 }
 ```
 
-If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
+Якщо ви помітите з наведеного вище виводу, повертається `height` `2452`, що ми будемо використовувати для наступної команди.
 
-#### Troubleshooting
+#### Усунення проблем
 
-If you encounter an error like:
+Якщо ви стикаєтеся з помилкою:
 
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+Цілком можливо, що обліковий запис з якого ви намагаєтеся відправити PayForData, ще не має тестових токенів. Переконайтеся, що faucet підтримує ваш обліковий запис з токенами й потім спробуйте знову.
 
-### Get Namespaced Shares by Block Height
+### Отримати простори імен за висотою блоку
 
-After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
+Після надсилання транзакції PFD у разі успіху вузол поверне висоту блоку, для якого була включена транзакція PFD. Потім ви можете використовувати цю висоту блоку та ідентифікатор простору імен, з яким ви надіслали транзакцію PFD, щоб повернути вам спільні повідомлення. У цьому прикладі висота блоку 589, яку ми отримали, використовуватиметься для наступної команди.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+Ми отримаємо такий вивід:
 
 ```json
-{
-   "shares":[
-      "DCBNOWAP3dMb8fIMqAB+kQo7+LLmHaDya8oH73hxem6lQWX1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
-   ],
-   "height":2452
-}
+curl -X GET \
+  http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-The output here is base64-encoded.
+Вивід тут має кодування base64.
