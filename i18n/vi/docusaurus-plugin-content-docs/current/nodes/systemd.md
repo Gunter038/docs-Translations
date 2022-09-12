@@ -38,38 +38,38 @@ Nếu tệp được tạo thành công, bạn sẽ có thể xem nội dung c�
 cat /etc/systemd/system/celestia-appd.service
 ```
 
-Enable and start celestia-appd daemon:
+Bật và khởi động daemon celestia-appd:
 
 ```sh
 systemctl enable celestia-appd
 systemctl start celestia-appd
 ```
 
-Check if daemon has been started correctly:
+Kiểm tra xem daemon đã được khởi động đúng cách chưa:
 
 ```sh
 systemctl status celestia-appd
 ```
 
-Check daemon logs in real time:
+Kiểm tra nhật ký daemon trong thực tế:
 
 ```sh
 journalctl -u celestia-appd.service -f
 ```
 
-To check if your node is in sync before going forward:
+Để kiểm tra xem node của bạn có được đồng bộ hóa hay không trước khi tiếp tục:
 
 ```sh
 curl -s localhost:26657/status | jq .result | jq .sync_info
 ```
 
-Make sure that you have `"catching_up": false`, otherwise leave it running until it is in sync.
+Đảm bảo rằng bạn có ` "catch_up": false `, nếu không, hãy để nó chạy cho đến khi nó được đồng bộ.
 
-## Data availability nodes
+## Các node về tính khả dụng của dữ liệu
 
-### Celestia full storage node
+### Node lưu trữ đầy đủ của Celestia
 
-Create Celestia Full Storage Node systemd file:
+Tạo tệp hệ thống nút lưu trữ đầy đủ Celestia:
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-full.service
@@ -89,13 +89,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Nếu tệp được tạo thành công, bạn sẽ có thể xem nội dung của nó:
 
 ```sh
 cat /etc/systemd/system/celestia-full.service
 ```
 
-Enable and start celestia-full daemon:
+Kích hoạt và khởi động celestia-full daemon:
 
 ```sh
 systemctl enable celestia-full
@@ -103,11 +103,11 @@ systemctl start celestia-full && journalctl -u \
 celestia-full.service -f
 ```
 
-You should be seeing logs coming through of the full storage node syncing.
+Bạn sẽ thấy nhật ký từ quá trình đồng bộ hóa node lưu trữ đầy đủ.
 
 ### Celestia bridge node
 
-Create Celestia Bridge systemd file:
+Tạo tệp hệ thống Celestia Bridge:
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-bridge.service
