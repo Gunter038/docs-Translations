@@ -2,23 +2,23 @@
 sidebar_label : Overview
 - - -
 
-# Overview to running nodes on Celestia
+# Tổng quan về việc chạy các nodes trên Celestia
 
-There are many ways you can participate in the Celestia network.
+Có nhiều cách để bạn có thể tham gia vào mạng lưới Celestia.
 
-Celestia node operators can run several options on the network.
+Các nhà chạy node Celestia có thể chạy một số tùy chọn trên mạng.
 
-Consensus:
+Đồng thuận:
 
-* [Validator Node](./validator-node.md): This type of node participates in consensus by producing and voting on blocks.
-* [Consensus Full Node](./consensus-full-node.md): A Celestia-App Full Node to sync blockchain history.
+* [ Validator Node](./validator-node.md): Loại node này tham gia trong việc đồng thuận bằng cách sản xuất và bỏ phiếu trên các khối.
+* [ Consensus Full Node](./consensus-full-node.md): Một node đầy đủ của ứng dụng Celestia nhằm đồng bộ hóa lịch sử blockchain.
 
-Data Availability:
+Tính khả dụng của dữ liệu:
 
-* [Bridge Node](./bridge-node.md): This node bridges blocks between the Data-Availability network and the Consensus network.
-* [Full Storage Node](./full-storage-node.md): This node stores all the data but does not connect to Consensus.
-* [Light Node](./light-node.md): Light clients conduct data availability sampling on the Data Availability network.
+* [Bridge Node](./bridge-node.md): Node này nối các khối giữa mạng dữ liệu-khả dụng và mạng đồng thuận.
+* [Full Storage Node](./full-storage-node.md): Node này lưu trữ tất cả dữ liệu nhưng không kết nối với Consensus.
+* [ Light Node ](./light-node.md): Light clients tiến hành cung cấp dữ liệu mẫu có sẵn trên mạng khả dụng của dữ liệu.
 
-You can learn more about how to setup each different node by going through each tutorial guide.
+Bạn có thể tìm hiểu thêm về cách thiết lập từng node khác nhau bằng cách đi qua từng hướng dẫn.
 
-Please provide any feedback on the tutorials and guides. If you notice a bug or issue, feel free to make a Pull Request or write up a Github Issue ticket!
+Vui lòng cung cấp bất kỳ phản hồi nào về các tài liệu giảng dạy và hướng dẫn. Nếu bạn để ý một lỗi hoặc sự cố, vui lòng đưa ra yêu cầu tương tác hoặc viết phản hồi trên Github!
