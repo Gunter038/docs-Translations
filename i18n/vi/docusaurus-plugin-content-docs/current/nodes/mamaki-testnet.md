@@ -155,13 +155,13 @@ celestia-appd tx staking create-validator \
     --keyring-backend=test
 ```
 
-You will be prompted to confirm the transaction:
+Bạn sẽ được nhắc xác nhận giao dịch:
 
 ```console
-confirm transaction before signing and broadcasting [y/N]: y
+xác nhận giao dịch trước khi ký và phát [y / N]: y
 ```
 
-Inputting `y` should provide an output similar to:
+Nhập ` y ` phải cung cấp đầu ra tương tự như:
 
 ```console
 code: 0
@@ -178,4 +178,4 @@ tx: null
 txhash: <tx-hash>
 ```
 
-You should now be able to see your validator from a block explorer like [here](https://celestia.explorers.guru/)
+Bây giờ bạn có thể thấy validator của mình từ block explorer như [ here ](https://celestia.explorers.guru/)
