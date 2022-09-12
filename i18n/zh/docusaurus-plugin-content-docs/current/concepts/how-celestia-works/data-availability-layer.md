@@ -4,35 +4,35 @@ sidebar_label : Celestia 的数据可用性层
 
 # Celestia 的数据可用性层
 
-Celestia 是一个数据可用性 (DA) 层，它为 [数据可用性问题](https://coinmarketcap.com/alexandria/article/what-is-data-availability) 提供了一个 可扩展的解决方案。 Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
+Celestia 是一个数据可用性 (DA) 层，它为[数据可用性问题](https://coinmarketcap.com/alexandria/article/what-is-data-availability)提供了一个可扩展的解决方案。 由于区块链网络的无许可性质，DA 层必须为执行层和结算层提供一种机制，以最小化信任的方式检查交易数据是否确实可用。
 
-Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+Celestia DA 层的两个关键特性是[数据可用性采样](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) 和[命名空间默克尔树](https://github.com/celestiaorg/nmt)(NMT)。 这两个功能都是新颖的区块链扩展解决方案：DAS 使轻节点无需下载整个区块即可验证数据可用性；NMT 使 Celestia 上的执行和结算层能够下载仅与它们相关的交易。
 
-## Data Availability Sampling (DAS)
+## 数据可用性采样(DAS)
 
-In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
+一般来说，轻节点只下载包含区块数据（即交易列表）的承诺（即Merkle根）。
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+为了使 DAS 成为可能，Celestia 使用二维 Reed-Solomon 编码方案对块数据进行编码：每个块数据被分成 k × k 块，排列在 ak × k 矩阵中，并用奇偶校验数据扩展为 2k × 2k通过多次应用 Reed-Solomon 编码来扩展矩阵。
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+然后，为扩展矩阵的行和列计算 4k 个单独的 Merkle 根；这些 Merkle 根的 Merkle 根被用作区块头中的区块数据承诺。
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+为了验证数据是否可用，Celestia 轻节点正在对 2k × 2k 数据块进行采样。
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+每个轻节点在扩展矩阵中随机选择一组唯一坐标，并在这些坐标处查询数据块和相应的 Merkle 证明的完整节点。 如果轻节点对每个采样查询都接收到有效响应，则很有[可能保证](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075)整个块的数据是可用的。
 
-Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
+此外，每个接收到的具有正确 Merkle 证明的数据块都会被发送到网络。 结果，只要 Celestia 轻节点对足够多的数据块进行采样（即，至少 k × k 个唯一块），完整的块可以通过诚实的全节点来恢复。
 
-For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
+有关 DAS 的更多详细信息，请查看[原始论文](https://arxiv.org/abs/1809.09044)。
 
-### Scalability
+### 可扩展性
 
-DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+DAS 使 Celestia 能够扩展 DA 层。 DAS 可以由资源有限的轻节点执行，因为每个轻节点仅对块数据的一小部分进行采样。 网络中的轻节点越多，它们可以共同下载和存储的数据就越多。
 
-This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
+这意味着增加执行 DAS 的轻节点的数量允许更大的块（即，具有更多事务），同时仍然保持 DAS 对资源有限的轻节点的可行性。 然而，为了验证区块头，Celestia 轻节点需要下载 4k 中间 Merkle 根。
 
-For a block data size of n bytes, this means that every light node must download O(n) bytes. Therefore, any improvement in the bandwidth capacity of Celestia light nodes has a quadratic effect on the throughput of Celestia's DA layer.
+对于 n 字节的块数据大小，这意味着每个轻节点必须下载 O(n) 字节。 因此，Celestia 轻节点带宽容量的任何改进都会对 Celestia DA 层的吞吐量产生二次影响。
 
 ### Fraud Proofs of Incorrectly Extended Data
 
