@@ -25,26 +25,26 @@ sidebar_label : Інструкція для ноди
 First, make sure to update and upgrade the OS:
 
 ```sh
-# If you are using the APT package manager
+# Якщо ви використовуєте менеджер пакетів APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Якщо ви використовуєте менеджер пакетів YUM
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Це важливі пакети, які необхідні для виконання багатьох завдань, таких як завантаження файлів, компілювання і моніторинг вузла:
 
 ```sh
-# If you are using the APT package manager
+# Якщо ви використовуєте менеджер пакетів APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Якщо ви використовуєте менеджер пакетів YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 
-### Install Golang
+### Інсталювати Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app та elestia-node записано в [Golang](https://go.dev/), тому нам слід встановити Golang, щоб побудувати та запустити їх.
 
 ```sh
 ver="1.18.2"
@@ -55,30 +55,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Тепер нам потрібно додати каталог `/usr/local/go/bin` до `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Щоб перевірити, чи був Go встановлений правильно:
 
 ```sh
-go version
+перейти до версії
 ```
 
-The output should be the version installed:
+Вихід повинен бути встановленою версією:
 
 ```sh
-go version go1.18.2 linux/amd64
+перейти до версії go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Нода Celestia
 
-### Install Celestia Node
+### Встановлення ноди Celestia
 
-Install the celestia-node binary by running the following commands:
+Встановіть бінарник celestia-node, виконуючи такі команди:
 
 ```sh
 cd $HOME
@@ -89,7 +89,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Перевірте, чи працює бінарний файл і перевіряє версію файлу з версією celestia:
 
 ```sh
 $ celestia version
@@ -97,7 +97,7 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-### Instantiate Celestia Light Node
+### Створення екземпляра слабкої ноди Celestia
 
 Now, let's instantiate a Celestia Light node:
 
