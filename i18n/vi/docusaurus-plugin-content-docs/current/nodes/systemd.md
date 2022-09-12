@@ -2,19 +2,19 @@
 sidebar_label : SystemD
 - - -
 
-# Setting up your node as a background process with SystemD
+# Thiết lập node của bạn làm quy trình nền với SystemD
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD là một dịch vụ daemon hữu ích để chạy các ứng dụng dưới dạng quy trình nền.
 
-## Consensus nodes
+## Các nodes đồng thuận
 
-If you are running a validator or consensus full node, here are the steps to setting up `celestia-appd` as a background process.
+Nếu bạn đang chạy validator hoặc node đồng thuận đầy đủ, đây là các bước để thiết lập ` celestia-appd ` làm quy trình nền.
 
-### Start the celestia-app with SystemD
+### Khởi động ứng dụng celestia với SystemD
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD là một dịch vụ daemon hữu ích để chạy các ứng dụng dưới dạng quy trình nền.
 
-Create Celestia-App systemd file:
+Tạo tệp hệ thống Celestia-App:
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-appd.service
@@ -32,7 +32,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Nếu tệp được tạo thành công, bạn sẽ có thể xem nội dung của nó:
 
 ```sh
 cat /etc/systemd/system/celestia-appd.service
