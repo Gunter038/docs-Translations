@@ -1,13 +1,10 @@
----
-sidebar_label : Keys
----
+- - -
+sidebar_label : 密钥
+- - -
 
 # Using the cel-key utility
 
-Inside the celestia-node repository is a utility called `cel-key` that uses
-the key utility provided by Cosmos-SDK under the hood. The utility can be
-used to `add`, `delete`, and manage keys for any DA node
-type `(bridge || full || light)`, or just keys in general.
+Inside the celestia-node repository is a utility called `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general.
 
 ## Installation
 
@@ -66,8 +63,7 @@ This will load the key <key_name> into the directory of the light node.
 
 ## Steps for exporting **light** node keys
 
-You can export a private key from the local keyring in encrypted and
- ASCII-armored format.
+You can export a private key from the local keyring in encrypted and ASCII-armored format.
 
 ```sh
 ./cel-key export <key-name> --keyring-backend test --node.type light
