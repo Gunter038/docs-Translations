@@ -1,30 +1,30 @@
 - - -
-sidebar_label : Create A Celestia Testnet
+sidebar_label : Створити тестнет Celestia
 - - -
 
-# Celestia App Network Instantiation Guide
+# Посібник з установки мережі Celestia App Network
 
-This guide is for helping instantiate a new testnetwork and following the correct steps to do so with Celestia-App. You should only follow this guide if you want to experiment with your own Celestia Testnetwork or if you want to test out new features to build as a core developer.
+Цей посібник призначений для того, щоб допомогти створити екземпляр нової тестової мережі та виконати правильні кроки для цього за допомогою Celestia-App. Дотримуйтеся цього посібника, лише якщо ви хочете поекспериментувати зі своєю власною тестовою мережею Celestia або якщо ви хочете випробувати нові функції для створення як основний розробник.
 
 ## Вимоги до обладнання
 
-You can follow hardware requirements [here](../nodes/validator-node.md#hardware-requirements).
+Вимоги до обладнання можна переглянути [тут](../nodes/validator-node.md#hardware-requirements).
 
 ## Налаштування залежностей
 
 Ви можете налаштувати залежності, дотримуючись інструкції [тут](./environment.md).
 
-## Celestia App Installation
+## Встановлення Celestia App
 
 Ви можете встановити додаток Celestia за інструкцією [тут](./celestia-app.md).
 
-## Spin Up A Celestia Testnet
+## Розкрутіть тестову мережу Celestia
 
-If you want to spin up a quick testnet with your friends, you can follow these steps. Unless otherwise noted, every step must be done by everyone who wants to participate in this testnet.
+Якщо ви хочете створити швидку тестову мережу разом із друзями, виконайте такі дії. Якщо не зазначено інше, кожен крок мають виконувати всі, хто хоче взяти участь у цій тестовій мережі.
 
-### Optional: Reset Working Directory
+### Необов'язково: Скинути робочий каталог
 
-If you have already initialized a working directory for `celestia-appd` in the past, you must clean up before reinitializing a new directory. Ви можете зробити це, виконавши таку команду:
+Якщо ви вже ініціалізували робочий каталог для `celestia-appd` у минулому, ви повинні очистити його перед повторною ініціалізацією нового каталогу. Ви можете зробити це, виконавши таку команду:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
