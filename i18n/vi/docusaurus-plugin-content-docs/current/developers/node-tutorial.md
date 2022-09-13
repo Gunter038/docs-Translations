@@ -111,7 +111,7 @@ celestia light init
 
 Bây giờ chúng ta hãy chạy node Celestia Light với kết nối GRPC cho một ví dụ về Điểm cuối Public Core.
 
-> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. Bạn có thể tìm thấy danh sách các điểm cuối RPC [ tại đây ](../nodes/mamaki-testnet#rpc-endpoints)
+> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
