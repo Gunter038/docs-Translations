@@ -2,41 +2,41 @@
 sidebar_label : Traductions de Docs
 - - -
 
-# Community Translation Support
+# Aide à la traduction communautaire
 
-If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
+Si vous êtes un membre passionné de la communauté Celestia et que vous souhaitez contribuer à la traduction de la page de documentation, ce guide est fait pour vous.
 
-## Visit our Crowdin project
+## Visitez notre projet sur Crowdin
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Pour commencer, allez sur le projet Crowdin [ici](https://crowdin.com/project/celestia-docs).
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+Vous devrez créer un compte et vous serez alors en mesure de rejoindre le projet afin de commencer vos traduction.
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+Si vous ne voyez pas votre langue, n'hésitez pas à le demander sur le canal `#translations` sur Discord [ici](https://discord.gg/celestiacommunity).
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+Sur Crowdin, vous pouvez traduire, commenter des traductions, et aussi donner des votes positifs et des votes négatifs aux traductions existantes.
 
-Give your opinion on existing translations to ensure it is correct!
+Donnez votre avis sur les traductions existantes pour vous assurer qu'elles sont correctes !
 
-## Tips
+## Conseils
 
-Here are few tips to help you during your translation.
+Voici quelques conseils pour vous aider pendant votre traduction.
 
-### Crowdin documentation
+### Documentation Crowdin
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+Le document officiel de Crowdin est disponible [ici](https://support.crowdin.com/online-editor).
 
 ### Guide
 
 #### Code
 
-Some pages contain metadata and computer code.
+Certaines pages contiennent des métadonnées et du code informatique.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+Il est important de garder à l'esprit que William Shakespeare était un anglophone...tout comme Alan Turing! C'est pourquoi vous ne devez pas traduire des parties du code "lui-même".
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Par exemple, si vous voyez des métadonnées comme `sidebar_label : Hello World`, une traduction française serait `sidebar_label : Salut tout le monde`.
 
-Let's take another example, you wouldn't have to translate anything here:
+Prenons un autre exemple, vous n'aurez pas à traduire quoi que ce soit ici:
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+De plus, vous n'avez pas à traduire les URL dans votre langue locale.
 
-#### Specific words
+#### Mots spécifiques
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+Au fur et à mesure que vous traduirez des concepts innovants, comme Data Availability Sampling , n'hésitez pas à discuter de la meilleure traduction avec le reste de la communauté .
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+De plus, faites attention à l'ordre des dates, au point et aux virgules concernant les chiffres d'une langue à l'autre.
