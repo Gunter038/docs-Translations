@@ -38,7 +38,7 @@ sidebar_label : 共识全节点
 
 对于本指南的这一部分，请选择您要连接的网络：
 
-* [Mamaki](./mamaki-testnet.md#setup-p2p-network)
+* [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
 之后，您可以继续本教程的其余部分。
 
@@ -100,6 +100,6 @@ sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/confi
 
 在上一步中重新启动 `celestia-appd` 来加载这些配置。
 
-### Start the celestia-app with SystemD
+### 使用 SystemD 启动 celestia-app
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+请按照[这里](./systemd.md#start-the-celestia-app-with-systemd)的教程，通过 SystemD，将 Celestia-App 设置为后台进程。
