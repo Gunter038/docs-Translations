@@ -12,14 +12,14 @@ CosmWasm — це смартконтрактна платформа, створ�
 
 У цьому посібнику ми переходимо до наступних кроків:
 
-* [Setting up your dependencies for your CosmWasm smart contracts](./cosmwasm-dependency.md)
-* [Setting up Optimint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
-* [Instantiate a local network for your CosmWasm chain connected to Celestia](./cosmwasm-environment.md)
-* [Deploying a Rust smart contract to CosmWasm chain](./cosmwasm-contract-deployment.md)
-* [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
+* [Встановлення залежностей для ваших смартконтрактів CosmWasm](./cosmwasm-dependency.md)
+* [Встановлення Optimint на CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
+* [Створіть екземпляр локальної мережі для свого ланцюга CosmWasm, підключеного до Celestia](./cosmwasm-environment.md)
+* [Розгортання смартконтракту Rust у мережі CosmWasm](./cosmwasm-contract-deployment.md)
+* [Взаємодія зі смартконтрактом](./cosmwasm-contract-interaction.md)
 
-The smart contract we will use for this tutorial is one provided by the CosmWasm team for Nameservice purchasing.
+Смартконтракт, який ми будемо використовувати для цього підручника, надано командою CosmWasm для придбання Nameservice.
 
-You can check out the contract [here](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
+Ви можете перевірити контракт [тут](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
 
-How to write the Rust smart contract for Nameservice is outside the scope of this tutorial. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia.
+Як написати смартконтракт Rust для Nameservice, виходить за рамки цього посібника. У майбутньому ми додамо більше навчальних посібників для написання смартконтрактів CosmWasm для Celestia.
