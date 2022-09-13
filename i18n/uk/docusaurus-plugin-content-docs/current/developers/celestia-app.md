@@ -29,7 +29,7 @@ make install
 celestia-appd --help
 ```
 
-You should see a similar output (with helpful example commands):
+Ви повинні побачити подібний вивід (з корисними прикладами команд):
 
 ```text
 Start celestia app
