@@ -4,11 +4,11 @@ sidebar_label : Installing Celestia Node
 
 # Нода Celestia
 
-This tutorial goes over building and installing celestia-node. This tutorial assumes you completed the steps in setting up your development environment [here](./environment.md).
+У цьому посібнику розповідається про створення та встановлення celestia-node. Цей підручник передбачає, що ви виконали кроки з налаштування середовища розробки [тут](./environment.md).
 
 ## Установка ноди Celestia
 
-Install the celestia-node binary by running the following commands:
+Встановіть двійковий файл celestia-node, виконавши такі команди:
 
 ```sh
 cd $HOME
@@ -19,8 +19,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди `celestia version`:
 
 ```console
 $ celestia version
