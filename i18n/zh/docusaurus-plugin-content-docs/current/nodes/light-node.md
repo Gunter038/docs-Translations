@@ -179,6 +179,6 @@ celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_cus
 
 请按照[这里](./systemd.md#celestia-light-node)的教程，通过SystemD，将轻节点设置为后台进程。
 
-## Data availability sampling (DAS)
+## 数据可用性采样(DAS)
 
-With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+随着您的轻节点运行，您可以在[这里](../developers/node-tutorial.md)查看本教程提交`PayForData`交易。
