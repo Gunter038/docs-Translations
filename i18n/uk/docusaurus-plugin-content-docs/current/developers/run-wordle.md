@@ -174,9 +174,9 @@ wordled q wordle list-guess --output json
 
 Є багато способів, як ця кодова база може бути розширена:
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+1. Можна поліпшити обмін повідомленнями, якщо вгадати правильне слово.
+2. Ви можете хешувати слово перед тим, як надсилати його в ланцюжок, гарантуючи, що хешування є локальним, щоб воно не було виявлено через переднє виконання іншими користувачами, які відстежують рядок відкритого тексту, коли він надсилається в ланцюжок.
+3. Ви можете покращити інтерфейс терміналу за допомогою приємного інтерфейсу для Wordle. Деякі приклади є [тут](https://github.com/nimblebun/wordle-cli).
+4. Ви можете покращити поточну дату, щоб дотримуватися певної часової зони.
+5. Ви можете створити бота, який надсилає wordle щодня в певний час.
+6. Ви можете створити інтерфейс vue.js за допомогою Ignite, використовуючи приклади репозиторіїв з відкритим кодом [тут](https://github.com/yyx990803/vue-wordle) і [тут](https://github.com/xudafeng/wordle).
