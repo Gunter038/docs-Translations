@@ -1,24 +1,19 @@
 ---
-sidebar_label : Messages
+sidebar_label: Messages
 ---
 
 # Messages
 
 Messages allow us to process and submit information to our specific module.
 
-From the Cosmos-SDK docs, [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages)
-are:
+From the Cosmos-SDK docs, [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages) are:
 
-> In the Cosmos SDK, messages are objects that are contained
-  in transactions to trigger state transitions. Each Cosmos SDK
-  module defines a list of messages and how to handle them.
+> In the Cosmos SDK, messages are objects that are contained in transactions to trigger state transitions. Each Cosmos SDK module defines a list of messages and how to handle them. Each Cosmos SDK module defines a list of messages and how to handle them.
 
-For messages for Wordle, given our initial design, we will
-make 2 messages with ignite.
+For messages for Wordle, given our initial design, we will make 2 messages with ignite.
 
 * The first one is: `SubmitWordle` and it only passes the Wordle of the Day.
-* The second one is: `SubmitGuess` and it attempts to guess the submitted
-  wordle. It also passes a word as a guess.
+* The second one is: `SubmitGuess` and it attempts to guess the submitted wordle. It also passes a word as a guess. It also passes a word as a guess.
 
 With these initial designs, we can start creating our messages!
 
