@@ -13,46 +13,46 @@ sidebar_label: Запустіть ланцюжок Wordle
 ignite chain serve 
 ```
 
-Це скомпілює код блокчейну, який ви щойно написали, а також створить файл genesis та кілька облікових записів для використання. Як тільки в журналі з'явиться щось на зразок наступного журналу:
+Це скомпілює код блокчейну, який ви щойно написали, а також створить файл genesis та кілька облікових записів для використання. Після того, як журнал покаже щось на зразок наступного журналу у вихідних даних:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
 Cosmos SDK's version is: stargate - v0.45.5
-📦 Installing dependencies...
-🛠️  Building the blockchain...
-💿 Initializing the app...
-🙂 Created account "alice" with address "cosmos1skalxj42asjhc7dde3lzzawnksnztqmgy6sned" with mnemonic: "exact arrive betray hawk trim surround exhibit host vibrant sting range robot luxury vague manage settle slide town bread adult pact scene journey elite"
-🙂 Created account "bob" with address "cosmos1xe3l8z634frp0ry6qlmzs5vr85x6gcty7tmf0n" with mnemonic: "wisdom jelly fine boat series time panel real world purchase age area coach eager spot fiber slide apology near endorse flight panel ready torch"
+📦 Встановлення залежностей...
+🛠️ Створення блокчейну...
+💿 Ініціалізація програми...
+🙂 Створено обліковий запис "alice" з адресою "cosmos1skalxj42asjhc7dde3lzzawnksnztqmgy6sned" із мнемонікою: "exact arrive betray hawk trim surround exhibit host vibrant sting range robot luxury vague manage settle slide town bread adult pact scene journey elite"
+🙂 Створено обліковий запис "bob" з адресою "cosmos1xe3l8z634frp0ry6qlmzs5vr85x6gcty7tmf0n" із мнемонікою: "wisdom jelly fine boat series time panel real world purchase age area coach eager spot fiber slide apology near endorse flight panel ready torch"
 🌍 Tendermint node: http://0.0.0.0:26657
 🌍 Blockchain API: http://0.0.0.0:1317
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Optimint flags added.
+Тут команда створила двійковий файл `wordled` та адреси `alice` та `bob`, а також кран і API. Ви впевнені, що хочете вийти з програми з CTRL-C. Причина цього в тому, що ми запускатимемо двійковий файл `wordled` окремо з доданими прапорцями Optimint.
 
-You can start the chain with optimint configurations by running the following:
+Ви можете почати ланцюжок із конфігурацій optimint, виконавши наступне:
 
 ```sh
 wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+Будь ласка, зверніть увагу:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> ПРИМІТКА. У наведеній вище команді вам потрібно передати IP-адресу ноди Celestia до `base_url`, який має обліковий запис із маркерами тестової мережі Mamaki. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
 
-Also please consider:
+Також зверніть увагу:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Mamaki Testnet for `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в тестовій мережі Mamaki для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://testnet.mintscan.io/celestia-testnet). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
 
-In another window, run the following to submit a Wordle:
+В іншому вікні виконайте наступне, щоб надіслати Wordle:
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> ПРИМІТКА. Ми надсилаємо транзакцію асинхронно, щоб уникнути помилок часу очікування. Завдяки Optimint як заміні Tendermint нам потрібно дочекатися, поки мережа доступності даних Celestia переконається, що блок включено з Wordle, перш ніж переходити до наступного блоку. Наразі в Optimint єдиний агрегатор не просувається вперед зі створенням наступного блоку, доки він намагається надіслати поточний блок до мережі DA. У майбутньому, з вибором лідера, виробництво блоків і логіка синхронізації значно покращуються.
 
-This will ask you to confirm the transaction with the following message:
+Це попросить вас підтвердити транзакцію з таким повідомленням:
 
 ```json
 {
@@ -87,15 +87,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Космос-SDK попросить вас підтвердити транзакцію:
 
 ```sh
 confirm transaction before signing and broadcasting [y/N]:
 ```
 
-Confirm with a Y.
+Підтвердити за допомогою Y.
 
-You will then get a response with a transaction hash as shown here:
+Ви отримаєте відповідь з хешем транзакції, як показано тут:
 
 ```sh
 code: 19
@@ -113,66 +113,66 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
+Зверніть увагу, це не означає, що транзакція ще була включена в блок. Давайте запитаємо хеш транзакції, щоб перевірити, чи він уже включений у блок, чи є якісь помилки.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+Це має показувати вивід, як наступний результат:
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Test out a few things for fun:
+Протестуйте декілька речей для задоволення:
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
+Після підтвердження транзакції надішліть запит `txhash`, так само як ви робили вище. Ви побачите, що у відповіді буде повідомлено про недійсну помилку, оскільки ви надіслали цілі числа.
 
-Now try:
+А тепер спробуйте:
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+Після підтвердження транзакції надішліть запит `txhash`, так само як ви робили вище. Ви побачите, що у відповіді буде повідомлено про недійсну помилку, оскільки ви надіслали слово, яке містить понад 5 символів.
 
-Now try to submit another wordle even though one was already submitted
+Тепер спробуйте надіслати інше слово, хоча одне вже було надіслано
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+Після надсилання транзакцій і підтвердження надішліть запит `txhash`, так само як ви робили вище. Ви отримаєте повідомлення про помилку, що слово на день уже надіслано.
 
-Now let’s try to guess a five letter word:
+Тепер спробуймо вгадати п'ять літер:
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+Після надсилання транзакцій і підтвердження надішліть запит `txhash`, так само як ви робили вище. Якщо ви не вгадали правильне слово, це збільшить кількість вгаданих для облікового запису Боба.
 
-We can verify this by querying the list:
+Ми можемо перевірити це, запитавши список:
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+Це виведе всі об’єкти Guess, надіслані на цю мить, з індексом, який є сьогоднішньою датою та адресою відправника.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base.
+Таким чином, ми реалізували базовий приклад Wordle за допомогою Cosmos-SDK і Ignite та Optimint. Прочитайте далі, як розширити кодову базу.
 
-## Extending in the Future
+## Розширення в майбутньому
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+Ви можете розширити кодову базу та покращити цей підручник, переглянувши репозиторій [тут](https://github.com/celestiaorg/wordle).
 
-There are many ways this codebase can be extended:
+Є багато способів, як ця кодова база може бути розширена:
 
 1. You can improve messaging around when you guess the correct word.
 2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
