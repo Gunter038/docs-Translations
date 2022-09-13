@@ -1,18 +1,17 @@
----
-sidebar_label : Node Tutorial
----
+- - -
+sidebar_label : 节点教程
+- - -
 
-# Getting and Sending Transactions with Celestia Node
+# 使用Celestia节点获取和发送交易
 <!-- markdownlint-disable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and
-retrieve messages from the Data Availability Layer by their namespace ID.
+在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
 This tutorial was assumes you are working in a Linux environment.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> 点击 [这里](./light-node-video.md)查看设置Celestia轻节点的视频教程。
 
-## Hardware Requirements
+## 硬件要求
 
 The following minimum hardware requirements are recommended for running a light node:
 
@@ -21,7 +20,7 @@ The following minimum hardware requirements are recommended for running a light 
 - Disk: 5 GB SSD Storage
 - Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Setting Up Dependencies
+## 设置依赖项
 
 First, make sure to update and upgrade the OS:
 
@@ -75,9 +74,9 @@ The output should be the version installed:
 go version go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Celestia 节点
 
-### Install Celestia Node
+### 安装Celestia节点
 
 Install the celestia-node binary by running the following commands:
 
@@ -98,25 +97,21 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-### Instantiate Celestia Light Node
+### 实例化Celestia轻节点
 
-Now, let's instantiate a Celestia Light node:
+现在，让我们实例化一个Celestia轻节点：
 
-> Note: RPC Endpoints are exposed in all Celestia Node types
-  such as Light, Bridge and Full Nodes.
+> 注意：所有Celestia节点类型都会暴露RPC端点，包括但不限于轻节点、桥接结点和全节点。
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### 连接到公共核心端点
 
-Let's now run the Celestia Light node with a GRPC connection to
-an example public Core Endpoint.
+现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> Note: You are also encouraged to find a community-run API endpoint
-  and there are several in the Discord. This one is used for demonstration
-  purposes. You can find a list of RPC endpoints [here](../nodes/mamaki-testnet#rpc-endpoints)
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
@@ -136,7 +131,7 @@ You can create your key for your node by running the following command:
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Once you start the Light Node, a wallet key will be generated for you. Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
 
 You can find the address by running the following command in the `celestia-node` directory:
 
@@ -146,32 +141,29 @@ You can find the address by running the following command in the `celestia-node`
 
 If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
 
-You can request funds to your wallet address using the following command in Discord:
+您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated
-when you created the wallet.
+当您创建钱包时，生成的`<Wallet-Address>`地址形如`celestia1******`。
 
-With your wallet funded, you can move on to the next step.
+您的钱包有了资金，您可以继续下一步。
 
-## Node API Calls
+## 节点 API 调用
 
-Open up another terminal window in order to begin querying the API.
-`celestia-node` exposes its RPC endpoint on port `26658` by default.
+打开另一个终端窗口以开始查询 API。 Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Balance
+### 余额
 
-Now, let's query our node for the balance of its default account
-(which is the account associated with the `developer` key we generated earlier):
+现在，让我们查询我们的节点的默认账户余额 (这是我们先前生成的 `developer` 密钥关联的账户)：
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+它将输出以下内容：
 
 ```json
 {
@@ -180,19 +172,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+这显示钱包中的余额。
 
-### Get Block Header
+### 获取块头
 
-Now, let's get the block header information.
+现在，让我们获取块头信息。
 
-Here we will get the header from Block 1:
+在这里，我们获取块1的块头：
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+它将输出如下内容：
 
 ```json
 {
@@ -364,26 +356,23 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### 提交PFD交易
 
-In this example, we will be submitting a PayForData
-transaction to the node's `/submit_pfd` endpoint.
+在此示例中，我们将向节点的`/submit_pfd` 端点提交 PayForData 交易。
 
-Some things to consider:
+注意事项：
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- PFD指PayForData 消息
+- 端点将`namespace_id`和`data`值作为输入。
+- 命名空间 ID 应为8字节。
+- 数据是原始消息的十六进制编码字节。
+- `gas_limit`是用于交易的燃料限制
 
-We use the following `namespace_id` of `0000010000000100` and
-the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+我们假定`namespace_id`为`0000010000000100`，以及`data`值为`f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`。
 
-You can generate your own `namespace_id` and data values using this
-useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+您可以在[这里](https://go.dev/play/p/7ltvaj8lhRl)生成自己的`namespace_id`值和data值，我们创建了一个可用的Golang试验场。
 
-We run the following:
+运行以下命令：
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -391,7 +380,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 60000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+我们得到以下输出：
 
 ```json
 {
@@ -608,8 +597,7 @@ We get the following output:
 }
 ```
 
-If you notice from the above output, it returns a `height` of
-`2452` which we will use for the next command.
+请您注意到上述输出， 它返回`高度`为`2452`，我们将它用于下一个命令。
 
 #### Troubleshooting
 
@@ -620,24 +608,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
 
-It is possible that the account you are trying to submit a PayForData from
-doesn't have testnet tokens yet. Ensure the testnet faucet has funded your
-account with tokens and then try again.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
-### Get Namespaced Shares by Block Height
+### 按区块高度获取命名空间相关的数据片段
 
-After submitting your PFD transaction, upon success, the node will return
-the block height for which the PFD transaction was included. You can then
-use that block height and the namespace ID with which you submitted your
-PFD transaction to get your message shares returned to you. In this example,
-the block height we got was 589 which we will use for the following command.
+在提交您的 PFD 交易后，该节点会返回包含PFD 交易的 块高度。 After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command. 在这个例子中，我们得到的块高度是2452，我们将在下面的命令中使用它。
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+我们得到以下输出：
 
 ```json
 {
@@ -648,4 +630,4 @@ Will generate the following output:
 }
 ```
 
-The output here is base64-encoded.
+这里的输出是base64编码数据。
