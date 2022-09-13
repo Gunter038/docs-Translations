@@ -1,11 +1,9 @@
----
-sidebar_label : Overview
----
+- - -
+sidebar_label : 概述
+- - -
 
-# Community Overview
+# 社区概述
 
-This section will highlight all the different resources and activities
-for the Celestia Community.
+本节将重点介绍Celestia社区所有不同的资源和活动 。
 
-Here you will find links to our community calendar, Code of Conduct
-and other community-related resources.
+在这里您可以找到指向我们社区日历、行为准则和其他社区相关资源的链接。
