@@ -111,7 +111,7 @@ celestia light init
 
 Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
 
-> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
+> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. Ви можете знайти список кінцевих точок RPC [тут](/nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
