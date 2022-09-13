@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Consensus Full Node
+sidebar_label : Повна нода консенсусу
 - - -
 
 # Встановлення повної ноди консенсусу Celestia
