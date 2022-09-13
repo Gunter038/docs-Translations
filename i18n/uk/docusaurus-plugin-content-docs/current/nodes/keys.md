@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Keys
+sidebar_label : Ключі
 - - -
 
 # Використання утиліти cel-key
