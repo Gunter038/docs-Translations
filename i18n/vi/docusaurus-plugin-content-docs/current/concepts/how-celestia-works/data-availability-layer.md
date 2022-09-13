@@ -6,7 +6,7 @@ Lớp dữ liệu sẵn sàng của Celestia
 
 Lớp dữ liệu sẵn sàng của Celestia cung cấp giải pháp mở rộng cho [ vấn đề dữ liệu có sẵn ](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Do tính chất của các blockchain không cần được cấp phép, lớp dữ liệu sẵn sàng phải cung cấp một cơ chế cho lớp thực hiện và lớp giải quyết để kiểm tra độ tin cậy xem dữ liệu giao dịch có thực sự có sẵn hay không.
 
-Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+Hai tính năng chính của lớp dữ liệu sẵn sàng của Celestia [ mẫu thử sẵn sàng ](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) và [ không gian tên cây Merkle  ](https://github.com/celestiaorg/nmt) (NMTs). Cả hai tính năng đều là các giải pháp mở rộng quy mô blockchain mới: DAS cho phép các light node xác minh tính khả dụng của dữ liệu mà không cần tải xuống toàn bộ khối;NMT cho phép các lớp thực thi và thanh toán trên Celestia để tải xuống các giao dịch chỉ có liên quan đến chúng.
 
 ## Data Availability Sampling (DAS)
 
