@@ -183,7 +183,7 @@
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " on {date}",
+    "message": " {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
@@ -223,19 +223,19 @@
     "description": "The title of the tag list page"
   },
   "Build Modular": {
-    "message": "Build Modular"
+    "message": "Створення модульної системи"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
     "message": "Celestia - це перша модульна блокчейн-мережа, яка дає змогу розробникам розгорнути власний блокчейн так само легко, як і новий смартконтракт."
   },
   "Run Different Nodes": {
-    "message": "Run Different Nodes"
+    "message": "Запустити різні ноди"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
-    "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
+    "message": "Celestia дозволяє запускати ноду валідатора, ноду мосту або легкий клієнт, щоб підтримувати мережу."
   },
   "Power-up with Data Availability Layer": {
-    "message": "Power-up with Data Availability Layer"
+    "message": "Увімкнення за допомогою рівня доступності даних"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
     "message": "Celestia запроваджує те, що називається \"Рівень доступності даних\", для забезпечення ефективного масштабування та використання ролапів другого рівня та дозволяє проводити вибірку даних для транзакцій."
@@ -245,7 +245,7 @@
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "Навігаційні ланцюжки",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.CodeBlock.wordWrapToggle": {
