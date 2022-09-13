@@ -10,17 +10,17 @@ sidebar_label : Полезные команды CLI
 $ celestia-appd --help
 Start celestia app
 
-Usage:
-  celestia-appd [command]
+Использование:
+  celestia-appd [команда]
 
 Available Commands:
-  add-genesis-account Add a genesis account to genesis.json
-  collect-gentxs      Collect genesis txs and output a genesis.json file
-  config              Create or query an application CLI configuration file
-  debug               Tool for helping with debugging your application
-  export              Export state to JSON
-  gentx               Generate a genesis tx carrying a self delegation
-  help                Help about any command
+  add-genesis-account Добавить исходную учетную запись в genesis.json
+  collect-gentxs      Собрать исходные транзакции и вывести файл genesis.json
+  config              Создать или запросить файл конфигурации приложения CLI
+  debug               Инструмент для помощи в отладке вашего приложения
+  export              Экспорт состояния в JSON
+  gentx               Создать исходную транзакцию с самостоятельной делегацией
+  help                Помощь с любой командой
   init                Initialize private validator, p2p, genesis, 
   and application configuration files
   keys                Manage your application's keys
