@@ -60,6 +60,6 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 
 Також зверніть увагу:
 
-> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в тестовій мережі Mamaki для `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в тестовій мережі Mamaki для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://testnet.mintscan.io/celestia-testnet). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+Таким чином ми запустили нашу мережу `wasmd`!
