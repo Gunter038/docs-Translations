@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Devops Resources
+sidebar_label : Ресурси Devops
 - - -
 
 # Ресурси для DevOps
