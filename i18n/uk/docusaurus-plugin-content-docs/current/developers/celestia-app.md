@@ -37,33 +37,33 @@ Start celestia app
 Usage:
   celestia-appd [command]
 
-Available Commands:
-  add-genesis-account Add a genesis account to genesis.json
-  collect-gentxs      Collect genesis txs and output a genesis.json file
-  config              Create or query an application CLI configuration file
-  debug               Tool for helping with debugging your application
-  export              Export state to JSON
-  gentx               Generate a genesis tx carrying a self delegation
-  help                Help about any command
-  init                Initialize private validator, p2p, genesis, and application configuration files
-  keys                Manage your application's keys
-  migrate             Migrate genesis to a specified target version
-  query               Querying subcommands
-  rollback            rollback tendermint state by one height
-  rollback            rollback cosmos-sdk and tendermint state by one height
-  start               Run the full node
-  status              Query remote node for status
-  tendermint          Tendermint subcommands
-  tx                  Transactions subcommands
-  validate-genesis    validates the genesis file at the default location or at the location passed as an arg
-  version             Print the application binary version information
+Доступні команди:
+  add-genesis-account Додати обліковий запис genesis до genesis.json
+  collect-gentxs      Зібрати файл genesis txs і вивести файл genesis.json
+  config              Створити або запитати файл конфігурації CLI програми
+  debug               Інструмент для допомоги в налагодженні вашої програми
+  export              Експорт стану в JSON
+  gentx               Створити  genesis tx із самоделегуванням
+  help                Довідка про будь-яку команду
+  init                Ініціалізувати приватний валідатор, p2p, genesis і файли конфігурації програми
+  keys                Керувати ключами вашої програми
+  migrate             Перенести Genesis до вказаної цільової версії
+  query               Підкоманди запиту
+  rollback            відкотити стан tendermint на одну висоту
+  rollback            відкотити cosmos-sdk і стан tendermint на одну висоту
+  start               Запустити повну ноду
+  status              Запитати стан віддаленої ноди
+  tendermint          Підкоманди Tendermint
+  tx                  Підкоманди транзакцій
+  validate-genesis    перевіряє файл genesis у розташуванні за замовчуванням або в розташуванні, переданому як аргумент
+  version             Роздрукуйте інформацію про двійкову версію програми
 
-Flags:
-  -h, --help                help for celestia-appd
-      --home string         directory for config and data (default "/root/.celestia-app")
-      --log_format string   The logging format (json|plain) (default "plain")
-      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
-      --trace               print out full stack trace on errors
+Прапорці:
+  -h, --help                довідка для celestia-appd
+      --home string        каталог для конфігурації та даних (за замовчуванням "/root/.celestia-app")
+      --log_format string   Формат журналювання (json|plain) (за замовчуванням "plain")
+      --log_level string    Рівень журналювання (трасування|налагодження|інформація|попередження|помилка|фатальна|паніка) (за замовчуванням "інформація")
+      --trace               роздрукувати повне трасування стека для помилок
 
-Use "celestia-appd [command] --help" for more information about a command.
+Використовуйте "celestia-appd [command] --help", щоб отримати додаткові відомості про команду.
 ```
