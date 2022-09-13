@@ -1,93 +1,79 @@
----
-sidebar_label : Full Storage Node
----
+- - -
+sidebar_label : 存储全节点
+- - -
 
-# Setting up a Celestia Full Storage Node
+# 设置 Celestia 存储全节点
 
-This tutorial will guide you through setting up a Celestia Full Storage
-Node, which is a Celestia node that doesn't connect to Celestia App
-(hence not a full node) but stores all the data.
+本教程将指导您设置 Celestia 存储全节点，这是一个不连接到 Celestia App（因此不是全节点）但存储所有数据的 Celestia 节点。
 
-## Hardware requirements
+## 硬件要求
 
-The following hardware minimum requirements are recommended for running
-the full storage node:
+建议使用以下硬件最低要求来运行存储全节点：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 磁盘：250 GB SSD 存储
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting up your full storage node
+## 设置您的存储全节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+以下教程是在 Ubuntu Linux 20.04 (LTS) x64 实例机器上完成的。
 
-### Setup the dependencies
+### 设置依赖项
 
-You can follow the tutorial for setting up your dependencies [here](../developers/environment.md)
+您可以按照[这里](../developers/environment.md)教程设置依赖项。
 
-## Install Celestia node
+## 安装 Celestia 节点
 
-> Note: Make sure that you have at least 250+ Gb of free space for
-  Celestia Full Storage Node
+> 注意：确保您有至少 250+ Gb 的可用空间用于 Celestia 存储全节点
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+您可以按照[这里](../developers/celestia-node.md)的教程来安装 Celestia 节点。
 
-### Run the full storage node
+### 运行存储全节点
 
-#### Initialize the full storage node
+#### 初始化存储全节点
 
-Run the following command:
+运行以下命令：
 
 ```sh
 celestia full init
 ```
 
-#### Start the full storage node
+#### 启动存储全节点
 
-Start the Full Storage Node with a connection to a validator node's gRPC endpoint
-(which is usually exposed on port 9090):
+启动存储全节点并连接到验证器节点的 gRPC 端点 (通常在端口 9090上显示)：
 
-> NOTE: In order for access to the ability to get/submit state-related
-  information, such as the ability to submit PayForData transactions,
-  or query for the node's account balance, a gRPC endpoint of a validator
-  (core) node must be passed as directed below.
+> 注意：为了获得获取/提交状态相关信息的能力，例如提交 PayForData 交易或查询节点账号余额的能力，验证者（核心）节点的 gRPC 端点必须按指示传递如下
 
 ```sh
 celestia full start --core.grpc http://<ip addr of core node>:9090
 ```
 
-If you would like to find example RPC endpoints, check out the list of
-resources [here](./mamaki-testnet.md#rpc-endpoints).
+如果您想要查询示例RPC端点，请在[这里](./mamaki-testnet.md#rpc-endpoints)查看资源列表。
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+您可以按照[这里](./keys.md)的`cel-key`指示教程为您的节点创建密钥
 
-Once you start the Full Node, a wallet key will be generated for you.
-You will need to fund that address with Mamaki Testnet tokens to pay for
-PayForData transactions.
-You can find the address by running the following command:
+启动存储全节点后，将为您生成一个钱包密钥。 您需要使用 Mamaki 测试网代币为该地址注资，以支付 PayForData 交易。 您可以通过运行以下命令找到地址：
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+可以在[这里](./mamaki-testnet.md#mamaki-testnet-faucet)请求 Mamaki 测试网代币
 
-### Optional: run the full storage node with a custom key
+### 可选：使用自定义密钥运行存储全节点
 
-In order to run a full storage node using a custom key:
+要使用自定义密钥运行存储全节点：
 
-1. The custom key must exist inside the celestia full storage node directory
-   at the correct path (default: `~/.celestia-full/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. 自定义密钥必须存在于 celestia 存储全节点目录中的正确路径(默认: `~/.celestia-full/keys/keyring-test`)
+2. 自定义密钥的名称必须在 `开始`时传递，就像这样：
 
 ```sh
 celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the full storage node with SystemD
+### 可选：使用 SystemD 启动存储全节点
 
-Follow the tutorial on setting up the full storage node as a background
-process with SystemD [here](./systemd.md#celestia-full-storage-node).
+请按照[这里](./systemd.md#celestia-full-storage-node)的教程，通过 SystemD ，将存储全节点设置为后台进程。
 
-With that, you are now running a Celestia Full Storage Node.
+有了它，您现在正在运行 Celestia 存储全节点。
