@@ -18,23 +18,23 @@ celestia-appd config keyring-backend test
 celestia-appd keys add validator
 ```
 
-Save the mnemonic output as this is the only way to recover your validator wallet in case you lose it!
+Збережіть мнемонічний вихід, оскільки це єдиний спосіб відновити гаманець валідатора, якщо ви його втратите!
 
-To check all your wallets you can run:
+Щоб перевірити всі свої гаманці, ви можете запустити:
 
 ```sh
 celestia-appd keys list
 ```
 
-## Fund a Wallet
+## Поповнити гаманець
 
-For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #faucet channel:
+Для публічної адреси Celestia ви можете поповнити раніше створений гаманець через [Discord](https://discord.gg/celestiacommunity), надіславши це повідомлення на канал #faucet:
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Wait to see if you get a confirmation that the tokens have been successfully sent. To check if tokens have arrived successfully to the destination wallet run the command below replacing the public address with your own:
+Дочекайтесь, щоб побачити, що токени успішно відправлені. Щоб перевірити, чи токени успішно надійшли до визначеного гаманця, виконайте наведену нижче команду, замінивши публічну адресу на свою власну:
 
 ```sh
 celestia-appd start
