@@ -1,40 +1,40 @@
 - - -
-sidebar_label : Setting Up Environment
+sidebar_label : Налаштування середовища
 - - -
 
 # Середовище розробки
 
-This tutorial will go over setting up your development environment to run Celestia software. This environment can be used for development, building binaries, and running nodes.
+У цьому підручнику описано налаштування середовища розробки для запуску програмного забезпечення Celestia. Це середовище можна використовувати для розробки, створення двійкових файлів і запуску вузлів.
 
 ## Встановлення залежностей
 
-Once you have setup your instance, ssh into the instance to begin installing the dependencies needed to run a node.
+Налаштувавши свій екземпляр, запустіть ssh в екземпляр, щоб почати встановлення залежностей, необхідних для запуску ноди.
 
-First, make sure to update and upgrade the OS:
+Спочатку переконайтеся, що бажаєте оновити та покращити ОС:
 
 ```sh
-# If you are using the APT package manager
+# Якщо ви використовуєте менеджер пакетів APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Якщо ви використовуєте менеджер пакетів YUM
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Це важливі пакети, які необхідні для виконання багатьох завдань, таких як завантаження файлів, компілювання і моніторинг ноди:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# Якщо ви використовуєте менеджер пакетів APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Якщо ви використовуєте менеджер пакетів YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Install Golang
+## Інсталювати Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app і celestia-node написані мовою [Golang](https://go.dev/), тому ми повинні встановити Golang, щоб створити та запустити їх.
 
 ```sh
 ver="1.18.2"
@@ -45,21 +45,21 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Тепер нам потрібно додати каталог `/usr/local/go/bin` до `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Щоб перевірити, чи був Go встановлений правильно:
 
 ```sh
-перейти до версії
+go version
 ```
 
-The output should be the version installed:
+Вихід повинен бути встановленою версією:
 
 ```sh
-перейти до версії go1.18.2 linux/amd64
+go version go1.18.2 linux/amd64
 ```
