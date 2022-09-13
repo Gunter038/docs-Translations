@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Installing Celestia Node
+sidebar_label : Встановлення ноди Celestia
 - - -
 
 # Нода Celestia
