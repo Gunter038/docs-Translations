@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Full Storage Node
+sidebar_label : Нода повного сховища
 - - -
 
 # Налаштування ноди повного сховища Celestia
