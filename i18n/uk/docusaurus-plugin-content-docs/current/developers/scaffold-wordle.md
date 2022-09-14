@@ -2,7 +2,7 @@
 sidebar_label: Риштування Ланцюга
 ---
 
-# Ignite та Scaffolding Wordle Chain
+# Ignite та Scaffolding ланцюга Wordle
 <!-- markdownlint-disable MD013 -->
 
 ## Ignite
@@ -22,52 +22,52 @@ sudo mv ignite /usr/local/bin/
 
 Тепер оновіть свій термінал за допомогою `source` або відкрийте новий термінальний сеанс, щоб зміни відбулися.
 
-If you run the following:
+Якщо ви запустите наступне:
 
 ```sh
 ignite --help
 ```
 
-You should see an output of help commands meaning Ignite was installed successfully!
+Ви повинні побачити вихід команд довідки, що означає, що Ignite успішно встановлено!
 
-## Scaffolding the Wordle Chain
+## Scaffolding ланцюга Wordle
 
-Now, comes the fun part, creating a new blockchain! With Ignite, the process is pretty easy and straightforward.
+А тепер - весела частина, створення нового блокчейна! З Ignite процес досить простий і простий.
 
-Ignite CLI comes with several scaffolding commands that are designed to make development more straightforward by creating everything you need to build your blockchain.
+Ignite CLI постачається з декількома командами скелету, які розроблені, щоб зробити розробку простішою, створивши все, що вам потрібно для створення вашого блокчейну.
 
-First, we will use Ignite CLI to build the foundation of a fresh Cosmos SDK blockchain. Ignite minimizes how much blockchain code you must write yourself. If you are coming from the EVM-world, think of Ignite as a Cosmos-SDK version of Foundry or Hardhat but specifically designed to build blockchains.
+По-перше, ми використаємо Ignite CLI, щоб побудувати основу нового блокчейну Cosmos SDK. Ignite мінімізує кількість блокчейн-коду, який ви повинні написати самостійно. Якщо ви зі світу EVM, думайте про Ignite як про версію Cosmos-SDK Foundry або Hardhat, яка спеціально розроблена для створення блокчейнів.
 
-We first run the following command to setup our project for our new blockchain, Wordle.
+Спочатку ми запускаємо наступну команду, щоб налаштувати ваш проєкт для нашого нового блокчейну, Wordle.
 
 ```sh
 ignite scaffold chain github.com/YazzyYaz/wordle --no-module
 ```
 
-This command scaffolds a new chain directory called `wordle` in your local directory from which you ran the command. Notice that we passed the `--no-module` flag, this is because we will be creating the module after.
+Ця команда створює новий ланцюжковий каталог `wordle` у вашому локальному каталозі, з якого ви запустили команду. Зверніть увагу, що ми передали прапорець `--no-module`, - це тому, що ми будемо створювати модуль пізніше.
 
-## Wordle Directory
+## Каталог Wordle
 
-Now, it’s time to enter the directory:
+Тепер час увійти до каталогу:
 
 ```sh
 cd wordle
 ```
 
-Inside you will see several directories and architecture for your cosmos-sdk blockchain.
+Усередині ви побачите кілька каталогів і архітектуру для вашого блокчейну cosmos-sdk.
 
-| File/directory | Purpose                                                                                                                                                                 |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| app/           | Files that wire together the blockchain. The most important file is `app.go` that contains type definition of the blockchain and functions to create and initialize it. |
-| cmd/           | The main package responsible for the CLI of compiled binary.                                                                                                            |
-| docs/          | Directory for project documentation. By default, an OpenAPI spec is generated.                                                                                          |
-| proto/         | Protocol buffer files describing the data structure.                                                                                                                    |
-| testutil/      | Helper functions for testing.                                                                                                                                           |
-| vue/           | A Vue 3 web app template.                                                                                                                                               |
-| x/             | Cosmos SDK modules and custom modules.                                                                                                                                  |
-| config.yml     | A configuration file for customizing a chain in development.                                                                                                            |
-| readme.md      | A readme file for your sovereign application-specific blockchain project.                                                                                               |
+| Файл/каталог | Призначення                                                                                                                                             |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| app/         | Файли, які об’єднують блокчейн. Найважливішим файлом є `app.go`, який містить визначення типу блокчейну та функції для його створення та ініціалізації. |
+| cmd/         | Основний пакет, який відповідає за CLI скомпільованого двійкового файлу.                                                                                |
+| docs/        | Каталог для документування проєкту. За замовчуванням створюється специфікація OpenAPI.                                                                  |
+| proto/       | Програма протоколу містить файли, що описують структуру даних.                                                                                          |
+| testutil/    | Допоміжні функції для тестування.                                                                                                                       |
+| vue/         | Шаблон вебдодатка Vue 3.                                                                                                                                |
+| x/           | Модулі Cosmos SDK та користувацькі модулі.                                                                                                              |
+| config.yml   | Конфігураційний файл для налаштування ланцюга в розробці.                                                                                               |
+| readme.md    | Файл readme для вашого суверенного проєкту блокчейну для конкретної програми.                                                                           |
 
-Going over each one is outside the scope of this guide, but we encourage you to read about it [here](https://docs.ignite.com/kb).
+Перегляд кожного з них виходить за рамки цього посібника, але ми радимо вам прочитати про це [тут](https://docs.ignite.com/kb).
 
-Most of the tutorial work will happen inside the `x` directory.
+Більшість навчальної роботи виконуватиметься в каталозі `x`.
