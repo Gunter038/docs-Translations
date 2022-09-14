@@ -79,13 +79,13 @@ source $HOME/.bash_profile
 Để kiểm tra xem Go đã được cài đặt để chạy đúng chưa:
 
 ```sh
-phiên bản
+go version
 ```
 
 Đầu ra phải là phiên bản được cài đặt:
 
 ```sh
-vào phiên bản go1.18.2 linux/amd64
+go version go1.18.2 linux/amd64
 ```
 
 ### Cài đặt node Celestia
