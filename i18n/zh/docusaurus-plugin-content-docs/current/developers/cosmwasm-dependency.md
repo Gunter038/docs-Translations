@@ -1,12 +1,12 @@
 ---
-sidebar_label: CosmWasm Dependencies
+sidebar_label: CosmWasm 依赖项
 ---
 
-# CosmWasm Dependency Installations
+# CosmWasm 依赖项安装
 
-## Environment Setup
+## 环境配置
 
-For this tutorial, we will be using `curl` and `jq` as helpful tools.
+对于本教程，我们将使用`curl`和`jq`作为有用的工具。
 
 You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
 
