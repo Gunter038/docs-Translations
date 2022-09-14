@@ -185,20 +185,20 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 }
 ```
 
-In the above code, we are doing the following things:
+У наведеному вище коді ми робимо такі речі:
 
-* Here, we are doing initial checks again on the word to ensure it’s 5 characters and only alphabet characters are used, which can be refactored in the future or checked within the CLI commands.
-* We then get the Wordle of the Day by getting the hash string of the current day.
-* Next we create a hash string of current day and the Submitter. This allows us to create a Guess type with an index that uses the current day and the address of the submitter. This helps us when we face a new day and an address wants to guess the new wordle of the day. The index setup ensures they can continue guessing a new wordle every day up to the max of 6 tries per day.
-* We then check if that Guess type for the Submitter for today’s wordle did reach 6 counts. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state.
+* Тут ми знову виконуємо початкові перевірки слова, щоб переконатися, що воно містить 5 символів і в ньому використовуються лише символи алфавіту, які можна буде оновити в майбутньому або перевірити в командах CLI.
+* Потім ми отримуємо слово дня, отримуючи хеш-рядок поточного дня.
+* Далі ми створимо хеш-рядок поточного дня і Submitter. Це дозволяє нам створити тип Guess з індексом, який використовує поточний день і адресу відправника. Це допомагає нам, коли ми стикаємося з новим днем і адреса хоче вгадати нове слово дня. Налаштування індексу гарантує, що вони можуть продовжувати вгадувати нове слово щодня максимум до 6 спроб на день.
+* Потім ми перевіряємо, чи цей тип припущення для Submitter для сьогоднішнього Wordle досяг 6 одиниць. Якщо ні, ми збільшимо рахунок. Потім ми перевіряємо, чи правильне число. Ми зберігаємо тип Guess з оновленим підрахунком стану.
 
-## Protobuff File
+## Файл Protobuff
 
-  A few files need to be modified for this to work.
+  Декілька файлів для цієї роботи потрібно буде змінити.
 
-The first is `proto/wordle/tx.proto`.
+Перший із них - `proto/wordle/tx.proto`.
 
-Inside this file, fill in the empty `MsgSubmitGuessResponse` with the following code:
+Всередині цього файлу заповніть пустий `MsgSubmitGuessResponse` наступним кодом:
 
 ```go
 message MsgSubmitGuessResponse {
@@ -207,9 +207,9 @@ message MsgSubmitGuessResponse {
 }
 ```
 
-Next file is `x/wordle/types/expected_keepers.go`
+Наступний файл - `x/wordle/types/expected_keepers.go`
 
-Here, we need to add the SendCoins method to the BankKeeper interface in order to allow sending the reward to the right guesser.
+Тут нам потрібно додати метод SendCoins до інтерфейсу BankKeeper, щоб дозволити надсилати винагороду правильному вгадувачу.
 
 ```go
 type BankKeeper interface {
@@ -217,4 +217,4 @@ type BankKeeper interface {
 }
 ```
 
-With that, we implemented all our Keeper functions! Time to compile the blockchain and take it out for a test drive.
+За допомогою цього ми реалізували всі наші функції Keeper! Час компілювати блокчейн і забрати його на тест-драйв.
