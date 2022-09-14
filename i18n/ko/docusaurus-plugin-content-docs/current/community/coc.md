@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label : 행동 강령
 - - -
 
-# Celestia.org Code of Conduct
+# Celestia.org 행동 강령
 
-## Our Pledge
+## 우리의 서약
 
 We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
