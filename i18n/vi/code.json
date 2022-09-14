@@ -223,72 +223,72 @@
     "description": "The title of the tag list page"
   },
   "Build Modular": {
-    "message": "Build Modular"
+    "message": "Xây dựng modular"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
-    "message": "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract."
+    "message": "Celestia là Modular Blockchain đầu tiên cho phép các nhà phát triển triển khai blockchain của riêng họ dễ dàng như triển khai một hợp đồng thông minh mới."
   },
   "Run Different Nodes": {
-    "message": "Run Different Nodes"
+    "message": "Chạy một node khác"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
-    "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
+    "message": "Celestia cho phép bạn chạy một nút validator, một nút bridge hoặc một light client để có thể hỗ trợ mạng lưới."
   },
   "Power-up with Data Availability Layer": {
-    "message": "Power-up with Data Availability Layer"
+    "message": "Tăng cường khả năng với Lớp Data Availability"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
-    "message": "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need."
+    "message": "Celestia giới thiệu Lớp Data Availability, thứ cho phép mở rộng quy mô hiệu quả và cho phép các L2 Rollup tìm kiếm dữ liệu cho các giao dịch mà họ cần."
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "Trang chủ",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "Tập hợp các đường dẫn liên kết",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "Chuyển đổi sang chế độ ngắt dòng tự động",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
+    "message": "Xem tất cả {count} kết quả"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "Tìm kiếm",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
+    "message": "Một tài liệu được tìm thấy|{count} tài liệu được tìm thấy",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
+    "message": "Kết quả tìm kiếm cho \"{query}\"",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
+    "message": "Tìm kiếm tài liệu",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Type your search here",
+    "message": "Hãy nhập vào nội dung bạn muốn tìm kiếm",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "Search",
+    "message": "Tìm kiếm",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "Search by Algolia",
+    "message": "Tìm kiếm bằng Algolia",
     "description": "The ARIA label for Algolia mention"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "No results were found",
+    "message": "Không có kết quả nào được tìm thấy",
     "description": "The paragraph for empty search result"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "Fetching new results...",
+    "message": "Đang tìm kết quả mới...",
     "description": "The paragraph for fetching new search results"
   }
 }
