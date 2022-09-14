@@ -1,15 +1,15 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: Thiết lập Môi trường Mạng
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
+# Thiết lập môi trường cho CosmWasm trên Celestia
 <!-- markdownlint-disable MD013 -->
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Optimint.
+Bây giờ binary ` wasmd` đã được tạo, chúng tôi cần thiết lập một mạng nội bộ giao tiếp giữa ` wasmd` và Optimint.
 
-## Building the Wasmd Network
+## Xây dựng mạng Wasmd
 
-Run the following command:
+Chạy lệnh sau:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -17,18 +17,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+Điều này khởi tạo một chuỗi được gọi là ` celeswasm ` with ` wasmd ` binary.
 
-The following command helps us setup accounts for genesis:
+Lệnh sau giúp chúng tôi thiết lập tài khoản cho genesis:
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated for later reference if needed.
+Đảm bảo bạn lưu trữ đầu ra của ví được tạo để tham khảo sau này nếu cần.
 
-Now, let's add a genesis account and use it to update our genesis file:
+Bây giờ, hãy thêm tài khoản genesis và sử dụng nó để cập nhật tệp genesis:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -37,29 +37,29 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-With that, we created a local network genesis file.
+Như vậy, chúng tôi đã tạo một tệp genesis mạng nội bộ.
 
-Some more useful commands we can setup:
+Một số lệnh hữu ích hơn mà chúng ta có thể thiết lập:
 
 ```sh
 export NODE="--chain-id ${CHAIN_ID}"
 export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
 ```
 
-## Starting the Wasmd Network
+## Khởi động mạng Wasmd
 
-We can run the following to start the `wasmd` network:
+Chúng ta có thể chạy khởi động mạng `wasmd` như sau:
 
 ```sh
 wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+Vui lòng xem xét:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> LƯU Ý: Trong lệnh trên, bạn cần chuyển một địa chỉ IP Celestia Node vào `base_url ` có tài khoản với mã thông báo testnet Mamaki. Theo dõi hướng dẫn thiết lập Celestia Light Node và tạo ví với tiền từ vòi testnet [here ](./node-tutorial.md) trong phần Celestia Node.
 
-Also please consider:
+Cũng vui lòng xem xét:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Mamaki Testnet for `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height trong Mamaki Testnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer[here](https://testnet.mintscan.io/celestia-testnet). Ngoài ra, đối với flag `--optimint.namespace_id`, bạn có thể tạo ID Namespace ngẫu nhiên bằng cách sử dụng playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+Như vậy, chúng ta đã khởi động lại mạng `wasmd` của mình!
