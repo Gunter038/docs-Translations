@@ -10,7 +10,7 @@ Two key features of Celestia's DA layer are [data availability sampling](https:/
 
 ## Data Availability Sampling (DAS)
 
-In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
+En général, les nœuds légers ne téléchargent que les en-têtes de blocs qui contiennent des engagements (c.-à-d. les racines Merkle) des données de bloc (c.-à-d. la liste des transactions).
 
 To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
 
