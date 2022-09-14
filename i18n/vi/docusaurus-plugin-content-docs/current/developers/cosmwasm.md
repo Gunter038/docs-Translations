@@ -1,8 +1,8 @@
 ---
-sidebar_label: CosmWasm Overview
+sidebar_label: Tổng quan về CosmWasm
 ---
 
-# CosmWasm on Optimint
+# CosmWasm trên Optimint
 
 CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Optimint.
 
