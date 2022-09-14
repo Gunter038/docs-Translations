@@ -33,43 +33,43 @@ make install-key
 
 ## 生成 **桥接** 节点密钥的步骤
 
-To generate a key for a Celestia bridge node, do the following:
+要为 Celestia 桥接节点生成密钥，请执行以下操作：
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type bridge
 ```
 
-This will load the key <key_name> into the directory of the bridge node.
+这将会加载密钥 <key_name> 到桥接节点的目录中。
 
-## Steps for generating **full** node keys
+## 生成 **全** 节点密钥的步骤
 
-To generate a key for a Celestia full node, do the following:
+要为 Celestia 全节点生成密钥，请执行以下操作：
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type full
 ```
 
-This will load the key <key_name> into the directory of the full node.
+这将会加载密钥 <key_name> 到全节点的目录中。
 
-## Steps for generating **light** node keys
+## 生成 **轻** 节点密钥的步骤
 
-To generate a key for a Celestia light node, do the following:
+要为 Celestia 轻节点生成密钥，请执行以下操作：
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-This will load the key <key_name> into the directory of the light node.
+这将会加载密钥 <key_name> 到轻节点的目录中。
 
-## Steps for exporting **light** node keys
+## 导出 **轻** 节点密钥的步骤
 
-You can export a private key from the local keyring in encrypted and ASCII-armored format.
+您可以从本地密钥环中以加密和 ASCII 保护格式导出私钥。
 
 ```sh
 ./cel-key export <key-name> --keyring-backend test --node.type light
 ```
 
-You can then import your key with `celestia-appd`:
+然后您可以使用 `celestia-appd` 导入您的密钥：
 
 ```sh
 celestia-appd keys import <new-key-name> <key-file-location>
