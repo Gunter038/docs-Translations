@@ -2,11 +2,11 @@
 sidebar_label : Bridge Node
 - - -
 
-# Setting up a Celestia Bridge Node
+# Thiết lập một Node Bridge của Celestia
 
-This tutorial will go over the steps to setting up your Celestia Bridge node.
+Hướng dẫn này sẽ trình bày các bước để thiết lập node Celestia Bridge của bạn.
 
-Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
+Các node Bridge kết nối lớp Data Availability và lớp Đồng Thuận trong khi đồng thời đưa ra lựa chọn để trở thành một validator.
 
 Validators không phải chạy các nodes cầu nối, nhưng được khuyến khích để để chuyển tiếp các khối tới mạng dữ liệu khả dụng.
 
