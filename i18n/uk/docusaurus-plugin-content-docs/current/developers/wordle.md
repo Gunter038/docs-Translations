@@ -8,22 +8,22 @@ sidebar_label: Огляд Wordle
 
 У цьому навчальному посібнику описано створення програми cosmos-sdk для Optimint, реалізації Optimistic Rollup Tendermint для популярної гри [ Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-У цьому посібнику описано, як налаштувати Optimint в Ignite CLI та використовувати його для створення гри. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
+У цьому посібнику описано, як налаштувати Optimint в Ignite CLI та використовувати його для створення гри. Підручник розгляне простий дизайн, а також завершить майбутні реалізації та ідеї щодо розширення цієї кодової бази.
 
-> NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer.
+> ПРИМІТКА. У цьому підручнику розглядається розробка за допомогою Optimint, яка все ще перебуває на стадії альфа-версії. Якщо ви виявите помилки, будь ласка, напишіть заявку на Github Issue або повідомте нам про це в нашому Discord. Крім того, хоча Optimint дозволяє вам створювати суверенні зведені пакети на Celestia, він наразі ще не підтримує докази шахрайства, тому працює в «песимістичному» режимі, де ноди мають повторно виконати транзакції, щоб перевірити дійсність ланцюжка (тобто повну ноду). Крім того, наразі Optimint підтримує лише один секвенсер.
 
-## Pre-requisites
+## Передумови
 
-Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
+Оскільки цей підручник призначений для розробників, які мають досвід роботи з Cosmos-SDK, ми рекомендуємо вам переглянути наступні підручники в Ignite, щоб зрозуміти всі різні компоненти Cosmos-SDK, перш ніж продовжити цей підручник.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
-* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
-* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
-* [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
+* [Основи блогу та модуля](https://docs.ignite.com/guide/blog)
+* [Навчальний посібник зі служби імен](https://docs.ignite.com/guide/nameservice)
+* [Полювання на сміття](https://docs.ignite.com/guide/scavenge)
 
-You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
+Вам не обов’язково виконувати ці посібники, щоб слідувати цьому посібнику Wordle, але це допоможе вам краще зрозуміти архітектуру Cosmos-SDK.
 
-## Design Implementation
+## Імплементація розробки
 
 The rules of Wordle are simple: You have to guess the word of the day.
 
