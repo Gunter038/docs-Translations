@@ -12,7 +12,7 @@ sidebar_label : 轻节点
 
 轻节点确保数据可用性， 这是与 Celestia 网络交互的最常见方式。
 
-![light-node](/img/nodes/LightNodes.png)
+![轻节点](/img/nodes/LightNodes.png)
 
 轻节点具有以下属性：
 
