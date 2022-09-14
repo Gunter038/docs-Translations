@@ -127,13 +127,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Nếu file được tạo thành công, bạn sẽ thấy nội dung nó như bên dưới:
 
 ```sh
 cat /etc/systemd/system/celestia-bridge.service
 ```
 
-Enable and start celestia-bridge daemon:
+Kích hoạt và khởi động trình chạy nền cho celestia-bridge:
 
 ```sh
 systemctl enable celestia-bridge
@@ -141,7 +141,7 @@ systemctl start celestia-bridge && journalctl -u \
 celestia-bridge.service -f
 ```
 
-Now, the Celestia bridge node will start syncing headers and storing blocks from Celestia application.
+Bây giờ, node Bridge Celestia sẽ bắt đầu đồng bộ hóa các headers và lưu trữ các khối từ ứng dụng Celestia.
 
 > Note: At startup, we can see the `multiaddress` from Celestia Bridge Node. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
 
