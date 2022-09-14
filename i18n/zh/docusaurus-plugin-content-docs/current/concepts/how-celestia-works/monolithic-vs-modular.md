@@ -11,10 +11,10 @@ sidebar_label : 单片与模块化区块链
 - __共识__ 意味着就交易的顺序达成一致。
 - __数据可用性__ (DA) 需要使交易数据可用。 请注意，执行、结算和共识需要 DA。
 
-Traditional blockchains, i.e. _monolithic blockchains_, implement all four functions together in a single base consensus layer. The problem with monolithic blockchains is that the consensus layer must perform a lot of different tasks and it cannot be optimized for only one of these functions. As a result, the monolithic paradigm limits the throughput of the system.
+传统区块链，即_单片区块链_，在一个基础共识层中共同实现所有四个功能。 单片区块链的问题在于共识层必须执行许多不同的任务，并且不能仅针对其中一项功能进行优化。 结果，单片模式限制了系统的吞吐量。
 
 ![Modular VS Monolithic](/img/concepts/monolithic-modular.png)
 
-As a solution, modular blockchains decouple these functions among multiple specialized layers as part of a modular stack. Due to the flexibility that specialization provides, there are many possibilities in which that stack can be arranged. For example, one such arrangement is the separation of the four functions into three specialized layers.
+作为一种解决方案，模块化区块链将这些功能在多个专业层之间解耦，作为模块化堆栈的一部分。 由于专业化提供的灵活性，可以安排该堆栈的许多可能性。 例如，将四个功能分成三个专门的层。
 
-The base layer consists of DA and consensus and thus, is referred to as the Consensus and DA layer (or for brevity, the DA layer), while both settlement and execution are moved on top in their own layers. As a result, every layer can be specialized to optimally perform only its function and thus, increase the throughput of the system. Furthermore, this modular paradigm enables multiple execution layers, i.e., [rollups](https://vitalik.ca/general/2021/01/05/rollup.html), to use the same settlement and DA layers.
+基础层由 DA 和共识组成，因此被称为共识和 DA 层（或为简洁起见，称DA 层），而结算和执行都在它们自己的层中移动。 因此，每一层都可以专门的优化执行其功能，从而增加系统的吞吐量。 此外，这种模块化模式使多个执行层（即 [Rollups](https://vitalik.ca/general/2021/01/05/rollup.html) ）能够使用相同的结算层和 DA 层。
