@@ -8,8 +8,7 @@ sidebar_label : Полезные команды CLI
 
 ```console
 $ celestia-appd --help
-Start celestia app
-
+Запуск приложения celestia
 Использование:
   celestia-appd [команда]
 
@@ -21,51 +20,50 @@ Available Commands:
   export              Экспорт состояния в JSON
   gentx               Создать исходную транзакцию с самостоятельной делегацией
   help                Помощь с любой командой
-  init                Initialize private validator, p2p, genesis, 
-  and application configuration files
-  keys                Manage your application's keys
-  migrate             Migrate genesis to a specified target version
-  query               Querying subcommands
-  rollback            rollback tendermint state by one height
-  rollback            rollback cosmos-sdk and tendermint state by one height
-  start               Run the full node
-  status              Query remote node for status
-  tendermint          Tendermint subcommands
-  tx                  Transactions subcommands
-  validate-genesis    validates the genesis file at the default 
-  location or at the location passed as an arg
-  version             Print the application binary version information
+  init                Инициализация файлов приватного валидатора, p2p, исходного, и конфигурации приложения
+  keys                Управление ключами вашего приложения
+  migrate             Миграция исходного файла на определенную версию
+  query               Запрос подкоманд
+  rollback            откат состояния тендерминта на одну высоту
+  rollback            откат состояния cosmos-sdk и тендерминта на одну высоту
+  start               Запуск полного узла
+  status              Запрос статуса от удаленного узла
+  tendermint          Подкоманы тендерминта
+  tx                  Подкоманды транзакций
+  validate-genesis    проверяет исходный файл в месте по умолчанию 
+  или в месте, переданном в качестве аргумента
+  version             Вывод информации о бинарной версии приложения
 ```
 
-## Creating a wallet
+## Создание кошелька
 
 ```sh
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configures the keyring's backend, where the keys are stored.
+`keyring-backend` настраивает серверную часть связки ключей, где хранятся ключи.
 
-Options are: `os|file|kwallet|pass|test|memory`.
+Параметры: `os|file|kwallet|pass|test|memory`.
 
-## Key management
+## Управление ключами
 
 ```sh
-# listing keys
+# список ключей
 celestia-appd keys list
 
-# adding keys
+# добавление ключей
 celestia-appd keys add <KEY_NAME>
 
-# deleting keys
+# удаление ключей
 celestia-appd keys delete <KEY_NAME>
 
-# renaming keys
+# переименование ключей
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### Импорт и экспорт ключей
 
-Import an encrypted and ASCII-armored private key into the local keybase.
+Импорт зашифрованного закрытого ключа в формате ASCII в локальную базу ключей.
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
