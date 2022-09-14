@@ -1,48 +1,40 @@
----
-sidebar_label : Creating A Wallet
----
+- - -
+sidebar_label : Création d'un Wallet
+- - -
 
 # Wallet
 
-## Create a Wallet
+## Créer un Wallet (Portefeuille)
 
-First, create an application CLI configuration file:
+Tout d'abord, créez un fichier de configuration CLI de l'application :
 
- ```sh
- celestia-appd config keyring-backend test
- ```
+```sh
+celestia-appd config keyring-backend test
+```
 
-You can pick whatever wallet name you want.
-For our example we used "validator" as the wallet name:
+Vous pouvez choisir le nom de Wallet que vous voulez. Pour notre exemple, nous avons utilisé "validator" comme nom de wallet :
 
 ```sh
 celestia-appd keys add validator
 ```
 
-Save the mnemonic output as this is the only way to
-recover your validator wallet in case you lose it!
+Enregistrez la sortie mnémonique car c'est la seule façon de récupérer votre wallet de validateur en cas de perte !
 
-To check all your wallets you can run:
+Pour vérifier tous vos portefeuilles, vous pouvez exécuter :
 
 ```sh
 celestia-appd keys list
 ```
 
-## Fund a Wallet
+## Financer un Wallet
 
-For the public celestia address, you can fund the
-previously created wallet via Discord by sending
-this message to #faucet channel:
+Pour l'adresse publique de Celestia, vous pouvez financer le wallet précédemment créé via [Discord](https://discord.gg/celestiacommunity) en envoyant ce message au canal #faucet :
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Wait to see if you get a confirmation that the
-tokens have been successfully sent. To check if
-tokens have arrived successfully to the destination
-wallet run the command below replacing the public
-address with your own:
+Attendez de voir si vous obtenez une confirmation que les tokens (jetons) ont été envoyés avec succès. Pour vérifier si les tokens sont arrivés avec succès à destination du wallet exécutez la commande ci-dessous en remplaçant l'adresse publique avec la vôtre :
 
 ```sh
 celestia-appd start
