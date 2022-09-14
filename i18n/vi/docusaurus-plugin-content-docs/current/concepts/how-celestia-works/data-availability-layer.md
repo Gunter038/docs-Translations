@@ -8,35 +8,35 @@ Lớp dữ liệu sẵn sàng của Celestia cung cấp giải pháp mở rộng
 
 Hai tính năng chính của lớp dữ liệu sẵn sàng của Celestia [ mẫu thử sẵn sàng ](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) và [ không gian tên cây Merkle  ](https://github.com/celestiaorg/nmt) (NMTs). Cả hai tính năng đều là các giải pháp mở rộng quy mô blockchain mới: DAS cho phép các light node xác minh tính khả dụng của dữ liệu mà không cần tải xuống toàn bộ khối;NMT cho phép các lớp thực thi và thanh toán trên Celestia để tải xuống các giao dịch chỉ có liên quan đến chúng.
 
-## Data Availability Sampling (DAS)
+## Lấy mẫu của dữ liệu sẵn sàng(DAS)
 
-In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
+Nói chung, các light node chỉ tải xuống các tiêu đề của khối có chứa các cam kết (tức là gốc của Merkle) của khối dữ liệu (tức là danh sách các giao dịch).
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+Để làm cho DAS khả thi, Celestia sử dụng Reed-Solomon 2 chiều lược đồ mã hóa để mã hóa dữ liệu khối: mọi dữ liệu khối đều được chia nhỏ thành k × k khối, được sắp xếp trong ma trận k × k và mở rộng với tính chẵn lẻ dữ liệu vào ma trận mở rộng 2k × 2k bằng cách áp dụng nhiều lần mã hóa Reed-Solomon.
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+Sau đó, 4k gốc Merkle riêng biệt được tính cho các hàng và cột của ma trận mở rộng; gốc Merkle của những gốc Merkle này được sử dụng như cam kết dữ liệu khối trong tiêu đề của khối.
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+Để xác minh rằng dữ liệu có sẵn, các light node của Celestia đang lấy mẫu các khối dữ liệu 2k × 2k.
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+Mỗi light node chọn ngẫu nhiên một tập hợp các tọa độ duy nhất trong ma trận mở rộng và truy vấn các full node cho các khối dữ liệu và các bằng chứng Merkle tương ứng tại các tọa độ đó. Nếu các light node nhận được phản hồi hợp lệ cho mỗi truy vấn lấy mẫu, sau đó sẽ có [xác suất cao đảm bảo ](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) rằng dữ liệu của toàn khối có sẵn.
 
-Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
+Ngoài ra, mọi đoạn dữ liệu nhận được đều có bằng chứng Merkle chính xác được bàn tán trên mạng. Kết quả là, miễn là các light node của Celestia lấy mẫu cùng nhau đủ các khối dữ liệu (tức là ít nhất k × k khối duy nhất), toàn bộ khối có thể được phục hồi bởi tính trung thực của full node.
 
-For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
+Để biết thêm chi tiết về DAS, hãy xem [ tài liệu gốc ](https://arxiv.org/abs/1809.09044).
 
-### Scalability
+### Khả năng mở rộng
 
-DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+DAS cho phép Celestia mở rộng quy mô lớp DA. DAS có thể được thực hiện bởi giới hạn tài nguyên của light node vì mỗi nút sáng chỉ lấy mẫu một phần dữ liệu khối. Càng có nhiều light node trong mạng, càng nhiều dữ liệu họ có thể tải xuống và lưu trữ chung.
 
-This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
+Điều này có nghĩa là việc tăng số lượng light node thực hiện DAS cho phép cho các khối lớn hơn (tức là có nhiều giao dịch hơn), trong khi vẫn giữ DAS khả thi cho các light node bị giới hạn tài nguyên. Tuy nhiên, để xác thực tiêu đề khối, các light node của  Celestia cần tải xuống trung gian 4k gốc Merkle.
 
-For a block data size of n bytes, this means that every light node must download O(n) bytes. Therefore, any improvement in the bandwidth capacity of Celestia light nodes has a quadratic effect on the throughput of Celestia's DA layer.
+Đối với kích thước dữ liệu khối là n byte, điều này có nghĩa là mọi light node phải tải xuống O (n) byte. Do đó, bất kỳ sự cải thiện nào về dung lượng băng thông của  Celestia light node có ảnh hưởng bậc hai đến thông lượng của Celestia Lớp DA.
 
-### Fraud Proofs of Incorrectly Extended Data
+### Bằng chứng gian lận về dữ liệu mở rộng không chính xác
 
-The requirement of downloading the 4k intermediate Merkle roots is a consequence of using a 2-dimensional Reed-Solomon encoding scheme. Alternatively, DAS could be designed with a standard (i.e., 1-dimensional) Reed-Solomon encoding, where the original data is split into k  chunks and extended with k additional chunks of parity data. Since the block data commitment is the Merkle root of the 2k resulting data chunks, light nodes no longer need to download O(n) bytes to validate block headers.
+Yêu cầu tải xuống các gốc Merkle trung gian 4k là một hệ quả của việc sử dụng lược đồ mã hóa Reed-Solomon 2 chiều. Ngoài ra, DAS có thể được thiết kế với mã hóa Reed-Solomon chuẩn (tức là 1 chiều), trong đó dữ liệu ban đầu được chia thành k khối và mở rộng với k phần bổ sung khối dữ liệu chẵn lẻ. Vì cam kết dữ liệu khối là gốc Merkle của 2k khối dữ liệu, các nút sáng không còn cần tải O (n) byte xuống xác thực tiêu đề khối.
 
 The downside of the standard Reed-Solomon encoding is dealing with malicious block producers that generate the extended data incorrectly.
 
