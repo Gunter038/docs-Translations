@@ -10,27 +10,27 @@ sidebar_label: Повідомлення
 
 > У Cosmos SDK повідомлення — це об’єкти, які містяться в транзакціях для ініціювання переходів станів. Кожен модуль Cosmos SDK визначає список повідомлень і способи їх обробки.
 
-For messages for Wordle, given our initial design, we will make 2 messages with ignite.
+Для повідомлень для Wordle, враховуючи наш початковий дизайн, ми зробимо 2 повідомлення з захопленням.
 
-* The first one is: `SubmitWordle` and it only passes the Wordle of the Day.
-* The second one is: `SubmitGuess` and it attempts to guess the submitted wordle. It also passes a word as a guess.
+* Перше: `SubmitWordle`, і він пропускає лише Wordle дня.
+* Друге: `SubmitGuess` і він намагається вгадати подане слово. Він також передає слово як припущення.
 
-With these initial designs, we can start creating our messages!
+Із такими початковими дизайнами ми можемо почати створювати наші повідомлення!
 
-## Scaffolding A Message
+## Риштування повідомлення
 
-To create the `SubmitWordle` message, we run the following command:
+Щоб створити повідомлення `SubmitWordle`, ми виконуємо таку команду:
 
 ```sh
 ignite scaffold message submit-wordle word
 ```
 
-This creates the `submit-wordle` message that takes in `word` as a parameter.
+Це створює повідомлення `submit-wordle`, яке приймає `word` як параметр.
 
-We now create the final message, `SubmitGuess`:
+Тепер ми створюємо остаточне повідомлення, `SubmitGuess`:
 
 ```sh
 ignite scaffold message submit-guess word
 ```
 
-Here, we are passing a word as a guess with `submit-guess`.
+Тут ми передаємо слово як припущення за допомогою `submit-guess`.
