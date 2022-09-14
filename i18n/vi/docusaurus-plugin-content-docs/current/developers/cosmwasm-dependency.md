@@ -38,19 +38,19 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Docker Installation
+## Cài đặt Docker
 
-We will be using Docker later in this tutorial for compiling a smart contract to use a small footprint.
+Chúng tôi sẽ sử dụng Docker sau trong hướng dẫn này soạn hợp đồng thông minh để sử dụng một small footfrint.
 
-We recommend installing Docker on your machine.
+Chúng tôi khuyên cài đặt Docker trên máy tính của mình.
 
-Examples on how to install it on Linux are found [here](https://docs.docker.com/engine/install/ubuntu/).
+Ví dụ về cách cài đặt nó trên Linux có tại [here ](https://docs.docker.com/engine/install/ubuntu/).
 
-Find the right instructions specific for your OS.
+Tìm các hướng dẫn phù hợp cụ thể cho hệ điều hành của bạn.
 
 ## wasmd Installation
 
-Here, we are going to pull down the `wasmd` repository and replace Tendermint with Optimint. Optimint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
+Ở đây, chúng tôi sẽ kéo xuống kho lưu trữ ` wasmd ` và thay thế Tendermint bằng Optimint. Optimint là một drop-in replacemen cho Tendermint cho phép ứng dụng Cosmos-SDK kết nối với mạng tính khả dụng dữ liệu của Celestia.
 
 ```sh
 git clone https://github.com/CosmWasm/wasmd.git
