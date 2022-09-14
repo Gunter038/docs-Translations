@@ -8,35 +8,35 @@ Nếu bạn là một thành viên cộng đồng Celestia đầy nhiệt huyế
 
 ## Hãy xem qua dự án Crowdin của chúng tôi
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Để bắt đầu, hãy đi đến trang dự án Crowdin [tại đây](https://crowdin.com/project/celestia-docs).
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+Bạn sẽ cần phải tạo một tài khoản và bạn sẽ có thể tham gia vào dự án để bắt đâu hành trình dịch thuật của mình.
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+Nếu bạn không tìm thấy ngôn ngữ chính của mình, hãy yêu cầu nó tại kênh `#translations` trong [Discord](https://discord.gg/celestiacommunity) của dự án.
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+Trên trang Crowdin, bạn có thể dịch, bình luận về các bài dịch, đồng thời bỏ phiếu upvotes và downvotes đối với các bản dịch đã tồn tại.
 
-Give your opinion on existing translations to ensure it is correct!
+Hãy đưa ra ý kiến của riêng mình đối với các bản dịch đã tồn tại để đảm bảo rằng nó chính xác!
 
 ## Tips
 
 Sau đây là một số tips sẽ giúp ích cho bạn trong quá trình dịch thuật.
 
-### Crowdin documentation
+### Tài liệu của Crowdin
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+Bạn có thể tìm thấy các tài liệu chính thức của Crowdin [tại đây](https://support.crowdin.com/online-editor).
 
-### Guide
+### Hướng dẫn
 
 #### Code
 
-Some pages contain metadata and computer code.
+Một số trang có chưa metadata và các dòng code máy tính.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+Hãy nhớ rằng William Shakespeare là một người nói tiếng anh... Và Alan Turing cũng vậy! Đó là lí do vì sao bạn không nên dịch các phần mà bản thân nó là code.
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Ví dụ, bạn có thể thấy metadata, ví dụ như `sidebar_label : Hello World`, bản dịch tiếng Pháp nên là `sidebar_label : Salut tout le monde`.
 
-Let's take another example, you wouldn't have to translate anything here:
+Hãy cùng đến với một ví dụ khác, bạn sẽ không cần phải dịch bất kì thứ gì dưới đây:
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+Hơn nữa, bạn không cần phải dịch URLs sang ngôn ngữ địa phương của bạn.
 
-#### Specific words
+#### Từ ngữ chuyên môn
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+Khi bạn dịch các khái niệm đổi mới, chẳng hạn như Data Availability Sampling, hãy thảo luận về bản dịch tốt nhất với phần còn lại của cộng đồng.
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+Ngoài ra, hãy cẩn thận với thứ tự ngày, khoảng thời gian và dấu phẩy liên quan đến số khi dịch từ ngôn ngữ này sang ngôn ngữ khác.
