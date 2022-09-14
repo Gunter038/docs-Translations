@@ -69,26 +69,25 @@ celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
 ```
 
-Example usage:
+Пример использования:
 
 ```sh
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Export a private key from the local keyring in encrypted and ASCII-armored format:
+Экспорт закрытого ключа из локальной связки ключей в зашифрованном и защищенном формате ASCII:
 
 ```sh
-celestia-appd keys export <KEY_NAME>
-
-# you will then be prompted to set a password for the encrypted private key:
-Enter passphrase to encrypt the exported key:
+celestia-appd keys export <KEY_NAME>:
+# вам будет предложено установить пароль для зашифрованного закрытого ключа:
+Введите парольную фразу для шифрования экспортированного ключа:
 ```
 
-After you set a password, your encrypted key will be displayed.
+После установки пароля будет показан зашифрованный ключ.
 
-## Querying subcommands
+## Запрос подкоманд
 
-Usage:
+Использование:
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
