@@ -25,7 +25,7 @@ sidebar_label: Огляд Wordle
 
 ## Імплементація розробки
 
-The rules of Wordle are simple: You have to guess the word of the day.
+Правила Wordle прості: Ви повинні вгадати слово дня.
 
 Key Points to Consider:
 
