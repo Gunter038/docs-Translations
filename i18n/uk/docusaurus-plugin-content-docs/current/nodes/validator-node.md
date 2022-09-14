@@ -2,7 +2,7 @@
 sidebar_label : Validator Node
 - - -
 
-# Налаштування ноди Celestia Validator
+# Налаштування Celestia Validator Ноди
 
 Валідатор ноди дозволяють брати участь у консенсусі в мережі Celestia.
 
@@ -131,30 +131,30 @@ celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [here](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Запуск bridge ноди
 
-Run the following:
+Виконайте наступне:
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: start the bridge node with SystemD
+### Необов'язково: запустити ноду bridge з SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Дотримуйтеся [цієї](./systemd.md#celestia-bridge-node) інструкції з налаштування ноди bridge як фонового процесу за допомогою SystemD.
 
-You have successfully set up a bridge node that is syncing with the network.
+Ви успішно налаштували ноду bridge, яка синхронізується з мережею.
 
-## Run a validator node
+## Запуск valadator ноди
 
-After completing all the necessary steps, you are now ready to run a validator! In order to create your validator on-chain, follow the instructions below. Keep in mind that these steps are necessary ONLY if you want to participate in the consensus.
+Після виконання всіх необхідних кроків ви готові до запуску валідатора! Для того, щоб створити свого валідатора в мережі, дотримуйтесь інструкцій, наведених нижче. Майте на увазі, що ці кроки необхідні ЛИШЕ в тому випадку, якщо ви хочете брати участь у консенсусі.
 
-Pick a `moniker` name of your choice! This is the validator name that will show up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you defined previously. Parameter `--min-self-delegation=1000000` defines the amount of tokens that are self delegated from your validator wallet.
+Обирайте `moniker`  ім'я на свій розсуд! Це ім'я валідатора, яке буде відображатися на публічних інформаційних панелях та в пошукових системах. `VALIDATOR_WALLET` має бути тим самим, який ви задали раніше. Параметр `--min-self-delegation=1000000` визначає кількість токенів, які самоделегуються з вашого гаманця валідатора.
 
-Now, connect to the network of your choice.
+Тепер підключіться до обраної вами мережі.
 
-You have the following option of connecting to list of networks shown below:
+Ви маєте можливість підключитися до переліку мереж, наведених нижче:
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in to complete the validator setup process.
+Щоб завершити процес налаштування валідатора, виконайте інструкції у відповідній мережі, в якій ви хочете пройти валідацію.
