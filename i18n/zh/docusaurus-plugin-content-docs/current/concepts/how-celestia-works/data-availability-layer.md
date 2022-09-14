@@ -40,17 +40,17 @@ DAS 使 Celestia 能够扩展 DA 层。 DAS 可以由资源有限的轻节点执
 
 标准 Reed-Solomon 编码的缺点是处理不正确地生成扩展数据的恶意块生产者。
 
-This is possible as __Celestia does not require a majority of the consensus (i.e., block producers) to be honest to guarantee data availability.__ Thus, if the extended data is invalid, the original data might not be recoverable, even if the light nodes are sampling sufficient unique chunks (i.e., at least k for a standard encoding and k × k for a 2-dimensional encoding).
+这是可能的，因为__Celestia 不需要大多数共识（即区块生产者）诚实以保证数据可用性__。 因此，如果扩展数据无效，则原始数据可能无法恢复，即使轻节点正在采样足够多的唯一块（即，对于标准编码，至少为 k，对于二维编码，至少为 k × k）。
 
-As a solution, _Fraud Proofs of Incorrectly Generated Extended Data_ enable light nodes to reject blocks with invalid extended data. Such proofs require reconstructing the encoding and verifying the mismatch. With standard Reed-Solomon encoding, this entails downloading the original data, i.e., O(n) bytes. Contrastingly, with 2-dimensional Reed-Solomon encoding, only O(n ) bytes are required as it is sufficient to verify only one row or one column of the extended matrix.
+作为一种解决方案，_错误生成扩展数据的欺诈证明_使轻节点能够拒绝具有无效扩展数据的块。 这样的证明需要重建编码并验证不匹配。 使用标准 Reed-Solomon 编码，这需要下载原始数据，即 O(n) 字节。 相比之下，使用二维 Reed-Solomon 编码，只需要 O(n) 个字节，因为只需验证扩展矩阵的一行或一列就足够了。
 
-## Namespaced Merkle Trees (NMTs)
+## 命名空间 Merkle 树(NMTs)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia 将块数据划分为多个命名空间，每个使用 DA 层的应用程序（例如，rollup）一个命名空间。 因此，每个应用程序只需要下载自己的数据，而可以忽略其他应用程序的数据。
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+为此，DA 层必须能够证明提供的数据是完整的，即返回一定命名空间的所有数据。 为此，Celestia 正在使用命名空间默克尔树 (NMTs)。
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+NMT 是一棵 Merkle 树，其叶子按命名空间标识符排序，并修改了哈希函数，以便树中的每个节点都包含其所有后代的命名空间范围。 下图显示了一个高度3（即8个数据块）的 NMT 示例， 数据被划分为三个命名空间。
 
 ![Namespaced Merkle Tree](/img/concepts/nmt.png)
 
