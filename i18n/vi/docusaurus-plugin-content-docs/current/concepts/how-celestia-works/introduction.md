@@ -1,9 +1,9 @@
-# Introduction
+# Giới thiệu
 
-Celestia is a modular blockchain network whose goal is to build a scalable [data availability layer](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/), enabling the next generation of scalable blockchain architectures - [modular blockchains](https://celestia.org/learn/). Celestia scales by [decoupling execution from consensus](https://arxiv.org/abs/1905.09274) and introducing a new primitive, [data availability sampling](https://arxiv.org/abs/1809.09044).
+Celestia là một modular blockchain với mục tiêu xây dựng một [lớp Data Availability](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/) có khả năng mở rộng, mở đường cho thế hệ kiến trúc blockchains có thể mở rộng tiếp theo - [ modular blockchains](https://celestia.org/learn/). Celestia mở rộng bằng cách [tách rời lớp thực thi khởi lớp đồng thuận](https://arxiv.org/abs/1905.09274) và giới thiệu một triết lý mới, [Data Availability sampling](https://arxiv.org/abs/1809.09044).
 
-The former entails that Celestia is only responsible for ordering transactions and guaranteeing their data availability; this is similar to [reducing consensus to atomic broadcast](https://en.wikipedia.org/wiki/Atomic_broadcast#Equivalent_to_Consensus).
+Điều đầu tiên đồng nghĩa rằng Celestia chỉ chịu trách nhiệm cho việc sắp xếp giao dịch và đảm bảo tính khả dụng của dữ liệu; nó tương tự với việc [giảm sự đồng thuận đối với việc truyền phát ở mức độ nguyên tử](https://en.wikipedia.org/wiki/Atomic_broadcast#Equivalent_to_Consensus).
 
-The latter provides an efficient solution to the [data availability problem](https://coinmarketcap.com/alexandria/article/what-is-data-availability) by only requiring resource-limited light nodes to sample a small number of random chunks from each block to verify data availability.
+Điều thứ hai cung cấp một giải pháp hiệu quả cho [vấn đề về tính khả dụng của dữ liệu](https://coinmarketcap.com/alexandria/article/what-is-data-availability) bằng cách chỉ yêu cầu các light node giới hạn về tài nguyên lấy mẫu một số lượng nhỏ các chunk ngẫu nhiên từ mỗi khối để xác minh tính khả dụng của dữ liệu.
 
-Interestingly, more light nodes that participate in sampling increases the amount of data that the network can safely handle, enabling the block size to increase without equally increasing the cost to verify the chain.
+Điều thú vị là càng nhiều light node tham gia vào việc lấy mẫu sẽ tăng lượng dữ liệu mà mạng có thể xử lý một cách an toàn, cho phép kích thước khối tăng lên mà không làm tăng chi phí để xác minh chuỗi.
