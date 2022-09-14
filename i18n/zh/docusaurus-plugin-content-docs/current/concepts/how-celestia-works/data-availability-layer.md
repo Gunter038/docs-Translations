@@ -10,17 +10,17 @@ Celestia DA 层的两个关键特性是[数据可用性采样](https://blog.cele
 
 ## 数据可用性采样(DAS)
 
-一般来说，轻节点只下载包含区块数据（即交易列表）的承诺（即Merkle根）。
+一般来说，轻节点只下载包含区块数据（即交易列表）的承诺（即Merkle根）的区块头。
 
-为了使 DAS 成为可能，Celestia 使用二维 Reed-Solomon 编码方案对块数据进行编码：每个块数据被分成 k × k 块，排列在 ak × k 矩阵中，并用奇偶校验数据扩展为 2k × 2k通过多次应用 Reed-Solomon 编码来扩展矩阵。
+为了使 DAS 成为可能，Celestia 使用二维 Reed-Solomon 编码方案对块数据进行编码：每个块数据被分成 k × k 块，排列在 k × k 矩阵中，并通过多次应用 Reed-Solomon 编码来增加校验数据，使它扩展为 2k × 2k。
 
-然后，为扩展矩阵的行和列计算 4k 个单独的 Merkle 根；这些 Merkle 根的 Merkle 根被用作区块头中的区块数据承诺。
+然后，为扩展矩阵的行和列计算 4k 个单独的 Merkle 根；再通过这些 Merkle 根生成一个（总的）Merkle 根，用作区块头中的区块数据承诺。
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-为了验证数据是否可用，Celestia 轻节点正在对 2k × 2k 数据块进行采样。
+为了验证数据是否可用，Celestia 轻节点正是对 2k × 2k 数据块进行采样。
 
-每个轻节点在扩展矩阵中随机选择一组唯一坐标，并在这些坐标处查询数据块和相应的 Merkle 证明的完整节点。 如果轻节点对每个采样查询都接收到有效响应，则很有[可能保证](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075)整个块的数据是可用的。
+每个轻节点在扩展后的矩阵中随机选择一组唯一坐标，并在这些坐标处，向存储全节点查询数据块和相应的 Merkle 证明。 如果轻节点对每个采样的查询都接收到有效响应，则[很有可能保证](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075)整个块的数据是可用的。
 
 此外，每个接收到的具有正确 Merkle 证明的数据块都会被发送到网络。 结果，只要 Celestia 轻节点对足够多的数据块进行采样（即，至少 k × k 个唯一块），完整的块可以通过诚实的全节点来恢复。
 
