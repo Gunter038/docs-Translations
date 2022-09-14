@@ -29,47 +29,47 @@ hay
 make install-key
 ```
 
-For the purpose of this guide, we will use the `make cel-key` command.
+Với mục đích của hướng dẫn này, chúng ta sẽ sử dụng câu lệnh `make cel-key`.
 
-## Steps for generating **bridge** node keys
+## Các bước tạo keys cho **bridge** node
 
-To generate a key for a Celestia bridge node, do the following:
+Để tạo một key cho node bridge của Celestia, thực hiện các bước sau:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type bridge
 ```
 
-This will load the key <key_name> into the directory of the bridge node.
+Việc này sẽ tải key <key_name> vào trong thư mục của node bridge.
 
-## Steps for generating **full** node keys
+## Các bước tạo keys cho **full** node
 
-To generate a key for a Celestia full node, do the following:
+Để tạo key cho một full node Celestia, thực hiện các bước sau:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type full
 ```
 
-This will load the key <key_name> into the directory of the full node.
+Việc này sẽ tải key <key_name> vào trong thư mục của full node.
 
-## Steps for generating **light** node keys
+## Các bước tạo keys cho **light** node
 
-To generate a key for a Celestia light node, do the following:
+Để tạo key cho một light node Celestia, thực hiện các bước sau:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-This will load the key <key_name> into the directory of the light node.
+Việc này sẽ tải key <key_name> vào trong thư mục của light node.
 
-## Steps for exporting **light** node keys
+## Các bước xuất keys cho **light** node
 
-You can export a private key from the local keyring in encrypted and ASCII-armored format.
+Bạn có thể xuất một private key từ khóa cục bộ ở dạng mã hóa và định dạng ASCII-armored.
 
 ```sh
 ./cel-key export <key-name> --keyring-backend test --node.type light
 ```
 
-You can then import your key with `celestia-appd`:
+Sau đó bạn có thể nhập key của bạn với `ứng dụng celestia`:
 
 ```sh
 celestia-appd keys import <new-key-name> <key-file-location>
