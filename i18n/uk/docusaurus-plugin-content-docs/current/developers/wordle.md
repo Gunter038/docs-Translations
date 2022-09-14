@@ -27,33 +27,33 @@ sidebar_label: Огляд Wordle
 
 Правила Wordle прості: Ви повинні вгадати слово дня.
 
-Key Points to Consider:
+Ключові точки для розгляду:
 
-* The word is a five-letter word.
-* You have 6 guesses.
-* Every 24 hours, there’s a new word.
+* У слові п'ять літер.
+* У вас є 6 здогадок.
+* Кожні 24 години - нове слово.
 
-The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
+Графічний інтерфейс для Wordle показує кілька індикаторів: виділення зеленим кольором літери в певній позиції означає, що це правильна літера для Wordle у правильній позиції. Жовте виділення означає, що це правильна літера для Wordle, але в неправильній позиції. Сіра підсвічування означає, що буква не є частиною Wordle.
 
-For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
+Для простоти дизайну ми уникатимемо цих підказок, хоча є способи розширити цю кодову базу для реалізації того, що ми покажемо наприкінці.
 
-In this current design, we implement the following rules:
+У поточній розробці ми реалізуємо такі правила:
 
-* 1 Wordle can be submitted per day
-* Every address will have 6 tries to guess the word
-* It must be a five-letter word.
-* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
+* На день можна надсилати 1 Wordle;
+* В кожній адресі буде 6 спроб вгадати слово;
+* Це має бути п'ятибуквене слово;
+* Той, хто правильно вгадає слово до закінчення 6 спроб, отримує нагороду в 100 токенів WORDLE.
 
-We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
+Щоб досягти цього, ми розглянемо архітектуру далі в посібнику. Але зараз ми розпочнемо налаштування нашого середовища розробника.
 
-## Table of Contents For This Tutorial
+## Зміст для цього посібника
 
-The following tutorial is broken down into the following sections:
+Цей підручник розбитий на такі розділи:
 
-1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
-2. [Installing Optimint](./install-optimint.md)
-3. [Modules](./wordle-module.md)
-4. [Messages](./wordle-messages.md)
-5. [Types](./wordle-types.md)
-6. [Keepers](./wordle-keeper.md)
-7. [Running Wordle](./run-wordle.md)
+1. [Ignite та Scaffolding ланцюга](./scaffold-wordle.md)
+2. [Встановлення Optimint](./install-optimint.md)
+3. [Модулі](./wordle-module.md)
+4. [Повідомлення](./wordle-messages.md)
+5. [Типи](./wordle-types.md)
+6. [Хранителі](./wordle-keeper.md)
+7. [Запуск Wordle](./run-wordle.md)
