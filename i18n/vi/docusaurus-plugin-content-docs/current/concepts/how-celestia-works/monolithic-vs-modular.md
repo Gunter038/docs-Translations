@@ -1,8 +1,8 @@
 - - -
-sidebar_label : Monolithic vs. Modular Blockchains
+sidebar_label : So sánh giữa Monolithic Blockchains và Modular Blockchains
 - - -
 
-# Monolithic vs. Modular Blockchains
+# So sánh giữa Monolithic và Modular Blockchains
 
 Blockchains instantiate [replicated state machines](https://dl.acm.org/doi/abs/10.1145/98163.98167): the nodes in a permissionless distributed network apply an ordered sequence of deterministic transactions to an initial state resulting in a common final state. This means blockchains require the following four functions:
 
