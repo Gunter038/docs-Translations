@@ -8,33 +8,33 @@ Les utilisateurs demandent à l'application Celestia de rendre les données disp
 
 Avant de proposer le bloc, le producteur le transmet à la machine à états via ABCI++, où chaque transaction `PayForData` est divisée en un message espacé par un nom (désigné par `Msg` dans la figure ci-dessous), c'est-à-dire les données avec le namespace ID, et une transaction exécutable (désignée par `e-Tx` dans la figure ci-dessous) qui ne contient pas les données, mais seulement un engagement qui peut être utilisé ultérieurement pour prouver que les données ont bien été mises à disposition.
 
-Ainsi, les données du bloc se composent de données partitionnées en namespaces et en transactions exécutables. Note that only these transactions are executed by the Celestia state machine once the block is committed.
+Ainsi, les données du bloc se composent de données partitionnées en namespaces et en transactions exécutables. Notez que seules ces transactions sont exécutées par la machine à états de Celestia une fois le bloc validé.
 
-![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
+![Cycle de vie d'une transaction Celestia App](/img/concepts/tx-lifecycle.png)
 
-Next, the block producer adds to the block header a commitment of the block data. As described [here](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), the commitment is the Merkle root of the 4k intermediate Merkle roots (i.e., one for each row and column of the extended matrix). To compute this commitment, the block producer performs the following operations:
+Ensuite, le producteur du bloc ajoute à l'en-tête du bloc un engagement des données du bloc. Comme décrit [ici](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), l'engagement est la racine de Merkle des 4k racines de Merkle intermédiaires (c'est-à-dire une pour chaque ligne et colonne de la matrice étendue). Pour calculer cet engagement, le producteur de blocs effectue les opérations suivantes :
 
-- It splits the executable transactions and the namespaced data into shares. Every share consists of some bytes prefixed by a namespace ID. To this end, the executable transactions are associated with a reserved namespace.
-- It arranges these shares into a square matrix (row-wise). Note that the shares are padded to the next power of two. The outcome square of size k × k is referred to as the original data.
-- It extends the original data to a 2k × 2k square matrix using the 2-dimensional Reed-Solomon encoding scheme described above. The extended shares (i.e., containing erasure data) are associated with another reserved namespace.
-- It computes a commitment for every row and column of the extended matrix using the NMTs described above.
+- Il divise les transactions exécutables et les données namespaced en parts. Chaque part est constituée de quelques octets préfixés par un namespace ID. À cette fin, les transactions exécutables sont associées à un namespace réservé.
+- Il classe ces parts dans une matrice carrée (par rangées). Notez que les parts sont complétées à la prochaine puissance de deux. Le carré de résultats de taille k × k est appelé données d'origine (original data).
+- Il étend les données originales à une matrice carrée de 2k × 2k en utilisant le schéma de codage de Reed-Solomon à 2 dimensions décrit ci-dessus. Les parts étendues (c'est-à-dire contenant des données d'effacement) sont associées à un autre namespace réservé.
+- Il calcule un engagement pour chaque ligne et chaque colonne de la matrice étendue en utilisant les NMT décrites ci-dessus.
 
-Thus, the commitment of the block data is the root of a Merkle tree with the leaves the roots of a forest of Namespaced Merkle subtrees, one for every row and column of the extended matrix.
+Ainsi, l'engagement des données du bloc est la racine d'un arbre de Merkle dont les feuilles sont les racines d'une forêt de sous-arbres de Namespaced Merkle, un pour chaque ligne et colonne de la matrice étendue.
 
-## Checking Data Availability
+## Vérification de la disponibilité des données
 
 ![DA network](/img/concepts/consensus-da.png)
 
-To enhance connectivity, the Celestia Node augments the Celestia App with a separate libp2p network, i.e., the so-called _DA network_, that serves DAS requests.
+Pour améliorer la connectivité, le Node Celestia améliore l'App Celestia avec un réseau libp2p séparé, c'est-à-dire le réseau dit _DA_, qui répond aux demandes de DAS.
 
-Light nodes connect to a Celestia Node in the DA network, listen to extended block headers (i.e., the block headers together with the relevant DA metadata, such as the 4k intermediate Merkle roots), and perform DAS on the received headers (i.e., ask for random data chunks).
+Les light nodes se connectent à un Node Celestia dans le réseau de DA, écoutent les en-têtes de blocs étendus (c'est-à-dire les en-têtes de blocs accompagnés des métadonnées de DA pertinentes, telles que les racines de Merkle intermédiaires 4k), et exécutent un DAS sur les en-têtes reçus (c'est-à-dire demander des morceaux de données aléatoires).
 
-Note that although it is recommended, performing DAS is optional -- light nodes could just trust that the data corresponding to the commitments in the block headers was indeed made available by the Celestia DA layer. In addition, light nodes can also submit transactions to the Celestia App, i.e., `PayForData` transactions.
+Notez que, bien qu'elle soit recommandée, l'exécution de la DAS est facultative -- les light nodes pourraient simplement faire confiance aux données correspondant d'engagements dans les en-têtes de bloc, qui ont été effectivement rendus disponibles par la couche de Celestia DA. De plus, les light nodes peuvent également soumettre des transactions à Celestia App, c'est-à-dire des transactions `PayForData`.
 
-While performing DAS for a block header, every light node queries Celestia Nodes for a number of random data chunks from the extended matrix and the corresponding Merkle proofs. If all the queries are successful, then the light node accepts the block header as valid (from a DA perspective).
+Lors de l'exécution du DAS pour un en-tête de bloc, chaque light node demande aux nodes Celestia un certain nombre de morceaux de données aléatoires provenant de la matrice étendue et des preuves de Merkle correspondantes. Si toutes les requêtes sont réussies, alors le light node accepte l'en-tête de bloc comme valide (du point de vue de DA).
 
-If at least one of the queries fails (i.e., either the data chunk is not received or the Merkle proof is invalid), then the light node rejects the block header and tries again later. The retrial is necessary to deal with false negatives, i.e., block headers being rejected although the block data is available. This may happen due to network congestion for example.
+Si au moins l'une des requêtes échoue (c'est-à-dire que le morceau de données n'est pas reçu ou que la preuve de Merkle n'est pas valide), le light node rejette l'en-tête de bloc et réessaie plus tard. Le nouvel essai est nécessaire pour traiter les faux négatifs, c'est-à-dire que les en-têtes de bloc sont rejetés bien que les données du bloc soient disponibles. Cela peut être dû par exemple à la congestion du réseau.
 
-Alternatively, light nodes may accept a block header although the data is not available, i.e., a _false positive_. This is possible since the soundness property (i.e., if an honest light node accepts a block as available, then at least one honest full node will eventually have the entire block data) is probabilistically guaranteed (for more details, take a look at the [original paper](https://arxiv.org/abs/1809.09044)).
+Alternativement, les light nodes peuvent accepter un en-tête de bloc bien que les données ne soient pas disponibles, c'est-à-dire un _faux positif_. Cela est possible car la propriété de solidité (c'est-à-dire que si un light node honnête accepte un bloc comme disponible, alors au moins un full node honnête aura éventuellement les données du bloc entier) est garantie de manière probabiliste (pour plus de détails, jetez un coup d'œil au [document original](https://arxiv.org/abs/1809.09044)).
 
-By fine tuning Celestia's parameters (e.g., the number of data chunks sampled by each light node) the likelihood of false positives can be sufficiently reduced such that block producers have no incentive to withhold the block data.
+En affinant les paramètres de Celestia (par exemple, le nombre de blocs de données échantillonnés par chaque light node), la probabilité de faux positifs peut être suffisamment réduite pour que les producteurs de blocs ne soient pas incités à retenir les données des blocs.
