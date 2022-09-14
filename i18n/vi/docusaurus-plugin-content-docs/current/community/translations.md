@@ -6,7 +6,7 @@ sidebar_label: Bản dịch Tài liệu
 
 Nếu bạn là một thành viên cộng đồng Celestia đầy nhiệt huyết muốn đóng góp dịch các trang tài liệu, thì đây là hướng dẫn dành cho bạn.
 
-## Visit our Crowdin project
+## Hãy xem qua dự án Crowdin của chúng tôi
 
 To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
 
@@ -20,7 +20,7 @@ Give your opinion on existing translations to ensure it is correct!
 
 ## Tips
 
-Here are few tips to help you during your translation.
+Sau đây là một số tips sẽ giúp ích cho bạn trong quá trình dịch thuật.
 
 ### Crowdin documentation
 
