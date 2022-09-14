@@ -4,46 +4,46 @@ sidebar_label : Validator Node
 
 # Налаштування ноди Celestia Validator
 
-Validator nodes allow you to participate in consensus in the Celestia network.
+Валідатор ноди дозволяють брати участь у консенсусі в мережі Celestia.
 
-## Hardware requirements
+## Системні вимоги
 
-The following hardware minimum requirements are recommended for running the validator node:
+Для роботи ноди Validator рекомендуються наступні мінімальні системі вимоги до апаратного забезпечення ноди Validator:
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Оперативна пам'ять: 8 ГБ  RAM
+* ПРОЦЕСОР (CPU): чотирьохядерний
+* Диск: 250 ГБ SSD-накопичувач
+* Пропускна здатність: 1 Гбіт/с на завантаження/100 Мбіт/с на вивантаження
 
-## Setting up your validator node
+## Налаштування ноди validator
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Наступний навчальний посібник виконано на машині з дистрибутивом Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Налаштування залежностей
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+Дотримуйтесь інструкцій щодо встановлення залежностей [тут](../developers/environment.md).
 
-## Deploying the celestia-app
+## Розгортання celestia-app
 
-This section describes part 1 of Celestia Validator Node setup: running a Celestia App daemon with an internal Celestia Core node.
+У цьому розділі описано частину 1 налаштування ноди Celestia Validator: запуск демона Celestia App з внутрішньою нодою Celestia Core.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> Примітка: Переконайтеся, що у вас є принаймні 100+ Гб вільного місця для безпечного встановлення та запуску ноди Validator.
 
-### Install celestia-app
+### Встановлення celestia-app
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Інструкцію по встановленню програми Celestia App можна знайти [тут](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Налаштування P2P мереж
 
-For this section of the guide, select the network you want to connect to:
+У цьому розділі інструкції виберіть мережу, до якої ви хочете підключитися:
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Після цього можна приступати до освоєння решти матеріалу інструкції.
 
-### Configure pruning
+### Налаштувати pruning
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+Для зменшення використання дискового простору ми рекомендуємо налаштувати pruning за допомогою наведених нижче конфігурацій.  За бажанням ви можете змінити їх на власні конфігурації pruning:
 
 ```sh
 PRUNING="custom"
@@ -57,79 +57,79 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure validator mode
+### Конфігурація validator ноди
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset network
+### Перезавантаження мережі
 
-This will delete all data folders so we can start fresh:
+Це призведе до видалення всіх папок з даними, щоб ми могли почати з чистого аркуша:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Додатково: швидка синхронізація зі snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+Синхронізація з Genesis може зайняти деякий час, залежно від вашого обладнання. Використовуючи цей метод, ви можете дуже швидко синхронізувати свою ноду Celestia, завантаживши останній снепшот блокчейну. Якщо ви хочете синхронізуватися з Genesis, то можете пропустити цю частину.
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+Якщо ви хочете скористатися снепшотом, визначте мережу, з якою ви хочете синхронізуватися, зі списку нижче:
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app with SystemD
+### Запустіть celestia-app за допомогою SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Дотримуйтеся [цієї](./systemd.md#start-the-celestia-app-with-systemd) інструкції з налаштування додатку Celestia як фонового процесу за допомогою SystemD.
 
-### Wallet
+### Гаманець
 
-Follow the tutorial on creating a wallet [here](../developers/wallet.md).
+З інструкцією по створенню гаманця можна ознайомитися [here](../developers/wallet.md).
 
-### Delegate stake to a validator
+### Делегувати стейк валідатору
 
-Create an environment variable for the address:
+Створіть змінну середовища для цієї адреси:
 
 ```sh
 VALIDATOR_WALLET=<validator-address>
 ```
 
-If you want to delegate more stake to any validator, including your own you will need the `celesvaloper` address of the validator in question. You can either check it using the block explorer mentioned above or you can run the command below to get the `celesvaloper` of your local validator wallet in case you want to delegate more to it:
+Якщо ви хочете делегувати більшу частку будь-якому валідатору, в тому числі і своєму власному, вам знадобиться `celesvaloper` адреса відповідного валідатора. Ви можете перевірити його за допомогою вищезгаданого провідника блоків або запустити команду нижче, щоб отримати `celesvaloper` вашого персонального гаманця валідатора, якщо ви хочете делегувати йому більше токенів:
 
 ```sh
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a
 ```
 
-After entering the wallet passphrase you should see a similar output:
+Після введення парольної фрази гаманця ви побачите схожий результат:
 
 ```sh
 Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+Далі виберіть мережу, в яку ви хочете делегувати валідатору:
 
-* [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
+* [Розгортання celestia-ноди](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the celestia-node
+## Розгортання celestia-ноди
 
-This section describes part 2 of Celestia Validator Node setup: running a Celestia Bridge Node daemon.
+У цьому розділі описано частину 2 налаштування ноди Celestia Validator: запуск демона ноди Celestia Bridge.
 
-### Install celestia-node
+### Встановлення celestia-ноди
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Ви можете ознайомитися з інструкцією по встановленню Celestia Ноди [here](../developers/celestia-node.md)
 
-### Initialize the bridge node
+### Ініціалізація bridge ноди
 
-Run the following:
+Виконайте наступне:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
   --core.grpc http://<ip:port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [here](./mamaki-testnet.md#rpc-endpoints)
 
 ### Run the bridge node
 
