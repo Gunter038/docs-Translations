@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Celestia's Data Availability Layer
+sidebar_label : Lớp Data Availability của Celestia
 - - -
 
 # The Lifecycle of a Celestia App Transaction
