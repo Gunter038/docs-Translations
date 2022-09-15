@@ -194,11 +194,11 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 
 ## Protobuf File
 
-  A few files need to be modified for this to work.
+  我们需要对一些文件进行调整以实现以上功能。
 
-The first is `proto/wordle/tx.proto`.
+首先需要调整的是`proto/wordle/tx.proto`。
 
-Inside this file, fill in the empty `MsgSubmitGuessResponse` with the following code:
+在这个文件中，用以下代码填写空白的 `MsgSubmitGuessResponse`：
 
 ```go
 message MsgSubmitGuessResponse {
@@ -207,9 +207,9 @@ message MsgSubmitGuessResponse {
 }
 ```
 
-Next file is `x/wordle/types/expected_keepers.go`
+下一个文件是 `x/wordle/types/expected_keepers.go`
 
-Here, we need to add the SendCoins method to the BankKeeper interface in order to allow sending the reward to the right guesser.
+现在，我们需要将 SendCoins 方法添加到 BankKeeper 的 接口，以便将奖励发送给正确的猜测者。
 
 ```go
 type BankKeeper interface {
