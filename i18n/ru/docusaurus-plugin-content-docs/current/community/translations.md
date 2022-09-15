@@ -8,13 +8,13 @@ sidebar_label : Перевод документов
 
 ## Посетите наш проект Crowdin
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Перейдите к проекту Crowdin [здесь](https://crowdin.com/project/celestia-docs).
 
 Вам нужно будет создать учетную запись, а затем вы сможете присоединиться к проекту для начала вашего путешествия по переводу.
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+Если вы не видите ваш язык, не стесняйтесь запросить его в `#translations` канал в Discord [здесь](https://discord.gg/celestiacommunity).
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+На Crowdin вы можете переводить, комментировать переводы, а также повышать и понижать голоса переводов.
 
 Give your opinion on existing translations to ensure it is correct!
 
