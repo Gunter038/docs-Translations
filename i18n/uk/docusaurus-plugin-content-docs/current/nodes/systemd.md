@@ -1,5 +1,5 @@
 - - -
-sidebar_label : SystemD
+бічна панель: SystemD
 - - -
 
 # Налаштування вашого вузла як фонового процесу SystemD
