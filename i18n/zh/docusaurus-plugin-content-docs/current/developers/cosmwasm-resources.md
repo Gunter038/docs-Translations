@@ -2,15 +2,15 @@
 sidebar_label: CosmWasm Resources
 ---
 
-# CosmWasm Resources
+# CosmWasm 资料
 
-For more resources on getting started building smart contracts with CosmWasm that you can then deploy on Celestia, check out the list of resources in this section.
+获取更多关于如何使用CosmWasm在Celestia上创建智能合约的资料源，请查看以下资料清单。
 
-## Tokens
+## 代币
 
-- [Atomic Swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
-- [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
-- [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
+- [原子交换](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
+- [质押](https://docs.rs/cw20-staking/latest/cw20_staking/)
+- [债券](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
 - [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
 ## Miscellanious
