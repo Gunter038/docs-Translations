@@ -1,25 +1,25 @@
 ---
-sidebar_label: CosmWasm Overview
+sidebar_label: CosmWasm 概述
 ---
 
-# CosmWasm on Optimint
+# Optimint 上的 CosmWasm
 
-CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Optimint. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Optimint.
+CosmWasm 是一个为 Cosmos 生态系统构建的智能合约平台，利用 WebAssembly（Wasm）为 Cosmos-SDK 构建智能合约。 在本教程中，我们将探索如何使用 Optimint 将 CosmWasm 与 Celestia 的数据可用性层集成。
 
-> NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer. Furthermore, Optimint currently only supports a single sequencer.
+> 注意：本教程将探索使用仍处于 Alpha 阶段的 Optimint 进行开发。 如果您遇到错误，请请求一个 Github 问题或在我们的 Discord 中告诉我们。 此外，虽然 Optimint 允许您在 Celestia 上构建主权rollups ，但它目前还不支持欺诈证明，因此运行在“悲观”模式下，节点需要重新执行交易以检查链的有效性（即一个全节点）。 此外，Optimint 目前仅支持单个定序器。
 
-You can learn more about CosmWasm [here](https://docs.cosmwasm.com/docs/1.0/).
+您可以在[这里](https://docs.cosmwasm.com/docs/1.0/)了解更多关于 CosmWasm 的信息。
 
-In this tutorial, we will going over the following:
+在本教程中，我们将介绍以下内容：
 
-* [Setting up your dependencies for your CosmWasm smart contracts](./cosmwasm-dependency.md)
-* [Setting up Optimint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
-* [Instantiate a local network for your CosmWasm chain connected to Celestia](./cosmwasm-environment.md)
-* [Deploying a Rust smart contract to CosmWasm chain](./cosmwasm-contract-deployment.md)
-* [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
+* [为您的 CosmWasm 智能合约设置依赖项](./cosmwasm-dependency.md)
+* [在 CosmWasm 上设置 Optimint](./cosmwasm-dependency.md#wasmd-installation)
+* [为连接到Celestia 的 CosmWasm 链实例化本地网络](./cosmwasm-environment.md)
+* [将 Rust 智能合约部署到 CosmWasm 链](./cosmwasm-contract-deployment.md)
+* [与智能合约交互](./cosmwasm-contract-interaction.md)
 
-The smart contract we will use for this tutorial is one provided by the CosmWasm team for Nameservice purchasing.
+我们将用于本教程的智能合约是 CosmWasm 团队为 Nameservice 购买提供的。
 
-You can check out the contract [here](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
+你可以在[这里](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice)查看合约。
 
-How to write the Rust smart contract for Nameservice is outside the scope of this tutorial. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia.
+如何为 Nameservice 编写 Rust 智能合约超出了本教程的范围。 未来，我们将添加更多为 Celestia 编写 CosmWasm 智能合约的教程。
