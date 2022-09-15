@@ -1,15 +1,15 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: 设置网络环境
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
+# 在 Celestia 上为 CosmWasm 设置环境
 <!-- markdownlint-disable MD013 -->
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Optimint.
+现在 `wasmd` 二进制文件已经构建好了，我们需要设置一个本地网络，在 `wasmd` 和 Optimint 之间进行通信。
 
-## Building the Wasmd Network
+## 构建 Wasmd 网络
 
-Run the following command:
+运行以下命令：
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -17,9 +17,9 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+这使用 `wasmd` 二进制文件初始化了一个名为 `celeswasm` 的链。
 
-The following command helps us setup accounts for genesis:
+运行以下命令帮助我们设置创世钱包：
 
 ```sh
 KEY_NAME=celeswasm-key
