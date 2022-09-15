@@ -1,21 +1,20 @@
----
+- - -
 sidebar_label : SystemD
----
+- - -
 
 # Setting up your node as a background process with SystemD
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD est un service daemon utile pour exécuter des applications en tant que processus en arrière-plan.
 
 ## Consensus nodes
 
-If you are running a validator or consensus full node, here are
-the steps to setting up `celestia-appd` as a background process.
+Si vous exécutez un node validateur ou complet de consensus, voici les étapes pour configurer `celestia-appd` en tant que processus d'arrière-plan.
 
 ### Start the celestia-app with SystemD
 
-SystemD is a daemon service useful for running applications as background processes.
+SystemD est un service daemon utile pour exécuter des applications en tant que processus en arrière-plan.
 
-Create Celestia-App systemd file:
+Créer un fichier systemd Celestia-App :
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-appd.service
@@ -33,45 +32,44 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Si le fichier a été créé avec succès, vous pourrez voir son contenu :
 
 ```sh
 cat /etc/systemd/system/celestia-appd.service
 ```
 
-Enable and start celestia-appd daemon:
+Activer et démarrer le daemon celestia-appd :
 
 ```sh
 systemctl enable celestia-appd
 systemctl start celestia-appd
 ```
 
-Check if daemon has been started correctly:
+Vérifier si le daemon a été démarré correctement :
 
 ```sh
 systemctl status celestia-appd
 ```
 
-Check daemon logs in real time:
+Vérifier les logs du daemon en temps réel :
 
 ```sh
 journalctl -u celestia-appd.service -f
 ```
 
-To check if your node is in sync before going forward:
+Pour vérifier si votre node est synchronisé avant d'aller de l'avant :
 
 ```sh
 curl -s localhost:26657/status | jq .result | jq .sync_info
 ```
 
-Make sure that you have `"catching_up": false`, otherwise leave it running
-until it is in sync.
+Assurez-vous que vous avez `"catching_up": false`, sinon laissez-le tourner jusqu'à ce qu'il soit synchronisé.
 
 ## Data availability nodes
 
 ### Celestia full storage node
 
-Create Celestia Full Storage Node systemd file:
+Créer un fichier systemd de Full Storage Node Celestia:
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-full.service
@@ -91,13 +89,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Si le fichier a été créé avec succès, vous pourrez voir son contenu :
 
 ```sh
 cat /etc/systemd/system/celestia-full.service
 ```
 
-Enable and start celestia-full daemon:
+Activer et démarrer le daemon celestia-full:
 
 ```sh
 systemctl enable celestia-full
@@ -105,11 +103,11 @@ systemctl start celestia-full && journalctl -u \
 celestia-full.service -f
 ```
 
-You should be seeing logs coming through of the full storage node syncing.
+Vous devriez voir les logs à travers la synchronisation du full storage node.
 
 ### Celestia bridge node
 
-Create Celestia Bridge systemd file:
+Créer un fichier systemd Celestia Bridge :
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-bridge.service
@@ -129,13 +127,13 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Si le fichier a été créé avec succès, vous pourrez voir son contenu :
 
 ```sh
 cat /etc/systemd/system/celestia-bridge.service
 ```
 
-Enable and start celestia-bridge daemon:
+Activer et démarrer le daemon celestia-bridge:
 
 ```sh
 systemctl enable celestia-bridge
@@ -143,25 +141,22 @@ systemctl start celestia-bridge && journalctl -u \
 celestia-bridge.service -f
 ```
 
-Now, the Celestia bridge node will start syncing headers and storing blocks
-from Celestia application.
+Maintenant, le bridge node Celestia va commencer à synchroniser les entêtes et stocker les blocs depuis l'application Celestia.
 
-> Note: At startup, we can see the `multiaddress` from Celestia Bridge Node.
-This is **needed for future Light Node** connections and communication between
-Celestia Bridge Nodes
+> Remarque : Au démarrage, nous pouvons voir le `multiadress` à partir du bridge node Celestia. Ceci est **nécessaire pour les futures connexions de Light Node** et la communication avec les bridge nodes Celestia
 
-Example:
+Exemple:
 
 ```sh
 NODE_IP=<ip-address>
 /ip4/$NODE_IP/tcp/2121/p2p/12D3KooWD5wCBJXKQuDjhXFjTFMrZoysGVLtVht5hMoVbSLCbV22
 ```
 
-You should be seeing logs coming through of the bridge node syncing.
+Vous devriez voir les logs à travers la synchronisation du bridge node.
 
 ### Celestia light node
 
-Start the Light Node as daemon process in the background
+Lancer le Light Node en tant que processus damon en arrière-plan
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
@@ -181,31 +176,29 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created succesfully you will be able to see its content:
+If the file was created successfully you will be able to see its content:
 
 ```sh
 cat /etc/systemd/system/celestia-lightd.service
 ```
 
-Enable and start celestia-lightd daemon:
+Activer et démarrer le daemon celestia-lightd :
 
 ```sh
 systemctl enable celestia-lightd
 systemctl start celestia-lightd
 ```
 
-Check if daemon has been started correctly:
+Vérifier si le daemon a été démarré correctement :
 
 ```sh
 systemctl status celestia-lightd
 ```
 
-Check daemon logs in real time:
+Vérifier les logs du daemon en temps réel :
 
 ```sh
 journalctl -u celestia-lightd.service -f
 ```
 
-Now, the Celestia Light Node will start syncing headers.
-After sync is finished, Light Node will do Data Availability
-Sampling (DAS) from the Bridge Node.
+Maintenant, le Light Node Celestia va commencer à synchroniser les en-têtes. Une fois la synchronisation terminée, le Light Node effectuera l'échantillonnage disponibilité des données (DAS) à partir du Bridge Node.
