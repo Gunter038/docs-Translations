@@ -28,13 +28,13 @@ celestia-appd keys list
 
 ## 给钱包充值
 
-For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #faucet channel:
+查询Celestia公共地址，可以通过发送以下信息至 [Discord](https://discord.gg/celestiacommunity)上的#faucet频道获取之前创建的钱包地址
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-请等待确认代币已成功发送的消息。 Wait to see if you get a confirmation that the tokens have been successfully sent. To check if tokens have arrived successfully to the destination wallet run the command below replacing the public address with your own:
+请等待确认代币已成功发送的消息。 可以通过运行以下替换了自己钱包地址的命令查看代币是否成功发送到目的钱包：
 
 ```sh
 celestia-appd start
