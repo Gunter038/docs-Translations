@@ -176,7 +176,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-Якщо файл створено успішно, ви зможете побачити його вміст:
+If the file was created successfully you will be able to see its content:
 
 ```sh
 cat /etc/systemd/system/celestia-lightd.service
