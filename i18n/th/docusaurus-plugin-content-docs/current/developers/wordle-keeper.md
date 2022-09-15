@@ -192,7 +192,7 @@ In the above code, we are doing the following things:
 * Next we create a hash string of current day and the Submitter. This allows us to create a Guess type with an index that uses the current day and the address of the submitter. This helps us when we face a new day and an address wants to guess the new wordle of the day. The index setup ensures they can continue guessing a new wordle every day up to the max of 6 tries per day.
 * We then check if that Guess type for the Submitter for today’s wordle did reach 6 counts. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state.
 
-## Protobuff File
+## Protobuf File
 
   A few files need to be modified for this to work.
 
