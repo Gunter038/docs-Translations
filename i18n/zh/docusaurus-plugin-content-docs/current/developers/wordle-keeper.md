@@ -5,17 +5,17 @@ sidebar_label: Keeper
 # Keeper 函数
 <!-- markdownlint-disable MD013 -->
 
-现在是时候将Keeper函数应用到每条信息上。 根据 Cosmos-SDK 文档, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) 定义如下:
+现在是时候将在每条信息上执行 Keeper 函数了。 根据 Cosmos-SDK 文档, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) 定义如下:
 
 > Cosmos SDK 模块的主要核心被称为Keeper. Keeper 处理与 store的交互, 引导与其他Keeper进行跨模块交互，具备模块的大部分核心功能。
 
-Keeper是Cosmos的抽象化，使得我们可以与Key-Value store进行交互并改变区块链的状态。
+Keeper 是 Cosmos 的抽象化，使得我们可以与 Key-Value store 进行交互并改变区块链的状态。
 
 在这方面，它将帮助我们勾勒出创建的每个信息的逻辑。
 
 ## SubmitWordle 函数
 
-我们从`SubmitWordle`函数开始。
+我们从 `SubmitWordle` 函数开始。
 
 打开以下文件： `x/wordle/keeper/msg_server_submit_wordle.go`
 
@@ -91,7 +91,7 @@ func IsLetter(s string) bool {
 
 ## SubmitGuess 函数
 
-我们会添加的下一个Keeper 函数如下： `x/wordle/keeper/msg_server_submit_guess.go`
+我们会添加的下一个 Keeper 函数如下： `x/wordle/keeper/msg_server_submit_guess.go`
 
 打开该文件，并添加以下代码，我们将在稍后解释：
 
@@ -190,7 +190,7 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 * 首先，我们再次对这个词进行初步检查，以确保它是5个字符，并且只使用字母，这可以在将来重构或在CLI命令中检查。
 * 然后，我们通过获取当天日期的哈希字符串来获得当天的Wordle。
 * 接下来我们创建了当天的哈希字符串以及Submitter（猜测人）。 这允许我们创建一个使用当前日期和Submitter（猜测人）地址的且可索引的猜测类型。 当新的一天和某个地址想要猜测当天的Wordle时，这可以帮助我们。 索引的设置确保他们可以每天猜测新的Wordle 但每天最多只能猜6次。
-* 然后我们检查今天Wordle的猜测者的猜测类型是否达到了6次。 如果没有，我们就继续计数。 我们随后会检查猜测是否正确。 我们随后存储猜测类型与更新的计数。
+* 然后我们检查今天Wordle的猜测者的猜测类型是否达到了6次。 如果没有，我们就继续计数。 我们随后会检查猜测是否正确。 此后，我们会存储猜测类型与更新的计数。
 
 ## Protobuf File
 
@@ -217,4 +217,4 @@ type BankKeeper interface {
 }
 ```
 
-With that, we implemented all our Keeper functions! With that, we implemented all our Keeper functions! Time to compile the blockchain and take it out for a test drive.
+通过以上步骤，我们执行了 Keeper 函数! 是时候编写区块链，并进行测试了。
