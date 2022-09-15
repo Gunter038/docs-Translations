@@ -1,19 +1,19 @@
 ---
-sidebar_label: Run The Wordle Chain
+sidebar_label: 运行 Wordle 链
 ---
 
-# Run the Wordle Chain
+# 运行 Wordle 链
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## 构建和运行 Wordle 链
 
-In one terminal window, run the following command:
+在一个终端窗口中，运行以下命令：
 
 ```sh
 ignite chain serve 
 ```
 
-This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
+这将编译您刚刚编写的区块链代码，并创建一个创世文件和一些帐户供您使用。 一旦日志在输出中显示类似于以下日志的内容：
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
@@ -40,7 +40,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 Please consider:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
 
 Also please consider:
 
@@ -52,7 +52,7 @@ In another window, run the following to submit a Wordle:
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
 
 This will ask you to confirm the transaction with the following message:
 
