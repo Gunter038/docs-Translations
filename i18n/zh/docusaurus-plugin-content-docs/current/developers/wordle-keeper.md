@@ -91,9 +91,9 @@ func IsLetter(s string) bool {
 
 ## SubmitGuess 函数
 
-The next Keeper function we will add is the following: `x/wordle/keeper/msg_server_submit_guess.go`
+我们会添加的下一个Keeper 函数如下： `x/wordle/keeper/msg_server_submit_guess.go`
 
-Open that file and add the following code, which we will explain in a bit:
+打开该文件，并添加以下代码，我们将在稍后解释：
 
 ```go
 package keeper
@@ -185,14 +185,14 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 }
 ```
 
-In the above code, we are doing the following things:
+我们在上述代码中，做了以下事情：
 
-* Here, we are doing initial checks again on the word to ensure it’s 5 characters and only alphabet characters are used, which can be refactored in the future or checked within the CLI commands.
-* We then get the Wordle of the Day by getting the hash string of the current day.
-* Next we create a hash string of current day and the Submitter. This allows us to create a Guess type with an index that uses the current day and the address of the submitter. This helps us when we face a new day and an address wants to guess the new wordle of the day. The index setup ensures they can continue guessing a new wordle every day up to the max of 6 tries per day.
-* We then check if that Guess type for the Submitter for today’s wordle did reach 6 counts. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state.
+* 首先，我们再次对这个词进行初步检查，以确保它是5个字符，并且只使用字母，这可以在将来重构或在CLI命令中检查。
+* 然后，我们通过获取当天日期的哈希字符串来获得当天的Wordle。
+* 接下来我们创建了当天的哈希字符串以及Submitter（猜测人）。 这允许我们创建一个使用当前日期和Submitter（猜测人）地址的且可索引的猜测类型。 当新的一天和某个地址想要猜测当天的Wordle时，这可以帮助我们。 索引的设置确保他们可以每天猜测新的Wordle 但每天最多只能猜6次。
+* 然后我们检查今天Wordle的猜测者的猜测类型是否达到了6次。 如果没有，我们就继续计数。 我们随后会检查猜测是否正确。 我们随后存储猜测类型与更新的计数。
 
-## Protobuff File
+## Protobuf File
 
   A few files need to be modified for this to work.
 
