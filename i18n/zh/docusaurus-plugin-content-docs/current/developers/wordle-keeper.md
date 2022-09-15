@@ -2,24 +2,24 @@
 sidebar_label: Keeper
 ---
 
-# Keeper Functions
+# Keeper 函数
 <!-- markdownlint-disable MD013 -->
 
-Now it’s time to implement the Keeper functions for each message. Now it’s time to implement the Keeper functions for each message. From the Cosmos-SDK docs, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) is defined as the following:
+现在是时候将Keeper函数应用到每条信息上。 根据 Cosmos-SDK 文档, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) 定义如下:
 
-> The main core of a Cosmos SDK module is a piece called the keeper. The main core of a Cosmos SDK module is a piece called the keeper. The keeper handles interactions with the store, has references to other keepers for cross-module interactions, and contains most of the core functionality of a module.
+> Cosmos SDK 模块的主要核心被称为Keeper. Keeper 处理与 store的交互, 引导与其他Keeper进行跨模块交互，具备模块的大部分核心功能。
 
-Keeper is an abstraction on Cosmos that allows us to interact with the Key-Value store and change the state of the blockchain.
+Keeper是Cosmos的抽象化，使得我们可以与Key-Value store进行交互并改变区块链的状态。
 
-Here, it will help us outline the logic for each message we create.
+在这方面，它将帮助我们勾勒出创建的每个信息的逻辑。
 
-## SubmitWordle Function
+## SubmitWordle 函数
 
-We first start with the `SubmitWordle` function.
+我们从`SubmitWordle`函数开始。
 
-Open up the following file: `x/wordle/keeper/msg_server_submit_wordle.go`
+打开以下文件： `x/wordle/keeper/msg_server_submit_wordle.go`
 
-Inside the following, add the following code, which we will go over in a bit:
+在下面的内容中，添加以下代码，我们将在稍后进行讨论：
 
 ```go
 package keeper
@@ -82,14 +82,14 @@ func IsLetter(s string) bool {
 }
 ```
 
-Here in the `SubmitWordle` Keeper function, we are doing a few things:
+关于`SubmitWordle` Keeper 函数，我们需要确定几项内容：
 
-* We first ensure that a word submitted for Wordle of the Day is 5 letters long and only uses alphabets. That means no integers can be submitted in the string. That means no integers can be submitted in the string.
-* We then create a hash from the current day the moment the Wordle was submitted. We set this hash to the index of the Wordle type. This allows us to look up any guesses for this Wordle for subsequent guesses, which we will go over next. We set this hash to the index of the Wordle type. This allows us to look up any guesses for this Wordle for subsequent guesses, which we will go over next.
-* We then check if the index for today’s date is currently empty or not. If it’s not empty, this means a Wordle has already been submitted. Remember, only one wordle can be submitted per day. Everyone else has to guess the submitted wordle. If it’s not empty, this means a Wordle has already been submitted. Remember, only one wordle can be submitted per day. Everyone else has to guess the submitted wordle.
-* We also have a helper function in there to check if a string only contains alphabet characters.
+* 我们首先要确保生成的"Wordle of the Day "的单词是 5个字母长，并且只使用字母。 也就是说不能在字符串中提交整数。
+* 然后我们根据当天Wordle生成的时刻创建一个哈希值。 我们将这个哈希值设置为Wordle类型的索引。 这便于我们查询有关这个Wordle的任何猜测，而后续进行猜测。
+* 然后我们检查今天日期的索引是否为空值。 如果它不是空值，就意味着已经有了一个Wordle 生成了。 请注意，一天只能生成一个Wordle。 每个人只能去猜测当天已生成的Wordle。
+* 我们还在其中设置了一个辅助函数，用来检查一个字符串是否只包含字母字符。
 
-## SubmitGuess Function
+## SubmitGuess 函数
 
 The next Keeper function we will add is the following: `x/wordle/keeper/msg_server_submit_guess.go`
 
