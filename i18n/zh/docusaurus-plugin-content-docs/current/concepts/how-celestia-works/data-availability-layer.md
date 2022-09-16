@@ -60,11 +60,11 @@ As a result, the application is able to check that the provided data is part of 
 
 For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
 
-## Building a PoS Blockchain for DA
+## 为数据可用性开发 PoS（权益证明）区块链
 
-### Providing Data Availability
+### 提供数据可用性
 
-The Celestia DA layer consists of a PoS blockchain. Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+Celestia DA 层由 PoS 区块链组成。 Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
 
 ![Main components of Celestia App](/img/concepts/celestia-app.png)
 
