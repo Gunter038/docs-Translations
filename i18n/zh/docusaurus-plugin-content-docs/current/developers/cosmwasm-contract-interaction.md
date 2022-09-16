@@ -36,7 +36,7 @@ wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 
 ## 合约实例化
 
-We start instantiating the contract by writing up the following `INIT` message for nameservice contract. We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
+我们通过为 nameservice 合约编写以下 `INIT` 消息来开始实例化合约。 这里，我们对 `purchase_price` 和 `transfer_price` 分别赋值 `100uwasm` 和 `999uwasm`。
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
