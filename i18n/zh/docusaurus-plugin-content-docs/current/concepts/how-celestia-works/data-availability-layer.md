@@ -64,13 +64,13 @@ For more details on NMTs, take a look at the [original paper](https://arxiv.org/
 
 ### 提供数据可用性
 
-Celestia DA 层由 PoS 区块链组成。 Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+Celestia DA 层由 PoS 区块链组成。 Celestia 将此区块链称为 [Celestia App](https://github.com/celestiaorg/celestia-app)，它是一个由 [Cosmos SDK](https://docs.cosmos.network/v0.44/) 构建的提供交易以促进 DA 层的应用程序。 下面介绍了 Celestia App 的主要组成部分。
 
 ![Main components of Celestia App](/img/concepts/celestia-app.png)
 
-Celestia App is built on top of [Celestia Core](https://github.com/celestiaorg/celestia-core), a modified version of the [Tendermint consensus algorithm](https://arxiv.org/abs/1807.04938). Among the more important changes to vanilla Tendermint, Celestia Core:
+Celestia App 是建立在 [Celestia Core](https://github.com/celestiaorg/celestia-core) 之上的 [Tendermint 共识算法](https://arxiv.org/abs/1807.04938) 的改进版。 Vanilla Tendermint 和 Celestia Core 的重要更新的部分内容如下：
 
-- Enables the erasure coding of block data (using the 2-dimensional Reed-Solomon encoding scheme).
+- 启用区块数据的纠删码技术（使用二维Reed-Solomon 算法）。
 - Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
 
 For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
