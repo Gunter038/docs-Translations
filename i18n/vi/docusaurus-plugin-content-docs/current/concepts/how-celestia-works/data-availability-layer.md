@@ -44,21 +44,21 @@ Nhược điểm của mã hóa Reed-Solomon tiêu chuẩn là đối phó với
 
 Như một giải pháp, _ Bằng chứng gian lận về dữ liệu mở rộng được tạo không chính xác _ bật các light node từ chối các khối có dữ liệu mở rộng không hợp lệ. Những bằng chứng như vậy yêu cầu tạo lại mã hóa và xác minh sự không khớp. Với Reed-Solomon tiêu chuẩn mã hóa, điều này đòi hỏi phải tải xuống dữ liệu gốc, tức là, O (n) byte. Ngược lại, với mã hóa Reed-Solomon 2 chiều, chỉ có các byte O (n) là bắt buộc vì chỉ cần xác minh một hàng hoặc một cột của ma trận mở rộng.
 
-## Namespaced Merkle Trees (NMTs)
+## Không gian tên cây Merkle (NMTs)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia phân vùng dữ liệu khối thành nhiều không gian tên, một không gian tên cho mọi ứng dụng (ví dụ: cuộn lại) bằng cách sử dụng lớp DA. Kết quả là, mọi ứng dụng chỉ cần tải xuống dữ liệu của chính nó và có thể bỏ qua dữ liệu của các ứng dụng khác.
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Để điều này hoạt động, lớp DA phải có khả năng chứng minh rằng dữ liệu hoàn tất, tức là tất cả dữ liệu cho một không gian tên nhất định sẽ được trả về. Để đạt được mục tiêu này, Celestia đang sử dụng không gian tên Merkle Trees (NMTs).
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+NMT là một cây Merkle với các lá được sắp xếp theo số nhận dạng không gian tên và hàm băm được sửa đổi để mọi nút trong cây bao gồm phạm vi không gian tên của tất cả các con cháu của nó. Hình sau cho thấy một ví dụ về NMT có chiều cao ba (tức là tám khối dữ liệu). Dữ liệu là được phân chia thành ba không gian tên.
 
 ![Namespaced Merkle Tree](/img/concepts/nmt.png)
 
-When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
+Khi một ứng dụng yêu cầu dữ liệu cho không gian tên 2, lớp DA phải cung cấp các khối dữ liệu `D3`, `D4`, `D5`, and `D6` và các nút `N2`, `N8` và  `N7`  làm bằng chứng (lưu ý rằng ứng dụng đã có gốc `N14`  từ tiêu đề của khối).
 
-As a result, the application is able to check that the provided data is part of the block data. Furthermore, the application can verify that all the data for namespace 2 was provided. If the DA layer provides for example only the data chunks `D4` and `D5`, it must also provide nodes `N12` and `N11` as proofs. However, the application can identify that the data is incomplete by checking the namespace range of the two nodes, i.e., both `N12` and `N11` have descendants part of namespace 2.
+Do đó, ứng dụng có thể kiểm tra xem dữ liệu được cung cấp có phải là một phần của dữ liệu khối. Hơn nữa, ứng dụng có thể xác minh rằng tất cả dữ liệu cho không gian tên 2 đã được cung cấp. Nếu lớp DA chỉ cung cấp ví dụ các khối dữ liệu ` D4 ` và ` D5 `, nó cũng phải cung cấp các node` N12 ` và ` N11 ` làm bằng chứng. Tuy nhiên, ứng dụng có thể xác định rằng dữ liệu không đầy đủ bằng cách kiểm tra phạm vi không gian tên của hai nút, tức là cả ` N12 ` và ` N11 ` đều có con cháu một phần của không gian tên 2.
 
-For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
+Để biết thêm chi tiết về NMT, hãy xem [ tài liệu gốc ](https://arxiv.org/abs/1905.09274).
 
 ## Building a PoS Blockchain for DA
 
