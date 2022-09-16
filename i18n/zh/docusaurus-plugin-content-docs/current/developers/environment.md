@@ -13,10 +13,10 @@ sidebar_label : 设置环境
 首先，确保更新和升级操作系统：
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用的是 APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# 如果你使用的是 YUM package manager
 sudo yum update
 ```
 
@@ -24,10 +24,9 @@ sudo yum update
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# 如果你是用的是 APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
-
-# If you are using the YUM package manager
+# 如果你使用的是 YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
