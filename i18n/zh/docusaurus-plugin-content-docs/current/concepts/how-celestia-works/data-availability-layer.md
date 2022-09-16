@@ -71,12 +71,12 @@ Celestia DA 层由 PoS 区块链组成。 Celestia 将此区块链称为 [Celest
 Celestia App 是建立在 [Celestia Core](https://github.com/celestiaorg/celestia-core) 之上的 [Tendermint 共识算法](https://arxiv.org/abs/1807.04938) 的改进版。 Vanilla Tendermint 和 Celestia Core 的重要更新的部分内容如下：
 
 - 启用区块数据的纠删码技术（使用二维Reed-Solomon 算法）。
-- Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
+- 通过Tendermint将常规Merkle树替换为用于存储区块数据的 [Namespaced Merkle](https://github.com/celestiaorg/nmt) 树，使得上述各层（即执行和结算）只下载需要的数据（更多细节，请见下面案例描述的部分）。
 
-For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
+关于 Tendermint 的更多更新细节，请看 [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture)。 请注意，Celestia Core 节点仍在使用 Tendermint p2p 网络。
 
-Similarly to Tendermint, Celestia Core is connected to the application layer (i.e., the state machine) by [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), a major evolution of [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
+与Tendermint类似，Celestia Core通过 [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B) 连接到应用层（即状态机），也是 [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci)（应用区块链接口）的主要发展之一。
 
-The Celestia App state machine is necessary to execute the PoS logic and to enable the governance of the DA layer.
+Celestia App 状态机对于执行 PoS 逻辑和实现 DA 层的治理是必要的。
 
 However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
