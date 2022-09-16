@@ -16,7 +16,7 @@ sidebar_label : Перевод документов
 
 На Crowdin вы можете переводить, комментировать переводы, а также повышать и понижать голоса переводов.
 
-Give your opinion on existing translations to ensure it is correct!
+Высказывайте свое мнение о существующих переводах, чтобы убедиться в их правильности!
 
 ## Советы
 
@@ -32,11 +32,11 @@ Give your opinion on existing translations to ensure it is correct!
 
 Некоторые страницы содержат метаданные и программный код.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+Важно помнить, что Уильям Шекспир был англоговорящим... Как и Алан Тьюринг! Поэтому не следует переводить части кода "от себя".
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Например, если вы видите метаданные типа `sidebar_label : Hello World`, перевод на французский язык будет `sidebar_label : Salut tout le monde`.
 
-Let's take another example, you wouldn't have to translate anything here:
+Давайте рассмотрим еще один пример, здесь вам не придется ничего переводить:
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+Более того, вам не нужно переводить URLы на свой локальный язык.
 
 #### Особые слова
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+Поскольку вы будете переводить инновационные понятия, такие как Data Availability Sampling, не стесняйтесь обсуждать корректный перевод с другими участниками сообщества.
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+Также будьте осторожны с порядком дат, точкой и запятыми при переводе чисел с одного языка на другой.
