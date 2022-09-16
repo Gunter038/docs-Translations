@@ -16,7 +16,7 @@ Celestia DA 层的两个关键特性是[数据可用性采样](https://blog.cele
 
 然后，为扩展矩阵的行和列计算 4k 个单独的 Merkle 根；再通过这些 Merkle 根生成一个（总的）Merkle 根，用作区块头中的区块数据承诺。
 
-![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
+![2D Reed-Soloman (RS) 编码](/img/concepts/reed-solomon-encoding.png)
 
 为了验证数据是否可用，Celestia 轻节点正是对 2k × 2k 数据块进行采样。
 
@@ -52,7 +52,7 @@ Celestia 将块数据划分为多个命名空间，每个使用 DA 层的应用�
 
 NMT 是一棵 Merkle 树，其叶子按命名空间标识符排序，并修改了哈希函数，以便树中的每个节点都包含其所有后代的命名空间范围。 下图显示了一个高度3（即8个数据块）的 NMT 示例， 数据被划分为三个命名空间。
 
-![Namespaced Merkle Tree](/img/concepts/nmt.png)
+![Namespaced Merkle 树](/img/concepts/nmt.png)
 
 When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
 
@@ -66,7 +66,7 @@ For more details on NMTs, take a look at the [original paper](https://arxiv.org/
 
 Celestia DA 层由 PoS 区块链组成。 Celestia 将此区块链称为 [Celestia App](https://github.com/celestiaorg/celestia-app)，它是一个由 [Cosmos SDK](https://docs.cosmos.network/v0.44/) 构建的提供交易以促进 DA 层的应用程序。 下面介绍了 Celestia App 的主要组成部分。
 
-![Main components of Celestia App](/img/concepts/celestia-app.png)
+![Celestia App 的主要组成部分](/img/concepts/celestia-app.png)
 
 Celestia App 是建立在 [Celestia Core](https://github.com/celestiaorg/celestia-core) 之上的 [Tendermint 共识算法](https://arxiv.org/abs/1807.04938) 的改进版。 Vanilla Tendermint 和 Celestia Core 的重要更新的部分内容如下：
 
@@ -79,4 +79,4 @@ Celestia App 是建立在 [Celestia Core](https://github.com/celestiaorg/celesti
 
 Celestia App 状态机对于执行 PoS 逻辑和实现 DA 层的治理是必要的。
 
-However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
+然而，Celestia App 是数据不可知的 -- 状态机既不验证也不存储 Celestia App 所提供的数据。
