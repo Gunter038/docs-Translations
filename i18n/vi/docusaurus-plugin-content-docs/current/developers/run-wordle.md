@@ -52,9 +52,9 @@ In another window, run the following to submit a Wordle:
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> LƯU Ý: Chúng ta đang gửi một giao dịch không đồng bộ để tránh bất kỳ lỗi thời gian chờ nào. Với Optimint thay thế cho Tendermint, chúng ta cần phải đợi mạng Dữ liệu-Khả dụng của Celestia để đảm bảo khối đã được đưa vào Wordle, trước khi chuyển sang khối tiếp theo. Hiện nay, trong Optimint, bộ tổng hợp duy nhất không tiếp tục với việc sản xuất khối tiếp theo miễn là nó đang cố gắng gửi khối hiện tại đến mạng DA. Trong tương lai, với việc lựa chọn leader, quá trình sản xuất khối và logic đồng bộ được cải thiện đáng kể.
 
-This will ask you to confirm the transaction with the following message:
+Thao tác này sẽ yêu cầu bạn xác nhận giao dịch bằng thông báo sau:
 
 ```json
 {
@@ -89,15 +89,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Cosmos-SDK sẽ yêu cầu bạn xác nhận giao dịch tại đây:
 
 ```sh
-confirm transaction before signing and broadcasting [y/N]:
+xác nhận giao dịch trước khi ký và phát [y / N]:
 ```
 
-Confirm with a Y.
+Xác nhận với Y.
 
-You will then get a response with a transaction hash as shown here:
+Sau đó, bạn sẽ nhận được phản hồi với một hàm hash giao dịch như được hiển thị ở đây:
 
 ```sh
 code: 19
@@ -115,70 +115,70 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
+Lưu ý, điều này không có nghĩa là giao dịch đã được đưa vào khối. Hãy truy vấn giao dịch hash để kiểm tra xem nó đã được đưa vào khối chưa hoặc nếu có bất kỳ lỗi nào không.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+Điều này sẽ hiển thị một đầu ra như sau:
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Test out a few things for fun:
+Kiểm tra một vài điều cho vui:
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
+Sau khi xác nhận giao dịch, hãy truy vấn `txhash` đưa ra theo đúng cách bạn đã làm ở trên. Bạn sẽ thấy các phản hồi hiển thị lỗi không hợp lệ vì bạn đã gửi số nguyên.
 
-Now try:
+Bây giờ cố gắng:
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+Sau khi xác nhận giao dịch, hãy truy vấn `txhash` được cung cấp giống cách bạn đã làm ở trên. Bạn sẽ thấy các phản hồi hiển thị lỗi không hợp lệ vì bạn đã gửi một từ lớn hơn 5 ký tự.
 
-Now try to submit another wordle even though one was already submitted
+Bây giờ hãy cố gắng gửi một từ khác mặc dù một từ đã được gửi
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+Sau khi gửi giao dịch và xác nhận, hãy truy vấn `txhash` đưa ra theo giống cách bạn đã làm ở trên. Bạn sẽ gặp một lỗi mà một từ ngữ đã được gửi trong ngày.
 
-Now let’s try to guess a five letter word:
+Bây giờ chúng ta hãy thử đoán một từ gồm năm chữ cái:
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+Sau khi gửi giao dịch và xác nhận, hãy truy vấn `txhash ` đưa ra theo giống cách bạn đã làm ở trên. Vì bạn không đoán đúng từ đó, nó sẽ tăng số lượt đoán cho tài khoản của Bob.
 
-We can verify this by querying the list:
+Chúng tôi có thể xác minh điều này bằng cách truy vấn danh sách:
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+Điều này xuất ra tất cả các Guess objects đã gửi cho đến nay, với mục lục là ngày hôm nay và địa chỉ của người gửi.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base.
+Như vậy, chúng tôi đã triển khai một ví dụ cơ bản về Wordle bằng cách sử dụng Cosmos-SDK và Ignite và Optimint. Đọc tiếp cách bạn có thể mở rộng code base.
 
-## Extending in the Future
+## Mở rộng trong tương lai
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+Bạn có thể mở rộng codebase và cải thiện hướng dẫn này bằng cách kiểm tra ngoài kho lưu trữ [here](https://github.com/celestiaorg/wordle).
 
-There are many ways this codebase can be extended:
+Có nhiều cách để mở rộng codebase:
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+1. Bạn có thể cải thiện khả năng nhắn tin khi đoán đúng từ.
+2. Bạn có thể hash từ trước khi gửi nó vào chuỗi, đảm bảo hashing là nội bộ để không bị tiết lộ qua front-running bởi những người khác giám sát chuỗi văn bản khi chúng được gửi trực tuyến.
+3. Bạn có thể cải thiện giao diện người dùng trong thiết bị đầu cuối bằng cách sử dụng một giao diện đẹp cho Wordle. Một số ví dụ tại [ here](https://github.com/nimblebun/wordle-cli).
+4. Bạn có thể cải thiện ngày hiện tại để phù hợp với một múi giờ cụ thể.
+5. Bạn có thể tạo một bot gửi từ ngữ mỗi ngày vào một thời điểm cụ thể.
+6. Bạn có thể tạo giao diện người dùng vue.js với Ignite bằng kho lưu trữ mã nguồn mở mẫu [here](https://github.com/yyx990803/vue-wordle) và [here](https://github.com/xudafeng/wordle).
