@@ -96,42 +96,42 @@ celestia-appd query <FLAGS> | <COMMAND>
 celestia-appd q <FLAGS> | <COMMAND>
 ```
 
-To see all options:
+Чтобы увидеть все параметры:
 
 ```sh
 celestia-appd q --help
 ```
 
-## Token management
+## Управление токенами
 
-Get token balances:
+Баланс токенов:
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
 ```
 
-Example usage:
+Пример использования:
 
 ```sh
 celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transfer tokens from one wallet to another:
+Перевод токенов с одного кошелька на другой:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 <amount> --node <NODE_URI> --chain-id <CHAIN_ID>
 ```
 
-Example usage:
+Пример использования:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 19000000utia --node https://rpc-mamaki.pops.one/ --chain-id mamaki
 ```
 
-To see options:
+Чтобы увидеть все параметры:
 
 ```sh
 celestia-appd tx bank send --help
