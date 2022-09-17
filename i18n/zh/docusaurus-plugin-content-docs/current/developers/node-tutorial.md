@@ -7,18 +7,18 @@ sidebar_label : 节点教程
 
 在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
-This tutorial was assumes you are working in a Linux environment.
+本教程假设是在Linux环境中工作。
 
 > 点击 [这里](./light-node-video.md)查看设置Celestia轻节点的视频教程。
 
 ## 硬件要求
 
-The following minimum hardware requirements are recommended for running a light node:
+建议运行轻节点的最低硬件要求如下：
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- 内存: 2 GB RAM
+- 中央处理器：单核
+- 硬盘：5 GB SSD 容量
+- 带宽：下载 56 Kbps / 上传 56 Kbps
 
 ## 设置依赖项
 
@@ -599,16 +599,16 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 
 请您注意到上述输出， 它返回`高度`为`2452`，我们将它用于下一个命令。
 
-#### Troubleshooting
+#### 故障排除
 
-If you encounter an error like:
+如果你遇到类似的错误：
 
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+有可能是你试图提交 PayForData 的账户 还没有测试网代币。 确保测试网水龙头已经将测试代币转到你的账户，然后再试一次。
 
 ### 按区块高度获取命名空间相关的数据片段
 
