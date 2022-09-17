@@ -2,33 +2,33 @@
 sidebar_label : Node Tutorial
 - - -
 
-# Getting and Sending Transactions with Celestia Node
+# Получение и отправка транзакций с нодой Celestia
 <!-- markdownlint-disable MD013 -->
 
 In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
-This tutorial was assumes you are working in a Linux environment.
+В этом руководстве предполагается, что вы работаете в среде Linux.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> Чтобы просмотреть видео по настройке Callestia Light Node нажмите [здесь](./light-node-video.md)
 
-## Hardware Requirements
+## Требования к оборудованию
 
-The following minimum hardware requirements are recommended for running a light node:
+Для запуска Light ноды рекомендуются следующие минимальные требования к оборудованию:
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- Память: 2 Гб RAM
+- ЦП: 1 ядро
+- Диск: 5 Гб SSD
+- Пропускная способность: 56 кбит/с в обе стороны
 
-## Setting Up Dependencies
+## Установка зависимостей
 
-First, make sure to update and upgrade the OS:
+Во-первых, необходимо обновить ОС:
 
 ```sh
-# If you are using the APT package manager
+# Если вы используете менеджер пакетов APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Если вы используете менеджер пакетов YUM
 sudo yum update
 ```
 
