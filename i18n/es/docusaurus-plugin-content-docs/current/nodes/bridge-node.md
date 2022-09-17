@@ -14,9 +14,9 @@ Los validadores no tienen que ejecutar nodos Bridge, pero se les anima a transmi
 
 Un nodo Bridge de Celestia tiene las siguientes propiedades:
 
-1. Importar y procesar encabezados "raw" & bloques desde un proceso de Core confiable (lo que significa una conexión RPC de confianza con un nodo-core celestia) en la red de Consenso.  Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
-2. Validate and erasure code the “raw” blocks
-3. Supply block shares with data availability headers to Light Nodes in the DA network. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+1. Importar y procesar encabezados "raw" & bloques desde un proceso de Core confiable (lo que significa una conexión RPC de confianza con un nodo-core celestia) en la red de Consenso.  Los nodos Bridge pueden ejecutar este proceso Core internamente (incrusado) o simplemente conectarse a un punto final remoto. Los nodos Bridge también tienen la opción de ser un validador activo en la red del Consenso.
+2. Validar y borrar el código de los bloques "raw".
+3. Suministrar bloques compartidos con encabezados de disponibilidad de datos a Nodos Light en la red DA. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
 From an implementation perspective, Bridge Nodes run two separate processes:
 
