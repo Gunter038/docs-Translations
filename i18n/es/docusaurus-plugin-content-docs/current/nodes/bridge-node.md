@@ -16,7 +16,7 @@ Un nodo Bridge de Celestia tiene las siguientes propiedades:
 
 1. Importar y procesar encabezados "raw" & bloques desde un proceso de Core confiable (lo que significa una conexión RPC de confianza con un nodo-core celestia) en la red de Consenso.  Los nodos Bridge pueden ejecutar este proceso Core internamente (incrusado) o simplemente conectarse a un punto final remoto. Los nodos Bridge también tienen la opción de ser un validador activo en la red del Consenso.
 2. Validar y borrar el código de los bloques "raw".
-3. Suministrar bloques compartidos con encabezados de disponibilidad de datos a Nodos Light en la red DA. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
+3. Suministrar bloques compartidos con encabezados de disponibilidad de datos a Nodos Light en la red DA. ![diagrama de nodo-bridge](/img/nodes/BridgeNodes.png)
 
 Desde una perspectiva de implementación, los Bridge Nodes ejecutan dos procesos separados:
 
@@ -68,37 +68,37 @@ Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista
 
 Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (que normalmente está en el puerto 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
+> NOTA: Para acceder a la capacidad de obtener/enviar información relacionada con el estado, como la posibilidad de enviar transacciones de PayForData o consulta para el saldo de cuenta del nodo un endpoint gRPC de un nodo validador (núcleo) debe ser configurado como indica debajo._
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Puedes crear tu clave para tu nodo siguiendo las instrucciones de `clave cel-` [aquí](./keys.md)
 
-Once you start the Bridge Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Una vez que inicies el Bridge Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData. Puedes encontrar la dirección ejecutando el siguiente comando:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Los tokens de Mamaki Testnet pueden ser solicitados [aquí](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-#### Optional: run the bridge node with a custom key
+#### Opcional: ejecuta el nodo bridge con una clave personalizada
 
-In order to run a bridge node using a custom key:
+Para ejecutar un nodo bridge usando una clave personalizada:
 
-1. The custom key must exist inside the celestia bridge node directory at the correct path (default: `~/.celestia-bridge/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. La clave personalizada debe existir dentro del directorio de nodos celestia en la ruta correcta (por defecto: `~/.celestia-bridge/keys/keyring-test`)
+2. El nombre de la clave personalizada debe pasarse al `start`, así:
 
 ```sh
 celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the bridge node with SystemD
+### Opcional: iniciar el nodo bridge con SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo plano con SystemD [aquí](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Has configurado con éxito un nodo bridge que está sincronizando con la red.
