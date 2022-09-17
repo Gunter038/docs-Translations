@@ -133,13 +133,13 @@ make cel-key
 
 一旦启动轻节点，钱包密钥将会生成。 您需要用 Mamaki 测试网代币为该地址提供资金，以支付 PayForData 交易。
 
-You can find the address by running the following command in the `celestia-node` directory:
+您可以通过在 `celestia-node` 目录下运行以下命令找到该地址：
 
 ```sh
-./cel-key list --node.type light --keyring-backend test
+/cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
+如果想将测试网代币转入您的钱包，请到 Celestia Discord 频道 `#faucet`。
 
 您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
