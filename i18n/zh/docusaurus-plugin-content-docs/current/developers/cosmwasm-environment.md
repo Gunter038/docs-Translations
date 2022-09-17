@@ -56,10 +56,10 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 
 请考虑以下方面：
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
+> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传递给拥有 Mamaki 测试代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
 
 还请考虑：
 
-> 重要提示：此外，在上述命令中，您需要指定最新的 `da_height` 在 Mamaki 测试网中的块高度。 您可以在[此处](https://testnet.mintscan.io/celestia-testnet)的资源管理器中找到最新的区块编号。 Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> 重要提示：此外，在上述命令中，您需要指定最新的 `da_height` 在 Mamaki 测试网中的块高度。 您可以在[此处](https://testnet.mintscan.io/celestia-testnet)的资源管理器中找到最新的区块编号。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
 
 这样，我们已经启动了我们的 `wasmd` 网络！
