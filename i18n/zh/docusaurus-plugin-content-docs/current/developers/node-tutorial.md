@@ -22,29 +22,29 @@ sidebar_label : 节点教程
 
 ## 设置依赖项
 
-First, make sure to update and upgrade the OS:
+首先，要确认更新和升级操作系统
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用 APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# 如果你使用 YUM package manager
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+这些是执行许多任务（如下载文件、编译和监控节点）所必需的基本包。
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用 APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# 如果你使用 YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 
-### Install Golang
+### 安装 Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app和celestia-node是用[Golang](https://go.dev/)编写的，所以我们必须安装Golang来构建和运行它们。
 
 ```sh
 ver="1.18.2"
@@ -55,20 +55,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+现在我们需要把 `/usr/local/go/bin` 目录添加到 `$PATH`。
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+要检查Go是否被正确安装，请运行。
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+输出的信息应该是所安装的版本。
 
 ```sh
 go version go1.18.2 linux/amd64
@@ -78,7 +78,7 @@ go version go1.18.2 linux/amd64
 
 ### 安装Celestia节点
 
-Install the celestia-node binary by running the following commands:
+通过运行以下命令安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -89,7 +89,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否工作，用celestia version命令检查版本：
 
 ```sh
 $ celestia version
@@ -111,27 +111,27 @@ celestia light init
 
 现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 你可以在[这里](/nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点的列表
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
 ```
 
-For example, your command along with an RPC endpoint might look like this:
+例如，命令连同 RPC 端点可能看起来像这样：
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### 密钥和钱包
 
-You can create your key for your node by running the following command:
+您可以通过运行以下命令为您的节点创建密钥：
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+一旦启动轻节点，钱包密钥将会生成。 Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
 
 You can find the address by running the following command in the `celestia-node` directory:
 
