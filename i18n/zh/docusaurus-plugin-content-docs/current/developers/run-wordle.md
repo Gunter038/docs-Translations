@@ -54,7 +54,7 @@ wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chai
 
 > NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
 
-This will ask you to confirm the transaction with the following message:
+这将要求你确认交易，并发出以下信息。
 
 ```json
 {
@@ -89,15 +89,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Cosmos-SDK将要求您在此确认交易：
 
 ```sh
 confirm transaction before signing and broadcasting [y/N]:
 ```
 
-Confirm with a Y.
+输入 Y 进行确认。
 
-You will then get a response with a transaction hash as shown here:
+然后你会得到一个带有交易哈希值的信息，如图所示：
 
 ```sh
 code: 19
