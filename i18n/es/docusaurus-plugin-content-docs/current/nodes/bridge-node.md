@@ -18,55 +18,55 @@ Un nodo Bridge de Celestia tiene las siguientes propiedades:
 2. Validar y borrar el código de los bloques "raw".
 3. Suministrar bloques compartidos con encabezados de disponibilidad de datos a Nodos Light en la red DA. ![bridge-node-diagram](/img/nodes/BridgeNodes.png)
 
-From an implementation perspective, Bridge Nodes run two separate processes:
+Desde una perspectiva de implementación, los Bridge Nodes ejecutan dos procesos separados:
 
-1. Celestia App with Celestia Core ([see repo](https://github.com/celestiaorg/celestia-app))
+1. Celestia App con Celestia Core ([ver repo](https://github.com/celestiaorg/celestia-app))
 
-    * **Celestia App** is the state machine where the application and the proof-of-stake logic is run. Celestia App is built on [Cosmos SDK](https://docs.cosmos.network/) and also encompasses **Celestia Core**.
-    * **Celestia Core** is the state interaction, consensus and block production layer. Celestia Core is built on [Tendermint Core](https://docs.tendermint.com/), modified to store data roots of erasure coded blocks among other changes ([see ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Celestia App** es la máquina de estado donde se ejecuta la aplicación y la lógica de prueba de participación. Celestia App está construida en [Cosmos SDK](https://docs.cosmos.network/) y también engloba **Celestia Core**.
+    * **Celestia Core** es la interacción con el estado, el consenso y la capa de producción de bloques. Celestia Core está construido sobre[nTendermint Core](https://docs.tendermint.com/), modificado para almacenar raíces de datos de bloques codificados de borrado entre otros cambios ([ver ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
-2. Celestia Node ([see repo](https://github.com/celestiaorg/celestia-node))
+2. Nodo Celestia ([ver repositorio](https://github.com/celestiaorg/celestia-node))
 
-    * **Celestia Node** augments the above with a separate libp2p network that serves data availability sampling requests. The team sometimes refer to this as the “halo” network.
+    * **Celestia Node** incrementa lo anterior con una red libp2p independiente que sirve solicitudes de muestreo de disponibilidad de datos. El equipo a veces se refiere a esto como la red "halo".
 
-## Hardware requirements
+## Requisitos de hardware
 
-The following hardware minimum requirements are recommended for running the bridge node:
+Se recomiendan los siguientes requisitos mínimos de hardware para ejecutar el nodo bridge:
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Memoria: 8 GB RAM
+* CPU: 4 cores
+* Disco: 250 GB de almacenamiento SSD
+* Ancho de banda: 1 Gbps descarga/100 Mbps subida
 
-## Setting up your bridge node
+## Configurando tu nodo bridge
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+El siguiente tutorial se ha realizado sobre una versión de Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Actualizando las dependencias
 
-Follow the tutorial here installing the dependencies [here](../developers/environment.md).
+Sigue las instrucciones para instalar las dependencias [aquí](../developers/environment.md).
 
-## Deploy the Celestia bridge node
+## Despliega el nodo celestia
 
-### Install Celestia node
+### Instala celestia-node
 
-Install the Celestia Node binary, which will be used to run the Bridge Node.
+Instala el binario Celestia Node, que se utilizará para ejecutar el Bridge Node.
 
-Follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md).
+Sigue el tutorial sobre la instalación de Celestia App [aquí](../developers/celestia-node.md).
 
-### Initialize the bridge node
+### Inicializa el nodo bridge
 
-Run the following:
+Ejecuta las siguientes instrucciones:
 
 ```sh
 celestia bridge init --core.remote tcp://<ip-address>:26657
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Ejecuta el nodo de puente
 
-Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (que normalmente está en el puerto 9090):
 
 > NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below._
 
