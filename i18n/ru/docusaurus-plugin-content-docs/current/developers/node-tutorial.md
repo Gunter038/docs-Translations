@@ -42,9 +42,9 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 
-### Install Golang
+### Установка Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app и celestia-node написаны на [Golang](https://go.dev/), поэтому мы должны установить Golang для их сборки и запуска.
 
 ```sh
 ver="1.18.2"
@@ -55,20 +55,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Теперь нужно добавить `/usr/local/go/bin` каталог в переменную `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Чтобы убедиться, что Go был правильно установлен проверим версию:
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+Вывод должен показать установленную версию:
 
 ```sh
 go version go1.18.2 linux/amd64
