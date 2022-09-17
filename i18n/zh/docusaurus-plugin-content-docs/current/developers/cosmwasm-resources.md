@@ -1,5 +1,5 @@
 ---
-sidebar_label: CosmWasm Resources
+sidebar_label: CosmWasm 资料
 ---
 
 # CosmWasm 资料
