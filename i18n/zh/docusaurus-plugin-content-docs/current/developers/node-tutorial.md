@@ -131,7 +131,7 @@ celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 make cel-key
 ```
 
-一旦启动轻节点，钱包密钥将会生成。 Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+一旦启动轻节点，钱包密钥将会生成。 您需要用 Mamaki 测试网代币为该地址提供资金，以支付 PayForData 交易。
 
 You can find the address by running the following command in the `celestia-node` directory:
 
