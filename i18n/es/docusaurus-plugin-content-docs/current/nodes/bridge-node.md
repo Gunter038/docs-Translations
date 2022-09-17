@@ -6,13 +6,13 @@ sidebar_label : Nodo Bridge
 
 Este tutorial recorrerá los pasos para configurar tu nodo de Celestia.
 
-Bridge nodes connect the data availability layer and the consensus layer while also having the option of becoming a validator.
+Los nodos Bridge conectan la capa de disponibilidad de datos y la capa de consenso al mismo tiempo que tienen la opción de convertirse en validador.
 
-Validators do not have to run bridge nodes, but are encouraged to in order to relay blocks to the data availability network.
+Los validadores no tienen que ejecutar nodos Bridge, pero se les anima a transmitir bloques a la red de disponibilidad de datos.
 
-## Overview of bridge nodes
+## Vista general de los nodos Bridge
 
-A Celestia bridge node has the following properties:
+Un nodo Bridge de Celestia tiene las siguientes propiedades:
 
 1. Import and process “raw” headers & blocks from a trusted Core process (meaning a trusted RPC connection to a celestia-core node) in the Consensus network. Bridge Nodes can run this Core process internally (embedded) or simply connect to a remote endpoint. Bridge Nodes also have the option of being an active validator in the Consensus network.
 2. Validate and erasure code the “raw” blocks
