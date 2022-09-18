@@ -143,9 +143,9 @@ celestia-bridge.service -f
 
 Bây giờ, node Bridge Celestia sẽ bắt đầu đồng bộ hóa các headers và lưu trữ các khối từ ứng dụng Celestia.
 
-> Note: At startup, we can see the `multiaddress` from Celestia Bridge Node. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
+> Lưu ý: Khi bắt đầu, chúng ta có thể nhìn thấy `multiaddress` từ Node Bridge của Celestia. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
 
-Example:
+Ví dụ:
 
 ```sh
 NODE_IP=<ip-address>
