@@ -40,45 +40,45 @@ Este Código de Conducta se aplica en todos los espacios comunitarios, y tambié
 
 ## Cumplimiento
 
-Los casos de comportamiento abusivo, acoso o de cualquier otra forma inaceptable pueden ser reportados a los líderes de la comunidad responsables de la aplicación en el Discord de Celestia.org. All complaints will be reviewed and investigated promptly and fairly.
+Los casos de comportamiento abusivo, acoso o de cualquier otra forma inaceptable pueden ser reportados a los líderes de la comunidad responsables de la aplicación en el Discord de Celestia.org. Todas las reclamaciones serán revisadas e investigadas de forma rápida y justa.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Todos los líderes de la comunidad están obligados a respetar la privacidad y la seguridad de la persona que reporte de cualquier incidente.
 
-## Enforcement Guidelines
+## Directrices de aplicación
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+Los líderes de la comunidad seguirán estas directrices de impacto para determinar las consecuencias de cualquier acción que consideren una violación de este código de conducta:
 
-### 1. Correction
+### 1. Corrección
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**Impacto en la comunidad**: Uso de un lenguaje inapropiado u otro comportamiento considerado poco profesional o no bienvenido en la comunidad.
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+**Consecuencia**: Una advertencia escrita por privado de los líderes de la comunidad, proporcionando claridad acerca de la naturaleza de la infracción y una explicación de por qué el comportamiento fue inapropiado. Se puede solicitar una disculpa pública.
 
-### 2. Warning
+### 2. Advertencia
 
-**Community Impact**: A violation through a single incident or series of actions.
+**Impacto en la comunidad**: Una infracción a través de un solo incidente o serie de acciones.
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**Consecuencia**: Una advertencia con consecuencias para el comportamiento continuo. Ninguna interacción con las personas involucradas, incluyendo la interacción no solicitada con aquellos que aplican el Código de Conducta, durante un período de tiempo determinado. Esto incluye evitar interacciones tanto en espacios comunitarios como en canales externos como en redes sociales. La violación de estos términos puede llevar a una prohibición temporal o permanente.
 
-### 3. Temporary Ban
+### 3. Baneo temporal
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**Impacto en la comunidad**: Una violación grave de los estándares de la comunidad, incluyendo comportamiento inapropiado sostenido.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+**Consecuencia**: Una prohibición temporal de cualquier tipo de interacción o comunicación pública con la comunidad durante un periodo de tiempo determinado. No habrá ninguna interacción, ni pública ni privada, con las personas involucradas, incluyendo la no interacción con aquellas personas que han aplicado el Código de Conducta, durante un período de tiempo determinado. La violación de estos términos puede llevar a una prohibición temporal o permanente.
 
-### 4. Permanent Ban
+### 4. Baneo permanente
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**Impacto en la comunidad**: Demostrar un patrón de violación de los estándares de la comunidad incluyendo comportamiento inapropiado sostenido, acoso o agresión hacia un individuo, o desprecio de clases de individuos.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+**Consecuencia**: Una prohibición permanente de cualquier tipo de interacción pública dentro de la comunidad.
 
-## Attribution
+## Atribución
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+Este Código de Conducta es una adaptación del [Pacto de Colaboradores][homepage], versión 2.1, disponible en [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Las directrices de impacto en la comunidad se inspiraron en [el código de conducta de Mozilla][Mozilla CoC].
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+Para respuestas a preguntas comunes sobre este código de conducta, consulta las preguntas frecuentes en [https://www.contributor-covenant.org/faq][FAQ]. Las traducciones están disponibles en [https://www.contributor-covenant.org/translations][translations].
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
