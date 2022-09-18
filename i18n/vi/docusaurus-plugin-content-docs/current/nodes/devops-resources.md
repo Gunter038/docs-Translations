@@ -1,11 +1,11 @@
 - - -
-sidebar_label : Devops Resources
+sidebar_label : Tài liệu cho DevOps
 - - -
 
-# DevOps Resources
+# Tài liệu về DevOps
 
-This section will be provide an overview of different available resources for Developers and Node Operators looking to test out Celestia architecture.
+Phần này sẽ cung cấp tổng quan về những nguồn tài liệu khác nhau cho nhà phát triển và những người vận hành node đang tìm kiếm cách để thử nghiệm kiến trúc của Celestia.
 
 ## Docker Compose
 
-* One resource for playing with Docker Compose for Celestia infrastructure is the [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster) repository. This repository provides infrastructure for doing integration testings for development by running a Docker Compose instance of Celestia devnet. It is not recommended to be used as-is for running nodes individually.
+* Một nguồn tài liệu để tương tác với Docker Compose đối với cơ sở hạ tầng của Celestia chính là kho lưu trữ [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster). Kho lưu trữ này cung cấp cơ sở hạ tầng cho việc thử nghiệm tích hợp cho việc phát triển bằng cách chạy phiên bản Docker Compose của Celestia devnet. Nó không được khuyến khích để sử dụng tương tự cho việc chạy các node riêng lẻ.
