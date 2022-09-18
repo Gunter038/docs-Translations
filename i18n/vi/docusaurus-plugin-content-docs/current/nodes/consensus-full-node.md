@@ -74,23 +74,23 @@ If you want to use snapshot, determine the network you would like to sync to fro
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app
+### Khởi chạy celestia-app
 
-In order to start your consensus full node, run the following:
+Để khởi chạy full node đồng thuận của bạn, chạy câu lệnh sau:
 
 ```sh
 celestia-appd start
 ```
 
-This will let you sync the Celestia blockchain history.
+Câu lệnh này sẽ giúp bạn bắt đầu đồng bộ hóa với lịch sử blockchain Celestia.
 
-### Optional: configure for RPC endpoint
+### Tùy chọn: điều chỉnh RPC endpoint
 
 You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
 
 Note that you would need to ensure port 9090 is open for this.
 
-Run the following commands:
+Chạy câu lệnh sau:
 
 ```sh
 EXTERNAL_ADDRESS=$(wget -qO- eth0.me)
@@ -98,7 +98,7 @@ sed -i.bak -e "s/^external-address = \"\"/external-address = \"$EXTERNAL_ADDRESS
 sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/config/config.toml
 ```
 
-Restart `celestia-appd` in the previous step to load those configs.
+Khởi động lại `celestia-appd` trong bước trước để chạy được những configs đó.
 
 ### Start the celestia-app with SystemD
 
