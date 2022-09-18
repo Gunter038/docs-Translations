@@ -23,24 +23,24 @@ Ejemplos de comportamiento que contribuyen a un ambiente positivo para nuestra c
 Ejemplos de comportamiento inaceptable incluyen:
 
 * El uso de lenguaje o imágenes de contenido sexual, interés o insinuaciones sexuales de cualquier clase
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* Usar insultos o comentarios despectivos y ataques personales o políticos
+* Acoso público o privado
+* Publicar información privada de otras personas, incluyendo dirección física o electrónica, sin permiso explícito
+* Otra conducta que podría considerarse razonablemente inapropiada en un entorno profesional
 
-## Enforcement Responsibilities
+## Responsibilidades
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Los líderes de la Comunidad son responsables de aclarar y hacer cumplir nuestros estándares de comportamiento aceptable y tomarán medidas correctivas adecuadas y justas en respuesta a cualquier comportamiento que consideren inapropiado, amenazante, ofensivo o perjudicial.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Los líderes del proyecto tienen el derecho y responsabilidad de eliminar, editar o rechazar comentarios, envíos, código, ediciones de wiki, problemas y otras contribuciones que no estén alineados a este código de conducta, o expulsar temporalmente o permanentemente cualquier contribuyente por otros comportamientos que consideren inapropiados, amenazante, ofensivo o dañino.
 
-## Scope
+## Alcance
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Este Código de Conducta se aplica en todos los espacios comunitarios, y también se aplica cuando un individuo representa oficialmente a la comunidad en espacios públicos. Ejemplos de representar a nuestra comunidad incluyen el uso de una dirección de correo electrónico oficial, publicar a través de una cuenta oficial de redes sociales, o actuar como representante designado en un evento online o offline.
 
-## Enforcement
+## Cumplimiento
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+Los casos de comportamiento abusivo, acoso o de cualquier otra forma inaceptable pueden ser reportados a los líderes de la comunidad responsables de la aplicación en el Discord de Celestia.org. All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
