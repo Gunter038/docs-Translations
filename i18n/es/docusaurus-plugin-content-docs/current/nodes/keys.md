@@ -59,9 +59,9 @@ Para generar una clave para un light node de Celestia, haz lo siguiente:
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-This will load the key <key_name> into the directory of the light node.
+Esto cargará la clave <key_name> en el directorio del light node.
 
-## Steps for exporting **light** node keys
+## Pasos para generar claves de **light** nodes
 
 You can export a private key from the local keyring in encrypted and ASCII-armored format.
 
