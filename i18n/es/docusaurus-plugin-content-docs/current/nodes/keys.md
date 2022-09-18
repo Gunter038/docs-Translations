@@ -41,7 +41,7 @@ Para generar una clave para un nodo de Celestia bridge, haz lo siguiente:
 
 Esto cargará la clave <key_name> en el directorio del nodo bridge.
 
-## Steps for generating **full** node keys
+## Pasos para generar claves de **full** nodes
 
 To generate a key for a Celestia full node, do the following:
 
