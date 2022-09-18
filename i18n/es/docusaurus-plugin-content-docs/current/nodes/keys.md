@@ -43,17 +43,17 @@ Esto cargará la clave <key_name> en el directorio del nodo bridge.
 
 ## Pasos para generar claves de **full** nodes
 
-To generate a key for a Celestia full node, do the following:
+Para generar una clave para un full node de Celestia, haz lo siguiente:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type full
 ```
 
-This will load the key <key_name> into the directory of the full node.
+Esto cargará la clave <key_name> en el directorio del full node.
 
-## Steps for generating **light** node keys
+## Pasos para generar teclas de **light** nodes
 
-To generate a key for a Celestia light node, do the following:
+Para generar una clave para un light node de Celestia, haz lo siguiente:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
