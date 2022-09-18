@@ -10,55 +10,55 @@ Este tutorial te guiará a través de la configuración de un nodo light Celesti
 
 ## Resumen de los light nodes
 
-Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
+Los light nodes garantizan la disponibilidad de datos. Esta es la forma más común de interactuar con la red Celestia.
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light nodes have the following behavior:
+Los light nodes tienen el siguiente comportamiento:
 
-1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
-2. They perform data availability sampling (DAS) on the received headers
+1. Escuchan ExtendedHeaders, es decir, cabeceras envueltas "raw", que notifican a los nodos Celestia acerca de nuevos encabezados de bloque y metadatos relevantes de DA.
+2. Realizan muestreo de disponibilidad de datos (DAS) en los encabezados recibidos
 
-## Hardware requirements
+## Requisitos de hardware
 
-The following minimum hardware requirements are recommended for running a light node:
+Se recomiendan los siguientes requisitos mínimos de hardware para ejecutar un light node:
 
-* Memory: 2 GB RAM
-* CPU: Single Core
-* Disk: 5 GB SSD Storage
-* Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+* Memoria: 2 GB RAM
+* CPU: Núcleo único
+* Disco: 5 GB de almacenamiento SSD
+* Ancho de banda: 56 Gbps descarga/56 Mbps subida
 
-## Setting up your light node
+## Configurando tu light node
 
-This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+El siguiente tutorial se ha realizado sobre una versión de Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Actualizando las dependencias
 
-First, make sure to update and upgrade the OS:
+Primero, asegúrate de actualizar el sistema operativo:
 
 ```sh
-# If you are using the APT package manager
+# Si estás usando el gestor de paquetes APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Si estás usando el gestor de paquetes YUM
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Estos son paquetes esenciales que son necesarios para ejecutar muchas tareas como descargar archivos, compilar y monitorear el nodo:
 
 ```sh
-# If you are using the APT package manager
+# Si está usando el gestor de paquetes APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# If you are using the YUM package manager
+# Si está usando el gestor de paquetes YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
-git make ncdu -y
+git make ncdu -y 
 ```
 
-### Install Golang
+### Instalando Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app y celestia-node están escritos en [Golang](https://go.dev/) por lo que debemos instalar Golang para compilarlos y ejecutarlos.
 
 ```sh
 ver="1.18.2"
@@ -69,28 +69,28 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Ahora necesitamos añadir el directorio `/usr/local/go/bin` a `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Para comprobar si Go fue instalado correctamente:
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+El resultado debe ser la versión instalada:
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-### Install Celestia node
+### Instalar el nodo Celestia
 
-Install the celestia-node binary by running the following commands:
+Instala el binario celestia-node ejecutando los siguientes comandos:
 
 ```sh
 cd $HOME
@@ -101,7 +101,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Verifica que el binario está funcionando y comprueba la versión con el comando de versión celestia:
 
 ```sh
 $ celestia version
@@ -109,15 +109,15 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Initialize the light node
+## Inicializa el light node
 
-Run the following command:
+Ejecuta el siguiente comando:
 
 ```sh
 celestia light init
 ```
 
-You should see output like:
+Deberás ver algo como esto:
 
 <!-- markdownlint-disable MD013 -->
 ```output
@@ -128,57 +128,57 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Start the light node
+### Iniciar el light node
 
-Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (que normalmente está en el puerto 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
+> NOTA: Para acceder a la capacidad de obtener/enviar información relacionada con el estado, como la posibilidad de enviar transacciones de PayForData o consulta para el saldo de cuenta del nodo un endpoint gRPC de un nodo validador (core) debe ser configurado como indica debajo.
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+Por ejemplo, tu comando podría verse algo como esto:
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### Claves y wallets
 
-You can create your key for your node by running the following command:
+Puedes crear tu clave para tu nodo ejecutando el siguiente comando:
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Una vez que inicies el Light Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Puedes encontrar la dirección ejecutando el siguiente comando en el directorio `celestia-node`:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Los tokens de Mamaki Testnet pueden ser solicitados [aquí](./mamaki-testnet.md#mamaki-testnet-faucet).
 
-### Optional: run the light node with a custom key
+### Opcional: ejecutar el light node con una tecla personalizada
 
-In order to run a light node using a custom key:
+Para ejecutar un light node usando una clave personalizada:
 
-1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. La clave personalizada debe existir dentro del directorio de nodos celestia en la ruta correcta (por defecto: `~/.celestia-bridge/keys/keyring-test`)
+2. El nombre de la clave personalizada debe pasarse al `start`, así:
 
 ```sh
 celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start light node with SystemD
+### Opcional: iniciar light node con SystememD
 
-Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
+Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo plano con SystemD [aquí](./systemd.md#celestia-light-node).
 
-## Data availability sampling (DAS)
+## Muestreo de disponibilidad de datos (DAS)
 
 With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
