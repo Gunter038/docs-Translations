@@ -2,63 +2,63 @@
 sidebar_label : Light Node
 - - -
 
-# Setting up a Celestia Light Node
+# Thiết lập Light Node Celestia
 
-This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
+Hướng dẫn này sẽ chỉ bạn cách thiết lập một Light Node Celestia. Việc này sẽ cho phép bạn thực hiện việc lấy mẫu Data Availability (DA) trên mạng Data Availability.
 
-> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
+> Để xem video hướng dẫn cách thiết lập light node Celestia, bấm [vào đây](../developers/light-node-video.md)
 
-## Overview of light nodes
+## Tổng quan về light node
 
-Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
+Light Node giúp bảo đảm Data availability. Đây là cách phổ biến nhất để tương tác với mạng Celestia.
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light nodes have the following behavior:
+Light nodes có thực hiện những hành động sau:
 
-1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
-2. They perform data availability sampling (DAS) on the received headers
+1. Chúng lắng nghe ExtendedHeaders, ví dụ wrapped “raw” headers, thứ thông báo cho các Celestia node về các block header mới và metadata DA liên quan.
+2. Chúng thực hiện Lấy mẫu Data Availability (DAS) trên các header nhận được
 
-## Hardware requirements
+## Yêu cầu phần cứng
 
-The following minimum hardware requirements are recommended for running a light node:
+Yêu cầu phần cứng tối thiểu bên dưới đây được khuyến nghị để chạy một light node:
 
 * Memory: 2 GB RAM
 * CPU: Single Core
 * Disk: 5 GB SSD Storage
-* Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+* Bandwidth: 56 Kbps đối với Download/56 Kbps đối với Upload
 
-## Setting up your light node
+## Thiết lập light node của bạn
 
-This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Hướng dẫn này sẽ được thực hiện trên thiết bị Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Thiết lập các thành phần phụ thuộc
 
-First, make sure to update and upgrade the OS:
+Đầu tiên, hãy bảo đảm đã cập nhật và nâng cấp OS:
 
 ```sh
-# If you are using the APT package manager
+# Nếu bạn đang sử dụng APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Nếu bạn đang sử dụng YUM package manager
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Chúng là những gói thiết yếu, cần thiết để thực thi nhiều tác vụ ví dụ như tải file, phiên dịch, và quản lý node:
 
 ```sh
-# If you are using the APT package manager
+# Nếu bạn đang sử dụng APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# If you are using the YUM package manager
+# Nếu bạn đang sử dụng YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
-### Install Golang
+### Cài đặt Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app và celestia-node được viết bằng ngôn ngữ lập trình [Golang](https://go.dev/) do vậy chúng ta phải cài đặt Golang để thiết lập và chạy nó.
 
 ```sh
 ver="1.18.2"
@@ -69,7 +69,7 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Bây giờ chúng ta cần thêm thư mục `/usr/local/go/bin` vào `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
