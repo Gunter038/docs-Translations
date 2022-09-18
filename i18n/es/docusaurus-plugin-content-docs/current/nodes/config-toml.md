@@ -29,7 +29,7 @@ Desglosemos algunas de las secciones más utilizadas.
 
 ### [Core]
 
-Esta sección es necesaria para el Nodo Bridge de Celestia. Por defecto, `Remote = false`. Still for devnet, we are going to use the remote core option and this can also be set by the command line flag `--core.remote`.
+Esta sección es necesaria para el Nodo Bridge de Celestia. Por defecto, `Remote = false`. Aún para devnet, vamos a a usar la opción de remote core y esto también puede establecerse por la bandera de línea de comandos `--core.remote`.
 
 ### [P2P]
 
