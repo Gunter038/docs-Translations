@@ -6,23 +6,23 @@ sidebar_label : Código de Conducta
 
 ## Nuestro Compromiso
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+Nosotros como miembros, colaboradores y líderes, nos comprometemos a hacer de la participación en nuestra comunidad una experiencia sin acoso para nadie, sin importar la edad, tamaño del cuerpo, discapacidad visible o invisible, etnia, rasgos sexuales, identidad de género y expresión, nivel de experiencia, educación, estatus socioeconómico, nacionalidad, apariencia personal, raza, casta, color, religión o identidad y orientación sexual.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+Nos comprometemos a actuar e interactuar de manera que contribuya a una comunidad abierta, agradable, diversa, inclusiva y saludable.
 
-## Our Standards
+## Nuestros estándares
 
-Examples of behavior that contributes to a positive environment for our community include:
+Ejemplos de comportamiento que contribuyen a un ambiente positivo para nuestra comunidad incluyen:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* Demostrar empatía y amabilidad hacia otras personas
+* Ser respetuoso con las diferentes opiniones, puntos de vista y experiencias
+* Dar y aceptar agradecido comentarios constructivos
+* Aceptar la responsabilidad y pedir disculpas a los afectados por nuestros errores, y aprender de la experiencia
+* Centrarse en lo que es mejor no solo para nosotros individualmente, sino para la comunidad en general
 
-Examples of unacceptable behavior include:
+Ejemplos de comportamiento inaceptable incluyen:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
+* El uso de lenguaje o imágenes de contenido sexual, interés o insinuaciones sexuales de cualquier clase
 * Trolling, insulting or derogatory comments, and personal or political attacks
 * Public or private harassment
 * Publishing others' private information, such as a physical or email address, without their explicit permission
