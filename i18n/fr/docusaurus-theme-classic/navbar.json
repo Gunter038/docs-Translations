@@ -4,11 +4,11 @@
     "description": "The title in the navbar"
   },
   "item.label.Run A Node": {
-    "message": "Run A Node",
+    "message": "Exécuter un node",
     "description": "Navbar item with label Run A Node"
   },
   "item.label.Developers": {
-    "message": "Developers",
+    "message": "Développeurs",
     "description": "Navbar item with label Developers"
   },
   "item.label.GitHub": {
@@ -16,7 +16,7 @@
     "description": "Navbar item with label GitHub"
   },
   "item.label.Community": {
-    "message": "Community",
+    "message": "Communauté",
     "description": "Navbar item with label Community"
   }
 }
