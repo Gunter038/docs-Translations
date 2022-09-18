@@ -1,18 +1,18 @@
 - - -
-sidebar_label : Celestia's Data Availability Layer
+sidebar_label : Couche de disponibilité des données de Celestia
 - - -
 
 # Couche de disponibilité des données de Celestia
 
 Celestia est une couche de disponibilité des données (DA) qui fournit une solution évolutive au [problème de la disponibilité des données](https://coinmarketcap.com/alexandria/article/what-is-data-availability). En raison de la nature sans permission des réseaux de blockchain, une couche de DA doit fournir un mécanisme permettant aux couches d'exécution et de consensus de vérifier, cryptographiquement, si les données de transaction sont effectivement disponibles.
 
-Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+Deux caractéristiques clés de la couche DA de Celestia sont [l'échantillonnage de la disponibilité des données](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) et [les arbres de Merkle Namespaced](https://github.com/celestiaorg/nmt) (NMTs). Les deux fonctionnalités sont des solutions novatrices de mise à l'échelle de la blockchain : la DAS permet aux lights nodes de vérifier la disponibilité des données sans avoir à télécharger un bloc entier ; Les NMTs permettent à des couches d'exécution et de règlement sur Celestia de télécharger des transactions qui ne sont pertinentes que pour elles.
 
-## Data Availability Sampling (DAS)
+## Échantillonnage de la disponibilité des données (DAS)
 
-En général, les nœuds légers ne téléchargent que les en-têtes de blocs qui contiennent des engagements (c.-à-d. les racines Merkle) des données de bloc (c.-à-d. la liste des transactions).
+En général, les lights nodes ne téléchargent que les en-têtes de blocs qui contiennent des engagements (c.-à-d. les racines Merkle) des données de bloc (c.-à-d. la liste des transactions).
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+Pour rendre la DAS possible, Celestia utilise un système d'encodage Reed-Salomon à deux dimensions pour encoder les données du bloc : chaque donnée de bloc est divisée en tronçon k x k , arrangé dans une matrice k × k, et étendu avec la parité de données dans une matrice étendue de 2k × 2k en appliquant plusieurs fois l'encodage Reed-Solomon.
 
 Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
 
@@ -26,7 +26,7 @@ Additionally, every received data chunk with a correct Merkle proof is gossiped 
 
 For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
 
-### Scalability
+### Scalabilité
 
 DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
 
