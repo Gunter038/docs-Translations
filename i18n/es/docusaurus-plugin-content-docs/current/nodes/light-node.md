@@ -12,7 +12,7 @@ Este tutorial te guiará a través de la configuración de un nodo light Celesti
 
 Los light nodes garantizan la disponibilidad de datos. Esta es la forma más común de interactuar con la red Celestia.
 
-![light-node](/img/nodes/LightNodes.png)
+![light nodes (Nodos ligeros)](/img/nodes/LightNodes.png)
 
 Los light nodes tienen el siguiente comportamiento:
 
@@ -181,4 +181,4 @@ Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo
 
 ## Muestreo de disponibilidad de datos (DAS)
 
-With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+Con tu nodo ligero en ejecución, puedes revisar este tutorial de enviar `transacciones de PayForData` [aquí](../developers/node-tutorial.md).
