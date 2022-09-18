@@ -72,8 +72,8 @@ Para ejecutar un full storage usando una clave personalizada:
 celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the full storage node with SystemD
+### Opcional: ejecuta el full storage node con SystemD
 
-Follow the tutorial on setting up the full storage node as a background process with SystemD [here](./systemd.md#celestia-full-storage-node).
+Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo plano con SystemD [aquí](./systemd.md#celestia-full-storage-node).
 
-With that, you are now running a Celestia Full Storage Node.
+Con eso, ahora se está ejecutando un nodo Celestia Full Storage.
