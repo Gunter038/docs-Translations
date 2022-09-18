@@ -63,14 +63,14 @@ Esto cargará la clave <key_name> en el directorio del light node.
 
 ## Pasos para generar claves de **light** nodes
 
-You can export a private key from the local keyring in encrypted and ASCII-armored format.
+Puedes exportar una clave privada desde el conjunto de claves local en formato cifrado y con formato ASCII.
 
 ```sh
 ./cel-key export <key-name> --keyring-backend test --node.type light
 ```
 
-You can then import your key with `celestia-appd`:
+A continuación, puedes importar tu clave con `celestia-appd`:
 
 ```sh
-celestia-appd keys import <new-key-name> <key-file-location>
+celestia-appd keys import <new-key-name> <key-file-location> 
 ```
