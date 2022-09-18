@@ -5,7 +5,7 @@ sidebar_label : Mamaki Testnet
 # Mamaki Testnet
 <!-- markdownlint-disable MD013 -->
 
-![mamaki-testnet](/img/mamaki.png)
+![mamaki Testnet](/img/mamaki.png)
 
 Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki es un hito en Celestia, permitiendo a todos probar las funcionalidades principales de la red. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
@@ -74,13 +74,13 @@ Para inicializar la red elige un "node-name" que describa tu nodo. El parámetro
 celestia-appd init "node-name" --chain-id mamaki
 ```
 
-Copie el archivo `genesis.json`. For mamaki we are using:
+Copie el archivo `genesis.json`. Para mamaki estamos usando:
 
 ```sh
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 ```
 
-Set seeds and peers:
+Establecer seeds y peers:
 
 ```sh
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
@@ -89,11 +89,11 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 
 ```
 
-Note: You can find more peers [here](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
+Nota: Puedes encontrar más peers [aquí](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
-## Quick-sync with snapshot
+## Sincronización rápida con snapshot
 
-Run the following command to quick-sync from a snapshot for `mamaki`:
+Ejecuta el siguiente comando para sincronizar rápidamente desde un snapshot para `mamaki`:
 
 ```sh
 cd $HOME
@@ -105,9 +105,9 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
 
-## Delegate to a validator
+## Delegar a un validador
 
-To delegate tokens to the the `celestiavaloper` validator, as an example you can run:
+Para delegar tokens al validador de `celestiavaloper`, como un ejemplo puedes ejecutar:
 
 ```sh
 celestia-appd tx staking delegate \
@@ -115,7 +115,7 @@ celestia-appd tx staking delegate \
     --from=$VALIDATOR_WALLET --chain-id=mamaki
 ```
 
-If successful, you should see a similar output as:
+Si se ha ejecutado con éxito, deberías ver una salida similar a esta:
 
 ```console
 code: 0
@@ -132,11 +132,11 @@ tx: null
 txhash: <tx-hash>
 ```
 
-You can check if the TX hash went through using the block explorer by inputting the `txhash` ID that was returned.
+Puedes comprobar si el hash TX fue enviado usando el explorador de bloques ingresando el ID de `txhash` que fue devuelto.
 
-## Connect validator
+## Conectar validador
 
-Continuing the Validator tutorial, here are the steps to connect your validator to Mamaki:
+Continuando con el tutorial Validator, aquí están los pasos para conectar tu validador a Mamaki:
 
 ```sh
 MONIKER="your_moniker"
@@ -155,13 +155,13 @@ celestia-appd tx staking create-validator \
     --keyring-backend=test
 ```
 
-You will be prompted to confirm the transaction:
+Se te pedirá que confirmes la transacción:
 
 ```console
 confirm transaction before signing and broadcasting [y/N]: y
 ```
 
-Inputting `y` should provide an output similar to:
+La entrada `y` debe proporcionar una salida similar a:
 
 ```console
 code: 0
@@ -178,4 +178,4 @@ tx: null
 txhash: <tx-hash>
 ```
 
-You should now be able to see your validator from a block explorer like [here](https://celestia.explorers.guru/)
+Ahora deberías poder ver a tu validador desde un explorador de bloques como [aquí](https://celestia.explorers.guru/)
