@@ -143,7 +143,7 @@ celestia-bridge.service -f
 
 Bây giờ, node Bridge Celestia sẽ bắt đầu đồng bộ hóa các headers và lưu trữ các khối từ ứng dụng Celestia.
 
-> Lưu ý: Khi bắt đầu, chúng ta có thể nhìn thấy `multiaddress` từ Node Bridge của Celestia. This is **needed for future Light Node** connections and communication between Celestia Bridge Nodes
+> Lưu ý: Khi bắt đầu, chúng ta có thể nhìn thấy `multiaddress` từ Node Bridge của Celestia. Điều này **cần thiết cho việc kết nối và giao tiếp của các Light node trong tương lai** với các Node Bridge của Celestia
 
 Ví dụ:
 
@@ -152,11 +152,11 @@ NODE_IP=<ip-address>
 /ip4/$NODE_IP/tcp/2121/p2p/12D3KooWD5wCBJXKQuDjhXFjTFMrZoysGVLtVht5hMoVbSLCbV22
 ```
 
-You should be seeing logs coming through of the bridge node syncing.
+Bạn sẽ nhìn thấy logs từ quá trình đồng bộ hóa của node bridge.
 
 ### Celestia light node
 
-Start the Light Node as daemon process in the background
+Khởi động Light Node với chương trình daemon chạy nền
 
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
@@ -176,29 +176,29 @@ WantedBy=multi-user.target
 EOF
 ```
 
-If the file was created successfully you will be able to see its content:
+Nếu file được tạo thành công bạn sẽ nhìn thấy nội dung như sau:
 
 ```sh
 cat /etc/systemd/system/celestia-lightd.service
 ```
 
-Enable and start celestia-lightd daemon:
+Cho phép và khởi động daemon celestia-lightd:
 
 ```sh
 systemctl enable celestia-lightd
 systemctl start celestia-lightd
 ```
 
-Check if daemon has been started correctly:
+Kiểm tra xem liệu daemon đã được khởi chạy đúng:
 
 ```sh
 systemctl status celestia-lightd
 ```
 
-Check daemon logs in real time:
+Kiểm tra logs của daemon đối với thời gian thực:
 
 ```sh
 journalctl -u celestia-lightd.service -f
 ```
 
-Now, the Celestia Light Node will start syncing headers. After sync is finished, Light Node will do Data Availability Sampling (DAS) from the Bridge Node.
+Bây giờ, Light node Celestia sẽ bắt đầu đồng bộ hóa headers. Sau khi đồng bộ hóa thành công, Light Node sẽ thực hiện Lấy mẫu Data Availability (DAS) từ Node Bridge.
