@@ -63,10 +63,10 @@ Los tokens de Mamaki Testnet pueden ser solicitados [aquí](./mamaki-testnet.md#
 
 ### Opcional: ejecuta el full storage node con una clave personalizada
 
-In order to run a full storage node using a custom key:
+Para ejecutar un full storage usando una clave personalizada:
 
-1. The custom key must exist inside the celestia full storage node directory at the correct path (default: `~/.celestia-full/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. La clave personalizada debe existir dentro del directorio de nodos celestia en la ruta correcta (por defecto: `~/.celestia-bridge/keys/keyring-test`)
+2. El nombre de la clave personalizada debe pasarse al `start`, así:
 
 ```sh
 celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
