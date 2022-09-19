@@ -1,15 +1,15 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: Configurar el entorno de red
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
+# Configurando tu entorno para CosmWasm en Celestia
 <!-- markdownlint-disable MD013 -->
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Optimint.
+Ahora el binario `wasmd` está compilado, necesitamos configurar una red local que comunique entre `wasmd` y Optimint.
 
-## Building the Wasmd Network
+## Construyendo la red de Wasmd
 
-Run the following command:
+Ejecuta el siguiente comando:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -17,18 +17,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+Esto inicializa una cadena llamada `celeswasm` con `wasmd` binario.
 
-The following command helps us setup accounts for genesis:
+El siguiente comando nos ayuda a configurar cuentas para génesis:
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated for later reference if needed.
+Asegúratee de almacenar la salida de la wallet generada para referencia posterior si es necesario.
 
-Now, let's add a genesis account and use it to update our genesis file:
+Ahora, vamos a añadir una cuenta de génesis y utilizarla para actualizar nuestro archivo de génesis:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -37,9 +37,9 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-With that, we created a local network genesis file.
+Con eso, creamos un archivo de génesis de red local.
 
-Some more useful commands we can setup:
+Algunos comandos más útiles que podemos configurar:
 
 ```sh
 export NODE="--chain-id ${CHAIN_ID}"
