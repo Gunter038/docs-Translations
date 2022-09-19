@@ -26,7 +26,7 @@ Cada mes, los Compañeros completarán un hito del proyecto, culminando en una p
 
 - **Mes 2** - Diseño & Implementación de un prototipo básico
 
-  In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
+  En este mes, diseñarás e implementarás un prototipo básico de la idea que se estableció durante el primer mes.
 
   - *Milestone - present the prototype for feedback*
 
