@@ -54,11 +54,11 @@ NMT 是一棵 Merkle 树，其叶子按命名空间标识符排序，并修改�
 
 ![Namespaced Merkle 树](/img/concepts/nmt.png)
 
-When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
+当应用程序请求命名空间2的数据时，DA层必须 提供数据块 `D3`， `D4`, `D5`, 和 `D6` 和节点 `N2`, `N8` 和 `N7` 作为证据(注意应用程序已经有根 `N14` 来自 个块头)。
 
-As a result, the application is able to check that the provided data is part of the block data. Furthermore, the application can verify that all the data for namespace 2 was provided. If the DA layer provides for example only the data chunks `D4` and `D5`, it must also provide nodes `N12` and `N11` as proofs. However, the application can identify that the data is incomplete by checking the namespace range of the two nodes, i.e., both `N12` and `N11` have descendants part of namespace 2.
+因此，应用程序能够检查所提供的数据是否为区块数据的部分。 此外，应用程序可以验证已提供命名空间 2 的所有数据 都已提供。 如果DA层只提供例如数据块`D4`和`D5`，它还必须提供节点`N11`和`N12`作为证明。 然而，应用程序可以通过检查两个节点的名称空间范围来识别数据的不完整性，即`N12`和`N11`都有属于名称空间2的后代。
 
-For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
+关于NMT的更多细节，请看[原始论文](https://arxiv.org/abs/1905.09274)。
 
 ## 为数据可用性开发 PoS（权益证明）区块链
 
