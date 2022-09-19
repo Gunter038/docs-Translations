@@ -2,29 +2,29 @@
 sidebar_label: Compañeros de Módulo
 ---
 
-# Modular Fellows
+# Compañeros de Módulo
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows is a program designed to empower modular builders with the right resources to build the future of scalable and sovereign blockchain networks.
+Compañeros de Módulo es un programa diseñado para empoderar a los constructores modulares con los recursos adecuados para construir el futuro de redes de blockchain escalables y soberanas.
 
-Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
+Durante el curso del programa de tres meses, los Compañeros de Módulo recibirán soporte de ingeniería mentorías, y una remuneración mensual de 3,000 $ para construir un proyecto de su elección. Después del programa, el continuo apoyo estará disponible para los Compañeros en forma de ayuda y subvenciones para la recaudación de fondos.
 
-Applications are currently closed. Check back for details about future cohorts.
+Las solicitudes están actualmente cerradas. Revisa para más detalles sobre futuras cohortes.
 
-## Overview
+## Vista general
 
-### Milestones
+### Hitos
 
-Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
+Cada mes, los Compañeros completarán un hito del proyecto, culminando en una presentación en una jornada de demostración.
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- **Mes 1** - Aprendizaje y Exploración (empieza a construir cuando estés listo)
 
-  In this month, you will immerse yourself in modular blockchains to come up with ideas of protocols, tools or applications to build during the rest of the program.
+  En este mes, te sumergirás en las blockchains modulares para crear ideas de protocolos, herramientas o aplicaciones para construir durante el resto del programa.
 
-  - *Milestone - present an idea that you want to pursue*
+  - *Hito - presenta una idea que quieres alcanzar*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- **Mes 2** - Diseño & Implementación de un prototipo básico
 
   In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
 
