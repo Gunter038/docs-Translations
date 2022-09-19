@@ -128,7 +128,7 @@ wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9
 }]}]}]
 ```
 
-Test out a few things for fun:
+可以做些测试当做娱乐：
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
