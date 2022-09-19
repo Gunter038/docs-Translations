@@ -46,20 +46,20 @@ export NODE="--chain-id ${CHAIN_ID}"
 export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
 ```
 
-## Starting the Wasmd Network
+## Iniciando la red Wasmd
 
-We can run the following to start the `wasmd` network:
+Podemos ejecutar el siguiente código para iniciar la red de `wasmd`:
 
 ```sh
 wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+Ten en cuenta que:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> NOTA: En el comando anterior, necesitas pasar una dirección IP del nodo Celestia al `base_url` que tiene una cuenta con tokens de Mamaki testnet. Sigue el tutorial para configurar un Nodo Celestia Light y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
 
-Also please consider:
+Ten en cuenta que:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Mamaki Testnet for `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANTE: Además, en el comando anterior, debes especificar la última Block Height en Mamaki Testnet para `da_height`. Puedes encontrar el último número de bloque en el explorador [aquí](https://testnet.mintscan.io/celestia-testnet). También, para la bandera `--optimint.namespace_id`, puedes generar un ID de Espacio de Nombres aleatorio usando el playground [aquí](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+¡Con esto, hemos iniciado nuestra red de `wasmd`!
