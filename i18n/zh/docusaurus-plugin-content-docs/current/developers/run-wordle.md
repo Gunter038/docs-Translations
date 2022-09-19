@@ -134,9 +134,9 @@ wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers. You will see the response shows an Invalid Error because you submitted integers.
+在确认交易后，采用上面同样的方法查询 `txhash`。 因为你提交的是整数，你会看到显示无效的错误信息。
 
-Now try:
+现在试着输入以下：
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
