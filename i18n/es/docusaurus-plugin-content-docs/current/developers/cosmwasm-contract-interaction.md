@@ -2,10 +2,10 @@
 sidebar_label: Contrato de interacción
 ---
 
-# Contract Interaction on CosmWasm with Celestia
+# Contrato de interacción en CosmWasm con Celestia
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
+En los pasos anteriores, hemos almacenado el hash tx del contrato en una variable de entorno para su uso posterior.
 
 Because of the longer time periods of submitting transactions via Optimint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
