@@ -1,31 +1,29 @@
----
+- - -
 sidebar_label : Installing Celestia Node
----
+- - -
 
 # Celestia Node
 
-This tutorial goes over building and installing celestia-node. This
-tutorial assumes you completed the steps in setting up your development
-environment [here](./environment.md).
+Ce tutoriel passe en revue l'installation de Celestia-Node. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
 
-## Install Celestia Node
+## Installer Celestia Node
 
-Install the celestia-node binary by running the following commands:
+Installez le binaire Celestia-node en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.0
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Vérifiez que le binaire fonctionne et vérifiez la version avec la commande `celestia
+version`:
 
 ```console
 $ celestia version
-Semantic version: v0.3.0-rc2
-Commit: 89892d8b96660e334741987d84546c36f0996fbe
+Semantic version: v0.3.0
+Commit: 00d80c423b2bfacec22a253ce6af3a534a1be3a7
 ```
