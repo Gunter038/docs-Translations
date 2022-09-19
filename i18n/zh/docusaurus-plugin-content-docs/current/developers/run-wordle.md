@@ -115,13 +115,13 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet. Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
+注意，这并不意味着该交易包含在此区块中。 我们可以查询交易哈希值，以检查它是否已被包含在区块中或者是否有任何错误。
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+应该显示如下信息：
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
