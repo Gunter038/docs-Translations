@@ -28,9 +28,9 @@ Cada mes, los Compañeros completarán un hito del proyecto, culminando en una p
 
   En este mes, diseñarás e implementarás un prototipo básico de la idea que se estableció durante el primer mes.
 
-  - *Milestone - present the prototype for feedback*
+  - *Hito - presentar el prototipo para comentarios*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- **Mes 3** - Convierte el prototipo en un producto funcional
 
   In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
 
