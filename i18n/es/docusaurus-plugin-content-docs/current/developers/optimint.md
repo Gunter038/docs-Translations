@@ -2,21 +2,21 @@
 
 ![optimint](/img/optimint.png)
 
-[Optimint](https://github.com/celestiaorg/optimint) is an ABCI (Application Blockchain Interface) implementation for sovereign rollups to deploy on top of Celestia.
+[Optimint](https://github.com/celestiaorg/optimint) es una implementación ABCI Blockchain Interface) para rollups soberanos a desplegar sobre Celestia.
 
-It is built by replacing Tendermint, the Cosmos-SDK consensus layer, with a drop-in replacement that communicates directly with Celestia's Data Availability layer.
+Se construye reemplazando Tendermint, la capa de consenso Cosmos-SDK, con un reemplazo desplegable que se comunica directamente con la capa de disponibilidad de datos de Celestia.
 
-It spins up a sovereign rollup, which collects transactions into blocks and posts them onto Celestia for consensus and data availability.
+Crea un rollup soberano, que recoge transacciones en bloques y las publica en Celestia para obtener consenso y disponibilidad de datos.
 
-The goal of Optimint is to enable anyone to design and deploy a sovereign rollup on Celestia in minutes.
+El objetivo de Optimint es permitir a cualquiera diseñar y desplegar un rollup soberano en Celestia en minutos.
 
-Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer.
+Además, mientras que Optimint te permite crear rollups soberanos en Celestia, actualmente no soporta pruebas de fraude aún y está por lo tanto funcionando en modo "pesimista", donde los nodos necesitarían volver a ejecutar las transacciones para comprobar la validez de la cadena (i.. un nodo completo). Además, Optimint actualmente soporta un solo secuenciador.
 
-## Tutorials
+## Tutoriales
 
-The following tutorials will help you get started building Cosmos-SDK applications that connect to Celestia's Data Availability Layer via Optimint. We call those chains Sovereign Rollups.
+Los siguientes tutoriales te ayudarán a comenzar a construir aplicaciones de Cosmos-SDK que se conectan a la disponibilidad de datos de Celestia Layer a través de Optimint. Nosotros llamamos a esas cadenas Rollups Soberanas.
 
-You can get started with the following tutorials:
+Puedes empezar con los siguientes tutoriales:
 
 - [Wordle Game](./wordle.md)
-- [CosmWasm Tutorial](./cosmwasm.md)
+- [Tutorial CosmWasm](./cosmwasm.md)
