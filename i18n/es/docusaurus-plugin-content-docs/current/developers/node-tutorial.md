@@ -111,49 +111,49 @@ celestia light init
 
 Ahora ejecutemos el nodo Celestia Light con una conexión GRPC a un ejemplo de public Core Endpoint.
 
-> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
+> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. Puedes encontrar una lista de endpoints RPC [aquí](/nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
 ```
 
-For example, your command along with an RPC endpoint might look like this:
+Por ejemplo, el comando junto con un endpoint RPC podría verse así:
 
 ```sh
 celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
 ```
 
-### Keys and wallets
+### Claves y wallets
 
-You can create your key for your node by running the following command:
+Puedes crear tu clave para tu nodo ejecutando el siguiente comando:
 
 ```sh
 make cel-key
 ```
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions.
+Una vez que inicies el Light Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Puedes encontrar la dirección ejecutando el siguiente comando en el directorio `celestia-node`:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#faucet`.
+Si deseas agregar fondos a tu wallet con tokens de testnet, diríjete al canal Celestia Discord `#faucet`.
 
-You can request funds to your wallet address using the following command in Discord:
+Puedes solicitar fondos a tu dirección de wallet usando el siguiente comando en Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Donde `<Wallet-Address>` es la dirección `celestia1******` generada al crear la wallet.
 
-With your wallet funded, you can move on to the next step.
+Una vez que estés listo, ¡puedes pasar al siguiente paso.
 
-## Node API Calls
+## API Calls de Nodo
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+Abre otra ventana de terminal para comenzar a consultar la API. `celestia-node` expone su endpoint RPC en el puerto `26658` por defecto.
 
 ### Balance
 
