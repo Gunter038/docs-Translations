@@ -91,44 +91,44 @@ Encontrarás el archivo JSON gentx generado dentro de `$HOME/.celestia-app/confi
 
 ### Creando el archivo Génesis JSON
 
-Once all participants have submitted their gentx JSON files to you, you will pull all those gentx files inside the following directory: `$HOME/.celestia-appd/config/gentx` and use them to create the final `genesis.json` file.
+Una vez que todos los participantes te han enviado sus archivos gentx JSON, extraerás todos esos archivos gentx dentro del siguiente directorio: `$HOME/.celestia-appd/config/gentx` y utilízalos para crear el archivo final `genesis.json`.
 
-Once you added the gentx files of all the particpants, run the following command:
+Una vez que hayas añadido los archivos gentx de todos los participantes, ejecuta el siguiente comando:
 
 ```sh
 celestia-appd collect-gentxs
 ```
 
-This command will look for the gentx files in this repo which should be moved to the following directory `$HOME/.celestia-app/config/gentx`.
+Este comando buscará los archivos gentx en este repositorio que debería moverse al siguiente directorio `$HOME/.celestia-app/config/gentx`.
 
-It will update the `genesis.json` file after in this location `$HOME/.celestia-app/config/genesis.json` which now includes the gentx of other participants.
+Actualizará el archivo `genesis.json` después en esta ubicación `$HOME/.celestia-app/config/genesis.json` que ahora incluye el gentx de otros participantes.
 
-You should then share this final `genesis.json` file with all the other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+Entonces deberías compartir este género final `genesis.json` y todos los otros participantes deben añadirlo a su directorio `$HOME/.celestia-app/config`.
 
-Everyone must ensure that they replace their existing `genesis.json` file with this new one created.
+Todos deben asegurarse de reemplazar su archivo `genesis.json` existente por este nuevo archivo creado.
 
-### Modify Your Config File
+### Modifica tu archivo de configuración
 
-Open the following file `$HOME/.celestia-app/config/config.toml` to modify it.
+Abre el siguiente archivo `$HOME/.celestia-app/config/config.toml` para modificarlo.
 
-Inside the file, add the other participants by modifying the following line to include other participants as persistent peers:
+Dentro del archivo, añade a los otros participantes modificando la siguiente línea para incluir a otros participantes como pares persistentes:
 
 ```text
-# Comma separated list of nodes to keep persistent connections to
+# Lista de nodos separados por comas para mantener conexiones persistentes a
 persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-You can find `validator_address` by running the following command:
+Puedes encontrar `validator_address` ejecutando el siguiente comando:
 
 ```sh
 celestia-appd tendermint show-node-id
 ```
 
-The output will be the hex-encoded `validator_address`. The default `port` is 26656.
+La salida será la `validator_address` codificada en hex. El puerto predeterminado `` es 26656.
 
-### Instantiate the Network
+### Instanciar la Red
 
-You can start your node by running the following command:
+Puede comenzar a sincronizar su nodo ejecutando el siguiente comando:
 
 ```sh
 celestia-appd start
