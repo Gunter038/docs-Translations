@@ -157,13 +157,13 @@ Abre otra ventana de terminal para comenzar a consultar la API. `celestia-node` 
 
 ### Balance
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+Ahora, vamos a consultar nuestro nodo por el saldo de su cuenta predeterminada (que es la cuenta asociada con la clave de `desarrollador` que generamos anteriormente):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+Debería generar el siguiente resultado:
 
 ```json
 {
@@ -172,19 +172,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+Esto te muestra el saldo de esa wallet.
 
-### Get Block Header
+### Obtener encabezado de bloque
 
-Now, let's get the block header information.
+Ahora, vamos a obtener la información de la cabecera del bloque.
 
-Here we will get the header from Block 1:
+Aquí obtendremos la cabecera del bloque 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+Deberá verse de la siguiente manera:
 
 ```json
 {
@@ -356,19 +356,19 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### Enviar una Transacción PFD
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+En este ejemplo, enviaremos una transacción de PayForData al endpoint `/submit_pfd` del nodo.
 
-Some things to consider:
+Algunas cosas a considerar:
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- PFD es un mensaje de PayForData.
+- El endpoint también toma valores de `namespace_id` y `data`.
+- El ID del espacio de nombres debe ser de 8 bytes.
+- Los datos están en bytes codificados por hexadecimal del mensaje raw.
+- `gas_limit` es el límite de gas a usar para la transacción
 
-We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+Utilizamos el siguiente `namespace_id` de `0000010000000100` y el valor `` de datos de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
 You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
 
