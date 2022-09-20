@@ -109,9 +109,9 @@ celestia light init
 
 ### Conectar a un Public Core Endpoint
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+Ahora ejecutemos el nodo Celestia Light con una conexión GRPC a un ejemplo de public Core Endpoint.
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
+> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
 
 ```sh
 celestia light start --core.grpc http://<ip-address>:9090
