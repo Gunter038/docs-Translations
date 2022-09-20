@@ -2,21 +2,21 @@
 sidebar_label: Compañeros de Módulo
 ---
 
-# Compañeros de Módulo
+# Becas Modulares
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Compañeros de Módulo es un programa diseñado para empoderar a los constructores modulares con los recursos adecuados para construir el futuro de redes de blockchain escalables y soberanas.
+Becas Modulares es un programa diseñado para empoderar a los constructores modulares con los recursos adecuados para construir el futuro de redes de blockchain escalables y soberanas.
 
-Durante el curso del programa de tres meses, los Compañeros de Módulo recibirán soporte de ingeniería mentorías, y una remuneración mensual de 3,000 $ para construir un proyecto de su elección. Después del programa, el continuo apoyo estará disponible para los Compañeros en forma de ayuda y subvenciones para la recaudación de fondos.
+Durante el curso del programa de tres meses, las Becas Modulares recibirán soporte de ingeniería, mentorías y una remuneración mensual de 3,000 $ para construir un proyecto de su elección. Después del programa, el soporte estará disponible permanentemente para los Becarios en forma de ayuda y subvenciones para la recaudación de fondos.
 
 Las solicitudes están actualmente cerradas. Revisa para más detalles sobre futuras cohortes.
 
-## Vista general
+## Visión general
 
 ### Hitos
 
-Cada mes, los Compañeros completarán un hito del proyecto, culminando en una presentación en una jornada de demostración.
+Cada mes, los Becarios completarán un hito del proyecto, culminando en una presentación en una jornada de demostración.
 
 - **Mes 1** - Aprendizaje y Exploración (empieza a construir cuando estés listo)
 
@@ -32,11 +32,11 @@ Cada mes, los Compañeros completarán un hito del proyecto, culminando en una p
 
 - **Mes 3** - Convierte el prototipo en un producto funcional
 
-  In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
+  En este mes, expandirás tu prototipo para construir un producto funcional que demostrarás y explicará con un escrito.
 
-  - *Milestone - demo, write up of product*
+  - *Hito - demo, redacción del producto*
 
-## Project ideas
+## Ideas de proyecto
 
 Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
 
