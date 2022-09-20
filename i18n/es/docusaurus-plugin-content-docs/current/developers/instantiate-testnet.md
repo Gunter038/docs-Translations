@@ -134,4 +134,4 @@ Puede comenzar a sincronizar su nodo ejecutando el siguiente comando:
 celestia-appd start
 ```
 
-Now you have a new Celestia Testnet to play around with!
+¡Ahora tienes una nueva Testnet de Celestia con la que jugar!
