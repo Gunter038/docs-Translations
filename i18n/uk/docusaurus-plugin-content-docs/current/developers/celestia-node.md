@@ -15,7 +15,7 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0
+git checkout tags/v0.3.0-rc2
 make install
 ```
 
@@ -23,6 +23,6 @@ make install
 
 ```console
 $ celestia version
-Semantic version: v0.3.0
-Commit: 00d80c423b2bfacec22a253ce6af3a534a1be3a7
+Semantic version: v0.3.0-rc2
+Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
