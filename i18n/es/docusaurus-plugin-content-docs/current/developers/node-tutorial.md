@@ -370,9 +370,9 @@ Algunas cosas a considerar:
 
 Utilizamos el siguiente `namespace_id` de `0000010000000100` y el valor `` de datos de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+Puedes generar tu propio `namespace_id` y tus valores de datos usando este útil Playground de Golang que creamos [aquí](https://go.dev/play/p/7ltvaj8lhRl).
 
-We run the following:
+Ejecuta las siguientes instrucciones:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -380,7 +380,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 60000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+Obtenemos la siguiente salida:
 
 ```json
 {
@@ -597,29 +597,29 @@ We get the following output:
 }
 ```
 
-If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
+Puedes observar en la salida anterior, que devuelve un `height` de `2452` que usaremos para el siguiente comando.
 
-#### Troubleshooting
+#### Solución de problemas
 
-If you encounter an error like:
+Si encuentras un error como:
 
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+Es posible que la cuenta desde la que estás intentando enviar un PayForData no tenga tokens de testnet todavía. Asegúrese de que el faucet de la testnet ha enviado a tu cuenta tokens y luego vuelve a intentarlo.
 
-### Get Namespaced Shares by Block Height
+### Consigue espacios de nombres compartidos por altura de bloque
 
-After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
+Después de enviar su transacción PFD, una vez realizada con éxito, el nodo devolverá la altura del bloque para la cual se incluyó la transacción PFD. Entonces puedes usar la altura del bloque y el ID del espacio de nombres con el que enviaste tu transacción PFD para que los mensajes compartidos te sean devueltos. En este ejemplo, la altura del bloque que obtuvimos era de 589 que usaremos para el siguiente comando.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+Obtenemos la siguiente salida:
 
 ```json
 {
@@ -630,4 +630,4 @@ Will generate the following output:
 }
 ```
 
-The output here is base64-encoded.
+La salida aquí es base64-codificada.
