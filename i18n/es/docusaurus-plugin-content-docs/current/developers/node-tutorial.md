@@ -1,50 +1,50 @@
 - - -
-sidebar_label : Node Tutorial
+sidebar_label : Tutorial de vídeo del nodo
 - - -
 
-# Getting and Sending Transactions with Celestia Node
+# Obtener y enviar transacciones con Celestia Node
 <!-- markdownlint-disable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+En este tutorial cubriremos cómo utilizar la API del nodo Celestia para enviar y recuperar mensajes de la Capa de Disponibilidad de Datos por tu espacio de nombres ID.
 
-This tutorial was assumes you are working in a Linux environment.
+Este tutorial asumió que está trabajando en un entorno Linux.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> Para ver un video tutorial para configurar un nodo Light Celestia, haz clic [aquí](./light-node-video.md)
 
-## Hardware Requirements
+## Requisitos de hardware
 
-The following minimum hardware requirements are recommended for running a light node:
+Se recomiendan los siguientes requisitos mínimos de hardware para ejecutar un light node:
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- Memoria: 2 GB RAM
+- CPU: Núcleo único
+- Disco: 5 GB de almacenamiento SSD
+- Ancho de banda: 56 Gbps descarga/56 Mbps subida
 
-## Setting Up Dependencies
+## Actualizando las dependencias
 
-First, make sure to update and upgrade the OS:
+Primero, asegúrate de actualizar el sistema operativo:
 
 ```sh
-# If you are using the APT package manager
+# Si estás usando el gestor de paquetes APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Si estás usando el gestor de paquetes YUM
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Estos son paquetes esenciales que son necesarios para ejecutar muchas tareas como descargar archivos, compilar y monitorear el nodo:
 
 ```sh
-# If you are using the APT package manager
+# Si estás usando el gestor de paquetes APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Si estás usando el gestor de paquetes YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 
-### Install Golang
+### Instalando Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app y celestia-node están escritos en [Golang](https://go.dev/) por lo que debemos instalar Golang para compilarlos y ejecutarlos.
 
 ```sh
 ver="1.18.2"
@@ -55,30 +55,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Ahora necesitamos añadir el directorio `/usr/local/go/bin` a `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Para comprobar si Go fue instalado correctamente:
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+El resultado debe ser la versión instalada:
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Nodo Celestia
 
-### Install Celestia Node
+### Instalar el nodo Celestia
 
-Install the celestia-node binary by running the following commands:
+Instala el binario celestia-node ejecutando los siguientes comandos:
 
 ```sh
 cd $HOME
@@ -89,7 +89,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Verifica que el binario está funcionando y comprueba la versión con el comando de versión celestia:
 
 ```sh
 $ celestia version
@@ -97,17 +97,17 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-### Instantiate Celestia Light Node
+### Instanciar Nodo Celestia Light
 
-Now, let's instantiate a Celestia Light node:
+Ahora, instanciemos un nodo Celestia Light:
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> Nota: los Endpoints RPC están expuestos en todos los tipos de nodos Celestia como los  Light, Bridge y Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### Conectar a un Public Core Endpoint
 
 Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
 
