@@ -1,6 +1,6 @@
 {
   "theme.ErrorPageContent.title": {
-    "message": "Ha ocurrido un error en la página.",
+    "message": "Ha ocurrido un error con la página.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
@@ -140,155 +140,155 @@
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "Ocultar la barra lateral",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Toggle the collapsible sidebar category '{label}'",
+    "message": "Cambiar la categoría de barra lateral plegable '{label}'",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "Un documento etiquetado|{count} documentos etiquetados",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "{nDocsTagged} con \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
     "message": "Version: {versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "message": "Esta es una documentación no publicada para el sitio {siteTitle} y la versión {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "message": "Esta es la documentación para {siteTitle} {versionLabel}, que ya no está siendo mantenida activamente.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "message": "Para obtener la última documentación actualizada, consulta {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "latest version",
+    "message": "ultima versión",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Edit this page",
+    "message": "Edita esta página",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Direct link to heading",
+    "message": "Enlace directo al encabezado",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " on {date}",
+    "message": " el {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " by {user}",
+    "message": " por {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Last updated{atDate}{byUser}",
+    "message": "Última actualización{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← Volver al menú principal",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Versiones",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "Saltar al contenido principal",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "En esta página",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags:",
+    "message": "Etiquetas:",
     "description": "The label alongside a tag list"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "Idiomas",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "Etiquetas",
     "description": "The title of the tag list page"
   },
   "Build Modular": {
-    "message": "Build Modular"
+    "message": "Construir módulo"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
-    "message": "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract."
+    "message": "Celestia es la primera red Modular Blockchain que permite a los desarrolladores desplegar su propia blockchain tan fácil como desplegar un nuevo smart contract."
   },
   "Run Different Nodes": {
-    "message": "Run Different Nodes"
+    "message": "Ejecutar diferentes nodos"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
-    "message": "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network."
+    "message": "Celestia te permite ejecutar un nodo validador, un nodo bridge o un cliente ligero para poder soportar la red."
   },
   "Power-up with Data Availability Layer": {
-    "message": "Power-up with Data Availability Layer"
+    "message": "Potenciar con la capa de disponibilidad de datos"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
-    "message": "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need."
+    "message": "Celestia introduce lo que se denomina Capa de Disponibilidad de Datos para permitir una escala eficiente y permitir a los Rollups de L2 hacer muestreo de datos para las transacciones que necesitan."
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "Página de inicio",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "Migas de pan",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "Alternar ajuste de palabras",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
+    "message": "Mostrar los {count} resultados"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "Buscar",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
+    "message": "Un documento encontrado|{count} documentos encontrados",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
+    "message": "Resultados de búsqueda para \"{query}\"",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
+    "message": "Buscar en la documentación",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Type your search here",
+    "message": "Escribe tu búsqueda aquí",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "Search",
+    "message": "Buscar",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "Search by Algolia",
+    "message": "Búsqueda por Algolia",
     "description": "The ARIA label for Algolia mention"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "No results were found",
+    "message": "No se han encontrado resultados",
     "description": "The paragraph for empty search result"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "Fetching new results...",
+    "message": "Obteniendo nuevos resultados...",
     "description": "The paragraph for fetching new search results"
   }
 }
