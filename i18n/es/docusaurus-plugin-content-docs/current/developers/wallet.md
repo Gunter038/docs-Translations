@@ -12,29 +12,29 @@ Primero, crea un archivo de configuración CLI de la aplicación:
 celestia-appd config keyring-backend test
 ```
 
-You can pick whatever wallet name you want. For our example we used "validator" as the wallet name:
+Puedes elegir el nombre de la wallet que desees. Para nuestro ejemplo usamos "validator" como nombre de la wallet:
 
 ```sh
 celestia-appd keys add validator
 ```
 
-Save the mnemonic output as this is the only way to recover your validator wallet in case you lose it!
+Guarda la salida de mnemonic ya que esta es la única manera de recuperar tu wallet de validadores en caso de que la pierdas!
 
-To check all your wallets you can run:
+Para comprobar todas tus wallets puedes ejecutar:
 
 ```sh
 celestia-appd keys list
 ```
 
-## Fund a Wallet
+## Deposita fondos en la wallet
 
-For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #faucet channel:
+Para la dirección pública de celestia, puedes financiar la wallet previamente creada a través de [Discord](https://discord.gg/celestiacommunity) enviando este mensaje al canal #faucet:
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Wait to see if you get a confirmation that the tokens have been successfully sent. To check if tokens have arrived successfully to the destination wallet run the command below replacing the public address with your own:
+Espera a ver si obtienes una confirmación de que los tokens han sido enviados con éxito. Para comprobar si los tokens han llegado con éxito a la wallet de destino, ejecute el comando de abajo reemplazando la dirección pública por la tuya propia:
 
 ```sh
 celestia-appd start
