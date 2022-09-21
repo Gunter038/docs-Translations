@@ -2,12 +2,12 @@
 sidebar_label: Keeper
 ---
 
-# Keeper Functions
+# Funciones de Keeper
 <!-- markdownlint-disable MD013 -->
 
-Now it’s time to implement the Keeper functions for each message. From the Cosmos-SDK docs, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) is defined as the following:
+Ahora es el momento de implementar las funciones de Keeper para cada mensaje. De los documentos Cosmos-SDK, [Keeper](https://docs. cosmos. network/master/building-modules/keeper. html) se define como lo siguiente:
 
-> The main core of a Cosmos SDK module is a piece called the keeper. The keeper handles interactions with the store, has references to other keepers for cross-module interactions, and contains most of the core functionality of a module.
+> El núcleo principal de un módulo Cosmos SDK es una pieza llamada keeper. The keeper handles interactions with the store, has references to other keepers for cross-module interactions, and contains most of the core functionality of a module.
 
 Keeper is an abstraction on Cosmos that allows us to interact with the Key-Value store and change the state of the blockchain.
 
