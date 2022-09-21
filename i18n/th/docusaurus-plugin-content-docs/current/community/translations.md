@@ -1,36 +1,36 @@
 - - -
-sidebar_label : Docs Translations
+การแปลเอกสาร
 - - -
 
-# Community Translation Support
+# การสนับสนุนการแปลโดยชุมชน
 
-If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
+หากคุณเป็นสมาชิกชุมชน Celestia ที่มีความกระตือรือร้นและต้องการมีส่วนร่วมในการแปลหน้าเอกสาร นี่คือคำแนะนำสำหรับคุณ
 
-## Visit our Crowdin project
+## เยี่ยมชมโครงการ Crowdin ของเรา
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+ในการเริ่มต้น ไปที่โครงการ Crowdin ที่นี่
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+คุณจะต้องสร้างบัญชี จากนั้นคุณจะสามารถเข้าร่วมโครงการเพื่อเริ่มต้นการแปลของคุณ
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+หากคุณไม่เห็นภาษาของคุณ โปรดสอบถามในช่อง #translations บน Discord ที่นี่
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+ใน Crowdin คุณสามารถแปล แสดงความคิดเห็นเกี่ยวกับการแปล และยังให้การโหวตเห็นด้วยและไม่เห็นด้วยในการแปลที่มีอยู่
 
-Give your opinion on existing translations to ensure it is correct!
+แสดงความคิดเห็นของคุณเกี่ยวกับการแปลที่มีอยู่เพื่อให้แน่ใจว่าถูกต้อง!
 
-## Tips
+## เคล็ดลับ
 
-Here are few tips to help you during your translation.
+ต่อไปนี้คือเคล็ดลับเล็กๆ น้อยๆ ที่จะช่วยคุณในระหว่างการแปล
 
-### Crowdin documentation
+### เอกสาร Crowdin
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+เอกสารประกอบอย่างเป็นทางการของ Crowdin
 
-### Guide
+### คำแนะนำ
 
-#### Code
+#### โค้ด
 
-Some pages contain metadata and computer code.
+บางหน้ามีข้อมูลและรหัสคอมพิวเตอร์
 
 It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
 
