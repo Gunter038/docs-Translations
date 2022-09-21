@@ -30,29 +30,29 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Optimint flags added.
+此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个水龙头 和 API接口。 你可以按CTRL-C确定退出程序 原因是我们将单独运行 `worded` 双进制标记添加了 Optimint 标记。
 
-You can start the chain with optimint configurations by running the following:
+您可以通过运行以下步骤优化配置启动区块链
 
 ```sh
 wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+请考虑以下方面：
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Mamaki testnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传输给拥有 Mamaki 测试网代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
 
-Also please consider:
+还需要注意：
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Mamaki Testnet for `da_height`. You can find the latest block number in the explorer [here](https://testnet.mintscan.io/celestia-testnet). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> 重要提示：此外，在上述命令中，您需要在 Mamaki 测试网中指定最新的 区块高度为 `da_height` 您可以在此浏览器 [中找到最新的区块编号 ](https://testnet.mintscan.io/celestia-testnet)。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [此](https://go.dev/play/p/7ltvaj8lhRl) 测试版生成一个随机的 Namespace ID 。
 
-In another window, run the following to submit a Wordle:
+在另一个窗口中，运行以下指令来提交Wordle：
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
 
 这将要求你确认交易，并发出以下信息。
 
