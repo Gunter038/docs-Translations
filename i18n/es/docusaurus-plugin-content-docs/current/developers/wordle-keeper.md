@@ -7,19 +7,19 @@ sidebar_label: Keeper
 
 Ahora es el momento de implementar las funciones de Keeper para cada mensaje. De los documentos Cosmos-SDK, [Keeper](https://docs. cosmos. network/master/building-modules/keeper. html) se define como lo siguiente:
 
-> El núcleo principal de un módulo Cosmos SDK es una pieza llamada keeper. The keeper handles interactions with the store, has references to other keepers for cross-module interactions, and contains most of the core functionality of a module.
+> El núcleo principal de un módulo Cosmos SDK es una pieza llamada keeper. Keeper maneja las interacciones con el almacenamiento, tiene referencias a otros mantenedores para interacciones entre módulos y contiene la mayoría de la funcionalidad principal de un módulo.
 
-Keeper is an abstraction on Cosmos that allows us to interact with the Key-Value store and change the state of the blockchain.
+Keeper es una abstracción en Cosmos que nos permite interactuar con el almacén Key-Value y cambiar el estado de la blockchain.
 
-Here, it will help us outline the logic for each message we create.
+Aquí, nos ayudará a esbozar la lógica de cada mensaje que creamos.
 
-## SubmitWordle Function
+## Función SubmitWordle
 
-We first start with the `SubmitWordle` function.
+Comenzamos primero con la función `SubmitWordle`.
 
-Open up the following file: `x/wordle/keeper/msg_server_submit_wordle.go`
+Abra el siguiente archivo: `x/wordle/keeper/msg_server_submit_wordle.go`
 
-Inside the following, add the following code, which we will go over in a bit:
+Dentro del siguiente bloque, añade el siguiente código, el cual pasaremos en un rato:
 
 ```go
 package keeper
@@ -36,39 +36,39 @@ import (
 )
 
 func (k msgServer) SubmitWordle(goCtx context.Context, msg *types.MsgSubmitWordle) (*types.MsgSubmitWordleResponse, error) {
-  ctx := sdk. UnwrapSDKContext(goCtx)
+  ctx := sdk.UnwrapSDKContext(goCtx)
   // Check to See the Wordle is 5 letters
   if len(msg.Word) != 5 {
-    return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "Wordle Must Be A 5 Letter Word")
+    return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Wordle Must Be A 5 Letter Word")
   }
   // Check to See Only Alphabets Are Passed for the Wordle
   if !(IsLetter(msg.Word)) {
-    return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "Wordle Must Only Consist Of Letters In The Alphabet")
+    return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Wordle Must Only Consist Of Letters In The Alphabet")
   }
 
   // Use Current Day to Create The Index of the Newly-Submitted Wordle of the Day
-  currentTime := time. Now().Local()
+  currentTime := time.Now().Local()
   var currentTimeBytes = []byte(currentTime.Format("2006-01-02"))
   var currentTimeHash = sha256.Sum256(currentTimeBytes)
-  var currentTimeHashString = hex. EncodeToString(currentTimeHash[:])
+  var currentTimeHashString = hex.EncodeToString(currentTimeHash[:])
   // Hash The Newly-Submitted Wordle of the Day
   var submittedSolutionHash = sha256.Sum256([]byte(msg.Word))
-  var submittedSolutionHashString = hex. EncodeToString(submittedSolutionHash[:])
+  var submittedSolutionHashString = hex.EncodeToString(submittedSolutionHash[:])
 
-  var wordle = types. Wordle{
+  var wordle = types.Wordle{
     Index:     currentTimeHashString,
     Word:      submittedSolutionHashString,
-    Submitter: msg. Creator,
+    Submitter: msg.Creator,
   }
 
   // Try to Get Wordle From KV Store Using Current Day as Key
   // This Helps ensure only one Wordle is submitted per day
-  _, isFound := k. GetWordle(ctx, currentTimeHashString)
+  _, isFound := k.GetWordle(ctx, currentTimeHashString)
   if isFound {
-    return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "Wordle of the Day is Already Submitted")
+    return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Wordle of the Day is Already Submitted")
   }
   // Write Wordle to KV Store
-  k. SetWordle(ctx, wordle)
+  k.SetWordle(ctx, wordle)
   return &types.MsgSubmitWordleResponse{}, nil
 }
 
@@ -82,18 +82,18 @@ func IsLetter(s string) bool {
 }
 ```
 
-Here in the `SubmitWordle` Keeper function, we are doing a few things:
+Aquí en la función Keeper de `SubmitWordle`, estamos haciendo algunas cosas:
 
-* We first ensure that a word submitted for Wordle of the Day is 5 letters long and only uses alphabets. That means no integers can be submitted in the string.
-* We then create a hash from the current day the moment the Wordle was submitted. We set this hash to the index of the Wordle type. This allows us to look up any guesses for this Wordle for subsequent guesses, which we will go over next.
-* We then check if the index for today’s date is currently empty or not. If it’s not empty, this means a Wordle has already been submitted. Remember, only one wordle can be submitted per day. Everyone else has to guess the submitted wordle.
-* We also have a helper function in there to check if a string only contains alphabet characters.
+* Primero nos aseguramos de que una palabra enviada para la palabra del día tenga 5 letras de largo y solo use alfabetos. Eso significa que ningún entero puede ser enviado en la cadena.
+* Entonces creamos un hash desde el día actual en el momento en que se envió la Wordle. Establecemos este hash al índice del tipo Wordle. Esta nos permite buscar cualquier suposición para esta Wordle, lo cual pasaremos a continuación.
+* Entonces verificamos si el índice para la fecha de hoy está vacío o no. Si no está vacío, esto significa que un Wordle ya ha sido enviado. Recuerda, solo se puede enviar una wordle por día. Todos los demás tienen que adivinar la palabra presentada.
+* También tenemos una función de ayuda ahí para comprobar si una cadena sólo contiene caracteres de alfabeto.
 
-## SubmitGuess Function
+## Función SubmitGuess
 
-The next Keeper function we will add is the following: `x/wordle/keeper/msg_server_submit_guess.go`
+La siguiente función de Keeper que añadiremos es la siguiente: `x/wordle/keeper/msg_server_submit_guess.go`
 
-Open that file and add the following code, which we will explain in a bit:
+Dentro del siguiente bloque, añade el siguiente código, el cual pasaremos en un rato:
 
 ```go
 package keeper
@@ -111,10 +111,10 @@ import (
 )
 
 func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess) (*types.MsgSubmitGuessResponse, error) {
-  ctx := sdk. UnwrapSDKContext(goCtx)
+  ctx := sdk.UnwrapSDKContext(goCtx)
   // Check Word is 5 Characters Long
   if len(msg.Word) != 5 {
-    return nil, sdkerrors.
+    return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Guess Must Be A 5 Letter Word!")
   Wrap(sdkerrors.ErrInvalidRequest, "Guess Must Be A 5 Letter Word!")
   }
 
@@ -148,7 +148,7 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
     if guess. Count == strconv. Itoa(6) {
       return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "You Have Guessed The Maximum Amount of Times for The Day! Try Again Tomorrow With A New Wordle.")
     }
-    currentCount, err := strconv. Try Again Tomorrow With A New Wordle.")
+    currentCount, err := strconv. Vuelva a intentarlo mañana con una nueva Wordle.")
     Atoi(guess.Count)
     if err != nil {
       panic(err)
@@ -185,20 +185,20 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 }
 ```
 
-In the above code, we are doing the following things:
+En el código anterior, estamos haciendo las siguientes cosas:
 
-* Here, we are doing initial checks again on the word to ensure it’s 5 characters and only alphabet characters are used, which can be refactored in the future or checked within the CLI commands.
-* We then get the Wordle of the Day by getting the hash string of the current day.
-* Next we create a hash string of current day and the Submitter. This allows us to create a Guess type with an index that uses the current day and the address of the submitter. This helps us when we face a new day and an address wants to guess the new wordle of the day. The index setup ensures they can continue guessing a new wordle every day up to the max of 6 tries per day.
-* We then check if that Guess type for the Submitter for today’s wordle did reach 6 counts. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state.
+* Aquí estamos volviendo a verificar la palabra para asegurarnos que son 5 caracteres y solo caracteres alfabéticos usados. que puede ser refactorizado en el futuro o comprobado dentro de los comandos CLI.
+* Entonces obtenemos la Wordle del día obteniendo la cadena hash de el día actual.
+* A continuación crearemos una cadena de hash del día actual y del remitente. Esto nos permite crear un tipo de Guess con un índice que utiliza el día actual y la dirección del envío. Esto nos ayuda cuando nos enfrentamos a un nuevo día y una dirección quiere adivinar la nueva palabra del día. La configuración del índice asegura que pueden continuar adivinando una nueva palabra cada día hasta el máximo de 6 intentos por día.
+* Luego verificamos si ese tipo de adivinación para el Enviador de la palabra de hoy llegó a 6 cuentas. Si no lo ha hecho, incrementamos el recuento. Entonces comprobamos si la conjetura es correcta. Almacenamos el tipo de adivinación con el recuento actualizado al estado.
 
-## Protobuf File
+## Archivo Protobuf
 
-  A few files need to be modified for this to work.
+  Para que esto funcione, es necesario modificar algunos archivos.
 
-The first is `proto/wordle/tx.proto`.
+El primero es `proto/wordle/tx.proto`.
 
-Inside this file, fill in the empty `MsgSubmitGuessResponse` with the following code:
+Dentro de este archivo, rellena el vacío `MsgSubmitGuessResponse` con el siguiente código:
 
 ```go
 message MsgSubmitGuessResponse {
@@ -207,14 +207,14 @@ message MsgSubmitGuessResponse {
 }
 ```
 
-Next file is `x/wordle/types/expected_keepers.go`
+El siguiente archivo es `x/wordle/types/expected_keepers.go`
 
-Here, we need to add the SendCoins method to the BankKeeper interface in order to allow sending the reward to the right guesser.
+Aquí tenemos que añadir el método SendCoins a la interfaz de BankKeeper para poder enviar la recompensa al cliente correcto.
 
 ```go
 type BankKeeper interface {
-  SendCoins(ctx sdk. Context, fromAddr sdk. AccAddress, toAddr sdk. AccAddress, amt sdk. Coins) error
+  SendCoins(ctx sdk.Context, fromAddr sdk.AccAddress, toAddr sdk.AccAddress, amt sdk.Coins) error
 }
 ```
 
-With that, we implemented all our Keeper functions! Time to compile the blockchain and take it out for a test drive.
+¡Con eso, implementamos todas nuestras funciones de Keeper! Tiempo para compilar la blockchain y sacarla para una unidad de prueba.
