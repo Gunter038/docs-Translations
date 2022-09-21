@@ -1,9 +1,9 @@
-# Reserved Namespace IDs
+# IDs Reservados de Espacio de Nombres
 
-This is a table of reserved namespace IDs on the Celestia Network.
+Esta es una tabla de IDs reservados de espacio de nombres en la Red Celestia.
 
 <!-- markdownlint-disable MD013 -->
-| name                                    | type          | value                | description                                                                                |
+| Nombre                                  | Tipo          | Valor                | Descripción                                                                                |
 | --------------------------------------- | ------------- | -------------------- | ------------------------------------------------------------------------------------------ |
 | `TRANSACTION_NAMESPACE_ID`              | `NamespaceID` | `0x0000000000000001` | Transactions: requests that modify the state.                                              |
 | `INTERMEDIATE_STATE_ROOT_NAMESPACE_ID`  | `NamespaceID` | `0x0000000000000002` | Intermediate state roots, committed after every transaction.                               |
