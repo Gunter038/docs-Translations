@@ -38,7 +38,7 @@ Cada mes, los Becarios completarán un hito del proyecto, culminando en una pres
 
 ## Ideas de proyecto
 
-Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
+Los becarios no necesitan tener una idea específica de proyecto al comienzo del programa, pero necesitarás establecerte en uno a finales del primer mes. No hay ideas correctas o incorrectas, pero aquí hay algunas para hacerte pensar:
 
 - New execution layers, e.g. a Move rollup
 - Rollup infrastructure services, e.g. one click deploy rollup sequencers
