@@ -1,87 +1,85 @@
 - - -
-sidebar_label : Code of Conduct
+หลักจรรยาบรรณ
 - - -
 
 # หลักจรรยาบรรณของ Celestia.org
 
-## Our Pledge
+## คำมั่นสัญญาของเรา
 
-We as Celestia.org members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+เราในฐานะสมาชิก Celestia.org ผู้นำและผู้มีส่วนร่วมทุกคนให้คำมั่นที่จะให้การมีส่วนร่วมในชุมชนของเราเป็นประสบการณ์ที่ปราศจากการล่วงละเมิดสำหรับทุกคน โดยไม่คำนึงถึงอายุ ขนาดร่างกาย ความพิการที่มองเห็นได้หรือมองไม่เห็น ชาติพันธุ์ ลักษณะทางเพศ อัตลักษณ์ทางเพศและการแสดงออก ระดับของ ประสบการณ์ การศึกษา สถานะทางเศรษฐกิจและสังคม สัญชาติ รูปลักษณ์ภายนอก เชื้อชาติ วรรณะ สีผิว ศาสนา หรืออัตลักษณ์และรสนิยมทางเพศ
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+เราให้คำมั่นที่จะดำเนินการและตอบสนองในการเอื้อต่อชุมชนที่เปิดกว้าง ต้อนรับให้หลากหลาย ครอบคลุม และเป็นมิตรกับทุกคน
 
-## Our Standards
+## มาตรฐานของเรา
 
-Examples of behavior that contributes to a positive environment for our community include:
+ตัวอย่างของพฤติกรรมที่ก่อให้เกิดสภาพแวดล้อมเชิงบวกสำหรับชุมชนของเรา ได้แก่:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+* การแสดงความเห็นอกเห็นใจและความเมตตาต่อผู้อื่น
+* เคารพในความคิดเห็น มุมมอง และประสบการณ์ที่แตกต่างกัน
+* ให้แนะนำและยอมรับข้อเสนอแนะที่สร้างสรรค์
+* รับผิดชอบและขอโทษผู้ที่ได้รับผลกระทบจากความผิดพลาดของเราและเรียนรู้จากประสบการณ์
+* มุ่งเน้นสิ่งที่ดีที่สุดไม่เพียงสำหรับตนเองเท่านั้น แต่สำหรับชุมชนโดยรวม
 
-Examples of unacceptable behavior include:
+ตัวอย่างของพฤติกรรมที่ยอมรับไม่ได้ ได้แก่:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+* การใช้ภาษาหรือภาพที่เกี่ยวกับเรื่องเพศ และความสนใจทางเพศหรือสิ่งล่อแหลมใดๆ
+* การล้อเลียน ดูถูก หรือแสดงความคิดเห็นที่เสื่อมเสีย และการโจมตีส่วนบุคคลหรือทางการเมือง
+* การล่วงละเมิดในที่สาธารณะหรือส่วนตัว
+* เผยแพร่ข้อมูลส่วนตัวของผู้อื่น เช่น ที่อยู่จริงหรืออีเมล โดยไม่ได้รับอนุญาต
+* ความประพฤติอื่น ๆ ที่สมควรได้รับการพิจารณาว่าไม่เหมาะสม
 
-## Enforcement Responsibilities
+## การบังคับใช้หลักจรรยาบรรณ
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+ผู้นำชุมชนมีหน้าที่รับผิดชอบในการชี้แจงและบังคับใช้มาตรฐานพฤติกรรมที่ยอมรับได้ของเรา และจะดำเนินการแก้ไขอย่างเหมาะสมและยุติธรรมเพื่อตอบสนองต่อพฤติกรรมที่พวกเขาเห็นว่าไม่เหมาะสม คุกคาม ก้าวร้าว หรือเป็นอันตราย
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+ผู้นำชุมชนมีสิทธิและความรับผิดชอบในการลบ แก้ไข หรือปฏิเสธความคิดเห็น การกระทำ รหัส การแก้ไขวิกิ ปัญหา และการมีส่วนร่วมอื่นๆ ที่ไม่สอดคล้องกับหลักจรรยาบรรณนี้ และจะแจ้งเหตุผลสำหรับการตัดสินใจกลั่นกรองตามความเหมาะสม
 
-## Scope
+## ขอบเขต
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+จรรยาบรรณนี้มีผลบังคับใช้ในทุกพื้นที่ของชุมชน และยังใช้เมื่อ บุคคลเป็นตัวแทนชุมชนอย่างเป็นทางการในที่สาธารณะ ตัวอย่างของการเป็นตัวแทนของชุมชนของเรา ได้แก่ การใช้ที่อยู่อีเมลอย่างเป็นทางการ โพสต์ผ่านบัญชีโซเชียลมีเดียอย่างเป็นทางการ หรือทำหน้าที่ตามที่ได้รับการแต่งตั้ง ตัวแทนในงานออนไลน์หรือออฟไลน์
 
-## Enforcement
+## การบังคับใช้
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+กรณีที่เป็นการล่วงละเมิด หรือพฤติกรรมอื่นๆ ที่ยอมรับไม่ได้จะถูก รายงานต่อผู้นำชุมชนที่รับผิดชอบในการบังคับใช้ที่ Celestia.org Discord ข้อร้องเรียนทั้งหมดจะได้รับการตรวจสอบและสอบสวนอย่างทันท่วงทีและเป็นธรรม
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+ผู้นำชุมชนทุกคนมีหน้าที่เคารพความเป็นส่วนตัวและความปลอดภัยของ ผู้แจ้งรายงาน
 
-## Enforcement Guidelines
+## แนวปฏิบัติในการบังคับใช้
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+ผู้นำชุมชนจะปฏิบัติตามแนวทางปฏิบัติเกี่ยวกับผลกระทบต่อชุมชนเหล่านี้ในการพิจารณาผลที่ตามมาสำหรับการกระทำใดๆ ที่พวกเขาเห็นว่าเป็นการละเมิดหลักจรรยาบรรณนี้:
 
-### 1. Correction
+### 1. การแก้ไข
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+ผลกระทบต่อชุมชน: การใช้ภาษาที่ไม่เหมาะสมหรือพฤติกรรมอื่นๆ ที่ถือว่าไม่เป็นมืออาชีพหรือไม่เป็นที่พอใจในชุมชน
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+ผลที่ตามมา: คำเตือนเป็นลายลักษณ์อักษรจากผู้นำชุมชนเป็นการส่วนตัว โดยให้ความกระจ่างเกี่ยวกับธรรมชาติของการละเมิดและคำอธิบายว่าเหตุใดพฤติกรรมจึงไม่เหมาะสม อาจมีการให้ออกมาขอโทษในที่สาธารณะ
 
-### 2. Warning
+### 2. การเตือน
 
-**Community Impact**: A violation through a single incident or series of actions.
+ผลกระทบต่อชุมชน: การทำผิดครั้งเดียวหรือการกระทำต่อเนื่องกัน
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+ผลที่ตามมา: คำเตือนจากการทำผิดต่อเนื่อง ไม่มีการตอบกับบุคคลที่เกี่ยวข้อง รวมถึงการโต้ตอบที่ไม่พึงประสงค์กับผู้ที่บังคับใช้หลักจรรยาบรรณในช่วงเวลาที่กำหนด ซึ่งรวมถึงการหลีกเลี่ยงการมีปฏิสัมพันธ์ในพื้นที่ชุมชนตลอดจนช่องทางภายนอก เช่น โซเชียลมีเดีย การละเมิดข้อกำหนดเหล่านี้อาจนำไปสู่การแบนชั่วคราวหรือถาวร
 
-### 3. Temporary Ban
+### 3. การแบนชั่วคราว
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+ผลกระทบต่อชุมชน: การละเมิดมาตรฐานชุมชนอย่างร้ายแรง รวมถึงพฤติกรรมที่ไม่เหมาะสมอย่างต่อเนื่อง
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+ผลที่ตามมา: การห้ามชั่วคราวจากการโต้ตอบหรือการสื่อสารสาธารณะใดๆ กับชุมชนในช่วงเวลาที่กำหนด ไม่อนุญาตให้พูดคุยตอบโต้ทางสาธารณะหรือส่วนตัวกับบุคคลที่เกี่ยวข้อง รวมถึงการโต้ตอบที่ไม่พึงประสงค์กับผู้ที่บังคับใช้หลักจรรยาบรรณในช่วงเวลานี้ การละเมิดข้อกำหนดเหล่านี้อาจนำไปสู่การแบนถาวร
 
-### 4. Permanent Ban
+### 4. การแบนถาวร
 
 **Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+ผลที่ตามมา: การแบนถาวรจากการมีปฏิสัมพันธ์สาธารณะใดๆ ภายในชุมชน
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+จรรยาบรรณนี้ดัดแปลงจาก Contributor Covenant เวอร์ชัน 2.1 ดูได้ที่ https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 
 Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
 
 For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
 
-[homepage]: https://www.contributor-covenant.org
-[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
