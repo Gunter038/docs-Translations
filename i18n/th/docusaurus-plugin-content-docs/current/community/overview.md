@@ -1,5 +1,5 @@
 - - -
-ภาพรวม
+sidebar_label : Overview
 - - -
 
 # ภาพรวมชุมชน
