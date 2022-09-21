@@ -175,8 +175,8 @@ Puedes extender el código base y mejorar este tutorial revisando el repositorio
 Hay muchas maneras en que esta base de código se puede ampliar:
 
 1. Puedes mejorar los mensajes cuando adivinas la palabra correcta.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+2. PuedeS hacer hash de la palabra antes de enviarla a la cadena, asegúrate de que el hashing sea local para que no sea revelado a través de front-running por otros que supervisan la cadena de texto plano cuando se envía en cadena.
+3. Puedes mejorar la interfaz de usuario en la terminal usando una interfaz agradable para Wordle. Algunos ejemplos son [aquí](https://github.com/nimblebun/wordle-cli).
+4. Puedes mejorar la fecha actual para vincularse a una zona horaria específica.
+5. Puedes crear un bot que envíe una palabra todos los días a un momento determinado.
+6. Puedes crear un front-end vue.js con Ignite usando repositorios de código abierto [aquí](https://github.com/yyx990803/vue-wordle) y [aquí](https://github.com/xudafeng/wordle).
