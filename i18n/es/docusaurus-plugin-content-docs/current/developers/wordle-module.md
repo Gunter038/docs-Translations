@@ -8,22 +8,22 @@ Para el módulo Wordle, podemos añadir dependencias ofrecidas por Cosmos-SDK.
 
 De los documentos Cosmos-SDK, un [módulo](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules) se define como lo siguiente:
 
-> In a Cosmos SDK blockchain, application-specific logic is implemented in separate modules. Modules keep code easy to understand and reuse. Each module contains its own message and transaction processor, while the Cosmos SDK is responsible for routing each message to its respective module.
+> En una blockchain de Cosmos SDK, la lógica específica de la aplicación se implementa en módulos separados. Los módulos mantienen el código fácil de entender y reutilizar. Cada módulo contiene su propio mensaje y procesador de transacciones, mientras que el SDK de Cosmos es responsable de enrutar cada mensaje a su módulo correspondiente.
 
-Many modules exist for slashing, validating, auth.
+Existen muchos módulos para particionar, validar, autenticar.
 
-## Scaffolding A Module
+## Andamiaje (Scaffolding) de un Módulo
 
-We will be using the `bank` module dependency for transactions.
+Utilizaremos la dependencia del módulo `bank` para las transacciones.
 
-From the Cosmos-SDK docs, the [`bank`](https://docs.cosmos.network/master/modules/bank/) module is defined as the following:
+De los documentos Cosmos-SDK, un módulo [`bank`](https://docs.cosmos.network/master/modules/bank/) se define como lo siguiente:
 
-> The bank module is responsible for handling multi-asset coin transfers between accounts and tracking special-case pseudo-transfers which must work differently with particular kinds of accounts (notably delegating/undelegating for vesting accounts). It exposes several interfaces with varying capabilities for secure interaction with other modules which must alter user balances.
+> El módulo bank es responsable de manejar transferencias de monedas de múltiples activos entre cuentas y el seguimiento de pseudo-transferencias especiales que deben funcionar de forma diferente con tipos particulares de cuentas (principalmente delegando/deseleccionando para cuentas de inversión). Expone varias interfaces con capacidades variables para una interacción segura con otros módulos que deben modificar el balance del usuario.
 
-We build the module with the `bank` dependency with the following command:
+Construiremos el módulo con la dependencia del `bank` con el siguiente comando:
 
 ```sh
 ignite scaffold module wordle --dep bank
 ```
 
-This will scaffold the Wordle module to our Wordle Chain project.
+Esto creará el andamiaje (scaffold) del módulo de Wordle a nuestro proyecto Wordle Chain.
