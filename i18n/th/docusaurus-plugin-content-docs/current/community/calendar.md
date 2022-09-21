@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Community Calendar
+ตารางงานกิจกรรมของชุมชน
 - - -
 
-# Community Calendar
+# ตารางงานกิจกรรมของชุมชน
 
-The Celestia Community Calendar is available for finding all the different community call events happening in Celestia's community.
+ตารางงานกิจกรรมของ Celestia พร้อมให้ค้นหากิจกรรมการจัดกิจกรรมของชุมชนต่างๆ ที่เกิดขึ้นในชุมชนของ Celestia
 
-You can add the Community Calendar to your personal calendar [here](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+คุณสามารถเพิ่มกิจกรรมของคอมมูในตารางส่วนตัวของคุณได้ ที่นี่
