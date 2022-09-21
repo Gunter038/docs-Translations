@@ -1,8 +1,8 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: โครงการ Modular Fellows
 ---
 
-# Modular Fellows
+# โครงการ Modular Fellows
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
@@ -16,84 +16,84 @@ Modular Fellows เป็นโปรแกรมที่ออกแบบม�
 
 ### เหตุการณ์สำคัญ
 
-Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
+ในแต่ละเดือน Fellows จะเสร็จสิ้นขั้นตอนสำคัญของโครงการโดยจะมีการนำเสนอในวันสาธิต
 
-- **Month 1** - Learning and Exploring (start building whenever you’re ready)
+- เดือนที่ 1 - การเรียนรู้และสำรวจ (เริ่มสร้างเมื่อใดก็ตามที่คุณพร้อม)
 
-  In this month, you will immerse yourself in modular blockchains to come up with ideas of protocols, tools or applications to build during the rest of the program.
+  ในเดือนนี้ คุณจะได้ดื่มด่ำกับบล็อคเชนแบบแยกส่วนเพื่อคิดไอเดียเกี่ยวกับโปรโตคอล เครื่องมือ หรือแอปพลิเคชันที่จะสร้างในช่วงที่เหลือของโปรแกรม
 
-  - *Milestone - present an idea that you want to pursue*
+  - *Milestone - นำเสนอแนวคิดที่คุณต้องการติดตาม*
 
-- **Month 2** - Designing & Implementing a Basic Prototype
+- เดือนที่ 2 - การออกแบบและการใช้งานพื้นฐานต้นแบบ
 
-  In this month, you will design and implement a basic prototype of the idea that you settled on during the first month.
+  ในเดือนนี้ คุณจะออกแบบและใช้งานต้นแบบพื้นฐานของแนวคิดที่คุณสนใจในช่วงเดือนแรก
 
-  - *Milestone - present the prototype for feedback*
+  - *Milestone - นำเสนอต้นแบบเพื่อรับคำติชม*
 
-- **Month 3** - Build out the Prototype into a Functional Product
+- เดือนที่ 3 - สร้างต้นแบบให้เป็นผลิตภัณฑ์ที่ใช้งานได้จริง
 
-  In this month, you will expand on your prototype to build a functional product which you will demo and explain with a write up.
+  ในเดือนนี้ คุณจะขยายต้นแบบของคุณเพื่อสร้างผลิตภัณฑ์ที่ใช้งานได้ ซึ่งคุณจะสาธิตและอธิบายด้วยการเขียน
 
-  - *Milestone - demo, write up of product*
+  - *Milestones - สาธิต เขียนถึงผลิตภัณฑ์*
 
-## Project ideas
+## แนวคิดโครงการ
 
-Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
+Fellows ไม่จำเป็นต้องมีแนวคิดโครงการเฉพาะในช่วงเริ่มต้นของโปรแกรม แต่คุณจะต้องตกลงกันภายในสิ้นเดือนแรก ไม่มีแนวคิดที่ถูกหรือผิด แต่ต่อไปนี้คือแนวคิดบางส่วนที่จะช่วยให้ชี้นำคุณ:
 
-- New execution layers, e.g. a Move rollup
-- Rollup infrastructure services, e.g. one click deploy rollup sequencers
-- Modular interoperability solutions, e.g. settlement layers or bridges
-- Modular versions of the following
-  - Popular DeFi apps e.g. AMMs & lending protocols
-  - NFT platforms
-  - Naming services like [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Social graphs like [Lens Protocol](https://lens.xyz/)
+- เลเยอร์การดำเนินการใหม่ เช่น Move rollup
+- Rollup infrastructure services เช่น คลิกเดียวปรับใช้โรลอัพซีเควนเซอร์
+- โซลูชันการทำงานร่วมกันแบบโมดูลาร์ เช่น settlement layers หรือ bridges
+- โมดูลาร์เวอร์ชั่นต่อไปนี้
+  - แอพ DeFi ยอดนิยมเช่น AMM และโปรโตคอลการให้ยืม
+  - แพลตฟอร์ม NFT
+  - บริการตั้งชื่อเช่น ENS
+  - กราฟโซเชียลเช่น Lens Protocol
 
-## Support
+## การสนับสนุน
 
-1. **Weekly office hours**
+1. **เวลาทำการรายสัปดาห์**
 
-    *An optional meeting to ask questions, get help and receive feedback.*
+    *การประชุมในช่องทางต่างๆ เพื่อถามคำถาม รับความช่วยเหลือ และรับคำติชม*
 
-    Wednesdays alternating at 8:00am or 6:00pm Central US time.
+    วันพุธสลับเวลากัน 8.00 น. หรือ 18.00 น. ตามเวลาอเมริกากลางของสหรัฐฯ
 
-2. **Lessons & tutorials**
+2. **บทเรียนและแบบฝึกหัด**
 
-    *Presentations from Celestia Labs team members & mentors explaining key concepts or giving tutorials on specific tools.*
+    *การนำเสนอจากสมาชิกในทีมและพี่เลี้ยงของ Celestia Labs ที่อธิบายแนวคิดหลักหรือให้คำแนะนำเกี่ยวกับเครื่องมือเฉพาะ*
 
-3. **Demos from participants**
+3. **การสาธิตจากผู้เข้าร่วม**
 
-    *Presentations from fellows about what they are working on for feedback.*
+    *การนำเสนอจากเพื่อนๆ เกี่ยวกับสิ่งที่พวกเขากำลังทำเพื่อขอความคิดเห็น*
 
-4. **Communication**
+4. **การสื่อสาร**
 
-    *Fellows will share a Telegram group with other Modular Fellows and Modular Mentors.*
+    *Fellows จะแบ่งปันกลุ่ม Telegram กับ Modular Fellows และ Modular Mentors อื่น ๆ*
 
-5. **Monthly stipend**
+5. **ค่าตอบแทนรายเดือน**
 
-    *Fellows will receive $3,000.00 per month paid on completion of each milestone.*
+    *Fellows จะได้รับ $3,000.00 ต่อเดือนโดยชำระเมื่อเสร็จสิ้นแต่ละเป้าหมาย*
 
-## Continuation
+## ความต่อเนื่อง
 
-Though the program lasts only 3 months, we will provide you with continuing support in the following ways.
+แม้ว่าโปรแกรมจะใช้เวลาเพียง 3 เดือน แต่เราจะให้การสนับสนุนอย่างต่อเนื่องแก่คุณด้วยวิธีต่อไปนี้
 
-- **Grants & Funding -** We will assist you in fundraising or in applying for a grant so that you can continue building your project.
-- **Alumni Network** - You will be inducted into the Modular Fellows alumni network where where you can keep in touch with other past and future Modular Fellows.
+- Grants & Funding - เราจะช่วยคุณในการระดมทุนหรือในการสมัครขอรับทุนเพื่อให้คุณสามารถสร้างโครงการของคุณต่อไปได้
+- เครือข่ายศิษย์เก่า - คุณจะถูกแต่งตั้งให้เข้าสู่เครือข่ายศิษย์เก่า Modular Fellows ซึ่งคุณสามารถติดต่อกับ Modular Fellows ในอดีตและในอนาคตได้
 
-### Modular Mentors
+### Modular Mentors (ที่ปรึกษา)
 
-Modular Fellows will work closely with the Celestia Labs team and a group of hand-picked Modular Mentors who will help solve engineering problems and provide feedback on milestones.
+Modular Fellows จะทำงานอย่างใกล้ชิดกับทีม Celestia Labs และกลุ่มที่ปรึกษาแบบโมดูลาร์ที่คัดเลือกมาด้วยมือ ซึ่งจะช่วยแก้ปัญหาด้านวิศวกรรมและให้ข้อเสนอแนะเกี่ยวกับเหตุการณ์สำคัญ
 
-These are the Mentors for the first cohort:
+นี่คือพี่เลี้ยงสำหรับกลุ่มแรก:
 
-- [Wei Dai](https://twitter.com/_weidai) - Research partner at Bain Capital Crypto
-- [Can Gurel](https://twitter.com/CannnGurel) - Researcher at Delphi Digital
-- [Eric Wall](https://twitter.com/ercwl) - Blockchain Researcher
-- [Eli Krenzke](https://twitter.com/eKRENZKE) - Research Team Partner at Polychain
-- [Zaki Manian](https://twitter.com/zmanian) - Co-Founder of Sommelier, Co-Founder of iqlusion, helped build the Cosmos ecosystem, including launching the first public Cosmos testnet
-- [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk lead and founder of binary holdings works.
-- [Morgan Beller](https://twitter.com/beller) - General Partner at NFX, a seed-stage venture capital fund, prev. Head of Strategy for Facebook's Novi
-- [John Adler](https://twitter.com/jadler0) - CRO, Celestia Labs
-- [Mustafa Al-Bassam](https://twitter.com/musalbas) - CEO, Celestia Labs
-- [Ismail Khoffi](https://twitter.com/KreuzUQuer) - CTO, Celestia Labs
-- [Evan Forbes](https://twitter.com/evansforbes) - Software Engineer, Celestia Labs
+- Wei Dai - หุ้นส่วนการวิจัยที่ Bain Capital Crypto
+- Can Gurel - นักวิจัยจาก Delphi Digital
+- Eric Wall - นักวิจัยบล็อคเชน
+- Eli Krenzke - พันธมิตรทีมวิจัยที่ Polychain
+- Zaki Manian - ผู้ร่วมก่อตั้ง Sommelier ผู้ร่วมก่อตั้ง iqlusion ช่วยสร้างระบบนิเวศของ Cosmos รวมถึงการเปิดตัว Cosmos testnet สาธารณะแห่งแรก
+- Marko Baricevic - หัวหน้า Cosmos-sdk และผู้ก่อตั้งการถือครองไบนารี
+- Morgan Beller - หุ้นส่วนทั่วไปที่ NFX ซึ่งเป็นกองทุนร่วมลงทุนระยะเริ่มต้น ก่อนหน้า หัวหน้าฝ่ายกลยุทธ์สำหรับ Novi . ของ Facebook
+- จอห์น แอดเลอร์ - CRO, Celestia Labs
+- Mustafa Al-Bassam - CEO, Celestia Labs
+- Ismail Khoffi - CTO, Celestia Labs
+- Evan Forbes - วิศวกรซอฟต์แวร์ Celestia Labs
