@@ -6,15 +6,15 @@ sidebar_label: Modular Fellows
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows is a program designed to empower modular builders with the right resources to build the future of scalable and sovereign blockchain networks.
+Modular Fellows เป็นโปรแกรมที่ออกแบบมาเพื่อเสริมพลังให้ผู้สร้างโมดูลาร์ด้วยทรัพยากรที่เหมาะสม เพื่อสร้างอนาคตของเครือข่ายบล็อคเชนที่ยืดหยุ่นปรับขนาดได้และมีอำนาจสูงสุด
 
-Over the course of the three month program, Modular Fellows will receive engineering support, mentorship, and a monthly stipend of $3,000 to build a project of their choice. After the program, continuing support will be available for Fellows in the form of fundraising help and grants.
+ในช่วงโปรแกรมสามเดือน Modular Fellows จะได้รับการสนับสนุนด้านวิศวกรรม การให้คำปรึกษา และค่าตอบแทนรายเดือน $3,000 เพื่อสร้างโครงการที่พวกเขาเลือก หลังจากโปรแกรม การสนับสนุนอย่างต่อเนื่องจะมีให้สำหรับ Fellows ในรูปแบบของความช่วยเหลือและเงินช่วยเหลือในการระดมทุน
 
-Applications are currently closed. Check back for details about future cohorts.
+ในตอนนี้ปิดรับสมัครแล้ว อาจมีอัพเดทภายหลังลองกลับมาดูข้อมูลใหม่
 
-## Overview
+## ภาพรวม
 
-### Milestones
+### เหตุการณ์สำคัญ
 
 Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
 
