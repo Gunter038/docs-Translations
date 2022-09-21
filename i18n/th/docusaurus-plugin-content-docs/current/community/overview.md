@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Overview
+ภาพรวม
 - - -
 
-# Community Overview
+# ภาพรวมชุมชน
 
-This section will highlight all the different resources and activities for the Celestia Community.
+ส่วนนี้จะเน้นที่แหล่งข้อมูลและกิจกรรมต่างๆ สำหรับชุมชน Celestia
 
-Here you will find links to our community calendar, Code of Conduct and other community-related resources.
+คุณจะพบลิงก์ไปยังกิจกรรมชุมชน หลักจรรยาบรรณ และแหล่งข้อมูลอื่นๆ ที่เกี่ยวข้องกับชุมชนได้ที่นี่
