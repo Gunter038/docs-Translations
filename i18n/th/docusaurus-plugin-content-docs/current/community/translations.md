@@ -1,5 +1,5 @@
 - - -
-การแปลเอกสาร
+sidebar_label : Docs Translations
 - - -
 
 # การสนับสนุนการแปลโดยชุมชน
