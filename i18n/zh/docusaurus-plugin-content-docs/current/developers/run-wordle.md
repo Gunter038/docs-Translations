@@ -44,7 +44,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 还需要注意：
 
-> 重要提示：此外，在上述命令中，您需要在 Mamaki 测试网中指定最新的 区块高度为 `da_height` 您可以在此浏览器 [中找到最新的区块编号 ](https://testnet.mintscan.io/celestia-testnet)。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [此](https://go.dev/play/p/7ltvaj8lhRl) 测试版生成一个随机的 Namespace ID 。
+> 重要提示：此外，在上述命令中，您需要在 Mamaki 测试网中指定最新的 区块高度为 `da_height` 您可以在此浏览器 [中找到最新的区块编号 ](https://testnet.mintscan.io/celestia-testnet)。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
 
 在另一个窗口中，运行以下指令来提交Wordle：
 
@@ -144,41 +144,68 @@ wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --cha
 
 After confirming the transaction, query the `txhash` given the same way you did above. After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-Now try to submit another wordle even though one was already submitted
+现在尝试提交另一个Wordle，即使已有一个Wordle已经提交
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 您将会收到一个单词 已经提交白天的错误。
 
-Now let’s try to guess a five letter word:
+现在让我们来猜测一个五个字母的单词：
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
 
-We can verify this by querying the list:
+我们可以通过查询列表来验证：
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+这将输出到目前为止提交的所有猜测对象，索引 为今天的日期和提交者的地址。
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base. Read on to how you can extend the code base.
+我们用 COSMOS-SDK、Ignite 和 Optimint 执行了一个基本的Wordle示例。 阅读如何扩展 代码基础。
 
-## Extending in the Future
+## 未来的扩展
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+您可以通过检查 这里 <a> 的repository来扩展代码库并改进此教程。</p> 
 
-There are many ways this codebase can be extended:
+<p spaces-before="0">
+  这个代码库可以通过多种方式扩展：
+</p>
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli). Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+<ol start="1">
+  <li>
+    你可以改进周围的消息，当你猜到正确的单词时。
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
+    </p>
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      You can improve the UI in terminal using a nice interface for Wordle. Some examples are <a href="https://github.com/nimblebun/wordle-cli">here</a>. <a href="https://github.com/nimblebun/wordle-cli">这里</a>是一些示例。
+    </p>
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      You can improve current date to stick to a specific timezone.
+    </p>
+  </li>
+  
+  <li>
+    You can create a bot that submits a wordle every day at a specific time.
+  </li>
+  
+  <li>
+    You can create a vue.js front-end with Ignite using example open-source repositories <a href="https://github.com/yyx990803/vue-wordle">here</a> and <a href="https://github.com/xudafeng/wordle">here</a>.
+  </li>
+</ol>
