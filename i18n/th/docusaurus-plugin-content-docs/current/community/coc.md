@@ -1,5 +1,5 @@
 - - -
-กฏระเบียบและจรรยาบรรณ
+sidebar_label : Code of Conduct
 - - -
 
 # กฏระเบียบและจรรยาบรรณของ Celestia.org
