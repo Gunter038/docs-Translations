@@ -4,7 +4,7 @@ sidebar_label: Compañeros de Módulo
 
 # Becas Modulares
 
-![Modular Fellows](/img/modular_fellows.jpg)
+![Becas Modulares](/img/modular_fellows.jpg)
 
 Becas Modulares es un programa diseñado para empoderar a los constructores modulares con los recursos adecuados para construir el futuro de redes de blockchain escalables y soberanas.
 
@@ -46,8 +46,8 @@ Los becarios no necesitan tener una idea específica de proyecto al comienzo del
 - Versiones modulares de lo siguiente
   - Aplicaciones DeFi populares, p. ej., AMMs & protocolos de préstamo
   - Plataformas NFT
-  - Servicios de nombres como [ENS](https://etherscan. io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
-  - Gráficos sociales como [Lens Protocol](https://lens. xyz/)
+  - Servicios de nombres como [ENS](https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72#code)
+  - Gráficos sociales como [Lens Protocol](https://lens.xyz/)
 
 ## Soporte
 
