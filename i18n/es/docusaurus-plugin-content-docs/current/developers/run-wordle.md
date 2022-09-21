@@ -164,17 +164,17 @@ Podemos verificar esto consultando la lista:
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+Esto produce todos los objetos Guess enviados hasta ahora, siendo el índice la fecha de hoy y la dirección del envío.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base.
+Con eso, implementamos un ejemplo básico de Wordle usando Cosmos-SDK e Ignite y Optimint. Lee cómo puedes extender la base de código.
 
-## Extending in the Future
+## Ampliando en el Futuro
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+Puedes extender el código base y mejorar este tutorial revisando el repositorio [aquí](https://github.com/celestiaorg/wordle).
 
-There are many ways this codebase can be extended:
+Hay muchas maneras en que esta base de código se puede ampliar:
 
-1. You can improve messaging around when you guess the correct word.
+1. Puedes mejorar los mensajes cuando adivinas la palabra correcta.
 2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
 3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
 4. You can improve current date to stick to a specific timezone.
