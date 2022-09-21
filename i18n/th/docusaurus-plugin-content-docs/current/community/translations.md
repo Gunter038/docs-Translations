@@ -32,11 +32,11 @@
 
 บางหน้ามีข้อมูลและรหัสคอมพิวเตอร์
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+สิ่งสำคัญคือต้องจำไว้ว่าวิลเลียม เชคสเปียร์เป็นผู้พูดภาษาอังกฤษ...อลัน ทัวริงก็เช่นกัน! นั่นคือเหตุผลที่คุณไม่ควรแปลบางส่วนของรหัส "ตัวเอง"
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+ตัวอย่างเช่น หากคุณเห็นข้อมูลเมตา เช่น sidebar_label : Hello World การแปลภาษาฝรั่งเศสจะเป็น sidebar_label : Salut tout le monde
 
-Let's take another example, you wouldn't have to translate anything here:
+ลองดูอีกตัวอย่างหนึ่ง คุณไม่จำเป็นต้องแปลอะไรส่วนนี้:
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+นอกจากนี้ คุณไม่จำเป็นต้องแปล URL เป็นภาษาท้องถิ่นของคุณ
 
-#### Specific words
+#### คำเฉพาะ
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+ขณะที่คุณจะแปลแนวคิดนวัตกรรมใหม่ๆ เช่น Data Availability Sampling อย่าลังเลที่จะถามเกี่ยวกับคำแปลที่ดีที่สุดกับคนอื่นๆ ในชุมชน
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+นอกจากนี้ โปรดใช้ความระมัดระวังในการเรียงลำดับวันที่ ระยะเวลา และเครื่องหมายจุลภาคเกี่ยวกับตัวเลขจากภาษาหนึ่งไปยังอีกภาษาหนึ่ง
