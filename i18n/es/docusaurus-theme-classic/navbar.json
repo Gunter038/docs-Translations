@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "Celestia Docs",
+    "message": "Documentos de Celestia",
     "description": "The title in the navbar"
   },
   "item.label.Run A Node": {
-    "message": "Run A Node",
+    "message": "Ejecutar un nodo",
     "description": "Navbar item with label Run A Node"
   },
   "item.label.Developers": {
-    "message": "Developers",
+    "message": "Desarrolladores",
     "description": "Navbar item with label Developers"
   },
   "item.label.GitHub": {
@@ -16,7 +16,7 @@
     "description": "Navbar item with label GitHub"
   },
   "item.label.Community": {
-    "message": "Community",
+    "message": "Comunidad",
     "description": "Navbar item with label Community"
   }
 }
