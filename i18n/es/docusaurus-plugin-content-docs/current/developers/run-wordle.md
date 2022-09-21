@@ -140,25 +140,25 @@ Ahora intenta:
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+Después de confirmar la transacción, consulta el `txhash` proporcionado en la misma forma en la que lo hiciste. Verás que la respuesta muestra un error no válido porque has enviado enteros.
 
-Now try to submit another wordle even though one was already submitted
+Ahora intenta enviar otra palabra aunque la anterior ya haya sido enviada
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+Después de confirmar la transacción, consulta el `txhash` de la misma forma en la que lo hiciste. Obtendrás un error sobre que una palabra ya ha sido enviada durante el día.
 
-Now let’s try to guess a five letter word:
+Ahora intentemos adivinar una palabra de cinco letras:
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+Después de confirmar la transacción, consulta el `txhash` de la misma forma en la que lo hiciste. Dado que no adivinaste la palabra correcta, incrementará el número de conjeturas para la cuenta de Bob.
 
-We can verify this by querying the list:
+Podemos verificar esto consultando la lista:
 
 ```sh
 wordled q wordle list-guess --output json
