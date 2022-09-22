@@ -3,7 +3,7 @@ sidebar_label : Tutorial de vídeo del nodo
 - - -
 
 # Obtener y enviar transacciones con Celestia Node
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 En este tutorial cubriremos cómo utilizar la API del nodo Celestia para enviar y recuperar mensajes de la Capa de Disponibilidad de Datos por tu espacio de nombres ID.
 
@@ -32,8 +32,9 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-Estos son paquetes esenciales que son necesarios para ejecutar muchas tareas como descargar archivos, compilar y monitorear el nodo:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 # Si estás usando el gestor de paquetes APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
@@ -41,13 +42,14 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 # Si estás usando el gestor de paquetes YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Instalando Golang
 
-Celestia-app y celestia-node están escritos en [Golang](https://go.dev/) por lo que debemos instalar Golang para compilarlos y ejecutarlos.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -85,16 +87,20 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.1
 make install
+make cel-key
 ```
 
-Verifica que el binario está funcionando y comprueba la versión con el comando de versión celestia:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
-Semantic version: v0.3.0-rc2
-Commit: 89892d8b96660e334741987d84546c36f0996fbe
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
 ```
 
 ### Instanciar Nodo Celestia Light
@@ -111,35 +117,45 @@ celestia light init
 
 Ahora ejecutemos el nodo Celestia Light con una conexión GRPC a un ejemplo de public Core Endpoint.
 
-> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. Puedes encontrar una lista de endpoints RPC [aquí](/nodes/mamaki-testnet#rpc-endpoints)
+> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
-celestia light start --core.grpc http://<ip-address>:9090
+celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Por ejemplo, el comando junto con un endpoint RPC podría verse así:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Claves y wallets
 
 Puedes crear tu clave para tu nodo ejecutando el siguiente comando:
 
 ```sh
-make cel-key
+./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-Una vez que inicies el Light Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData.
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <key_name> 
+```
+<!-- markdownlint-enable MD013 -->
 
-Puedes encontrar la dirección ejecutando el siguiente comando en el directorio `celestia-node`:
+Una vez que inicies el Light Node, se generará una clave de wallet para ti. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Si deseas agregar fondos a tu wallet con tokens de testnet, diríjete al canal Celestia Discord `#faucet`.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
 Puedes solicitar fondos a tu dirección de wallet usando el siguiente comando en Discord:
 
@@ -603,10 +619,12 @@ Puedes observar en la salida anterior, que devuelve un `height` de `2452` que us
 
 Si encuentras un error como:
 
+<!-- markdownlint-disable MD013 -->
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
+<!-- markdownlint-enable MD013 -->
 
 Es posible que la cuenta desde la que estás intentando enviar un PayForData no tenga tokens de testnet todavía. Asegúrese de que el faucet de la testnet ha enviado a tu cuenta tokens y luego vuelve a intentarlo.
 
