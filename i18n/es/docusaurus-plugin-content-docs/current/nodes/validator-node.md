@@ -125,9 +125,10 @@ Puedes seguir el tutorial para instalar Celestia Node [aquí](../developers/cele
 Ejecuta las siguientes instrucciones:
 
 ```sh
-celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
-  --core.grpc http://<ip:port>
+celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
