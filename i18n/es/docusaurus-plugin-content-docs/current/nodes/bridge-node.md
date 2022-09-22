@@ -59,8 +59,10 @@ Sigue el tutorial sobre la instalación de Celestia App [aquí](../developers/ce
 Ejecuta las siguientes instrucciones:
 
 ```sh
-celestia bridge init --core.remote tcp://<ip-address>:26657
+celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
+
+> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
@@ -68,23 +70,28 @@ Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista
 
 Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (que normalmente está en el puerto 9090):
 
-> NOTA: Para acceder a la capacidad de obtener/enviar información relacionada con el estado, como la posibilidad de enviar transacciones de PayForData o consulta para el saldo de cuenta del nodo un endpoint gRPC de un nodo validador (núcleo) debe ser configurado como indica debajo._
-
 ```sh
-celestia bridge start --core.grpc http://<ip>:9090
+celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
 Puedes crear tu clave para tu nodo siguiendo las instrucciones de `clave cel-` [aquí](./keys.md)
 
-Una vez que inicies el Bridge Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData. Puedes encontrar la dirección ejecutando el siguiente comando:
+Una vez que inicies el Bridge Node, se generará una clave de wallet para ti. You will need to fund that address with Testnet tokens to pay for PayForData transactions. Puedes encontrar la dirección ejecutando el siguiente comando:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Los tokens de Mamaki Testnet pueden ser solicitados [aquí](./mamaki-testnet.md#mamaki-testnet-faucet).
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
 
 #### Opcional: ejecuta el nodo bridge con una clave personalizada
 
@@ -94,7 +101,7 @@ Para ejecutar un nodo bridge usando una clave personalizada:
 2. El nombre de la clave personalizada debe pasarse al `start`, así:
 
 ```sh
-celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia bridge start --core.ip <ip> --core.grpc.port 9090 --keyring.accname <name_of_custom_key>
 ```
 
 ### Opcional: iniciar el nodo bridge con SystemD
