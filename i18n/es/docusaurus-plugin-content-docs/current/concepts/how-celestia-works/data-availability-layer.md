@@ -4,73 +4,73 @@ sidebar_label : Capa de disponibilidad de datos de Celestia
 
 # Capa de disponibilidad de datos de Celestia
 
-Celestia es una capa de disponibilidad de datos (DA) que proporciona una solución escalable al problema de disponibilidad de datos [](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
+Celestia es una capa de disponibilidad de datos (DA) que proporciona una solución escalable al problema de disponibilidad de datos [](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Debido a la naturaleza sin permiso de las redes blockchain, una capa DA debe proporcionar un mecanismo para la ejecución y liquidación de capas para comprobar de una manera minimizada si los datos de transacción están efectivamente disponibles.
 
-Two key features of Celestia's DA layer are [data availability sampling](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) and [Namespaced Merkle trees](https://github.com/celestiaorg/nmt) (NMTs). Both features are novel blockchain scaling solutions: DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+Dos características clave de la capa DA de Celestia son [muestra de disponibilidad de datos](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) y [los Nombres de Dominio de los árboles Merkle ](https://github.com/celestiaorg/nmt) (NMTs). Ambas características son nuevas soluciones de escalabilidad de la blockchain: DAS permite que los nodos ligeros verifiquen la disponibilidad de datos sin necesidad de descargar un bloque completo; Los NMTs permiten la ejecución y liquidación de capas en Celestia para descargar transacciones que solo son relevantes para ellos.
 
-## Data Availability Sampling (DAS)
+## Muestreo de Disponibilidad de Datos (DAS)
 
-In general, light nodes download only block headers that contain commitments (i.e., Merkle roots) of the block data (i.e., the list of transactions).
+En general, los nodos ligeros solo descargan los encabezados que contienen compromisos (es decir, raíz de Merkle) de los datos del bloque (es decir, la lista de transacciones).
 
-To make DAS possible, Celestia uses a 2-dimensional Reed-Solomon encoding scheme to encode the block data: every block data is split into k × k chunks, arranged in a k × k matrix, and extended with parity data into a 2k × 2k extended matrix by applying multiple times Reed-Solomon encoding.
+Para hacer posible la DAS Celestia utiliza un esquema de codificación Reed-Solomon de 2 dimensiones para codificar los datos del bloque: cada dato de bloque se divide en fragmentos k × k, ordenado en una matriz k × k, y extendido con datos de paridad en una matriz extendida 2k × 2k aplicando múltiples veces la codificación Reed-Salomon.
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+Entonces, se calculan las raíces de Merkle 4k separadas para las filas y columnas de la matriz extendida; la raíz Merkle de estas raíces de Merkle se utiliza como el compromiso de datos de bloque en la cabecera de bloques.
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+Para verificar que los datos están disponibles, los nodos ligeros de Celestia están muestreando los fragmentos de datos 2k × 2k.
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+Cada nodo ligero elige aleatoriamente un conjunto de coordenadas únicas en la matriz extendida y consulta a nodos completos para los fragmentos de datos y pruebas de Merkle correspondientes en esas coordenadas. Si los nodos ligeros reciben una respuesta válida para cada consulta de muestreo, entonces hay una [garantía de alta probabilidad](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) de que todos los datos del bloque están disponibles.
 
-Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
+Además, cada fragmento de datos recibido con una prueba de Merkle correcta es informado a la red. Como resultado, mientras los nodos ligeros de Celestia muestreen suficientes fragmentos de datos (i.., al menos k × k fragmentos únicos), el bloque completo puede ser recuperado por nodos completos honestos.
 
-For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
+Para más detalles sobre DAS, echa un vistazo al [original paper](https://arxiv.org/abs/1809.09044).
 
-### Scalability
+### Escalabilidad
 
-DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+La DAS permite a Celestia escalar la capa DA. La DAS puede ser realizada por nodos ligeros limitados a recursos, ya que cada nodo ligero solo muestra una pequeña porción de los datos del bloque. Cuantos más nodos ligeros haya en la red, más datos podrán descargar y almacenar de forma conjunta.
 
-This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
+Esto significa que aumentar el número de nodos ligeros que realizan DAS permite bloques más grandes (i.., con más transacciones), sin dejar de mantener la función DAS para nodos ligeros limitados a recursos. Sin embargo, para validar encabezados de bloques, los nodos de Celestia necesitan descargar las raíces intermedias de Merkle.
 
-For a block data size of n bytes, this means that every light node must download O(n) bytes. Therefore, any improvement in the bandwidth capacity of Celestia light nodes has a quadratic effect on the throughput of Celestia's DA layer.
+Para un tamaño de bloque de datos de n bytes, significa que cada nodo ligero debe descargar O(n) bytes. Por lo tanto, cualquier mejora en la capacidad de ancho de banda de los nodos ligeros de Celestia tiene un efecto cuadrático en el recorrido de la capa DA de Celestia.
 
-### Fraud Proofs of Incorrectly Extended Data
+### Prueba de Fraude de Datos Extendidos Incorrectamente
 
-The requirement of downloading the 4k intermediate Merkle roots is a consequence of using a 2-dimensional Reed-Solomon encoding scheme. Alternatively, DAS could be designed with a standard (i.e., 1-dimensional) Reed-Solomon encoding, where the original data is split into k  chunks and extended with k additional chunks of parity data. Since the block data commitment is the Merkle root of the 2k resulting data chunks, light nodes no longer need to download O(n) bytes to validate block headers.
+El requisito para descargar las raíces intermedias de Merkle 4k es una consecuencia del uso de un esquema de codificación Reed-Salomon de 2 dimensiones. Alternativamente, el DAS podría ser diseñado con un estándar (i.e. de 1 dimensión) con codificación Reed-Salomon, donde los datos originales se dividen en fragmentos k y se extienden con k fragmentos adicionales de datos de paridad. Dado que el compromiso de datos de bloques es la raíz de Merkle de los fragmentos de datos resultantes de 2k, los nodos ligeros ya no necesitan descargar O(n) bytes para validar las cabeceras de bloque.
 
-The downside of the standard Reed-Solomon encoding is dealing with malicious block producers that generate the extended data incorrectly.
+La desventaja de la codificación estándar Reed-Salomon es tratar con los productores de bloques maliciosos que generan los datos extendidos incorrectamente.
 
-This is possible as __Celestia does not require a majority of the consensus (i.e., block producers) to be honest to guarantee data availability.__ Thus, if the extended data is invalid, the original data might not be recoverable, even if the light nodes are sampling sufficient unique chunks (i.e., at least k for a standard encoding and k × k for a 2-dimensional encoding).
+Esto es posible ya que __Celestia no requiere que la mayoría del consenso (i.., los productores de bloques) sean honestos para garantizar la disponibilidad de datos.__ Por lo tanto, si los datos extendidos son inválidos, los datos originales podrían no ser recuperables, incluso si los nodos ligeros están muestreando suficientes fragmentos únicos (i.., al menos k para una codificación estándar y k × k para una codificación de 2 dimensiones).
 
-As a solution, _Fraud Proofs of Incorrectly Generated Extended Data_ enable light nodes to reject blocks with invalid extended data. Such proofs require reconstructing the encoding and verifying the mismatch. With standard Reed-Solomon encoding, this entails downloading the original data, i.e., O(n) bytes. Contrastingly, with 2-dimensional Reed-Solomon encoding, only O(n ) bytes are required as it is sufficient to verify only one row or one column of the extended matrix.
+Como solución, la _Prueba de Fraude de Datos Extendidos Incorrectamente_ habilita a nodos ligeros para rechazar bloques con datos extendidos inválidos. Tales pruebas requieren reconstruir la codificación y verificar el desajuste de funciones. Con la codificación estándar Reed-Salomon, esto implica descargar los datos originales, por ejemplo, O(n) bytes. En resumen, con codificación Reed-Salomon de 2 dimensiones, solo se requieren O(n ) bytes ya que es suficiente para verificar solo una fila o una columna de la matriz extendida.
 
-## Namespaced Merkle Trees (NMTs)
+## Nombre de Dominio de Árboles de Merkle (NMTs)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia fragmenta los datos del bloque en múltiples nombres de dominio, uno para cada aplicación (por ejemplo, rollup) usando la capa DA. Como resultado, cada aplicación necesita descargar solo sus propios datos y puede ignorar los datos de otras aplicaciones.
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Para que esto funcione, la capa DA debe ser capaz de demostrar que los datos proporcionados están completos, i.., se retornan todos los datos de un espacio de nombres de dominio determinado. Con este fin, Celestia está utilizando los nombre de dominio de árboles Merkle (NMTs).
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+Un NMT es un árbol Merkle con las hojas ordenadas por los identificadores del nombre de dominio y la función hash modificada para que cada nodo en el árbol incluya el rango de espacios de nombres de dominio de todos sus descendientes. La siguiente figura muestra un ejemplo de un NMT con altura tres (es decir, ocho fragmentos de datos). Los datos se fragmentan en tres nombres de dominio.
 
-![Namespaced Merkle Tree](/img/concepts/nmt.png)
+![Nombre de Dominio de Árboles de Merkle (NMTs)](/img/concepts/nmt.png)
 
-When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
+Cuando una aplicación solicita los datos para el nombre de dominio 2, la capa DA debe proporcionar los fragmentos de datos `D3`, `D4`, `D5`, y `D6` y los nodos `N2`, `N8` y `N7` como prueba (ten en cuenta que la aplicación ya tiene la raíz `N14` de el encabezado del bloque).
 
-As a result, the application is able to check that the provided data is part of the block data. Furthermore, the application can verify that all the data for namespace 2 was provided. If the DA layer provides for example only the data chunks `D4` and `D5`, it must also provide nodes `N12` and `N11` as proofs. However, the application can identify that the data is incomplete by checking the namespace range of the two nodes, i.e., both `N12` and `N11` have descendants part of namespace 2.
+Como resultado, la aplicación es capaz de comprobar que los datos proporcionados son parte de los datos del bloque. Además, la aplicación puede verificar que se proporcionaron todos los datos para el nombre de dominio 2. Si la capa DA proporciona, por ejemplo, sólo los fragmentos de datos `D4` y `D5`, también debe proporcionar los nodos `N12` y `N11` como pruebas. Sin embargo, la aplicación puede identificar que los datos están incompletos comprobando el rango de nombre de dominio de los dos nodos, i.., tanto `N12` como `N11` tienen descendientes parte del nombre de dominio 2.
 
-For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
+Para más detalles sobre DAS, echa un vistazo al [original paper](https://arxiv.org/abs/1905.09274).
 
-## Building a PoS Blockchain for DA
+## Construir una Blockchain PoS para DA
 
-### Providing Data Availability
+### Proporcionando Disponibilidad de Datos
 
-The Celestia DA layer consists of a PoS blockchain. Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+La capa de Celestia DA consiste en una blockchain PoS. Celestia apunta a esta blockchain como la [App de Celestia](https://github.com/celestiaorg/celestia-app), una aplicación que proporciona transacciones para facilitar la capa DA y que se construye usando [Cosmos SDK](https://docs.cosmos.network/v0.44/). La siguiente figura muestra los componentes principales de la App de Celestia.
 
 ![Main components of Celestia App](/img/concepts/celestia-app.png)
 
-Celestia App is built on top of [Celestia Core](https://github.com/celestiaorg/celestia-core), a modified version of the [Tendermint consensus algorithm](https://arxiv.org/abs/1807.04938). Among the more important changes to vanilla Tendermint, Celestia Core:
+La App de Celestia se construye sobre [Celestia Core](https://github.com/celestiaorg/celestia-core), una versión modificada del [algoritmo de consenso de Tendermint](https://arxiv.org/abs/1807.04938). Entre los cambios más importantes en Tendermint, Celestia Core:
 
-- Enables the erasure coding of block data (using the 2-dimensional Reed-Solomon encoding scheme).
+- Habilita la codificación de borrado de los datos de bloque (usando el esquema de codificación de 2 dimensiones Reed-Solomon).
 - Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
 
 For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
