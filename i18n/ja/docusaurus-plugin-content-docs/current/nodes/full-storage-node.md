@@ -45,21 +45,32 @@ Start the Full Storage Node with a connection to a validator node's gRPC endpoin
 
 > NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
 
+A note on ports:
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip addr of core node>:9090
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 ```
+<!-- markdownlint-enable MD013 -->
 
 If you would like to find example RPC endpoints, check out the list of resources [here](./mamaki-testnet.md#rpc-endpoints).
 
 You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
 
-Once you start the Full Node, a wallet key will be generated for you. You will need to fund that address with Mamaki Testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
+Once you start the Full Node, a wallet key will be generated for you. You will need to fund that address with testnet tokens to pay for PayForData transactions. You can find the address by running the following command:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
 
 ### Optional: run the full storage node with a custom key
 
@@ -68,9 +79,11 @@ In order to run a full storage node using a custom key:
 1. The custom key must exist inside the celestia full storage node directory at the correct path (default: `~/.celestia-full/keys/keyring-test`)
 2. The name of the custom key must be passed upon `start`, like so:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyring.accname <name-of-custom-key>
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Optional: start the full storage node with SystemD
 
