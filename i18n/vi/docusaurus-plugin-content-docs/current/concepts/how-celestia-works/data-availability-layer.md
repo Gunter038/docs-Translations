@@ -60,7 +60,7 @@ Do đó, ứng dụng có thể kiểm tra xem dữ liệu được cung cấp c
 
 Để biết thêm chi tiết về NMT, hãy xem [ tài liệu gốc ](https://arxiv.org/abs/1905.09274).
 
-## Building a PoS Blockchain for DA
+## Xây dựng Blockchain PoS cho DA
 
 ### Providing Data Availability
 
