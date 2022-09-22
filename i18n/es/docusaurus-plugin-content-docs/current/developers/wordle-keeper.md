@@ -127,7 +127,7 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
   var currentTimeHashString = hex. EncodeToString(currentTimeHash[:])
   wordle, isFound := k. GetWordle(ctx, currentTimeHashString)
   if !isFound {
-    return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "Wordle of The Day Hasn't Been Submitted Yet. Feel Free to Submit One!")
+    return nil, sdkerrors. Wrap(sdkerrors.ErrInvalidRequest, "Wordle of The Day Hasn't Been Submitted Yet. ¡Siéntete libre de enviar una!")
   Feel Free to Submit One!")
   }
 
