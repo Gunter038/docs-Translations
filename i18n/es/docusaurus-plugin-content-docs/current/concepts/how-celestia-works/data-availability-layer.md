@@ -16,7 +16,7 @@ Para hacer posible la DAS Celestia utiliza un esquema de codificación Reed-Solo
 
 Entonces, se calculan las raíces de Merkle 4k separadas para las filas y columnas de la matriz extendida; la raíz Merkle de estas raíces de Merkle se utiliza como el compromiso de datos de bloque en la cabecera de bloques.
 
-![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
+![Codificación Reed-Saloman (RS) 2D](/img/concepts/reed-solomon-encoding.png)
 
 Para verificar que los datos están disponibles, los nodos ligeros de Celestia están muestreando los fragmentos de datos 2k × 2k.
 
@@ -66,17 +66,17 @@ Para más detalles sobre DAS, echa un vistazo al [original paper](https://arxiv.
 
 La capa de Celestia DA consiste en una blockchain PoS. Celestia apunta a esta blockchain como la [App de Celestia](https://github.com/celestiaorg/celestia-app), una aplicación que proporciona transacciones para facilitar la capa DA y que se construye usando [Cosmos SDK](https://docs.cosmos.network/v0.44/). La siguiente figura muestra los componentes principales de la App de Celestia.
 
-![Main components of Celestia App](/img/concepts/celestia-app.png)
+![Componentes principales de la App de Celestia](/img/concepts/celestia-app.png)
 
 La App de Celestia se construye sobre [Celestia Core](https://github.com/celestiaorg/celestia-core), una versión modificada del [algoritmo de consenso de Tendermint](https://arxiv.org/abs/1807.04938). Entre los cambios más importantes en Tendermint, Celestia Core:
 
 - Habilita la codificación de borrado de los datos de bloque (usando el esquema de codificación de 2 dimensiones Reed-Solomon).
-- Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
+- Reemplaza el árbol de Merkle utilizado por Tendermint para almacenar los datos de bloques con un [árbol de Merkle con nombre de dominio](https://github.com/celestiaorg/nmt) que habilita las capas anteriores (i.., ejecución y liquidación) para descargar sólo los datos necesarios (para más detalles, mira la sección de abajo que describe los casos de uso).
 
-For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
+Para más detalles sobre los cambios en Tendermint, echa un vistazo a [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Ten en cuenta que los nodos de Celestia Core siguen utilizando la red p2p de Tendermint.
 
-Similarly to Tendermint, Celestia Core is connected to the application layer (i.e., the state machine) by [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), a major evolution of [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
+Del mismo modo, Celestia Core está conectado a Tendermint a la capa de aplicación (i.e. la máquina del estado) por [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), una evolución importante de [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Aplicación de Interfaz de Blockchain).
 
-The Celestia App state machine is necessary to execute the PoS logic and to enable the governance of the DA layer.
+La máquina de estado de la App de Celestia es necesaria para ejecutar la lógica de PoS y para habilitar la gobernanza de la capa DA.
 
-However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
+Sin embargo, la App de Celestia es agnóstica -- la máquina de estado ni valida ni almacena los datos que pone a disposición la App de Celestia.
