@@ -1,20 +1,20 @@
 ---
-sidebar_label: Module
+sidebar_label: 模块
 ---
 
-# Creating the Wordle Module
+# 创建 Wordle 模块
 
-For the Wordle module, we can add dependencies offered by Cosmos-SDK.
+对于 Wordle 模块，我们可以添加 Cosmos-SDK 提供的依赖项。
 
-From the Cosmos-SDK docs, a [module](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules) is defined as the following:
+在 Cosmos-SDK 文档中，[模块](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules)定义如下：
 
-> In a Cosmos SDK blockchain, application-specific logic is implemented in separate modules. Modules keep code easy to understand and reuse. In a Cosmos SDK blockchain, application-specific logic is implemented in separate modules. Modules keep code easy to understand and reuse. Each module contains its own message and transaction processor, while the Cosmos SDK is responsible for routing each message to its respective module.
+> 在 Cosmos SDK 区块链中，特定于应用程序的逻辑在单独的模块中实现。 模块使代码易于理解和重新使用。 每个模块都包含自己的消息和事务处理器，而 Cosmos SDK 负责将每条消息路由到各自的模块。
 
-Many modules exist for slashing, validating, auth.
+存在许多用于 slashing、validating、auth 的模块。
 
-## Scaffolding A Module
+## 脚手架模块
 
-We will be using the `bank` module dependency for transactions.
+我们将使用 `bank` 模块依赖项进行交易。
 
 From the Cosmos-SDK docs, the [`bank`](https://docs.cosmos.network/master/modules/bank/) module is defined as the following:
 
