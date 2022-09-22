@@ -1,18 +1,18 @@
 - - -
-sidebar_label : Установка Celestia Node
+sidebar_label : Установка ноды Celestia
 - - -
 
 # Нода Celestia
 
-В этом руководстве рассматривается создание и установка ноды celestia. This tutorial assumes you completed the steps in setting up your development environment [here](./environment.md).
+В этом руководстве рассматривается создание и установка ноды celestia. В этом руководстве предполагается, что вы выполнили шаги по настройке стартовой среды [ тут](./environment.md).
 
-## Install Celestia Node
+## Установка ноды Celestia
 
-### Arabica Installation
+### Установка Arabica
 
-Installing celestia-node for Arabica Devnet means installing a specific version to be compatible with the network.
+Установка ноды Сelestia в Arabica Devnet означает установку определенной версии для совместимости с сетью.
 
-Install the celestia-node binary by running the following commands:
+Установить бинарный (исполняемый) файл для ноды Сelestia, можно с помощью следующих команд:
 
 ```sh
 cd $HOME
@@ -23,8 +23,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Убедитесь, что бинарный (исполняемый) файл работает, и проверьте версию с помощью команды `celestia version`:
 
 ```console
 $ celestia version
@@ -35,11 +34,11 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Mamaki Installation
+### Установка Mamaki
 
-Installing celestia-node for Mamaki Testnet means installing a specific version to be compatible with the network.
+Установка ноды Сelestia в Mamaki Devnet означает установку определенной версии для совместимости с сетью.
 
-Install the celestia-node binary by running the following commands:
+Установить бинарный (исполняемый) файл для ноды Сelestia, можно с помощью следующих команд:
 
 ```sh
 cd $HOME
@@ -50,8 +49,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Убедитесь, что бинарный (исполняемый) файл работает, и проверьте версию с помощью команды `celestia version`:
 
 ```console
 $ celestia version
