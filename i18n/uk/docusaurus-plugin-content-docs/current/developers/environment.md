@@ -37,7 +37,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 Celestia-app і celestia-node написані мовою [Golang](https://go.dev/), тому ми повинні встановити Golang, щоб створити та запустити їх.
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
