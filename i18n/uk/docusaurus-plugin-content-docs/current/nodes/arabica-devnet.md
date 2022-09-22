@@ -7,52 +7,52 @@ sidebar_label: Arabica Devnet
 
 ![arabica-devnet](/img/arabica-devnet.png)
 
-Arabica Devnet is a new testnet from Celestia Labs that is focused exclusively on providing developers with enhanced performance and the latest upgrades for testing their rollups and applications.
+Arabica Devnet є новою тестовою мережею   Celestia Labs, який зосереджений виключно на забезпеченні розробників покращеною продуктивністю і найновішим оновленням для тестування своїх резервних копій і додатків.
 
-Arabica does not focus on validator or consensus-level testing, rather, that is what Mamaki Testnet is used for. If you are a validator, we recommend just testing your validator operations on Mamaki [here](./mamaki-testnet.md).
+Арабіка не зосереджується на валідаторі чи тестуванні на консенсусному рівні, скоріше, це те, для чого використовується Mamaki Testnet. Якщо ви є валідатором, ми рекомендуємо тільки перевірити ваші операції  на Мамакі [тут](./mamaki-testnet.md).
 
-With Arabica having the latest updates from all Celestia's products deployed on it, it can be subject to many changes. Therefore, as a fair warning, Arabica can break unexpectedly but given it will be continously updated, it is a useful way to keep testing the latest changes in the software.
+Арабіка має останні оновлення з усіх продуктів Celestia, розгорнутих на ній, вона може зазнавати багатьох змін. Тому, як справедливе попередження, Arabica може несподівано зламатися, але враховуючи, що вона постійно оновлюватиметься, це корисний спосіб продовжувати тестувати останні зміни в програмному забезпеченні.
 
-Developers can still deploy on Mamaki Testnet their sovereign rollups if they chose to do so, it just will always lag behind Arabica Devnet until Mamaki undergoes Hardfork Upgrades in coordination with Validators.
+Розробники все ще можуть розгортати на Mamaki Testnet свої суверенні зведені пакети, якщо вони вирішать це зробити, просто він завжди відставатиме від Arabica Devnet, доки Mamaki не пройде Hardfork Upgrades у координації з валідаторами.
 
-## Integrations
+## Інтеграції
 
-This guide contains the relevant sections for how to connect to Arabica, depending on the type of node you are running.
+Ця інструкція містить відповідні розділи для підключення до тестової мережі Mamaki, в залежності від типу запущеної вами ноди.
 
-Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+Ваш найкращий підхід до участі — це спочатку визначити, яку ноду ви хочете запустити. Гіди  з налаштування  кожної ноди надсилатиметься  на відповідну мережу, щоб показати вам, як до них підключитися.
 
-You have a list of options on the type of nodes you can run in order to participate in Arabica:
+У вас є список варіантів типу нод, які ви можете запустити, щоб взяти участь у Mamaki:
 
-Data Availability:
+Доступність даних:
 
-* [Bridge Node](./bridge-node.md)
-* [Full Storage Node](./full-storage-node.md)
-* [Light Node](./light-node.md)
+* [Вузол мосту](./bridge-node.md)
+* [Повний вузол ](./full-storage-node.md)
+* [Легкий вузол](./light-node.md)
 
-Select the type of node you would like to run and follow the instructions on each respective page. Whenever you are asked to select the type of network you want to connect to in those guides, select `Arabica` in order to refer to the correct instructions on this page on how to connect to Arabica.
+Виберіть тип ноди, яку ви хочете запустити, і дотримуйтесь інструкцій на кожній відповідній сторінці. Щоразу, коли вас попросять вибрати тип мережі, до якої ви хочете підключитися в цих посібниках, виберіть `Mamaki`, щоб переглянути правильні інструкції на цій сторінці щодо підключення до Mamaki.
 
-## RPC endpoints
+## Кінцеві точки RPC
 
-There is a list of RPC endpoints you can use to connect to Arabica Devnet:
+Це список кінцевих точок RPC, які ви можете використати для підключення до сервера Mamaki Testnet:
 
 * [https://limani.celestia-devops.dev](https://limani.celestia-devops.dev)
 
 ## Arabica Devnet faucet
 
-> USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS.
+> ВИКОРИСТАННЯ ЦЬОГО КРАНУ НЕ ДАЄ ВАМ ПРАВА НА ЖОДЕН AIRDROP АБО ІНШЕ РОЗПОДІЛ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA. ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA НАРАЗІ НЕ ІСНУЄ, І НЕМАЄ ПУБЛІЧНИХ ПРОДАЖІВ ЧИ ІНШИХ ПУБЛІЧНИХ РОЗПОВСЮДЖЕНЬ БУДЬ-ЯКИХ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA.
 
-You can request from Arabica Devnet Faucet on the #arabica-faucet channel on Celestia's Discord server with the following command:
+Ви можете надіслати запит у Mamaki Testnet Faucet на каналі #faucet на сервері Discord Celestia за допомогою такої команди:
 
 ```text
 $request <CELESTIA-ADDRESS>
 ```
 
-Where `<CELESTIA-ADDRESS>` is a `celestia1******` generated address.
+Де `<CELESTIA-ADDRESS>` є `celestia1******` створеною адресою гаманця.
 
-> Note: Faucet has a limit of 10 tokens per week per address/Discord ID
+> Примітка: Faucet має обмеження на 10 токенів в тиждень на адресу/Discord ID
 
-## Explorers
+## Провідник
 
-There is an explorer you can use for Arabica:
+Провідник, який ви можете використовувати для Arabica
 
 * [https://explorer.celestia.observer/arabica](https://explorer.celestia.observer/arabica)
