@@ -1,89 +1,59 @@
 ---
-sidebar_label : Wordle Overview
+sidebar_label: Wordle Aperçu
 ---
 
-# Wordle App on Optimint
+# Application Wordle sur Optimint
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app
-for Optimint, the Optimistic Rollup implementation of
-Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+Ce tutoriel va aller plus loin dans la construction d'une application du cosmos-sdk pour Optimint, l'implémentation d'Optimistic Rollup de Tendermint, pour le jeu populaire [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-This tutorial will go over how to setup Optimint
-in the Ignite CLI and use it to build the game.
-The tutorial will go over the simple design,
-as well as conclude with future implementations and ideas
-to extend this codebase.
+Ce tutoriel va vous expliquer comment configurer Optimint dans le Ignite CLI et l'utiliser pour construire le jeu. Le tutoriel va passer en revue la simple conception, ainsi que conclure avec de futures implémentations et idées pour étendre le code.
 
-> NOTE: This tutorial will explore developing with Optimint,
-  which is still in Alpha stage. If you run into bugs, please
-  write a Github Issue ticket or let us know in our Discord.
-  Furthermore, while Optimint allows you to build sovereign
-  rollups on Celestia, it currently does not support fraud
-  proofs yet and is therefore running in "pessimistic" mode,
-  where nodes would need to re-execute the transactions to check
-  the validity of the chain (i.e. a full node). Furthermore,
-  Optimint currently only supports a single sequencer.
+> NOTE : Ce tutoriel explorera le développement avec Optimint, qui est toujours en phase Alpha. Si vous rencontrez des bugs, veuillez écrire une Issue Github ou nous le faire savoir dans notre Discord. De plus, alors qu'Optimint vous permet de construire des rollups souverains sur Celestia, il ne supporte pas encore les preuves de fraude et fonctionne donc en mode "pessimistique" où les nodes auraient besoin de réexécuter les transactions pour vérifier la validité de la chaîne (c.a.d - un  full node). De plus, Optimint ne prend actuellement en charge qu'un seul séquenceur.
 
-## Pre-requisites
+## Pré-requis
 
-Given this tutorial is targeted for developers who are experienced
-in Cosmos-SDK, we recommend you go over the following tutorials
-in Ignite to understand all the different components in Cosmos-SDK before
-proceeding with this tutorial.
+Étant donné que ce tutoriel est destiné aux développeurs expérimentés vis-àvis du Cosmos-SDK, nous vous recommandons de passer en revue les tutoriels suivants dans Ignite pour comprendre tous les différents composants du Cosmos-SDK avant de continuer avec ce tutoriel.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
-* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
-* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Blog et modules de base](https://docs.ignite.com/guide/blog)
+* [Tutoriel de Nameservice](https://docs.ignite.com/guide/nameservice)
 * [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-You do not have to do those guides in order to follow this Wordle tutorial,
-but doing so helps you understand the architecture of Cosmos-SDK better.
+Vous n'avez pas à faire ces guides pour suivre ce tutoriel Wordle, mais cela vous aide à mieux comprendre l'architecture du Cosmos-SDK.
 
-## Design Implementation
+## Implémentation de la conception
 
-The rules of Wordle are simple: You have to guess the word of the day.
+Les règles de Wordle sont simples : il faut deviner le mot du jour.
 
-Key Points to Consider:
+Points clés à considérer :
 
-* The word is a five-letter word.
-* You have 6 guesses.
-* Every 24 hours, there’s a new word.
+* Le mot est un mot à cinq lettres.
+* Vous avez 6 suppositions.
+* Toutes les 24 heures, il y a un nouveau mot.
 
-The GUI for Wordle shows you a few indicators: a
-green highlight on a letter in a certain position
-means that’s the correct letter for the Wordle
-in the right position. A yellow highlight means
-it’s a correct letter for the Wordle included in
-the wrong position. A grey highlight means the letter
-isn’t part of the Wordle.
+L'interface pour Wordle vous montre quelques indicateurs : un vert surligné sur une lettre dans une certaine position signifie que c'est la lettre correcte dans la bonne position. Une surbrillance jaune signifie que c'est une lettre correcte pour le mot dans la mauvaise position. Un surlignage gris signifie que la lettre ne fait pas partie du mot.
 
-For simplicity of the design, we will avoid those
-hints, although there are ways to extend this codebase
-to implement that, which we will show at the end.
+Pour la simplicité de la conception, nous éviterons ces astuces, bien qu'il y ait des moyens d'étendre cette base de code pour implémenter cela, que nous montrerons à la fin.
 
-In this current design, we implement the following rules:
+Dans cette conception actuelle, nous implémentons les règles suivantes :
 
-* 1 Wordle can be submitted per day
-* Every address will have 6 tries to guess the word
-* It must be a five-letter word.  
-* Whoever guesses the word correctly before their
-  6 tries are over gets an award of 100 WORDLE tokens.
+* 1 mot peut être soumis par jour
+* Chaque adresse aura 6 tentatives de deviner le mot
+* Il doit s'agir d'un mot à cinq lettres.
+* Quiconque devine correctement le mot avant leurs 6 essais est supérieur a une récompense de 100 jetons WORDLE.
 
-We will go over the architecture to achieve this further
-in the guide. But for now, we will get started setting up
-our development environment.
+Nous irons plus loin dans l'architecture pour atteindre cet objectif dans le guide. Mais pour l'instant, nous allons commencer à mettre en place notre environnement de développement.
 
-## Table of Contents For This Tutorial
+## Table des matières pour ce tutoriel
 
-The following tutorial is broken down into the following
-sections:
+Le tutoriel suivant est divisé en sections suivantes :
 
-1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
-2. [Installing Optimint](./install-optimint.md)
+1. [Ignite et Scaffolding de la Chaine](./scaffold-wordle.md)
+2. [Installation d'Optimint](./install-optimint.md)
 3. [Modules](./wordle-module.md)
 4. [Messages](./wordle-messages.md)
 5. [Types](./wordle-types.md)
 6. [Keepers](./wordle-keeper.md)
-7. [Running Wordle](./run-wordle.md)
+7. [Exécution de Wordle](./run-wordle.md)
