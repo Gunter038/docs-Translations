@@ -2,19 +2,19 @@
 sidebar_label : Monolíticas vs. Bloques Modulares
 - - -
 
-# Monolithic vs. Modular Blockchains
+# Monolíticas vs. Blockchains Modulares
 
-Blockchains instantiate [replicated state machines](https://dl.acm.org/doi/abs/10.1145/98163.98167): the nodes in a permissionless distributed network apply an ordered sequence of deterministic transactions to an initial state resulting in a common final state. This means blockchains require the following four functions:
+Las Blockchains requieren[máquinas de estado replicadas](https://dl.acm.org/doi/abs/10.1145/98163.98167): los nodos en una red distribuida sin permiso aplican una secuencia ordenada de transacciones deterministas a un estado inicial resultando en un estado común final. Esto significa que las blockchains requieren las siguientes cuatro funciones:
 
-- __Execution__ entails executing transactions that update the state correctly. Thus, execution must ensure that only valid transactions are executed, i.e., transactions that result in valid state machine transitions.
-- __Settlement__ entails an environment for execution layers to verify proofs, resolve fraud disputes, and bridge between other execution layers.
-- __Consensus__ entails agreeing on the order of the transactions.
-- __Data Availability__ (DA) entails making the transaction data available. Note that execution, settlement, and consensus require DA.
+- __Ejecución__ implica ejecutar transacciones que actualizan el estado correctamente. Por lo tanto, la ejecución debe asegurarse de que solo se ejecutan transacciones válidas, por ejemplo:   transacciones que resultan en transiciones automáticas de estado válidas.
+- __El Acuerdo__ entraña un entorno para las capas de ejecución para verificar pruebas, resolver disputas de fraude y puente entre otras capas de ejecución.
+- __El Consenso__ implica aceptar el orden de las transacciones.
+- __La Disponibilidad de Datos__ (DA) implica que los datos de la transacción estén disponibles. Ten en cuenta que la ejecución, la solución y el consenso requieren DA.
 
-Traditional blockchains, i.e. _monolithic blockchains_, implement all four functions together in a single base consensus layer. The problem with monolithic blockchains is that the consensus layer must perform a lot of different tasks and it cannot be optimized for only one of these functions. As a result, the monolithic paradigm limits the throughput of the system.
+Las blockchains tradicionales, es decir, _monolíticas blockchains_, implementan las cuatro funciones juntas en una sola capa de consenso base. El problema con las blockchains monolíticas es que la capa de consenso debe realizar muchas tareas diferentes y no pueden ser optimizadas en solo una de estas funciones. Como resultado, el paradigma monolítico limita el recorrido del sistema.
 
-![Modular VS Monolithic](/img/concepts/monolithic-modular.png)
+![Monolíticas VS Modulares](/img/concepts/monolithic-modular.png)
 
-As a solution, modular blockchains decouple these functions among multiple specialized layers as part of a modular stack. Due to the flexibility that specialization provides, there are many possibilities in which that stack can be arranged. For example, one such arrangement is the separation of the four functions into three specialized layers.
+Como solución, las blockchains modulares desacoplan estas funciones entre capas especializadas como parte de una pila modular. Debido a la flexibilidad que proporciona la especialización, hay muchas posibilidades en las que se puede organizar esa pila. Por ejemplo, uno de estos arreglos es la separación de las cuatro funciones en tres capas especializadas.
 
-The base layer consists of DA and consensus and thus, is referred to as the Consensus and DA layer (or for brevity, the DA layer), while both settlement and execution are moved on top in their own layers. As a result, every layer can be specialized to optimally perform only its function and thus, increase the throughput of the system. Furthermore, this modular paradigm enables multiple execution layers, i.e., [rollups](https://vitalik.ca/general/2021/01/05/rollup.html), to use the same settlement and DA layers.
+La capa base consiste en DA y consenso y, por lo tanto, se refiere a como la capa de Consenso y DA (o por brevedad, la capa DA), mientras que tanto el establecimiento y la ejecución se mueven en la parte superior de sus propias capas. Como resultado, cada capa se puede especializar para realizar óptimamente sólo su función y, por lo tanto, aumentar el rendimiento del sistema. Además, este paradigm modular permite múltiples capas de ejecución, por ejemplo, [rollups](https://vitalik.ca/general/2021/01/05/rollup.html)para usar la misma capa de consenso y DA.
