@@ -3,7 +3,7 @@ sidebar_label : Node Tutorial
 - - -
 
 # Getting and Sending Transactions with Celestia Node
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
@@ -34,6 +34,7 @@ sudo yum update
 
 These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 # If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
@@ -41,13 +42,14 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 # If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Install Golang
 
 Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -85,16 +87,20 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.1
 make install
+make cel-key
 ```
 
-Xác minh rằng binary đang hoạt động và kiểm tra phiên bản bằng lệnh celestia:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
-Semantic version: v0.3.0-rc2
-Commit: 89892d8b96660e334741987d84546c36f0996fbe
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
 ```
 
 ### Khởi tạo Light Node Celestia
@@ -111,35 +117,45 @@ celestia light init
 
 Bây giờ chúng ta hãy chạy node Celestia Light với kết nối GRPC cho một ví dụ về Điểm cuối Public Core.
 
-> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. You can find a list of RPC endpoints [here](/nodes/mamaki-testnet#rpc-endpoints)
+> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
-celestia light start --core.grpc http://<ip-address>:9090
+celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Ví dụ: lệnh của bạn cùng với điểm cuối RPC có thể trông giống như sau:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Mã khóa và ví
 
 Bạn có thể tạo mã khóa cho node của mình bằng cách chạy lệnh sau:
 
 ```sh
-make cel-key
+./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ ví đó bằng mã thông báo Mamaki Testnet nhằm thanh toán cho các giao dịch PayForData.
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <key_name> 
+```
+<!-- markdownlint-enable MD013 -->
 
-Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục ` celestia-node `:
+Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Nếu bạn muốn nạp vào ví của mình với mã thông báo testnet, hãy truy cập kênh Discord của Celestia ` #faucet `.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
 Bạn có thể yêu cầu nạp tiền vào địa chỉ ví của mình bằng lệnh sau trong Discord:
 
@@ -607,10 +623,12 @@ If you notice from the above output, it returns a `height` of `2452` which we wi
 
 If you encounter an error like:
 
+<!-- markdownlint-disable MD013 -->
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
+<!-- markdownlint-enable MD013 -->
 
 It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
