@@ -45,21 +45,32 @@ Khởi động node lưu trữ đầy đủ với kết nối với điểm cu�
 
 > LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi liên quan đến tình trạng thông tin, chẳng hạn như khả năng gửi các giao dịch PayForData, hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
 
+A note on ports:
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip addr of core node>:9090
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 ```
+<!-- markdownlint-enable MD013 -->
 
 Nếu bạn muốn tìm ví dụ các điểm cuối RPC, hãy xem danh sách tài nguyên [ here ](./mamaki-testnet.md#rpc-endpoints).
 
 Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Khi bạn khởi động Full Node, một khóa ví sẽ được xuất cho bạn. Bạn sẽ cần nạp tiền cho địa chỉ đó bằng mã thông báo Mamaki Testnet để thanh toán cho Giao dịch PayForData. Bạn có thể tìm địa chỉ bằng cách chạy lệnh sau:
+Khi bạn khởi động Full Node, một khóa ví sẽ được xuất cho bạn. You will need to fund that address with testnet tokens to pay for PayForData transactions. Bạn có thể tìm địa chỉ bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Yêu cầu mã thông báo Mamaki Testnet tại [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
 
 ### Tùy chọn: chạy toàn bộ node lưu trữ bằng khóa tùy chỉnh
 
@@ -68,9 +79,11 @@ Yêu cầu mã thông báo Mamaki Testnet tại [here](./mamaki-testnet.md#mamak
 1. Khóa tùy chỉnh phải tồn tại trong thư mục node lưu trữ đầy đủ của celestia tại đúng đường dẫn (default: ` ~ /.celestia-full / keys / keyring-test `)
 2. Tên của khóa tùy chỉnh phải được chuyển khi ` start `, như sau:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyring.accname <name-of-custom-key>
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Tùy chọn: khởi động node lưu trữ đầy đủ với SystemD
 
