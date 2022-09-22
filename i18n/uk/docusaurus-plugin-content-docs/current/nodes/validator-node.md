@@ -125,9 +125,10 @@ celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 Виконайте наступне:
 
 ```sh
-celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
-  --core.grpc http://<ip:port>
+celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [here](./mamaki-testnet.md#rpc-endpoints)
 
