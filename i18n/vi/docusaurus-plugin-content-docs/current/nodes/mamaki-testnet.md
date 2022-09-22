@@ -3,11 +3,12 @@ sidebar_label : Mamaki Testnet
 - - -
 
 # Mamaki Testnet
-<!-- markdownlint-disable MD013 -->
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki là một cột mốc quan trọng trong Celestia, cho phép mọi người kiểm tra các chức năng cốt lõi trên mạng. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+
+Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Cách tốt nhất để tham gia là trước tiên xác định bạn muốn chạy node nào. Mỗi hướng dẫn node sẽ liên kết đến mạng liên quan để hướng dẫn bạn cách kết nối với chúng.
 
@@ -40,7 +41,7 @@ Chọn loại node bạn muốn chạy và làm theo hướng dẫn trên mỗi 
 
 > SỬ DỤNG VÒI NÀY SẼ KHÔNG GIÚP BẠN NHẬN BẤT KÌ AIRDROP NÀO HOẶC CÁC ĐỢT PHÂN PHỐI TOKENS CELESTIA MAINNET. TOKENS CELESTIA MAINNET HIỆN KHÔNG TỒN TẠI VÀ HIỆN KHÔNG CÓ BẤT KÌ ĐỢT BÁN CÔNG KHAI HOẶC ĐỢT PHÂN PHỐI TOKEN CELESTIA MAINNET NÀO.
 
-Bạn có thể yêu cầu từ Vòi Mamaki Testnet trên kênh #faucet trong Máy chủ Discord của Celestia với lệnh sau:
+You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -82,12 +83,13 @@ cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 
 Chỉnh seeds và peers:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
 echo $BOOTSTRAP_PEERS
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
-
 ```
+<!-- markdownlint-enable MD013 -->
 
 Ghi chú: Bạn có thể tìm thêm peers [tại đây](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
@@ -107,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## Ủy thác cho một validator
 
-Để ủy thác tokens đến `celestiavaloper` của validator, ví dụ, bạn có thể chạy:
+To delegate tokens to the `celestiavaloper` validator, as an example you can run:
 
 ```sh
 celestia-appd tx staking delegate \
