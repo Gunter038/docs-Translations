@@ -1,6 +1,6 @@
-# Participate in the Celestia Testnets
+# Прийняти участь у тестах
 
-Celestia currently has two exisiting testnets that will enable participation:
+Селестія наразі має два тестанета , що активують участь:
 
-* [Arabica Devnet](./arabica-devnet.md): A devnet focused on developers who want to deploy sovereign rollups on the lastest changes from Celestia's codebase. Arabica will be updated frequently and might be unstable at times given new updates. Validators won't be able to validate on Arabica as it is not designed for validators to participate.
-* [Mamaki Testnet](./mamaki-testnet.md): A testnet focused on enabling validators to test out their infrastructure by running nodes connected to the network. Developers can also deploy sovereign rollups on Mamaki, it just will always be behind Arabica as Mamaki upgrades are slower given they need to be done via hardforks in coordination with the validator community on Mamaki.
+* [Arabica Devnet](./arabica-devnet.md): devnet зосереджений на розробниках, які хочуть розгорнути суверенні розгортання на останні зміни за допомогою кодової бази Селестії. Arabica часто оновлюватиметься і може бути нестабільною, часом надаючи нові оновлення. Валідатори не зможуть перевірити Arabica, оскільки вона не призначена для участі валідаторів.
+* [Mamaki Testnet](./mamaki-testnet.md): тестова мережа, зосереджена на активації валідаторів перевірити свою інфраструктуру, запустивши вузли, підключені до мережі. Розробники також можуть розгортати суверенні зведені пакети ролапи  на Mamaki, але це завжди буде позаду Arabica, оскільки оновлення Mamaki повільніше, оскільки їх потрібно виконувати через хардфорки в координації зі спільнотою валідаторів на Mamaki.
