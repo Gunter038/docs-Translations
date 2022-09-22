@@ -40,11 +40,11 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 请考虑以下方面：
 
-> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传输给拥有 Mamaki 测试网代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
 
 还需要注意：
 
-> 重要提示：此外，在上述命令中，您需要在 Mamaki 测试网中指定最新的 区块高度为 `da_height` 您可以在此浏览器 [中找到最新的区块编号 ](https://testnet.mintscan.io/celestia-testnet)。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
 
 在另一个窗口中，运行以下指令来submit a Wordle：
 
