@@ -5,7 +5,7 @@ sidebar_label: Arabica Devnet
 # Arabica Devnet
 <!-- markdownlint-disable MD013 -->
 
-![arabica-devnet](/img/arabica-devnet.png)
+![Arabica Devnet](/img/arabica-devnet.png)
 
 Arabica Devnet є новою тестовою мережею   Celestia Labs, який зосереджений виключно на забезпеченні розробників покращеною продуктивністю і найновішим оновленням для тестування своїх резервних копій і додатків.
 
