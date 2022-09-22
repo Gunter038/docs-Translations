@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Estos son paquetes esenciales que son necesarios para ejecutar muchas tareas como descargar archivos, compilar y monitorear el nodo:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -46,7 +46,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ### Instalando Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app y celestia-node están escritos en [Golang](https://go.dev/) por lo que debemos instalar Golang para compilarlos y ejecutarlos.
 
 ```sh
 ver="1.19.1"
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Verifica que el binario está funcionando y comprueba la versión con el comando de versión celestia:
 
 ```sh
 $ celestia version
@@ -117,13 +117,13 @@ celestia light init
 
 Ahora ejecutemos el nodo Celestia Light con una conexión GRPC a un ejemplo de public Core Endpoint.
 
-> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> Nota: También se te recomienda encontrar un endpoint API de ejecución comunitaria y hay varios en Discord. Este se utiliza solo para fines de demostración. Puedes encontrar una lista de los endpoints RPC [aquí](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTA: El `--core.grpc. ort` es por defecto 9090, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puede utilizar la bandera para especificar otro puerto si lo prefiere.
 
 Por ejemplo, el comando junto con un endpoint RPC podría verse así:
 
