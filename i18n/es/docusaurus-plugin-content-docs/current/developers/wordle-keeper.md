@@ -5,7 +5,7 @@ sidebar_label: Keeper
 # Funciones de Keeper
 <!-- markdownlint-disable MD013 -->
 
-Ahora es el momento de implementar las funciones de Keeper para cada mensaje. De los documentos Cosmos-SDK, [Keeper](https://docs. cosmos. network/master/building-modules/keeper. html) se define como lo siguiente:
+Ahora es el momento de implementar las funciones de Keeper para cada mensaje. De los documentos Cosmos-SDK, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) se define como lo siguiente:
 
 > El núcleo principal de un módulo Cosmos SDK es una pieza llamada keeper. Keeper maneja las interacciones con el almacenamiento, tiene referencias a otros mantenedores para interacciones entre módulos y contiene la mayoría de la funcionalidad principal de un módulo.
 
