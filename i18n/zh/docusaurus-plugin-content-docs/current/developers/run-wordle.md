@@ -46,13 +46,13 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 > 重要提示：此外，在上述命令中，您需要在 Mamaki 测试网中指定最新的 区块高度为 `da_height` 您可以在此浏览器 [中找到最新的区块编号 ](https://testnet.mintscan.io/celestia-testnet)。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
 
-在另一个窗口中，运行以下指令来提交Wordle：
+在另一个窗口中，运行以下指令来submit a Wordle：
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 In the future, with leader selection, block production and sync logic improves dramatically.
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
 
 这将要求你确认交易，并发出以下信息。
 
@@ -142,12 +142,12 @@ wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+在确认交易后，采用上面同样的方法查询 `txhash`。 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
 现在尝试提交另一个Wordle，即使已有一个Wordle已经提交
 
 ```sh
-wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
 在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 您将会收到一个单词 已经提交白天的错误。
@@ -185,27 +185,27 @@ wordled q wordle list-guess --output json
   
   <li>
     <p spaces-before="0">
-      You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
+      你可以将单词提交到链上之前对其进行哈希处理， 确保散列函数是本地的，当它是在链上提交的时候，就不会通过 其他人在监控明文字符串时抢先运行 。
     </p>
   </li>
   
   <li>
     <p spaces-before="0">
-      You can improve the UI in terminal using a nice interface for Wordle. Some examples are <a href="https://github.com/nimblebun/wordle-cli">here</a>. <a href="https://github.com/nimblebun/wordle-cli">这里</a>是一些示例。
+      您可以在终端中使用一个不错的 Wordle 界面来改进用户界面。 <a href="https://github.com/nimblebun/wordle-cli">这里</a>是一些示例。
     </p>
   </li>
   
   <li>
     <p spaces-before="0">
-      You can improve current date to stick to a specific timezone.
+      您可以改进当前日期以保持特定时区。
     </p>
   </li>
   
   <li>
-    You can create a bot that submits a wordle every day at a specific time.
+    您可以创建一个bot，每天在特定时间提交Wordle。
   </li>
   
   <li>
-    You can create a vue.js front-end with Ignite using example open-source repositories <a href="https://github.com/yyx990803/vue-wordle">here</a> and <a href="https://github.com/xudafeng/wordle">here</a>.
+    你可以通过Ignite使用示例开源储存库 repositories <a href="https://github.com/yyx990803/vue-wordle">here</a> and <a href="https://github.com/xudafeng/wordle">here</a> 创建一个 vue.js 前端
   </li>
 </ol>
