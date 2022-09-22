@@ -7,17 +7,17 @@ sidebar_label: Arabica Devnet
 
 ![arabica-devnet](/img/arabica-devnet.png)
 
-Arabica Devnet is a new testnet from Celestia Labs that is focused exclusively on providing developers with enhanced performance and the latest upgrades for testing their rollups and applications.
+Arabica Devnet es una nueva testnet de Celestia Labs que se centra exclusivamente en proporcionar a los desarrolladores un rendimiento mejorado y las últimas actualizaciones para probar sus aplicaciones y rollups.
 
-Arabica does not focus on validator or consensus-level testing, rather, that is what Mamaki Testnet is used for. If you are a validator, we recommend just testing your validator operations on Mamaki [here](./mamaki-testnet.md).
+Arabica no se centra en las pruebas de validador o nivel de consenso, más bien, para eso es para lo que se utiliza Mamaki Testnet. Si eres un validador, te recomendamos solo probar las operaciones de tu validador en Mamaki [aquí](./mamaki-testnet.md).
 
-With Arabica having the latest updates from all Celestia's products deployed on it, it can be subject to many changes. Therefore, as a fair warning, Arabica can break unexpectedly but given it will be continously updated, it is a useful way to keep testing the latest changes in the software.
+Con Arabica tienes implementadas las últimas actualizaciones de todos los productos de Celestia en ella, puede estar sujeta a muchos cambios. Por lo tanto, como una advertencia justa, Arabia puede romperse inesperadamente, pero dado que se actualizará continuamente, es una forma útil de seguir probando los últimos cambios en el software.
 
-Developers can still deploy on Mamaki Testnet their sovereign rollups if they chose to do so, it just will always lag behind Arabica Devnet until Mamaki undergoes Hardfork Upgrades in coordination with Validators.
+Los desarrolladores todavía pueden desplegar en Mamaki Testnet sus rollups soberanos si eligieron hacerlo, esto siempre se retrasará detrás de Arabica Devnet hasta que Mamaki sufra actualizaciones de Hardfork en coordinación con validadores.
 
-## Integrations
+## Integraciones
 
-This guide contains the relevant sections for how to connect to Arabica, depending on the type of node you are running.
+Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando.
 
 Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
 
