@@ -16,7 +16,7 @@ Nói chung, các light node chỉ tải xuống các tiêu đề của khối c�
 
 Sau đó, 4k gốc Merkle riêng biệt được tính cho các hàng và cột của ma trận mở rộng; gốc Merkle của những gốc Merkle này được sử dụng như cam kết dữ liệu khối trong tiêu đề của khối.
 
-![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
+![Mã hóa 2D Reed-Soloman (RS)](/img/concepts/reed-solomon-encoding.png)
 
 Để xác minh rằng dữ liệu có sẵn, các light node của Celestia đang lấy mẫu các khối dữ liệu 2k × 2k.
 
@@ -52,7 +52,7 @@ Celestia phân vùng dữ liệu khối thành nhiều không gian tên, một k
 
 NMT là một cây Merkle với các lá được sắp xếp theo số nhận dạng không gian tên và hàm băm được sửa đổi để mọi nút trong cây bao gồm phạm vi không gian tên của tất cả các con cháu của nó. Hình sau cho thấy một ví dụ về NMT có chiều cao ba (tức là tám khối dữ liệu). Dữ liệu là được phân chia thành ba không gian tên.
 
-![Namespaced Merkle Tree](/img/concepts/nmt.png)
+![Không gian tên Cây Merkle](/img/concepts/nmt.png)
 
 Khi một ứng dụng yêu cầu dữ liệu cho không gian tên 2, lớp DA phải cung cấp các khối dữ liệu `D3`, `D4`, `D5`, and `D6` và các nút `N2`, `N8` và  `N7`  làm bằng chứng (lưu ý rằng ứng dụng đã có gốc `N14`  từ tiêu đề của khối).
 
@@ -62,21 +62,21 @@ Do đó, ứng dụng có thể kiểm tra xem dữ liệu được cung cấp c
 
 ## Xây dựng Blockchain PoS cho DA
 
-### Providing Data Availability
+### Cung cấp dữ liệu có sẵn
 
-The Celestia DA layer consists of a PoS blockchain. Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+Lớp Celestia DA bao gồm một blockchain PoS. Celestia đang định đặt tên cho blockchain là [ Celestia App ](https://github.com/celestiaorg/celestia-app), một ứng dụng cung cấp các giao dịch để tạo điều kiện thuận lợi cho lớp DA và được xây dựng dựa trên [ Cosmos SDK ](https://docs.cosmos.network/v0.44/). Hình sau hiển thị các thành phần chính của Ứng dụng Celestia.
 
-![Main components of Celestia App](/img/concepts/celestia-app.png)
+![Các thành phần chính của Ứng dụng Celestia](/img/concepts/celestia-app.png)
 
-Celestia App is built on top of [Celestia Core](https://github.com/celestiaorg/celestia-core), a modified version of the [Tendermint consensus algorithm](https://arxiv.org/abs/1807.04938). Among the more important changes to vanilla Tendermint, Celestia Core:
+Ứng dụng Celestia được xây dựng trên nền tảng của [ Celestia Core ](https://github.com/celestiaorg/celestia-core), một phiên bản sửa đổi của [ thuật toán đồng thuận Tendermint ](https://arxiv.org/abs/1807.04938). Trong số những thay đổi quan trọng hơn đối với Tendermint, Celestia Core:
 
-- Enables the erasure coding of block data (using the 2-dimensional Reed-Solomon encoding scheme).
-- Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
+- Cho phép bảo vệ khối dữ liệu (sử dụng Reed-Solomon 2 chiều lược đồ mã hóa).
+- Thay thế cây Merkle thông thường được Tendermint sử dụng để lưu trữ dữ liệu khối với [ Không gian tên Cây Merkle  ](https://github.com/celestiaorg/nmt) cho phép các lớp trên (tức là thực thi và giải quyết) để chỉ tải xuống những dữ liệu cần thiết (để biết thêm chi tiết, xem phần bên dưới mô tả các trường hợp sử dụng).
 
-For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
+Để biết thêm chi tiết về những thay đổi đối với Tendermint, hãy xem [ ADRs ](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Lưu ý rằng các nút Celestia Core vẫn đang sử dụng mạng Tendermint p2p.
 
-Similarly to Tendermint, Celestia Core is connected to the application layer (i.e., the state machine) by [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), a major evolution of [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
+Tương tự như Tendermint, Celestia Core được kết nối với lớp ứng dụng (tức là máy trạng thái) bởi [ ABCI ++ ](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), một sự phát triển lớn của [ ABCI ](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
 
-The Celestia App state machine is necessary to execute the PoS logic and to enable the governance of the DA layer.
+Máy trạng thái Ứng dụng Celestia là cần thiết để thực thi logic PoS và cho phép quản lý lớp DA.
 
-However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
+Tuy nhiên, Ứng dụng Celestia là dữ liệu bất khả tri - máy trạng thái cũng không xác thực cũng như lưu trữ dữ liệu được cung cấp bởi Ứng dụng Celestia.
