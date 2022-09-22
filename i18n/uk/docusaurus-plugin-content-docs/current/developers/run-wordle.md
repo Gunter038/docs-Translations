@@ -38,11 +38,11 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 Будь ласка, зверніть увагу:
 
-> ПРИМІТКА. У наведеній вище команді вам потрібно передати IP-адресу ноди Celestia до `base_url`, який має обліковий запис із маркерами тестової мережі Mamaki. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
 
 Також зверніть увагу:
 
-> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в тестовій мережі Mamaki для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://testnet.mintscan.io/celestia-testnet). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
 
 В іншому вікні виконайте наступне, щоб надіслати Wordle:
 
