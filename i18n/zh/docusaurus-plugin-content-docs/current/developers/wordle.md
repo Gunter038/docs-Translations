@@ -2,7 +2,7 @@
 sidebar_label: Wordle Overview
 ---
 
-# Wordle App on Optimint
+# Optimint 上的 Wordle 应用程序
 
 ![mamaki-testnet](/img/wordle.jpg)
 
