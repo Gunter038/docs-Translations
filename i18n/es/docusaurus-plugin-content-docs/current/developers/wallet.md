@@ -28,7 +28,7 @@ celestia-appd keys list
 
 ## Deposita fondos en la wallet
 
-Para la dirección pública de celestia, puedes financiar la wallet previamente creada a través de [Discord](https://discord.gg/celestiacommunity) enviando este mensaje al canal #faucet:
+For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #arabica-faucet channel:
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
