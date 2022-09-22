@@ -158,6 +158,7 @@ NODE_IP=<ip-address>
 
 把轻节点作为后台进程启动
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
@@ -166,7 +167,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/celestia light start --core.grpc http://<ip>:9090
+ExecStart=$HOME/go/bin/celestia light start --core.ip <ip-address> --core.grpc.port <port>
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -175,6 +176,7 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 ```
+<!-- markdownlint-enable MD013 -->
 
 如果文件被成功创建，您将能够看到它的内容：
 
