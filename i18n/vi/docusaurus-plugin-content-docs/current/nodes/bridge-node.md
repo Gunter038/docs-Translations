@@ -59,8 +59,10 @@ Làm theo hướng dẫn cài đặt Celestia Node [ here ](../developers/celest
 Chạy lệnh sau:
 
 ```sh
-celestia bridge init --core.remote tcp://<ip-address>:26657
+celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
+
+> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Nếu bạn cần danh sách các endpoints RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
@@ -68,23 +70,28 @@ Nếu bạn cần danh sách các endpoints RPC để kết nối, bạn có th�
 
 Khởi động Bridge Node bằng kết nối với endpoint của node's gRPC validator (thường được hiển thị trên cổng 9090):
 
-> LƯU Ý: Để có quyền truy cập vào khả năng nhận / gửi thông tin liên quan đến trạng thái, chẳng hạn như khả năng gửi các giao dịch PayForData hoặc truy vấn số dư tài khoản các nodes, một endpoint gRPC của validator (core) phải được chuyển như chỉ dẫn bên dưới._
-
 ```sh
-celestia bridge start --core.grpc http://<ip>:9090
+celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Nếu bạn cần danh sách các endponit RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
 Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Khi bạn khởi động Bridge Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ ví bằng mã thông báo Mamaki Testnet để thanh toán cho Giao dịch PayForData. Bạn có thể tìm thấy địa chỉ ví bằng cách chạy lệnh sau:
+Khi bạn khởi động Bridge Node, một mã khóa ví sẽ được tạo. You will need to fund that address with Testnet tokens to pay for PayForData transactions. Bạn có thể tìm thấy địa chỉ ví bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-Có thể yêu cầu mã thông báo Mamaki Testnet [ here ](./mamaki-testnet.md#mamaki-testnet-faucet).
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
 
 #### Tùy chọn: chạy bridge node bằng khóa tùy chỉnh
 
@@ -94,7 +101,7 @@ Có thể yêu cầu mã thông báo Mamaki Testnet [ here ](./mamaki-testnet.md
 2. Tên của khóa tùy chỉnh phải được chuyển theo ` start `, như sau:
 
 ```sh
-celestia bridge start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia bridge start --core.ip <ip> --core.grpc.port 9090 --keyring.accname <name_of_custom_key>
 ```
 
 ### Tùy chọn: bắt đầu bridge node với SystemD
