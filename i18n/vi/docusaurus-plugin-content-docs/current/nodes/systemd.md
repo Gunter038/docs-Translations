@@ -158,6 +158,7 @@ Bạn sẽ nhìn thấy logs từ quá trình đồng bộ hóa của node bridg
 
 Khởi động Light Node với chương trình daemon chạy nền
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
@@ -166,7 +167,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/celestia light start --core.grpc http://<ip>:9090
+ExecStart=$HOME/go/bin/celestia light start --core.ip <ip-address> --core.grpc.port <port>
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -175,6 +176,7 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 ```
+<!-- markdownlint-enable MD013 -->
 
 Nếu file được tạo thành công bạn sẽ nhìn thấy nội dung như sau:
 
