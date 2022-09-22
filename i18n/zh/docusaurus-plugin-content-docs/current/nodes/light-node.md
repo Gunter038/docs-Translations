@@ -61,7 +61,7 @@ git make ncdu -y
 Celestia-app 和 celestia-node 是用[Golang](https://go.dev/)编写的，所以我们必须安装 Golang 来构建和运行它们。
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -90,6 +90,12 @@ go version go1.18.2 linux/amd64
 
 ### 安装 Celestia 节点
 
+One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+
+The following sections highlight how to install it for the two networks.
+
+#### Mamaki Testnet installation
+
 通过运行以下命令安装 celestia-node 二进制文件：
 
 ```sh
@@ -99,6 +105,7 @@ git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
 git checkout tags/v0.3.0-rc2
 make install
+make cel-key
 ```
 
 验证二进制文件是否正常工作并使用 celestia version 命令检查版本：
@@ -107,6 +114,30 @@ make install
 $ celestia version
 Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
+```
+
+#### Arabica Devnet installation
+
+Install the celestia-node binary by running the following commands:
+
+```sh
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node/
+git checkout tags/v0.3.1
+make install
+```
+
+Verify that the binary is working and check the version with the celestia version command:
+
+```sh
+$ celestia version
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
 ```
 
 ## 初始化轻节点
@@ -134,27 +165,39 @@ $ celestia light init
 
 > 注意：为了获得获取/提交状态相关信息的能力，例如提交 PayForData 交易或查询节点账户余额的能力，验证者（核心）节点的 gRPC 端点必须按指示传递如下
 
+For ports:
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+
 ```sh
-celestia light start --core.grpc http://<ip>:9090
+celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-如果您需要连接到 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
 
 例如，您的命令可能如下所示：
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### 密钥和钱包
 
 您可以通过运行以下命令为您的节点创建密钥：
 
 ```sh
-make cel-key
+./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-启动轻节点后，将为您生成一个钱包密钥。 您需要使用 Mamaki 测试网代币为该地址注资，以支付 PayForData 交易。
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <key_name>
+```
+<!-- markdownlint-enable MD013 -->
+
+启动轻节点后，将为您生成一个钱包密钥。 You will need to fund that address with testnet tokens to pay for PayForData transactions.
 
 您可以通过在 `celestia-node` 目录中运行以下命令来找到地址：
 
@@ -162,7 +205,20 @@ make cel-key
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-可以在[这里](./mamaki-testnet.md#mamaki-testnet-faucet)请求 Mamaki 测试网代币
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+
+You can request funds to your wallet address using the following command in Discord:
+
+```console
+$request <Wallet-Address>
+```
+
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
 ### 可选：使用自定义密钥运行轻节点
 
@@ -171,9 +227,11 @@ make cel-key
 1. 自定义密钥必须存在于 celestia 轻节点目录中的正确路径(默认:`~/.celestia-light/keys/keyring-test`)
 2. 自定义密钥的名称必须在 `开始`时传递，就像这样：
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <name_of_custom_key>
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### 可选：通过 SystemD 启动轻节点
 
