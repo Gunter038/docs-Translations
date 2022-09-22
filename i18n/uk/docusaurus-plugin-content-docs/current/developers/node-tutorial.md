@@ -3,7 +3,7 @@ sidebar_label : Інструкція для ноди
 - - -
 
 # Отримання та надсилання транзакцій із нодою Celestia
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 У цьому підручнику ми розглянемо, як використовувати Celestia Node API для надсилання та отримання повідомлень із рівня доступності даних за їхнім ідентифікатором простору імен.
 
@@ -32,8 +32,9 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-Це важливі пакети, які необхідні для виконання багатьох завдань, таких як завантаження файлів, компілювання і моніторинг вузла:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 # Якщо ви використовуєте менеджер пакетів APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
@@ -41,13 +42,14 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 # Якщо ви використовуєте менеджер пакетів YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Інсталювати Golang
 
-Celestia-app та elestia-node записано в [Golang](https://go.dev/), тому нам слід встановити Golang, щоб побудувати та запустити їх.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -85,16 +87,20 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.1
 make install
+make cel-key
 ```
 
-Перевірте, чи працює бінарний файл і перевіряє версію файлу з версією celestia:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
-Semantic version: v0.3.0-rc2
-Commit: 89892d8b96660e334741987d84546c36f0996fbe
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
 ```
 
 ### Створення екземпляра слабкої ноди Celestia
@@ -111,35 +117,45 @@ celestia light init
 
 Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
 
-> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. Ви можете знайти список кінцевих точок RPC [тут](/nodes/mamaki-testnet#rpc-endpoints)
+> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
-celestia light start --core.grpc http://<ip-address>:9090
+celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 Наприклад, ваша команда разом з кінцевою точкою RPC може виглядати так:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Ключі та гаманці
 
 Ви можете створити ключ для вашої ноди, запустивши таку команду:
 
 ```sh
-make cel-key
+./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-Після запуску ноди Light для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів тестнету Mamaki для оплати транзакцій PayForData.
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <key_name> 
+```
+<!-- markdownlint-enable MD013 -->
 
-Ви можете знайти адресу, запустивши таку команду в каталозі `elestia-node`:
+Після запуску ноди Light для вас буде згенеровано ключ гаманця. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Якщо ви хочете поповнити ваш гаманець тестовими токенами, перейдіть до каналу Discord Celestia `#faucet`.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
 Ви можете попросити кошти на адресу гаманця за допомогою такої команди в Discord:
 
@@ -603,10 +619,12 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 
 Якщо ви стикаєтеся з помилкою:
 
+<!-- markdownlint-disable MD013 -->
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
+<!-- markdownlint-enable MD013 -->
 
 Цілком можливо, що обліковий запис з якого ви намагаєтеся відправити PayForData, ще не має тестових токенів. Переконайтеся, що faucet підтримує ваш обліковий запис з токенами й потім спробуйте знову.
 
