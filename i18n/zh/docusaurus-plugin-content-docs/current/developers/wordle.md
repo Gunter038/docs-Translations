@@ -1,14 +1,14 @@
 ---
-sidebar_label: Wordle Overview
+sidebar_label: Wordle 概述
 ---
 
 # Optimint 上的 Wordle 应用程序
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app for Optimint, the Optimistic Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+本教程指南将介绍流行游戏[Wordle](https://www.nytimes.com/games/wordle/index.html)构建Optimint（Tendermint 的 Optimistic Rollup 实现）的 cosmos-sdk 应用程序。
 
-This tutorial will go over how to setup Optimint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
+本教程将介绍如何在 Ignite CLI 中设置 Optimint 并使用它来构建游戏。 本教程将介绍简单的设计， 并以未来的实施和想法结束 扩展这个代码库。
 
 > NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer. Furthermore, Optimint currently only supports a single sequencer.
 
