@@ -1,5 +1,5 @@
 ---
-sidebar_label: Scaffolding The Chain
+sidebar_label: 脚手架链
 ---
 
 # Ignite and Scaffolding the Wordle Chain
@@ -7,67 +7,67 @@ sidebar_label: Scaffolding The Chain
 
 ## Ignite
 
-Ignite is an amazing CLI tool to help us get started building our own blockchains for cosmos-sdk apps. It provides lots of power toolings and scaffoldings for adding messages, types, and modules with a host of cosmos-sdk libraries provided. It provides lots of power toolings and scaffoldings for adding messages, types, and modules with a host of cosmos-sdk libraries provided.
+Ignite 是一个了不起的 CLI 工具，可以帮助我们开始为 cosmos-sdk 应用程序构建我们自己的区块链。 它提供了许多强大的工具和脚手架，用于添加消息、类型和模块，并提供了大量的 cosmos-sdk 库。
 
-You can read more about Ignite [here](https://docs.ignite.com/).
+您可以在[此处](https://docs.ignite.com/)阅读有关 Ignite的更多信息。
 
-To install Ignite, you can run this command in your terminal:
+要安装 Ignite，您可以在终端中运行此命令：
 
 ```sh
 curl https://get.ignite.com/cli | bash
 sudo mv ignite /usr/local/bin/
 ```
 
-This installs Ignite CLI in your local machine. This tutorial uses a MacOS but it should work for Windows. For Windows users, check out the Ignite docs on installation for Windows machines. This tutorial uses a MacOS but it should work for Windows. For Windows users, check out the Ignite docs on installation for Windows machines.
+这会在您的本地机器上安装 Ignite CLI。 本教程使用的是 MacOS，但它应该适用于 Windows。 对于 Windows 用户，请查看有关 Windows 机器安装的 Ignite 文档。
 
-Now, refresh your terminal using `source` or open a new terminal session for the change to take place.
+现在，使用或打开一个新的终端会话刷新您的终端以 `source` 进行更改。
 
-If you run the following:
+运行以下命令：
 
 ```sh
 ignite --help
 ```
 
-You should see an output of help commands meaning Ignite was installed successfully!
+您应该会看到帮助命令的输出，这意味着 Ignite 已成功安装！
 
-## Scaffolding the Wordle Chain
+## 搭建 Wordle 链
 
-Now, comes the fun part, creating a new blockchain! With Ignite, the process is pretty easy and straightforward. With Ignite, the process is pretty easy and straightforward.
+现在，有趣的部分来了，创建一个新的区块链！ 使用 Ignite，该过程非常简单明了。
 
-Ignite CLI comes with several scaffolding commands that are designed to make development more straightforward by creating everything you need to build your blockchain.
+Ignite CLI 附带了几个脚手架命令，旨在通过创建构建区块链所需的一切来使开发更加简单。
 
-First, we will use Ignite CLI to build the foundation of a fresh Cosmos SDK blockchain. Ignite minimizes how much blockchain code you must write yourself. If you are coming from the EVM-world, think of Ignite as a Cosmos-SDK version of Foundry or Hardhat but specifically designed to build blockchains. Ignite minimizes how much blockchain code you must write yourself. If you are coming from the EVM-world, think of Ignite as a Cosmos-SDK version of Foundry or Hardhat but specifically designed to build blockchains.
+首先，我们将使用 Ignite CLI 构建全新 Cosmos SDK 区块链的基础。 Ignite 最大限度地减少了您必须自己编写的区块链代码。 如果您来自 EVM 的工程师，请将 Ignite 视为 Foundry 或 Hardhat 的 Cosmos-SDK 版本，但专门用于构建区块链。
 
-We first run the following command to setup our project for our new blockchain, Wordle.
+我们首先运行以下命令来为我们的新区块链 Wordle 设置我们的项目。
 
 ```sh
 ignite scaffold chain github.com/YazzyYaz/wordle --no-module
 ```
 
-This command scaffolds a new chain directory called `wordle` in your local directory from which you ran the command. Notice that we passed the `--no-module` flag, this is because we will be creating the module after. Notice that we passed the `--no-module` flag, this is because we will be creating the module after.
+此命令在您运行命令的本地目录中构建一个名为 `wordle` 的新链目录。 请注意，我们传递了` --no-module` 标志，这是因为我们将在之后创建模块。
 
-## Wordle Directory
+## Wordle 目录
 
-Now, it’s time to enter the directory:
+现在，是时候进入目录了：
 
 ```sh
 cd wordle
 ```
 
-Inside you will see several directories and architecture for your cosmos-sdk blockchain.
+在里面你会看到你的 cosmos-sdk 区块链的几个目录和架构。
 
-| File/directory | Purpose                                                                                                                                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| app/           | Files that wire together the blockchain. Files that wire together the blockchain. The most important file is `app.go` that contains type definition of the blockchain and functions to create and initialize it. |
-| cmd/           | The main package responsible for the CLI of compiled binary.                                                                                                                                                     |
-| docs/          | Directory for project documentation. Directory for project documentation. By default, an OpenAPI spec is generated.                                                                                              |
-| proto/         | Protocol buffer files describing the data structure.                                                                                                                                                             |
-| testutil/      | Helper functions for testing.                                                                                                                                                                                    |
-| vue/           | A Vue 3 web app template.                                                                                                                                                                                        |
-| x/             | Cosmos SDK modules and custom modules.                                                                                                                                                                           |
-| config.yml     | A configuration file for customizing a chain in development.                                                                                                                                                     |
-| readme.md      | A readme file for your sovereign application-specific blockchain project.                                                                                                                                        |
+| 文件/目录  | 用途                                                       |
+| ------ | -------------------------------------------------------- |
+| 应用程序/  | 将区块链连接在一起的文件。 最重要的文件是 `app.go`，其中包含区块链的类型定义以及创建和初始化它的函数。 |
+| 命令/    | 负责编译二进制 CLI 的主包。                                         |
+| 文档/    | 项目文档目录。 默认情况下，会生成 OpenAPI 规范。                            |
+| 原型/    | 描述数据结构的协议缓冲文件。                                           |
+| 测试工具/  | 用于测试的辅助函数。                                               |
+| vue/   | 一个 Vue 3 网络应用程序模板。                                       |
+| x/     | Cosmos SDK 模块和自定义模块。                                     |
+| 配置.yml | 用于自定义开发链的配置文件。                                           |
+| 自述文件   | 您的主权应用程序特定区块链项目的自述文件。                                    |
 
-Going over each one is outside the scope of this guide, but we encourage you to read about it [here](https://docs.ignite.com/kb).
+逐一复习不在本指南的范围内，但我们鼓励您在[此处](https://docs.ignite.com/kb)阅读相关内容。
 
-Most of the tutorial work will happen inside the `x` directory.
+大部分教程工作将在 `x` 目录中进行。
