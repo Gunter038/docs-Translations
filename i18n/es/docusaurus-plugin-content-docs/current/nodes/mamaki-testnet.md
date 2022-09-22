@@ -3,11 +3,12 @@ sidebar_label : Mamaki Testnet
 - - -
 
 # Mamaki Testnet
-<!-- markdownlint-disable MD013 -->
 
 ![mamaki Testnet](/img/mamaki.png)
 
-Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki es un hito en Celestia, permitiendo a todos probar las funcionalidades principales de la red. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+
+Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Tu mejor enfoque para participar es determinar primero qué nodo deseas ejecutar. Cada guía de nodo se enlazará a la red relevante para mostrarte cómo conectarse a ellos.
 
@@ -40,7 +41,7 @@ Hay una lista de puntos finales RPC que puedes utilizar para conectarte a Mamaki
 
 > USAR ESTE FAUCER NO TE DA ACCESO A NINGÚN AIRDROP U OTRA DISTRIBUCIÓN DE TOKENS DE LA MAINNET DE CELESTIA. LOS TOKENS DE MAINNET DE CELESTIA ACTUALMENTE NO EXISTEN NI SE HACEN VENTAS PÚBLICAS U OTRAS DISTRIBUCIONES PÚBLICAS DE CUALQUIER TOKEN DE MAINNET DE CELESTIA.
 
-Puedes solicitar desde Mamaki Testnet Faucet en el canal #faucet en el servidor de Discord de Celestia con el siguiente comando:
+You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -82,12 +83,13 @@ cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 
 Establecer seeds y peers:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
 echo $BOOTSTRAP_PEERS
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
-
 ```
+<!-- markdownlint-enable MD013 -->
 
 Nota: Puedes encontrar más peers [aquí](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
@@ -107,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## Delegar a un validador
 
-Para delegar tokens al validador de `celestiavaloper`, como un ejemplo puedes ejecutar:
+To delegate tokens to the `celestiavaloper` validator, as an example you can run:
 
 ```sh
 celestia-appd tx staking delegate \
