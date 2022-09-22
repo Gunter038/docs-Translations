@@ -45,21 +45,32 @@ celestia full init
 
 > ПРИМІТКА. Щоб отримати доступ до можливості отримати/надсилати інформацію, пов’язану зі станом, наприклад можливість надсилати транзакції PayForData або запитувати баланс рахунку ноди, кінцеву точку gRPC ноди валідатора (основного) потрібно передати відповідно до вказівок нижче.
 
+A note on ports:
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip addr of core node>:9090
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 ```
+<!-- markdownlint-enable MD013 -->
 
 Якщо ви хочете знайти приклад кінцевих точок RPC, перегляньте список ресурсів [тут](./mamaki-testnet.md#rpc-endpoints).
 
 Ви можете створити ключ для своєї ноди, дотримуючись інструкцій `cel-key` [тут](./keys.md)
 
-Після запуску повної ноди для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів тестнету Mamaki для оплати транзакцій PayForData. Ви можете знайти адресу, виконавши таку команду:
+Після запуску повної ноди для вас буде згенеровано ключ гаманця. You will need to fund that address with testnet tokens to pay for PayForData transactions. Ви можете знайти адресу, виконавши таку команду:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Зробити запит на токени тестнету Mamaki можна [тут](./mamaki-testnet.md#mamaki-testnet-faucet).
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
 
 ### Додатково: запуск ноди повного сховища за допомогою кастомного ключа
 
@@ -68,9 +79,11 @@ celestia full start --core.grpc http://<ip addr of core node>:9090
 1. Кастомний ключ має існувати в каталозі повної ноди зберігання celestia за правильним шляхом (за замовчуванням: `~/.celestia-full/keys/keyring-test`)
 2. Ім'я кастомного ключа має бути передано під час `запуску`, наприклад:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyring.accname <name-of-custom-key>
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### Додатково: запуск ноди повного сховища за допомогою SystemD
 
