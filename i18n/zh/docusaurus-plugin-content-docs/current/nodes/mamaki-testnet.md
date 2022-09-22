@@ -3,11 +3,12 @@ sidebar_label : Mamaki测试网
 - - -
 
 # Mamaki测试网
-<!-- markdownlint-disable MD013 -->
 
 ![mamaki-testnet](/img/mamaki.png)
 
-本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/). 公告在[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)。
+本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+
+Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. 公告在[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)。
 
 您参与的最佳方式取决于首先确定的您想运行的节点类型。 Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
 
@@ -40,7 +41,7 @@ sidebar_label : Mamaki测试网
 
 > USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS. 主网上的Celestia代码目前还不存在，也没有任何公开销售或分配的计划。
 
-您可以通过Celestia的Discord服务器上的#faucet频道，向Mamaki测试网水龙头发出以下申请：
+You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -82,12 +83,13 @@ cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 
 设置种子和对等节点：
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
 echo $BOOTSTRAP_PEERS
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
-
 ```
+<!-- markdownlint-enable MD013 -->
 
 注意：您可以在[这里](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt)找到更多对等节点。
 
@@ -107,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## 向验证者提供抵押
 
-要将代币委派给`celestiavaloper`验证者，作为示例，您可以运行：
+To delegate tokens to the `celestiavaloper` validator, as an example you can run:
 
 ```sh
 celestia-appd tx staking delegate \
