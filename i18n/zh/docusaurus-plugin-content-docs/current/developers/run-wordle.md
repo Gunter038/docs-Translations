@@ -52,7 +52,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 In the future, with leader selection, block production and sync logic improves dramatically.
 
 这将要求你确认交易，并发出以下信息。
 
