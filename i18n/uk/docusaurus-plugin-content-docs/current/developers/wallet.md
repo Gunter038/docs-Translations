@@ -28,7 +28,7 @@ celestia-appd keys list
 
 ## Поповнити гаманець
 
-Для публічної адреси Celestia ви можете поповнити раніше створений гаманець через [Discord](https://discord.gg/celestiacommunity), надіславши це повідомлення на канал #faucet:
+For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #arabica-faucet channel:
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
