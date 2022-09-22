@@ -3,7 +3,6 @@ sidebar_label: Налаштування середовища мережі
 ---
 
 # Налаштування вашого середовища для CosmWasm на Celestia
-<!-- markdownlint-disable MD013 -->
 
 Тепер двійковий файл `wasmd` створено, нам потрібно налаштувати локальну мережу, яка обмінюється даними між `wasmd` і Optimint.
 
@@ -41,25 +40,29 @@ wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend tes
 
 Ще кілька корисних команд, які ми можемо налаштувати:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 export NODE="--chain-id ${CHAIN_ID}"
 export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
 ```
+<!-- markdownlint-enable MD013 -->
 
 ## Запуск мережі Wasmd
 
 Ми можемо виконати наступне, щоб запустити мережу `wasmd`:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
+<!-- markdownlint-enable MD013 -->
 
 Будь ласка, зверніть увагу:
 
-> ПРИМІТКА. У наведеній вище команді вам потрібно передати IP-адресу вузла Celestia до `base_url`, який має обліковий запис із маркерами тестової мережі Mamaki. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
 
 Також зверніть увагу:
 
-> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в тестовій мережі Mamaki для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://testnet.mintscan.io/celestia-testnet). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 Таким чином ми запустили нашу мережу `wasmd`!
