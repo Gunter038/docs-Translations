@@ -2,7 +2,7 @@
 sidebar_label: 脚手架链
 ---
 
-# Ignite and Scaffolding the Wordle Chain
+# 点燃和搭建单词链
 <!-- markdownlint-disable MD013 -->
 
 ## Ignite
