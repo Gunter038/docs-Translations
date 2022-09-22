@@ -28,7 +28,7 @@ celestia-appd keys list
 
 ## 给钱包充值
 
-查询Celestia公共地址，可以通过发送以下信息至 [Discord](https://discord.gg/celestiacommunity)上的#faucet频道获取之前创建的钱包地址
+For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #arabica-faucet channel:
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
