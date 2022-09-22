@@ -45,21 +45,32 @@ celestia full init
 
 > 注意：为了获得获取/提交状态相关信息的能力，例如提交 PayForData 交易或查询节点账号余额的能力，验证者（核心）节点的 gRPC 端点必须按指示传递如下
 
+A note on ports:
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip addr of core node>:9090
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 ```
+<!-- markdownlint-enable MD013 -->
 
 如果您想要查询示例RPC端点，请在[这里](./mamaki-testnet.md#rpc-endpoints)查看资源列表。
 
 您可以按照[这里](./keys.md)的`cel-key`指示教程为您的节点创建密钥
 
-启动存储全节点后，将为您生成一个钱包密钥。 您需要使用 Mamaki 测试网代币为该地址注资，以支付 PayForData 交易。 您可以通过运行以下命令找到地址：
+启动存储全节点后，将为您生成一个钱包密钥。 You will need to fund that address with testnet tokens to pay for PayForData transactions. 您可以通过运行以下命令找到地址：
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-可以在[这里](./mamaki-testnet.md#mamaki-testnet-faucet)请求 Mamaki 测试网代币
+You have two networks to get testnet tokens from:
+
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
+
+> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
 
 ### 可选：使用自定义密钥运行存储全节点
 
@@ -68,9 +79,11 @@ celestia full start --core.grpc http://<ip addr of core node>:9090
 1. 自定义密钥必须存在于 celestia 存储全节点目录中的正确路径(默认: `~/.celestia-full/keys/keyring-test`)
 2. 自定义密钥的名称必须在 `开始`时传递，就像这样：
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyring.accname <name-of-custom-key>
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### 可选：使用 SystemD 启动存储全节点
 
