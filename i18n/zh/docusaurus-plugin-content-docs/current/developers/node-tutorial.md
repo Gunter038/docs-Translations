@@ -3,7 +3,7 @@ sidebar_label : 节点教程
 - - -
 
 # 使用Celestia节点获取和发送交易
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
@@ -32,8 +32,9 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-这些是执行许多任务（如下载文件、编译和监控节点）所必需的基本包。
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 # 如果你使用 APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
@@ -41,13 +42,14 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 # 如果你使用 YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### 安装 Golang
 
-Celestia-app和celestia-node是用[Golang](https://go.dev/)编写的，所以我们必须安装Golang来构建和运行它们。
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -85,16 +87,20 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.1
 make install
+make cel-key
 ```
 
-验证二进制文件是否工作，用celestia version命令检查版本：
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
-Semantic version: v0.3.0-rc2
-Commit: 89892d8b96660e334741987d84546c36f0996fbe
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
 ```
 
 ### 实例化Celestia轻节点
@@ -111,35 +117,45 @@ celestia light init
 
 现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 你可以在[这里](/nodes/mamaki-testnet#rpc-endpoints)找到 RPC 端点的列表
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
-celestia light start --core.grpc http://<ip-address>:9090
+celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
+
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 例如，命令连同 RPC 端点可能看起来像这样：
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.grpc https://rpc-mamaki.pops.one:9090
+celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
 ```
+<!-- markdownlint-enable MD013 -->
 
 ### 密钥和钱包
 
 您可以通过运行以下命令为您的节点创建密钥：
 
 ```sh
-make cel-key
+./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-一旦启动轻节点，钱包密钥将会生成。 您需要用 Mamaki 测试网代币为该地址提供资金，以支付 PayForData 交易。
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <key_name> 
+```
+<!-- markdownlint-enable MD013 -->
 
-您可以通过在 `celestia-node` 目录下运行以下命令找到该地址：
+一旦启动轻节点，钱包密钥将会生成。 You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 /cel-key list --node.type light --keyring-backend test
 ```
 
-如果想将测试网代币转入您的钱包，请到 Celestia Discord 频道 `#faucet`。
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
 您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
@@ -603,10 +619,12 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 
 如果你遇到类似的错误：
 
+<!-- markdownlint-disable MD013 -->
 ```console
 $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd83255b8410fef4860c0cd2eba82e24a", "gas_limit": 60000}'  localhost:26658/submit_pfd
 "rpc error: code = NotFound desc = account celestia1krkle0n547u0znz3unnln8paft2dq4z3rznv86 not found"
 ```
+<!-- markdownlint-enable MD013 -->
 
 有可能是你试图提交 PayForData 的账户 还没有测试网代币。 确保测试网水龙头已经将测试代币转到你的账户，然后再试一次。
 
