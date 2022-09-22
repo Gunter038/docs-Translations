@@ -3,7 +3,6 @@ sidebar_label: Configurar el entorno de red
 ---
 
 # Configurando tu entorno para CosmWasm en Celestia
-<!-- markdownlint-disable MD013 -->
 
 Ahora el binario `wasmd` está compilado, necesitamos configurar una red local que comunique entre `wasmd` y Optimint.
 
@@ -41,25 +40,29 @@ Con eso, creamos un archivo de génesis de red local.
 
 Algunos comandos más útiles que podemos configurar:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 export NODE="--chain-id ${CHAIN_ID}"
 export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
 ```
+<!-- markdownlint-enable MD013 -->
 
 ## Iniciando la red Wasmd
 
 Podemos ejecutar el siguiente código para iniciar la red de `wasmd`:
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
+<!-- markdownlint-enable MD013 -->
 
 Ten en cuenta que:
 
-> NOTA: En el comando anterior, necesitas pasar una dirección IP del nodo Celestia al `base_url` que tiene una cuenta con tokens de Mamaki testnet. Sigue el tutorial para configurar un Nodo Celestia Light y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Sigue el tutorial para configurar un Nodo Celestia Light y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
 
 Ten en cuenta que:
 
-> IMPORTANTE: Además, en el comando anterior, debes especificar la última Block Height en Mamaki Testnet para `da_height`. Puedes encontrar el último número de bloque en el explorador [aquí](https://testnet.mintscan.io/celestia-testnet). También, para la bandera `--optimint.namespace_id`, puedes generar un ID de Espacio de Nombres aleatorio usando el playground [aquí](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 ¡Con esto, hemos iniciado nuestra red de `wasmd`!
