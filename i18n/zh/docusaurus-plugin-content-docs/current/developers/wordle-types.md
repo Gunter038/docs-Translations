@@ -1,5 +1,5 @@
 ---
-sidebar_label: Types
+sidebar_label: 类型
 ---
 
 # Wordle 类型
@@ -12,7 +12,7 @@ sidebar_label: Types
 ignite scaffold map wordle word submitter --no-message
 ```
 
-This type is a map called `Wordle` with two values of `word` and `submitter`. `submitter` is the address of the person that submitted the Wordle. `submitter` is the address of the person that submitted the Wordle.
+这种类型是一个名为 `Wordle` 的映射，具有两个值 `word` 和 `submitter`。 `submitter` 是提交者的地址提交 Wordle 的人。
 
 第二种类型是 `Guess` 类型。 第二种类型是 ` Guess ` 类型。它允许我们保存对于提交解决方案的每个地址的最新猜测。
 
