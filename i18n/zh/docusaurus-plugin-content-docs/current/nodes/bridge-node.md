@@ -62,7 +62,7 @@ Celestia桥接节点具有以下属性：
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. 如果你喜欢，你可以使用flag来指定另一个端口。
 
 如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
@@ -74,19 +74,19 @@ celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. 如果你喜欢，你可以使用flag来指定另一个端口。
 
 如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
 您可以按照[这里](./keys.md)的`cel-key`指示步骤为您的节点创建密钥
 
-启动桥接节点后，将为您生成一个钱包密钥。 You will need to fund that address with Testnet tokens to pay for PayForData transactions. 您可以通过运行以下命令找到地址：
+启动桥接节点后，将为您生成一个钱包密钥。 你需要使用测试网代币为该地址注资，以支付 PayForData 交易。 您可以通过运行以下命令找到地址：
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+你有两个网络获取测试网代币：
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
