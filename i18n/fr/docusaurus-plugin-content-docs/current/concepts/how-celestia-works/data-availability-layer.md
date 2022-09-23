@@ -48,7 +48,7 @@ Comme solution, _les Preuves Frauduleuses de Données Etendues Incorrectes_ perm
 
 Celestia cloisonne les données d'un bloc en plusieurs espaces de noms, un pour chaque application (par exemple, rollup) en utilisant la couche d'accessibilité des données. Il en résulte que chaque application a besoin de télécharger uniquement ses propres données et peut ignorer toutes les autres applications.
 
-Pour ce travail, la couche d'accessibilité des données doit être en mesure de prouver que les données fournies sont complètes, c-à-d que toutes les données d'un espace de nom sont revenues. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Pour ce travail, la couche d'accessibilité des données doit être en mesure de prouver que les données fournies sont complètes, c-à-d que toutes les données d'un espace de nom sont revenues. Pour y arriver, Celestia utilise les Arbres de Merkle Namespaced (NMTs).
 
 An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
 
