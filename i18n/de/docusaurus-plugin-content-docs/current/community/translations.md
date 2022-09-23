@@ -6,37 +6,37 @@ sidebar_label : Docs Translations
 
 If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
 
-## Visit our Crowdin project
+## Besuche unser Crowdin Projekt
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Um zu beginnen, geh zum Crowdin Projekt [hier](https://crowdin.com/project/celestia-docs).
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+Du musst zuerst einen Account anlegen, dann kannst du dem Projekt beitreten und deine Reise als Übersetzer beginnen.
 
 If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
 
 On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
 
-Give your opinion on existing translations to ensure it is correct!
+Gib deine Meinung zu bereits existierenden Übersetzungen um sicherzustellen, dass sie richtig sind!
 
-## Tips
+## Tipps
 
-Here are few tips to help you during your translation.
+Hier sind ein paar Tipps, die dir beim Übersetzen helfen.
 
-### Crowdin documentation
+### Crowdin Dokumentation
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+Die offizielle Crowdin Dokumentation ist [Hier](https://support.crowdin.com/online-editor) verfügbar.
 
-### Guide
+### Anleitung
 
 #### Code
 
 Some pages contain metadata and computer code.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+Es ist wichtig, daran zu denken, dass William Shakespeare Englisch gesprochen hat... genauso wie Alan Turing! Darum solltest du nicht Teile des Codes "selbst" übersetzen.
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Zum Beispiel, wenn du Metadaten wie `siedebar_label : Hello World`, eine Deutsche Übersetzung wäre `sidebar_label : Hallo Welt`.
 
-Let's take another example, you wouldn't have to translate anything here:
+Hier ein anderes Beispiel, dort müsste man überhaupt nichts übersetzen:
 
 ```sh
 cd $HOME
@@ -50,9 +50,9 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+Des weiteren solltest du keine URLs in deine Sprache übersetzen.
 
-#### Specific words
+#### Besondere Wörter
 
 As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
 
