@@ -12,9 +12,9 @@ Over the course of the three month program, Modular Fellows will receive enginee
 
 Applications are currently closed. Check back for details about future cohorts.
 
-## Overview
+## Übersicht
 
-### Milestones
+### Meilensteine
 
 Each month, the Fellows will complete a project milestone, culminating in a demo-day presentation.
 
@@ -36,7 +36,7 @@ Each month, the Fellows will complete a project milestone, culminating in a demo
 
   - *Milestone - demo, write up of product*
 
-## Project ideas
+## Projekt Ideen
 
 Fellows do not need to have a specific project idea at the start of the program, but you will need to settle on one by the end of the first month. There are no right or wrong ideas, but here are a few to get you thinking:
 
