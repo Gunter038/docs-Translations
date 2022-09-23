@@ -154,7 +154,7 @@ NODE_IP=<ip-address>
 
 Deberías estar viendo los registros que aparecen a través de la sincronización de nodos de full storage.
 
-### Nodo ligero de Celestia
+### Celestia Light Node
 
 Inicia el Nodo Light como proceso demonio en segundo plano
 
