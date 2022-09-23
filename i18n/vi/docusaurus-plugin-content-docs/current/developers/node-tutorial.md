@@ -634,7 +634,7 @@ Có thể tài khoản bạn đang cố gắng gửi giao dịch PayForData chư
 
 ### Nhận các Namespaced Shares theo Block Height
 
-Sau khi gửi giao dịch PFD của bạn, khi thành công, node sẽ gửi trở lại Block Height mà giao dịch PFD đã được thực hiện. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
+Sau khi gửi giao dịch PFD của bạn, khi thành công, node sẽ gửi trở lại Block Height mà giao dịch PFD đã được thực hiện. Bạn có thể sử dụng Block Height đó và namespace ID mà bạn đã gửi cùng với giao dịch PFD để nhận lại message shares của bạn. Trong ví dụ sau, Block Height chúng ta sẽ nhận là 589 bằng cách sử dụng câu lệnh sau.
 
 ```sh
 curl -X GET \
