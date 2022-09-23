@@ -40,15 +40,15 @@ La nécessité de télécharger les racines de Merkle des 4k intermédiaires est
 
 La contrepartie de l'encodage Reed-Solomon standard est de gérer les producteurs de bloc malveillants qui produisent les données étendues de manière incorrecte.
 
-This is possible as __Celestia does not require a majority of the consensus (i.e., block producers) to be honest to guarantee data availability.__ Thus, if the extended data is invalid, the original data might not be recoverable, even if the light nodes are sampling sufficient unique chunks (i.e., at least k for a standard encoding and k × k for a 2-dimensional encoding).
+C'est toutefois possible puisque __Celestia ne nécessite pas qu'une majorité du consensus (c-à-d des producteurs de blocs) soient honnêtes pour garantir la disponibilité des données.__ De ce fait, si la donnée étendue est invalide, la donnée original pourrait ne pas être récupérable, même si les light nodes échantillonnent des morceaux uniques suffisants (c-à-d au moins k pour un encodage standard et k x k pour un encodage à deux dimensions).
 
-As a solution, _Fraud Proofs of Incorrectly Generated Extended Data_ enable light nodes to reject blocks with invalid extended data. Such proofs require reconstructing the encoding and verifying the mismatch. With standard Reed-Solomon encoding, this entails downloading the original data, i.e., O(n) bytes. Contrastingly, with 2-dimensional Reed-Solomon encoding, only O(n ) bytes are required as it is sufficient to verify only one row or one column of the extended matrix.
+Comme solution, _les Preuves Frauduleuses de Données Etendues Incorrectes_ permettent aux light nodes de rejeter les blocs dont les données étendues sont invalides. Ces preuves nécessitent de reconstruire l'encodage et de vérifier les incohérences. Avec l'encodage Reed-Solomon standard, cela implique de télécharger les données originelles, c-à-d O(n) octets. A contrario, avec l'encodage Reed-Solomon à deux dimensions, seul O(n ) octets sont nécessaires puisque suffisants pour vérifier une ligne ou une colonne de la matrice étendue.
 
-## Namespaced Merkle Trees (NMTs)
+## Les Arbres de Merkle Namespaced (NMTs)
 
-Celestia partitions the block data into multiple namespaces, one for every application (e.g., rollup) using the DA layer. As a result, every application needs to download only its own data and can ignore the data of other applications.
+Celestia cloisonne les données d'un bloc en plusieurs espaces de noms, un pour chaque application (par exemple, rollup) en utilisant la couche d'accessibilité des données. Il en résulte que chaque application a besoin de télécharger uniquement ses propres données et peut ignorer toutes les autres applications.
 
-For this to work, the DA layer must be able to prove that the provided data is complete, i.e., all the data for a given namespace is returned. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
+Pour ce travail, la couche d'accessibilité des données doit être en mesure de prouver que les données fournies sont complètes, c-à-d que toutes les données d'un espace de nom sont revenues. To this end, Celestia is using Namespaced Merkle Trees (NMTs).
 
 An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
 
