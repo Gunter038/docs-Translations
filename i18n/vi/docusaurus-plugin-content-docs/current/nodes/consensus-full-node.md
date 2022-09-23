@@ -26,17 +26,17 @@ Làm theo hướng dẫn tại đây để cài đặt các thành phần phụ 
 
 ## Triển khai celestia-app
 
-This section describes part 1 of Celestia consensus full node setup: running a Celestia App daemon with an internal Celestia Core node.
+Phần này mô tả phần 1 của việc thiết lập full node Consensus của Celestia: chạy daemon của Celestia App với một node Celestia Core nội bộ.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install + run the consensus full node.
+> Lưu ý: Đảm bảo bạn có ít nhất 100 Gb dung lượng trống để cài đặt + chạy một cách an toàn Full node Consensus.
 
 ### Cài đặt celestia-app
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Làm theo hướng dẫn cài đặt Celestia Node [tại đây](../developers/celestia-app.md).
 
 ### Thiết lập mạng P2P
 
-For this section of the guide, select the network you want to connect to:
+Đối với phần này của hướng dẫn, chọn mạng bạn muốn kết nối:
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
@@ -44,7 +44,7 @@ Sau đó, bạn có thể tiếp tục với phần còn lại của hướng d�
 
 ### Configure pruning
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+Để sử dụng dung lượng ổ cứng thấp hơn, chúng tôi khuyên bạn nên thiết lập pruning bằng cách sử dụng configurations bên dưới. Bạn có thể thay đổi nó thành prunning configurations của riêng bạn nếu bạn muốn:
 
 ```sh
 PRUNING="custom"
@@ -58,19 +58,19 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Reset network
+### Reset mạng
 
-This will delete all data folders so we can start fresh:
+Việc này se xóa tất cả folder dữ liệu để chúng ta có thể bắt đầu lại từ đầu:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Tùy chọn: Sync nhanh với Snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+Đồng bộ hóa từ đầu có thể mất nhiều thời gian, tùy thuộc vào phần cứng của bạn. Sử dụng phương pháp này bạn có thể đồng bộ hóa node celestia của mình rất nhanh bằng cách tải xuống một snapshot gần đây của blockchain. Nếu bạn muốn sync từ đầu, bạn có thể bỏ qua phần này.
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+Nếu bạn muốn sử dụng snapshot, hãy xác định mạng bạn muốn đồng bộ hóa từ danh sách dưới đây:
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
@@ -86,9 +86,9 @@ Câu lệnh này sẽ giúp bạn bắt đầu đồng bộ hóa với lịch s�
 
 ### Tùy chọn: điều chỉnh RPC endpoint
 
-You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
+Bạn có thể định cấu hình full node Consensus của mình thành một RPC endpoint công khai và lắng nghe bất kỳ kết nối nào từ các Data Availability Nodes để cung cấp các yêu cầu cho Data Availability API [tại đây](../developers/node-tutorial.md).
 
-Note that you would need to ensure port 9090 is open for this.
+Lưu ý rằng bạn sẽ cần đảm bảo port 9090 được mở cho việc này.
 
 Chạy câu lệnh sau:
 
@@ -100,6 +100,6 @@ sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/confi
 
 Khởi động lại `celestia-appd` trong bước trước để chạy được những configs đó.
 
-### Start the celestia-app with SystemD
+### Khởi động celestia-app với SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Làm theo hướng dẫn về cách thiết lập Celestia-App làm trình chạy nền với SystemD [tại đây](./systemd.md#start-the-celestia-app-with-systemd).
