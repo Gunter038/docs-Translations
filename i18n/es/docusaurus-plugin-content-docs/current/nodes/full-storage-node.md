@@ -45,9 +45,9 @@ Inicia el Full Storage Node con una conexión al endpoint gRPC de un nodo valida
 
 > NOTA: Para acceder a la capacidad de obtener/enviar información relacionada con el estado, como la posibilidad de enviar transacciones de PayForData o consulta para el saldo de cuenta del nodo un endpoint gRPC de un nodo validador (core) debe ser configurado como indica debajo.
 
-A note on ports:
+Una nota sobre los puertos:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTA: El `--core.grpc. ort` es por defecto 9090, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -59,18 +59,18 @@ Si desea encontrar los endpoints RPC de ejemplo, consulte la lista de recursos [
 
 Puedes crear tu clave para tu nodo siguiendo las instrucciones de `cel-key-` [aquí](./keys.md)
 
-Una vez que inicies el Full Node, se generará una clave de wallet para ti. You will need to fund that address with testnet tokens to pay for PayForData transactions. Puedes encontrar la dirección ejecutando el siguiente comando:
+Una vez que inicies el Full Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData. Puedes encontrar la dirección ejecutando el siguiente comando:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Tienes dos redes desde las que obtener tokens de testnet:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
+> NOTA: Si estás ejecutando un nodo full-storage para su despliegue soberano, es altamente recomendable solicitar Arabica devnet tokens ya que Arabica tiene los últimos cambios que pueden ser usados para prueba para desarrollar su registro soberano. También puedes usar Mamaki Testnet, se utiliza principalmente para operaciones de validador.
 
 ### Opcional: ejecuta el full storage node con una clave personalizada
 
