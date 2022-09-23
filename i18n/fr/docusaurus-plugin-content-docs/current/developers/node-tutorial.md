@@ -7,18 +7,18 @@ sidebar_label : Tutoriel du node
 
 Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur identifiant d'espace de noms.
 
-This tutorial was assumes you are working in a Linux environment.
+Ce tutoriel est adapté à un travail en environnement Linux.
 
 > Pour voir un tutoriel vidéo pour la mise en place d'un Celestia Light Node, cliquez sur [ici](./light-node-video.md)
 
 ## Hardware Requis
 
-The following minimum hardware requirements are recommended for running a light node:
+Les exigences matérielles minimales recommandées pour lancer un light node sont les suivantes:
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- Mémoire vive : 2GB RAM
+- Processeur : simple cœur
+- Disque dur : 5 Go SSD
+- Bande-passante : 56 ko/s download/56ko/s upload
 
 ## Configuration des dépendances
 
