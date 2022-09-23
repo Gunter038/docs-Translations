@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Community Calendar
+sidebar_label : ตารางงานกิจกรรมของชุมชน
 - - -
 
 # ตารางงานกิจกรรมของชุมชน
