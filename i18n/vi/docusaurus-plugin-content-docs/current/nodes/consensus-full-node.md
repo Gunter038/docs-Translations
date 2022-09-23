@@ -9,38 +9,38 @@ Các nodes đồng thuận đầy đủ cho phép bạn đồng bộ hóa lịch
 
 ## Yêu cầu phần cứng
 
-The following hardware minimum requirements are recommended for running the Consensus Full Node:
+Các yêu cầu tối thiểu về phần cứng được khuyến nghị để chạy Consensus full node:
 
 * Memory: 8 GB RAM
 * CPU: Quad-Core
 * Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Bandwidth: 1 Gbps đối với Download/100 Mbps đối với Upload
 
-## Setting up your consensus full node
+## Thiết lập Consensus full node
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Hướng dẫn sau được thực hiện trên phiên bản Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Thiết lập các thành phần phụ thuộc
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+Làm theo hướng dẫn tại đây để cài đặt các thành phần phụ thuộc [tại đây](../developers/environment.md).
 
-## Deploying the celestia-app
+## Triển khai celestia-app
 
 This section describes part 1 of Celestia consensus full node setup: running a Celestia App daemon with an internal Celestia Core node.
 
 > Note: Make sure you have at least 100+ Gb of free space to safely install + run the consensus full node.
 
-### Install celestia-app
+### Cài đặt celestia-app
 
 Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Thiết lập mạng P2P
 
 For this section of the guide, select the network you want to connect to:
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Sau đó, bạn có thể tiếp tục với phần còn lại của hướng dẫn.
 
 ### Configure pruning
 
