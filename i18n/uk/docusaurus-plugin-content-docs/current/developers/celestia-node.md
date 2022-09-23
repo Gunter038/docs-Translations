@@ -8,9 +8,9 @@ sidebar_label : Встановлення ноди Celestia
 
 ## Установка ноди Celestia
 
-### Arabica Installation
+### Встановлення Arabica
 
-Installing celestia-node for Arabica Devnet means installing a specific version to be compatible with the network.
+Встановлення celestia-node для Arabica Devnet означає встановлення певної версії, сумісної з мережею.
 
 Встановіть двійковий файл celestia-node, виконавши такі команди:
 
@@ -34,11 +34,11 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Mamaki Installation
+### Встановлення Mamaki
 
-Installing celestia-node for Mamaki Testnet means installing a specific version to be compatible with the network.
+Встановлення celestia-node для Mamaki Testnet означає встановлення певної версії, сумісної з мережею.
 
-Install the celestia-node binary by running the following commands:
+Встановіть двійковий файл celestia-node, виконавши такі команди:
 
 ```sh
 cd $HOME
@@ -49,8 +49,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди `celestia version`:
 
 ```console
 $ celestia version
