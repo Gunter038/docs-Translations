@@ -30,7 +30,7 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个水龙头 和 API接口。 你可以按CTRL-C确定退出程序 原因是我们将单独运行 `worded` 双进制标记添加了 Optimint 标记。
+此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 原因是我们将单独运行 `worded` 双进制标记添加了 Optimint 标记。
 
 您可以通过运行以下步骤优化配置启动区块链
 
@@ -40,11 +40,11 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 请考虑以下方面：
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
+> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传输给拥有Arabica开发网代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
 
 还需要注意：
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
 
 在另一个窗口中，运行以下指令来submit a Wordle：
 
@@ -150,9 +150,9 @@ wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --cha
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 您将会收到一个单词 已经提交白天的错误。
+在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 您将会收到一个错误显示一个wordle已经在当天提交。
 
-现在让我们来猜测一个五个字母的单词：
+现在让我们来猜一个五个字母的单词：
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
