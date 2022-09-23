@@ -1,19 +1,19 @@
 ---
-sidebar_label: Run The Wordle Chain
+sidebar_label: Chạy chuỗi Wordle
 ---
 
-# Run the Wordle Chain
+# Chạy chuỗi Wordle
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## Xây dựng và chạy chuỗi Wordle
 
-In one terminal window, run the following command:
+Trong terminal, hãy chạy lệnh sau:
 
 ```sh
 ignite chain serve 
 ```
 
-This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
+Việc này sẽ biên dịch blockchain code bạn vừa viết và đồng thời tạo một file genesis và một vài tài khoản để bạn sử dụng. Một khi log cho thấy một số thứ trông như những log sau trong phần kết quả:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
@@ -30,23 +30,23 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Optimint flags added.
+Đây là lệnh tạo một binary gọi là `wordled` và địa chỉ`alice` và `bob`, cùng với một vòi và API. Bạn có thể thoát khỏi chương trình với CTRL-C. Lí do là vì chúng ta sẽ chạy binary `wordled` riêng biệt so với Optimint flags được thêm vào.
 
-You can start the chain with optimint configurations by running the following:
+Bạn có thể bắt đầu chuỗi với Optimint configurations bằng cách chạy như sau:
 
 ```sh
 wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+Hãy cân nhắc rằng:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> LƯU Ý: Trong lệnh trên, bạn cần chuyển một địa chỉ IP Celestia Node vào `base_url`. Địa chỉ phải có tài khoản với token testnet Arabica. Theo dõi hướng dẫn thiết lập Celestia Light Node và tạo ví với token testnet [tại đây](./node-tutorial.md) trong phần Celestia Node.
 
-Also please consider:
+Đồng thời hãy cân nhắc rằng:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Ngoài ra, đối với flag `--optimint.namespace_id`, bạn có thể tạo ID Namespace ngẫu nhiên bằng cách sử dụng playground [tại đây](https://go.dev/play/p/7ltvaj8lhRl)
 
-In another window, run the following to submit a Wordle:
+Trong một cửa số khác, chạy câu lệnh sau để gửi một Wordle:
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
