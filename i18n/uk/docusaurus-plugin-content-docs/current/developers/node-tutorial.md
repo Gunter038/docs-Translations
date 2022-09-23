@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Це основні пакети, необхідні для виконання багатьох завдань, таких як завантаження файлів, компіляція та моніторинг ноди:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -46,7 +46,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ### Інсталювати Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app і celestia-node написані мовою [Golang](https://go.dev/), тому ми повинні встановити Golang, щоб створити та запустити їх.
 
 ```sh
 ver="1.19.1"
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди celestia version:
 
 ```sh
 $ celestia version
@@ -103,9 +103,9 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Створення екземпляра слабкої ноди Celestia
+### Створення екземпляра легкої ноди Celestia
 
-Тепер давайте запустимо слабку ноду Celestia:
+Тепер запустімо легку ноду Celestia:
 
 > Примітка: RPC Endpoints в усіх типах нод Celestia, таких як Light, Bridge і Full Nodes.
 
@@ -113,11 +113,11 @@ Golang version: go1.19.1
 celestia light init
 ```
 
-### Під'єднатися до Public Core Endpoint
+### Під'єднайтеся до публічної кінцевої точки ядра
 
 Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
 
-> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. Ви можете знайти список кінцевих точок RPC [тут](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
