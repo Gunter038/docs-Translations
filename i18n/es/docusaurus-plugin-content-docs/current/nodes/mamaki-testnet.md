@@ -6,9 +6,9 @@ sidebar_label : Mamaki Testnet
 
 ![mamaki Testnet](/img/mamaki.png)
 
-Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki Testnet está diseñado para ayudar a los validadores a probar su infraestructura y software de nodos con la red de pruebas. Se anima a los desarrolladores a desplegar sus registros soberanos en Mamaki, pero también recomendamos [Arabica Devnet](./arabica-devnet.md) para eso ya que está diseñado para fines de desarrollo.
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki es un hito en Celestia, permitiendo a todos probar las funcionalidades principales de la red. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Tu mejor enfoque para participar es determinar primero qué nodo deseas ejecutar. Cada guía de nodo se enlazará a la red relevante para mostrarte cómo conectarse a ellos.
 
@@ -41,7 +41,7 @@ Hay una lista de puntos finales RPC que puedes utilizar para conectarte a Mamaki
 
 > USAR ESTE FAUCER NO TE DA ACCESO A NINGÚN AIRDROP U OTRA DISTRIBUCIÓN DE TOKENS DE LA MAINNET DE CELESTIA. LOS TOKENS DE MAINNET DE CELESTIA ACTUALMENTE NO EXISTEN NI SE HACEN VENTAS PÚBLICAS U OTRAS DISTRIBUCIONES PÚBLICAS DE CUALQUIER TOKEN DE MAINNET DE CELESTIA.
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+Puedes solicitar desde Mamaki Testnet Faucet en el canal #faucet en el servidor de Discord de Celestia con el siguiente comando:
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -109,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## Delegar a un validador
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+Para delegar tokens al validador de `celestiavaloper`, como un ejemplo puedes ejecutar:
 
 ```sh
 celestia-appd tx staking delegate \
