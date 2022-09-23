@@ -6,11 +6,11 @@ sidebar_label : Capa de disponibilidad de datos de Celestia
 
 Celestia es una capa de disponibilidad de datos (DA) que proporciona una solución escalable al problema de disponibilidad de datos [](https://coinmarketcap.com/alexandria/article/what-is-data-availability). Debido a la naturaleza sin permiso de las redes blockchain, una capa DA debe proporcionar un mecanismo para la ejecución y liquidación de capas para comprobar de una manera minimizada si los datos de transacción están efectivamente disponibles.
 
-Dos características clave de la capa DA de Celestia son [muestra de disponibilidad de datos](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) y [los Nombres de Dominio de los árboles Merkle ](https://github.com/celestiaorg/nmt) (NMTs). Ambas características son nuevas soluciones de escalabilidad de la blockchain: DAS permite que los nodos ligeros verifiquen la disponibilidad de datos sin necesidad de descargar un bloque completo; Los NMTs permiten la ejecución y liquidación de capas en Celestia para descargar transacciones que solo son relevantes para ellos.
+Dos características clave de la capa DA de Celestia son [muestra de disponibilidad de datos](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) y [los Nombres de Dominio de los árboles Merkle ](https://github.com/celestiaorg/nmt) (NMTs). Ambas características son nuevas soluciones de escalabilidad de la blockchain: DAS permite que los light nodes verifiquen la disponibilidad de datos sin necesidad de descargar un bloque completo; Los NMTs permiten la ejecución y liquidación de capas en Celestia para descargar transacciones que solo son relevantes para ellos.
 
 ## Muestreo de Disponibilidad de Datos (DAS)
 
-En general, los nodos ligeros solo descargan los encabezados que contienen compromisos (es decir, raíz de Merkle) de los datos del bloque (es decir, la lista de transacciones).
+En general, los light nodes solo descargan los encabezados que contienen compromisos (es decir, raíz de Merkle) de los datos del bloque (es decir, la lista de transacciones).
 
 Para hacer posible la DAS Celestia utiliza un esquema de codificación Reed-Solomon de 2 dimensiones para codificar los datos del bloque: cada dato de bloque se divide en fragmentos k × k, ordenado en una matriz k × k, y extendido con datos de paridad en una matriz extendida 2k × 2k aplicando múltiples veces la codificación Reed-Salomon.
 
@@ -18,19 +18,19 @@ Entonces, se calculan las raíces de Merkle 4k separadas para las filas y column
 
 ![Codificación Reed-Saloman (RS) 2D](/img/concepts/reed-solomon-encoding.png)
 
-Para verificar que los datos están disponibles, los nodos ligeros de Celestia están muestreando los fragmentos de datos 2k × 2k.
+Para verificar que los datos están disponibles, los light nodes de Celestia están muestreando los fragmentos de datos 2k × 2k.
 
-Cada nodo ligero elige aleatoriamente un conjunto de coordenadas únicas en la matriz extendida y consulta a nodos completos para los fragmentos de datos y pruebas de Merkle correspondientes en esas coordenadas. Si los nodos ligeros reciben una respuesta válida para cada consulta de muestreo, entonces hay una [garantía de alta probabilidad](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) de que todos los datos del bloque están disponibles.
+Cada light node elige aleatoriamente un conjunto de coordenadas únicas en la matriz extendida y consulta a los full nodes para los fragmentos de datos y pruebas de Merkle correspondientes en esas coordenadas. Si los light nodes reciben una respuesta válida para cada consulta de muestreo, entonces hay una [garantía de alta probabilidad](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) de que todos los datos del bloque están disponibles.
 
-Además, cada fragmento de datos recibido con una prueba de Merkle correcta es informado a la red. Como resultado, mientras los nodos ligeros de Celestia muestreen suficientes fragmentos de datos (i.., al menos k × k fragmentos únicos), el bloque completo puede ser recuperado por nodos completos honestos.
+Además, cada fragmento de datos recibido con una prueba de Merkle correcta es informado a la red. Como resultado, mientras los light nodes de Celestia muestreen suficientes fragmentos de datos (i.., al menos k × k fragmentos únicos), el bloque completo puede ser recuperado por full nodes honestos.
 
 Para más detalles sobre DAS, echa un vistazo al [original paper](https://arxiv.org/abs/1809.09044).
 
 ### Escalabilidad
 
-La DAS permite a Celestia escalar la capa DA. La DAS puede ser realizada por nodos ligeros limitados a recursos, ya que cada nodo ligero solo muestra una pequeña porción de los datos del bloque. Cuantos más nodos ligeros haya en la red, más datos podrán descargar y almacenar de forma conjunta.
+La DAS permite a Celestia escalar la capa DA. La DAS puede ser realizada por light nodes limitados a recursos, ya que cada light node solo muestra una pequeña porción de los datos del bloque. Cuantos más light nodes haya en la red, más datos podrán descargar y almacenar de forma conjunta.
 
-Esto significa que aumentar el número de nodos ligeros que realizan DAS permite bloques más grandes (i.., con más transacciones), sin dejar de mantener la función DAS para nodos ligeros limitados a recursos. Sin embargo, para validar encabezados de bloques, los nodos de Celestia necesitan descargar las raíces intermedias de Merkle.
+Esto significa que aumentar el número de light nodes que realizan DAS permite bloques más grandes (i.., con más transacciones), sin dejar de mantener la función DAS para light nodes limitados a recursos. Sin embargo, para validar encabezados de bloques, los nodos de Celestia necesitan descargar las raíces intermedias de Merkle.
 
 Para un tamaño de bloque de datos de n bytes, significa que cada nodo ligero debe descargar O(n) bytes. Por lo tanto, cualquier mejora en la capacidad de ancho de banda de los nodos ligeros de Celestia tiene un efecto cuadrático en el recorrido de la capa DA de Celestia.
 
