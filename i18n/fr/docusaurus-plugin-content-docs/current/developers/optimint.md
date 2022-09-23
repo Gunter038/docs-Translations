@@ -14,9 +14,9 @@ Furthermore, while Optimint allows you to build sovereign rollups on Celestia, i
 
 ## Tutorials
 
-The following tutorials will help you get started building Cosmos-SDK applications that connect to Celestia's Data Availability Layer via Optimint. We call those chains Sovereign Rollups.
+Les tutoriels suivants vont vous aider à débuter la construction d'applications Cosmos-SDK capables de se connecter à la couche d'accessibilité des données de Celestia, via Optimint. We call those chains Sovereign Rollups.
 
-You can get started with the following tutorials:
+Vous pouvez commencer avec les tutoriels suivants :
 
-- [Wordle Game](./wordle.md)
-- [CosmWasm Tutorial](./cosmwasm.md)
+- [Jeu du Wordle](./wordle.md)
+- [Tutoriel CosmWasm](./cosmwasm.md)
