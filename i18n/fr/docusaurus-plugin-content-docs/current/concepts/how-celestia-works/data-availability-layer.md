@@ -18,23 +18,23 @@ Then, 4k separate Merkle roots are computed for the rows and columns of the exte
 
 ![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
 
-To verify that the data is available, Celestia light nodes are sampling the 2k × 2k data chunks.
+Pour vérifier que la donnée est disponible, les light nodes Celestia échantillonnent les paquets de données 2k x 2k.
 
-Every light node randomly chooses a set of unique coordinates in the extended matrix and queries full nodes for the data chunks and the corresponding Merkle proofs at those coordinates. If light nodes receive a valid response for each sampling query, then there is a [high probability guarantee](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) that the whole block's data is available.
+Chaque light node choisit au hasard un ensemble de coordonnées uniques dans la matrice étendue et envoit une requête aux full nodes pour les paquets de données et aux preuves de Merkle correspondant à ces coordonnées. Si un light node reçoit une réponse valide pour chaque échantillon réclamé au full node , alors il y a une [haute probabilité](https://github.com/celestiaorg/celestia-node/issues/805#issuecomment-1150081075) que toute la donnée du bloc soit disponible.
 
-Additionally, every received data chunk with a correct Merkle proof is gossiped to the network. As a result, as long as the Celestia light nodes are sampling together enough data chunks (i.e., at least k × k unique chunks), the full block can be recovered by honest full nodes.
+Egalement, chaque morceau de donnée reçu avec une preuve de Merkle correcte est transmise au réseau. De ce fait, aussi longtemps que les light nodes Celestia échantillonnent ensemble assez de morceaux de données (c-à-d, au moins k x k morceaux uniques), le bloc entier peut être rétabli par les full nodes.
 
-For more details on DAS, take a look at the [original paper](https://arxiv.org/abs/1809.09044).
+Pour plus de détails sur l'échantillonnage de la disponibilité des données, vous pouvez regarder cet [ article](https://arxiv.org/abs/1809.09044).
 
 ### Scalabilité
 
-DAS enables Celestia to scale the DA layer. DAS can be performed by resource-limited light nodes since each light node only samples a small portion of the block data. The more light nodes there are in the network, the more data they can collectively download and store.
+L'échantillonnage de la disponibilité des données permet à Celestia d'augmenter la capacité de la couche de disponibilité des données. L'échantillonnage de la disponibilité des données peut être effectuée par des light nodes aux ressources limitées puisque chaque light node échantillonne seulement une petite partie des données de chaque bloc. Plus il y a de light nodes dans le réseau et plus ils peuvent télécharger et stocker de données ensemble.
 
-This means that increasing the number of light nodes performing DAS allows for larger blocks (i.e., with more transactions), while still keeping DAS feasible for resource-limited light nodes. However, in order to validate block headers, Celestia light nodes need to download the 4k intermediate Merkle roots.
+Cela signifie qu'en augmentant le nombre de light nodes réalisant l'échantillonnage de la disponibilité des données, on permet des blocs plus importants (c-à-d avec davantage de transactions), tout en conservant possible l'échantillonnage de la disponibilité des données par des light nodes aux ressources limitées. Cependant, pour valider les en-tête de blocs, les light nodes Celestia ont besoin de télécharger les racines de Merkle des 4k intermédiaires.
 
-For a block data size of n bytes, this means that every light node must download O(n) bytes. Therefore, any improvement in the bandwidth capacity of Celestia light nodes has a quadratic effect on the throughput of Celestia's DA layer.
+Pour une taille de donnée de bloc de n octets, cela signifie que chaque light node doit télécharger O(n) octets. C'est pourquoi chaque amélioration de la bande passante allouée aux light nodes de Celestia a un effet quadratique sur le débit de la couche de disponibilité des données de Celestia.
 
-### Fraud Proofs of Incorrectly Extended Data
+### Preuves frauduleuses de Données Etendues Incorrectes
 
 The requirement of downloading the 4k intermediate Merkle roots is a consequence of using a 2-dimensional Reed-Solomon encoding scheme. Alternatively, DAS could be designed with a standard (i.e., 1-dimensional) Reed-Solomon encoding, where the original data is split into k  chunks and extended with k additional chunks of parity data. Since the block data commitment is the Merkle root of the 2k resulting data chunks, light nodes no longer need to download O(n) bytes to validate block headers.
 
