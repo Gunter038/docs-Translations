@@ -45,9 +45,9 @@ Khởi động node lưu trữ đầy đủ với kết nối với điểm cu�
 
 > LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi liên quan đến tình trạng thông tin, chẳng hạn như khả năng gửi các giao dịch PayForData, hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
 
-A note on ports:
+Một lưu ý đối với ports:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 26657. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -59,18 +59,18 @@ Nếu bạn muốn tìm ví dụ các điểm cuối RPC, hãy xem danh sách t�
 
 Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Khi bạn khởi động Full Node, một khóa ví sẽ được xuất cho bạn. You will need to fund that address with testnet tokens to pay for PayForData transactions. Bạn có thể tìm địa chỉ bằng cách chạy lệnh sau:
+Khi bạn khởi động Full Node, một khóa ví sẽ được xuất cho bạn. Bạn cần phải nạp tiền cho địa chỉ ví đó với token Testnet để trả gas cho giao dịch PayForData. Bạn có thể tìm địa chỉ bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Bạn có thể nhận tokens testnet từ 2 mạng:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
+> Lưu ý: Nếu bạn đang chạy một full-storage node cho     rollup chuyên dụng của bạn, bạn nên yêu cầu Arabica devnet tokens     vì Arabica có những thay đổi và cập nhật mới nhất có thể được sử dụng để thử nghiệm cho việc phát triển rollup chuyên dụng của bạn. Bạn vẫn có thể sử dụng    Testnet Mamaki. Nó được sử dụng cho việc vận hành Validator.
 
 ### Tùy chọn: chạy toàn bộ node lưu trữ bằng khóa tùy chỉnh
 
