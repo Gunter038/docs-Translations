@@ -32,17 +32,17 @@ La DAS permite a Celestia escalar la capa DA. La DAS puede ser realizada por lig
 
 Esto significa que aumentar el número de light nodes que realizan DAS permite bloques más grandes (i.., con más transacciones), sin dejar de mantener la función DAS para light nodes limitados a recursos. Sin embargo, para validar encabezados de bloques, los nodos de Celestia necesitan descargar las raíces intermedias de Merkle.
 
-Para un tamaño de bloque de datos de n bytes, significa que cada nodo ligero debe descargar O(n) bytes. Por lo tanto, cualquier mejora en la capacidad de ancho de banda de los nodos ligeros de Celestia tiene un efecto cuadrático en el recorrido de la capa DA de Celestia.
+Para un tamaño de bloque de datos de n bytes, significa que cada light node debe descargar O(n) bytes. Por lo tanto, cualquier mejora en la capacidad de ancho de banda de los light nodes de Celestia tiene un efecto cuadrático en el recorrido de la capa DA de Celestia.
 
 ### Prueba de Fraude de Datos Extendidos Incorrectamente
 
-El requisito para descargar las raíces intermedias de Merkle 4k es una consecuencia del uso de un esquema de codificación Reed-Salomon de 2 dimensiones. Alternativamente, el DAS podría ser diseñado con un estándar (i.e. de 1 dimensión) con codificación Reed-Salomon, donde los datos originales se dividen en fragmentos k y se extienden con k fragmentos adicionales de datos de paridad. Dado que el compromiso de datos de bloques es la raíz de Merkle de los fragmentos de datos resultantes de 2k, los nodos ligeros ya no necesitan descargar O(n) bytes para validar las cabeceras de bloque.
+El requisito para descargar las raíces intermedias de Merkle 4k es una consecuencia del uso de un esquema de codificación Reed-Salomon de 2 dimensiones. Alternativamente, el DAS podría ser diseñado con un estándar (i.e. de 1 dimensión) con codificación Reed-Salomon, donde los datos originales se dividen en fragmentos k y se extienden con k fragmentos adicionales de datos de paridad. Dado que el compromiso de datos de bloques es la raíz de Merkle de los fragmentos de datos resultantes de 2k, los light nodes ya no necesitan descargar O(n) bytes para validar las cabeceras de bloque.
 
 La desventaja de la codificación estándar Reed-Salomon es tratar con los productores de bloques maliciosos que generan los datos extendidos incorrectamente.
 
-Esto es posible ya que __Celestia no requiere que la mayoría del consenso (i.., los productores de bloques) sean honestos para garantizar la disponibilidad de datos.__ Por lo tanto, si los datos extendidos son inválidos, los datos originales podrían no ser recuperables, incluso si los nodos ligeros están muestreando suficientes fragmentos únicos (i.., al menos k para una codificación estándar y k × k para una codificación de 2 dimensiones).
+Esto es posible ya que __Celestia no requiere que la mayoría del consenso (i.., los productores de bloques) sean honestos para garantizar la disponibilidad de datos.__ Por lo tanto, si los datos extendidos son inválidos, los datos originales podrían no ser recuperables, incluso si los light nodes están muestreando suficientes fragmentos únicos (i.., al menos k para una codificación estándar y k × k para una codificación de 2 dimensiones).
 
-Como solución, la _Prueba de Fraude de Datos Extendidos Incorrectamente_ habilita a nodos ligeros para rechazar bloques con datos extendidos inválidos. Tales pruebas requieren reconstruir la codificación y verificar el desajuste de funciones. Con la codificación estándar Reed-Salomon, esto implica descargar los datos originales, por ejemplo, O(n) bytes. En resumen, con codificación Reed-Salomon de 2 dimensiones, solo se requieren O(n ) bytes ya que es suficiente para verificar solo una fila o una columna de la matriz extendida.
+Como solución, la _Prueba de Fraude de Datos Extendidos Incorrectamente_ habilita a los light nodes para rechazar bloques con datos extendidos inválidos. Tales pruebas requieren reconstruir la codificación y verificar el desajuste de funciones. Con la codificación estándar Reed-Salomon, esto implica descargar los datos originales, por ejemplo, O(n) bytes. En resumen, con codificación Reed-Salomon de 2 dimensiones, solo se requieren O(n ) bytes ya que es suficiente para verificar solo una fila o una columna de la matriz extendida.
 
 ## Nombre de Dominio de Árboles de Merkle (NMTs)
 
