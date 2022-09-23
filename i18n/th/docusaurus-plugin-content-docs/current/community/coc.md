@@ -1,8 +1,8 @@
 - - -
-sidebar_label : Code of Conduct
+sidebar_label : หลักจรรยาบรรณ
 - - -
 
-# กฏระเบียบและจรรยาบรรณของ Celestia.org
+# กฏระเบียบและหลักจรรยาบรรณของ Celestia.org
 
 ## คำมั่นสัญญาของเรา
 
