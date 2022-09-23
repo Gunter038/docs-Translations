@@ -1,38 +1,38 @@
 - - -
-sidebar_label : Setting Up Environment
+sidebar_label : Thiết lập môi trường
 - - -
 
-# Development Environment
+# Môi trường phát triển
 
-This tutorial will go over setting up your development environment to run Celestia software. This environment can be used for development, building binaries, and running nodes.
+Hướng dẫn này sẽ xem xét thiết lập môi trường phát triển của bạn để chạy Phần mềm Celestia. Môi trường này có thể được sử dụng để phát triển, xây dựng binary và chạy nodes.
 
-## Install Dependencies
+## Cài đặt các dependency
 
-Once you have setup your instance, ssh into the instance to begin installing the dependencies needed to run a node.
+Một khi bạn đã thiết lập máy của mình, ssh vào máy của bạn để bắt đầu cài đặt dependencies cần thiết để chạy một node.
 
-First, make sure to update and upgrade the OS:
+Đầu tiên, hãy bảo đảm đã cập nhật và nâng cấp OS:
 
 ```sh
-# If you are using the APT package manager
+# Nếu bạn đang sử dụng APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Nếu bạn đang sử dụng YUM package manager
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Chúng là những gói thiết yếu, cần thiết để thực thi nhiều tác vụ ví dụ như tải file, biên dịch, và quản lý node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# Nếu bạn đang sử dụng APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Nếu bạn đang sử dụng YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Install Golang
+## Cài đặt Golang
 
 Celestia-app và celestia-node được viết bằng [ Golang ](https://go.dev/) do vậy chúng tôi phải cài đặt Golang để thiết lập và chạy nó.
 
