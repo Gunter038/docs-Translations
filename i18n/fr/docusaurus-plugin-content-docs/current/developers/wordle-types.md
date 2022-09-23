@@ -20,4 +20,4 @@ The second type is the `Guess` type. It allows us to store the latest guess for 
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Here, we are also storing `count` to count how many guesses this address submitted.
+Ici, nous allons également stocker `count` pour compter combien de guess cette adresse a soumis.
