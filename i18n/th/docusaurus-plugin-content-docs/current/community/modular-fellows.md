@@ -1,5 +1,5 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: 'sidebar_label : โครงการ Modular Fellows'
 ---
 
 # โครงการ Modular Fellows
