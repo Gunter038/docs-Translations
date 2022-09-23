@@ -4,6 +4,6 @@ Celestia es una red blockchain modular cuyo objetivo es construir una [capa de d
 
 El primero implica que Celestia solo es responsable de ordenar transacciones y garantizar su disponibilidad de datos; esto es similar a [reducir el consenso a la transmisión atómica](https://en.wikipedia.org/wiki/Atomic_broadcast#Equivalent_to_Consensus).
 
-El último proporciona una solución eficiente para el [problema de disponibilidad de datos](https://coinmarketcap.com/alexandria/article/what-is-data-availability) solo requiriendo nodos ligeros limitados a recursos para mostrar un pequeño número de fragmentos aleatorios de cada bloque para verificar la disponibilidad de datos.
+El último proporciona una solución eficiente para el [problema de disponibilidad de datos](https://coinmarketcap.com/alexandria/article/what-is-data-availability) solo requiriendo light nodes limitados a recursos para mostrar un pequeño número de fragmentos aleatorios de cada bloque para verificar la disponibilidad de datos.
 
-Curiosamente, más nodos ligeros que participan en el muestreo incrementan la cantidad de datos que la red puede manejar de forma segura permitiendo que el tamaño del bloque aumente sin aumentar igualmente el coste para verificar la cadena.
+Curiosamente, más light nodes que participan en el muestreo incrementan la cantidad de datos que la red puede manejar de forma segura permitiendo que el tamaño del bloque aumente sin aumentar igualmente el coste para verificar la cadena.
