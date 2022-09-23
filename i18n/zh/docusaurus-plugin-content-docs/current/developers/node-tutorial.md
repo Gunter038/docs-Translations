@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+这些是执行许多任务（如下载文件、编译和监控节点）所必需的基本安装包。
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -46,7 +46,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ### 安装 Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app和celestia-node是用[Golang](https://go.dev/)编写的，所以我们必须安装Golang来构建和运行它们。
 
 ```sh
 ver="1.19.1"
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否工作，用celestia version命令检查版本：
 
 ```sh
 $ celestia version
@@ -117,13 +117,13 @@ celestia light init
 
 现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> 注意：我们还鼓励您使用社区中提供的API终结点，比如Discord中有一些终结点。 这一个用于演示目的， 你可以在[这里](/nodes/arabica-devnet.md#rpc-endpoints)找到 RPC 端点的列表
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> 注意： `--core.grpc。 ort` 默认为9090， 如果您没有在命令行中指定 它，它将默认设置为该端口。 如果你喜欢，你可以使用标注来指定另一个端口。
 
 例如，命令连同 RPC 端点可能看起来像这样：
 
@@ -147,15 +147,15 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-一旦启动轻节点，钱包密钥将会生成。 You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+一旦启动轻节点，钱包密钥将会生成。 您需要用 Arabica开发网代币为该地址提供资金，以支付 PayForData 交易。
 
-You can find the address by running the following command in the `celestia-node` directory:
+您可以在目录 `celestia-node` 运行以下命令找到该地址：
 
 ```sh
 /cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
+如果想将测试网代币转入您的钱包，请到 Celestia Discord 频道 `#faucet`。
 
 您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
