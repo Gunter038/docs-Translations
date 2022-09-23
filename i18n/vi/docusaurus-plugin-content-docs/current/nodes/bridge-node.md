@@ -62,7 +62,7 @@ Chạy lệnh sau:
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Lưu ý: `Cổng RPC chính` mặc định sẽ là 26657, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 26657. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
 
 Nếu bạn cần danh sách các endpoints RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
@@ -74,24 +74,24 @@ Khởi động Bridge Node bằng kết nối với endpoint của node's gRPC v
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 9090. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
 
 Nếu bạn cần danh sách các endponit RPC để kết nối, bạn có thể kiểm tra từ danh sách [ here ](./mamaki-testnet.md#rpc-endpoints)
 
 Bạn có thể tạo khóa cho node của mình bằng cách làm theo hướng dẫn ` cel-key ` [ here ](./keys.md)
 
-Khi bạn khởi động Bridge Node, một mã khóa ví sẽ được tạo. You will need to fund that address with Testnet tokens to pay for PayForData transactions. Bạn có thể tìm thấy địa chỉ ví bằng cách chạy lệnh sau:
+Khi bạn khởi động Bridge Node, một mã khóa ví sẽ được tạo. Bạn cần phải nạp tiền cho địa chỉ ví đó với token Testnet để trả gas cho giao dịch PayForData. Bạn có thể tìm thấy địa chỉ ví bằng cách chạy lệnh sau:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Bạn có thể nhận tokens testnet từ 2 mạng:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
+> Lưu ý: Nếu bạn đang chạy node bridge cho validator của bạn, bạn nên yêu cầu testnet tokens Mamaki     bởi vì đây là mạng testnet được sử dụng để thử nghiệm việc vận hành validator.
 
 #### Tùy chọn: chạy bridge node bằng khóa tùy chỉnh
 
