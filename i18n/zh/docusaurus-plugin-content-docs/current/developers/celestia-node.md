@@ -8,9 +8,9 @@ sidebar_label : 安装Celestia Node
 
 ## 安装 Celestia 节点
 
-### Arabica Installation
+### Arabica 安装
 
-Installing celestia-node for Arabica Devnet means installing a specific version to be compatible with the network.
+安装 Arabia 开发网的 celestia-节点意味着安装一个与网络兼容特定版本。
 
 通过运行以下命令安装 celestia-node 二进制文件：
 
@@ -23,7 +23,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-验证二进制文件是否正常工作并使用以下`celestia version` 命令检查版本：
+验证二进制文件是否正常工作并使用以下命令`celestia version`检查版本：
 
 ```console
 $ celestia version
@@ -34,11 +34,11 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Mamaki Installation
+### Mamaki 安装
 
-Installing celestia-node for Mamaki Testnet means installing a specific version to be compatible with the network.
+安装 Mamaki 测试网的 celestia-节点意识着安装一个与网络兼容特定版本。
 
-Install the celestia-node binary by running the following commands:
+通过运行以下命令安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -49,8 +49,7 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+验证二进制文件是否正常工作并使用以下命令`celestia version`检查版本：
 
 ```console
 $ celestia version
