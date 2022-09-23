@@ -2,14 +2,14 @@
 sidebar_label : So sánh giữa Monolithic Blockchains và Modular Blockchains
 - - -
 
-# So sánh giữa Monolithic và Modular Blockchains
+# So sánh mô hình blockchain nguyên khối và mô hình blockchain mô-đun
 
-Blockchains instantiate [replicated state machines](https://dl.acm.org/doi/abs/10.1145/98163.98167): the nodes in a permissionless distributed network apply an ordered sequence of deterministic transactions to an initial state resulting in a common final state. This means blockchains require the following four functions:
+Blockchains khởi tạo [bản sao của máy trạng thái](https://dl.acm.org/doi/abs/10.1145/98163.98167): các nút không được cấp phép trong mạng phân tán áp dụng một trình tự có thứ tự của các giao dịch xác định đến trạng thái ban đầu dẫn đến một trạng thái cuối cùng. Điều này có nghĩa là các blockchains yêu cầu bốn chức năng sau:
 
-- __Execution__ entails executing transactions that update the state correctly. Thus, execution must ensure that only valid transactions are executed, i.e., transactions that result in valid state machine transitions.
-- __Settlement__ entails an environment for execution layers to verify proofs, resolve fraud disputes, and bridge between other execution layers.
-- __Consensus__ entails agreeing on the order of the transactions.
-- __Data Availability__ (DA) entails making the transaction data available. Note that execution, settlement, and consensus require DA.
+- __ Thực thi __ yêu cầu thực hiện các giao dịch cập nhật trạng thái một cách chính xác. Do đó, việc thực hiện phải đảm bảo rằng chỉ các giao dịch hợp lệ mới được thực hiện, tức là các giao dịch dẫn đến sự chuyển đổi hợp lệ trong máy trạng thái.
+- __ Sự dàn xếp __ đòi hỏi một môi trường cho các lớp thực thi để xác minh các bằng chứng, giải quyết các tranh chấp gian lận và làm cầu nối giữa các lớp thực thi khác.
+- __ Sự đồng thuận __ đòi hỏi sự đồng ý về thứ tự của các giao dịch.
+- __ Sự sẵn sàng của dữ liệu __ (DA) đòi hỏi phải cung cấp dữ liệu giao dịch. Note that execution, settlement, and consensus require DA.
 
 Traditional blockchains, i.e. _monolithic blockchains_, implement all four functions together in a single base consensus layer. The problem with monolithic blockchains is that the consensus layer must perform a lot of different tasks and it cannot be optimized for only one of these functions. As a result, the monolithic paradigm limits the throughput of the system.
 
