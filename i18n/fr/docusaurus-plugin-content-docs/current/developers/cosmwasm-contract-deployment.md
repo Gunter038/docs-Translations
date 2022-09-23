@@ -1,11 +1,11 @@
 ---
-sidebar_label: Contract Deployment
+sidebar_label: Déploiement de contrat
 ---
 
-# Contract Deployment on CosmWasm with Optimint
+# Déploiement de contrat sur CosmWasm avec Optimint
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## Compiler le Contrat Intelligent
 
 We will run the following commands to pull down the Nameservice smart contract and compile it:
 
@@ -20,19 +20,19 @@ The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw
 
 ## Unit Tests
 
-If we want to run tests, we can do so with the following command:
+Si nous voulons exécuter des essais, nous pouvons le faire par la commande suivante :
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Contrat Intelligent Optimisé
 
 Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
 
 CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
 
-Run the following command:
+Exécuter la commande suivante :
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -43,14 +43,14 @@ sudo docker run --rm -v "$(pwd)":/code \
 
 This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## Déploiement du Contrat
 
-Let's now deploy our smart contract!
+Déployons maintenant notre contrat intelligent !
 
-Run the following:
+Exécuter le code suivant :
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Optimint, there will be a delay on the transaction being included due to Optimint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+Cela vous fournira le hash de la transaction pour le déploiement du contrat intelligent. Given we are using Optimint, there will be a delay on the transaction being included due to Optimint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
