@@ -14,9 +14,9 @@ En général, les lights nodes ne téléchargent que les en-têtes de blocs qui 
 
 Pour rendre la DAS possible, Celestia utilise un système d'encodage Reed-Salomon à deux dimensions pour encoder les données du bloc : chaque donnée de bloc est divisée en tronçon k x k , arrangé dans une matrice k × k, et étendu avec la parité de données dans une matrice étendue de 2k × 2k en appliquant plusieurs fois l'encodage Reed-Solomon.
 
-Then, 4k separate Merkle roots are computed for the rows and columns of the extended matrix; the Merkle root of these Merkle roots is used as the block data commitment in the block header.
+Ensuite, les racines de Merkle 4k séparées sont calculées pour les lignes et les colonnes de la matrice étendue ; la racine de Merkle de ces racines de Merkle sont utilisées comme l'engagement des données du bloc par les en-têtes de bloc.
 
-![2D Reed-Soloman (RS) Encoding](/img/concepts/reed-solomon-encoding.png)
+![Encodage de Reed-Solomon (RS) deux dimensions](/img/concepts/reed-solomon-encoding.png)
 
 Pour vérifier que la donnée est disponible, les light nodes Celestia échantillonnent les paquets de données 2k x 2k.
 
@@ -50,33 +50,33 @@ Celestia cloisonne les données d'un bloc en plusieurs espaces de noms, un pour 
 
 Pour ce travail, la couche d'accessibilité des données doit être en mesure de prouver que les données fournies sont complètes, c-à-d que toutes les données d'un espace de nom sont revenues. Pour y arriver, Celestia utilise les Arbres de Merkle Namespaced (NMTs).
 
-An NMT is a Merkle tree with the leafs ordered by the namespace identifiers and the hash function modified so that every node  in the tree includes the range of namespaces of all its descendants. The following figure shows an example of an NMT with height three (i.e., eight data chunks). The data is partitioned into three namespaces.
+Un NMT est un arbre de Merkle dont les feuilles sont ordonnées par les identifiants de l'espace de nom et la fonction hash modifiée de sorte que chaque noeud de l'arbre inclue la plage d'espaces de noms de tous ses descendants. La figure suivante montre un example de MNT de hauteur trois (c-à-d huit morceaux de données). La donnée est divisée en trois espaces de noms.
 
-![Namespaced Merkle Tree](/img/concepts/nmt.png)
+![Arbre de Merkle Namespaced](/img/concepts/nmt.png)
 
-When an application requests the data for namespace 2, the DA layer must provide the data chunks `D3`, `D4`, `D5`, and `D6` and the nodes `N2`, `N8` and `N7` as proof (note that the application already has the root `N14` from the block header).
+Quand une application requiert la donnée pour l'espace de nom 2, la couche d'accessibilité des données doit fournir les morceaux de données `D3`, `D4`, `D5`, et `D6` et les noeuds `N2`,`N8` et `N7` comme preuve (notez que l'application a déjà la racine `N14` provenant de l'en-tête du bloc).
 
-As a result, the application is able to check that the provided data is part of the block data. Furthermore, the application can verify that all the data for namespace 2 was provided. If the DA layer provides for example only the data chunks `D4` and `D5`, it must also provide nodes `N12` and `N11` as proofs. However, the application can identify that the data is incomplete by checking the namespace range of the two nodes, i.e., both `N12` and `N11` have descendants part of namespace 2.
+Il en résulte que l'application est en capacité de vérifier que la donnée fournie fait bien partie de la donnée du bloc. De plus, l'application peut vérifier que toute la donnée pour l'espace de nom 2 a été fournie. Si la couche d'accessibilité des données fournit par exemple les morceaux de données `D4` and `D5`, elle doit également fournir les nœuds `N12` and `N11` en tant que preuves. Cependant, l'application peut identifier Que la donnée est incomplète en vérifiant la plage de l'espace de nom des deux nœuds, c.-à-d. que `N12` et `N11` ont tous les deux des parties descendantes de l'espace de nom 2.
 
-For more details on NMTs, take a look at the [original paper](https://arxiv.org/abs/1905.09274).
+Pour davantage de détails sur les NMTs, vous pouvez consulter cet [article](https://arxiv.org/abs/1905.09274).
 
-## Building a PoS Blockchain for DA
+## Construire une blockchain PoS pour la couche d'accessibilité
 
-### Providing Data Availability
+### Fournir l'Accessibilité des Données
 
-The Celestia DA layer consists of a PoS blockchain. Celestia is dubbing this blockchain as the [Celestia App](https://github.com/celestiaorg/celestia-app), an application that provides transactions to facilitate the DA layer and is built using [Cosmos SDK](https://docs.cosmos.network/v0.44/). The following figure shows the main components of Celestia App.
+La couche d'accessibilité des données Celestia consiste en une blockchain PoS. Celestia appelle une blockchain "[Celestia App](https://github.com/celestiaorg/celestia-app)" une application qui permet des transactions pour faciliter la couche d'accessibilité des données et est construite en utilisant le [Cosmos SDK](https://docs.cosmos.network/v0.44/). Le schéma suivant montre les différents composants d'une Celestia App.
 
-![Main components of Celestia App](/img/concepts/celestia-app.png)
+![Principaux composants de la Celestia App](/img/concepts/celestia-app.png)
 
-Celestia App is built on top of [Celestia Core](https://github.com/celestiaorg/celestia-core), a modified version of the [Tendermint consensus algorithm](https://arxiv.org/abs/1807.04938). Among the more important changes to vanilla Tendermint, Celestia Core:
+La Celestia App est construite sur le [Celestia Core](https://github.com/celestiaorg/celestia-core), une version modifiée du [consensus algorithmique Tendermint](https://arxiv.org/abs/1807.04938). Parmi les plus importants changements apportés à Tendermint, Celestia Core:
 
-- Enables the erasure coding of block data (using the 2-dimensional Reed-Solomon encoding scheme).
-- Replaces the regular Merkle tree used by Tendermint to store block data with a [Namespaced Merkle tree](https://github.com/celestiaorg/nmt) that enables the above layers (i.e., execution and settlement) to only download the needed data (for more details, see the section below describing use cases).
+- Permet le codage d'effacement des données d'un bloc (en utilisant le schéma d'encodage Reed-Solomon en deux dimensions).
+- Replace l'arbre de Merkle habituel utilisé par Tendermint pour stocker les données avec un [arbre de Merkle Namespaced](https://github.com/celestiaorg/nmt) qui permet aux couches d'au-dessus (c-à-d d'exécution ou de réglement) de seulement télécharger les données nécessaires (pour plus de détails, voir la section ci-dessous décrivant les cas d'usage).
 
-For more details on the changes to Tendermint, take a look at the [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). Notice that Celestia Core nodes are still using the Tendermint p2p network.
+Pour plus de détails sur les changements par rapport à Tendermint, consulter [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). À noter que les nœuds de Celestia Core utilisent toujours le réseau Tendermint de pair-à-pair.
 
-Similarly to Tendermint, Celestia Core is connected to the application layer (i.e., the state machine) by [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), a major evolution of [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Application Blockchain Interface).
+De manière similaire à Tendermint, Celestia Core est connecté à la couche d'application (c.-à-d., la machine d'état) par [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), une évolution majeure de [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Interface d'Application Blockchain).
 
-The Celestia App state machine is necessary to execute the PoS logic and to enable the governance of the DA layer.
+L'état de machine Celestia App est nécessaire pour exécuter la logique PoS et pour permettre la gouvernance de la couche d'accessibilité des données.
 
-However, the Celestia App is data-agnostic -- the state machine neither validates nor stores the data that is made available by the Celestia App.
+Cependant, la Celestia App est données-agnostique -- la machine d'état ne valide ni ne stocke les données qui sont rendues accessibles par la Celestia App.
