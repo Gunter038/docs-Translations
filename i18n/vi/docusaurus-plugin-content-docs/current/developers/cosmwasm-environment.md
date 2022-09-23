@@ -59,10 +59,10 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 
 Vui lòng xem xét:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Theo dõi hướng dẫn thiết lập Celestia Light Node và tạo ví với tiền từ vòi testnet [here ](./node-tutorial.md) trong phần Celestia Node.
+> LƯU Ý: Trong lệnh trên, bạn cần chuyển một địa chỉ IP Celestia Node vào `base_url`. Địa chỉ phải có tài khoản với token testnet Mamaki. Theo dõi hướng dẫn thiết lập Celestia Light Node và tạo ví với token testnet [tại đây ](./node-tutorial.md) trong phần Celestia Node.
 
 Cũng vui lòng xem xét:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Ngoài ra, đối với flag `--optimint.namespace_id`, bạn có thể tạo ID Namespace ngẫu nhiên bằng cách sử dụng playground [tại đây](https://go.dev/play/p/7ltvaj8lhRl)
 
 Như vậy, chúng ta đã khởi động lại mạng `wasmd` của mình!
