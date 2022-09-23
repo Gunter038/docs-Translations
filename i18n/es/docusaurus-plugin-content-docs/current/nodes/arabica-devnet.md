@@ -5,7 +5,7 @@ sidebar_label: Arabica Devnet
 # Arabica Devnet
 <!-- markdownlint-disable MD013 -->
 
-![arabica-devnet](/img/arabica-devnet.png)
+![arabica Devnet](/img/arabica-devnet.png)
 
 Arabica Devnet es una nueva testnet de Celestia Labs que se centra exclusivamente en proporcionar a los desarrolladores un rendimiento mejorado y las últimas actualizaciones para probar sus aplicaciones y rollups.
 
@@ -29,30 +29,30 @@ Disponibilidad de Datos:
 * [Full Storage Node](./full-storage-node.md)
 * [Light Node](./light-node.md)
 
-Select the type of node you would like to run and follow the instructions on each respective page. Whenever you are asked to select the type of network you want to connect to in those guides, select `Arabica` in order to refer to the correct instructions on this page on how to connect to Arabica.
+Selecciona el tipo de nodo que deseas ejecutar y sigue las instrucciones en cada página correspondiente. Cada vez que se le pida que seleccione el tipo de red a la que desea conectarse en esas guías, seleccione `Arabica` para referirse a las instrucciones correctas en esta página sobre cómo conectarse a Arabica.
 
-## RPC endpoints
+## Endpoints RPC
 
-There is a list of RPC endpoints you can use to connect to Arabica Devnet:
+Hay una lista de endpoints RPC que puedes utilizar para conectarte a Mamaki Testnet:
 
 * [https://limani.celestia-devops.dev](https://limani.celestia-devops.dev)
 
 ## Arabica Devnet faucet
 
-> USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS.
+> USAR ESTE FAUCER NO TE DA ACCESO A NINGÚN AIRDROP U OTRA DISTRIBUCIÓN DE TOKENS DE LA MAINNET DE CELESTIA. LOS TOKENS DE MAINNET DE CELESTIA ACTUALMENTE NO EXISTEN NI SE HACEN VENTAS PÚBLICAS U OTRAS DISTRIBUCIONES PÚBLICAS DE CUALQUIER TOKEN DE MAINNET DE CELESTIA.
 
-You can request from Arabica Devnet Faucet on the #arabica-faucet channel on Celestia's Discord server with the following command:
+Puedes solicitar desde Mamaki Testnet Faucet en el canal #faucet en el servidor de Discord de Celestia con el siguiente comando:
 
 ```text
 $request <CELESTIA-ADDRESS>
 ```
 
-Where `<CELESTIA-ADDRESS>` is a `celestia1******` generated address.
+Donde `<CELESTIA-ADDRESS>` es una dirección `celestia1******` generada.
 
-> Note: Faucet has a limit of 10 tokens per week per address/Discord ID
+> Nota: Faucet tiene un límite de 10 tokens por semana por dirección/Discord ID
 
-## Explorers
+## Exploradores
 
-There is an explorer you can use for Arabica:
+Hay un explorador que puedes usar para Arabica:
 
 * [https://explorer.celestia.observer/arabica](https://explorer.celestia.observer/arabica)
