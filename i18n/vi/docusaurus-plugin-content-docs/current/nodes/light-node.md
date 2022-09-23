@@ -90,11 +90,11 @@ go version go1.18.2 linux/amd64
 
 ### Cài đặt node Celestia
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+Một điều cần lưu ý ở đây là quyết định phiên bản nào của node Celestia bạn muốn biên dịch. Mamaki Testnet yêu cầu v0.3.0-rc2 và Arabica Devnet yêu cầu v0.3.0.
 
-The following sections highlight how to install it for the two networks.
+Phần tiếp theo sẽ cho thấy cách cài đặt nó cho cả 2 mạng.
 
-#### Mamaki Testnet installation
+#### Cài đặt Testnet Mamaki
 
 Cài đặt binary nodes celestia bằng cách chạy các lệnh sau:
 
@@ -116,9 +116,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-#### Arabica Devnet installation
+#### Cài đặt Devnet Arabica
 
-Install the celestia-node binary by running the following commands:
+Cài đặt binary của celestia-node bằng cách chạy các câu lệnh sau:
 
 ```sh
 cd $HOME
@@ -129,7 +129,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Kiểm tra liệu binary đang hoạt động và kiểm tra phiên bản với lệnh celestia version:
 
 ```sh
 $ celestia version
@@ -165,15 +165,15 @@ Khởi động Bridge Node bằng kết nối với điểm cuối gRPC của no
 
 > LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi thông tin liên quan đến trạng thái, chẳng hạn như gửi các giao dịch PayForData hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
 
-For ports:
+Đối với ports:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 26657. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+Nếu bạn cần danh sách các RPC endpoints để kết nối, bạn có thể kiểm tra từ danh sách [tại đây](./arabica-devnet.md#rpc-endpoints)
 
 Ví dụ: lệnh của bạn có thể trông giống như sau:
 
@@ -197,7 +197,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. You will need to fund that address with testnet tokens to pay for PayForData transactions.
+Khi bạn khởi động Light Node, một key ví sẽ được tạo. Bạn cần phải nạp tiền cho địa chỉ ví đó với token Testnet để trả gas cho giao dịch PayForData.
 
 Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục ` celestia-node `:
 
@@ -205,20 +205,20 @@ Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong th
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Bạn có thể nhận tokens testnet từ 2 mạng:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> Lưu ý: Nếu bạn đang chạy một light node cho     rollup chuyên dụng của bạn, bạn nên yêu cầu Arabica devnet tokens     vì Arabica có những thay đổi và cập nhật mới nhất có thể được sử dụng để thử nghiệm cho việc phát triển rollup chuyên dụng của bạn. Bạn vẫn có thể sử dụng    Testnet Mamaki. Nó được sử dụng cho việc vận hành Validator.
 
-You can request funds to your wallet address using the following command in Discord:
+Bạn có thể yêu cầu gửi tiền vào địa chỉ ví của mình bằng lệnh sau trong Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Với `<Wallet-Address>` là `celestia1****** ` được xuất ra khi bạn tạo ví.
 
 ### Tùy chọn: chạy light node bằng khóa tùy chỉnh
 
@@ -229,7 +229,7 @@ Where `<Wallet-Address>` is the `celestia1******` address generated when you cre
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <name_of_custom_key>
+celestia light start --core.ip<ip-address> --core.grpc.port <port> --keyring.accname <name_of_custom_key>
 ```
 <!-- markdownlint-enable MD013 -->
 
