@@ -2,33 +2,33 @@
 sidebar_label: CosmWasm Dependencies
 ---
 
-# CosmWasm Dependency Installations
+# Cài đặt các thành phần phụ thuộc của CosmWasm
 
-## Environment Setup
+## Thiết lập môi trường
 
-For this tutorial, we will be using `curl` and `jq` as helpful tools.
+Đối với hướng dẫn này, chúng ta sẽ sử dụng `curl` và `jq` như là một công cụ hữu ích.
 
-You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
+Bạn có thể làm theo hướng dẫn sau để cài đặt chúng [tại đây](./environment.md#setting-up-dependencies).
 
-## Golang Dependency
+## Thành phần phụ thuộc Golang
 
-The Golang version used for this tutorial is v1.18+
+Phiên bản Golang được sử dụng cho hướng dẫn này là v1.18+
 
-If you are using a Linux distribution, you can install Golang by following our tutorial [here](./environment.md#install-golang).
+Nếu bạn đang sử dụng Linux, bạn có thể cài Golang bằng cách làm theo hướng dẫn sau đây của chúng tôi [tại đây](./environment.md#install-golang).
 
-## Rust Installation
+## Cài đặt Rust
 
 ### Rustup
 
-First, before installing Rust, you would need to install `rustup`.
+Đầu tiên, trước khi cài đặt Rust, bạn sẽ cần phải cài đặt `rustup`.
 
-On Mac/Linux systems, here are the commands for installing it:
+Đối với Mac/Linux, sau đây là câu lệnh để cài đặt nó:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-After installation, follow the commands here to setup Rust.
+Sau khi cài đặt, chạy những câu lệnh sau đây để thiết lập Rust.
 
 ```sh
 rustup default stable
