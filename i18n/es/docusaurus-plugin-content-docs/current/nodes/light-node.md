@@ -90,11 +90,11 @@ go version go1.18.2 linux/amd64
 
 ### Instalar el nodo Celestia
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+Una cosa a tener en cuenta aquí es decidir qué versión de celestia-node deseas compilar. Mamaki Testnet requiere v0.3.0-rc2 y Arabica Devnet requiere v0.3.0.
 
-The following sections highlight how to install it for the two networks.
+Las siguientes secciones indican cómo instalarlo en las dos redes.
 
-#### Mamaki Testnet installation
+#### Instalación de Mamaki Testnet
 
 Instala el binario celestia-node ejecutando los siguientes comandos:
 
@@ -116,9 +116,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-#### Arabica Devnet installation
+#### Instalación de Arabica Devnet
 
-Install the celestia-node binary by running the following commands:
+Instala el binario celestia-node ejecutando los siguientes comandos:
 
 ```sh
 cd $HOME
@@ -129,7 +129,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Verifica que el binario está funcionando y comprueba la versión con el comando de versión de celestia:
 
 ```sh
 $ celestia version
@@ -165,15 +165,15 @@ Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (q
 
 > NOTA: Para acceder a la capacidad de obtener/enviar información relacionada con el estado, como la posibilidad de enviar transacciones de PayForData o consulta para el saldo de cuenta del nodo un endpoint gRPC de un nodo validador (core) debe ser configurado como indica debajo.
 
-For ports:
+Para los puertos:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTA: El `--core.grpc. ort` es por defecto 9090, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./arabica-devnet.md#rpc-endpoints)
 
 Por ejemplo, tu comando podría verse algo como esto:
 
@@ -197,7 +197,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Una vez que inicies el Light Node, se generará una clave de wallet para ti. You will need to fund that address with testnet tokens to pay for PayForData transactions.
+Una vez que inicies el Light Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData.
 
 Puedes encontrar la dirección ejecutando el siguiente comando en el directorio `celestia-node`:
 
@@ -205,20 +205,20 @@ Puedes encontrar la dirección ejecutando el siguiente comando en el directorio 
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Tienes dos redes desde las que obtener tokens de testnet:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> NOTA: Si estás ejecutando un light node para su despliegue soberano, es altamente recomendable solicitar Arabica devnet tokens ya que Arabica tiene los últimos cambios que pueden ser usados para prueba para desarrollar su registro soberano. También puedes usar Mamaki Testnet, se utiliza principalmente para operaciones de validador.
 
-You can request funds to your wallet address using the following command in Discord:
+Puedes solicitar fondos a tu dirección de wallet usando el siguiente comando en Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Donde `<Wallet-Address>` es la dirección `celestia1******` generada al crear la wallet.
 
 ### Opcional: ejecutar el light node con una tecla personalizada
 
