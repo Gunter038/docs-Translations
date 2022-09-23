@@ -239,4 +239,4 @@ Sigue el tutorial sobre cómo configurar Celestia-App como un proceso en segundo
 
 ## Muestreo de disponibilidad de datos (DAS)
 
-Con tu nodo ligero en ejecución, puedes revisar este tutorial de enviar `transacciones de PayForData` [aquí](../developers/node-tutorial.md).
+Con tu light node en ejecución, puedes revisar este tutorial de enviar `transacciones de PayForData` [aquí](../developers/node-tutorial.md).
