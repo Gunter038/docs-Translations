@@ -62,7 +62,7 @@ Celestia桥接节点具有以下属性：
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. 如果你喜欢，你可以使用flag来指定另一个端口。
+> 注意： `--core.rpc。 ort` 默认为 26657 如果您没有在命令行中指定 它，它将默认设置为该端口。 如果你喜欢，你可以使用flag来指定另一个端口。
 
 如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
@@ -74,7 +74,7 @@ celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. 如果你喜欢，你可以使用flag来指定另一个端口。
+> 注意： `--core.grpc。 ort` 默认为9090， 如果您没有在命令行中指定 它，它将默认设置为该端口。 如果你喜欢，你可以使用flag来指定另一个端口。
 
 如果您需要连接到的 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
@@ -91,7 +91,7 @@ celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
+> 注意：如果您正在运行验证器的桥接节Mamaki测试网testnet代币 ，因为这是用于测试验证者操作的测试网。
 
 #### 可选：使用自定义密钥运行桥接节点
 
