@@ -22,7 +22,7 @@ Les exigences matérielles minimales recommandées pour lancer un light node son
 
 ## Configuration des dépendances
 
-First, make sure to update and upgrade the OS:
+Premièrement, vérifiez que votre système d'exploitation est à jour ou mettez le à jour:
 
 ```sh
 # If you are using the APT package manager
@@ -46,7 +46,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ### Install Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+La Celestia-app et le nœud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les mettre en application.
 
 ```sh
 ver="1.19.1"
@@ -133,9 +133,9 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Keys and wallets
+### Clés et portefeuilles
 
-You can create your key for your node by running the following command:
+Vous pouvez créer vos clés pour votre nœud en lançant la commande suivante :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
@@ -147,9 +147,9 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+Lorsque vous lancez le Light Node, une clé de sécurité du portefeuille sera générée pour vous. Vous aurez besoin d'envoyer des tokens Arabica devnet à cette adresse pour payer les transactions PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Vous pouvez trouver cette adresse en lançant la commande suivante dans le répertoire `celestia-node` :
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
@@ -615,9 +615,9 @@ Nous obtenons la sortie suivante :
 
 Si vous remarquez sur la sortie ci-dessus, elle renvoie une `height` de `2452` que nous utiliserons pour la prochaine commande.
 
-#### Troubleshooting
+#### Dépannage
 
-If you encounter an error like:
+Si vous rencontrez une erreur telle que :
 
 <!-- markdownlint-disable MD013 -->
 ```console
@@ -626,7 +626,7 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
 
 ### Obtenir des partages d'espace de noms par hauteur de bloc
 
