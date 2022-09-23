@@ -8,9 +8,9 @@ Ce tutoriel passe en revue l'installation de Celestia-Node. Ce tutoriel suppose 
 
 ## Installer Celestia Node
 
-### Arabica Installation
+### Installation d'Arabica
 
-Installing celestia-node for Arabica Devnet means installing a specific version to be compatible with the network.
+Installer un nœud Celestia pour le Devnet Arabica signifie installer une version spécifique compatible avec le réseau.
 
 Installez le binaire Celestia-node en exécutant les commandes suivantes :
 
@@ -35,9 +35,9 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Mamaki Installation
+### Installation de Mamaki
 
-Installing celestia-node for Mamaki Testnet means installing a specific version to be compatible with the network.
+Installer un nœud Celestia pour le Devnet Mamaki signifie installer une version spécifique compatible avec le réseau.
 
 Install the celestia-node binary by running the following commands:
 
