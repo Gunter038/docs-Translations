@@ -19,11 +19,11 @@ Los desarrolladores todavía pueden desplegar en Mamaki Testnet sus rollups sobe
 
 Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando.
 
-Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+Tu mejor estrategia para participar es determinar primero qué nodo deseas ejecutar. Cada guía de nodo se enlazará a la red correspondiente para mostrarte cómo conectarse a ellos.
 
-You have a list of options on the type of nodes you can run in order to participate in Arabica:
+Tienes una lista de opciones sobre el tipo de nodos que puedes ejecutar para participar en Arábica:
 
-Data Availability:
+Disponibilidad de Datos:
 
 * [Bridge Node](./bridge-node.md)
 * [Full Storage Node](./full-storage-node.md)
