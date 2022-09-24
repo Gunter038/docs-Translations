@@ -90,11 +90,11 @@ go version go1.18.2 linux/amd64
 
 ### 安装 Celestia 节点
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+这里需要注意的是决定你想要编译哪个版本的celestia-节点。 Mamaki 测试网需要v0.3.0-rc2 和 Arabia开发网 需要 v0.3.0。
 
-The following sections highlight how to install it for the two networks.
+下面的章节重点介绍了如何为两个网络安装所需版本。
 
-#### Mamaki Testnet installation
+#### Mamaki 测试网安装
 
 通过运行以下命令安装 celestia-node 二进制文件：
 
@@ -116,9 +116,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-#### Arabica Devnet installation
+#### Arabia 开发网 安装
 
-Install the celestia-node binary by running the following commands:
+通过运行以下命令安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -129,7 +129,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否正常工作并使用 celestia version 命令检查版本：
 
 ```sh
 $ celestia version
@@ -165,15 +165,15 @@ $ celestia light init
 
 > 注意：为了获得获取/提交状态相关信息的能力，例如提交 PayForData 交易或查询节点账户余额的能力，验证者（核心）节点的 gRPC 端点必须按指示传递如下
 
-For ports:
+对于端口：
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> 注意： `--core.grpc。 ort` 默认为9090， 如果您没有在命令行中指定 它，它将默认设置为该端口。 如果你喜欢，你可以使用标注来指定另一个端口。
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+如果您需要连接到 RPC 端点列表，可以从[此处](./arabica-devnet.md#rpc-endpoints)的列表中查看
 
 例如，您的命令可能如下所示：
 
@@ -197,7 +197,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-启动轻节点后，将为您生成一个钱包密钥。 You will need to fund that address with testnet tokens to pay for PayForData transactions.
+启动轻节点后，将为您生成一个钱包密钥。 你需要使用测试网代币为该地址注资，以支付 PayForData 交易。
 
 您可以通过在 `celestia-node` 目录中运行以下命令来找到地址：
 
@@ -205,20 +205,20 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+你可以从两种网络获取测试网代币：
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> 注意：如果你正在为你的主权Rollup运行一个轻节点， 强烈建议您请求Arabica的开发网代币，因为Arabica有最新版本，可以用于开发你的主权Rollup测试。 您仍然可以使用Mamaki测试网，它仅用于验证者操作。
 
-You can request funds to your wallet address using the following command in Discord:
+您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+当您创建钱包时，生成的`<Wallet-Address>`地址形如`celestia1******`。
 
 ### 可选：使用自定义密钥运行轻节点
 
