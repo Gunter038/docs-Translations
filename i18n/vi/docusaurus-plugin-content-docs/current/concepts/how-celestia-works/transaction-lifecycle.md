@@ -2,9 +2,9 @@
 sidebar_label : Lớp Data Availability của Celestia
 - - -
 
-# The Lifecycle of a Celestia App Transaction
+# Vòng đời một giao dịch của ứng dụng Celestia
 
-Users request the Celestia App to make data available by sending `PayForData` transactions. Every such transaction consists of the identity of the sender, the data to be made available, also referred to as the message, the data size, the namespace ID, and a signature. Every block producer batches multiple `PayForData` transactions into a block.
+Người dùng yêu cầu Ứng dụng Celestia cung cấp dữ liệu bằng cách gửi ` PayForData ` giao dịch. Mỗi giao dịch như vậy bao gồm danh tính của người gửi, dữ liệu được cung cấp, cũng được gọi là thông báo, kích thước dữ liệu, không gian tên ID và một chữ ký. Every block producer batches multiple `PayForData` transactions into a block.
 
 Before proposing the block though, the producer passes it to the state machine via ABCI++, where each `PayForData` transaction is split into a namespaced message (denoted by `Msg` in the figure below), i.e., the data together with the namespace ID, and an executable transaction (denoted by `e-Tx` in the figure below) that does not contain the data, but only a commitment that can be used at a later time to prove that the data was indeed made available.
 
