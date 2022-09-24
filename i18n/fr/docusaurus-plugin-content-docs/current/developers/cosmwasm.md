@@ -16,10 +16,10 @@ Dans ce tutoriel, nous allons apprendre à :
 * [Configurer Optimint sur CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
 * [Instancier un réseau local pour votre chaine CosmWasm connectée à Celestia](./cosmwasm-environment.md)
 * [Déployer un contrat intelligent en Rust sur la chaine CosmWasm](./cosmwasm-contract-deployment.md)
-* [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
+* [Intéragir avec le contrat intelligent](./cosmwasm-contract-interaction.md)
 
-The smart contract we will use for this tutorial is one provided by the CosmWasm team for Nameservice purchasing.
+Le contrat intelligent que nous utiliserons dans ce tutoriel est un fourni par l'équipe CosmWasm pour l'achat d'espace de nom.
 
-You can check out the contract [here](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
+Vous pouvez trouver le contrat [ici](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
 
-How to write the Rust smart contract for Nameservice is outside the scope of this tutorial. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia.
+Comment écrire le contrat intelligent en Rust pour l'espace de nom ne fait pas l'objet de ce tutoriel. Dans le futur, nous ajouterons davantage de tutoriels pour écrire des contrats intelligents de CosmWasm sur Celestia.
