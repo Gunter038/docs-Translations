@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Installing Celestia Node
+installer un nœud Celestia
 - - -
 
-# Celestia Node
+# Nœud Celestia
 
-Ce tutoriel passe en revue l'installation de Celestia-Node. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
+Ce tutoriel passe en revue l'installation d'un nœud Celestia. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
 
 ## Installer Celestia Node
 
@@ -39,7 +39,7 @@ Golang version: go1.19.1
 
 Installer un nœud Celestia pour le Devnet Mamaki signifie installer une version spécifique compatible avec le réseau.
 
-Install the celestia-node binary by running the following commands:
+Installer le fichier binaire du nœud celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -50,8 +50,8 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Vérifiez que le fichier binaire fonctionne et la version avec la commande `celestia
+version` :
 
 ```console
 $ celestia version
