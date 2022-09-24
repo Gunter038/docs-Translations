@@ -1,19 +1,19 @@
 ---
-sidebar_label: Run The Wordle Chain
+sidebar_label: Exécuter la chaine Wordle
 ---
 
-# Run the Wordle Chain
+# Exécuter la chaine Wordle
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## Construire et exécuter la chaine Wordle
 
-In one terminal window, run the following command:
+Dans un terminal, exécuter la commande suivante :
 
 ```sh
 ignite chain serve 
 ```
 
-This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
+Cela va compiler le code de la blockchain que vous venez d'écrire, créer un fichier genesis et quelques comptes à utiliser. Once the log shows something like the following log in the output:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
