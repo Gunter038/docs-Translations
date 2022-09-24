@@ -45,9 +45,9 @@ celestia full init
 
 > ПРИМІТКА. Щоб отримати доступ до можливості отримати/надсилати інформацію, пов’язану зі станом, наприклад можливість надсилати транзакції PayForData або запитувати баланс рахунку ноди, кінцеву точку gRPC ноди валідатора (основного) потрібно передати відповідно до вказівок нижче.
 
-A note on ports:
+Нотатка на портах:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете його в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -59,18 +59,18 @@ celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 
 Ви можете створити ключ для своєї ноди, дотримуючись інструкцій `cel-key` [тут](./keys.md)
 
-Після запуску повної ноди для вас буде згенеровано ключ гаманця. You will need to fund that address with testnet tokens to pay for PayForData transactions. Ви можете знайти адресу, виконавши таку команду:
+Після запуску повної ноди для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів Testnet для оплати транзакцій PayForData. Ви можете знайти адресу, виконавши таку команду:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+У вас є дві мережі для отримання токенів testnet:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a full-storage node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just mostly used for Validator operations.
+> ПРИМІТКА. Якщо ви використовуєте  для свого суверенного ролапа ноду повного сховища, неполегливо рекомендуємо запитувати токени Arabica devnet, оскільки в Arabica є останні зміни, які можна використовувати для тестування розробки суверенного ролапа. Ви все ще можете використовувати Mamaki Testnet, але він переважно використовується для операцій валідатора.
 
 ### Додатково: запуск ноди повного сховища за допомогою кастомного ключа
 
