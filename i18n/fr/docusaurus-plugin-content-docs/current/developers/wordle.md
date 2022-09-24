@@ -1,10 +1,10 @@
 ---
-sidebar_label: Wordle Aperçu
+sidebar_label: Présentation de Wordle
 ---
 
 # Application Wordle sur Optimint
 
-![mamaki-testnet](/img/wordle.jpg)
+![testnet Mamaki](/img/wordle.jpg)
 
 Ce tutoriel va aller plus loin dans la construction d'une application du cosmos-sdk pour Optimint, l'implémentation d'Optimistic Rollup de Tendermint, pour le jeu populaire [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
