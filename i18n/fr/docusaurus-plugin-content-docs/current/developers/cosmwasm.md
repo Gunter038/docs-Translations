@@ -1,39 +1,25 @@
 ---
-sidebar_label : CosmWasm Overview
+sidebar_label: Aperçu de CosmWasm
 ---
 
-# CosmWasm on Optimint
+# CosmWasm sur Optimint
 
-CosmWasm is a smart contracting platform built for the Cosmos
-ecosystem by making use of WebAssembly (Wasm) to build smart contracts
-for Cosmos-SDK. In this tutorial, we will be exploring how to integrate
-CosmWasm with Celestia's Data Availability Layer using Optimint.
+CosmWasm est une plateforme de contrats intelligents construite pour l'écosystème Cosmos en utilisant la WebAssembly (Wasm) pour construire des contrats intelligents sur le Cosmos-SDK. Dans ce tutoriel, nous allons apprendre la manière d'intégrer le CosmWasm avec la couche de disponibilité des données de Celestia, en utilisant Optimint.
 
-> NOTE: This tutorial will explore developing with Optimint,
-  which is still in Alpha stage. If you run into bugs, please
-  write a Github Issue ticket or let us know in our Discord.
-  Furthermore, while Optimint allows you to build sovereign rollups
-  on Celestia, it currently does not support fraud proofs yet and is
-  therefore running in "pessimistic" mode, where nodes would need to
-  re-execute the transactions to check the validity of the chain
-  (i.e. a full node). Furthermore, Optimint currently only supports
-  a single sequencer.
+> NOTE : ce tutoriel explore le développement sur Optimint, qui est toujours en phase alpha. Si vous rencontrez des bugs, nous vous prions d'écrire un ticket sur la section appropriée de Github ou de nous le faire savoir sur notre Discord. Également, alors qu'Optimint permet de construire des rollups souverains sur Celestia, il ne traite actuellement pas les preuves de fraude et fonctionne donc en mode "pessimiste", dans lequel les nœuds doivent exécuter à nouveau les transactions pour vérifier la validité de la chaine (c-à-d un full node). Enfin, Optimint ne possède actuellement qu'un unique séquenceur.
 
-You can learn more about CosmWasm [here](https://docs.cosmwasm.com/docs/1.0/).
+Vous pouvez en apprendre davantage sur CosmWasm [ici](https://docs.cosmwasm.com/docs/1.0/).
 
-In this tutorial, we will going over the following:
+Dans ce tutoriel, nous allons apprendre à :
 
-* [Setting up your dependencies for your CosmWasm smart contracts](./cosmwasm-dependency.md)
-* [Setting up Optimint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
-* [Instantiate a local network for your CosmWasm chain connected to Celestia](./cosmwasm-environment.md)
-* [Deploying a Rust smart contract to CosmWasm chain](./cosmwasm-contract-deployment.md)
+* [Configurer vos dépendances pour vos contrats intelligents de CosmWasm](./cosmwasm-dependency.md)
+* [Configurer Optimint sur CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
+* [Instancier un réseau local pour votre chaine CosmWasm connectée à Celestia](./cosmwasm-environment.md)
+* [Déployer un contrat intelligent en Rust sur la chaine CosmWasm](./cosmwasm-contract-deployment.md)
 * [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
 
-The smart contract we will use for this tutorial is one provided by
-the CosmWasm team for Nameservice purchasing.
+The smart contract we will use for this tutorial is one provided by the CosmWasm team for Nameservice purchasing.
 
 You can check out the contract [here](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
 
-How to write the Rust smart contract for Nameservice is outside the scope of
-this tutorial. In the future we will add more tutorials for writing CosmWasm
-smart contracts for Celestia.
+How to write the Rust smart contract for Nameservice is outside the scope of this tutorial. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia.
