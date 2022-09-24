@@ -2,39 +2,39 @@
 sidebar_label : Light Node
 - - -
 
-# Setting up a Celestia Light Node
+# Configuration d'un Light Node Celestia
 
 Ce tutoriel vous guidera à travers la mise en place d'un Light Node Celestia, qui vous permettra d'effectuer des échantillonnages de disponibilité de données sur le réseau de disponibilité de données (Data Availability/DA).
 
 > Pour voir un tutoriel vidéo pour la mise en place d'un Light Node Celestia, cliquez [ici](../developers/light-node-video.md)
 
-## Overview of light nodes
+## Présentation des Light Nodes
 
 Les Light nodes s'assurent de la disponibilité des données. C'est le moyen le plus commun d'interagir avec le réseau Celestia.
 
-![light-node](/img/nodes/LightNodes.png)
+![Light Node](/img/nodes/LightNodes.png)
 
 Les Light Nodes ont le comportement suivant :
 
 1. Ils écoutent les ExtendedHeaders, c'est-à-dire les en-têtes « bruts» enveloppés, qui notifient les nodes Celestia des nouveaux en-têtes de blocs et des métadonnées DA pertinentes.
 2. Ils effectuent l'échantillonnage de la disponibilité des données (DAS) sur les en-têtes reçus.
 
-## Hardware requirements
+## Configuration matérielle requise
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter un Light node :
 
 * Mémoire: 2 Go de RAM
 * CPU : Noyau unique
 * Disque: 5 Go de stockage SSD
-* Bande passante : 56 Gbps pour le téléchargement/56 Mbps pour l'upload
+* Bande passante : 56 Go/s pour le download/56 Mo/s pour l'upload
 
-## Setting up your light node
+## Configuration de votre Light Node
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
-First, make sure to update and upgrade the OS:
+Premièrement vérifiez que votre système d'exploitation est à jour ou mettez-le à jour :
 
 ```sh
 # If you are using the APT package manager
@@ -69,14 +69,14 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Maintenant nous devons ajouter le répertoire `/usr/local/go/bin` à `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Pour vérifier que Go a été installé correctement, lancez :
 
 ```sh
 go version
@@ -185,7 +185,7 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 
 ### Keys and wallets
 
-You can create your key for your node by running the following command:
+Vous pouvez créer votre clé pour votre nœud en exécutant la commande suivante :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
@@ -205,12 +205,12 @@ You can find the address by running the following command in the `celestia-node`
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Vous avez le choix entre deux réseaux pour obtenir des jetons de testnet :
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> NOTE : Si vous souhaitez lancer un light node pour votre rollup souverain, il est hautement recommandé de demander des jetons du devnet Arabica car c'est le devnet qui reçoit les dernières mises à jour utiles au développement de votre rollup souverain. Vous pouvez également utiliser le testnet Mamaki, bien qu'il soit davantage conçu pour les opérations de Validateurs.
 
 You can request funds to your wallet address using the following command in Discord:
 
@@ -233,10 +233,10 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Optional: start light node with SystemD
+### Optionnel : démarrer un light node avec SystemD
 
 Suivez le tutoriel sur la configuration du Light Node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-light-node).
 
-## Data availability sampling (DAS)
+## Échantillonnage de disponibilité des données (DAS)
 
 Avec votre light node en cours d'exécution, vous pouvez consulter ce tutoriel sur la soumission de transactions `PayForData` [ici](../developers/node-tutorial.md).
