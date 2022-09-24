@@ -91,7 +91,7 @@ celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
+> ПРИМІТКА: Якщо ви використовуєте для свого валідатора мостову ноду, наполегливо рекомендуємо запитувати токени тестової мережі Mamaki, оскільки це тестова мережа, яка використовується для тестування операцій валідатора.
 
 #### Додатково: запустіть мостову ноду за допомогою нетиповго ключа
 
