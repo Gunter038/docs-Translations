@@ -90,11 +90,11 @@ go version go1.18.2 linux/amd64
 
 ### Встановлення ноди Celestia
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+Одна річ, яку тут слід зазначити, це можливість вирішити, яку версію celestia-node ви хочете скомпілювати. Mamaki Testnet вимагає v0.3.0-rc2, а Arabica Devnet вимагає v0.3.0.
 
-The following sections highlight how to install it for the two networks.
+У наступних розділах описано, як її встановити для двох мереж.
 
-#### Mamaki Testnet installation
+#### Встановлення тестової мережі Mamaki
 
 Встановіть двійковий файл celestia-node, виконавши такі команди:
 
@@ -116,9 +116,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-#### Arabica Devnet installation
+#### Встановлення Arabica Devnet
 
-Install the celestia-node binary by running the following commands:
+Встановіть двійковий файл celestia-node, виконавши такі команди:
 
 ```sh
 cd $HOME
@@ -129,7 +129,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди celestia version:
 
 ```sh
 $ celestia version
@@ -165,15 +165,15 @@ $ celestia light init
 
 > ПРИМІТКА. Щоб отримати доступ до можливості отримати/надсилати інформацію, пов’язану зі станом, наприклад можливість надсилати транзакції PayForData або запитувати баланс рахунку ноди, кінцеву точку gRPC ноди валідатора (основного) потрібно передати відповідно до вказівок нижче.
 
-For ports:
+Для портів:
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете іншого в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [тут](./arabica-devnet.md#rpc-endpoints)
 
 Наприклад, ваша команда може виглядати приблизно так:
 
@@ -197,7 +197,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Після запуску легкої ноди для вас буде згенеровано ключ гаманця. You will need to fund that address with testnet tokens to pay for PayForData transactions.
+Після запуску легкої ноди для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів Testnet для оплати транзакцій PayForData.
 
 Ви можете знайти адресу, запустивши таку команду в каталозі `сelestia-node`:
 
@@ -205,20 +205,20 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+У вас є дві мережі для отримання токенів testnet:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> ПРИМІТКА. Якщо ви використовуєте для свого суверенного ролапа легку ноду, наполегливо рекомендуємо запитувати токени Arabica devnet, оскільки в Arabica є останні зміни, які можна використовувати для тестування для розробки вашого суверенного ролапа. Ви все ще можете використовувати Mamaki Testnet, але він переважно використовується для операцій валідатора.
 
-You can request funds to your wallet address using the following command in Discord:
+Ви можете попросити кошти на адресу гаманця за допомогою такої команди в Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Де `<Wallet-Address>` – це адреса `celestia1******`, що була згенерована під час створення гаманця.
 
 ### Необов’язково: запустити легку ноду зі спеціальним ключем
 
