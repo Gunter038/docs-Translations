@@ -28,24 +28,24 @@ Maintenant, nous pouvons jeter un œil aux contrats générés par ce code d'ide
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 ```
 
-We get the following output:
+Nous obtenons le résultat suivant :
 
 ```json
 {"contracts":[],"pagination":{"next_key":null,"total":"0"}}
 ```
 
-## Contract Instantiation
+## Instanciation du contrat
 
-We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
+Nous commençons à instancier le contrat en écrivant le message `INIT` pour le contrat nameservice. Ici nous spécifions que le `purchase_price` (prix d'achat) d'un nom est de `100uwasm` et que le `transfer_price` (prix de transfert) est de `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
 wasmd tx wasm instantiate $CODE_ID "$INIT" --from $KEY_NAME --keyring-backend test --label "name service" $TXFLAG -y --no-admin
 ```
 
-## Contract Interaction
+## Interaction avec le contrat
 
-Now that we instantiated it, we can interact further with the contract:
+Maintenant que nous l'avons instancié, nous pouvons interagir davantage avec le contrat :
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
