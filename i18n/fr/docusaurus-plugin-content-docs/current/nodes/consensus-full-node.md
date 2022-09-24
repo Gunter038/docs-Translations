@@ -1,57 +1,50 @@
----
-sidebar_label : Consensus Full Node
----
+- - -
+Full node de Consensus
+- - -
 
-# Setting up a Celestia Consensus Full Node
+# Configurer un Full Node de Consensus de Celestia
 <!-- markdownlint-disable MD013 -->
 
-Consensus Full Nodes allow you to sync blockchain history in the Celestia
-Consensus Layer.
+Les Full Nodes vous permettent de synchroniser l'historique de la blockchain dans la couche de consensus de Celestia.
 
-## Hardware requirements
+## Configuration matérielle requise :
 
-The following hardware minimum requirements are recommended for running the
-Consensus Full Node:
+La configuration matérielle minimale requise pour exécuter le full node de consensus est la suivante :
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Mémoire vive : 8Go RAM
+* Processeur : 4 cœurs
+* Disque dur : 250 Go de stockage SSD
+* Bande passante : 1 Go/s en download / 100 Mo/s en upload
 
-## Setting up your consensus full node
+## Configurer votre full node de consensus
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64
-instance machine.
+Le tutoriel ci-après a été réalisé sur un système d'exploitation Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+Suivre les instructions pour installer les dépendances [ici](../developers/environment.md).
 
-## Deploying the celestia-app
+## Déployer la Celestia-App
 
-This section describes part 1 of Celestia consensus full node setup:
-running a Celestia App daemon with an internal Celestia Core node.
+Cette section décrit la partie 1 de la configuration d'un full node de consensus Celestia : exécuter une Celestia App daemon avec un nœud interne à Celestia Core.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install + run
-  the consensus full node.  
+> Note : vérifier que vous avez au moins 100+ Go d'espace libre pour installer et exécuter en tout sécurité le full node de validateur.
 
-### Install celestia-app
+### Installer la Celestia App
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Suivre le tutoriel pour installer la Celestia App [ici](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Configurer les réseaux pair-à-pair
 
-For this section of the guide, select the network you want to connect to:
+Pour cette section du guide, sélectionner le réseau que vous voulez connecter à :
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Après cela, vous pouvez continuer le tutoriel.
 
-### Configure pruning
+### Configurer pruning
 
-For lower disk space usage we recommend setting up pruning using the
-configurations below. You can change this to your own pruning configurations
-if you want:
+Pour des disques durs aux espaces de stockage plus réduits nous recommandons de configurer pruning en utilisant les paramètres ci dessous. Vous pouvez utiliser vos propres paramètres de pruning si vous voulez :
 
 ```sh
 PRUNING="custom"
@@ -65,55 +58,48 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Reset network
+### Réinitialiser le réseau
 
-This will delete all data folders so we can start fresh:
+Cela va supprimer tous les dossiers de données pour pouvoir recommencer à zéro :
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Optionnel : synchronisation rapide avec snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using
-this method you can synchronize your Celestia node very quickly by downloading
-a recent snapshot of the blockchain. If you would like to sync from the Genesis,
-then you can skip this part.
+Synchroniser à partir de Genesis peut prendre beaucoup de temps, selon votre matériel. En utilisant cette méthode vous synchronisez très rapidement votre nœud Celestia en téléchargeant un snapshot récent de la blockchain. Si vous souhaitez synchroniser à partir de Genesis vous pouvez ignorer cette partie.
 
-If you want to use snapshot, determine the network you would like to sync
-to from the list below:
+Si vous souhaitez utiliser le snapshot, déterminez à quel réseau vous souhaitez vous synchroniser à partir de la liste ci-dessous :
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app
+### Lancer la Celestia App
 
-In order to start your consensus full node, run the following:
+Afin de démarrer votre noeud validateur, exécutez la commande ci-dessous :
 
 ```sh
 celestia-appd start
 ```
 
-This will let you sync the Celestia blockchain history.
+Cela vous permettra de synchroniser l'historique de la blockchain Celestia.
 
-### Optional: configure for RPC endpoint
+### Optionnel: configuration du point de terminaison RPC
 
-You can configure your Consensus Full Node to be a public RPC endpoint
-and listen to any connections from Data Availability Nodes in order to
-serve requests for the Data Availability API [here](../developers/node-tutorial.md).
+You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
 
-Note that you would need to ensure port 9090 is open for this.
+Notez que vous devez vous assurer que le port 9090 est ouvert pour cela.
 
-Run the following commands:
+Exécutez les commandes suivantes :
 
 ```sh
 EXTERNAL_ADDRESS=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external-address = \"\"/external-address = \"$EXTERNAL_ADDRESS:26656\"/" $HOME/.celestia-app/config/config.toml
-sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/config/config.toml
+sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0:26657"#g' ~/.celestia-app/config/config/config.toml
 ```
 
-Restart `celestia-appd` in the previous step to load those configs.
+Redémarrez `céleste-appd` à l'étape précédente pour charger ces configurations.
 
-### Start the celestia-app with SystemD
+### Démarrer la Celestia-App avec SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process
-with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Suivre le tutoriel pour configurer la Celestia App en tant que processus de fond avec SystemD [ici](./systemd.md#start-the-celestia-app-with-systemd).
