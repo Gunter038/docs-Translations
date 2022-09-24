@@ -192,7 +192,7 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 * 接下来我们创建了当天的哈希字符串以及Submitter（猜测人）。 这允许我们创建一个使用当前日期和Submitter（猜测人）地址的且可索引的猜测类型。 当新的一天和某个地址想要猜测当天的Wordle时，这可以帮助我们。 索引的设置确保他们可以每天猜测新的Wordle 但每天最多只能猜6次。
 * 然后我们检查今天Wordle的猜测者的猜测类型是否达到了6次。 如果没有，我们就继续计数。 我们随后会检查猜测是否正确。 此后，我们会存储猜测类型与更新的计数。
 
-## Protobuf File
+## 原型缓冲区文件
 
   我们需要对一些文件进行调整以实现以上功能。
 
