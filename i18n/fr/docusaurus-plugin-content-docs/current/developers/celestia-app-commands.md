@@ -1,94 +1,92 @@
----
-sidebar_label : Helpful CLI commands
----
+- - -
+sidebar_label : Commandes CLI utiles
+- - -
 
-# Helpful CLI commands
+# Commandes CLI utiles
 
-View all options:
+Voir les options:
 
 ```console
 $ celestia-appd --help
 Start celestia app
 
-Usage:
+Utilisation:
   celestia-appd [command]
 
-Available Commands:
-  add-genesis-account Add a genesis account to genesis.json
-  collect-gentxs      Collect genesis txs and output a genesis.json file
-  config              Create or query an application CLI configuration file
-  debug               Tool for helping with debugging your application
-  export              Export state to JSON
-  gentx               Generate a genesis tx carrying a self delegation
-  help                Help about any command
-  init                Initialize private validator, p2p, genesis, 
-  and application configuration files
-  keys                Manage your application's keys
-  migrate             Migrate genesis to a specified target version
-  query               Querying subcommands
-  rollback            rollback tendermint state by one height
-  rollback            rollback cosmos-sdk and tendermint state by one height
-  start               Run the full node
-  status              Query remote node for status
-  tendermint          Tendermint subcommands
-  tx                  Transactions subcommands
-  validate-genesis    validates the genesis file at the default 
-  location or at the location passed as an arg
-  version             Print the application binary version information
+Commandes disponibles:
+  add-genesis-account Ajoute un compte genesis à genesis.json
+  collect-gentxs      Collecte les transactions genesis et produit un fichier genesis.json
+  config              Crée ou demande un fichier de configuration pour une application CLI
+  debug               Outil d'aide au débogage de votre application
+  export              Exporte l'état en JSON
+  gentx               Génère une transaction genesis portant une auto-délégation 
+  help                Aide pour toute commande 
+  init                Initialise un validateur privé, pair-à-pair, genesis, et les fichiers de configuration de l'application 
+  keys                Gérer les clés de votre application
+  migrate             Migrer genesis vers une destination spécifique
+  query               Requête de sous-commandes
+  rollback            Retourne l'état Tendermint d'une grandeur en arrière 
+  rollback            Retourne les états cosmos-sdk etTendermint d'une grandeur en arrière 
+  start               Exécute le full node 
+  status              Envoie une demande de statut au noeud éloigné
+  tendermint          Sous-commandes Tendermint 
+  tx                  Sous-commandes de Transactions 
+  validate-genesis    valide le fichier genesis à l'emplacement par défaut ou à l'emplacement spécifié en arg 
+  version             Imprime la version de l'information binaire de l'application
 ```
 
-## Creating a wallet
+## Créer un wallet
 
 ```sh
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configures the keyring's backend, where the keys are stored.
+`keyring-backend` configure le backend du trousseau de clés, où les clés sont stockées.
 
-Options are: `os|file|kwallet|pass|test|memory`.
+Les options sont: `os|file|kwallet|pass|test|memory`.
 
-## Key management
+## Gestion des clés
 
 ```sh
-# listing keys
+# liste des clés
 celestia-appd keys list
 
-# adding keys
+# ajouter des clés
 celestia-appd keys add <KEY_NAME>
 
-# deleting keys
+# supprimer des clés
 celestia-appd keys delete <KEY_NAME>
 
-# renaming keys
+# renommer des clés
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### Importation et exportation des clés
 
-Import an encrypted and ASCII-armored private key into the local keybase.
+Importez une clé privée chiffrée et blindée ASCII dans la base de clés locale.
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
 ```
 
-Example usage:
+Exemple d'utilisation :
 
 ```sh
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Export a private key from the local keyring in encrypted and ASCII-armored format:
+Exporter une clé privée depuis le trousseau local au format chiffré et blindé ASCII :
 
 ```sh
 celestia-appd keys export <KEY_NAME>
 
-# you will then be prompted to set a password for the encrypted private key:
-Enter passphrase to encrypt the exported key:
+# vous serez alors invités à définir un mot de passe pour la clé privée chiffrée :
+Entrez le mot de passe pour chiffrer la clé exportée :
 ```
 
-After you set a password, your encrypted key will be displayed.
+Après avoir défini un mot de passe, votre clé chiffrée sera affichée.
 
-## Querying subcommands
+## Interrogation des sous-commandes
 
 Usage:
 
@@ -99,42 +97,42 @@ celestia-appd query <FLAGS> | <COMMAND>
 celestia-appd q <FLAGS> | <COMMAND>
 ```
 
-To see all options:
+Pour voir les options:
 
 ```sh
 celestia-appd q --help
 ```
 
-## Token management
+## Gestion des tokens
 
-Get token balances:
+Obtenir le solde de tokens:
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
 ```
 
-Example usage:
+Exemple d'utilisation:
 
 ```sh
 celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transfer tokens from one wallet to another:
+Transférer des tokens d'un wallet vers un autre:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 <amount> --node <NODE_URI> --chain-id <CHAIN_ID>
 ```
 
-Example usage:
+Exemple d'utilisation:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 19000000utia --node https://rpc-mamaki.pops.one/ --chain-id mamaki
 ```
 
-To see options:
+Pour voir les options:
 
 ```sh
 celestia-appd tx bank send --help
