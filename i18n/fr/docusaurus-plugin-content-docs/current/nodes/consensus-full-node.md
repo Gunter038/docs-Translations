@@ -11,7 +11,7 @@ Les Full Nodes vous permettent de synchroniser l'historique de la blockchain dan
 
 La configuration matérielle minimale requise pour exécuter le full node de consensus est la suivante :
 
-* Mémoire vive : 8Go RAM
+* Mémoire vive : 8Go de RAM
 * Processeur : 4 cœurs
 * Disque dur : 250 Go de stockage SSD
 * Bande passante : 1 Go/s en download / 100 Mo/s en upload
