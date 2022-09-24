@@ -6,9 +6,9 @@ sidebar_label : Mamaki Тестнет
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Ця інструкція містить відповідні розділи для підключення до тестової мережі Mamaki, в залежності від типу запущеної вами ноди. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Ця інструкція містить відповідні розділи для підключення до тестової мережі Mamaki, в залежності від типу запущеної вами ноди. Mamaki Testnet розроблено, щоб допомогти валідаторам перевірити свою інфраструктуру та програмне забезпечення нод за допомогою тестової мережі. Розробникам рекомендується розгортати свої суверенні зведені пакети на Mamaki, але ми також рекомендуємо для цього [Arabica Devnet](./arabica-devnet.md), оскільки він призначений для розробницьких цілей.
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Прочитайте анонс [тут](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki - це важлива стадія в Celestia, що дозволяє всім охочим протестувати основні функціональні можливості мережі. Прочитайте анонс [тут](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Ваш найкращий підхід до участі — це спочатку визначити, яку ноду ви хочете запустити. Посібники з настройки кожної ноди посилатимутья на відповідну мережу, щоб показати вам, як до них підключитися.
 
@@ -41,7 +41,7 @@ Mamaki is a milestone in Celestia, allowing everyone to test out core functional
 
 > ВИКОРИСТАННЯ ЦЬОГО КРАНУ НЕ ДАЄ ВАМ ПРАВА НА ЖОДЕН AIRDROP АБО ІНШЕ РОЗПОДІЛ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA. ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA НАРАЗІ НЕ ІСНУЄ, І НЕМАЄ ПУБЛІЧНИХ ПРОДАЖІВ ЧИ ІНШИХ ПУБЛІЧНИХ РОЗПОВСЮДЖЕНЬ БУДЬ-ЯКИХ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA.
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+Ви можете надіслати запит у кран Mamaki Testnet на каналі #mamaki-faucet на сервері Discord Celestia за допомогою такої команди:
 
 ```text
 $request <Celestia-Address>
@@ -109,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## Делегуйте валідатору
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+Щоб делегувати токени валідатору `celestiavaloper`, як приклад, ви можете виконати:
 
 ```sh
 celestia-appd tx staking delegate \
