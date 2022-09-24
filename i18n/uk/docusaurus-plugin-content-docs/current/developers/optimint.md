@@ -2,7 +2,7 @@
 
 ![optimint](/img/optimint.png)
 
-[Optimint](https://github.com/celestiaorg/optimint) is an ABCI (Application Blockchain Interface) implementation for sovereign rollups to deploy on top of Celestia.
+[Optimint](https://github.com/celestiaorg/optimint) – це реалізація ABCI (інтерфейс блокчейну програми) для суверенних ролапів для розгортання поверх Celestia.
 
 Його створено шляхом заміни Tendermint, консенсусного рівня Cosmos-SDK, заміна якого безпосередньо взаємодіє з рівнем доступності даних Celestia.
 
