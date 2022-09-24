@@ -1,14 +1,14 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: Configurer l'Environnement du Réseau
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
+# Configurer votre environnement pour CosmWasm sur Celestia
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Optimint.
+Maintenant que le fichier binaire `wasmd` est créé, nous avons besoin de configurer un réseau local qui communiquerait entre `wasmd` et Optimint.
 
-## Building the Wasmd Network
+## Construire le réseau Wasmd
 
-Run the following command:
+Exécuter la commande suivante :
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -16,18 +16,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+Cela initialise une chaine appelée `celeswasm` avec le fichier binaire `wasmd`.
 
-The following command helps us setup accounts for genesis:
+La commande suivante nous aide à configurer des comptes pour genesis :
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated for later reference if needed.
+Assurez-vous de stocker le produit du portefeuille généré pour un usage ultérieur si besoin.
 
-Now, let's add a genesis account and use it to update our genesis file:
+Maintenant, ajoutons un compte genesis et utilisons-le pour mettre à jour notre fichier genesis:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -36,9 +36,9 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-With that, we created a local network genesis file.
+Grâce à cela, nous avons créé un fichier genesis sur le réseau local.
 
-Some more useful commands we can setup:
+D'autres commandes encore plus utiles que nous pouvons configurer :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -47,9 +47,9 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Starting the Wasmd Network
+## Lancer le réseau Wasmd
 
-We can run the following to start the `wasmd` network:
+Nous pouvons exécuter la commande suivante pour lancer le réseau `wasmd` :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -57,12 +57,12 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 ```
 <!-- markdownlint-enable MD013 -->
 
-Please consider:
+Remarques:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> NOTE : Dans la commande du dessus, vous avez besoin de fournir une adresse IP d'un nœud Celestia possédant des Arabica Devnet Tokens à la `base_url`. Suivre le tutoriel pour configurer un Light Node Celestia et créer un portefeuille avec les tokens faucet de testnet dans la section nœud de Celestia [ici](./node-tutorial.md).
 
-Also please consider:
+Remarques complémentaires :
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Aussi, pour le drapeau `--optimint.namespace_id`, vous pouvez générer un identifiant d'espace de nom (namespace ID) aléatoire en utilisant l'environnement de test [ici](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+Grâce à cet article, nous avons démarré notre réseau `wasmd` !
