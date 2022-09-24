@@ -123,7 +123,7 @@ celestia light init
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете його в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 Наприклад, ваша команда разом з кінцевою точкою RPC може виглядати так:
 
@@ -147,15 +147,15 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Після запуску ноди Light для вас буде згенеровано ключ гаманця. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+Після запуску ноди Light для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів Arabica Devnet для оплати транзакцій PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Ви можете знайти адресу, запустивши таку команду в каталозі `elestia-node`:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
+Якщо ви хочете поповнити ваш гаманець тестовими токенами, перейдіть до Discord-каналу Celestia `#faucet`.
 
 Ви можете попросити кошти на адресу гаманця за допомогою такої команди в Discord:
 
