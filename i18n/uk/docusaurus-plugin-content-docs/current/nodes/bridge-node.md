@@ -62,7 +62,7 @@ sidebar_label : Bridge Node
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.rpc.port` за замовчуванням має значення 26657, тому, якщо ви не вкажете його в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете побачити список [тут](./mamaki-testnet.md#rpc-endpoints)
 
@@ -74,19 +74,19 @@ celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете його в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете побачити список [тут](./mamaki-testnet.md#rpc-endpoints)
 
 Ви можете створити свій ключ для своєї ноди, дотримуючись інструкцій `cel-key` [тут](./keys.md)
 
-Після запуску мостової ноди для вас буде згенеровано ключ гаманця. You will need to fund that address with Testnet tokens to pay for PayForData transactions. Ви можете знайти адресу, виконавши наступну команду:
+Після запуску мостової ноди для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів Testnet для оплати транзакцій PayForData. Ви можете знайти адресу, виконавши наступну команду:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+У вас є дві мережі для отримання токенів testnet:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
