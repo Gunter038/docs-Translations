@@ -128,7 +128,7 @@ celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете іншого в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
 
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [here](./mamaki-testnet.md#rpc-endpoints)
 
