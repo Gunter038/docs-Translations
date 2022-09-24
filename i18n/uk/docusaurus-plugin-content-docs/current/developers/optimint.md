@@ -6,11 +6,11 @@
 
 Його створено шляхом заміни Tendermint, консенсусного рівня Cosmos-SDK, заміна якого безпосередньо взаємодіє з рівнем доступності даних Celestia.
 
-It spins up a sovereign rollup, which collects transactions into blocks and posts them onto Celestia for consensus and data availability.
+Він запускає суверенний ролап, який збирає транзакції в блоки та публікує їх у Celestia для консенсусу та доступності даних.
 
-The goal of Optimint is to enable anyone to design and deploy a sovereign rollup on Celestia in minutes.
+Мета Optimint — дати будь-кому можливість розробити та розгорнути суверенний ролап на Celestia за лічені хвилини.
 
-Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer.
+Крім того, хоча Optimint дозволяє створювати суверенні ролапи на Celestia, наразі він ще не підтримує доказів шахрайства, тому працює в «песимістичному» режимі, де ноди повинні повторно виконувати транзакції, щоб перевірити дійсність ланцюжка (мова про повну ноду). Крім того, наразі Optimint підтримує лише один секвенсер.
 
 ## Навчальні посібники
 
