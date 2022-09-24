@@ -224,7 +224,7 @@ message MsgSubmitGuessResponse {
 }
 ```
 
-Next file is `x/wordle/types/expected_keepers.go`
+Le fichier suivant est : `x/wordle/types/expected_keepers.go`
 
 Here, we need to add the SendCoins method to the BankKeeper interface in order to allow sending the reward to the right guesser.
 
