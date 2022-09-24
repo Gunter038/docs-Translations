@@ -6,11 +6,11 @@ sidebar_label : Mamaki测试网
 
 ![mamaki-testnet](/img/mamaki.png)
 
-本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+本指南包含如何连接到Mamaki的相关内容，取决于您正在运行的节点类型。 Mamaki测试网是为了帮助验证者测试其基础设施和节点软件的测试网络而设计的。 我们鼓励开发者在Mamaki上部署他们的主权Rollup。 但我们也建议开发者使用为开发而设计的[Arabica开发网](./arabica-devnet.md)。
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. 公告在[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)。
+Mamaki是Celestia的一个里程碑，每个人都可以测试网络上的核心功能。 阅读[这里](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/)的公告。
 
-您参与的最佳方式取决于首先确定的您想运行的节点类型。 Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+你最好的参与方式是首先确定你想运行的节点。 每个节点指南将链接到相关的网络，以便向你展示如何连接它们。
 
 关于您可以运行的节点类型，就Mamaki而言，选项列表为：
 
@@ -41,7 +41,7 @@ Mamaki is a milestone in Celestia, allowing everyone to test out core functional
 
 > USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS. 主网上的Celestia代码目前还不存在，也没有任何公开销售或分配的计划。
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+您可以通过Celestia的Discord服务器上的#faucet频道，向Mamaki测试网水龙头发出以下申请：
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -109,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## 向验证者提供抵押
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+要将代币委派给`celestiavaloper`验证者，作为示例，您可以运行：
 
 ```sh
 celestia-appd tx staking delegate \
