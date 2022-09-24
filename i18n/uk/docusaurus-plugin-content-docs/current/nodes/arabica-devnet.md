@@ -37,7 +37,7 @@ Arabica Devnet є новою тестовою мережею   Celestia Labs, я
 
 * [https://limani.celestia-devops.dev](https://limani.celestia-devops.dev)
 
-## Arabica Devnet faucet
+## Кран Arabica Devnet
 
 > ВИКОРИСТАННЯ ЦЬОГО КРАНУ НЕ ДАЄ ВАМ ПРАВА НА ЖОДЕН AIRDROP АБО ІНШЕ РОЗПОДІЛ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA. ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA НАРАЗІ НЕ ІСНУЄ, І НЕМАЄ ПУБЛІЧНИХ ПРОДАЖІВ ЧИ ІНШИХ ПУБЛІЧНИХ РОЗПОВСЮДЖЕНЬ БУДЬ-ЯКИХ ТОКЕНІВ ОСНОВНОЇ МЕРЕЖІ CELESTIA.
 
