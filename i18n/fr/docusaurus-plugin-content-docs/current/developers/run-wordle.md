@@ -32,17 +32,17 @@ Cosmos SDK's version is: stargate - v0.45.5
 
 Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Optimint flags added.
 
-You can start the chain with optimint configurations by running the following:
+Vous pouvez commencer la chaine avec des configurations Optimint en exécutant la commande suivante :
 
 ```sh
 wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
 
-Please consider:
+Remarques :
 
 > NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
 
-Also please consider:
+Remarques complémentaires :
 
 > IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--optimint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
@@ -54,7 +54,7 @@ wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chai
 
 > NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Optimint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Optimint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
 
-This will ask you to confirm the transaction with the following message:
+Cela vous demandera de confirmer la transaction avec le message suivant :
 
 ```json
 {
@@ -89,15 +89,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Le Cosmos-SDK vous demandera alors de confirmer la transaction ici :
 
 ```sh
 confirm transaction before signing and broadcasting [y/N]:
 ```
 
-Confirm with a Y.
+Confirmez en tapant un Y.
 
-You will then get a response with a transaction hash as shown here:
+Vous aurez alors une réponse avec un hash de transaction comme indiqué ci-dessous :
 
 ```sh
 code: 19
@@ -115,20 +115,20 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
+Notez que cela ne signifie pas que la transaction était déjà inclue dans le bloc. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+Cela devrait afficher le résultat suivant :
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Test out a few things for fun:
+Essayons quelques petites choses pour nous amuser :
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
@@ -136,7 +136,7 @@ wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain
 
 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
 
-Now try:
+Maintenant essayez la commande suivante :
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
@@ -160,7 +160,7 @@ wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-i
 
 After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
 
-We can verify this by querying the list:
+Nous pouvons vérifier cela en interrogeant la liste :
 
 ```sh
 wordled q wordle list-guess --output json
@@ -174,7 +174,7 @@ With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite 
 
 You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
 
-There are many ways this codebase can be extended:
+Il y a de multiples façons d'étendre cette code base :
 
 1. You can improve messaging around when you guess the correct word.
 2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
