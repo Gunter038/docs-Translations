@@ -2,15 +2,15 @@
 sidebar_label : SystemD
 - - -
 
-# Setting up your node as a background process with SystemD
+# Configuration de votre Node en tant que processus d'arrière-plan avec SystemD
 
 SystemD est un service daemon utile pour exécuter des applications en tant que processus en arrière-plan.
 
-## Consensus nodes
+## Consensus Nodes
 
 Si vous exécutez un node validateur ou complet de consensus, voici les étapes pour configurer `celestia-appd` en tant que processus d'arrière-plan.
 
-### Start the celestia-app with SystemD
+### Démarrer la Celestia-App avec SystemD
 
 SystemD est un service daemon utile pour exécuter des applications en tant que processus en arrière-plan.
 
