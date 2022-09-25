@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du nœud :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -44,7 +44,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Install Golang
+### Installer Golang
 
 La Celestia-app et le nœud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les mettre en application.
 
@@ -57,20 +57,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Maintenant nous devons ajouter le répertoire `/usr/local/go/bin` à `$PATH` :
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Pour vérifier que Go a été installé correctement, lancez :
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+La sortie doit être la version installée ci-après :
 
 ```sh
 go version go1.18.2 linux/amd64
@@ -80,7 +80,7 @@ go version go1.18.2 linux/amd64
 
 ### Installer Celestia node
 
-Install the celestia-node binary by running the following commands:
+Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -89,10 +89,10 @@ git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
 git checkout tags/v0.3.1
 make install
-make cel-key
+make cel-ke
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Vérifiez que le binaire fonctionne et la version avec la commande celestia ci-dessous :
 
 ```sh
 $ celestia version
@@ -117,15 +117,15 @@ celestia light init
 
 Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau.
 
-> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points d'appel à distance (RPC) [ici](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera à celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
 
-For example, your command along with an RPC endpoint might look like this:
+Par exemple, votre commande avec un point de terminaison RPC (appel de procédure à distance) peut ressembler à ceci :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -155,7 +155,7 @@ Vous pouvez trouver cette adresse en lançant la commande suivante dans le répe
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
+Si vous souhaitez approvisionner votre portefeuille en tokens de testnet, dirigez vous vers le canal Discord `#arabica-faucet`.
 
 Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord:
 
@@ -626,7 +626,7 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
+Il est possible que le compte auquel vous essayez de soumettre un frais PayForData n'ait pas encore de tokens. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
 
 ### Obtenir des partages d'espace de noms par hauteur de bloc
 
