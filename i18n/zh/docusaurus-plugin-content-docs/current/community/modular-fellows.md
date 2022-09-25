@@ -10,7 +10,7 @@ sidebar_label: 模块化研究员
 
 在为期三个月的计划中，模块化研究员将获得工程支持、指导和每月 3,000 美元的津贴，以构建他们选择的项目。 计划结束后，将继续以筹款帮助和赠款的形式为研究员提供支持。
 
-申请目前已关闭， 请回来查看有关未来队伍的详细信息。
+申请目前已关闭， 请持续关注有关未来队伍的详细信息。
 
 ## 概述
 
@@ -55,7 +55,7 @@ sidebar_label: 模块化研究员
 
     *一个可选的会议，用于提问、获得帮助和接收反馈。*
 
-    星期三在美国中部时间上午 8:00 或下午 6:00 交替进行。
+    每周的星期三在美国中部时间上午 8:00 或下午 6:00 交替进行。
 
 2. **课程和教程**
 
@@ -73,9 +73,9 @@ sidebar_label: 模块化研究员
 
     *每个里程碑完成后，研究员每月将收到3 000.00美元。*
 
-## 继续
+## 后续
 
-虽然该程序仅持续3个月，但我们将以以下方式继续为您提供支持。
+虽然该计划仅持续3个月，但我们将以以下方式继续为您提供支持。
 
 - **赠款和资金** - 我们将协助您筹款或申请赠款，以便您可以继续构建您的项目。
 - **校友网络** - 您将被引入模块化研究员校友网络，在那里您可以与其他过去和未来的模块化研究员保持联系。
@@ -92,7 +92,7 @@ sidebar_label: 模块化研究员
 - [Eli Krenzke](https://twitter.com/eKRENZKE) - Polychain 的研究团队合作伙伴
 - [Zaki Manian](https://twitter.com/zmanian) - Sommelier 的联合创始人，iqlusion 的联合创始人，帮助建立 Cosmos 生态系统，包括启动第一个公共 Cosmos 测试网
 - [Marko Baricevic](https://twitter.com/mark0baricevic) - Cosmos-sdk 的负责人和二元控股公司的创始人
-- [Morgan Beller](https://twitter.com/beller) - 上一个是NFX 的普通合伙人，种子阶段风险投资基金， 目前是Facebook 的 Novi 战略主管
+- [Morgan Beller](https://twitter.com/beller) - 上一个是NFX 的种子阶段风险投资基金普通合伙人， 目前是Facebook 的 Novi 战略主管
 - [John Adler](https://twitter.com/jadler0) - Celestia Labs 首席风险官
 - [Mustafa Al-Bassam](https://twitter.com/musalbas) - Celestia Labs 首席执行官
 - [Ismail Khoffi](https://twitter.com/KreuzUQuer) - Celestia Labs 首席技术官
