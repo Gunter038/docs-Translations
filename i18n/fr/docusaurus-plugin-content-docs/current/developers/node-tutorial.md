@@ -25,10 +25,10 @@ Les exigences matérielles minimales recommandées pour lancer un light node son
 Premièrement, vérifiez que votre système d'exploitation est à jour ou mettez le à jour:
 
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire APT 
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire YUM
 sudo yum update
 ```
 
@@ -36,10 +36,10 @@ Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le té
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire APT 
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire YUM 
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
