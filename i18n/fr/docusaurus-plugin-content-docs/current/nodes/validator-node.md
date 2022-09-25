@@ -1,29 +1,29 @@
 - - -
-sidebar_label : Validator Node
+sidebar_label : Node Validateur
 - - -
 
-# Setting up a Celestia Validator Node
+# Configurer un Node validateur
 
-Les Validator nodes vous permettent de participer au consensus sur le réseau Céleste.
+Les nodes Validateurs vous permettent de participer au consensus sur le réseau de Celestia.
 
-## Hardware requirements
+## Hardware Requis
 
-Les exigences matérielles minimales suivantes sont recommandées pour exécuter le validator node: :
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le node validateur : :
 
 * Mémoire : 8 Go de RAM
 * CPU : Quad-Core
 * Disque : 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting up your validator node
+## Configuration de votre Node validateur
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
 Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Deploying the celestia-app
+## Déployer Celestia-App
 
 Cette section décrit la première partie de l'installation d'un Validator Node Celestia: exécutant un daemon Celestia App avec un node Celestia Core interne.
 
