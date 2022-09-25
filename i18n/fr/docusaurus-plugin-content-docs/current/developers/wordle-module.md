@@ -4,26 +4,26 @@ sidebar_label: Module
 
 # Créer le module Wordle
 
-For the Wordle module, we can add dependencies offered by Cosmos-SDK.
+Pour le module Wordle, nous pouvons ajouter des dépendances offertes par Cosmos-SDK.
 
-From the Cosmos-SDK docs, a [module](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules) is defined as the following:
+À partir de la documentation du Cosmos-SDK, un [module](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules) est défini comme suit :
 
-> In a Cosmos SDK blockchain, application-specific logic is implemented in separate modules. Modules keep code easy to understand and reuse. Each module contains its own message and transaction processor, while the Cosmos SDK is responsible for routing each message to its respective module.
+> Dans une blockchain de Cosmos SDK, la logique spécifique à l'application est implémentée dans des modules séparés. Les modules gardent le code facile à comprendre et à réutiliser. Chaque module contient son propre message et son processeur de transaction, alors que le Cosmos SDK  est responsable du routage de chaque message vers son module respectif.
 
 De multiples modules existent pour le slashing, la validation, l'authentification.
 
-## Scaffolding A Module
+## Scaffolder un Module
 
 Nous utiliserons la dépendance du module `bank` pour les transactions.
 
-From the Cosmos-SDK docs, the [`bank`](https://docs.cosmos.network/master/modules/bank/) module is defined as the following:
+À partir de la documentation du Cosmos-SDK, un [`bank`](https://docs.cosmos.network/master/modules/bank/) est défini comme suit :
 
-> The bank module is responsible for handling multi-asset coin transfers between accounts and tracking special-case pseudo-transfers which must work differently with particular kinds of accounts (notably delegating/undelegating for vesting accounts). It exposes several interfaces with varying capabilities for secure interaction with other modules which must alter user balances.
+> Le module bancaire est responsable de la gestion des transferts de "coins" multi-actifs entre comptes et du suivi des pseudo-transferts de cas spéciaux qui doivent fonctionner différemment avec certains types de comptes (notamment déléguant/délèguant pour l'acquisition de comptes). Il expose plusieurs interfaces avec des capacités différentes pour une interaction sécurisée avec d'autres modules qui doivent modifier les soldes des utilisateurs.
 
-We build the module with the `bank` dependency with the following command:
+Nous construisons le module avec la dépendance `bank` avec la commande suivante :
 
 ```sh
 ignite scaffold module wordle --dep bank
 ```
 
-This will scaffold the Wordle module to our Wordle Chain project.
+Ceci scaffoldera le module Wordle à notre projet de Chaine World.
