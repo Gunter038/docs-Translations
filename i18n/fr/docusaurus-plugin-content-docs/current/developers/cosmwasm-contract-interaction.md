@@ -9,7 +9,7 @@ Dans les étapes précédentes, nous avons stocké le hash de la transaction du 
 
 Because of the longer time periods of submitting transactions via Optimint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
-## Contract Querying
+## Interrogation du contrat
 
 Commençons par questionner notre hash de transaction pour son code d'identification:
 
