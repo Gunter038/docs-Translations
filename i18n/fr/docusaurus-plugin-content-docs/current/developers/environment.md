@@ -13,10 +13,10 @@ Une fois que vous avez configuré votre instance, ssh dans l'instance pour comme
 Tout d'abord, assurez-vous de mettre à jour le système d'exploitation:
 
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire YUM
 sudo yum update
 ```
 
@@ -24,10 +24,10 @@ Ce sont des paquets essentiels qui sont nécessaires pour exécuter de nombreuse
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire YUM
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
