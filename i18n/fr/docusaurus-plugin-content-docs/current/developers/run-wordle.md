@@ -144,7 +144,7 @@ wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --cha
 
 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-Now try to submit another wordle even though one was already submitted
+Maintenant essayez de soumettre un autre mot même si l'un d'eux a déjà été soumis
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
@@ -152,13 +152,13 @@ wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-
 
 After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
 
-Now let’s try to guess a five letter word:
+Maintenant essayons de deviner un mot à cinq lettres :
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+Après avoir soumis les transactions et les avoir confirmées, interroger le `txhash` de la même manière que vous l'avez fait ci-dessus. Etant donné que vous n'avez pas deviné le bon mot, cela augmentera le nombre de guess du compte Bob.
 
 Nous pouvons vérifier cela en interrogeant la liste :
 
@@ -166,19 +166,19 @@ Nous pouvons vérifier cela en interrogeant la liste :
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+Cela fournit tous les guess soumis jusqu'à présent, l'index étant la date d'aujourd'hui et l'adresse de l'émetteur.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base.
+Grâce à cela, nous avons implémenté un exemple basique de Wordle en utilisant le Cosmos-SDK, Ignite et Optimint. La prochaine partie sera sur la façon d'étendre la code base.
 
-## Extending in the Future
+## Étendre dans le futur
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+Vous pouvez étendre la code base et améliorer ce tutoriel en consultant le dossier github [ici](https://github.com/celestiaorg/wordle).
 
 Il y a de multiples façons d'étendre cette code base :
 
-1. You can improve messaging around when you guess the correct word.
+1. Vous pouvez améliorer le message lorsque vous devinez le mot correct.
 2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
+3. Vous pouvez améliorer l'interface utilisateur dans le terminal en utilisant une interface plus jolie pour Wordle. Quelques exemples sont proposés [ici](https://github.com/nimblebun/wordle-cli).
+4. Vous pouvez améliorer la date actuelle pour qu'elle soit adaptée à un fuseau horaire spécifique.
+5. Vous pouvez créer un bot qui soumet un mot chaque jour à une heure spécifique.
 6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
