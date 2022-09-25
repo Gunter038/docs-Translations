@@ -29,11 +29,11 @@ Cette section décrit la première partie de l'installation d'un Validator Node 
 
 > Remarque : Assurez-vous de disposer d'au moins 100 Go d'espace de libre pour installer et exécuter en toute sécurité le Validator node .
 
-### Install celestia-app
+### Installer Celestia App
 
 Suivez le tutoriel d'installation de Celestia App [ici](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Configurer les réseaux pair-à-pair
 
 Pour cette section du guide, sélectionnez le réseau auquel vous souhaitez vous connecter :
 
@@ -57,13 +57,13 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure validator mode
+### Configurer le Node Validateur
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset network
+### Réinitialiser le réseau
 
 Cela supprimera tous les dossiers de données afin de pouvoir recommencer à zéro :
 
@@ -71,7 +71,7 @@ Cela supprimera tous les dossiers de données afin de pouvoir recommencer à zé
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Optionnel : synchronisation rapide avec snapshot
 
 La synchronisation depuis le Genesis peut prendre beaucoup de temps, selon votre matériel. Utiliser cette méthode vous permet de synchroniser votre node Celestia très rapidement en téléchargeant un Snapshot récent de la blockchain. Si vous souhaitez synchroniser depuis le Genesis, alors vous pouvez ignorer cette partie.
 
@@ -79,15 +79,15 @@ Si vous souhaitez utiliser un Snapshot, déterminez le réseau auquel vous souha
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app with SystemD
+### Démarrer Celestia-App avec SystemD
 
-Suivez le tutoriel sur la configuration du Light Node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#start-the-celestia-app-with-systemd).
+Suivre le tutoriel pour configurer la Celestia App en tant que processus de fond avec SystemD [ici](./systemd.md#start-the-celestia-app-with-systemd).
 
 ### Wallet
 
 Suivez le tutoriel sur la création d'un wallet [ici](../developers/wallet.md).
 
-### Delegate stake to a validator
+### Déléguer de la Stake (mise) à un validateur
 
 Créer une variable d'environnement pour l'adresse:
 
@@ -112,15 +112,15 @@ Ensuite, sélectionnez le réseau que vous souhaitez utiliser pour déléguer à
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the celestia-node
+## Deployer le Celestia Node
 
-Cette section décrit la partie 2 de l'installation d'un node validateur Celestia : exécuter Celestia Bridge NodeCelestia daemon.
+Cette section décrit la partie 2 de l'installation d'un node validateur Celestia : exécuter le daemon Celestia Bridge Node.
 
-### Install celestia-node
+### Installer Celestia Node
 
 Vous pouvez suivre le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md)
 
-### Initialize the bridge node
+### Initialiser le Bridge node
 
 Exécutez ce qui suit :
 
@@ -128,11 +128,11 @@ Exécutez ce qui suit :
 celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
 
 Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Exécuter le Bridge node
 
 Exécutez ce qui suit :
 
@@ -140,13 +140,13 @@ Exécutez ce qui suit :
 celestia bridge start
 ```
 
-### Optional: start the bridge node with SystemD
+### Facultatif : Démarrez le Bridge Node avec SystemD
 
 Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
 Vous avez configuré avec succès un Bridge node qui se synchronise avec le réseau.
 
-## Run a validator node
+## Exécuter un Node Validateur
 
 Après avoir terminé toutes les étapes nécessaires, vous êtes maintenant prêt à exécuter un validateur ! Afin de créer votre validateur sur la chaîne, suivez les instructions ci-dessous. Gardez à l'esprit que ces étapes sont nécessaires UNIQUEMENT si vous souhaitez participer au consensus.
 
