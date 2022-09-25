@@ -7,7 +7,7 @@ sidebar_label: Déploiement de contrat
 
 ## Compiler le Contrat Intelligent
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+Nous allons exécuter les commandes suivantes pour retirer le contrat intelligent Nameservice et le compiler :
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,9 +16,9 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Le contrat compilé est affiché à: `cible/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Tests unitaires
 
 Si nous voulons exécuter des essais, nous pouvons le faire par la commande suivante :
 
@@ -28,9 +28,9 @@ cargo unit-test
 
 ## Contrat Intelligent Optimisé
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+Parce que nous déployons le contrat intelligent compilé sur `wasmd`, nous voulons qu'il soit aussi petit que possible.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+L'équipe CosmWasm fournit un outil appelé `rust-optimizer` qui a besoin de Docker pour pouvoir compiler.
 
 Exécuter la commande suivante :
 
