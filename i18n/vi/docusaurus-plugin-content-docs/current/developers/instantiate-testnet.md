@@ -83,55 +83,54 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
   --keyring-backend test
 ```
 
-Điều này sẽ tạo giao dịch genesis cho chuỗi mới của bạn. Here `$STAKING_AMOUNT` should be at least `1000000000utia`. If you provide too much or too little, you will encounter an error when starting your node.
+Điều này sẽ tạo giao dịch genesis cho chuỗi mới của bạn. `$STAKING_AMOUNT` ít nhất nên là `1000000000utia`. Nếu bạn cung cấp quá nhiều hoặc quá ít, bạn sẽ gặp lỗi khi khởi chạy node.
 
-You will find the generated gentx JSON file inside `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
+Bạn sẽ tìm thấy gentx file JSON được tạo ở bên trong `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
 
-> Note: If you have other validators in your network, they need to also run the above command with the `genesis.json` file you shared with them in the previous step.
+> Lưu ý: Nếu bạn có các validators khác trong mạng của bạn, chúng cũng cần phải     chạy câu lệnh ở trên với file `genesis.json` mà bạn chia sẻ với chúng trong bước trước.
 
-### Creating the Genesis JSON File
+### Tạo File Genesis JSON
 
-Once all participants have submitted their gentx JSON files to you, you will pull all those gentx files inside the following directory: `$HOME/.celestia-appd/config/gentx` and use them to create the final `genesis.json` file.
+Sau khi tất cả những người tham gia đã gửi file gentx JSON của họ cho bạn, bạn sẽ kéo tất cả các file gentx đó vào bên trong thư mục sau:`$HOME/.celestia-appd/config/gentx` và sử dụng chúng để tạo file `genesis.json` chính thức cuối cùng.
 
-Once you added the gentx files of all the particpants, run the following command:
+Một khi bạn đã thêm file gentx của tất cả những người tham gia, chạy câu lệnh sau:
 
 ```sh
 celestia-appd collect-gentxs
 ```
 
-This command will look for the gentx files in this repo which should be moved to the following directory `$HOME/.celestia-app/config/gentx`.
+Lệnh này sẽ tìm kiếm các tệp gentx trong kho lưu trữ này,thứ sẽ được chuyển đến thư mục sau`$HOME/.celestia-app/config/gentx`.
 
-It will update the `genesis.json` file after in this location `$HOME/.celestia-app/config/genesis.json` which now includes the gentx of other participants.
+Nó sẽ cập nhật file `genesis.json` sau đó trong `$HOME/.celestia-app/config/genesis.json`, thứ bây giờ sẽ bao gồm gentx của những người tham gia khác.
 
-You should then share this final `genesis.json` file with all the other particpants who must add it to their `$HOME/.celestia-app/config` directory.
+Bạn sau đó nên chia sẻ file `genesis.json` cuối cùng với tất cả những người tham gia còn lại, những người sẽ phải thêm nó vào thư mục `$HOME/.celestia-app/config`.
 
-Everyone must ensure that they replace their existing `genesis.json` file with this new one created.
+Mọi người nên bảo đảm rằng họ đã thay file `genesis.json` hiện tại của họ với file mới được tạo.
 
-### Modify Your Config File
+### Điều chỉnh File Config
 
-Open the following file `$HOME/.celestia-app/config/config.toml` to modify it.
+Mở file sau `$HOME/.celestia-app/config/config.toml` để điều chỉnh.
 
-Inside the file, add the other participants by modifying the following line to include other participants as persistent peers:
+Bên trong tệp, hãy thêm những người tham gia khác bằng cách sửa đổi dòng sau thành bao gồm những người tham gia khác như là các persistent peers:
 
 ```text
-# Comma separated list of nodes to keep persistent connections to
-persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
+# Dấu phẩy sẽ tách rời danh sách các nodes để giữ kết nối ổn định đối với persistent_peer = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-You can find `validator_address` by running the following command:
+Bạn có thể tìm `validator_address` bằng cách chạy lệnh sau:
 
 ```sh
 celestia-appd tendermint show-node-id
 ```
 
-The output will be the hex-encoded `validator_address`. The default `port` is 26656.
+Kết quả sẽ là `validator_address` mã hóa bằng hàm hex. `Cổng` mặc định sẽ là 26656.
 
-### Instantiate the Network
+### Khởi chạy mạng
 
-You can start your node by running the following command:
+Bạn có thể khởi chạy node bằng cách chạy lệnh sau:
 
 ```sh
 celestia-appd start
 ```
 
-Now you have a new Celestia Testnet to play around with!
+Bây giờ, bạn đã có một Testnet Celestia mới để tương tác với!
