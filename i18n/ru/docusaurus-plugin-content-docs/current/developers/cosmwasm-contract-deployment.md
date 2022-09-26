@@ -2,12 +2,12 @@
 sidebar_label: Contract Deployment
 ---
 
-# Contract Deployment on CosmWasm with Optimint
+# Развертывание контрактов на CosmWasm с помощью Optimint
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## Компиляция смарт-контракта
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+Мы выполним следующие команды, чтобы вызвать смарт-контракт Nameservice и скомпилировать его:
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
