@@ -16,19 +16,19 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Вывод скомпилированного контракта: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Модульные тесты
 
-If we want to run tests, we can do so with the following command:
+Если мы хотим провести тесты, мы можем сделать это с помощью следующей команды:
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Оптимизированный смарт контракт
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+Поскольку мы развертываем скомпилированный смарт контракт на `wasmd`, то хотелось б, чтобы он был как можно меньше.
 
 CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
 
