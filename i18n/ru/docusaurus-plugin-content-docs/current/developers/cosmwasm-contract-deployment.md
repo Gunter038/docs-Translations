@@ -1,5 +1,5 @@
 ---
-sidebar_label: Contract Deployment
+sidebar_label: Развертывание контракта
 ---
 
 # Развертывание контрактов на CosmWasm с помощью Optimint
