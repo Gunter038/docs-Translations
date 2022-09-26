@@ -4,26 +4,26 @@ sidebar_label : Lớp Data Availability của Celestia
 
 # Vòng đời một giao dịch của ứng dụng Celestia
 
-Người dùng yêu cầu Ứng dụng Celestia cung cấp dữ liệu bằng cách gửi ` PayForData ` giao dịch. Mỗi giao dịch như vậy bao gồm danh tính của người gửi, dữ liệu được cung cấp, cũng được gọi là thông báo, kích thước dữ liệu, không gian tên ID và một chữ ký. Every block producer batches multiple `PayForData` transactions into a block.
+Người dùng yêu cầu Ứng dụng Celestia cung cấp dữ liệu bằng cách gửi ` PayForData ` giao dịch. Mỗi giao dịch như vậy bao gồm danh tính của người gửi, dữ liệu được cung cấp, cũng được gọi là thông báo, kích thước dữ liệu, không gian tên ID và một chữ ký. Mỗi người tạo khối tổng hợp nhiều giao dịch `PayForData` vào một khối.
 
-Before proposing the block though, the producer passes it to the state machine via ABCI++, where each `PayForData` transaction is split into a namespaced message (denoted by `Msg` in the figure below), i.e., the data together with the namespace ID, and an executable transaction (denoted by `e-Tx` in the figure below) that does not contain the data, but only a commitment that can be used at a later time to prove that the data was indeed made available.
+Trước khi đề xuất khối, người tạo khối chuyển nó sang máy trạng thái thông qua ABCI++, nơi mỗi giao dịch `PayForData`được chia thành một message được namespace ( được biểu thị bằng `Msg` trong hình bên dưới), ví dụ, data cùng với namespace ID, và giao dịch có thể thực thi ( được biểu thị bằng `e-Tx` trong hình bên dưới) và không chứa dữ liệu, nhưng chỉ một cam kết có thể được sử dụng sau này để chứng minh rằng data đã thực sự được khả dụng.
 
-Thus, the block data consists of data partitioned into namespaces and executable transactions. Note that only these transactions are executed by the Celestia state machine once the block is committed.
+Do đó, dữ liệu khối bao gồm dữ liệu được phân chia thành các namespaces và các giao dịch có thể thực thi. Lưu ý rằng chỉ những giao dịch này mới được thực thi bởi máy trạng thái Celestia sau khi khối được cam kết.
 
-![Lifecycle of a Celestia App Transaction](/img/concepts/tx-lifecycle.png)
+![Vòng đời một giao dịch của Celestia App](/img/concepts/tx-lifecycle.png)
 
-Next, the block producer adds to the block header a commitment of the block data. As described [here](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), the commitment is the Merkle root of the 4k intermediate Merkle roots (i.e., one for each row and column of the extended matrix). To compute this commitment, the block producer performs the following operations:
+Tiếp theo, người tạo khối thêm vào tiêu đề khối một cam kết về dữ liệu khối. Như đã được mô tả [tại đây](./data-availability-layer.md#fraud-proofs-of-incorrectly-extended-data), cam kết là gốc Merkle của rễ Merkle trung gian 4k (tức là một cho mỗi hàng và cột của ma trận mở rộng). Để tính toán cam kết này, nhà sản xuất khối thực hiện các hoạt động sau:
 
-- It splits the executable transactions and the namespaced data into shares. Every share consists of some bytes prefixed by a namespace ID. To this end, the executable transactions are associated with a reserved namespace.
+- Nó phân chia các giao dịch thực thi và dữ liệu được namespace thành các phần. Mỗi phần bao gồm một vài bytes với tiền tố là một namespace ID. Để đạt được điều này, các giao dịch có thể thực thi được liên kết với một namespace riêng.
 - It arranges these shares into a square matrix (row-wise). Note that the shares are padded to the next power of two. The outcome square of size k × k is referred to as the original data.
 - It extends the original data to a 2k × 2k square matrix using the 2-dimensional Reed-Solomon encoding scheme described above. The extended shares (i.e., containing erasure data) are associated with another reserved namespace.
 - It computes a commitment for every row and column of the extended matrix using the NMTs described above.
 
 Thus, the commitment of the block data is the root of a Merkle tree with the leaves the roots of a forest of Namespaced Merkle subtrees, one for every row and column of the extended matrix.
 
-## Checking Data Availability
+## Kiểm tra tính khả dụng của dữ liệu
 
-![DA network](/img/concepts/consensus-da.png)
+![Mạng lưới DA](/img/concepts/consensus-da.png)
 
 To enhance connectivity, the Celestia Node augments the Celestia App with a separate libp2p network, i.e., the so-called _DA network_, that serves DAS requests.
 
