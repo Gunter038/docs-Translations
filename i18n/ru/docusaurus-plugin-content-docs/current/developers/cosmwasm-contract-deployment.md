@@ -30,9 +30,9 @@ cargo unit-test
 
 Поскольку мы развертываем скомпилированный смарт контракт на `wasmd`, то хотелось б, чтобы он был как можно меньше.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+Команда CosmWasm предоставляет инструмент под названием `rust-optimizer`, для запуска которого нам необходим Docker.
 
-Run the following command:
+Выполните следующую команду:
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -41,16 +41,16 @@ sudo docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+Это позволит поместить оптимизированный байт-код Wasm в `artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## Развертывание контракта
 
-Let's now deploy our smart contract!
+Давайте теперь развернем наш смарт контракт!
 
-Run the following:
+Выполните следующее:
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Optimint, there will be a delay on the transaction being included due to Optimint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+Это позволит вам получить хэш транзакции для развертывания смарт контракта. Поскольку мы используем Optimint, возникнет задержка при добавлении транзакции, в связи с тем, что Optimint ожидает подтверждения от Celestia's Data Availability Layer, что блок был включен перед отправкой нового блока.
