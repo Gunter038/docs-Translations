@@ -6,9 +6,9 @@ sidebar_label : Mamaki Testnet
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki testnet được thiết kế để giúp các validators thử nghiệm cơ sở hạ tầng và phần mềm node đối với mạng test. Nhà phát triển được khuyến khích để triển khai rollup chuyên dụng của họ trên Mamaki, tuy nhiên, chúng tôi cũng khuyến khích sử dụng [Arabica Devnet](./arabica-devnet.md) để làm việc đó bởi vì nó được thiết kế cho mục đích phát triển.
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki là một cột mốc của Celestia, cho phép mọi người có thể thử nghiệm cách tính năng cốt lõi trên mạng lưới. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Cách tốt nhất để tham gia là trước tiên xác định bạn muốn chạy node nào. Mỗi hướng dẫn node sẽ liên kết đến mạng liên quan để hướng dẫn bạn cách kết nối với chúng.
 
@@ -41,7 +41,7 @@ Chọn loại node bạn muốn chạy và làm theo hướng dẫn trên mỗi 
 
 > SỬ DỤNG VÒI NÀY SẼ KHÔNG GIÚP BẠN NHẬN BẤT KÌ AIRDROP NÀO HOẶC CÁC ĐỢT PHÂN PHỐI TOKENS CELESTIA MAINNET. TOKENS CELESTIA MAINNET HIỆN KHÔNG TỒN TẠI VÀ HIỆN KHÔNG CÓ BẤT KÌ ĐỢT BÁN CÔNG KHAI HOẶC ĐỢT PHÂN PHỐI TOKEN CELESTIA MAINNET NÀO.
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+Bạn có thể yêu cầu từ Vòi Mamaki Testnet trên kênh #mamaki-faucet trong Máy chủ Discord của Celestia với lệnh sau:
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -109,7 +109,7 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
 
 ## Ủy thác cho một validator
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+Để ủy thác tokens đến địa chỉ `celestiavaloper` của validator, ví dụ, bạn có thể chạy:
 
 ```sh
 celestia-appd tx staking delegate \
