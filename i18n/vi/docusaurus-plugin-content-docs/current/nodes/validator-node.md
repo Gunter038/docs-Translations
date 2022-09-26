@@ -2,48 +2,48 @@
 sidebar_label : Validator Node
 - - -
 
-# Setting up a Celestia Validator Node
+# Thiết lập một Node Validator của Celestia
 
-Validator nodes allow you to participate in consensus in the Celestia network.
+Các node validator cho phép bạn tham gia vào quá trình đồng thuận của mạng Celestia.
 
-## Hardware requirements
+## Yêu cầu phần cứng
 
-The following hardware minimum requirements are recommended for running the validator node:
+Các yêu cầu tối thiểu về phần cứng sau đây được khuyến nghị để chạy validator node:
 
 * Memory: 8 GB RAM
 * CPU: Quad-Core
 * Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Bandwidth: 1 Gbps đối với Download/100 Mbps đối với Upload
 
-## Setting up your validator node
+## Thiết lập validator node của bạn
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Hướng dẫn sau được thực hiện trên phiên bản Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Thiết lập các thành phần phụ thuộc
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+Làm theo hướng dẫn tại đây để cài đặt các thành phần phụ thuộc [tại đây](../developers/environment.md).
 
-## Deploying the celestia-app
+## Triển khai celestia-app
 
-This section describes part 1 of Celestia Validator Node setup: running a Celestia App daemon with an internal Celestia Core node.
+Phần này mô tả phần 1 của việc thiết lập Validator Node của Celestia: chạy daemon của Celestia App với một node Celestia Core nội bộ.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run the Validator Node.
+> Lưu ý: Đảm bảo bạn có ít nhất 100 Gb dung lượng trống để cài đặt + chạy một cách an toàn     Validator Node.
 
-### Install celestia-app
+### Cài đặt celestia-app
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Làm theo hướng dẫn cài đặt Celestia App [tại đây](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Thiết lập mạng P2P
 
-For this section of the guide, select the network you want to connect to:
+Đối với phần này của hướng dẫn, chọn mạng bạn muốn kết nối:
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Sau đó, bạn có thể tiếp tục với phần còn lại của hướng dẫn.
 
 ### Configure pruning
 
-For lower disk space usage we recommend setting up pruning using the configurations below. You can change this to your own pruning configurations if you want:
+Để sử dụng dung lượng ổ cứng thấp hơn, chúng tôi khuyên bạn nên thiết lập pruning bằng cách sử dụng configurations bên dưới. Bạn có thể thay đổi nó thành prunning configurations của riêng bạn nếu bạn muốn:
 
 ```sh
 PRUNING="custom"
@@ -57,105 +57,105 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure validator mode
+### Định cấu hình chế độ validator
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset network
+### Reset mạng
 
-This will delete all data folders so we can start fresh:
+Việc này sẽ xóa tất cả folder dữ liệu để chúng ta có thể bắt đầu lại từ đầu:
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Tùy chọn: Sync nhanh với Snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using this method you can synchronize your Celestia node very quickly by downloading a recent snapshot of the blockchain. If you would like to sync from the Genesis, then you can skip this part.
+Đồng bộ hóa từ đầu có thể mất nhiều thời gian, tùy thuộc vào phần cứng của bạn. Sử dụng phương pháp này bạn có thể đồng bộ hóa node celestia của mình rất nhanh bằng cách tải xuống một snapshot gần đây của blockchain. Nếu bạn muốn sync từ đầu, bạn có thể bỏ qua phần này.
 
-If you want to use snapshot, determine the network you would like to sync to from the list below:
+Nếu bạn muốn sử dụng snapshot, hãy xác định mạng bạn muốn đồng bộ hóa từ danh sách dưới đây:
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app with SystemD
+### Khởi động celestia-app với SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Làm theo hướng dẫn về cách thiết lập Celestia-App làm trình chạy nền với SystemD [tại đây](./systemd.md#start-the-celestia-app-with-systemd).
 
-### Wallet
+### Ví
 
-Follow the tutorial on creating a wallet [here](../developers/wallet.md).
+Làm theo hướng dẫn để tạo ví [tại đây](../developers/wallet.md).
 
-### Delegate stake to a validator
+### Ủy thác cho một validator
 
-Create an environment variable for the address:
+Tạo biến môi trường cho địa chỉ ví:
 
 ```sh
 VALIDATOR_WALLET=<validator-address>
 ```
 
-If you want to delegate more stake to any validator, including your own you will need the `celesvaloper` address of the validator in question. You can either check it using the block explorer mentioned above or you can run the command below to get the `celesvaloper` of your local validator wallet in case you want to delegate more to it:
+Nếu bạn muốn ủy thác thêm cổ phần cho bất kì validator nào, bao gồm của riêng bạn, bạn sẽ cần địa chỉ `celesvaloper` của validator trong phần câu hỏi. Bạn có thể kiếm tra nó bằng cách sử dụng block explorer được đề cập ở trên hoặc bạn có thể chạy lệnh bên dưới để nhận `celesvaloper` của ví validator của bạn trong trường hợp bạn muốn ủy thác thêm:
 
 ```sh
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a
 ```
 
-After entering the wallet passphrase you should see a similar output:
+Sau khi gửi passphrase ví của bạn, bạn sẽ thấy kết quả tương tự như sau:
 
 ```sh
 Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+Kế tiếp, chọn mạng lưới bạn muốn ủy thác cho validator:
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the celestia-node
+## Triển khai celestia-node
 
-This section describes part 2 of Celestia Validator Node setup: running a Celestia Bridge Node daemon.
+Phần này mô tả phần 2 của việc thiết lập Celestia Validator Node: chạy daemon của Bridge Node của Celestia.
 
-### Install celestia-node
+### Cài đặt Node Celestia
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Bạn có thể làm theo hướng dẫn sau để cài đặt Node Celestia [tại đây](../developers/celestia-node.md)
 
-### Initialize the bridge node
+### Khởi tạo bridge node
 
-Run the following:
+Chạy lệnh sau:
 
 ```sh
 celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 9090. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Nếu bạn cần danh sách các RPC endpoint để kết nối, bạn có thể kiểm tra từ danh sách [tại đây](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Chạy bridge node
 
-Run the following:
+Chạy lệnh sau:
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: start the bridge node with SystemD
+### Tùy chọn: khởi chạy bridge node với SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with SystemD [here](./systemd.md#celestia-bridge-node).
+Làm theo hướng dẫn về cách thiết lập bridge node làm trình chạy nền với SystemD [tại đây](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Bạn đã thiết lập thành công một bridge node đang đồng bộ với mạng.
 
-## Run a validator node
+## Chạy một Validator Node
 
-After completing all the necessary steps, you are now ready to run a validator! In order to create your validator on-chain, follow the instructions below. Keep in mind that these steps are necessary ONLY if you want to participate in the consensus.
+Sau khi hoàn thành tất cả các bước, bây giờ bạn đã sẵn sàng chạy validator! Để bắt đầu khởi tạo validator on-chain, làm theo hướng dẫn sau. Hãy nhớ rằng tất cả các bước đều cần thiết nếu bạn muốn tham gia vào việc đồng thuận.
 
-Pick a `moniker` name of your choice! This is the validator name that will show up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you defined previously. Parameter `--min-self-delegation=1000000` defines the amount of tokens that are self delegated from your validator wallet.
+Chọn một tên `moniker` tùy ý của bạn! Đây là tên validator sẽ được hiển thị trên dashboard và explorers công khai. `VALIDATOR_WALLET` phải giống với địa chỉ ví bạn tạo trước đó. Thông số `--min-self-delegation=1000000` có nghĩa là số lượng token đang được tự ủy thác từ ví validator của bạn.
 
-Now, connect to the network of your choice.
+Bây giờ, kết nối với mạng lưới tùy bạn chọn.
 
-You have the following option of connecting to list of networks shown below:
+Bạn có những lựa chọn sau đây để kết nối với mạng thể hiện bên dưới:
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in to complete the validator setup process.
+Hoàn thành hướng dẫn theo từng mạng lưới bạn muốn xác thực để hoàn thành quá trình thiết lập validator.
