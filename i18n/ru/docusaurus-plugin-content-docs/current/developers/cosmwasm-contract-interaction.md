@@ -5,13 +5,13 @@ sidebar_label: Взаимодействие с контрактом
 # Взаимодействие с контрактом на CosmWasm с помощью Celestia
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
+В предыдущих шагах мы сохранили хеш tx контракта как переменную для последующего использования.
 
-Because of the longer time periods of submitting transactions via Optimint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
+В связи с более длительными сроками отправки транзакций через Optimint из-за ожидания подтверждения о включении блока от Celestia's Data Availability Layer, нам придется напрямую запрашивать наш tx хеш, чтобы получить информацию о нем.
 
-## Contract Querying
+## Запрос контракта
 
-Let's start by querying our transaction hash for its code ID:
+Давайте начнем с запроса хеша нашей транзакции для идентификатора кода:
 
 ```sh
 CODE_ID=$(wasmd query tx --type=hash $TX_HASH $NODE --output json | jq -r '.logs[0].events[-1].attributes[0].value')
