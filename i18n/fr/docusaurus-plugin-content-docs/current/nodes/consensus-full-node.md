@@ -86,7 +86,7 @@ Cela vous permettra de synchroniser l'historique de la blockchain Celestia.
 
 ### Optionnel: configuration du point de terminaison RPC
 
-You can configure your Consensus Full Node to be a public RPC endpoint and listen to any connections from Data Availability Nodes in order to serve requests for the Data Availability API [here](../developers/node-tutorial.md).
+Vous pouvez configurer votre nœud validateur pour qu'il soit un terminal RPC public et écouter toutes les connexions des Nœuds de Disponibilité de Données afin de servir les demandes de l'API de Disponibilité de Données [ici](../developers/node-tutorial.md).
 
 Notez que vous devez vous assurer que le port 9090 est ouvert pour cela.
 
