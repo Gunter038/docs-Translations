@@ -6,9 +6,9 @@ sidebar_label : Testnet Mamaki
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Ce guide contient les sections pertinentes pour savoir comment se connecter à Mamaki, selon le type de nœud que vous exécutez. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Ce guide contient les sections pertinentes pour savoir comment se connecter à Mamaki, selon le type de nœud que vous exécutez. Le testnet Mamaki a été conçu pour aider les validateurs à essayer leur infrastructure et leur nœud avec le réseau de test. Les développeurs sont encouragés à déployer leurs rollups souverains sur Mamaki, mais nous recommandons également de le faire sur le devnet Arabica, qui est spécifiquement conçu à des fins de développement.
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Lire l'annonce [ici](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki est une étape clé de Celestia, permettant à chacun de tester les fonctionnalités de base du réseau. Lire l'annonce [ici](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
 Votre meilleure approche pour participer est de déterminer d'abord quel nœud vous aimeriez exécuter. Chaque guide de node sera lié au réseau concerné afin de vous montrer comment vous y connecter.
 
@@ -27,7 +27,7 @@ Disponibilité des données :
 
 Sélectionnez le type de nœud que vous souhaitez exécuter et suivez les instructions sur chaque page respective. À chaque fois que l'on vous demande de sélectionner le type de réseau auquel vous voulez vous connecter dans ces guides, sélectionnez `Mamaki` afin de vous référer aux instructions correctes sur cette page sur la façon de vous connecter à Mamaki.
 
-## RPC endpoints
+## Points de terminaison RPC
 
 Il y a une liste des terminaux RPC que vous pouvez utiliser pour vous connecter au Testnet Mamaki:
 
@@ -37,11 +37,11 @@ Il y a une liste des terminaux RPC que vous pouvez utiliser pour vous connecter 
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
 
-## Mamaki Testnet faucet
+## Faucet du Testnet Mamaki
 
 > L'UTILISATION DE CE FAUCET NE VOUS DONNERA PAS LE DROIT À UNE AUTRE DISTRIBUTION DE TOKENS DU MAINNET CELESTIA. LES JETONS DU MAINNET CELESTIA N'EXISTENT ACTUELLEMENT PAS ET IL N'Y A AUCUNE VENTE PUBLIQUE OU AUTRE DISTRIBUTION DE TOKENS DU MAINNET CELESTIA.
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+Vous pouvez demander des tokens au faucet du testnet Mamaki dans le canal #faucet du serveur Discord de Celestia avec la commande suivante :
 
 ```text
 $request <CELESTIA-ADDRESS>
@@ -49,7 +49,7 @@ $request <CELESTIA-ADDRESS>
 
 Où `<CELESTIA-ADDRESS>` est une adresse générée par `céleste1******`.
 
-> Note: Faucet has a limit of 10 tokens per week per address/Discord ID
+> Note : le Faucet a une limite de 10 tokens par semaine et par adresse/identififant Discord
 
 ## Explorateur
 
@@ -59,7 +59,7 @@ Il y a plusieurs explorateurs que vous pouvez utiliser pour Mamaki:
 * [https://celestia.explorers.guru/](https://celestia.explorers.guru/)
 * [https://celestiascan.vercel.app/](https://celestiascan.vercel.app/)
 
-## Setup P2P network
+## Configurer le réseau pair-à-pair
 
 Maintenant, nous allons configurer les réseaux P2P en clonant le référentiel réseau:
 
@@ -93,7 +93,7 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 
 Remarque : Vous pouvez trouver plus de peers [ici](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
-## Quick-sync with snapshot
+## Synchronisation rapide avec un snapshot
 
 Exécutez la commande suivante pour synchroniser rapidement à partir d'un snapshot pour `mamaki`:
 
@@ -107,9 +107,9 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
 
-## Delegate to a validator
+## Déléguer à un Validateur
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+Pour déléguer des tokens au validateur `celestiavaloper`, par exemple, vous pouvez éxecuter :
 
 ```sh
 celestia-appd tx staking delegate \
@@ -136,7 +136,7 @@ txhash: <tx-hash>
 
 Vous pouvez vérifier si le TX hash a été effectué en utilisant l'explorateur de bloc en saisissant l'ID `txhash` qui a été retourné.
 
-## Connect validator
+## Se connecter à un Validateur
 
 Pour continuer le tutoriel de Validateur, voici les étapes pour connecter votre validateur à Mamaki:
 
