@@ -13,24 +13,24 @@ Selon la définition fournie par le Cosmos-SDK, les [messages](https://docs.cosm
 Pour des messages pour Wordle, et étant donné notre concept initial, nous ferons 2 messages avec ignite.
 
 * Le premier est : `SubmitWordle` et il ne génère que le Wordle du jour.
-* Le second est : `SubmitGuess` et il tente de deviner le wordle soumis. It also passes a word as a guess.
+* Le second est : `SubmitGuess` et il tente de deviner le wordle soumis. Ce message transmet également une proposition de mot.
 
 Avec ces concepts initiaux, nous pouvons commencer à créer nos messages !
 
-## Scaffolding A Message
+## Échafauder un message
 
-To create the `SubmitWordle` message, we run the following command:
+Pour créer le message `SubmitWordle`, nous exécutons la commande suivante :
 
 ```sh
 ignite scaffold message submit-wordle word
 ```
 
-This creates the `submit-wordle` message that takes in `word` as a parameter.
+Cela crée le message `submit-wordle` qui prend `word` en tant que paramètre.
 
-We now create the final message, `SubmitGuess`:
+Nous créons maintenant le message final, `SubmitGuess` :
 
 ```sh
 ignite scaffold message submit-guess word
 ```
 
-Here, we are passing a word as a guess with `submit-guess`.
+Ici nous soumettons un mot avec `submit-guess`.
