@@ -41,7 +41,7 @@ Pour cette section du guide, sélectionnez le réseau auquel vous souhaitez vous
 
 Après cela, vous pouvez continuer avec le reste du tutoriel.
 
-### Configure pruning
+### Configurer pruning
 
 Pour une utilisation réduite de l'espace disque, nous vous recommandons de configurer le pruning à l'aide de la configurations ci-dessous. Vous pouvez changer cela pour vos propres configurations de pruning, si vous le désirez:
 
