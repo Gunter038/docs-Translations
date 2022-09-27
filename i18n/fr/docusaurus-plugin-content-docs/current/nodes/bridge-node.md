@@ -8,9 +8,9 @@ Ce tutoriel passera en revue les étapes de configuration de votre Bridge node C
 
 Les Bridge nodes connectent la couche de disponibilité des données et la couche de consensus tout en offrant la possibilité de devenir validateur.
 
-Validators do not have to run bridge nodes, but are encouraged to in order to relay blocks to the data availability network.
+Les Validateurs n'ont pas à exécuter les nœuds de passerelle (bridge nodes) mais sont encouragés à relayer les blocs au réseau de disponibilité des données.
 
-## Overview of bridge nodes
+## Présentation des nœuds de passerelle (Bridge Nodes)
 
 Un Bridge node Celestia a les propriétés suivantes:
 
@@ -29,7 +29,7 @@ Du point de vue de l'implémentation, les Bridge nodes exécutent deux processus
 
     * **Celestia Node** augmente ce qui précède avec un réseau libp2p séparé qui sert des demandes d'échantillonnage de la disponibilité des données. L'équipe appelle parfois ceci le réseau « halo ».
 
-## Hardware requirements
+## Configuration matérielle requise
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter le Bridge node :
 
@@ -38,23 +38,23 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque: 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting up your bridge node
+## Configuration de votre nœud de passerelle (Bridge Node)
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
 Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Deploy the Celestia bridge node
+## Déployez le bridge node sur Celestia
 
-### Install Celestia node
+### Installer le nœud Celestia
 
 Installez le binaire Celestia Node, qui sera utilisé pour exécuter le Bridge node.
 
 Suivez le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md).
 
-### Initialize the bridge node
+### Initialiser le bridge node
 
 Exécutez les commandes suivantes:
 
@@ -62,38 +62,38 @@ Exécutez les commandes suivantes:
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTE: The `--core.rpc.port` defaults to 26657, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Note : le port `--core.rpc.port` est configuré par défaut à 26657, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau pour spécifier un autre port si vous le préférez.
 
 Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-### Run the bridge node
+### Exécuter le Bridge Node
 
-Start the Bridge Node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+Démarrer le Bridge Node avec une connexion au terminal RPC d'un noeud Validateur (qui est d'habitude exposé sur le port 9090) :
 
 ```sh
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> Note : le port `--core.grpc.port`  est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau pour spécifier un autre port si vous le préférez.
 
 Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
 Vous pouvez créer votre clé pour votre node en suivant les instructions `cel-key` [ici](./keys.md)
 
-Une fois que vous aurez démarré le Bridge Node, une clé de wallet sera générée pour vous. You will need to fund that address with Testnet tokens to pay for PayForData transactions. Vous pouvez trouver l'adresse en exécutant la commande suivante:
+Une fois que vous aurez démarré le Bridge Node, une clé de wallet sera générée pour vous. Vous aurez besoin d'approvisionner cette adresse avec des jetons du testnet pour payer les transactions de type PayForData. Vous pouvez trouver l'adresse en exécutant la commande suivante:
 
 ```sh
 ./cel-key list --node.type bridge --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+Vous avez deux réseaux pour obtenir des jetons de testnet :
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a bridge node for your validator it is highly recommended to request Mamaki testnet tokens as this is the testnet used to test out validator operations.
+> NOTE : si vous exécutez un Bridge Node pour un validateur il est hautement recommandé de demander des jetons du testnet Mamaki, car c'est le réseau le plus adapté aux opérations relatives aux Validateurs.
 
-#### Optional: run the bridge node with a custom key
+#### Optionnel : exécutez le Bridge Node avec une clé personnalisée
 
 Afin d'exécuter un Bridge node en utilisant une clé personnalisée:
 
@@ -104,7 +104,7 @@ Afin d'exécuter un Bridge node en utilisant une clé personnalisée:
 celestia bridge start --core.ip <ip> --core.grpc.port 9090 --keyring.accname <name_of_custom_key>
 ```
 
-### Optional: start the bridge node with SystemD
+### Optionnel : démarrer le Bridge Node avec SystemD
 
 Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
