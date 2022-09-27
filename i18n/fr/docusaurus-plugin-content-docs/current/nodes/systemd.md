@@ -10,7 +10,7 @@ SystemD est un service daemon utile pour exécuter des applications en tant que 
 
 Si vous exécutez un node validateur ou complet de consensus, voici les étapes pour configurer `celestia-appd` en tant que processus d'arrière-plan.
 
-### Démarrer la Celestia-App avec SystemD
+### Démarrer Celestia App avec SystemD
 
 SystemD est un service daemon utile pour exécuter des applications en tant que processus en arrière-plan.
 
@@ -65,9 +65,9 @@ curl -s localhost:26657/status | jq .result | jq .sync_info
 
 Assurez-vous que vous avez `"catching_up": false`, sinon laissez-le tourner jusqu'à ce qu'il soit synchronisé.
 
-## Data availability nodes
+## Nœuds de disponibilité des données
 
-### Celestia full storage node
+### Noeud de stockage complet Celestia
 
 Créer un fichier systemd de Full Storage Node Celestia:
 
@@ -105,7 +105,7 @@ celestia-full.service -f
 
 Vous devriez voir les logs à travers la synchronisation du full storage node.
 
-### Celestia bridge node
+### Bridge Node de Celestia
 
 Créer un fichier systemd Celestia Bridge :
 
@@ -154,7 +154,7 @@ NODE_IP=<ip-address>
 
 Vous devriez voir les logs à travers la synchronisation du bridge node.
 
-### Celestia light node
+### Light Node de Celestia
 
 Lancer le Light Node en tant que processus damon en arrière-plan
 
@@ -178,7 +178,7 @@ EOF
 ```
 <!-- markdownlint-enable MD013 -->
 
-If the file was created successfully you will be able to see its content:
+Si un fichier a été créé avec succès, vous pourrez voir son contenu :
 
 ```sh
 cat /etc/systemd/system/celestia-lightd.service
