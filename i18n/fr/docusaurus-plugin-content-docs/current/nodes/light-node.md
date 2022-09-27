@@ -37,28 +37,28 @@ Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS)
 Premièrement vérifiez que votre système d'exploitation est à jour ou mettez-le à jour :
 
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire de paquet APT
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire de paquet YUM 
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du nœud :
 
 ```sh
-# If you are using the APT package manager
+# Si vous utilisez le gestionnaire de paquet APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# If you are using the YUM package manager
+# Si vous utilisez le gestionnaire de paquet YUM 
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
-### Install Golang
+### Installer Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+La Celestia App et le noeud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
 
 ```sh
 ver="1.19.1"
@@ -82,21 +82,21 @@ Pour vérifier que Go a été installé correctement, lancez :
 go version
 ```
 
-The output should be the version installed:
+Le résultat devrait être la version installée suivante :
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-### Install Celestia node
+### Installer un nœud Celestia
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+Une chose à faire ici est de décider quelle version du nœud Celestia vous décidez de compiler. Le testnet Mamaki requiert v0.3.0-rc2 et le Devnet Arabica requiert v0.3.0.
 
-The following sections highlight how to install it for the two networks.
+Les sections suivantes soulignent comment l'installer pour les deux réseaux.
 
-#### Mamaki Testnet installation
+#### Installation du testnet Mamaki
 
-Install the celestia-node binary by running the following commands:
+Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -108,7 +108,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Vérifiez que le binaire fonctionne et la version avec la commande Celestia ci-dessous :
 
 ```sh
 $ celestia version
@@ -116,9 +116,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-#### Arabica Devnet installation
+#### Installation du devnet Arabica
 
-Install the celestia-node binary by running the following commands:
+Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -129,7 +129,7 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Vérifiez que le binaire fonctionne et la version avec la commande Celestia ci-dessous :
 
 ```sh
 $ celestia version
@@ -140,7 +140,7 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-## Initialize the light node
+## Initialiser le Light Node
 
 Exécutez la commande suivante :
 
@@ -159,23 +159,23 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Start the light node
+### Démarrer le Light Node
 
 Démarre le Light node avec une connexion au point de terminaison gRPC d'un node de validateur (qui est généralement exposé sur le port 9090):
 
 > REMARQUE : Pour avoir accès à la possibilité d'obtenir/de soumettre des informations relatives à l'état, telles que la possibilité de soumettre des transactions PayForData ou d'interroger solde de compte du node, un point de terminaison gRPC d'un Node Validateur (core) doit être transmis comme montré ci-dessous.
 
-For ports:
+Concernant les ports :
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau pour spécifier un autre port si vous le préférez.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./arabica-devnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+Par exemple, votre commande pourrait ressembler à cela :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -183,7 +183,7 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Keys and wallets
+### Clés et portefeuilles
 
 Vous pouvez créer votre clé pour votre nœud en exécutant la commande suivante :
 
@@ -197,9 +197,9 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Une fois que vous démarrez le Light Node, une clé de wallet sera générée pour vous. You will need to fund that address with testnet tokens to pay for PayForData transactions.
+Une fois que vous démarrez le Light Node, une clé de wallet sera générée pour vous. Vous aurez besoin d'approvisionner cette adresse avec des jetons du testnet Mamaki pour payer les transactions de type PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Vous pouvez trouver cette adresse en exécutant la commande suivante dans le répertoire `celestia-node` :
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
@@ -212,15 +212,15 @@ Vous avez le choix entre deux réseaux pour obtenir des jetons de testnet :
 
 > NOTE : Si vous souhaitez lancer un light node pour votre rollup souverain, il est hautement recommandé de demander des jetons du devnet Arabica car c'est le devnet qui reçoit les dernières mises à jour utiles au développement de votre rollup souverain. Vous pouvez également utiliser le testnet Mamaki, bien qu'il soit davantage conçu pour les opérations de Validateurs.
 
-You can request funds to your wallet address using the following command in Discord:
+Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord :
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Dans laquelle `<Wallet-Address>` est l'adresse `celestia1******` générée quand vous avez créé le portefeuille.
 
-### Optional: run the light node with a custom key
+### Optionnel : exécuter le Light Node avec une clé personnalisée
 
 Afin d'exécuter un Light Node en utilisant une clé personnalisée :
 
