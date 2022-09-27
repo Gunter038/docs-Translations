@@ -1,25 +1,25 @@
 ---
-sidebar_label: Keeper
+sidebar_label: Gardien
 ---
 
-# Keeper Functions
+# Les fonctions du Gardien
 <!-- markdownlint-disable MD013 -->
 
-Now it’s time to implement the Keeper functions for each message. From the Cosmos-SDK docs, [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) is defined as the following:
+Maintenant, il est temps d'ajouter les fonctions du Gardien pour chaque message. À partir de la documentation du Cosmos-SDK, un [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) est défini de la façon qui suit :
 
-> The main core of a Cosmos SDK module is a piece called the keeper. The keeper handles interactions with the store, has references to other keepers for cross-module interactions, and contains most of the core functionality of a module.
+> Le noyau principal d'un module Cosmos-SDK est une pièce appelée le Gardien. Le gardien gère les intéractions avec le stockage, a des références à d'autres gardiens pour les intéractions entre modules et contient la plupart des fonctionnalités de base d'un module.
 
-Keeper is an abstraction on Cosmos that allows us to interact with the Key-Value store and change the state of the blockchain.
+Un Gardien est une abstraction sur Cosmos qui nous permet d'interagir avec le stockage de Key-Value et de changer l'état de la blockchain.
 
-Here, it will help us outline the logic for each message we create.
+Ici, il nous aidera à définir la logique de chaque message que nous créons.
 
-## SubmitWordle Function
+## Fonction SubmitWordle
 
-We first start with the `SubmitWordle` function.
+Nous allons commencer avec la fonction `SubmitWordle`.
 
-Open up the following file: `x/wordle/keeper/msg_server_submit_wordle.go`
+Ouvrez le fichier suivant : `x/wordle/keeper/msg_server_submit_wordle.go`
 
-Inside the following, add the following code, which we will go over in a bit:
+A l'intérieur de ce qui suit, ajoutez le code suivant, que nous allons étudier plus loin :
 
 ```go
 package keeper
@@ -82,18 +82,18 @@ func IsLetter(s string) bool {
 }
 ```
 
-Here in the `SubmitWordle` Keeper function, we are doing a few things:
+Ici, dans la fonction du Gardien `SubmitWordle`, nous allons faire certaines choses :
 
-* We first ensure that a word submitted for Wordle of the Day is 5 letters long and only uses alphabets. That means no integers can be submitted in the string.
-* We then create a hash from the current day the moment the Wordle was submitted. We set this hash to the index of the Wordle type. This allows us to look up any guesses for this Wordle for subsequent guesses, which we will go over next.
-* We then check if the index for today’s date is currently empty or not. If it’s not empty, this means a Wordle has already been submitted. Remember, only one wordle can be submitted per day. Everyone else has to guess the submitted wordle.
-* We also have a helper function in there to check if a string only contains alphabet characters.
+* Nous nous assurons d'abord que le mot soumis pour le mot du jour est long de 5 caractères et qu'il n'utilise que des lettres. Cela signifie qu'aucun nombre entier ne peut être être soumis dans la chaine.
+* Nous créons ensuite un hash à partir du jour en cours au moment où le mot a été soumis. Nous plaçons ce hash à l'index du type du Wordle. Cela nous permet de rechercher toutes les suppositions de ce mot pour les jeux suivants, que nous allons étudier ensuite.
+* Nous vérifions ensuite si l'index de la date du jour est actuellement vide ou non. S'il n'est pas vide, cela signifie qu'un mot a déjà été soumis. Rappelez-vous qu'un seul mot seulement peut être soumis chaque jour. Tout le monde doit deviner le mot soumis.
+* Nous avons également une fonction d'aide pour vérifier si une chaine de caractères contient seulement des caractères alphabétiques.
 
-## SubmitGuess Function
+## La fonction SubmitGuess
 
-The next Keeper function we will add is the following: `x/wordle/keeper/msg_server_submit_guess.go`
+La prochaine fonction de Gardien que nous allons ajouter est la suivante : `x/wordle/keeper/msg_server_submit_guess.go`
 
-Open that file and add the following code, which we will explain in a bit:
+Ouvrez ce fichier et ajoutez le code suivant, que nous allons expliquer un peu plus bas :
 
 ```go
 package keeper
@@ -202,20 +202,20 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
 }
 ```
 
-In the above code, we are doing the following things:
+Dans le code ci-dessus, nous effectuons les choses suivantes :
 
-* Here, we are doing initial checks again on the word to ensure it’s 5 characters and only alphabet characters are used, which can be refactored in the future or checked within the CLI commands.
-* We then get the Wordle of the Day by getting the hash string of the current day.
-* Next we create a hash string of current day and the Submitter. This allows us to create a Guess type with an index that uses the current day and the address of the submitter. This helps us when we face a new day and an address wants to guess the new wordle of the day. The index setup ensures they can continue guessing a new wordle every day up to the max of 6 tries per day.
-* We then check if that Guess type for the Submitter for today’s wordle did reach 6 counts. If it hasn’t, we increment the count. We then check if the guess is correct. We store the Guess type with the updated count to the state.
+* Ici, nous effectuons des vérifications initiales sur le mot pour nous assurer qu'il est fait de 5 caractères uniquement alphabétiques, ce qui peut être refactorisé dans le futur ou vérifié dans les commandes CLI.
+* Nous obtenons ensuite le mot du jour en récupérant la chaine de hash du jour actuel.
+* Ensuite, nous créons une chaine de hash du jour courant et l'Emetteur. Cela nous permet de créer un type pour les mots proposés avec un index qui utilise le jour actuel et l'adresse de l'émetteur. Cela nous aide quand nous sommes confrontés à un nouveau jour et qu'une adresse veut deviner ce nouveau mot. La configuration de l'index permet de continuer à essayer de deviner un nouveau mot chaque jour jusqu'à un maximum de 6 essais par jour.
+* Nous vérifions ensuite si le nombre d'essais de l'émetteur a bien atteint 6 pour aujourd'hui. Si ce n'est pas le cas, il incrémente l'essai. Nous vérifions ensuite si la tentative est correcte. Nous stockons le mot essayé avec le nombre d'essais mis à jour.
 
-## Protobuf File
+## Le fichier Protobuf
 
-  A few files need to be modified for this to work.
+  Quelques fichiers doivent être modifiés pour que cela fonctionne.
 
-The first is `proto/wordle/tx.proto`.
+Le premier est `proto/wordle/tx.proto`.
 
-Inside this file, fill in the empty `MsgSubmitGuessResponse` with the following code:
+Dans ce fichier, remplissez le `MsgSubmitGuessResponse` vide avec le code suivant :
 
 ```go
 message MsgSubmitGuessResponse {
@@ -226,7 +226,7 @@ message MsgSubmitGuessResponse {
 
 Le fichier suivant est : `x/wordle/types/expected_keepers.go`
 
-Here, we need to add the SendCoins method to the BankKeeper interface in order to allow sending the reward to the right guesser.
+Ici, nous avons besoin d'ajouter la méthode SendCoins à l'interface de BankKeeper afin de permettre l'envoi de récompense à la personne qui a deviné.
 
 ```go
 type BankKeeper interface {
@@ -234,4 +234,4 @@ type BankKeeper interface {
 }
 ```
 
-With that, we implemented all our Keeper functions! Time to compile the blockchain and take it out for a test drive.
+Avec cela, nous avons implémenté toutes nos fonctions de Gardien ! Il est temps de compiler la blockchain et de l'exposer pour un galop d'essai.
