@@ -1,5 +1,5 @@
 ---
-sidebar_label: Modular Fellows
+sidebar_label: Les compagnons du modulaire (Modular Fellows)
 ---
 
 # Modular Fellows
