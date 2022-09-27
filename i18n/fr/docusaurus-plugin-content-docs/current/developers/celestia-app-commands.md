@@ -88,7 +88,7 @@ Après avoir défini un mot de passe, votre clé chiffrée sera affichée.
 
 ## Interrogation des sous-commandes
 
-Usage:
+Utilisation :
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
