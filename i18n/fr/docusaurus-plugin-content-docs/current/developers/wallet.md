@@ -28,7 +28,7 @@ celestia-appd keys list
 
 ## Financer un Wallet
 
-For the public celestia address, you can fund the previously created wallet via [Discord](https://discord.gg/celestiacommunity) by sending this message to #arabica-faucet channel:
+Pour l'adresse publique de Celestia, vous pouvez financer le portefeuille précédemment créé via [Discord](https://discord.gg/celestiacommunity) en envoyant ce message au canal #faucet :
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
