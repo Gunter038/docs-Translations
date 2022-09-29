@@ -6,14 +6,14 @@ sidebar_label: Integrate Celestia
 
 > 此文档适用于如托管机构和浏览器的第三方服务提供商整合Celestia网络。
 
-## Celestia服务提供者笔记
+## Celestia服务提供者标记
 
-Celestia is a fairly standard Cosmos-SDK based chain. We use the latest version of Tendermint and the Cosmos-SDK, with only minor modifications to each. This means that we are:
+Celestia是一个相当标准的以Cosmos-SDK为基础的区块链。 我们使用稍作修改的最新版本Tendermint 和 Cosmos-SDK。 这意味着我们是：
 
 - Using the default Cosmos-SDK modules: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limited in some TBD capacities), upgrade, vesting, feegrant, capability, and payment.
 - Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
 
-While exactly which modules used is subject to change, Celestia aims to be as minimal as possible.
+虽然所使用的模块会被更改，但Celestia的目标是尽可能减少此种情况。
 
 ### 托管和密钥管理
 
@@ -31,7 +31,7 @@ Linux, particularly Ubuntu 20.04 LTS, is the most well tested. Potentially compa
 
 ### 同步
 
-Since we utilize Tendermint and the Cosmos-SDK, syncing the chain can be performed by any method that is supported by those libraries. This includes fast-sync, state sync, and quick sync.
+由于我们使用 Tendermint 和 Cosmos-SDK，可以使用这些数据库支持的任何方法区块链同步区块链。 这包括fast同步、状态同步和快速同步。
 
 ### 相对于其他区块链的显著不同
 
