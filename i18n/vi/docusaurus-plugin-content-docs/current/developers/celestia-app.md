@@ -27,43 +27,27 @@ make install
 
 ```sh
 celestia-appd --help
+
 ```
 
 Bạn sẽ thấy một kết quả tương tự (với các lệnh ví dụ hữu ích):
 
 ```text
-Start celestia app
+Chạy celestia app
+Sử dụng:
+  celestia-appd [lệnh]
 
-Usage:
-  celestia-appd [command]
-
-Available Commands:
-  add-genesis-account Add a genesis account to genesis.json
-  collect-gentxs      Collect genesis txs and output a genesis.json file
-  config              Create or query an application CLI configuration file
-  debug               Tool for helping with debugging your application
-  export              Export state to JSON
-  gentx               Generate a genesis tx carrying a self delegation
-  help                Help about any command
-  init                Initialize private validator, p2p, genesis, and application configuration files
-  keys                Manage your application's keys
-  migrate             Migrate genesis to a specified target version
-  query               Querying subcommands
-  rollback            rollback tendermint state by one height
-  rollback            rollback cosmos-sdk and tendermint state by one height
-  start               Run the full node
-  status              Query remote node for status
-  tendermint          Tendermint subcommands
-  tx                  Transactions subcommands
-  validate-genesis    validates the genesis file at the default location or at the location passed as an arg
-  version             Print the application binary version information
-
-Flags:
-  -h, --help                help for celestia-appd
-      --home string         directory for config and data (default "/root/.celestia-app")
-      --log_format string   The logging format (json|plain) (default "plain")
-      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
-      --trace               print out full stack trace on errors
-
-Use "celestia-appd [command] --help" for more information about a command.
+Những câu lệnh có sẵn:
+  add-genesis-account Thêm tài khoản genesis vào genesis.json
+  collect-gentxs      Thu thập txs genesis và xuất tệp genesis.json
+  config              Tạo hoặc truy vấn tệp cấu hình CLI ứng dụng
+  debug               Công cụ giúp gỡ lỗi ứng dụng của bạn
+  export              Xuất trạng thái sang JSON
+  gentx               Tạo một tx genesis mang tự ủy quyền
+  help                Trợ giúp về bất kỳ lệnh khác
+  init                Khởi tạo tệp cấu hình ứng dụng, p2p, genesis và trình xác thực riêng tư
+  keys                Quản lý khóa ứng dụng của bạn
+  migrate             Di chuyển genesis sang một phiên bản mục tiêu cụ thể
+  query               Truy vấn lệnh con
+  rollback            Trở lại trạng thái tendermint
 ```
