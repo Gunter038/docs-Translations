@@ -1,15 +1,15 @@
 - - -
-sidebar_label : Installing Celestia App
+Cài đặt Celestia App
 - - -
 
 # Celestia App
 <!-- markdownlint-disable MD013 -->
 
-This tutorial will guide you through building Celestia App. This tutorial presumes you completed the steps in setting up your own environment [here](./environment.md).
+Hướng dẫn này sẽ hướng dẫn bạn xây dựng Celestia App. Đây hướng dẫn giả định rằng bạn đã hoàn thành các bước trong việc thiết lập môi trường riêng [ tại đây ](./environment.md).
 
-## Install Celestia App
+## Cài đặt Celestia App
 
-The steps below will create a binary file named `celestia-appd` inside `$HOME/go/bin` folder which will be used later to run the node.
+Các bước dưới đây sẽ tạo một tệp nhị phân có tên ` celestia-appd ` bên trong thư mục ` $ HOME / go / bin ` sẽ được sử dụng sau này để chạy node.
 
 ```sh
 cd $HOME
@@ -23,13 +23,13 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-To check if the binary was successfully compiled you can run the binary using the `--help` flag:
+Để kiểm tra xem tệp nhị phân đã được biên dịch thành công hay chưa, bạn có thể chạy tệp nhị phân sử dụng cờ ` --help `:
 
 ```sh
 celestia-appd --help
 ```
 
-You should see a similar output (with helpful example commands):
+Bạn sẽ thấy một kết quả tương tự (với các lệnh ví dụ hữu ích):
 
 ```text
 Start celestia app
