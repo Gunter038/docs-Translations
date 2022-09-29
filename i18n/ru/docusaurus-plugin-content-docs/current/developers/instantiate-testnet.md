@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Create A Celestia Testnet
+sidebar_label : Создание тестовой сети Celestia
 - - -
 
 # Celestia App Network Instantiation Guide
