@@ -1,14 +1,13 @@
----
-sidebar_label : Overview
----
+- - -
+sidebar_label : Aperçu
+- - -
 
-# Developers
+# Développeurs
 
-This section contains all things developer-related for building on top
-of Celestia.
+Cette section contient tout ce qui est lié aux développeurs pour construire sur Celestia.
 
-It includes:
+Cela comprend :
 
-* How to set up your development environment
-* Installing celestia-app and celestia-node
-* A tutorial on interacting with the Data Availability API
+* Comment configurer votre environnement de développement
+* Installation de Celestia-app et Celestia-node
+* Un tutoriel sur l'interaction avec l'API de disponibilité des données
