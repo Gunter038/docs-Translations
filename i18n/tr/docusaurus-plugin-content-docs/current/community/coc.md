@@ -32,53 +32,53 @@ Kabul edilemez davranış örnekleri şunlardır:
 
 Topluluk liderleri, kabul edilebilir davranış standartlarımızı açıklığa kavuşturmaktan ve uygulamaktan sorumludur ve uygunsuz, tehdit edici, saldırgan veya zararlı gördükleri davranışlara yanıt olarak uygun ve adil düzeltici önlemler alacaktır.
 
-Topluluk liderleri, bu Davranış Kurallarıyla uyumlu olmayan yorumları, Github commitlerini, kodları, wiki düzenlemelerini, sorunları ve diğer katkıları kaldırma, düzenleme veya reddetme hakkına ve sorumluluğuna sahiptir ve uygun olduğunda denetleme kararlarının nedenlerini bildirecektir.
+Topluluk liderleri, Davranış Kurallarıyla uyumlu olmayan yorumları, Github commitlerini, kodları, wiki düzenlemelerini, sorunları ve diğer katkıları kaldırma, düzenleme veya reddetme hakkına ve sorumluluğuna sahiptir ve uygun olduğunda denetleme kararlarının nedenlerini bildirecektir.
 
 ## Kapsam
 
-Bu Davranış Kuralları tüm topluluk alanlarında geçerlidir ve bir birey topluluğu resmi olarak kamusal alanlarda temsil ettiğinde de geçerlidir. Topluluğumuzu temsil etme örnekleri, resmi bir e-posta adresi kullanmak, resmi bir sosyal medya hesabı aracılığıyla gönderi paylaşmak veya çevrimiçi veya çevrimdışı bir etkinlikte atanmış bir temsilci olarak temsil etmek yer alır.
+Davranış Kuralları tüm topluluk alanlarında geçerlidir ve bir birey topluluğu resmi olarak kamusal alanlarda temsil ettiğinde de geçerlidir. Topluluğumuzu temsil etme örnekleri, resmi bir e-posta adresi kullanmak, resmi bir sosyal medya hesabı aracılığıyla gönderi paylaşmak veya çevrimiçi veya çevrimdışı bir etkinlikte atanmış bir temsilci olarak temsil etmek yer alır.
 
-## Uygulama
+## Yürütme
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
+Küfürlü, taciz edici veya başka türlü kabul edilemez davranışlar Celestia.org Discord'da yürütmeden sorumlu topluluk liderlerine bildirilebilir. Tüm şikayetler derhal ve adil bir şekilde incelenecek ve soruşturulacaktır.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Tüm topluluk liderleri, herhangi bir olayı bildiren kişinin mahremiyetine ve güvenliğine saygı göstermekle yükümlüdür.
 
-## Enforcement Guidelines
+## Yürütme Yönergeleri
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+Topluluk liderleri, Davranış Kurallarını ihlal ettiğini düşündükleri herhangi bir eylemin sonuçlarını belirlerken bu Topluluk Etkisi Yönergelerini takip edeceklerdir:
 
-### 1. Correction
+### 1. Düzeltme
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+**Topluluk etkisi**: Uygunsuz dil kullanımı veya toplulukta profesyonellikten uzak ya da hoş karşılanmayan olarak kabul edilen diğer davranışlar.
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+**Sonuç**: Topluluk liderlerinden, ihlalin niteliğine açıklık getiren ve davranışın neden uygunsuz olduğuna dair bir açıklama sağlayan özel, yazılı bir uyarı. Resmi bir özür istenebilir.
 
-### 2. Warning
+### 2. Uyarı
 
-**Community Impact**: A violation through a single incident or series of actions.
+**Topluluk Etkisi**: Tek bir olay veya bir dizi eylemden kaynaklanan ihlal.
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**Sonuç**: Devam eden davranışlar için sonuçları olan bir uyarı. Belirli bir süre boyunca Davranış Kurallarını uygulayan kişilerle talep edilmeyen etkileşimler de dahil olmak üzere, istenmeyen davranışlara dahil olan kişilerle hiçbir etkileşimde bulunulmaz. Sosyal medya gibi dış kanalların yanı sıra topluluk alanlarındaki etkileşimlerden kaçınmak da buna dahildir. Bu şartların ihlali geçici veya kalıcı bir yasaklamaya neden olabilir.
 
-### 3. Temporary Ban
+### 3. Geçici Yasaklama
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**Topluluk Etkisi**: Sürekli uygunsuz davranışlar da dahil olmak üzere topluluk standartlarının ciddi şekilde ihlali.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+**Sonuç**: Belirli bir süre boyunca toplulukla her türlü etkileşimden veya kamusal iletişimden geçici olarak yasaklanma. Bu süre zarfında, Davranış Kurallarını uygulayanlarla istenmeyen etkileşim de dahil olmak üzere, ilgili kişilerle hiçbir kamu veya özel etkileşime izin verilmez. Bu şartların ihlali kalıcı bir yasaklamaya neden olabilir.
 
-### 4. Permanent Ban
+### 4. Kalıcı Yasaklama
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**Topluluk Etkisi**: Sürekli devam eden uygunsuz davranış, bir bireyin taciz edilmesi veya bireylerin sınıflarına yönelik saldırganlık veya onları küçümseme dahil olmak üzere topluluk standartlarının ihlal edildiğine dair bir görünüm çizmek.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+**Sonuç**: Topluluk içindeki her türlü kamusal etkileşimden kalıcı bir yasaklama.
 
-## Attribution
+## Atıf
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+Bu Davranış Kuralları, [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1] adresinde bulunan [Katılımcı Sözleşmesi][homepage] version 2.1'den uyarlanmıştır.
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Topluluk Etkisi Yönergeleri [Mozilla'nın davranış kuralları uygulama merdiveni][Mozilla CoC]'nden esinlenmiştir.
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+Davranış kurallarıyla ilgili sık sorulan soruların yanıtları için [https://www.contributor-covenant.org/faq][FAQ] adresindeki FAQ bölümüne bakın. Çeviriler [https://www.contributor-covenant.org/translations][translations] adresinde mevcuttur.
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
