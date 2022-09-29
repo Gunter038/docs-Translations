@@ -30,15 +30,15 @@ Kabul edilemez davranış örnekleri şunlardır:
 
 ## Uygulama Sorumlulukları
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Topluluk liderleri, kabul edilebilir davranış standartlarımızı açıklığa kavuşturmaktan ve uygulamaktan sorumludur ve uygunsuz, tehdit edici, saldırgan veya zararlı gördükleri davranışlara yanıt olarak uygun ve adil düzeltici önlemler alacaktır.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Topluluk liderleri, bu Davranış Kurallarıyla uyumlu olmayan yorumları, Github commitlerini, kodları, wiki düzenlemelerini, sorunları ve diğer katkıları kaldırma, düzenleme veya reddetme hakkına ve sorumluluğuna sahiptir ve uygun olduğunda denetleme kararlarının nedenlerini bildirecektir.
 
-## Scope
+## Kapsam
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Bu Davranış Kuralları tüm topluluk alanlarında geçerlidir ve bir birey topluluğu resmi olarak kamusal alanlarda temsil ettiğinde de geçerlidir. Topluluğumuzu temsil etme örnekleri, resmi bir e-posta adresi kullanmak, resmi bir sosyal medya hesabı aracılığıyla gönderi paylaşmak veya çevrimiçi veya çevrimdışı bir etkinlikte atanmış bir temsilci olarak temsil etmek yer alır.
 
-## Enforcement
+## Uygulama
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Celestia.org Discord. All complaints will be reviewed and investigated promptly and fairly.
 
