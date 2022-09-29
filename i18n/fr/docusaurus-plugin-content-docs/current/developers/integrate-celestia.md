@@ -10,31 +10,31 @@ sidebar_label: Intégrer Celestia
 
 Celestia est une chaine standard basée sur le Cosmos-SDK. Nous utilisons la dernière version de Tendermint et du Cosmos-SDK, avec seulement quelques modifications mineures. Cela signifie que nous :
 
-- Using the default Cosmos-SDK modules: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limited in some TBD capacities), upgrade, vesting, feegrant, capability, and payment.
-- Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
+- Utilisons les modules par défaut du Cosmos-SDK : authentification, banque, distribution, staking, slashing, mint, ibchost, genutil, evidence, ibctransfer, params, gov (limité dans certaines capacités TBD), mise à niveau, vesting, feegrant, capacité et paiement.
+- Utilisons les schémas standards de clés numériques fournis par le Cosmos-SDK et par Tendermint, ceux-ci étant secp256k1 pour les transactions des utilisateurs et tm-ed25519 pour la signature et la vérification des messages de consensus.
 
-While exactly which modules used is subject to change, Celestia aims to be as minimal as possible.
+Bien que les modules utilisés soient encore sujets à des changements, Celestia vise à être le plus minimal possible.
 
-### Custody and Key Management
+### Détention et gestion des clés
 
-Celestia supports many already existing key management systems, as we rely on the Cosmos-SDK and Tendermint libraries for signing and verifying transactions. [Cosmos-SDK documentation](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
+Celestia prend en charge de nombreux systèmes de gestion des clés existants, car nous comptons sur les bibliothèques du Cosmos-SDK et de Tendermint pour signer et vérifier les transactions. [documentation Cosmos-SDK](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
 
-### RPC and Querying
+### Terminaux RPC et requête
 
-In celestia-app, only the standard RPC endpoints for Tendermint and the Cosmos-SDK are exposed. We do not currently add or subtract any core functionality, but this could change in the future. The same goes for querying data from the chain.
+Dans la Celestia App, seuls les terminaux standards RPC pour Tendermint et le Cosmos-SDK sont exposés. Nous n'ajoutons ni ne soustrayons actuellement aucune fonctionnalité de base, mais cela pourrait changer à l'avenir. Il en va de même pour la requête des données de la chaine.
 
-In celestia-node, the Data Availability node client, there is a JSON-RPC API that allows you to interact directly with Celestia's Data Availability layer. The guide for it can be found [here](https://docs.celestia.org/developers/node-tutorial).
+Dans le nœud Celestia, le client du nœud de disponibilité des données précisément, il y a une interface de programmation d'application (API) JSON-RPC qui vous permet d'interagir directement avec la couche de disponibilité des données de Celestia. Le guide pour cela peut être trouvé [ici](https://docs.celestia.org/developers/node-tutorial).
 
-### Compatibility
+### Compatibilité
 
-Linux, particularly Ubuntu 20.04 LTS, is the most well tested. Potentially compatible with other OSs, but they are currently untested. Some of the cryptography libraries used for erasure data are not guaranteed to work on other platforms.
+Linux, en particulier Ubuntu 20.04 LTS, est l'OS le mieux éprouvé. Celestia est possiblement compatible avec d'autres OS, mais cela n'a pas encore été testé. Certaines des bibliothèques de cryptographie utilisées pour effacer les données ne sont pas garanties de fonctionner sur d'autres plates-formes.
 
-### Syncing
+### Synchronisation
 
-Since we utilize Tendermint and the Cosmos-SDK, syncing the chain can be performed by any method that is supported by those libraries. This includes fast-sync, state sync, and quick sync.
+Puisque nous utilisons Tendermint et le Cosmos-SDK, la synchronisation de la chaine peut être effectuée par n'importe quelle méthode supportée par ces bibliothèques. Cela inclut la synchronisation rapide, la synchronisation d'état et la synchronisation simple.
 
-### Notable exceptions relative to other blockchains
+### Exceptions notables relatives aux autres blockchains
 
-Relative to other Tendermint based chains, Celestia will have significantly longer blocktimes of around 30* seconds. The reason behind this block time is to optimize the bandwidth used by light clients that are sampling the chain, and is not because we have modified Tendermint consensus in any meaningful way. Validators will likely download/upload relatively large blocks. It should be noted that while these blocks are large, very little typical blockchain state execution is actually occurring on Celestia. Meaning that the bandwidth requirements will likely be larger than that of a typical Cosmos-SDK based blockchain full node, the computing requirements should be similar in magnitude.
+Par rapport aux autres chaines basées sur Tendermint, Celestia aura un temps de génération des blocs significativement plus longs, d'environ 30* secondes. La raison de cette longueur est d'optimiser la bande passante utilisée par les clients légers qui échantillonnent la chaine, et pas parce que nous aurions modifié le consensus Tendermint de manière importante. Les validateurs vont probablement download et upload des blocs relativement grands. Il est à noter que bien que ces blocs soient grands, il n'y a généralement que très peu d'exécution de l'état de la blockchain sur Celestia. Cela signifie que la bande passante requise sera probablement plus grande que celle d'un full node d'une blockchain typique basée sur le Cosmos-SDK, et les exigences de calcul devraient être de la même importance.
 
-*Subject to Change
+*Sujet à changement
