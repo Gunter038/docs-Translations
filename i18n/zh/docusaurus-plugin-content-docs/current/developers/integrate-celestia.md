@@ -10,24 +10,24 @@ sidebar_label: Integrate Celestia
 
 Celestia是一个相当标准的以Cosmos-SDK为基础的区块链。 我们使用稍作修改的最新版本Tendermint 和 Cosmos-SDK。 这意味着我们是：
 
-- Using the default Cosmos-SDK modules: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limited in some TBD capacities), upgrade, vesting, feegrant, capability, and payment.
+- 使用默认的 Cosmos-SDK 模块：授权、银行、发行、质押、 滑点、铸造、crisis、ibc主机、genutil、证据 ibc转账, params, 治理 (在某些待定容量里有限制), 升级, 授予, 收费, 能力, 支付
 - Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
 
 虽然所使用的模块会被更改，但Celestia的目标是尽可能减少此种情况。
 
 ### 托管和密钥管理
 
-Celestia supports many already existing key management systems, as we rely on the Cosmos-SDK and Tendermint libraries for signing and verifying transactions. [COSMOS-SDK 文档](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
+Celestia支持许多已经存在的密钥管理系统，因为我们依靠Cosmos-SDK 和 Tendermint 数据库来签署和核实交易。 [COSMOS-SDK 文档](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
 
 ### RPC 和查询
 
-In celestia-app, only the standard RPC endpoints for Tendermint and the Cosmos-SDK are exposed. We do not currently add or subtract any core functionality, but this could change in the future. The same goes for querying data from the chain.
+In celestia-app, only the standard RPC endpoints for Tendermint and the Cosmos-SDK are exposed. 我们目前没有添加或减少任何核心函数，但这可能会在未来改动。 查询区块链中的数据也是如此。
 
-In celestia-node, the Data Availability node client, there is a JSON-RPC API that allows you to interact directly with Celestia's Data Availability layer. The guide for it can be found [here](https://docs.celestia.org/developers/node-tutorial).
+In celestia-node, the Data Availability node client, there is a JSON-RPC API that allows you to interact directly with Celestia's Data Availability layer. 指南在[这里](https://docs. celestia. org/developers/node-tutorial)
 
 ### 兼容性
 
-Linux, particularly Ubuntu 20.04 LTS, is the most well tested. Potentially compatible with other OSs, but they are currently untested. Some of the cryptography libraries used for erasure data are not guaranteed to work on other platforms.
+Linux，尤其是Ubuntu 20.04 LTS，是最佳的测试。 可能与其他操作系统兼容，但它们目前尚未测试。 一些用于擦除数据的加密数据库不能保证在其他平台上工作。
 
 ### 同步
 
@@ -35,6 +35,6 @@ Linux, particularly Ubuntu 20.04 LTS, is the most well tested. Potentially compa
 
 ### 相对于其他区块链的显著不同
 
-Relative to other Tendermint based chains, Celestia will have significantly longer blocktimes of around 30* seconds. The reason behind this block time is to optimize the bandwidth used by light clients that are sampling the chain, and is not because we have modified Tendermint consensus in any meaningful way. Validators will likely download/upload relatively large blocks. It should be noted that while these blocks are large, very little typical blockchain state execution is actually occurring on Celestia. Meaning that the bandwidth requirements will likely be larger than that of a typical Cosmos-SDK based blockchain full node, the computing requirements should be similar in magnitude.
+相对于其他基于 Tendermint 的区块链，Celestia将有明显较长的区块时间，大约30* 秒。 这个区块时间的逻辑是优化采样区块链中轻客户端使用的带宽。 并且并不是因为我们以任何有意义的方式修改了Tendermint的共识。 验证者可能会下载/上传相对较大的区块。 应该注意到虽然这些区块很大，但实际上很少有典型的区块链状态执行在 Celestia 上进行。 这意味着带宽要求可能会大于典型的基于 Cosmos-SDK 的区块链全节点的带宽需求，计算需求的量级应该相似。
 
 *可能会变动
