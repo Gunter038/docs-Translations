@@ -6,15 +6,15 @@ sidebar_label : Couche de disponibilité des données de Celestia
 
 Celestia est une couche de disponibilité des données (DA) qui fournit une solution évolutive au [problème de la disponibilité des données](https://coinmarketcap.com/alexandria/article/what-is-data-availability). En raison de la nature sans permission des réseaux de blockchain, une couche de DA doit fournir un mécanisme permettant aux couches d'exécution et de consensus de vérifier, cryptographiquement, si les données de transaction sont effectivement disponibles.
 
-Deux caractéristiques clés de la couche DA de Celestia sont [l'échantillonnage de la disponibilité des données](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) et [les arbres de Merkle Namespaced](https://github.com/celestiaorg/nmt) (NMTs). Les deux fonctionnalités sont des solutions novatrices de mise à l'échelle de la blockchain : la DAS permet aux lights nodes de vérifier la disponibilité des données sans avoir à télécharger un bloc entier ; Les NMTs permettent à des couches d'exécution et de règlement sur Celestia de télécharger des transactions qui ne sont pertinentes que pour elles.
+Deux caractéristiques clés de la couche DA de Celestia sont [l'échantillonnage de la disponibilité des données](https://blog.celestia.org/celestia-mvp-release-data-availability-sampling-light-clients/) (DAS) et [les arbres de Merkle Namespaced](https://github.com/celestiaorg/nmt) (NMTs). Les deux fonctionnalités sont des solutions novatrices de mise à l'échelle de la blockchain : la DAS permet aux light nodes de vérifier la disponibilité des données sans avoir à télécharger un bloc entier ; les NMTs permettent à des couches d'exécution et de règlement sur Celestia de télécharger des transactions qui ne sont pertinentes que pour elles.
 
 ## Échantillonnage de la disponibilité des données (DAS)
 
-En général, les lights nodes ne téléchargent que les en-têtes de blocs qui contiennent des engagements (c.-à-d. les racines Merkle) des données de bloc (c.-à-d. la liste des transactions).
+En général, les light nodes ne téléchargent que les en-têtes de blocs qui contiennent des engagements (c.-à-d. les racines Merkle) des données de bloc (c.-à-d. la liste des transactions).
 
 Pour rendre la DAS possible, Celestia utilise un système d'encodage Reed-Salomon à deux dimensions pour encoder les données du bloc : chaque donnée de bloc est divisée en tronçon k x k , arrangé dans une matrice k × k, et étendu avec la parité de données dans une matrice étendue de 2k × 2k en appliquant plusieurs fois l'encodage Reed-Solomon.
 
-Ensuite, les racines de Merkle 4k séparées sont calculées pour les lignes et les colonnes de la matrice étendue ; la racine de Merkle de ces racines de Merkle sont utilisées comme l'engagement des données du bloc par les en-têtes de bloc.
+Ensuite, les racines de Merkle 4k séparées sont calculées pour les lignes et les colonnes de la matrice étendue ; la racine de Merkle de ces racines de Merkle est utilisée comme l'engagement des données du bloc dans les en-têtes de bloc.
 
 ![Encodage de Reed-Solomon (RS) deux dimensions](/img/concepts/reed-solomon-encoding.png)
 
