@@ -71,7 +71,7 @@ La couche d'accessibilité des données Celestia consiste en une blockchain PoS.
 La Celestia App est construite sur le [Celestia Core](https://github.com/celestiaorg/celestia-core), une version modifiée du [consensus algorithmique Tendermint](https://arxiv.org/abs/1807.04938). Parmi les plus importants changements apportés à Tendermint, Celestia Core:
 
 - Permet le codage d'effacement des données d'un bloc (en utilisant le schéma d'encodage Reed-Solomon en deux dimensions).
-- Replace l'arbre de Merkle habituel utilisé par Tendermint pour stocker les données avec un [arbre de Merkle Namespaced](https://github.com/celestiaorg/nmt) qui permet aux couches d'au-dessus (c-à-d d'exécution ou de réglement) de seulement télécharger les données nécessaires (pour plus de détails, voir la section ci-dessous décrivant les cas d'usage).
+- Replace l'arbre de Merkle habituel utilisé par Tendermint pour stocker les données avec un [arbre de Merkle Namespaced](https://github.com/celestiaorg/nmt) qui permet aux couches d'au-dessus (c.-à-d. d'exécution ou de règlement) de seulement télécharger les données nécessaires (pour plus de détails, voir la section ci-dessous décrivant les cas d'usage).
 
 Pour plus de détails sur les changements par rapport à Tendermint, consulter [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). À noter que les nœuds de Celestia Core utilisent toujours le réseau Tendermint de pair-à-pair.
 
