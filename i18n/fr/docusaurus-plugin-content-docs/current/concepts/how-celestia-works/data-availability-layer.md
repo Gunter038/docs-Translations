@@ -16,7 +16,7 @@ Pour rendre la DAS possible, Celestia utilise un système d'encodage Reed-Salomo
 
 Ensuite, les racines de Merkle 4k séparées sont calculées pour les lignes et les colonnes de la matrice étendue ; la racine de Merkle de ces racines de Merkle est utilisée comme l'engagement des données du bloc dans les en-têtes de bloc.
 
-![Encodage de Reed-Solomon (RS) deux dimensions](/img/concepts/reed-solomon-encoding.png)
+![Encodage Reed-Solomon (RS) 2D](/img/concepts/reed-solomon-encoding.png)
 
 Pour vérifier que la donnée est disponible, les light nodes Celestia échantillonnent les paquets de données 2k x 2k.
 
@@ -66,7 +66,7 @@ Pour davantage de détails sur les NMTs, vous pouvez consulter cet [article](htt
 
 La couche d'accessibilité des données Celestia consiste en une blockchain PoS. Celestia appelle une blockchain "[Celestia App](https://github.com/celestiaorg/celestia-app)" une application qui permet des transactions pour faciliter la couche d'accessibilité des données et est construite en utilisant le [Cosmos SDK](https://docs.cosmos.network/v0.44/). Le schéma suivant montre les différents composants d'une Celestia App.
 
-![Principaux composants de la Celestia App](/img/concepts/celestia-app.png)
+![Principaux composants de l’app Celestia](/img/concepts/celestia-app.png)
 
 La Celestia App est construite sur le [Celestia Core](https://github.com/celestiaorg/celestia-core), une version modifiée du [consensus algorithmique Tendermint](https://arxiv.org/abs/1807.04938). Parmi les plus importants changements apportés à Tendermint, Celestia Core:
 
@@ -79,4 +79,4 @@ De manière similaire à Tendermint, Celestia Core est connecté à la couche d'
 
 L'état de machine Celestia App est nécessaire pour exécuter la logique PoS et pour permettre la gouvernance de la couche d'accessibilité des données.
 
-Cependant, la Celestia App est données-agnostique -- la machine d'état ne valide ni ne stocke les données qui sont rendues accessibles par la Celestia App.
+Cependant, l’app Celestia est dite agnostique en ce qui concerne les données -- la machine d'état ne valide ni ne stocke les données qui sont rendues accessibles par l’app Celestia.
