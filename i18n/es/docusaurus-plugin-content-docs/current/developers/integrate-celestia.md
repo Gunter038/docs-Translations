@@ -1,33 +1,33 @@
 ---
-sidebar_label: Integrate Celestia
+sidebar_label: Integrar Celestia
 ---
 
-# Integrate Celestia
+# Integrar Celestia
 
-> This document is for third-party service providers, such as custodians and explorers, integrating the Celestia network.
+> Este documento es para proveedores de servicios de terceros, como custodios y exploradores, integrando la red Celestia.
 
-## Celestia Service Provider Notes
+## Notas del proveedor de servicio de Celestia
 
-Celestia is a fairly standard Cosmos-SDK based chain. We use the latest version of Tendermint and the Cosmos-SDK, with only minor modifications to each. This means that we are:
+Celestia es una cadena basada en Cosmos-SDK bastante estandar. Utilizamos la última versión de Tendermint y el Cosmos-SDK, con solo modificaciones menores de cada uno. Esto significa que estamos:
 
-- Using the default Cosmos-SDK modules: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limited in some TBD capacities), upgrade, vesting, feegrant, capability, and payment.
-- Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
+- Utilizando los módulos por defecto de Cosmos-SDK: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limitado en algunas capacidades de TBD), upgrade, vesting, feegrant, capability y payment.
+- Usando los esquemas de claves digitales estándar proporcionados por el Cosmos-SDK y Tendermint, que son secp256k1 para las transacciones de usuario, y tm-ed25519 para firmar y verificar mensajes de consenso.
 
-While exactly which modules used is subject to change, Celestia aims to be as minimal as possible.
+En cuanto a exactamente qué módulos usados están sujetos a cambios, Celestia pretende tener el mínimo posible.
 
-### Custody and Key Management
+### Custodia y Gestión de Claves
 
-Celestia supports many already existing key management systems, as we rely on the Cosmos-SDK and Tendermint libraries for signing and verifying transactions. [Cosmos-SDK documentation](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
+Celestia soporta muchos sistemas de gestión de claves ya existentes, ya que confiamos en las librerías Cosmos-SDK y Tendermint para firmar y verificar transacciones. [Documentación Cosmos-SDK](https://docs.cosmos.network/master/basics/accounts.html#keys-accounts-addresses-and-signatures)
 
-### RPC and Querying
+### RPC y consulta
 
-In celestia-app, only the standard RPC endpoints for Tendermint and the Cosmos-SDK are exposed. We do not currently add or subtract any core functionality, but this could change in the future. The same goes for querying data from the chain.
+En celestia-app, solo los endpoints RPC estándar para Tendermint y el Cosmos-SDK están expuestos. Actualmente no sumamos o restamos ninguna funcionalidad principal, pero esto podría cambiar en el futuro. Lo mismo ocurre con la consulta de datos de la cadena.
 
-In celestia-node, the Data Availability node client, there is a JSON-RPC API that allows you to interact directly with Celestia's Data Availability layer. The guide for it can be found [here](https://docs.celestia.org/developers/node-tutorial).
+En el nodo Celestia, el cliente del nodo de disponibilidad de datos, hay una API JSON-RPC que te permite interactuar directamente con la capa de disponibilidad de datos de Celestia. La guía se puede encontrar [aquí](https://docs.celestia.org/developers/node-tutorial).
 
-### Compatibility
+### Compatibilidad
 
-Linux, particularly Ubuntu 20.04 LTS, is the most well tested. Potentially compatible with other OSs, but they are currently untested. Some of the cryptography libraries used for erasure data are not guaranteed to work on other platforms.
+Linux, particularmente Ubuntu 20.04 LTS, es el más probado. Potentially compatible with other OSs, but they are currently untested. Some of the cryptography libraries used for erasure data are not guaranteed to work on other platforms.
 
 ### Syncing
 
