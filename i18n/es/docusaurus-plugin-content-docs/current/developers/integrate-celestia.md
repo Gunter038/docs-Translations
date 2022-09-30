@@ -27,14 +27,14 @@ En el nodo Celestia, el cliente del nodo de disponibilidad de datos, hay una API
 
 ### Compatibilidad
 
-Linux, particularmente Ubuntu 20.04 LTS, es el más probado. Potentially compatible with other OSs, but they are currently untested. Some of the cryptography libraries used for erasure data are not guaranteed to work on other platforms.
+Linux, particularmente Ubuntu 20.04 LTS, es el más probado. Potencialmente compatible con otros sistemas operativos, pero actualmente no están probados. Algunas de las librerías de criptografía utilizadas para borrar datos no están garantizadas para funcionar en otras plataformas.
 
-### Syncing
+### Sincronizando
 
-Since we utilize Tendermint and the Cosmos-SDK, syncing the chain can be performed by any method that is supported by those libraries. This includes fast-sync, state sync, and quick sync.
+Dado que utilizamos Tendermint y el Cosmos-SDK, la sincronización de la cadena puede ser realizada por cualquier método soportado por esas librerías. Esto incluye fast-sync, state sync, y quick sync.
 
-### Notable exceptions relative to other blockchains
+### Excepciones notables relativas a otras blockchains
 
-Relative to other Tendermint based chains, Celestia will have significantly longer blocktimes of around 30* seconds. The reason behind this block time is to optimize the bandwidth used by light clients that are sampling the chain, and is not because we have modified Tendermint consensus in any meaningful way. Validators will likely download/upload relatively large blocks. It should be noted that while these blocks are large, very little typical blockchain state execution is actually occurring on Celestia. Meaning that the bandwidth requirements will likely be larger than that of a typical Cosmos-SDK based blockchain full node, the computing requirements should be similar in magnitude.
+En relación con otras cadenas basadas en Tendermint, Celestia tendrá significativamente tiempos de bloqueo más largos de unos 30* segundos. La razón detrás de este tiempo de bloqueo es para optimizar el ancho de banda utilizado por clientes ligeros que muestren la cadena, y no es porque hemos modificado el consenso de Tendermint de ninguna manera significativa. Es probable que los validadores descarguen/suban bloques relativamente grandes. Hay que tener en cuenta que aunque estos bloques son grandes, en Celestia actualmente se está produciendo muy poca ejecución de transacciones. Probablemente los requerimientos de ancho de banda sean mayores que los de un nodo de blockchain basado en Cosmos-SDK, los requisitos de cálculo deben ser similares en magnitud.
 
-*Subject to Change
+* Sujeto a cambios
