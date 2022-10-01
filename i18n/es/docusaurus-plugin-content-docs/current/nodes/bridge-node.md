@@ -23,7 +23,7 @@ Desde una perspectiva de implementación, los Bridge Nodes ejecutan dos procesos
 1. Celestia App con Celestia Core ([ver repo](https://github.com/celestiaorg/celestia-app))
 
     * **Celestia App** es la máquina de estado donde se ejecuta la aplicación y la lógica de prueba de participación. Celestia App está construida en [Cosmos SDK](https://docs.cosmos.network/) y también engloba **Celestia Core**.
-    * **Celestia Core** es la interacción con el estado, el consenso y la capa de producción de bloques. Celestia Core está construido sobre[nTendermint Core](https://docs.tendermint.com/), modificado para almacenar raíces de datos de bloques codificados de borrado entre otros cambios ([ver ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Celestia Core** es la interacción del estado, el consenso y la capa de producción de bloques. Celestia Core está construida sobre[Tendermint Core](https://docs.tendermint.com/), modificada para almacenar raíces de datos de bloques codificados de borrado entre otros cambios ([ver ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
 2. Nodo Celestia ([ver repositorio](https://github.com/celestiaorg/celestia-node))
 
@@ -62,7 +62,7 @@ Ejecuta las siguientes instrucciones:
 celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 ```
 
-> NOTA: El `--core.grpc. ort` es por defecto 26657, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
+> NOTA: El `--core.rpc.port` por defecto es 26657, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
