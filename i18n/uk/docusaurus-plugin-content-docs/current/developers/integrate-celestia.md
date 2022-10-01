@@ -1,14 +1,14 @@
 ---
-sidebar_label: Integrate Celestia
+sidebar_label: Інтегрування Celestia
 ---
 
-# Integrate Celestia
+# Інтегрування Celestia
 
-> This document is for third-party service providers, such as custodians and explorers, integrating the Celestia network.
+> Цей документ призначений для сторонніх постачальників послуг, таких як зберігачі та дослідники, які інтегрують мережу Celestia.
 
-## Celestia Service Provider Notes
+## Нотатки постачальника послуг Celestia
 
-Celestia is a fairly standard Cosmos-SDK based chain. We use the latest version of Tendermint and the Cosmos-SDK, with only minor modifications to each. This means that we are:
+Celestia — це досить стандартна мережа на основі Cosmos-SDK. Ми використовуємо останню версію Tendermint і Cosmos-SDK лише з незначними змінами. Це означає, що ми:
 
 - Using the default Cosmos-SDK modules: auth, bank, distribution, staking, slashing, mint, crisis, ibchost, genutil, evidence, ibctransfer, params, gov (limited in some TBD capacities), upgrade, vesting, feegrant, capability, and payment.
 - Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
