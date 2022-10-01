@@ -16,7 +16,7 @@ Ver todas las opciones:
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configura el backend del almacen, donde se guardan las llaves.
+`keyring-backend` configura el backend del llavero, donde se guardan las claves.
 
 Las opciones son: `os|file|kwallet|pass|test|memory`.
 
@@ -26,13 +26,13 @@ Las opciones son: `os|file|kwallet|pass|test|memory`.
 # listando claves
 celestia-appd lista
 
-# añadir teclas
+# añadir claves
 celestia-appd add <KEY_NAME>
 
-# eliminar teclas
+# eliminar claves
 celestia-appd delete <KEY_NAME>
 
-# renombrar teclas
+# renombrar claves
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
