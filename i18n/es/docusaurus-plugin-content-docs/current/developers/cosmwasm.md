@@ -4,7 +4,7 @@ sidebar_label: Vista general de CosmWasm
 
 # CosmWasm en Optimint
 
-CosmWasm es una plataforma de smart contracts construida para el ecosistema de Cosmos haciendo uso de WebAssembly (Wasm) para construir contratos inteligentes para Cosmos-SDK. En este tutorial, vamos a explorar cómo integrar CosmWasm con la capa de disponibilidad de datos de Celestia usando Optimint.
+CosmWasm es una plataforma de smart contracts construida para el ecosistema de Cosmos haciendo uso de WebAssembly (Wasm) para construir smart contracts para Cosmos-SDK. En este tutorial, vamos a explorar cómo integrar CosmWasm con la capa de disponibilidad de datos de Celestia usando Optimint.
 
 > NOTA: Este tutorial explorará el desarrollo con Optimint, que todavía está en fase Alfa. Si encuentras errores, por favor escribe un ticket de Github Issue o háznoslo saber en nuestro Discord. Además, mientras que Optimint te permite crear registros soberanos en Celestia, actualmente no soporta pruebas de fraude aún y está por lo tanto funcionando en modo "pesimista", donde los nodos necesitarían volver a ejecutar las transacciones para comprobar la validez de la cadena (i.. un nodo completo). Además, Optimint actualmente sólo soporta un solo secuenciador.
 
