@@ -52,7 +52,7 @@ Pour ce travail, la couche d'accessibilité des données doit être en mesure de
 
 Un NMT est un arbre de Merkle dont les feuilles sont ordonnées par les identifiants de l'espace de nom et la fonction hash modifiée de sorte que chaque noeud de l'arbre inclue la plage d'espaces de noms de tous ses descendants. La figure suivante montre un exemple de MNT de hauteur trois (c.-à-d. huit morceaux de données). La donnée est divisée en trois espaces de noms.
 
-![Arbre de Merkle Namespaced](/img/concepts/nmt.png)
+![Arborescence Merkle avec espace de noms](/img/concepts/nmt.png)
 
 Quand une application requiert la donnée pour l'espace de nom 2, la couche d'accessibilité des données doit fournir les morceaux de données `D3`, `D4`, `D5`, et `D6` et les noeuds `N2`,`N8` et `N7` comme preuve (notez que l'application a déjà la racine `N14` provenant de l'en-tête du bloc).
 
