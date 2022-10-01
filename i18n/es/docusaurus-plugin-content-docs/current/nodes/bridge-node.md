@@ -66,7 +66,7 @@ celestia bridge init --core.ip <ip-address> --core.rpc.port <port>
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-### Ejecuta el nodo de puente
+### Ejecuta el nodo bridge
 
 Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (que normalmente está en el puerto 9090):
 
@@ -74,11 +74,11 @@ Inicia el Bridge Node con una conexión al endpoint gRPC de un nodo validador (q
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTA: El `--core.grpc. ort` es por defecto 9090, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
+> NOTA: El `--core.grpc.port` es por defecto 9090, así que si no lo especificas en la línea de comandos, se establecerá por defecto en ese puerto. Puedes utilizar la bandera para especificar otro puerto si lo prefieres.
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-Puedes crear tu clave para tu nodo siguiendo las instrucciones de `clave cel-` [aquí](./keys.md)
+Puedes crear tu clave para tu nodo siguiendo las instrucciones de `cel-key` [aquí](./keys.md)
 
 Una vez que inicies el Bridge Node, se generará una clave de wallet para ti. Tendrás que enviar a esa dirección los tokens de Mamaki Testnet para pagar por transacciones de PayForData. Puedes encontrar la dirección ejecutando el siguiente comando:
 
@@ -91,7 +91,7 @@ Tienes dos redes desde las que obtener tokens de testnet:
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTA: Si estás ejecutando un nodo bridge para tu validador es altamente recomendable solicitar tokens Mamaki testnet ya que esta es la testnet utilizada para probar las operaciones de validador.
+> NOTA: Si estás ejecutando un nodo bridge para tu validador es altamente recomendable solicitar tokens de Mamaki testnet ya que esta es la testnet utilizada para probar las operaciones de validador.
 
 #### Opcional: ejecutar el nodo bridge con una clave personalizada
 
