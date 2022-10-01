@@ -4,7 +4,7 @@ sidebar_label : Monolíticas vs. Bloques Modulares
 
 # Monolíticas vs. Blockchains Modulares
 
-Las Blockchains requieren[máquinas de estado replicadas](https://dl.acm.org/doi/abs/10.1145/98163.98167): los nodos en una red distribuida sin permiso aplican una secuencia ordenada de transacciones deterministas a un estado inicial resultando en un estado común final. Esto significa que las blockchains requieren las siguientes cuatro funciones:
+Las Blockchains requieren [máquinas de estado replicadas](https://dl.acm.org/doi/abs/10.1145/98163.98167): los nodos en una red distribuida sin permiso aplican una secuencia ordenada de transacciones deterministas a un estado inicial resultando en un estado común final. Esto significa que las blockchains requieren las siguientes cuatro funciones:
 
 - __Ejecución__ implica ejecutar transacciones que actualizan el estado correctamente. Por lo tanto, la ejecución debe asegurarse de que solo se ejecutan transacciones válidas, por ejemplo:   transacciones que resultan en transiciones automáticas de estado válidas.
 - __El Acuerdo__ entraña un entorno para las capas de ejecución para verificar pruebas, resolver disputas de fraude y puente entre otras capas de ejecución.
