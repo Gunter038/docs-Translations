@@ -94,9 +94,34 @@ go version go1.18.2 linux/amd64
 
 下面的章节重点介绍了如何为两个网络安装所需版本。
 
-#### Mamaki 测试网安装
+#### Arabia 开发网 安装
 
 通过运行以下命令安装 celestia-node 二进制文件：
+
+```sh
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node/
+git checkout tags/v0.3.1
+make install
+make cel-key
+```
+
+验证二进制文件是否正常工作并使用 celestia version 命令检查版本：
+
+```sh
+$ celestia version
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
+```
+
+#### Mamaki 测试网安装
+
+通过运行以下命令安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -114,30 +139,6 @@ make cel-key
 $ celestia version
 Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
-```
-
-#### Arabia 开发网 安装
-
-通过运行以下命令安装celestia-node二进制文件：
-
-```sh
-cd $HOME
-rm -rf celestia-node
-git clone https://github.com/celestiaorg/celestia-node.git
-cd celestia-node/
-git checkout tags/v0.3.1
-make install
-```
-
-验证二进制文件是否正常工作并使用 celestia version 命令检查版本：
-
-```sh
-$ celestia version
-Semantic version: v0.3.1
-Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
-Build Date: Thu Sep 22 15:15:43 UTC 2022
-System version: amd64/linux
-Golang version: go1.19.1
 ```
 
 ## 初始化轻节点
@@ -173,6 +174,8 @@ $ celestia light init
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
+#### Arabica Setup
+
 如果您需要连接到 RPC 端点列表，可以从[此处](./arabica-devnet.md#rpc-endpoints)的列表中查看
 
 例如，您的命令可能如下所示：
@@ -180,6 +183,18 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port>
 <!-- markdownlint-disable MD013 -->
 ```sh
 celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
+```
+<!-- markdownlint-enable MD013 -->
+
+#### Mamaki Setup
+
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+
+For example, your command might look something like this:
+
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
 ```
 <!-- markdownlint-enable MD013 -->
 
