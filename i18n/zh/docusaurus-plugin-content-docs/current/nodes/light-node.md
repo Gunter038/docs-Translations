@@ -174,7 +174,7 @@ $ celestia light init
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-#### Arabica Setup
+#### Arabica 设置
 
 如果您需要连接到 RPC 端点列表，可以从[此处](./arabica-devnet.md#rpc-endpoints)的列表中查看
 
@@ -186,11 +186,11 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-#### Mamaki Setup
+#### Mamaki 设置
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果您需要连接到 RPC 端点列表，可以从[此处](./mamaki-testnet.md#rpc-endpoints)的列表中查看
 
-For example, your command might look something like this:
+例如，您的命令可能如下所示：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
