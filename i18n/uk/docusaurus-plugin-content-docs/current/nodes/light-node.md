@@ -94,6 +94,31 @@ go version go1.18.2 linux/amd64
 
 У наступних розділах описано, як її встановити для двох мереж.
 
+#### Встановлення Arabica Devnet
+
+Встановіть двійковий файл celestia-node, виконавши такі команди:
+
+```sh
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node/
+git checkout tags/v0.3.1
+make install
+make cel-key
+```
+
+Verify that the binary is working and check the version with the celestia version command:
+
+```sh
+$ celestia version
+Semantic version: v0.3.1
+Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
+Build Date: Thu Sep 22 15:15:43 UTC 2022
+System version: amd64/linux
+Golang version: go1.19.1
+```
+
 #### Встановлення тестової мережі Mamaki
 
 Встановіть двійковий файл celestia-node, виконавши такі команди:
@@ -108,36 +133,12 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди celestia version:
 
 ```sh
 $ celestia version
 Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
-```
-
-#### Встановлення Arabica Devnet
-
-Встановіть двійковий файл celestia-node, виконавши такі команди:
-
-```sh
-cd $HOME
-rm -rf celestia-node
-git clone https://github.com/celestiaorg/celestia-node.git
-cd celestia-node/
-git checkout tags/v0.3.1
-make install
-```
-
-Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди celestia version:
-
-```sh
-$ celestia version
-Semantic version: v0.3.1
-Commit: 8bce8d023f9d0a1929e56885e439655717aea4e4
-Build Date: Thu Sep 22 15:15:43 UTC 2022
-System version: amd64/linux
-Golang version: go1.19.1
 ```
 
 ## Ініціалізація легкої ноди
@@ -173,6 +174,8 @@ $ celestia light init
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
+#### Arabica Setup
+
 Якщо вам потрібен список кінцевих точок RPC для підключення, ви можете ознайомитися зі списком [тут](./arabica-devnet.md#rpc-endpoints)
 
 Наприклад, ваша команда може виглядати приблизно так:
@@ -180,6 +183,18 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port>
 <!-- markdownlint-disable MD013 -->
 ```sh
 celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090
+```
+<!-- markdownlint-enable MD013 -->
+
+#### Mamaki Setup
+
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+
+For example, your command might look something like this:
+
+<!-- markdownlint-disable MD013 -->
+```sh
+celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
 ```
 <!-- markdownlint-enable MD013 -->
 
