@@ -1,5 +1,5 @@
 ---
-sidebar_label: Integrate Celestia
+sidebar_label: 集成Celestia
 ---
 
 # 集成Celestia
@@ -11,7 +11,7 @@ sidebar_label: Integrate Celestia
 Celestia是一个相当标准的以Cosmos-SDK为基础的区块链。 我们使用稍作修改的最新版本Tendermint 和 Cosmos-SDK。 这意味着我们是：
 
 - 使用默认的 Cosmos-SDK 模块：授权、银行、发行、质押、 滑点、铸造、crisis、ibc主机、genutil、证据 ibc转账, params, 治理 (在某些待定容量里有限制), 升级, 授予, 收费, 能力, 支付
-- Use the standard digital keys schemes provided by the Cosmos-SDK and Tendermint, those being secp256k1 for user transactions, and tm-ed25519 for signing and verifying consensus messages.
+- 使用 Cosmos-SDK 和 Tendermint 提供的标准数字密钥方案，secp256k1 用于用户交易，tm-ed25519 用于签署和验证共识消息。
 
 虽然所使用的模块会被更改，但Celestia的目标是尽可能减少此种情况。
 
@@ -21,9 +21,9 @@ Celestia支持许多已经存在的密钥管理系统，因为我们依靠Cosmos
 
 ### RPC 和查询
 
-In celestia-app, only the standard RPC endpoints for Tendermint and the Cosmos-SDK are exposed. 我们目前没有添加或减少任何核心函数，但这可能会在未来改动。 查询区块链中的数据也是如此。
+在 celestia-app，只暴露了 Tendermint 和Cosmos-SDK 的标准RPC端点。 我们目前没有添加或减少任何核心函数，但这可能会在未来改动。 查询区块链中的数据也是如此。
 
-In celestia-node, the Data Availability node client, there is a JSON-RPC API that allows you to interact directly with Celestia's Data Availability layer. 指南在[这里](https://docs. celestia. org/developers/node-tutorial)
+在 celestia-node（数据可用性节点客户端）中，有一个 JSON-RPC API，允许您直接与 Celestia 的数据可用性层交互。 指南在[这里](https://docs. celestia. org/developers/node-tutorial)
 
 ### 兼容性
 
