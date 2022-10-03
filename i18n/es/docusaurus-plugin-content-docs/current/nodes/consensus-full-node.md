@@ -9,7 +9,7 @@ Los Full Nodes de consenso te permiten sincronizar el historial de la blockchain
 
 ## Requisitos de hardware
 
-Se recomiendan los siguientes requisitos mínimos de hardware para ejecutar el nodo bridge:
+Se recomiendan los siguientes requisitos mínimos de hardware para ejecutar el Full Node:
 
 * Memoria: 8 GB RAM
 * CPU: 4 cores
@@ -26,7 +26,7 @@ Sigue las instrucciones para instalar las dependencias [aquí](../developers/env
 
 ## Desplegando celestia-app
 
-Esta sección describe la parte 1 de la configuración del full node de Celestia: ejecutando un daemon de la aplicación Celestia con un nodo interno Core de Celestia.
+Esta sección describe la parte 1 de la configuración del full node de Celestia: ejecutando un daemon de Celestia App con un nodo interno Core de Celestia.
 
 > Nota: Asegúrate de tener al menos 100+ Gb de espacio libre para instalar y ejecutar de forma segura el full node.
 
