@@ -16,14 +16,14 @@ sidebar_label : Guía de Config.toml
 
 ## Pre-requisitos
 
-Por favor, asegúrese de que ha instalado e inicializado el nodo celestia
+Por favor, asegúrate de que has instalado e inicializado el nodo celestia
 
 ## Entendiendo config.toml
 
 Después de la inicialización, para cualquier tipo de nodo, encontrarás un `config.toml` en la siguiente ruta (ubicación predeterminada):
 
 - `$HOME/.celestia-bridge/config.toml` para nodo bridge
-- `$HOME/.celestia-bridge/config.toml` para light node
+- `$HOME/.celestia-bridge/config.toml` para nodo light
 
 Desglosemos algunas de las secciones más utilizadas.
 
@@ -47,6 +47,6 @@ El propósito de esta configuración es establecer una comunicación bidireccion
 
 `TrustedHash` es necesario para inicializar correctamente un Nodo Celestia Bridge con un `Remoto` Nodo Celestia Core, ya ejecutado. El Nodo Light Celestia tomará un hash de génesis como el de confianza, si no se proporciona ningún hash manualmente durante la fase de inicialización.
 
-`TrustedPeers` es el array de peers de Celestia Bridge Nodes en el que Light Node confía. Por defecto, los peers de bootstrap se convierten en pares de confianza para Celestia Light Nodes si un usuario no está configurando los parámetros de confianza en el archivo de configuración.
+`TrustedPeers` es el array de peers de Celestia Bridge Nodes en el que Light Node confía. Por defecto, los peers de bootstrap se convierten en pares de confianza para los nodos Celestia Light si un usuario no está configurando los parámetros de confianza en el archivo de configuración.
 
 Cualquier Nodo Bridge de Celestia puede ser un par de confianza para el Light Node. Sin embargo, el nodo Light por diseño no puede ser un par de confianza para otro nodo Light.
