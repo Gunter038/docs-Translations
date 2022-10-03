@@ -186,11 +186,11 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-#### Mamaki Setup
+#### Configuración de Mamaki
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./mamaki-testnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+Por ejemplo, el comando podría ser algo como esto:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
