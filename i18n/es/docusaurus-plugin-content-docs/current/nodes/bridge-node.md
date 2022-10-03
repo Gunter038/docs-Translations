@@ -8,7 +8,7 @@ Este tutorial recorrerá los pasos para configurar tu nodo de Celestia.
 
 Los nodos Bridge conectan la capa de disponibilidad de datos y la capa de consenso al mismo tiempo que tienen la opción de convertirse en validador.
 
-Los validadores no tienen que ejecutar nodos Bridge, pero se les anima a transmitir bloques a la red de disponibilidad de datos.
+Los validadores no tienen que ejecutar nodos bridge, pero se les anima a transmitir bloques a la red de disponibilidad de datos.
 
 ## Vista general de los nodos Bridge
 
@@ -93,7 +93,7 @@ Tienes dos redes desde las que obtener tokens de testnet:
 
 > NOTA: Si estás ejecutando un nodo bridge para tu validador es altamente recomendable solicitar tokens de Mamaki testnet ya que esta es la testnet utilizada para probar las operaciones de validador.
 
-#### Opcional: ejecutar el nodo bridge con una clave personalizada
+#### Opcional: ejecutar el nodo bridge con una key personalizada
 
 Para ejecutar un nodo bridge usando una clave personalizada:
 
