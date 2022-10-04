@@ -1,9 +1,9 @@
 - - -
-sidebar_label : Overview
+topluluğa genel bakış Bu bölüm Celestia Topluluğu için tüm farklı kaynakları ve faaliyetleri öne çıkaracaktır Burada topluluk takvimimize, Davranış Kurallarımıza ve toplulukla ilişkili diğer kaynaklara bağlantılar bulacaksınız
 - - -
 
-# Community Overview
+# Topluluğa Genel Bakış
 
-This section will highlight all the different resources and activities for the Celestia Community.
+Bu bölüm Celestia Topluluğu için tüm farklı kaynakları ve faaliyetleri öne çıkaracaktır.
 
-Here you will find links to our community calendar, Code of Conduct and other community-related resources.
+Burada topluluk takvimimize, Davranış Kurallarımıza ve toplulukla ilişkili diğer kaynaklara bağlantılar bulacaksınız.
