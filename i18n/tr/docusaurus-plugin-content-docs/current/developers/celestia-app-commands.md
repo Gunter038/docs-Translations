@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Helpful CLI commands
+yardımcı CLI komutları
 - - -
 
-# Helpful CLI commands
+# Yardımcı CLI komutları
 
-View all options:
+Tüm seçenekleri görüntüleyin:
 
 ```console
 $ celestia-appd --help
@@ -37,7 +37,7 @@ Available Commands:
   version             Print the application binary version information
 ```
 
-## Creating a wallet
+## Cüzdan Oluşturma
 
 ```sh
 celestia-appd config keyring-backend test
@@ -47,50 +47,50 @@ celestia-appd config keyring-backend test
 
 Options are: `os|file|kwallet|pass|test|memory`.
 
-## Key management
+## Anahtar yönetimi (Key Management)
 
 ```sh
-# listing keys
+# Anahtarları görüntüleme
 celestia-appd keys list
 
-# adding keys
+# Anahtar ekleme
 celestia-appd keys add <KEY_NAME>
 
-# deleting keys
+# Anahtar silme
 celestia-appd keys delete <KEY_NAME>
 
-# renaming keys
+# Anahtarı yeniden adlandırma
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### Anahtarları içe ve dışa aktarma
 
-Import an encrypted and ASCII-armored private key into the local keybase.
+Yerel anahtar tabanına şifreli ve ASCII zırhlı bir özel anahtarı içe aktarın.
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
 ```
 
-Example usage:
+Örnek kullanım:
 
 ```sh
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Export a private key from the local keyring in encrypted and ASCII-armored format:
+Yerel Keyringten şifreli ve ASCII zırhlı biçimde bir özel anahtarı dışa aktarın:
 
 ```sh
 celestia-appd keys export <KEY_NAME>
 
-# you will then be prompted to set a password for the encrypted private key:
+# ardından şifreli özel anahtar için bir parola belirlemeniz istenecektir:
 Enter passphrase to encrypt the exported key:
 ```
 
-After you set a password, your encrypted key will be displayed.
+Bir şifre belirledikten sonra şifreli anahtarınız görüntülenecektir.
 
-## Querying subcommands
+## Alt komutları sorgulama
 
-Usage:
+Kullanım:
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
@@ -99,35 +99,35 @@ celestia-appd query <FLAGS> | <COMMAND>
 celestia-appd q <FLAGS> | <COMMAND>
 ```
 
-To see all options:
+Tüm opsiyonları görmek için:
 
 ```sh
 celestia-appd q --help
 ```
 
-## Token management
+## Token yönetimi
 
-Get token balances:
+Token balansı öğrenme:
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
 ```
 
-Example usage:
+Örnek kullanım:
 
 ```sh
 celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transfer tokens from one wallet to another:
+Tokenleri bir cüzdandan diğerine aktarın:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 <amount> --node <NODE_URI> --chain-id <CHAIN_ID>
 ```
 
-Example usage:
+Örnek kullanım:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
