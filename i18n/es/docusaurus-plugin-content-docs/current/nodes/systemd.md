@@ -2,7 +2,7 @@
 sidebar_label : SystemD
 - - -
 
-# Configurando tu nodo como un proceso en segundo plano con SystememD
+# Configurando tu nodo como un proceso en segundo plano con SystemD
 
 SystemD es un servicio de daemon útil para ejecutar aplicaciones como procesos en segundo plano.
 
@@ -141,7 +141,7 @@ systemctl start celestia-bridge && journalctl -u \
 celestia-bridge.service -f
 ```
 
-Ahora, el nodo de puente Celestia comenzará a sincronizar cabeceras y bloques de almacenamiento desde la aplicación Celestia.
+Ahora, el nodo bridge Celestia comenzará a sincronizar cabeceras y bloques de almacenamiento desde la aplicación Celestia.
 
 > Nota: al inicio, podemos ver la `multiaddress` de Celestia Bridge Node. Esto es **necesario para futuras conexiones de Nodo Light** y comunicación entre Nodos Celestia Bridge
 
@@ -156,7 +156,7 @@ Deberías estar viendo los registros que aparecen a través de la sincronizació
 
 ### Celestia Light Node
 
-Inicia el Nodo Light como proceso demonio en segundo plano
+Inicia el Light Node como proceso demonio en segundo plano
 
 <!-- markdownlint-disable MD013 -->
 ```sh
