@@ -47,7 +47,7 @@ Puedes solicitar desde Mamaki Testnet Faucet en el canal #faucet en el servidor 
 $request <CELESTIA-ADDRESS>
 ```
 
-Donde `<CELESTIA-ADDRESS>` es una `celestia1******` dirección generada.
+Donde `<CELESTIA-ADDRESS>` es una dirección`celestia1******` generada.
 
 > Nota: Faucet tiene un límite de 10 tokens por semana por dirección/Discord ID
 
