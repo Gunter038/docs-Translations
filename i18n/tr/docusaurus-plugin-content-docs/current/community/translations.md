@@ -1,5 +1,5 @@
 - - -
-sidebar_label : Docs Translations
+topluluk çeviri desteği
 - - -
 
 # Topluluk Çeviri Desteği
@@ -8,35 +8,35 @@ Eğer dökümantasyon sayfasının çevrilmesine katkıda bulunmak isteyen tutku
 
 ## Crowdin Projemizi Ziyaret Edin
 
-To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
+Başlamak için Crowdin projesine [buradan](https://crowdin.com/project/celestia-docs) ulaşabilirsiniz.
 
-You will have to create an account and then you will be able to join the project in order to begin your translation journey.
+Çeviri yolculuğunuza başlamak için bir hesap oluşturmanız gerekecek ve ardından projeye katılabileceksiniz.
 
-If you don't see your language, feel free to ask for it on the `#translations` channel on Discord [here](https://discord.gg/celestiacommunity).
+Dilinizi göremiyorsanız, <https://discord. gg/8ssKPmAJG9>discord</a> daki #translations kanalından dilinizi istemekten çekinmeyin.
 
-On Crowdin you can translate, comment on translations, and also give upvotes and downvotes to existing translations.
+Crowdin'de çeviri yapabilir, çevirilere yorum yapabilir ve hem de mevcut çevirilere olumlu ve olumsuz oy verebilirsiniz.
 
-Give your opinion on existing translations to ensure it is correct!
+Doğru olduğundan emin olmak için mevcut çeviriler hakkında görüşlerinizi bildirin!
 
-## Tips
+## İpuçları
 
-Here are few tips to help you during your translation.
+İşte çeviriniz sırasında size yardımcı olacak birkaç ipucu.
 
-### Crowdin documentation
+### Crowdin dokümantasyonu
 
-Official Crowdin's documentaton is available [here](https://support.crowdin.com/online-editor).
+Resmi Crowdin dökümantasyonları [burada](https://support.crowdin.com/online-editor) mevcuttur.
 
-### Guide
+### Kılavuz
 
-#### Code
+#### Kod
 
-Some pages contain metadata and computer code.
+Bazı sayfalar meta veriler ve bilgisayar kodu içerir.
 
-It is important to keep in mind that William Shakespeare was an English speaker...So was Alan Turing! That is why you should not translate parts of the code "itself".
+William Shakespeare'in bir yazar olduğunu akılda tutmak önemlidir. İngilizce konuşan... Alan Turing de öyleydi! Bu yüzden "kendi" kodunun bazı kısımlarını çevirmemelisiniz.
 
-For instance, if you see metadata like `sidebar_label : Hello World`, a French translation would be `sidebar_label : Salut tout le monde`.
+Mesela, sidebar_label : Hello World, gibi metaveri görürseniz Fransızca çevirisi sidebar_label : Salut tout le monde olacaktır.
 
-Let's take another example, you wouldn't have to translate anything here:
+Başka bir örnek verelim, burada hiçbir şeyi tercüme etmenize gerek yok:
 
 ```sh
 cd $HOME
@@ -50,10 +50,10 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-Furthermore, you do not have to translate URLs into your local language.
+Ayrıca, URL'leri yerel dilinize çevirmeniz gerekmez.
 
-#### Specific words
+#### Belirli kelimeler
 
-As you will translate innovative concepts, like Data Availability Sampling, feel free to discuss about the best translation with the rest of the community.
+Veri Kullanılabilirliği Örneklemesi gibi yenilikçi kavramları çevireceğiniz için, topluluğun geri kalanıyla en iyi çeviri hakkında tartışmaktan çekinmeyin.
 
-Also, be careful with date order, period and commas regarding numbers from a language to another.
+Ayrıca, bir dilden diğerine sayılara ilişkin tarih sırasına, döneme ve virgül işaretlerine dikkat edin.
