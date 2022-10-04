@@ -76,7 +76,7 @@ Si deseas usar snapshot, elige la red a la que deseas sincronizar de la lista de
 
 ### Iniciar celestia-app
 
-Para iniciar el full node del consenso, ejecuta lo siguiente:
+Para iniciar el full node de consenso, ejecuta lo siguiente:
 
 ```sh
 celestia-appd start
