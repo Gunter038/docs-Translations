@@ -2,11 +2,11 @@
 sidebar_label : Docs Translations
 - - -
 
-# Community Translation Support
+# Topluluk Çeviri Desteği
 
-If you are a passionate Celestia community member who would like to contribute to translating the documentation page, then this is the guide for you.
+Eğer dökümantasyon sayfasının çevrilmesine katkıda bulunmak isteyen tutkulu bir Celestia topluluğu üyesiyseniz, bu yazı sizin için bir kılavuzdur.
 
-## Visit our Crowdin project
+## Crowdin Projemizi Ziyaret Edin
 
 To get started, go to the Crowdin project [here](https://crowdin.com/project/celestia-docs).
 
