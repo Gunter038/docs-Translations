@@ -174,7 +174,7 @@ Para los puertos:
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-#### Arabica Setup
+#### Configuración de Arabica
 
 Si necesitas una lista de puertos RPC para conectarte, puedes comprobar la lista [aquí](./arabica-devnet.md#rpc-endpoints)
 
