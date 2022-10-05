@@ -49,7 +49,7 @@ Remarques complémentaires :
 Dans une autre fenêtre, exécutez la commande suivante pour soumettre un Wordle :
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
 > NOTE : Nous soumettons une transaction asynchrone car nous souhaitons éviter les erreurs de timeout. Optimint remplaçant Tendermint, nous avons besoin d'attendre le réseau de disponibilité des données de Celestia pour nous assurer qu'un bloc a été inclus dans Wordle, avant de passer au bloc suivant. Actuellement dans Optimint, l'agrégateur unique n'avance pas avec le bloc suivant en production tant qu'il tente de soumettre le bloc antérieur au réseau de disponibilité des données. Dans le futur, avec la leader election, la production du bloc et la logique de synchronisation vont s'améliorer considérablement.
