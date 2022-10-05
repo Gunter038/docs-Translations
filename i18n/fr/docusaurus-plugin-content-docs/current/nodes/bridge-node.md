@@ -1,6 +1,6 @@
-- - -
+---
 sidebar_label : Bridge Node
-- - -
+---
 
 # Configurer un Bridge Node Celestia
 
