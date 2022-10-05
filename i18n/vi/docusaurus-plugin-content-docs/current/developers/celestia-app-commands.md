@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Helpful CLI commands
+Những câu lệnh CLI hữu ích
 - - -
 
-# Helpful CLI commands
+# Những câu lệnh CLI hữu ích
 
-View all options:
+Xem tất cả sự lựa chọn:
 
 ```console
 $ celestia-appd --help
