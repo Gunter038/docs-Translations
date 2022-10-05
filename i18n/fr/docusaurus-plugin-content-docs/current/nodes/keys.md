@@ -1,10 +1,10 @@
 - - -
-sidebar_label : Keys
+sidebar_label : Clés
 - - -
 
-# Using the cel-key utility
+# Prise en main de l'utilitaire Cel-Key
 
-Inside the celestia-node repository is a utility called `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. L'utilitaire peut être pour `add`(ajouter), `delete`(effacer) , et gérer les clés pour tout type de node de Disponilité de la donnée `(bridge || full || light)`, ou juste des clés en général.
+A l'intérieur du dépôt du nœud Celestia se trouve un utilitaire appelé `cel-key` qui utilise l'utilitaire de clé fourni par le Cosmos-SDK et sa technologie. L'utilitaire peut être pour `add`(ajouter), `delete`(effacer) , et gérer les clés pour tout type de node de Disponilité de la donnée `(bridge || full || light)`, ou juste des clés en général.
 
 ## Installation
 
