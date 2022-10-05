@@ -1,6 +1,6 @@
-- - -
+---
 Full node de Consensus
-- - -
+---
 
 # Configurer un Full Node de Consensus de Celestia
 <!-- markdownlint-disable MD013 -->
