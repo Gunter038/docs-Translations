@@ -1,18 +1,18 @@
 - - -
-sidebar_label : Installing Celestia Node
+celestia node kurulumu
 - - -
 
 # Celestia Node
 
-This tutorial goes over building and installing celestia-node. This tutorial assumes you completed the steps in setting up your development environment [here](./environment.md).
+Bu rehber, celestia-node'u oluşturma ve kurma konusunu ele almaktadır. [Burada](./environment.md) bu eğitim, içinde bulunan şartlarda kurma adımlarını tamamladığınızı varsayar.
 
-## Install Celestia Node
+## Celestia Node Kurulumu
 
-### Arabica Installation
+### Arabica Kurulumu
 
-Installing celestia-node for Arabica Devnet means installing a specific version to be compatible with the network.
+Arabica Devnet için celestia-node kurulumu, ağ ile uyumlu olacak belirli bir sürümün yüklenmesi anlamına gelir.
 
-Install the celestia-node binary by running the following commands:
+Aşağıdaki komutları çalıştırarak celestia node Binary'i yükleyin:
 
 ```sh
 cd $HOME
@@ -23,8 +23,8 @@ git checkout tags/v0.3.1
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Binary'inin çalıştığını doğrulayın ve sürümü `celestia
+version` komutuyla kontrol edin:
 
 ```console
 $ celestia version
@@ -35,11 +35,11 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Mamaki Installation
+### Mamaki kurulumu
 
-Installing celestia-node for Mamaki Testnet means installing a specific version to be compatible with the network.
+Mamaki Testnet için celestia-node kurulumu, ağ ile uyumlu olacak belirli bir sürümün yüklenmesi anlamına gelir.
 
-Install the celestia-node binary by running the following commands:
+Aşağıdaki komutları çalıştırarak celestia düğümü Binary'ileri yükleyin:
 
 ```sh
 cd $HOME
@@ -50,8 +50,8 @@ git checkout tags/v0.3.0-rc2
 make install
 ```
 
-Verify that the binary is working and check the version with the `celestia
-version` command:
+Binary'inin çalıştığını doğrulayın ve sürümü `celestia
+version` komutuyla kontrol edin:
 
 ```console
 $ celestia version
