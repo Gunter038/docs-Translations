@@ -8,58 +8,56 @@ Xem tất cả sự lựa chọn:
 
 ```console
 $ celestia-appd --help
-Start celestia app
+Chạy celestia app
 
-Usage:
-  celestia-appd [command]
+Ứng dụng:
+  celestia-appd [lệnh]
 
-Available Commands:
-  add-genesis-account Add a genesis account to genesis.json
-  collect-gentxs      Collect genesis txs and output a genesis.json file
-  config              Create or query an application CLI configuration file
-  debug               Tool for helping with debugging your application
-  export              Export state to JSON
-  gentx               Generate a genesis tx carrying a self delegation
-  help                Help about any command
-  init                Initialize private validator, p2p, genesis, 
-  and application configuration files
-  keys                Manage your application's keys
-  migrate             Migrate genesis to a specified target version
-  query               Querying subcommands
-  rollback            rollback tendermint state by one height
-  rollback            rollback cosmos-sdk and tendermint state by one height
-  start               Run the full node
-  status              Query remote node for status
-  tendermint          Tendermint subcommands
-  tx                  Transactions subcommands
-  validate-genesis    validates the genesis file at the default 
-  location or at the location passed as an arg
-  version             Print the application binary version information
+Những câu lệnh có sẵn:
+add-genesis-account Thêm tài khoản genesis vào genesis.json
+  collect-gentxs      Thu thập txs genesis và xuất tệp genesis.json
+  config              Tạo hoặc truy vấn tệp cấu hình CLI ứng dụng
+  debug               Công cụ giúp gỡ lỗi ứng dụng của bạn
+  export              Xuất trạng thái sang JSON
+  gentx               Tạo một tx genesis mang tự ủy quyền
+  help                Trợ giúp về bất kỳ lệnh khác
+  init                Khởi tạo tệp cấu hình ứng dụng, p2p, genesis và trình xác thực riêng tư
+  keys                Quản lý khóa ứng dụng của bạn
+  migrate             Di chuyển genesis sang một phiên bản mục tiêu cụ thể
+  query               Truy vấn lệnh con
+  rollback            Trở lại trạng thái tendermint
+ rollback            Trở lại trạng thái tendermint và cosmos-sdk 
+  start               Chạy full node
+  status              Truy vấn nút từ xa để biết trạng thái
+  tendermint        Lệnh con Tendermint
+  tx                         Lệnh con Transactions
+ validate-genesis    Xác thực tệp genesis tại vị trí mặc định hoặc tại vị trí được truyền dưới dạng đối số  
+ version             In thông tin phiên bản nhị phân của ứng dụng
 ```
 
-## Creating a wallet
+## Tạo ví
 
 ```sh
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configures the keyring's backend, where the keys are stored.
+` keyring-backend ` định cấu hình backend của keyring, nơi lưu trữ các khóa.
 
-Options are: `os|file|kwallet|pass|test|memory`.
+Các tùy chọn là: ` os | file | kwallet | pass | test | memory `.
 
-## Key management
+## Quản lý khóa
 
 ```sh
-# listing keys
-celestia-appd keys list
+# liệt kê khóa
+ celestia-appd keys list
 
-# adding keys
+# thêm khóa
 celestia-appd keys add <KEY_NAME>
 
-# deleting keys
+# xóa khóa
 celestia-appd keys delete <KEY_NAME>
 
-# renaming keys
+# đổi tên khóa
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
