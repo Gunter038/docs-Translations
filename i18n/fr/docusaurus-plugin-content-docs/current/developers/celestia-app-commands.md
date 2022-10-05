@@ -138,51 +138,51 @@ Pour voir les options:
 celestia-appd tx bank send --help
 ```
 
-## Governance
+## Gouvernance
 
-You can vote on a governance proposal with the following command:
+Vous pouvez voter lors d'une proposition de gouvernance avec la commande suivante :
 
 ```sh
 celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
 ```
 
-## Claim validator rewards
+## Réclamer les récompenses de validateur
 
-You can claim your validator rewards with the following command:
+Vous pouvez réclamer vos récompenses de validateur avec la commande suivante :
 
 ```sh
 celestia-appd tx distribution withdraw-rewards <validator valoper>\
     --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
 ```
 
-## Delegate & undelegate tokens
+## Déléguer et retirer la délégation de ses jetons
 
-You can `delegate` your tokens to a validator with the following command:
+Vous pouvez `delegate` (déléguer) vos tokens à un validateur avec la commande suivante :
 
 ```sh
 celestia-appd tx staking delegate <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-You can undelegate tokens to a validator with the `unbond` command:
+Vous pouvez dé-déléguer des jetons à un validateur avec la commande `unbond`:
 
 ```sh
 celestia-appd tx staking unbond <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-## Unjailing the validator
+## Emprisonner le validateur
 
-You can unjail your validator with the following command:
+Vous pouvez "unjail" votre validateur avec la commande suivante :
 
 ```sh
 celestia-appd tx slashing unjail --from <validator wallet>\
     --chain-id <chain-id> --gas auto -y
 ```
 
-## How to export logs with SystemD
+## Comment exporter les logs avec SystemD
 
-You can export your logs if you are running a SystemD service with the following command:
+Vous pouvez exporter vos logs si vous exécutez un service SystemD avec la commande suivante :
 
 ```sh
 sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
