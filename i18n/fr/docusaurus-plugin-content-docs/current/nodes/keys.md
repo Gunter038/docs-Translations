@@ -1,5 +1,5 @@
 ---
-Clés
+sidebar_label : Keys
 ---
 
 # Utilisation de l'utilitaire Cel-Key
