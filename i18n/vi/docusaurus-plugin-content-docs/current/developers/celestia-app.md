@@ -50,4 +50,18 @@ Những câu lệnh có sẵn:
   migrate             Di chuyển genesis sang một phiên bản mục tiêu cụ thể
   query               Truy vấn lệnh con
   rollback            Trở lại trạng thái tendermint
+ rollback            Trở lại trạng thái tendermint và cosmos-sdk 
+  start               Chạy full node
+  status              Truy vấn nút từ xa để biết trạng thái
+  tendermint        Lệnh con Tendermint
+  tx                         Lệnh con Transactions
+  validate-genesis    Xác thực tệp genesis tại vị trí mặc định hoặc tại vị trí được truyền dưới dạng đối số  version             In thông tin phiên bản nhị phân của ứng dụng
+Cờ:
+  -h, --help                Giúp đỡ cho celestia-appd
+      --home string         Thư mục cho cấu hình và dữ liệu (mặc định "/root/.celestia-app")
+      --log_format string   Định dạng ghi nhật ký(json|plain) (mặc định "plain")
+      --log_level string    Mức độ ghi nhật ký(trace|debug|info|warn|error|fatal|panic) (mặc định "info")
+      --trace               In ra dấu vết ngăn xếp đầy đủ về lỗi
+
+Sử dụng "celestia-appd [command] --help" để biết thêm thông tin về lệnh.
 ```
