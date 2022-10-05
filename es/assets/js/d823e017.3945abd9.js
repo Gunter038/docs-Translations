@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcelestia_docs=self.webpackChunkcelestia_docs||[]).push([[4824],{7357:function(e){e.exports=JSON.parse('{"title":"Wordle","slug":"/category/wordle","permalink":"/es/category/wordle","navigation":{"previous":{"title":"Optimint","permalink":"/es/developers/optimint"},"next":{"title":"Resumen de Wordle","permalink":"/es/developers/wordle"}}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcelestia_docs=self.webpackChunkcelestia_docs||[]).push([[8375],{5114:function(e){e.exports=JSON.parse('{"title":"Recursos","slug":"/category/resources","permalink":"/es/category/resources","navigation":{"previous":{"title":"mamaki-testnet","permalink":"/es/nodes/mamaki-testnet"},"next":{"title":"systemd","permalink":"/es/nodes/systemd"}}}')}}]);
