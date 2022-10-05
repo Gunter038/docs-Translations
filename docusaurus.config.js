@@ -39,7 +39,7 @@ const config = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','fr','zh']
+    locales: ['en','fr','zh','es','uk']
   },
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
