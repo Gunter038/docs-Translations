@@ -1,51 +1,60 @@
 ---
-sidebar_label : Run The Wordle Chain
+sidebar_label: 运行 Wordle 链
 ---
 
-# Run the Wordle Chain
+# 运行 Wordle 链
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## 构建和运行 Wordle 链
 
-In one terminal window, run the following command:
-
-```sh
-ignite chain build 
-```
-
-This will compile the blockchain code you just wrote.
-It will also compile a daemon binary we can use to
-interact with the blockchain. This binary will have
-the name `wordled`
-
-When the compilation finishes, it's time to start `wordled`. You
-can start the chain with optimint configurations by running the following:
+在一个终端窗口中，运行以下命令：
 
 ```sh
-wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000,"namespace_id":[0,0,0,0,0,0,255,255]}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height 21380
+ignite chain serve 
 ```
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address
-  to the `base_url` that has an account with Mamaki testnet tokens. Follow
-  the tutorial for setting up a Celestia Light Node and creating a wallet
-  with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
-
-In another window, run the following to submit a Wordle:
+这将编译您刚刚编写的区块链代码，并创建一个创世文件和一些帐户供您使用。 一旦日志在输出中显示类似于以下日志的内容：
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+root@yaz-workshop:~/wordle# ignite chain serve
+Cosmos SDK's version is: stargate - v0.45.5
+
+🛠️  Building proto...
+📦 Installing dependencies...
+🛠️  Building the blockchain...
+💿 Initializing the app...
+🙂 Created account "alice" with address "cosmos1skalxj42asjhc7dde3lzzawnksnztqmgy6sned" with mnemonic: "exact arrive betray hawk trim surround exhibit host vibrant sting range robot luxury vague manage settle slide town bread adult pact scene journey elite"
+🙂 Created account "bob" with address "cosmos1xe3l8z634frp0ry6qlmzs5vr85x6gcty7tmf0n" with mnemonic: "wisdom jelly fine boat series time panel real world purchase age area coach eager spot fiber slide apology near endorse flight panel ready torch"
+🌍 Tendermint node: http://0.0.0.0:26657
+🌍 Blockchain API: http://0.0.0.0:1317
+🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding
-  any timeout errors. With Optimint as a replacement to Tendermint, we
-  need to wait for Celestia's Data-Availability network to ensure a block
-  was included from Wordle, before proceeding to the next block. Currently,
-  in Optimint, the single aggregator is not moving forward with the next block
-  production as long as it is trying to submit the current block to the DA network.
-  In the future, with leader selection, block production and sync logic improves
-  dramatically.
+此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 原因是我们将单独运行 `worded` 双进制标记添加了 Optimint 标记。
 
-This will ask you to confirm the transaction with the following message:
+您可以通过运行以下步骤优化配置启动区块链
+
+```sh
+wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+```
+
+请考虑以下方面：
+
+> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传输给拥有Arabica开发网代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
+
+还需要注意：
+
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
+
+在另一个窗口中，运行以下指令来submit a Wordle：
+
+```sh
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
+```
+
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
+
+这将要求你确认交易，并发出以下信息。
 
 ```json
 {
@@ -80,15 +89,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Cosmos-SDK将要求您在此确认交易：
 
 ```sh
 confirm transaction before signing and broadcasting [y/N]:
 ```
 
-Confirm with a Y.
+输入 Y 进行确认。
 
-You will then get a response with a transaction hash as shown here:
+然后你会得到一个带有交易哈希值的信息，如图所示：
 
 ```sh
 code: 19
@@ -106,89 +115,97 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet.
-Let's query the transaction hash to check whether it has been included in
-the block yet or if there are any errors.
+注意，这并不意味着该交易包含在此区块中。 我们可以查询交易哈希值，以检查它是否已被包含在区块中或者是否有任何错误。
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+应该显示如下信息：
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Test out a few things for fun:
+可以做些测试当做娱乐：
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash`
-given the same way you did above. You will see the response shows
-an Invalid Error because you submitted integers.
+在确认交易后，采用上面同样的方法查询 `txhash`。 因为你提交的是整数，你会看到显示无效的错误信息。
 
-Now try:
+现在试着输入以下：
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same
-way you did above. You will see the response shows
-an Invalid Error because you submitted a word larger than 5 characters.
+在确认交易后，采用上面同样的方法查询 `txhash`。 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-Now try to submit another wordle even though one was already submitted
+现在尝试提交另一个Wordle，即使已有一个Wordle已经提交
 
 ```sh
-wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
 ```
 
-After submitting the transactions and confirming, query the `txhash`
-given the same way you did above. You will get an error that a wordle
-has already been submitted for the day.
+在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 您将会收到一个错误显示一个wordle已经在当天提交。
 
-Now let’s try to guess a five letter word:
+现在让我们来猜一个五个字母的单词：
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash`
-given the same way you did above. Given you didn’t guess the correct
-word, it will increment the guess count for Bob’s account.
+在提交交易并确认后，用此前相同的方式查询已提供的 `txhash` 。 After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
 
-We can verify this by querying the list:
+我们可以通过查询列表来验证：
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index
-being today’s date and the address of the submitter.
+这将输出到目前为止提交的所有猜测对象，索引 为今天的日期和提交者的地址。
 
-With that, we implemented a basic example of Wordle using
-Cosmos-SDK and Ignite and Optimint. Read on to how you can
-extend the code base.
+我们用 COSMOS-SDK、Ignite 和 Optimint 执行了一个基本的Wordle示例。 阅读如何扩展 代码基础。
 
-## Extending in the Future
+## 未来的扩展
 
-You can extend the codebase and improve this tutorial by checking
-out the repository [here](https://github.com/celestiaorg/wordle).
+您可以通过检查 这里 <a> 的repository来扩展代码库并改进此教程。</p> 
 
-There are many ways this codebase can be extended:
+<p spaces-before="0">
+  这个代码库可以通过多种方式扩展：
+</p>
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain,
-  ensuring the hashing is local so that it’s not revealed via
-  front-running by others monitoring the plaintext string when
-  it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for
-  Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source
-    repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+<ol start="1">
+  <li>
+    你可以改进周围的消息，当你猜到正确的单词时。
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      你可以将单词提交到链上之前对其进行哈希处理， 确保散列函数是本地的，当它是在链上提交的时候，就不会通过 其他人在监控明文字符串时抢先运行 。
+    </p>
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      您可以在终端中使用一个不错的 Wordle 界面来改进用户界面。 <a href="https://github.com/nimblebun/wordle-cli">这里</a>是一些示例。
+    </p>
+  </li>
+  
+  <li>
+    <p spaces-before="0">
+      您可以改进当前日期以保持特定时区。
+    </p>
+  </li>
+  
+  <li>
+    您可以创建一个bot，每天在特定时间提交Wordle。
+  </li>
+  
+  <li>
+    你可以通过Ignite使用示例开源储存库 repositories <a href="https://github.com/yyx990803/vue-wordle">here</a> and <a href="https://github.com/xudafeng/wordle">here</a> 创建一个 vue.js 前端
+  </li>
+</ol>

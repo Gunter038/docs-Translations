@@ -1,20 +1,18 @@
----
-sidebar_label : Node Video Tutorial
----
+- - -
+sidebar_label : 节点视频教程
+- - -
 
-# Node Video Tutorial
+# 节点视频教程
 <!-- markdownlint-disable MD033 -->
 
-This video will guide you through setting up a Celestia Light Node,
-which can allow you to do data-sampling on the Data Availability (DA)
-network.
+这个视频将指导您建立一个Celestia轻节点，可以让您在数据可用性（DA）网络上进行数据取样。
 
 <div class="youtube-wrapper">
   <iframe
      class="youtube-video"
-     title="Running a Celestia Light Node"
+     title="运行一个Celestia轻节点"
      src="https://www.youtube.com/embed/9uL3jZe4mTY"
      allowfullscreen
-  >
+>
   </iframe>
 </div>

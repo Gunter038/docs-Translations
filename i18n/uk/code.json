@@ -1,0 +1,294 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "Сторінка не завантажилася через помилку.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Повторіть спробу",
+    "description": "The label of the button to try again when the page crashed"
+  },
+  "theme.NotFound.title": {
+    "message": "Сторінку не знайдено",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "Ми не змогли знайти те, що ви шукали.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Будь ласка, зв’яжіться з власником сайту, який дав Вам URL-адресу, і повідомте, що посилання не працює.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "До початку",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрити",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.archive.title": {
+    "message": "Архівувати",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Архівувати",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Навігація сторінками блогу",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Новіші записи",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Старіші записи",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Прочитати за одну хвилину|{readingTime} одна хвилина читання",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Прочитати більше про {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Читати більше",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Навігація між дописами в блозі",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Новіший допис",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Старіший допис",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Навігація останніми дописами блогу",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Один допис|{count} дописи|{count} дописів",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} містять тег \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Переглянути всі теги",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Копіювати код до буфера обміну",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопійовано",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Копіювати",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Перемикання між темним та світлим режимами (поточний: {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "темний режим",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "світлий режим",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} елементів",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Розгорнути бічну панель",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Розгорнути бічну панель",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Навігація сторінками документації",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Попередній",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Далі",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Згорнути бічну панель",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Згорнути бічну панель",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "Перемкнути стан бічної панелі, «{label}»",
+    "description": "The ARIA label to toggle the collapsible sidebar category"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Один документ із тегами|{count} документів із тегами",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} містять тег \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Версія: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Це неопублікована документація для версії {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Ця документація стосується{siteTitle}{versionLabel}, що вже не підтримується активністю.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Щоб переглянути найновішу документацію, див. {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "остання версія",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Редагувати цю сторінку",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Пряме посилання на заголовок",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " користувачем {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Востаннє оновлено{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← До головного меню",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Версії",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Перейти до основного змісту",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "На цій сторінці",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Теги:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Мови",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Теги",
+    "description": "The title of the tag list page"
+  },
+  "Build Modular": {
+    "message": "Створення модульної системи"
+  },
+  "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
+    "message": "Celestia - це перша модульна блокчейн-мережа, яка дає змогу розробникам розгорнути власний блокчейн так само легко, як і новий смартконтракт."
+  },
+  "Run Different Nodes": {
+    "message": "Запустити різні ноди"
+  },
+  "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
+    "message": "Celestia дозволяє запускати ноду валідатора, ноду мосту або легкий клієнт, щоб підтримувати мережу."
+  },
+  "Power-up with Data Availability Layer": {
+    "message": "Увімкнення за допомогою рівня доступності даних"
+  },
+  "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
+    "message": "Celestia запроваджує те, що називається \"Рівень доступності даних\", для забезпечення ефективного масштабування та використання ролапів другого рівня та дозволяє проводити вибірку даних для транзакцій."
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Домашня сторінка",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Навігаційні ланцюжки",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Увімкнути переніс слів",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "Переглянути всі {count} результатів"
+  },
+  "theme.SearchBar.label": {
+    "message": "Пошук",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "Знайдено один документ|Знайдено {count} документи|Знайдено {count} документів|Знайдено {count} документа",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Результати пошуку для \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Пошук документації",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Введіть тут ваш пошуковий запит",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Пошук",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Пошук за допомогою Algolia",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "Нічого не знайдено",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Отримання нових результатів...",
+    "description": "The paragraph for fetching new search results"
+  }
+}

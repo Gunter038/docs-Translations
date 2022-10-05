@@ -1,10 +1,9 @@
----
-sidebar_label : Community Calendar
----
+- - -
+sidebar_label : Calendrier communautaire
+- - -
 
-# Community Calendar
+# Calendrier Communautaire
 
-The Celestia Community Calendar is available for finding all the different
-community call events happening in Celestia's community.
+Le calendrier de la communauté de Celestia est disponible pour trouver tous les événements d'appels communautaires qui se déroulent dans la communauté de Celestia.
 
-You can add the Community Calendar to your personal calendar [here](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+Vous pouvez ajouter le Calendrier Communautaire à votre calendrier personnel [ici](https://calendar.google.com/calendar/u/0?cid=Y19za2JzbjIzNWszYmlzdHNoZ3RvNmw5ODYyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).

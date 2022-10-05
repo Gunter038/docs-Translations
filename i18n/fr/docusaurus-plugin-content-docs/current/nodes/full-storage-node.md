@@ -1,93 +1,92 @@
----
+- - -
 sidebar_label : Full Storage Node
----
+- - -
 
-# Setting up a Celestia Full Storage Node
+# Configuration d'un Full Storage Node Celestia
 
-This tutorial will guide you through setting up a Celestia Full Storage
-Node, which is a Celestia node that doesn't connect to Celestia App
-(hence not a full node) but stores all the data.
+Ce tutoriel vous guidera à travers la mise en place d'un Full Storage Node Celestia, qui est un node Celestia qui ne se connecte pas à Celestia App (donc pas un full node) mais stocke toutes les données.
 
-## Hardware requirements
+## Hardware Requis
 
-The following hardware minimum requirements are recommended for running
-the full storage node:
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le full storage node :
 
-* Memory: 8 GB RAM
+* Mémoire: 8 Go de RAM
 * CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Disque: 250 Go de stockage SSD
+* Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting up your full storage node
+## Configuration de votre Full Storage Node
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
-You can follow the tutorial for setting up your dependencies [here](../developers/environment.md)
+Vous pouvez suivre le tutoriel pour configurer les dépendances [ici](../developers/environment.md)
 
-## Install Celestia node
+## Installer Celestia node
 
-> Note: Make sure that you have at least 250+ Gb of free space for
-  Celestia Full Storage Node
+> Remarque : Assurez-vous que vous disposez d'au moins 250 Go d'espace libre pour un Full Storage Node Celestia
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Vous pouvez suivre le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md)
 
-### Run the full storage node
+### Démarrer le Full Storage Node
 
-#### Initialize the full storage node
+#### Initialiser le Full Storage Node
 
-Run the following command:
+Exécutez la commande suivante :
 
 ```sh
 celestia full init
 ```
 
-#### Start the full storage node
+#### Démarrer le Full Storage Node
 
-Start the Full Storage Node with a connection to a validator node's gRPC endpoint
-(which is usually exposed on port 9090):
+Démarrez le Full storage node avec une connexion au point de terminaison gRPC d'un validator node (qui est généralement exposé sur le port 9090):
 
-> NOTE: In order for access to the ability to get/submit state-related
-  information, such as the ability to submit PayForData transactions,
-  or query for the node's account balance, a gRPC endpoint of a validator
-  (core) node must be passed as directed below.
+> REMARQUE : Pour avoir accès à la possibilité d'obtenir/soumettre des informations, telles que la possibilité de soumettre des transactions PayForData, ou interroger le solde du compte du Node, un point de terminaison gRPC d'un validateur (core) doit être transmis comme indiqué ci-dessous.
 
+Une note sur les ports :
+
+> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip addr of core node>:9090
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port>
 ```
+<!-- markdownlint-enable MD013 -->
 
-If you would like to find example RPC endpoints, check out the list of
-resources [here](./mamaki-testnet.md#rpc-endpoints).
+Si vous souhaitez trouver des exemples de points de terminaison RPC, consultez la liste des ressources [ici](./mamaki-testnet.md#rpc-endpoints).
 
-You can create your key for your node by following the `cel-key` instructions [here](./keys.md)
+Vous pouvez créer votre clé pour votre node en suivant les instructions `cel-key` [ici](./keys.md)
 
-Once you start the Full Node, a wallet key will be generated for you.
-You will need to fund that address with Mamaki Testnet tokens to pay for
-PayForData transactions.
-You can find the address by running the following command:
+Une fois que vous démarrez le Node, une clé de wallet sera générée pour vous. Vous aurez besoin de financer cette adresse avec les jetons du Testnet Mamaki pour payer des transactions PayForData. Vous pouvez trouver l'adresse en exécutant la commande suivante:
 
 ```sh
 ./cel-key list --node.type full --keyring-backend test
 ```
 
-Mamaki Testnet tokens can be requested [here](./mamaki-testnet.md#mamaki-testnet-faucet).
+Vous avez le choix entre deux réseaux pour obtenir des jetons de testnet :
 
-### Optional: run the full storage node with a custom key
+* [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
+* [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-In order to run a full storage node using a custom key:
+> NOTE : Si vous souhaitez lancer un full-storage node pour votre rollup souverain, il est hautement recommandé de demander des jetons du devnet Arabica car c'est le devnet qui reçoit les dernières mises à jour utiles au développement de votre rollup souverain. Vous pouvez également utiliser le testnet Mamaki, bien qu'il soit davantage conçu pour les opérations de Validateurs.
 
-1. The custom key must exist inside the celestia full storage node directory
-   at the correct path (default: `~/.celestia-full/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+### Facultatif : Exécuter le Full Storage Node avec une clé personnalisée
 
+Afin d'exécuter un Full Storage Node en utilisant une clé personnalisée :
+
+1. La clé personnalisée doit exister dans le répertoire du Full Storage Node Celestia au bon chemin (default: `~/.celestia-full/keys/keyring-test`)
+2. Le nom de la clé personnalisée doit être transmis lors de `start`, comme ceci:
+
+<!-- markdownlint-disable MD013 -->
 ```sh
-celestia full start --core.grpc http://<ip>:9090 --keyring.accname <name_of_custom_key>
+celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyring.accname <name-of-custom-key>
 ```
+<!-- markdownlint-enable MD013 -->
 
-### Optional: start the full storage node with SystemD
+### Facultatif : Démarrez le Full Storage Node avec SystemD
 
-Follow the tutorial on setting up the full storage node as a background
-process with SystemD [here](./systemd.md#celestia-full-storage-node).
+Suivez le tutoriel sur la configuration du full storage node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-full-storage-node).
 
-With that, you are now running a Celestia Full Storage Node.
+Avec cela, vous exécutez maintenant Full Storage Node Celestia.

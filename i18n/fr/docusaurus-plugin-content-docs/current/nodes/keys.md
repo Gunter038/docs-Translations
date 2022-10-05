@@ -1,79 +1,75 @@
----
-sidebar_label : Keys
----
+- - -
+Clés
+- - -
 
-# Using the cel-key utility
+# Utilisation de l'utilitaire Cel-Key
 
-Inside the celestia-node repository is a utility called `cel-key` that uses
-the key utility provided by Cosmos-SDK under the hood. The utility can be
-used to `add`, `delete`, and manage keys for any DA node
-type `(bridge || full || light)`, or just keys in general.
+À l'intérieur du dépôt celestia-node se trouve un utilitaire appelé `cel-key` qui utilise l'utilitaire clé fourni par le Cosmos-SDK sous le capot. L'utilitaire peut être pour `add`(ajouter), `delete`(effacer) , et gérer les clés pour tout type de node de Disponilité de la donnée `(bridge || full || light)`, ou juste des clés en général.
 
 ## Installation
 
-You need to first pull down the `celestia-node` repository:
+Vous devez d'abord "pull down" le dépôt `celestia-node`:
 
 ```sh
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
 ```
 
-It can be built using either of the following commands:
+Il peut être construit en utilisant l'une des commandes suivantes :
 
 ```sh
 # dumps binary in current working directory, accessible via `./cel-key`
 make cel-key
 ```
 
-or
+ou
 
 ```sh
 # installs binary in GOBIN path, accessible via `cel-key`
 make install-key
 ```
 
-For the purpose of this guide, we will use the `make cel-key` command.
+Dans le cadre de ce guide, nous utiliserons la commande `make cel-key`.
 
-## Steps for generating **bridge** node keys
+## Étapes pour générer une clé de **bridge** node
 
-To generate a key for a Celestia bridge node, do the following:
+Pour générer une clé pour un bridge node, procédez comme ce qui suit :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type bridge
 ```
 
-This will load the key <key_name> into the directory of the bridge node.
+Cela chargera la clé <key_name> dans le répertoire du Bridge node.
 
-## Steps for generating **full** node keys
+## Étapes pour générer une clé de **full** node
 
-To generate a key for a Celestia full node, do the following:
+Pour générer une clé pour un full node Celestia, procédez comme suit :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type full
 ```
 
-This will load the key <key_name> into the directory of the full node.
+Cela chargera la clé <key_name> dans le répertoire du full node.
 
-## Steps for generating **light** node keys
+## Étapes pour générer une clé de **light** node
 
-To generate a key for a Celestia light node, do the following:
+Pour générer une clé pour un light node Celestia, procédez comme suit :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-This will load the key <key_name> into the directory of the light node.
+Cela chargera la clé <key_name> dans le répertoire du light node.
 
-## Steps for exporting **light** node keys
+## Étapes pour générer des clés de **light** node
 
-You can export a private key from the local keyring in encrypted and
- ASCII-armored format.
+Vous pouvez exporter une clé privée à partir du trousseau local au format crypté et ASCII-armored.
 
 ```sh
 ./cel-key export <key-name> --keyring-backend test --node.type light
 ```
 
-You can then import your key with `celestia-appd`:
+Vous pouvez ensuite importer votre clé avec `celestia-appd`:
 
 ```sh
 celestia-appd keys import <new-key-name> <key-file-location>

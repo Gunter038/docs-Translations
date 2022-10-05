@@ -1,14 +1,13 @@
 ---
-sidebar_label : Contract Deployment
+sidebar_label: 合约部署
 ---
 
-# Contract Deployment on CosmWasm with Optimint
+# 使用 Optimint 在 CosmWasm 上部署合约
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## 编译智能合约
 
-We will run the following commands to pull down the Nameservice
-smart contract and compile it:
+我们将运行以下命令来拉取 Nameservice 智能合约并进行编译：
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -17,47 +16,41 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to:
-`target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+编译后的合约输出到：`target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## 部署测试
 
-If we want to run tests, we can do so with the following command:
+如果我们想运行测试，我们可以使用以下命令：
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## 优化智能合约
 
-Because we are deploying the compiled smart contract to `wasmd`,
-we want it to be as small as possible.
+因为我们正在将编译后的智能合约部署到 `wasmd `，所以我们希望它的空间尽可能的小。
 
-CosmWasm team provides a tool called `rust-optimizer` which we need
-Docker for in order to compile.
+CosmWasm 团队提供了一个工具 `rust-optimizer` ，我们需要 Docker 来编译它。
 
-Run the following command:
+运行以下命令：
 
 ```sh
-docker run --rm -v "$(pwd)":/code \
+sudo docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+这会将优化的 Wasm 字节码放置在`artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## 部署合约
 
-Let's now deploy our smart contract!
+现在让我们部署我们的智能合约！
 
-Run the following:
+运行以下命令：
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given
-we are using Optimint, there will be a delay on the transaction being included
-due to Optimint waiting on Celestia's Data Availability Layer to confirm the block
-has been included before submitting a new block.
+这将为您提供智能合约部署的交易哈希。 鉴于我们使用的是 Optimint，由于 Optimint 在 Celestia 的数据可用性层上等待确认该块已被包含，然后再提交一个新块，因此包含交易将会有延迟。

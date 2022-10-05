@@ -1,41 +1,36 @@
 ---
-sidebar_label : Messages
+sidebar_label: Messages
 ---
 
 # Messages
 
-Messages allow us to process and submit information to our specific module.
+Les messages nous permettent de traiter et soumettre de l'information à notre module spécifique.
 
-From the Cosmos-SDK docs, [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages)
-are:
+Selon la définition fournie par le Cosmos-SDK, les [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages) sont :
 
-> In the Cosmos SDK, messages are objects that are contained
-  in transactions to trigger state transitions. Each Cosmos SDK
-  module defines a list of messages and how to handle them.
+> Dans le Cosmos-SDK, les messages sont des objects qui sont contenus dans des transactions pour déclencher des transitions d'état. Chaque module du Cosmos-SDK définit une liste de messages et comment les traiter.
 
-For messages for Wordle, given our initial design, we will
-make 2 messages with ignite.
+Pour des messages pour Wordle, et étant donné notre concept initial, nous ferons 2 messages avec ignite.
 
-* The first one is: `SubmitWordle` and it only passes the Wordle of the Day.
-* The second one is: `SubmitGuess` and it attempts to guess the submitted
-  wordle. It also passes a word as a guess.
+* Le premier est : `SubmitWordle` et il ne génère que le Wordle du jour.
+* Le second est : `SubmitGuess` et il tente de deviner le wordle soumis. Ce message transmet également une proposition de mot.
 
-With these initial designs, we can start creating our messages!
+Avec ces concepts initiaux, nous pouvons commencer à créer nos messages !
 
-## Scaffolding A Message
+## Échafauder un message
 
-To create the `SubmitWordle` message, we run the following command:
+Pour créer le message `SubmitWordle`, nous exécutons la commande suivante :
 
 ```sh
 ignite scaffold message submit-wordle word
 ```
 
-This creates the `submit-wordle` message that takes in `word` as a parameter.
+Cela crée le message `submit-wordle` qui prend `word` en tant que paramètre.
 
-We now create the final message, `SubmitGuess`:
+Nous créons maintenant le message final, `SubmitGuess` :
 
 ```sh
 ignite scaffold message submit-guess word
 ```
 
-Here, we are passing a word as a guess with `submit-guess`.
+Ici nous soumettons un mot avec `submit-guess`.

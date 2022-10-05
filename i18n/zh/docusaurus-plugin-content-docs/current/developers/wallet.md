@@ -1,48 +1,40 @@
----
-sidebar_label : Creating A Wallet
----
+- - -
+sidebar_label : 创建钱包
+- - -
 
-# Wallet
+# 钱包
 
-## Create a Wallet
+## 创建钱包
 
-First, create an application CLI configuration file:
+首先，创建一个应用程序 CLI 配置文件：
 
- ```sh
- celestia-appd config keyring-backend test
- ```
+```sh
+celestia-appd config keyring-backend test
+```
 
-You can pick whatever wallet name you want.
-For our example we used "validator" as the wallet name:
+你可以选择任何你想要的钱包名称。 对于我们的示例，我们使用“validator”作为钱包名称：
 
 ```sh
 celestia-appd keys add validator
 ```
 
-Save the mnemonic output as this is the only way to
-recover your validator wallet in case you lose it!
+保存好助记词，因为这是找回钱包的唯一方法，以防丢失！
 
-To check all your wallets you can run:
+要检查你所有的钱包，你可以运行：
 
 ```sh
 celestia-appd keys list
 ```
 
-## Fund a Wallet
+## 给钱包充值
 
-For the public celestia address, you can fund the
-previously created wallet via Discord by sending
-this message to #faucet channel:
+查询Celestia公共地址，可以通过发送以下信息至 [Discord](https://discord.gg/celestiacommunity)上的#arabica-faucet频道获取之前创建的钱包地址
 
 ```text
 $request celestia1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Wait to see if you get a confirmation that the
-tokens have been successfully sent. To check if
-tokens have arrived successfully to the destination
-wallet run the command below replacing the public
-address with your own:
+请等待确认代币已成功发送的消息。 可以通过运行以下替换了自己钱包地址的命令查看代币是否成功发送到目的钱包：
 
 ```sh
 celestia-appd start

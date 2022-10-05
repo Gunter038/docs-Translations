@@ -1,36 +1,34 @@
 ---
-sidebar_label : CosmWasm Dependencies
+sidebar_label: CosmWasm 依赖项
 ---
 
-# CosmWasm Dependency Installations
+# CosmWasm 依赖项安装
 
-## Environment Setup
+## 环境配置
 
-For this tutorial, we will be using `curl` and `jq` as helpful
-tools.
+对于本教程，我们将使用 `curl` 和 `jq` 作为有用的工具。
 
-You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
+您可以按照[这里](./environment.md#setting-up-dependencies)的安装指南进行操作。
 
-## Golang Dependency
+## Golang 依赖
 
-The Golang version used for this tutorial is v1.18+
+本教程使用的 Golang 版本是 v1.18+
 
-If you are using a Linux distribution, you can install Golang
-by following our tutorial [here](./environment.md#install-golang).
+如果您使用的是 Linux 发行版，则可以按照[这里](./environment.md#install-golang)的教程安装 Golang 。
 
-## Rust Installation
+## Rust 安装
 
 ### Rustup
 
-First, before installing Rust, you would need to install `rustup`.
+首先，在安装Rust之前，您需要安装 `rustup`。
 
-On Mac/Linux systems, here are the commands for installing it:
+在 Mac/Linux 系统上，以下是安装它的命令：
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-After installation, follow the commands here to setup Rust.
+安装完成后，按此命令来设置 Rust。
 
 ```sh
 rustup default stable
@@ -40,29 +38,26 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Docker Installation
+## Docker 安装
 
-We will be using Docker later in this tutorial for compiling a smart contract
-to use a small footprint.
+我们将在本教程后面使用 Docker 来编译智能合约以使用较小的内存。
 
-We recommend installing Docker on your machine.
+我们建议在您的机器上安装 Docker。
 
-Examples on how to install it on Linux are found [here](https://docs.docker.com/engine/install/ubuntu/).
+有关如何在 Linux 上安装它的示例，请参见[此处](https://docs.docker.com/engine/install/ubuntu/)。
 
-Find the right instructions specific for your OS.
+找到您操作系统的正确说明。
 
-## wasmd Installation
+## wasmd 安装
 
-Here, we are going to pull down the `wasmd` repository and replace Tendermint
-with Optimint. Optimint is a drop-in replacement for Tendermint that allows
-Cosmos-SDK applications to connect to Celestia's Data Availability network.
+在这里，我们将会打开 `wasmd` 存储库并将 Tendermint 替换为 Optimint 。 它允许 Cosmos-SDK 应用程序连接到 Celestia 的数据可用性网络。
 
 ```sh
 git clone https://github.com/CosmWasm/wasmd.git
 cd wasmd
 git fetch --tags
 git checkout v0.27.0
-go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk@v0.45.4-optimint-v0.3.4
+go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk@v0.45.4-optimint-v0.3.5
 go mod tidy 
 go mod download
 make install

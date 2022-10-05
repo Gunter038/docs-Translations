@@ -1,16 +1,14 @@
 ---
-sidebar_label : Setup Network Environment
+sidebar_label: Configurer l'Environnement du Réseau
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
-<!-- markdownlint-disable MD013 -->
+# Configurer votre environnement pour CosmWasm sur Celestia
 
-Now the `wasmd` binary is built, we need to setup a local network
-that communicates between `wasmd` and Optimint.
+Maintenant que le fichier binaire `wasmd` est créé, nous avons besoin de configurer un réseau local qui communiquerait entre `wasmd` et Optimint.
 
-## Building the Wasmd Network
+## Construire le réseau Wasmd
 
-Run the following command:
+Exécuter la commande suivante :
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -18,19 +16,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+Cela initialise une chaine appelée `celeswasm` avec le fichier binaire `wasmd`.
 
-The following command helps us setup accounts for genesis:
+La commande suivante nous aide à configurer des comptes pour genesis :
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated
-for later reference if needed.
+Assurez-vous de stocker le produit du portefeuille généré pour un usage ultérieur si besoin.
 
-Now, let's add a genesis account and use it to update our genesis file:
+Maintenant, ajoutons un compte genesis et utilisons-le pour mettre à jour notre fichier genesis:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -39,26 +36,33 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-With that, we created a local network genesis file.
+Grâce à cela, nous avons créé un fichier genesis sur le réseau local.
 
-Some more useful commands we can setup:
+D'autres commandes encore plus utiles que nous pouvons configurer :
 
+<!-- markdownlint-disable MD013 -->
 ```sh
 export NODE="--chain-id ${CHAIN_ID}"
 export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
 ```
+<!-- markdownlint-enable MD013 -->
 
-## Starting the Wasmd Network
+## Lancer le réseau Wasmd
 
-We can run the following to start the `wasmd` network:
+Nous pouvons exécuter la commande suivante pour lancer le réseau `wasmd` :
 
+<!-- markdownlint-disable MD013 -->
 ```sh
-wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000,"namespace_id":[0,0,0,0,0,0,255,255]}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height 21380
+wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
 ```
+<!-- markdownlint-enable MD013 -->
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address
-  to the `base_url` that has an account with Mamaki testnet tokens. Follow
-  the tutorial for setting up a Celestia Light Node and creating a wallet
-  with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+Remarques:
 
-With that, we have kickstarted our `wasmd` network!
+> NOTE : Dans la commande du dessus, vous avez besoin de fournir une adresse IP d'un nœud Celestia possédant des Arabica Devnet Tokens à la `base_url`. Suivre le tutoriel pour configurer un Light Node Celestia et créer un portefeuille avec les tokens faucet de testnet dans la section nœud de Celestia [ici](./node-tutorial.md).
+
+Remarques complémentaires :
+
+> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Aussi, pour le drapeau `--optimint.namespace_id`, vous pouvez générer un identifiant d'espace de nom (namespace ID) aléatoire en utilisant l'environnement de test [ici](https://go.dev/play/p/7ltvaj8lhRl)
+
+Grâce à cet article, nous avons démarré notre réseau `wasmd` !

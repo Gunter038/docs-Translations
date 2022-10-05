@@ -1,28 +1,23 @@
 ---
-sidebar_label : Types
+sidebar_label: Types
 ---
 
-# Wordle Types
+# Types de Wordle
 
-For the next steps, we will be creating types to be used by
-the messages we created.
+Dans les prochaines étapes, nous allons créer des types qui seront utilisés par les messages que nous avons créés.
 
-## Scaffoling Wordle Types
+## Types de Scaffoling Wordle
 
 ```sh
 ignite scaffold map wordle word submitter --no-message
 ```
 
-This type is a map called `Wordle` with two values of
-`word` and `submitter`. `submitter` is the address of the
-person that submitted the Wordle.
+Ce type est une carte appelée `Wordle` avec deux valeurs appelées `mot` et `déposant`. `submitter` est l'adresse de la personne qui a soumis le mot.
 
-The second type is the `Guess` type. It allows us to store
-the latest guess for each address that submitted a solution.
+Le second type est le type `Guess`. Il nous permet de stocker la dernière estimation pour chaque adresse qui a soumis une solution.
 
 ```sh
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Here, we are also storing `count` to count how many guesses
-this address submitted.
+Ici, nous allons également stocker `count` pour compter combien de guess cette adresse a soumis.

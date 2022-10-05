@@ -1,14 +1,13 @@
 ---
-sidebar_label : Contract Deployment
+sidebar_label: Déploiement de contrat
 ---
 
-# Contract Deployment on CosmWasm with Optimint
+# Déploiement de contrat sur CosmWasm avec Optimint
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## Compiler le Contrat Intelligent
 
-We will run the following commands to pull down the Nameservice
-smart contract and compile it:
+Nous allons exécuter les commandes suivantes pour retirer le contrat intelligent Nameservice et le compiler :
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -17,29 +16,26 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to:
-`target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Le contrat compilé est affiché à: `cible/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Tests unitaires
 
-If we want to run tests, we can do so with the following command:
+Si nous voulons exécuter des essais, nous pouvons le faire par la commande suivante :
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Contrat Intelligent Optimisé
 
-Because we are deploying the compiled smart contract to `wasmd`,
-we want it to be as small as possible.
+Parce que nous déployons le contrat intelligent compilé sur `wasmd`, nous voulons qu'il soit aussi petit que possible.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need
-Docker for in order to compile.
+L'équipe CosmWasm fournit un outil appelé `rust-optimizer` qui a besoin de Docker pour pouvoir compiler.
 
-Run the following command:
+Exécuter la commande suivante :
 
 ```sh
-docker run --rm -v "$(pwd)":/code \
+sudo docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
   cosmwasm/rust-optimizer:0.12.6
@@ -47,17 +43,14 @@ docker run --rm -v "$(pwd)":/code \
 
 This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## Déploiement du Contrat
 
-Let's now deploy our smart contract!
+Déployons maintenant notre contrat intelligent !
 
-Run the following:
+Exécuter le code suivant :
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given
-we are using Optimint, there will be a delay on the transaction being included
-due to Optimint waiting on Celestia's Data Availability Layer to confirm the block
-has been included before submitting a new block.
+Cela vous fournira le hash de la transaction pour le déploiement du contrat intelligent. Étant donné que nous utilisons Optimint, il y aura du délai pour inclure la transaction car Optimint est en attente de la couche de disponibilité des données de Celestia qui doit confirmer que le bloc a été inclus avant de soumettre un nouveau bloc.

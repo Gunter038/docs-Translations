@@ -2,27 +2,21 @@
 
 ![optimint](/img/optimint.png)
 
-[Optimint](https://github.com/celestiaorg/optimint) is an Optimistic-Rollup
-implementation of ABCI (Application Blockchain Interface) in
-order to build sovereign chains using the Cosmos-SDK for Celestia.
+[Optimint](https://github.com/celestiaorg/optimint) 是ABCI (应用区块链接口) 的一个实现，以便主权独立的 rollups 布署在 Celestia 上。
 
-It is built by replacing Tendermint, the Cosmos-SDK
-consensus layer, with a drop-in replacement that
-communicates directly with Celestia's Data Availability layer.
+它是通过插件式替换Cosmos-SDK中的共识层Tendermint来构建的，使得（执行环境）直接与Celestia的数据可用性层通信。
 
-It spins up an optimistic rollup, which collects transactions into blocks and
-posts them onto Celestia for consensus and data availability.
+我们启动了一个主权独立的rollup，它把交易打包进区块，并且发布到Celestia，以实现共识和数据可用。
 
-The goal of Optimint is to enable anyone to design and deploy a Cosmos Zone
-on Celestia in minutes.
+Optimint的目标是让任何人都可以在几分钟内，在Celestia上设计和布署主权独立的rollup。
 
-## Tutorials
+此外，Optimint允许你在Celestia上构建主权独立的rollup的同时，它目前还不能支持欺诈证明，因此它只能工作在‘悲观’模式下，也就是说节点需要重新执行所有的交易，来验证链的有效性（相当于全节点）。 此外，Optimint当前只支持单一的排序器。
 
-The following tutorials will help you get started building
-Cosmos-SDK applications that connect to Celestia's Data Availability
-Layer via Optimint. We call those chains Sovereign Rollups.
+## 教程
 
-You can get started with the following tutorials:
+以下教程将帮助您开始，通过Optimint构建，连接到Celestia数据可用性层的Cosmos SDK应用程序。 我们称这些链为主权rollup。
 
-- [Wordle Game](./wordle.md)
-- [CosmWasm Tutorial](./cosmwasm.md)
+您可以开始学习以下教程：
+
+- [文字游戏](./wordle.md)
+- [CosmWasm教程](./cosmwasm.md)

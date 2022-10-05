@@ -1,14 +1,13 @@
----
-sidebar_label : Overview
----
+- - -
+sidebar_labar : 概述
+- - -
 
-# Developers
+# 开发人员
 
-This section contains all things developer-related for building on top
-of Celestia.
+本节包含所有与开发人员相关的在 Celestia 之上构建的内容。
 
-It includes:
+这包括:
 
-* How to set up your development environment
-* Installing celestia-app and celestia-node
-* A tutorial on interacting with the Data Availability API
+* 如何设置你的开发环境
+* 安装 celestia-app 和 celestia-node
+* 与数据可用性 API 交互的教程

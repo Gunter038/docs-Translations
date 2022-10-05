@@ -1,31 +1,19 @@
 ---
-sidebar_label : Installing Optimint
+sidebar_label: 安装 Optimint
 ---
 
-# Setting Up Optimint
+# 设置 Optimint
 
-Before we continue with building our Wordle App, we need to set up
-Optimint on our codebase.
+在我们继续构建我们的 Wordle 应用程序之前，我们需要在我们的代码库上设置 Optimint。
 
-## Optimint Overview
+## 安装 Optimint
 
-Optimint is an Optimistic-Rollup implementation of
-ABCI (Application Blockchain Interface) in order to build sovereign
-chains using the Cosmos-SDK for Celestia.
-
-It is built by replacing Tendermint, the Cosmos-SDK consensus layer, with
-a drop-in replacement that communicates directly with
-Celestia's Data Availability layer.
-
-## Installing Optimint
-
-Run the following command inside the `wordle` directory.
+在 `wordle` 目录中运行以下命令：
 
 ```sh
-go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk@v0.45.4-optimint-v0.3.4
+go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk@v0.45.4-optimint-v0.3.5
 go mod tidy
 go mod download
 ```
 
-With that, we have Optimint changes added to the project directory. Now,
-let's build the Wordle app!
+这样，我们将 Optimint 更改添加到项目目录中。 现在，让我们构建 Wordle 应用！

@@ -1,55 +1,49 @@
----
-sidebar_label : Validator Node
----
+- - -
+sidebar_label : Node Validateur
+- - -
 
-# Setting up a Celestia Validator Node
+# Configurer un Node validateur
 
-Validator nodes allow you to participate in consensus in the Celestia network.
+Les nodes Validateurs vous permettent de participer au consensus sur le réseau de Celestia.
 
-## Hardware requirements
+## Hardware Requis
 
-The following hardware minimum requirements are recommended for running the
-validator node:
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le node validateur : :
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* Mémoire : 8 Go de RAM
+* CPU : Quad-Core
+* Disque : 250 Go de stockage SSD
+* Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Setting up your validator node
+## Configuration de votre Node validateur
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64
-instance machine.
+Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
-### Setup the dependencies
+### Configurer les dépendances
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Deploying the celestia-app
+## Déployer Celestia-App
 
-This section describes part 1 of Celestia Validator Node setup:
-running a Celestia App daemon with an internal Celestia Core node.
+Cette section décrit la première partie de l'installation d'un Validator Node Celestia: exécutant un daemon Celestia App avec un node Celestia Core interne.
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install+run
-  the Validator Node.
+> Remarque : Assurez-vous de disposer d'au moins 100 Go d'espace de libre pour installer et exécuter en toute sécurité le Validator node .
 
-### Install celestia-app
+### Installer Celestia App
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+Suivez le tutoriel d'installation de Celestia App [ici](../developers/celestia-app.md).
 
-### Setup the P2P networks
+### Configurer les réseaux pair-à-pair
 
-For this section of the guide, select the network you want to connect to:
+Pour cette section du guide, sélectionnez le réseau auquel vous souhaitez vous connecter :
 
 * [Mamaki](./mamaki-testnet.md#setup-p2p-network)
 
-After that, you can proceed with the rest of the tutorial.
+Après cela, vous pouvez continuer avec le reste du tutoriel.
 
-### Configure pruning
+### Configurer pruning
 
-For lower disk space usage we recommend setting up pruning using the
-configurations below. You can change this to your own pruning configurations
-if you want:
+Pour une utilisation réduite de l'espace disque, nous vous recommandons de configurer le pruning à l'aide de la configurations ci-dessous. Vous pouvez changer cela pour vos propres configurations de pruning, si vous le désirez:
 
 ```sh
 PRUNING="custom"
@@ -63,122 +57,105 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Configure validator mode
+### Configurer le Node Validateur
 
 ```sh
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 ```
 
-### Reset network
+### Réinitialiser le réseau
 
-This will delete all data folders so we can start fresh:
+Cela supprimera tous les dossiers de données afin de pouvoir recommencer à zéro :
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### Optionnel : synchronisation rapide avec snapshot
 
-Syncing from Genesis can take a long time, depending on your hardware. Using
-this method you can synchronize your Celestia node very quickly by downloading
-a recent snapshot of the blockchain. If you would like to sync from the Genesis,
-then you can skip this part.
+La synchronisation depuis le Genesis peut prendre beaucoup de temps, selon votre matériel. Utiliser cette méthode vous permet de synchroniser votre node Celestia très rapidement en téléchargeant un Snapshot récent de la blockchain. Si vous souhaitez synchroniser depuis le Genesis, alors vous pouvez ignorer cette partie.
 
-If you want to use snapshot, determine the network you would like to sync
-to from the list below:
+Si vous souhaitez utiliser un Snapshot, déterminez le réseau auquel vous souhaitez vous synchroniser à partir de la liste ci-dessous :
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app with SystemD
+### Démarrer Celestia-App avec SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process
-with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Suivre le tutoriel pour configurer la Celestia App en tant que processus de fond avec SystemD [ici](./systemd.md#start-the-celestia-app-with-systemd).
 
 ### Wallet
 
-Follow the tutorial on creating a wallet [here](../developers/wallet.md).
+Suivez le tutoriel sur la création d'un wallet [ici](../developers/wallet.md).
 
-### Delegate stake to a validator
+### Déléguer de la Stake (mise) à un validateur
 
-Create an environment variable for the address:
+Créer une variable d'environnement pour l'adresse:
 
 ```sh
 VALIDATOR_WALLET=<validator-address>
 ```
 
-If you want to delegate more stake to any validator, including your own you
-will need the `celesvaloper` address of the validator in question. You can
-either check it using the block explorer mentioned above or you can run the
-command below to get the `celesvaloper` of your local validator wallet in
-case you want to delegate more to it:
+Si vous souhaitez déléguer plus de stake à n'importe quel validateur, y compris le vôtre, vous aurez besoin de l'adresse `celesvaloper` du validateur en question. Vous pouvez soit la vérifier en utilisant l'explorateur de blocs mentionné ci-dessus ou vous pouvez exécuter la commande ci-dessous pour obtenir le `celesvaloper` de votre wallet de validateur local dans le cas où vous souhaitez lui déléguer davantage :
 
 ```sh
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a
 ```
 
-After entering the wallet passphrase you should see a similar output:
+Après avoir entré la passphrase du portefeuille, vous devriez voir une sortie similaire :
 
 ```sh
 Enter keyring passphrase:
 celesvaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u43cv6hd
 ```
 
-Next, select the network you want to use to delegate to a validator:
+Ensuite, sélectionnez le réseau que vous souhaitez utiliser pour déléguer à un validateur :
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deploy the celestia-node
+## Deployer le Celestia Node
 
-This section describes part 2 of Celestia Validator Node setup: running a
-Celestia Bridge Node daemon.
+Cette section décrit la partie 2 de l'installation d'un node validateur Celestia : exécuter le daemon Celestia Bridge Node.
 
-### Install celestia-node
+### Installer Celestia Node
 
-You can follow the tutorial for installing Celestia Node [here](../developers/celestia-node.md)
+Vous pouvez suivre le tutoriel d'installation de Celestia Node [ici](../developers/celestia-node.md)
 
-### Initialize the bridge node
+### Initialiser le Bridge node
 
-Run the following:
+Exécutez ce qui suit :
 
 ```sh
-celestia bridge init --core.remote tcp://<ip:port of celestia-app> \
-  --core.grpc http://<ip:port>
+celestia bridge init --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
 
-### Run the bridge node
+Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
 
-Run the following:
+### Exécuter le Bridge node
+
+Exécutez ce qui suit :
 
 ```sh
 celestia bridge start
 ```
 
-### Optional: start the bridge node with SystemD
+### Facultatif : Démarrez le Bridge Node avec SystemD
 
-Follow the tutorial on setting up the bridge node as a background process with
-SystemD [here](./systemd.md#celestia-bridge-node).
+Suivez le tutoriel sur la configuration du Bridge node en tant que processus de fond avec SystemD [ici](./systemd.md#celestia-bridge-node).
 
-You have successfully set up a bridge node that is syncing with the network.
+Vous avez configuré avec succès un Bridge node qui se synchronise avec le réseau.
 
-## Run a validator node
+## Exécuter un Node Validateur
 
-After completing all the necessary steps, you are now ready to run a validator!
-In order to create your validator on-chain, follow the instructions below.
-Keep in mind that these steps are necessary ONLY if you want to participate
-in the consensus.
+Après avoir terminé toutes les étapes nécessaires, vous êtes maintenant prêt à exécuter un validateur ! Afin de créer votre validateur sur la chaîne, suivez les instructions ci-dessous. Gardez à l'esprit que ces étapes sont nécessaires UNIQUEMENT si vous souhaitez participer au consensus.
 
-Pick a `moniker` name of your choice! This is the validator name that will show
-up on public dashboards and explorers. `VALIDATOR_WALLET` must be the same you
-defined previously. Parameter `--min-self-delegation=1000000` defines the
-amount of tokens that are self delegated from your validator wallet.
+Choisissez un nom de `moniker` de votre choix! C'est le nom du validateur qui s'affichera sur les tableaux de bord publics et les explorateurs. `VALIDATOR_WALLET` doit être le même que celui défini précédemment. Le paramètre `--min-self-delegation=1000000` définit la quantité de tokens qui sont auto-délégués depuis votre wallet de validateur.
 
-Now, connect to the network of your choice.
+Maintenant, connectez-vous au réseau de votre choix.
 
-You have the following option of connecting to list of networks shown below:
+Vous avez l'option suivante de vous connecter à la liste des réseaux montrée ci-dessous:
 
 * [Mamaki](./mamaki-testnet.md#connect-validator)
 
-Complete the instructions in the respective network you want to validate in
-to complete the validator setup process.
+Complétez les instructions du réseau que vous souhaitez valider pour terminer le processus de configuration du validateur.

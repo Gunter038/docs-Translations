@@ -1,57 +1,50 @@
----
-sidebar_label : Consensus Full Node
----
+- - -
+sidebar_label : 共识全节点
+- - -
 
-# Setting up a Celestia Consensus Full Node
+# 设置 Celestia 共识全节点
 <!-- markdownlint-disable MD013 -->
 
-Consensus Full Nodes allow you to sync blockchain history in the Celestia
-Consensus Layer.
+共识全节点允许你在 Celestia 共识层同步区块链历史。
 
-## Hardware requirements
+## 硬件要求:
 
-The following hardware minimum requirements are recommended for running the
-Consensus Full Node:
+运行共识全节点建议满足以下硬件最低要求：
 
-* Memory: 8 GB RAM
-* CPU: Quad-Core
-* Disk: 250 GB SSD Storage
-* Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+* 内存: 8 GB RAM
+* CPU：四核
+* 磁盘：250 GB SSD 存储
+* 带宽： 1 Gbps下载/100 Mbps上传
 
-## Setting up your consensus full node
+## 设置你的共识全节点
 
-The following tutorial is done on an Ubuntu Linux 20.04 (LTS) x64
-instance machine.
+以下教程基于运行Ubuntu Linux 20.04 (LTS) x64的主机。
 
-### Setup the dependencies
+### 设置依赖项
 
-Follow the instructions on installing the dependencies [here](../developers/environment.md).
+请按照[这里](../developers/environment.md)的步骤安装依赖项
 
-## Deploying the celestia-app
+## 部署 Celestia App
 
-This section describes part 1 of Celestia consensus full node setup:
-running a Celestia App daemon with an internal Celestia Core node.
+本节介绍 Celestia 共识全节点设置的第 1 部分：使用内部 Celestia Core 节点运行 Celestia App 守护程序。
 
-> Note: Make sure you have at least 100+ Gb of free space to safely install + run
-  the consensus full node.  
+> 注意: 请确保您至少有 100+ Gb 的可用空间来安全安装 + 运行共识全节点。
 
-### Install celestia-app
+### 安装 Celestia App
 
-Follow the tutorial on installing Celestia App [here](../developers/celestia-app.md).
+按照[这里](../developers/celestia-app.md)的教程进行安装 Celestia App 操作。
 
-### Setup the P2P networks
+### 设置 P2P 网络
 
-For this section of the guide, select the network you want to connect to:
+对于本指南的这一部分，请选择您要连接的网络：
 
-* [Mamaki](./mamaki-testnet.md#setup-p2p-network)
+* [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-After that, you can proceed with the rest of the tutorial.
+之后，您可以继续本教程的其余部分。
 
-### Configure pruning
+### 配置修剪参数
 
-For lower disk space usage we recommend setting up pruning using the
-configurations below. You can change this to your own pruning configurations
-if you want:
+为了降低磁盘空间使用率，我们建议您按照下面的配置来修剪。 如果需要，您可以将其更改为您自己的修剪配置：
 
 ```sh
 PRUNING="custom"
@@ -65,45 +58,39 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-### Reset network
+### 重置网络
 
-This will delete all data folders so we can start fresh:
+这将删除所有数据文件夹，以便我们全新开始：
 
 ```sh
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
-### Optional: quick-sync with snapshot
+### 可选：通过快照快速同步
 
-Syncing from Genesis can take a long time, depending on your hardware. Using
-this method you can synchronize your Celestia node very quickly by downloading
-a recent snapshot of the blockchain. If you would like to sync from the Genesis,
-then you can skip this part.
+从初始状态同步可能需要很长时间，具体取决于您的硬件。 使用这种方法，您可以通过下载区块链的最新快照来快速地同步您的 Celestia 节点。 如果您想从初始状态同步，则可以跳过此部分。
 
-If you want to use snapshot, determine the network you would like to sync
-to from the list below:
+如果您要使用快照，请从下面的列表选择您要同步的网络：
 
 * [Mamaki](./mamaki-testnet.md#quick-sync-with-snapshot)
 
-### Start the celestia-app
+### 启动 celestia-app
 
-In order to start your consensus full node, run the following:
+为了启动您的共识全节点，请运行以下命令：
 
 ```sh
 celestia-appd start
 ```
 
-This will let you sync the Celestia blockchain history.
+这将让您同步 Celestia 区块链历史。
 
-### Optional: configure for RPC endpoint
+### 可选：配置 RPC 端点
 
-You can configure your Consensus Full Node to be a public RPC endpoint
-and listen to any connections from Data Availability Nodes in order to
-serve requests for the Data Availability API [here](../developers/node-tutorial.md).
+您可以将您的共识全节点配置为公共 RPC 端点并侦听来自数据可用性节点的任何连接，以便在[此处](../developers/node-tutorial.md)为数据可用性 API 的请求提供服务。
 
-Note that you would need to ensure port 9090 is open for this.
+请注意，你需要确保 9090 端口是否对此开放。
 
-Run the following commands:
+运行以下命令:
 
 ```sh
 EXTERNAL_ADDRESS=$(wget -qO- eth0.me)
@@ -111,9 +98,8 @@ sed -i.bak -e "s/^external-address = \"\"/external-address = \"$EXTERNAL_ADDRESS
 sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/config/config.toml
 ```
 
-Restart `celestia-appd` in the previous step to load those configs.
+在上一步中重新启动 `celestia-appd` 来加载这些配置。
 
-### Start the celestia-app with SystemD
+### 使用 SystemD 启动 celestia-app
 
-Follow the tutorial on setting up Celestia-App as a background process
-with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+请按照[这里](./systemd.md#start-the-celestia-app-with-systemd)的教程，通过 SystemD，将 Celestia-App 设置为后台进程。

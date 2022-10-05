@@ -1,10 +1,10 @@
----
-sidebar_label : Helpful CLI commands
----
+- - -
+sidebar_label: 有用的 CLI 命令
+- - -
 
-# Helpful CLI commands
+# 有用的 CLI 命令
 
-View all options:
+查看所有选项
 
 ```console
 $ celestia-appd --help
@@ -37,17 +37,17 @@ Available Commands:
   version             Print the application binary version information
 ```
 
-## Creating a wallet
+## 创建钱包
 
 ```sh
 celestia-appd config keyring-backend test
 ```
 
-`keyring-backend` configures the keyring's backend, where the keys are stored.
+`keyring-backend`配置存储密钥的keyring的后台实现。
 
-Options are: `os|file|kwallet|pass|test|memory`.
+选项是:`os|file|kwallet|pass|test|memory`。
 
-## Key management
+## 密钥管理
 
 ```sh
 # listing keys
@@ -63,21 +63,21 @@ celestia-appd keys delete <KEY_NAME>
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### 导入和导出
 
-Import an encrypted and ASCII-armored private key into the local keybase.
+导入加密的 ASCII-armored 私钥到本地密钥。
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
 ```
 
-Example usage:
+示例：
 
 ```sh
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Export a private key from the local keyring in encrypted and ASCII-armored format:
+用加密格式和 ASCII-armored 格式从本地密钥中导出私钥：
 
 ```sh
 celestia-appd keys export <KEY_NAME>
@@ -86,11 +86,11 @@ celestia-appd keys export <KEY_NAME>
 Enter passphrase to encrypt the exported key:
 ```
 
-After you set a password, your encrypted key will be displayed.
+在您设置密码后，您的加密密钥将会显示。
 
-## Querying subcommands
+## 查询子命令
 
-Usage:
+用法：
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
@@ -99,43 +99,96 @@ celestia-appd query <FLAGS> | <COMMAND>
 celestia-appd q <FLAGS> | <COMMAND>
 ```
 
-To see all options:
+查看所有选项
 
 ```sh
 celestia-appd q --help
 ```
 
-## Token management
+## 代币管理
 
-Get token balances:
+获取代币余额：
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
 ```
 
-Example usage:
+示例：
 
 ```sh
 celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transfer tokens from one wallet to another:
+将代币从钱包转移到另一个钱包：
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 <amount> --node <NODE_URI> --chain-id <CHAIN_ID>
 ```
 
-Example usage:
+示例：
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 19000000utia --node https://rpc-mamaki.pops.one/ --chain-id mamaki
 ```
 
-To see options:
+查看选项:
 
 ```sh
 celestia-appd tx bank send --help
+```
+
+## Governance
+
+You can vote on a governance proposal with the following command:
+
+```sh
+celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
+```
+
+## Claim validator rewards
+
+You can claim your validator rewards with the following command:
+
+```sh
+celestia-appd tx distribution withdraw-rewards <validator valoper>\
+    --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
+```
+
+## Delegate & undelegate tokens
+
+You can `delegate` your tokens to a validator with the following command:
+
+```sh
+celestia-appd tx staking delegate <validator valoper> <amount>\
+    --from <wallet> --chain-id <chain-id>
+```
+
+You can undelegate tokens to a validator with the `unbond` command:
+
+```sh
+celestia-appd tx staking unbond <validator valoper> <amount>\
+    --from <wallet> --chain-id <chain-id>
+```
+
+## Unjailing the validator
+
+You can unjail your validator with the following command:
+
+```sh
+celestia-appd tx slashing unjail --from <validator wallet>\
+    --chain-id <chain-id> --gas auto -y
+```
+
+## How to export logs with SystemD
+
+You can export your logs if you are running a SystemD service with the following command:
+
+```sh
+sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
+sudo journalctl -u <your systemd service> -S today > node_logs.txt
+# This command outputs the last 1 million lines!
+sudo journalctl -u <your systemd service> -n 1000000 > node_logs.txt
 ```
