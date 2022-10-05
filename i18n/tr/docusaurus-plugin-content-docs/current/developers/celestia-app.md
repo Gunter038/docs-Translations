@@ -1,15 +1,15 @@
 - - -
-sidebar_label : Installing Celestia App
+celestia uygulamasını yükleme
 - - -
 
-# Celestia App
+# Celestia Uygulaması
 <!-- markdownlint-disable MD013 -->
 
-This tutorial will guide you through building Celestia App. This tutorial presumes you completed the steps in setting up your own environment [here](./environment.md).
+Bu eğitim, size Celestia Uygulamasını oluştururken rehberlik edecektir. [Burada](./environment.md) bu eğitim, içinde bulunan şartlarda kurma adımlarını tamamladığınızı varsayar.</0>.
 
-## Install Celestia App
+## Celestia Uygulamasını Yükleme
 
-The steps below will create a binary file named `celestia-appd` inside `$HOME/go/bin` folder which will be used later to run the node.
+Aşağıdaki adımlar, daha sonra Nodu çalıştırmak için kullanılacak $HOME/go/bin klasörü içinde celestia-appd adlı bir ikili dosya oluşturacaktır.
 
 ```sh
 cd $HOME
@@ -23,13 +23,13 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-To check if the binary was successfully compiled you can run the binary using the `--help` flag:
+Binaryinin başarıyla derlenip derlenmediğini kontrol etmek için binaryi çalıştırabilirsiniz. `--help` flag kullanarak:
 
 ```sh
 celestia-appd --help
 ```
 
-You should see a similar output (with helpful example commands):
+Benzer bir çıktı görmelisiniz (yardımcı örnek komutlarla):
 
 ```text
 Start celestia app
