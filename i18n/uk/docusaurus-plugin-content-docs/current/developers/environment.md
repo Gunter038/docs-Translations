@@ -61,5 +61,5 @@ go version
 Вихід повинен бути встановленою версією:
 
 ```sh
-go version go1.18.2 linux/amd64
+go version go1.19.1 linux/amd64
 ```
