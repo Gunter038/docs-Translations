@@ -1,6 +1,6 @@
----
+- - -
 sidebar_label : Guide Config.toml
----
+- - -
 
 # Décomposition de Config.toml
 
