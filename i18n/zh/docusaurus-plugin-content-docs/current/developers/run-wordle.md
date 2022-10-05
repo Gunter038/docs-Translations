@@ -49,7 +49,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 在另一个窗口中，运行以下指令来submit a Wordle：
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
 > 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
