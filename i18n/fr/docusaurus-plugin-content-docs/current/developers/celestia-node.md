@@ -59,9 +59,9 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Network Selection
+## Sélection du réseau
 
-You can perform network selection in celestia-node between Arabica and Mamaki. However, you should note that networks work best on the celestia-node versions mentioned above.
+Vous pouvez sélectionner un réseau dans le nœud Celestia entre Arabica et Mamaki. Cependant, vous noterez que les réseaux fonctionnent mieux sur les versions du nœud Celestia mentionnées ci-dessus.
 
 ```sh
 celestia light init
