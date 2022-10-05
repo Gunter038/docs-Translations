@@ -49,7 +49,7 @@ Hãy cân nhắc rằng:
 Trong một cửa số khác, chạy câu lệnh sau để gửi một Wordle:
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
 > LƯU Ý: Chúng ta đang gửi một giao dịch không đồng bộ để tránh bất kỳ lỗi thời gian chờ nào. Với Optimint thay thế cho Tendermint, chúng ta cần phải đợi mạng Dữ liệu-Khả dụng của Celestia để đảm bảo khối đã được đưa vào Wordle, trước khi chuyển sang khối tiếp theo. Hiện nay, trong Optimint, bộ tổng hợp duy nhất không tiếp tục với việc sản xuất khối tiếp theo miễn là nó đang cố gắng gửi khối hiện tại đến mạng DA. Trong tương lai, với việc lựa chọn leader, quá trình sản xuất khối và logic đồng bộ được cải thiện đáng kể.
