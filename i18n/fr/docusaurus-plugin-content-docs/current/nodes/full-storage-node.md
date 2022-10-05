@@ -1,6 +1,6 @@
----
+- - -
 sidebar_label : Full Storage Node
----
+- - -
 
 # Configuration d'un Full Storage Node Celestia
 
