@@ -1,6 +1,6 @@
-- - -
+---
 sidebar_label : Light Node
-- - -
+---
 
 # Configuration d'un Light Node Celestia
 

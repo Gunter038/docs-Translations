@@ -1,6 +1,6 @@
-- - -
+---
 sidebar_label : Testnet Mamaki
-- - -
+---
 
 # Testnet Mamaki
 

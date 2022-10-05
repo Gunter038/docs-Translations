@@ -1,6 +1,6 @@
-- - -
+---
 sidebar_label : SystemD
-- - -
+---
 
 # Configuration de votre Node en tant que processus d'arrière-plan avec SystemD
 
