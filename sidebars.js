@@ -64,10 +64,16 @@ const sidebars = {
       type: "category",
       label: "Participate",
       link: {
-        type: 'generated-index'
+        type: "doc",
+        id: "nodes/participate"
       },
       collapsed: false,
       items: [
+        {
+          type: "doc",
+          label: "Arabica Devnet",
+          id: "nodes/arabica-devnet"
+        },
         {
           type: "doc",
           label: "Mamaki Testnet",
@@ -277,7 +283,12 @@ const sidebars = {
           ]
         }
       ]
-    }
+    },
+    {
+      type: "doc",
+      label: "Integrate Celestia",
+      id: "developers/integrate-celestia",
+    },
   ],
   community: [
     { type: "doc", label: "Overview", id: "community/overview" },
@@ -326,6 +337,26 @@ const sidebars = {
       type: "link",
       label: "Glossary",
       href: "https://celestia.org/glossary/"
+    },
+    {
+      type: "category",
+      label: "Specifications",
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          label: "Reserved Namespace IDs",
+          id: "concepts/specifications/reserved-namespace-id"
+        },
+      ]
+    },
+    {
+      type: "link",
+      label: "Resources",
+      href: "https://celestia.org/resources/"
     }
   ]
 };

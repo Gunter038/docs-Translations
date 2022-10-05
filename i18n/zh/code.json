@@ -223,19 +223,17 @@
     "description": "The title of the tag list page"
   },
   "Build Modular": {
-    "message": "构建模块化"
   },
   "Celestia is the First Modular Blockchain network which enables developers to deploy their own blockchain as easy as deploying a new smart contract.": {
     "message": "Celestia是第一个模块化区块链网络，它使开发者能够像部署新的智能合约一样，轻松地部署自己的区块链。"
   },
   "Run Different Nodes": {
-    "message": "运行不同的节点"
+
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
     "message": "Celestia使您通过运行验证节点、桥接节点或轻客户端来支持网络。"
   },
   "Power-up with Data Availability Layer": {
-    "message": "使用数据可用性层启动"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
     "message": "Celestia介绍了所谓的数据可用层，以便能够有效地扩展，并允许L2 Rollup对它们所需要的交易进行数据取样。"
