@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Kế tiếp",
+    "description": "The label for version current"
+  },
+  "sidebar.nodes.category.Types of Nodes": {
+    "message": "Các loại Node",
+    "description": "The label for category Types of Nodes in sidebar nodes"
+  },
+  "sidebar.nodes.category.Consensus": {
+    "message": "Đồng thuận",
+    "description": "The label for category Consensus in sidebar nodes"
+  },
+  "sidebar.nodes.category.Data Availability": {
+    "message": "Tính khả dụng dữ liệu",
+    "description": "The label for category Data Availability in sidebar nodes"
+  },
+  "sidebar.nodes.category.Participate": {
+    "message": "Tham gia",
+    "description": "The label for category Participate in sidebar nodes"
+  },
+  "sidebar.nodes.category.Resources": {
+    "message": "Nguồn tài liệu",
+    "description": "The label for category Resources in sidebar nodes"
+  },
+  "sidebar.developers.category.Celestia App": {
+    "message": "Celestia App",
+    "description": "The label for category Celestia App in sidebar developers"
+  },
+  "sidebar.developers.category.Celestia Node": {
+    "message": "Celestia Node",
+    "description": "The label for category Celestia Node in sidebar developers"
+  },
+  "sidebar.developers.category.Optimint": {
+    "message": "Optimint",
+    "description": "The label for category Optimint in sidebar developers"
+  },
+  "sidebar.developers.category.Wordle": {
+    "message": "Wordle",
+    "description": "The label for category Wordle in sidebar developers"
+  },
+  "sidebar.developers.category.CosmWasm": {
+    "message": "CosmWasm",
+    "description": "The label for category CosmWasm in sidebar developers"
+  }
+}
