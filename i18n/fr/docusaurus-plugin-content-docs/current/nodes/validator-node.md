@@ -1,6 +1,6 @@
----
+- - -
 sidebar_label : Node Validateur
----
+- - -
 
 # Configurer un Node validateur
 
