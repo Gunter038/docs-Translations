@@ -47,7 +47,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 В іншому вікні виконайте наступне, щоб надіслати Wordle:
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
 > ПРИМІТКА. Ми надсилаємо транзакцію асинхронно, щоб уникнути помилок часу очікування. Завдяки Optimint як заміні Tendermint нам потрібно дочекатися, поки мережа доступності даних Celestia переконається, що блок включено з Wordle, перш ніж переходити до наступного блоку. Наразі в Optimint єдиний агрегатор не просувається вперед зі створенням наступного блоку, доки він намагається надіслати поточний блок до мережі DA. У майбутньому, з вибором лідера, виробництво блоків і логіка синхронізації значно покращуються.
