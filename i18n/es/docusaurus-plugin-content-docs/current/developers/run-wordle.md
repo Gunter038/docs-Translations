@@ -47,7 +47,7 @@ Ten en cuenta que:
 En otra ventana, ejecuta lo siguiente para enviar una Wordle:
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
 > NOTA: Estamos enviando una transacción de forma asincrónica debido a evitar cualquier error de tiempo de espera. Con Optimint como sustituto de Tendermint, necesitamos esperar a la red de disponibilidad de datos de Celestia para asegurar que un bloque fue incluido de Wordle, antes de pasar al siguiente bloque. Actualmente, en Optimint, el único agregador no se está moviendo hacia adelante con el siguiente bloque de producción siempre y cuando esté tratando de enviar el bloque actual a la red DA. En el futuro, con la selección de líderes, la producción de bloques y la lógica de sincronización mejora espectacularmente.
