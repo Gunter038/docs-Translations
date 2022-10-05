@@ -98,8 +98,8 @@ sed -i.bak -e "s/^external-address = \"\"/external-address = \"$EXTERNAL_ADDRESS
 sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0:26657"#g' ~/.celestia-app/config/config/config.toml
 ```
 
-Restart `celestia-appd` in the previous step to load those configs.
+Redémarrez `celestia-appd` à l'étape précédente pour charger ces configurations.
 
 ### Démarrer la Celestia-App avec SystemD
 
-Follow the tutorial on setting up Celestia-App as a background process with SystemD [here](./systemd.md#start-the-celestia-app-with-systemd).
+Il est possible de suivre le tutoriel pour configurer la Celestia App en tant que processus de fond avec SystemD, [ici](./systemd.md#start-the-celestia-app-with-systemd).
