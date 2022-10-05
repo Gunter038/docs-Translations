@@ -73,7 +73,7 @@ source $HOME/.bash_profile
 Вихід повинен бути встановленою версією:
 
 ```sh
-перейти до версії go1.18.2 linux/amd64
+go version go1.18.2 linux/amd64
 ```
 
 ## Нода Celestia
@@ -117,7 +117,7 @@ celestia light init
 
 Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
 
-> Примітка. Вам також пропонується знайти кінцеву точку API, керовану спільнотою, і в Discord їх є кілька. Цей використовується для демонстраційних цілей. Ви можете знайти список кінцевих точок RPC [тут](/nodes/arabica-devnet.md#rpc-endpoints)
+> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
@@ -173,7 +173,7 @@ $request <Wallet-Address>
 
 ### Баланс
 
-Тепер дайте запит на нашу ноду для балансу його облікового запису за замовчуванням (який є рахунком, пов'язаним із ключем `` розробника </code>, який ми створили раніше):
+Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
@@ -640,8 +640,12 @@ curl -X GET \
 Ми отримаємо такий вивід:
 
 ```json
-curl -X GET \
-  http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
+{
+   "shares":[
+      "DCBNOWAP3dMb8fIMqAB+kQo7+LLmHaDya8oH73hxem6lQWX1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+   ],
+   "height":2452
+}
 ```
 
 Вивід тут має кодування base64.
