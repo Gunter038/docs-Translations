@@ -1,6 +1,6 @@
-- - -
+---
 sidebar_label : Aperçu
-- - -
+---
 
 # Présentation des différents nœuds sur Celestia
 
