@@ -2,13 +2,13 @@
 
 Ce tutoriel est pour exécuter des métriques pour votre instance de disponibilité des données de votre nœud Celestia.
 
-This tutorial will focus on running metrics for a light-node.
+Ce tutoriel se concentrera sur l'exécution de métriques pour un light node.
 
-This tutorial assumes you have already setup your light node by following the tutorial in the [Node API tutorial](./node-tutorial.md).
+Ce tutoriel suppose que vous avez déjà configuré votre light node en suivant le [tutoriel de Node API](./node-tutorial.md).
 
-## Running metrics flags
+## Drapeaux métriques en exécution
 
-You can enable the celestia-node metric flags with the following command:
+Vous pouvez activer les drapeaux métriques du nœud Celestia avec la commande suivante :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -16,18 +16,18 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --metrics --
 ```
 <!-- markdownlint-enable MD013 -->
 
-Note that the `--metrics` flags enables metrics and expects an input into `--metrics.endpoint`.
+Notez que les drapeaux `--metrics` activent les métriques et attendent une entrée au niveau de `--metrics.endpoint`.
 
-We will go over what the endpoint will need to be in the following section.
+Nous allons passer en revue ce que le terminal devra être dans la prochaine section.
 
-## Metrics endpoint design considerations
+## Réflexions de conception du terminal des métriques
 
-At the moment, the architecture of celestia-node metrics works as specified in the following [ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-010-incentivized-testnet-monitoring.md).
+Pour le moment, l'architecture des métriques au sein du noeud Celestia fonctionne comme spécifié dans l'[ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-010-incentivized-testnet-monitoring.md) suivant.
 
-Essentially, the design considerations here will necessitate running an OpenTelemetry (OTEL) collector that connects to Celestia Light Node.
+En substance, les réflexions sur la conception vont ici nécessiter d'exécuter un collecteur OpenTelemetry (OTEL) qui se connecte au light node Celestia.
 
-For an overview of OTEL, check out the guide [here](https://opentelemetry.io/docs/collector/).
+Pour une présentation d'OTEL, consultez le guide [ici](https://opentelemetry.io/docs/collector/).
 
-The ADR and the OTEL docs will help you run your collector on the metrics endpoint. This will then allow you to process the data in the collector on a Prometheus server which can then be viewed on a Grafana dashboard.
+L'ADR et la document de l'OTEL vous aideront à exécuter votre collecteur sur le terminal des métriques. Cela vous permettra alors de traiter les données du collecteur sur un serveur Prometheus qui peut être consulté sur un tableau de bord Grafana.
 
-In the future, we do want to open-source some developer toolings around this infrastructure to allow for node operators to be able to monitor their Data Availability nodes.
+Dans le futur, nous souhaitons des outils de développement en accès libre autour de cette infrastructure pour permettre aux opérateurs de nœud d'être en capacité de surveiller leurs nœuds de disponibilité des données.
