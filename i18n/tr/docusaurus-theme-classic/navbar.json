@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Celestia Belgeleri",
+    "description": "The title in the navbar"
+  },
+  "item.label.Run A Node": {
+    "message": "Bir Düğüm Çalıştırın",
+    "description": "Navbar item with label Run A Node"
+  },
+  "item.label.Developers": {
+    "message": "Geliştiriciler",
+    "description": "Navbar item with label Developers"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Community": {
+    "message": "Topluluk",
+    "description": "Navbar item with label Community"
+  }
+}
