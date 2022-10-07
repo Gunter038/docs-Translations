@@ -24,10 +24,10 @@ Endpoint ne olması gerektiğini aşağıdaki bölümde ele alacağız.
 
 Şu anda, celestia-node metriklerinin mimarisi, aşağıdaki [ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-010-incentivized-testnet-monitoring.md) belirtildiği gibi çalışmaktadır.
 
-Essentially, the design considerations here will necessitate running an OpenTelemetry (OTEL) collector that connects to Celestia Light Node.
+Esasen, buradaki tasarım hususları, Celestia'ya bağlanan bir OpenTelemetry (OTEL) toplayıcısının çalıştırılmasını gerektirecektir. Light Node.
 
-For an overview of OTEL, check out the guide [here](https://opentelemetry.io/docs/collector/).
+OTEL'e genel bir bakış için [buradaki](https://opentelemetry.io/docs/collector/) kılavuza bakın.
 
-The ADR and the OTEL docs will help you run your collector on the metrics endpoint. This will then allow you to process the data in the collector on a Prometheus server which can then be viewed on a Grafana dashboard.
+ADR ve OTEL dokümanları, toplayıcınızı metrik endpoint'de çalıştırmanıza yardımcı olacaktır. Bu daha sonra toplayıcıdaki verileri bir Prometheus sunucusunda işlemenize ve ardından Grafana panosunda görüntülenebilmenize olanak tanır.
 
-In the future, we do want to open-source some developer toolings around this infrastructure to allow for node operators to be able to monitor their Data Availability nodes.
+Gelecekte, düğüm operatörlerinin Veri Kullanılabilirliği düğümlerini izleyebilmelerini olanak sağlamak için bu altyapı etrafında bazı geliştirici araçlarını açık kaynaklı hale getirmek istiyoruz.
