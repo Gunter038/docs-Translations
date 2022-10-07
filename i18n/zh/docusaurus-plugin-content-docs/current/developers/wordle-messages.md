@@ -6,9 +6,9 @@ sidebar_label: 信息
 
 消息允许我们处理信息并将信息提交到特定模块。
 
-From the Cosmos-SDK docs, [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages) are:
+从 Cosmos-SDK 文档， [消息](https://docs.cosmos.network/master/building-modules/messages-and-queries.html#messages) 是：
 
-> In the Cosmos SDK, messages are objects that are contained in transactions to trigger state transitions. Each Cosmos SDK module defines a list of messages and how to handle them.
+> 在Cosmos SDK中，消息是在触发状态转换的交易中包含的对象。 每个Cosmos SDK模块定义一个消息列表以及如何处理消息。
 
 For messages for Wordle, given our initial design, we will make 2 messages with ignite.
 
@@ -19,7 +19,7 @@ For messages for Wordle, given our initial design, we will make 2 messages with 
 
 ## 搭建信息
 
-To create the `SubmitWordle` message, we run the following command:
+要创建消息`SubmitWordle` ，我们运行以下命令：
 
 ```sh
 ignite scaffold message submit-wordle word
