@@ -8,7 +8,7 @@ Bu eğitim light node kurulumunu [Node API eğitimi](./node-tutorial.md) ile ço
 
 ## Metrik bayraklarını çalıştırma
 
-You can enable the celestia-node metric flags with the following command:
+Celestia düğümü metrik bayraklarını aşağıdaki komutla etkinleştirebilirsiniz:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -16,13 +16,13 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --metrics --
 ```
 <!-- markdownlint-enable MD013 -->
 
-Note that the `--metrics` flags enables metrics and expects an input into `--metrics.endpoint`.
+`--metrics` işaretlerinin metrikleri etkinleştirdiğini ve `--metrics.endpoint` bir girdi beklediğini unutmayın.
 
-We will go over what the endpoint will need to be in the following section.
+Endpoint ne olması gerektiğini aşağıdaki bölümde ele alacağız.
 
-## Metrics endpoint design considerations
+## Metrik endpoint tasarımında dikkat edilecek noktalar
 
-At the moment, the architecture of celestia-node metrics works as specified in the following [ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-010-incentivized-testnet-monitoring.md).
+Şu anda, celestia-node metriklerinin mimarisi, aşağıdaki [ADR](https://github.com/celestiaorg/celestia-node/blob/main/docs/adr/adr-010-incentivized-testnet-monitoring.md) belirtildiği gibi çalışmaktadır.
 
 Essentially, the design considerations here will necessitate running an OpenTelemetry (OTEL) collector that connects to Celestia Light Node.
 
