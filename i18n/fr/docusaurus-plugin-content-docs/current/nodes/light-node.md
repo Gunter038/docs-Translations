@@ -19,46 +19,46 @@ Les Light Nodes ont le comportement suivant :
 1. Ils écoutent les ExtendedHeaders, c'est-à-dire les en-têtes « bruts» enveloppés, qui notifient les nodes Celestia des nouveaux en-têtes de blocs et des métadonnées DA pertinentes.
 2. Ils effectuent l'échantillonnage de la disponibilité des données (DAS) sur les en-têtes reçus.
 
-## Configuration matérielle requise
+## Hardware Requis
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter un Light node :
 
 * Mémoire: 2 Go de RAM
-* CPU : Noyau unique
+* CPU: Single Core
 * Disque: 5 Go de stockage SSD
-* Bande passante : 56 Go/s pour le download/56 Mo/s pour l'upload
+* Bande passante : 56 Gbps pour le téléchargement/56 Mbps pour l'upload
 
 ## Configuration de votre Light Node
 
-Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
+Le tutoriel suivant est fait sur une machine d'instance Linux Ubuntu 20.04 (LTS) x64.
 
 ### Configurer les dépendances
 
 Premièrement vérifiez que votre système d'exploitation est à jour ou mettez-le à jour :
 
 ```sh
-# Si vous utilisez le gestionnaire de paquet APT
+# Si vous utilisez le gestionnaire de package APT
 sudo apt update && sudo apt upgrade -y
 
-# Si vous utilisez le gestionnaire de paquet YUM 
+# Si vous utilisez le gestionnaire de package YUM 
 sudo yum update
 ```
 
-Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du nœud :
+Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du node:
 
 ```sh
-# Si vous utilisez le gestionnaire de paquet APT
+# Si vous utilisez le gestionnaire de package APT
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# Si vous utilisez le gestionnaire de paquet YUM 
+# Si vous utilisez le gestionnaire de package YUM 
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
 ### Installer Golang
 
-La Celestia App et le noeud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
+Celestia-app et celestia-node sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
 
 ```sh
 ver="1.19.1"
@@ -227,13 +227,13 @@ Vous avez le choix entre deux réseaux pour obtenir des jetons de testnet :
 
 > NOTE : Si vous souhaitez lancer un light node pour votre rollup souverain, il est hautement recommandé de demander des jetons du devnet Arabica car c'est le devnet qui reçoit les dernières mises à jour utiles au développement de votre rollup souverain. Vous pouvez également utiliser le testnet Mamaki, bien qu'il soit davantage conçu pour les opérations de Validateurs.
 
-Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord :
+Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante sur Discord :
 
 ```console
 $request <Wallet-Address>
 ```
 
-Dans laquelle `<Wallet-Address>` est l'adresse `celestia1******` générée quand vous avez créé le portefeuille.
+Dans laquelle `<Wallet-Address>` est l'adresse `celestia1******` générée quand vous avez créé le wallet.
 
 ### Optionnel : exécuter le Light Node avec une clé personnalisée
 
