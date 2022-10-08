@@ -138,17 +138,17 @@ celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 celestia-appd tx bank send --help
 ```
 
-## Governance
+## Управління
 
-You can vote on a governance proposal with the following command:
+Ви можете голосувати за пропозицію управління за допомогою такої команди:
 
 ```sh
 celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
 ```
 
-## Claim validator rewards
+## Запит винагороди валідатора
 
-You can claim your validator rewards with the following command:
+Ви можете отримати винагороди валідатора за допомогою такої команди:
 
 ```sh
 celestia-appd tx distribution withdraw-rewards <validator valoper>\
