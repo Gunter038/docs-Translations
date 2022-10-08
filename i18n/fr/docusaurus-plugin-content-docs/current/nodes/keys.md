@@ -53,7 +53,7 @@ Cela chargera la clé <key_name> dans le répertoire du full node.
 
 ## Étapes pour générer une clé de **light** node
 
-Pour générer une clé pour un light node Celestia, procédez comme suit :
+Pour générer une clé pour un light node Celestia, procédez comme il suit :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
