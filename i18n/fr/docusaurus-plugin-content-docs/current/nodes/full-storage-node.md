@@ -17,7 +17,7 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 
 ## Configuration de votre Full Storage Node
 
-Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
+Le tutoriel suivant est fait sur une machine d'instance Linux Ubuntu 20.04 (LTS) x64.
 
 ### Configurer les dépendances
 
@@ -47,7 +47,7 @@ Démarrez le Full storage node avec une connexion au point de terminaison gRPC d
 
 Une note sur les ports :
 
-> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
+> Note : le port `--core.grpc.port`  est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -89,4 +89,4 @@ celestia full start --core.ip http://<ip-address> --core.grpc.port <port> --keyr
 
 Suivez le tutoriel sur la configuration du full storage node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-full-storage-node).
 
-Avec cela, vous exécutez maintenant Full Storage Node Celestia.
+Avec cela, vous exécutez maintenant un Full Storage Node Celestia.
