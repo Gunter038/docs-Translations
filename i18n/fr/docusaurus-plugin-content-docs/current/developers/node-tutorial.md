@@ -115,9 +115,9 @@ celestia light init
 
 ### Se connecter à un point de terminaison public principal
 
-Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau.
+Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau public.
 
-> Remarque : Vous êtes également encouragé à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points d'appel à distance (RPC) [ici](/nodes/arabica-devnet.md#rpc-endpoints)
+> Remarque : Vous êtes également encouragés à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points d'appel à distance (RPC) [ici](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
@@ -628,9 +628,9 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 
 Il est possible que le compte auquel vous essayez de soumettre des frais PayForData n'ait pas encore de tokens. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
 
-### Obtenir des partages d'espace de noms par hauteur de bloc
+### Obtenir des Namespaced Shares par hauteur de bloc
 
-Après avoir soumis votre transaction PFD, en cas de succès, le node retournera la hauteur de bloc pour laquelle la transaction PFD a été incluse. Vous pouvez ensuite utiliser cette hauteur de bloc et l'ID d'espace de noms avec lesquels vous avez soumis votre transaction PFD pour que vos partages de messages vous soient retournés. Dans cet exemple, la hauteur de bloc que nous avons obtenue était de 589, que nous utiliserons pour la commande suivante.
+Après avoir soumis votre transaction PFD, en cas de succès, le node retournera la hauteur de bloc pour laquelle la transaction PFD a été incluse. Vous pouvez ensuite utiliser cette hauteur de bloc et l'ID de namepace avec lesquels vous avez soumis votre transaction PFD pour que vos partages de messages vous soient retournés. Dans cet exemple, la hauteur de bloc que nous avons obtenue était de 589, que nous utiliserons pour la commande suivante.
 
 ```sh
 curl -X GET \
