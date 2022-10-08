@@ -133,9 +133,9 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Clés et portefeuilles
+### Clés et wallets
 
-Vous pouvez créer vos clés pour votre nœud en lançant la commande suivante :
+Vous pouvez créer vos clés pour votre node en lançant la commande suivante :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
