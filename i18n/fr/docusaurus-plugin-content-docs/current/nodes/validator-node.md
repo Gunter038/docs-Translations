@@ -17,7 +17,7 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 
 ## Configuration de votre Node validateur
 
-Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
+Le tutoriel suivant est fait sur une machine d'instance Linux Ubuntu 20.04 (LTS) x64.
 
 ### Configurer les dépendances
 
@@ -25,11 +25,11 @@ Suivez le tutoriel ici pour installer les dépendances [ici](../developers/envir
 
 ## Déployer Celestia-App
 
-Cette section décrit la première partie de l'installation d'un Validator Node Celestia: exécutant un daemon Celestia App avec un node Celestia Core interne.
+Cette section décrit la première partie de l'installation d'un Node Validateur Celestia: exécutant un daemon Celestia App avec un node Celestia Core interne.
 
-> Remarque : Assurez-vous de disposer d'au moins 100 Go d'espace de libre pour installer et exécuter en toute sécurité le Validator node .
+> Remarque : Assurez-vous de disposer d'au moins 100 Go d'espace de libre pour installer et exécuter en toute sécurité le node validateur .
 
-### Installer Celestia App
+### Installer celestia-app
 
 Suivez le tutoriel d'installation de Celestia App [ici](../developers/celestia-app.md).
 
