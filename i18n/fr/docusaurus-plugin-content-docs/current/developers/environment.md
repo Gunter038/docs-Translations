@@ -13,10 +13,10 @@ Une fois que vous avez configuré votre instance, ssh dans l'instance pour comme
 Tout d'abord, assurez-vous de mettre à jour le système d'exploitation:
 
 ```sh
-# Si vous utilisez le gestionnaire APT
+# Si vous utilisez le gestionnaire de package APT
 sudo apt update && sudo apt upgrade -y
 
-# Si vous utilisez le gestionnaire YUM
+# Si vous utilisez le gestionnaire de package YUM 
 sudo yum update
 ```
 
