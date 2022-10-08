@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "item.label.Run A Node": {
-    "message": "Exécuter un node",
+    "message": "Exécuter un Node",
     "description": "Navbar item with label Run A Node"
   },
   "item.label.Developers": {
