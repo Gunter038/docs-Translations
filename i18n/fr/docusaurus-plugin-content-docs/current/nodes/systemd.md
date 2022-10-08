@@ -67,7 +67,7 @@ Assurez-vous que vous avez `"catching_up": false`, sinon laissez-le tourner jusq
 
 ## Nœuds de disponibilité des données
 
-### Noeud de stockage complet Celestia
+### Node de stockage complet Celestia
 
 Créer un fichier systemd de Full Storage Node Celestia:
 
@@ -105,7 +105,7 @@ celestia-full.service -f
 
 Vous devriez voir les logs à travers la synchronisation du full storage node.
 
-### Bridge Node de Celestia
+### Bridge Node Celestia
 
 Créer un fichier systemd Celestia Bridge :
 
