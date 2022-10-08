@@ -59,8 +59,8 @@ Cela créera une nouvelle clé, avec un nom de votre choix. Enregistrez la sorti
 Exécutez la commande suivante :
 
 ```sh
-KEY_NAME=validator
-celestia-appd keys add $KEY_NAME --keyring-backend test
+CELES_AMOUNT="10000000000000000000000000utia"
+celestia-appd add-genesis-account $KEY_NAME $CELES_AMOUNT --keyring-backend test
 ```
 
 Ici `$VALIDATOR_NAME` est le même nom de clé qu'avant ; et `$AMOUNT` est quelque chose comme `10000000000000000000000000utia`.
@@ -71,7 +71,7 @@ Si d'autres participants de votre réseau test veulent également être des vali
 
 Une fois tous les validateurs ajoutés, le fichier `genesis.json` est créé. Vous avez besoin de le partager avec tous les autres validateurs de votre testnet afin que tout le monde puisse passer à l'étape suivante.
 
-You can find the `genesis.json` at `$HOME/.celestia-app/config/genesis.json`
+Vous pouvez trouver le `genesis.json` dans `$HOME/.celestia-app/config/genesis.json`
 
 ### Créer la transaction Genesis pour la nouvelle chaîne
 
@@ -85,7 +85,8 @@ celestia-appd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID \
 
 Cela créera la transaction Genesis pour votre nouvelle chaîne. Ici, `$STAKING_AMOUNT` doit être au moins égal à `1000000000utia`. Si vous fournissez trop ou trop peu, vous rencontrerez une erreur lors du démarrage de votre Node.
 
-Vous trouverez le fichier JSON gentx généré dans `$HOME/.celestia-app/config/gentx/gentx-$KEY_NAME.json`
+Vous trouverez le fichier JSON gentx généré dans `$HOME/.celestia-
+app/config/gentx/gentx-$KEY_NAME.json`
 
 > Remarque : Si vous avez d'autres validateurs dans votre réseau, ils doivent également exécuter la commande ci-dessus avec le fichier `genesis.json` que vous avez partagé avec eux à l'étape précédente.
 
@@ -99,7 +100,7 @@ Une fois que vous avez ajouté les fichiers gentx de tous les particpants, lance
 celestia-appd collect-gentxs
 ```
 
-Cette commande va rechercher les fichiers gentx de ce dépôt qui devrait être déplacé dans le répertoire suivant `$HOME/.celestia-app/config/gentx`.
+Cette commande va rechercher les fichiers gentx de ce dépôt qui devraient être déplacés dans le répertoire suivant `$HOME/.celestia-app/config/gentx`.
 
 Elle mettra à jour le fichier `genesis.json` dans cet emplacement `$HOME/. elestia-app/config/genesis.json` qui inclut maintenant le gentx des autres participants.
 
@@ -118,7 +119,7 @@ Ouvrez le fichier suivant `$HOME/.celestia-app/config/config.toml` pour le modif
 persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
-Vous pouvez trouver `validator_address` en exécutant la commande suivante:
+Vous pouvez trouver la `validator_address` en exécutant la commande suivante:
 
 ```sh
 celestia-appd tendermint show-node-id
