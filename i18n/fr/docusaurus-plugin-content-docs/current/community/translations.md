@@ -10,9 +10,9 @@ Si vous êtes un membre passionné de la communauté Celestia et que vous souhai
 
 Pour commencer, allez sur le projet Crowdin [ici](https://crowdin.com/project/celestia-docs).
 
-Vous devrez créer un compte et vous serez alors en mesure de rejoindre le projet afin de commencer vos traduction.
+Vous devrez créer un compte et vous serez alors en mesure de rejoindre le projet afin de commencer vos traductions.
 
-Si vous ne voyez pas votre langue, n'hésitez pas à le demander sur le canal `#translations` sur Discord [ici](https://discord.gg/celestiacommunity).
+Si vous ne voyez pas votre langue, n'hésitez pas à la demander sur le canal `#translations` sur Discord [ici](https://discord.gg/celestiacommunity).
 
 Sur Crowdin, vous pouvez traduire, commenter des traductions, et aussi donner des votes positifs et des votes négatifs aux traductions existantes.
 
@@ -50,7 +50,7 @@ git checkout tags/$APP_VERSION -b $APP_VERSION
 make install
 ```
 
-De plus, vous n'avez pas à traduire les URL dans votre langue locale.
+De plus, vous n'avez pas à traduire les URLs dans votre langue locale.
 
 #### Mots spécifiques
 
