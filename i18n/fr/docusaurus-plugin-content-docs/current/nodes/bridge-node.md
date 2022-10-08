@@ -4,13 +4,13 @@ sidebar_label : Bridge Node
 
 # Configurer un Bridge Node Celestia
 
-Ce tutoriel passera en revue les étapes de configuration de votre Bridge node Celestia (Noeud Pont).
+Ce tutoriel passera en revue les étapes de configuration de votre Bridge node Celestia.
 
 Les Bridge nodes connectent la couche de disponibilité des données et la couche de consensus tout en offrant la possibilité de devenir validateur.
 
-Les Validateurs n'ont pas à exécuter les nœuds de passerelle (bridge nodes) mais sont encouragés à relayer les blocs au réseau de disponibilité des données.
+Les Validateurs n'ont pas à exécuter les bridge nodes mais sont encouragés à relayer les blocs au réseau de disponibilité des données.
 
-## Présentation des nœuds de passerelle (Bridge Nodes)
+## Présentation des Bridge Nodes
 
 Un Bridge node Celestia a les propriétés suivantes:
 
