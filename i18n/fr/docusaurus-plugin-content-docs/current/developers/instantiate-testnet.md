@@ -4,7 +4,7 @@ sidebar_label : Créer un Testnet Celestia
 
 # Guide d'instanciation du réseau Celestia App
 
-Ce guide est destiné à aider à instancier un nouveau réseau de test et à suivre les étapes correctes pour le faire avec Celestia-App. Vous ne devriez suivre que ce guide si vous voulez expérimenter avec votre propre réseau test Celestia ou si vous voulez tester de nouvelles fonctionnalités à développer en tant que développeur.
+Ce guide est destiné à aider à instancier un nouveau réseau de test et à suivre les étapes correctes pour le faire avec Celestia-App. Vous ne devriez suivre ce guide que si vous voulez expérimenter avec votre propre réseau test Celestia ou si vous voulez tester de nouvelles fonctionnalités à développer en tant que développeur.
 
 ## Hardware Requis
 
