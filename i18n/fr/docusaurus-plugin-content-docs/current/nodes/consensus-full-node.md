@@ -24,13 +24,13 @@ Le tutoriel ci-après a été réalisé sur un système d'exploitation Ubuntu Li
 
 Suivre les instructions pour installer les dépendances [ici](../developers/environment.md).
 
-## Déployer la Celestia-App
+## Déployer Celestia-App
 
-Cette section décrit la partie 1 de la configuration d'un full node de consensus Celestia : exécuter une Celestia App daemon avec un nœud interne à Celestia Core.
+Cette section décrit la partie 1 de la configuration d'un full node de consensus Celestia : exécuter un daemon Celestia App avec un Node interne Celestia Core.
 
-> Note : vérifier que vous avez au moins 100+ Go d'espace libre pour installer et exécuter en tout sécurité le full node de validateur.
+> Note : vérifier que vous avez au moins 100+ Go d'espace libre pour installer et exécuter en tout sécurité le full node de consensus.
 
-### Installer la Celestia App
+### Installer celestia-app
 
 Suivre le tutoriel pour installer la Celestia App [ici](../developers/celestia-app.md).
 
