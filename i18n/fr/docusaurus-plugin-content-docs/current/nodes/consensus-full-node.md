@@ -14,7 +14,7 @@ La configuration matérielle minimale requise pour exécuter le full node de con
 * Mémoire vive : 8Go de RAM
 * Processeur : 4 cœurs
 * Disque dur : 250 Go de stockage SSD
-* Bande passante : 1 Go/s en download / 100 Mo/s en upload
+* Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
 ## Configurer votre full node de consensus
 
