@@ -1,16 +1,16 @@
 - - -
-installer un nœud Celestia
+sidebar_label : Installer Celestia Node
 - - -
 
-# Nœud Celestia
+# Celestia Node
 
-Ce tutoriel passe en revue l'installation d'un nœud Celestia. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
+Ce tutoriel passe en revue l'installation de celestia-node. Ce tutoriel suppose que vous avez terminé les étapes de configuration de votre propre environnement [ici](./environment.md).
 
 ## Installer Celestia Node
 
 ### Installation d'Arabica
 
-Installer un nœud Celestia pour le Devnet Arabica signifie installer une version spécifique compatible avec le réseau.
+Installer un node Celestia pour le Devnet Arabica signifie installer une version spécifique compatible avec le réseau.
 
 Installez le binaire Celestia-node en exécutant les commandes suivantes :
 
@@ -37,9 +37,9 @@ Golang version: go1.19.1
 
 ### Installation de Mamaki
 
-Installer un nœud Celestia pour le Devnet Mamaki signifie installer une version spécifique compatible avec le réseau.
+Installer un node Celestia pour le Testnet Mamaki signifie installer une version spécifique compatible avec le réseau.
 
-Installer le fichier binaire du nœud celestia en exécutant les commandes suivantes :
+Installer le fichier binaire de celestia-node en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -61,7 +61,7 @@ Commit: 89892d8b96660e334741987d84546c36f0996fbe
 
 ## Sélection du réseau
 
-Vous pouvez sélectionner un réseau dans le nœud Celestia entre Arabica et Mamaki. Cependant, vous noterez que les réseaux fonctionnent mieux sur les versions du nœud Celestia mentionnées ci-dessus.
+Vous pouvez sélectionner un réseau dans celestia-node entre Arabica et Mamaki. Cependant, vous noterez que les réseaux fonctionnent mieux sur les versions de celestia-node mentionnées ci-dessus.
 
 ```sh
 celestia light init
