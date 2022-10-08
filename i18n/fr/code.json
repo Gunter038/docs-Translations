@@ -229,16 +229,16 @@
     "message": "Celestia est le premier réseau de Blockchain Modulaire qui permet aux développeurs de déployer leur propre blockchain aussi facilement que de déployer un nouveau contrat intelligent."
   },
   "Run Different Nodes": {
-    "message": "Exécuter différents nœuds"
+    "message": "Exécuter différents nodes"
   },
   "Celestia allows you to run a validator node, a bridge node or a light client to be able to support the network.": {
-    "message": "Celestia vous permet d'exécuter un noeud validation, un noeud bridge ou un light client qui permet de supporter le réseau."
+    "message": "Celestia vous permet d'exécuter un node validateur, un bridge node ou un light client qui permet de supporter le réseau."
   },
   "Power-up with Data Availability Layer": {
-    "message": "Décollage avec la couche de disponibilité des données"
+    "message": "Démarrer avec la couche de disponibilité des données"
   },
   "Celestia introduces what is called the Data Availability Layer for enabling efficient scaling and allowing L2 Rollups to do data sampling for transactions they need.": {
-    "message": "Celestia introduit ce que l'on appelle la couche de disponibilité des données pour permettre une mise à l'échelle efficace et permettre aux L2 Rollups de faire des échantillons de données pour les transactions dont ils ont besoin."
+    "message": "Celestia introduit ce que l'on appelle la couche de disponibilité des données pour permettre une mise à l'échelle efficace et permettre aux Rollups de type L2 de faire des échantillonages de données pour les transactions dont ils ont besoin."
   },
   "theme.docs.breadcrumbs.home": {
     "message": "Page d'accueil",
