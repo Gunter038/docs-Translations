@@ -75,20 +75,20 @@ Exemple d'utilisation :
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Exporter une clé privée depuis le trousseau local au format chiffré et blindé ASCII :
+Exporter une clé privée à partir du trousseau local au format crypté et ASCII-armored:
 
 ```sh
 celestia-appd keys export <KEY_NAME>
 
 # vous serez alors invités à définir un mot de passe pour la clé privée chiffrée :
-Entrez le mot de passe pour chiffrer la clé exportée :
+Entrez la passphrase pour chiffrer la clé exportée :
 ```
 
 Après avoir défini un mot de passe, votre clé chiffrée sera affichée.
 
 ## Interrogation des sous-commandes
 
-Utilisation :
+Utilisation:
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
@@ -171,7 +171,7 @@ celestia-appd tx staking unbond <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-## Emprisonner le validateur
+## Unjail le validateur
 
 Vous pouvez "unjail" votre validateur avec la commande suivante :
 
