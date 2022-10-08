@@ -6,7 +6,7 @@ sidebar_label : Testnet Mamaki
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Ce guide contient les sections pertinentes pour savoir comment se connecter à Mamaki, selon le type de nœud que vous exécutez. Le testnet Mamaki a été conçu pour aider les validateurs à essayer leur infrastructure et leur nœud avec le réseau de test. Les développeurs sont encouragés à déployer leurs rollups souverains sur Mamaki, mais nous recommandons également de le faire sur le devnet Arabica, qui est spécifiquement conçu à des fins de développement.
+Ce guide contient les sections pertinentes pour savoir comment se connecter à Mamaki, selon le type de node que vous exécutez. Le testnet Mamaki a été conçu pour aider les validateurs à essayer leur infrastructure et leur node avec le réseau de test. Les développeurs sont encouragés à déployer leurs rollups souverains sur Mamaki, mais nous recommandons également de le faire sur le devnet Arabica, qui est spécifiquement conçu à des fins de développement.
 
 Mamaki est une étape clé de Celestia, permettant à chacun de tester les fonctionnalités de base du réseau. Lire l'annonce [ici](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
@@ -16,8 +16,8 @@ Vous avez une liste d'options sur le type de nœuds que vous pouvez exécuter af
 
 Consensus:
 
-* [Validator Node](./validator-node.md)
-* [Consensus Full Node](./consensus-full-node.md)
+* [Node Validateur](./validator-node.md)
+* [Full Node de Consensus](./consensus-full-node.md)
 
 Disponibilité des données :
 
@@ -25,7 +25,7 @@ Disponibilité des données :
 * [Full Storage Node](./full-storage-node.md)
 * [Light Node](./light-node.md)
 
-Sélectionnez le type de nœud que vous souhaitez exécuter et suivez les instructions sur chaque page respective. À chaque fois que l'on vous demande de sélectionner le type de réseau auquel vous voulez vous connecter dans ces guides, sélectionnez `Mamaki` afin de vous référer aux instructions correctes sur cette page sur la façon de vous connecter à Mamaki.
+Sélectionnez le type de node que vous souhaitez exécuter et suivez les instructions sur chaque page respective. À chaque fois que l'on vous demande de sélectionner le type de réseau auquel vous voulez vous connecter dans ces guides, sélectionnez `Mamaki` afin de vous référer aux instructions correctes sur cette page sur la façon de vous connecter à Mamaki.
 
 ## Points de terminaison RPC
 
@@ -47,9 +47,9 @@ Vous pouvez demander des tokens au faucet du testnet Mamaki dans le canal #fauce
 $request <CELESTIA-ADDRESS>
 ```
 
-Où `<CELESTIA-ADDRESS>` est une adresse générée par `céleste1******`.
+Où `<CELESTIA-ADDRESS>` est une adresse générée de type `celestia1******`.
 
-> Note : le Faucet a une limite de 10 tokens par semaine et par adresse/identififant Discord
+> Remarque : Le faucet a une limite de 10 jetons par semaine par adresse/ID Discord
 
 ## Explorateur
 
