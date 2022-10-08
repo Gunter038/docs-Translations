@@ -8,4 +8,4 @@ Cette section fournira un aperçu des différentes ressources disponibles pour l
 
 ## Docker Compose
 
-* Une ressource pour jouer avec Docker Compose et l'infrastructure Celestia est dans le dépôt [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster). Ce dépôt fournit une infrastructure pour faire l'intégration test pour le développement en exécutant une instance Docker Compose pour le devnet Celestia. Il n'est pas recommandé de l'utiliser tel quel pour exécuter des nodes individuellement.
+* Une ressource pour jouer avec Docker Compose et l'infrastructure de Celestia est dans le dépôt [ephemeral-cluster](https://github.com/celestiaorg/ephemeral-cluster). Ce dépôt fournit une infrastructure pour faire l'intégration test pour le développement en exécutant une instance Docker Compose pour le devnet Celestia. Il n'est pas recommandé de l'utiliser tel quel pour exécuter des nodes individuellement.
