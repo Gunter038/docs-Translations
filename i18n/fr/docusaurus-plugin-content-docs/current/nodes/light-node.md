@@ -200,7 +200,7 @@ celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
 
 ### Clés et portefeuilles
 
-Vous pouvez créer votre clé pour votre nœud en exécutant la commande suivante :
+Vous pouvez créer votre clé pour votre node en exécutant la commande suivante :
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
