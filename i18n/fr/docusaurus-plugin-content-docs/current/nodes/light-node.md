@@ -6,7 +6,7 @@ sidebar_label : Light Node
 
 Ce tutoriel vous guidera à travers la mise en place d'un Light Node Celestia, qui vous permettra d'effectuer des échantillonnages de disponibilité de données sur le réseau de disponibilité de données (Data Availability/DA).
 
-> Pour voir un tutoriel vidéo pour la mise en place d'un Light Node Celestia, cliquez [ici](../developers/light-node-video.md)
+> Pour voir un tutoriel vidéo sur la mise en place d'un Light Node Celestia, cliquez [ici](../developers/light-node-video.md)
 
 ## Présentation des Light Nodes
 
