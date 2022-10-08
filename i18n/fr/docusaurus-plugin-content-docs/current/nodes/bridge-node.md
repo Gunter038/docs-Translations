@@ -91,7 +91,7 @@ Vous avez deux réseaux pour obtenir des jetons de testnet :
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE : si vous exécutez un Bridge Node pour un validateur il est hautement recommandé de demander des jetons du testnet Mamaki, car c'est le réseau le plus adapté aux opérations relatives aux Validateurs.
+> NOTE : si vous exécutez un Bridge Node pour votre validateur il est hautement recommandé de demander des jetons du testnet Mamaki, car c'est le réseau le plus adapté aux opérations relatives aux Validateurs.
 
 #### Optionnel : exécutez le Bridge Node avec une clé personnalisée
 
