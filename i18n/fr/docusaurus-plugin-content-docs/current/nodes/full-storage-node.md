@@ -8,7 +8,7 @@ Ce tutoriel vous guidera à travers la mise en place d'un Full Storage Node Cele
 
 ## Hardware Requis
 
-Les exigences matérielles minimales suivantes sont recommandées pour exécuter le full storage node :
+Les exigences matérielles minimales suivantes sont recommandées pour exécuter le full storage node:
 
 * Mémoire: 8 Go de RAM
 * CPU: Quad-Core
