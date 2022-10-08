@@ -2,7 +2,7 @@
 sidebar_label : Aperçu
 - - -
 
-# Présentation des différents nœuds sur Celestia
+# Présentation des différents nodes sur Celestia
 
 Il y a plusieurs façons de participer au réseau Celestia.
 
@@ -10,8 +10,8 @@ Les opérateurs de nodes Celestia peuvent exécuter plusieurs options sur le ré
 
 Consensus:
 
-* [Nœud Validateur (Validator Node)](./validator-node.md) : ce type de nœud participe au consensus en produisant et votant les blocs.
-* [Consensus Full Node](./consensus-full-node.md): Un full node Celestia-App pour synchroniser l'historique de la blockchain.
+* [Node Validateur (Validator Node)](./validator-node.md) : ce type de nœud participe au consensus en produisant et votant les blocs.
+* [Full Node de Consensus](./consensus-full-node.md): Un full node Celestia-App pour synchroniser l'historique de la blockchain.
 
 Disponibilité des données :
 
