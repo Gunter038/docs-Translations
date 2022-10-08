@@ -1,10 +1,10 @@
-# Celestia Node Metrics
+# Метрики ноди Celestia
 
-This tutorial is for running metrics for your celestia-node Data Availability instance.
+Цей посібник призначений для запуску метрик для вашого екземпляра ноди доступності даних.
 
-This tutorial will focus on running metrics for a light-node.
+У цьому посібнику основний фокус буде зосереджено на запуску метрик для легкої ноди.
 
-This tutorial assumes you have already setup your light node by following the tutorial in the [Node API tutorial](./node-tutorial.md).
+Цей підручник передбачає, що ви вже налаштували свою легку ноду, дотримуючись інструкцій в [Посібнику API Node](./node-tutorial.md).
 
 ## Running metrics flags
 
