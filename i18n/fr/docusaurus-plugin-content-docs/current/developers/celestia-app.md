@@ -1,5 +1,5 @@
 - - -
-installer la Celestia App
+installer Celestia App
 - - -
 
 # Celestia App
