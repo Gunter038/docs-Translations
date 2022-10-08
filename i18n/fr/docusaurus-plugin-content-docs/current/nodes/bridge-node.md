@@ -22,14 +22,14 @@ Du point de vue de l'implémentation, les Bridge nodes exécutent deux processus
 
 1. Celestia App avec Celestia Core ([voir le repo](https://github.com/celestiaorg/celestia-app))
 
-    * **Celestia App** est la machine où l'application et la logique de Proof-of-Stake (Preuve d'enjeu) sont exécutées. L'application Celestia est construite sur le [Cosmos SDK](https://docs.cosmos.network/) et englobe également **Celestia Core**.
-    * **Celestia Core** est l'interaction d'état, le consensus et la couche de production de blocs. Celestia Core est construite sur [Tendermint Core](https://docs.tendermint.com/), modifié pour stocker des racines de données d'erasure block coding parmi d'autres changements ([voir ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
+    * **Celestia App** est la machine où l'application et la logique de Proof-of-Stake (Preuve d'enjeu) sont exécutées. Celestia App est construite sur le [Cosmos SDK](https://docs.cosmos.network/) et englobe également **Celestia Core**.
+    * **Celestia Core** est l'interaction d'état, le consensus et la couche de production de blocs. Celestia Core est construit sur [Tendermint Core](https://docs.tendermint.com/), modifié pour stocker des racines de données "d'erasure block" parmi d'autres changements ([voir ADRs](https://github.com/celestiaorg/celestia-core/tree/master/docs/celestia-architecture)).
 
 2. Celestia Node ([voir le repo](https://github.com/celestiaorg/celestia-node))
 
     * **Celestia Node** augmente ce qui précède avec un réseau libp2p séparé qui sert des demandes d'échantillonnage de la disponibilité des données. L'équipe appelle parfois ceci le réseau « halo ».
 
-## Configuration matérielle requise
+## Hardware Requis
 
 Les exigences matérielles minimales suivantes sont recommandées pour exécuter le Bridge node :
 
@@ -38,7 +38,7 @@ Les exigences matérielles minimales suivantes sont recommandées pour exécuter
 * Disque: 250 Go de stockage SSD
 * Bande passante : 1 Gbps pour le téléchargement/100 Mbps pour l'upload
 
-## Configuration de votre nœud de passerelle (Bridge Node)
+## Configuration de votre Bridge Node
 
 Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS) x64.
 
@@ -46,9 +46,9 @@ Le tutoriel suivant est fait sur une machine d'instance Ubuntu Linux 20.04 (LTS)
 
 Suivez le tutoriel ici pour installer les dépendances [ici](../developers/environment.md).
 
-## Déployez le bridge node sur Celestia
+## Déployez le bridge node Celestia
 
-### Installer le nœud Celestia
+### Installer Celestia Node
 
 Installez le binaire Celestia Node, qui sera utilisé pour exécuter le Bridge node.
 
@@ -68,7 +68,7 @@ Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouve
 
 ### Exécuter le Bridge Node
 
-Démarrer le Bridge Node avec une connexion au terminal RPC d'un noeud Validateur (qui est d'habitude exposé sur le port 9090) :
+Démarrer le Bridge Node avec une connexion au terminal Rpc d'un node Validateur (qui est d'habitude exposé sur le port 9090):
 
 ```sh
 celestia bridge start --core.ip <ip-address> --core.grpc.port <port>
