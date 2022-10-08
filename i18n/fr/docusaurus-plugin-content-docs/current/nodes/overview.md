@@ -21,4 +21,4 @@ Disponibilité des données :
 
 Vous pouvez en apprendre plus sur la façon de configurer chaque node à travers les tutoriels.
 
-N'hésitez pas à fournir des commentaires sur les didacticiels et les guides. Si vous remarquez un bug ou un problème, n'hésitez pas à faire une Pull Request sur Github ou à rédiger ou à émettre un ticket "issue" sur Github !
+N'hésitez pas à fournir des commentaires sur les didacticiels et les guides. Si vous remarquez un bug ou un problème, n'hésitez pas à faire une Pull Request sur Github ou à émettre un ticket "issue" sur Github !
