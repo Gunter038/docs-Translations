@@ -147,7 +147,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Lorsque vous lancez le Light Node, une clé de sécurité du portefeuille sera générée pour vous. Vous aurez besoin d'envoyer des tokens Arabica devnet à cette adresse pour payer les transactions PayForData.
+Lorsque vous lancez le Light Node, une clé de sécurité du wallet sera générée pour vous. Vous aurez besoin d'envoyer des tokens du devnet Arabica à cette adresse pour payer les transactions PayForData.
 
 Vous pouvez trouver cette adresse en lançant la commande suivante dans le répertoire `celestia-node` :
 
@@ -155,9 +155,9 @@ Vous pouvez trouver cette adresse en lançant la commande suivante dans le répe
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Si vous souhaitez approvisionner votre portefeuille en tokens de testnet, dirigez vous vers le canal Discord `#arabica-faucet`.
+Si vous souhaitez approvisionner votre wallet en tokens de testnet, dirigez vous vers le canal Discord `#arabica-faucet`.
 
-Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante dans Discord:
+Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante sur Discord:
 
 ```console
 $request <Wallet-Address>
@@ -167,7 +167,7 @@ Où `<Wallet-Address>` est l'adresse `celestia1******` générée à la créatio
 
 Une fois que tout est configuré, vous pouvez passer à l'étape suivante.
 
-## Requête d'API Node
+## Requête d'API du Node
 
 Ouvrez une autre fenêtre de terminal afin de commencer à interroger l'API. `celestia-node` expose son point de terminaison RPC sur le port `26658` par défaut.
 
@@ -188,7 +188,7 @@ Il produira ce qui suit :
 }
 ```
 
-Cela vous montre le solde de ce portefeuille.
+Cela vous montre le solde de ce wallet.
 
 ### Obtenir l'en-tête du bloc
 
@@ -381,10 +381,10 @@ Quelques éléments à prendre en considération :
 - PFD est un message PayForData.
 - Le point de terminaison prend également les valeurs `namespace_id` et `data`.
 - L'identifiant de l'espace de noms doit être de 8 octets.
-- Les données sont en octets codées en hexadécimal du message brut.
+- Les données sont en octets codés en hexadécimal du message brut.
 - `gas_limit` est la limite de gaz à utiliser pour la transaction.
 
-Nous utilisons le `namespace_id suivant` de `0000010000000100` et les `données` valeur de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+Nous utilisons le `namespace_id` suivant de `0000010000000100` et la `data` valeur de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
 Vous pouvez générer vos propres `namespace_id` et valeurs de données en utilisant ce terrain de jeu Golang utile que nous avons créé [ici](https://go.dev/play/p/7ltvaj8lhRl).
 
@@ -626,7 +626,7 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-Il est possible que le compte auquel vous essayez de soumettre un frais PayForData n'ait pas encore de tokens. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
+Il est possible que le compte auquel vous essayez de soumettre des frais PayForData n'ait pas encore de tokens. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
 
 ### Obtenir des partages d'espace de noms par hauteur de bloc
 
