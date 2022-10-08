@@ -155,38 +155,38 @@ celestia-appd tx distribution withdraw-rewards <validator valoper>\
     --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
 ```
 
-## Delegate & undelegate tokens
+## Делегування та скасування делегування токенів
 
-You can `delegate` your tokens to a validator with the following command:
+Ви можете `делегувати` свої токени валідатору за допомогою такої команди:
 
 ```sh
 celestia-appd tx staking delegate <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-You can undelegate tokens to a validator with the `unbond` command:
+Ви можете скасувати делегування токенів валідатору за допомогою команди `unbond`:
 
 ```sh
 celestia-appd tx staking unbond <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-## Unjailing the validator
+## Від'єднання валідатора
 
-You can unjail your validator with the following command:
+Ви можете відв'язати валідатор за допомогою команди:
 
 ```sh
 celestia-appd tx slashing unjail --from <validator wallet>\
     --chain-id <chain-id> --gas auto -y
 ```
 
-## How to export logs with SystemD
+## Як експортувати журнали з SystemD
 
-You can export your logs if you are running a SystemD service with the following command:
+Ви можете експортувати свої журнали, якщо ви використовуєте службу SystemD, за допомогою такої команди:
 
 ```sh
-sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
+sudo journalctl -u <your systemd service> -S вчора > node_logs. xt
 sudo journalctl -u <your systemd service> -S today > node_logs.txt
-# This command outputs the last 1 million lines!
+# Ця команда виводить останні 1 мільйон ліній!
 sudo journalctl -u <your systemd service> -n 1000000 > node_logs.txt
 ```
