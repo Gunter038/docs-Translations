@@ -1,14 +1,14 @@
 ---
-sidebar_label: Les compagnons du modulaire (Modular Fellows)
+sidebar_label: Modular Fellows
 ---
 
 # Modular Fellows
 
 ![Modular Fellows](/img/modular_fellows.jpg)
 
-Modular Fellows est un programme conçu pour donner aux constructeurs modulaires les ressources appropriées pour construire l'avenir des réseaux blockchain évolutifs et souverains.
+Modular Fellows est un programme conçu pour donner aux constructeurs modulaires les ressources appropriées pour construire l'avenir des réseaux blockchains évolutifs et souverains.
 
-Au cours du programme de trois mois, les Modular Fellows bénéficieront d'un soutien en ingénierie et une allocation mensuelle de 3 000 $ pour construire un projet de leur choix. choix. Après le programme, un soutien continu sera disponible pour les Fellows sous la forme d'une aide à la collecte de fonds et de subventions.
+Au cours du programme de trois mois, les Modular Fellows bénéficieront d'un soutien en ingénierie et d'une allocation mensuelle de 3 000 $ pour construire un projet de leur choix. Après le programme, un soutien continu sera disponible pour les Fellows sous la forme d'une aide à la collecte de fonds et de subventions.
 
 Les candidatures sont actuellement fermées. Revenez nous voir pour plus de détails sur les futures cohortes.
 
@@ -18,7 +18,7 @@ Les candidatures sont actuellement fermées. Revenez nous voir pour plus de dét
 
 Chaque mois, les Fellows achèveront une étape importante du projet, qui débouchera sur une présentation lors d'une journée de démonstration.
 
-- **Mois 1** - Apprendre et Explorer (commencez à construire dès que vous êtes prêt)
+- **Mois 1** - Apprendre et Explorer (commencez à construire dès que vous êtes prêts)
 
   Dans ce mois, vous vous immergerez dans des blockchains modulaires pour trouver des idées de protocoles, outils ou applications à construire pendant le reste du programme.
 
@@ -34,14 +34,14 @@ Chaque mois, les Fellows achèveront une étape importante du projet, qui débou
 
   Au cours de ce mois, vous développerez votre prototype pour construire un produit fonctionnel dont vous ferez la démonstration et que vous expliquerez par écrit.
 
-  - *Important - démonstration, rédaction du produit*
+  - *Jalon Important - démonstration, rédaction du produit*
 
 ## Idées de projet
 
 Il n'est pas nécessaire que les Fellows aient une idée de projet spécifique au début du programme, mais vous devrez en choisir une à la fin du premier mois. Il n'y a pas de bonnes ou mauvaises idées, mais voici quelques-unes pour vous faire réfléchir:
 
 - Des nouveaux layers d'execution, par exemple, un rollup Move
-- Des services d'infrastructure de rollup, par exemple, le déploiement en un clic de séquenceurs de rollup
+- Des services d'infrastructure de rollup, par exemple, le déploiement en un clic de séquenceurs de rollups
 - Solutions d'interopérabilité modulaires, par exemple, des layers de settlement ou des bridges
 - Des versions modulaires des éléments suivants
   - Des applications DeFi populaires, par exemple des AMM & des protocoles de prêt
@@ -87,7 +87,7 @@ Les Modular Fellows travailleront en étroite collaboration avec l'équipe de Ce
 Voici les Mentors pour la première cohorte :
 
 - [Wei Dai](https://twitter.com/_weidai) - Partenaire de recherche à Bain Capital Crypto
-- [Peut Gurel](https://twitter.com/CannnGurel) - Chercheur chez Delphi Digital
+- [Can Gurel](https://twitter.com/CannnGurel) - Chercheur chez Delphi Digital
 - [Eric Wall](https://twitter.com/ercwl) - Chercheur Blockchain
 - [Eli Krenzke](https://twitter.com/eKRENZKE) - Partenaire de l'équipe de recherche chez Polychain
 - [Zaki Manian](https://twitter.com/zmanian) - Cofondateur de Sommelier, cofondateur d'iqlusion, a aidé à construire l'écosystème Cosmos, y compris le lancement du premier testnet public Cosmos
