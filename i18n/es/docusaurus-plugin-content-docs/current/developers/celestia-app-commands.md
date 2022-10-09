@@ -113,55 +113,55 @@ Ver todas las opciones:
 celestia-appd tx bank send --help
 ```
 
-## Governance
+## Gobernanza
 
-You can vote on a governance proposal with the following command:
+Puedes votar sobre una propuesta de gobernanza con el siguiente comando:
 
 ```sh
 celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
 ```
 
-## Claim validator rewards
+## Reclamar recompensas del validador
 
-You can claim your validator rewards with the following command:
+Puedes reclamar las recompensas de tu validador con el siguiente comando:
 
 ```sh
 celestia-appd tx distribution withdraw-rewards <validator valoper>\
     --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
 ```
 
-## Delegate & undelegate tokens
+## Delegar & undelegar tokens
 
-You can `delegate` your tokens to a validator with the following command:
+Puedes `delegar` tus tokens a un validador con el siguiente comando:
 
 ```sh
 celestia-appd tx staking delegate <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-You can undelegate tokens to a validator with the `unbond` command:
+Puedes undelegar tokens a un validador con el comando `unbond`:
 
 ```sh
 celestia-appd tx staking unbond <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-## Unjailing the validator
+## Realizar unjailing al validador
 
-You can unjail your validator with the following command:
+Puedes realizar unjail a tu validador con el siguiente comando:
 
 ```sh
 celestia-appd tx slashing unjail --from <validator wallet>\
     --chain-id <chain-id> --gas auto -y
 ```
 
-## How to export logs with SystemD
+## Cómo exportar logs con SystememD
 
-You can export your logs if you are running a SystemD service with the following command:
+Puedes exportar tus logs si estás ejecutando un servicio SystemD con el siguiente comando:
 
 ```sh
 sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
 sudo journalctl -u <your systemd service> -S today > node_logs.txt
-# This command outputs the last 1 million lines!
+# ¡Este comando genera el último millón de líneas!
 sudo journalctl -u <your systemd service> -n 1000000 > node_logs.txt
 ```
