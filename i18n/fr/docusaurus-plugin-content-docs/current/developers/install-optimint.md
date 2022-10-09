@@ -4,7 +4,7 @@ sidebar_label: Installer Optimint
 
 # Configurer Optimint
 
-Avant que nous ne continuions de construire notre Wordle App, nous devons configurer Optimint dans notre code base.
+Avant que nous ne continuions de construire notre Wordle App, nous devons configurer Optimint dans notre codebase.
 
 ## Installer Optimint
 
