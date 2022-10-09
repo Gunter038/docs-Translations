@@ -154,9 +154,9 @@ NODE_IP=<ip-address>
 
 Vous devriez voir les logs à travers la synchronisation du bridge node.
 
-### Light Node de Celestia
+### Light Node Celestia
 
-Lancer le Light Node en tant que processus damon en arrière-plan
+Lancer le Light Node en tant que processus daemon en arrière-plan
 
 <!-- markdownlint-disable MD013 -->
 ```sh
