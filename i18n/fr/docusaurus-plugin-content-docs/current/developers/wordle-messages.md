@@ -17,7 +17,7 @@ Pour des messages pour Wordle, et étant donné notre concept initial, nous fero
 
 Avec ces concepts initiaux, nous pouvons commencer à créer nos messages !
 
-## Échafauder un message
+## Scaffolder un message
 
 Pour créer le message `SubmitWordle`, nous exécutons la commande suivante :
 
