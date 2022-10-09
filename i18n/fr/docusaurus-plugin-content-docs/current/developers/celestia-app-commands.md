@@ -63,7 +63,7 @@ celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 
 ### Importation et exportation des clés
 
-Importez une clé privée chiffrée et blindée ASCII dans la base de clés locale.
+Importez une clé privée chiffrée et ASCII-armored dans la base de clés locale.
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
