@@ -88,7 +88,7 @@ Le résultat devrait être la version installée suivante :
 go version go1.18.2 linux/amd64
 ```
 
-### Installer un nœud Celestia
+### Installer un node Celestia
 
 Une chose à faire ici est de décider quelle version du nœud Celestia vous décidez de compiler. Le testnet Mamaki requiert v0.3.0-rc2 et le Devnet Arabica requiert v0.3.0.
 
@@ -96,7 +96,7 @@ Les sections suivantes soulignent comment l'installer pour les deux réseaux.
 
 #### Installation du devnet Arabica
 
-Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
+Installez le binaire du node Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
@@ -121,7 +121,7 @@ Golang version: go1.19.1
 
 #### Installation du testnet Mamaki
 
-Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
+Installez le binaire du node Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
