@@ -168,16 +168,16 @@ wordled q wordle list-guess --output json
 
 Cela fournit tous les guess soumis jusqu'à présent, l'index étant la date d'aujourd'hui et l'adresse de l'émetteur.
 
-Grâce à cela, nous avons implémenté un exemple basique de Wordle en utilisant le Cosmos-SDK, Ignite et Optimint. La prochaine partie sera sur la façon d'étendre la code base.
+Grâce à cela, nous avons implémenté un exemple basique de Wordle en utilisant le Cosmos-SDK, Ignite et Optimint. La prochaine partie sera sur la façon d'étendre la codebase.
 
 ## Étendre dans le futur
 
 Vous pouvez étendre la code base et améliorer ce tutoriel en consultant le dossier github [ici](https://github.com/celestiaorg/wordle).
 
-Il y a de multiples façons d'étendre cette code base :
+Il y a de multiples façons d'étendre cette codebase :
 
 1. Vous pouvez améliorer le message lorsque vous devinez le mot correct.
-2. Vous pouvez hash le mot avant de le soumettre à la chaine en vous assurant que le hashing est local et qu'il ne soit pas révélé en front-run par d'autres qui surveillent la chaine pendant qu'il est soumis à celle-ci.
+2. Vous pouvez hash le mot avant de le soumettre à la chaîne en vous assurant que le hashing est local et qu'il ne soit pas révélé en front-run par d'autres qui surveillent la chaîne pendant qu'il est soumis à celle-ci.
 3. Vous pouvez améliorer l'interface utilisateur dans le terminal en utilisant une interface plus jolie pour Wordle. Quelques exemples sont proposés [ici](https://github.com/nimblebun/wordle-cli).
 4. Vous pouvez améliorer la date actuelle pour qu'elle soit adaptée à un fuseau horaire spécifique.
 5. Vous pouvez créer un bot qui soumet un mot chaque jour à une heure spécifique.
