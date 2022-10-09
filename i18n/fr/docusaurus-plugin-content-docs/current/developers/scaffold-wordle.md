@@ -1,15 +1,15 @@
 ---
-sidebar_label: Echafauder la chaine
+sidebar_label: Scaffolder la chaîne
 ---
 
-# Ignite et échafauder la chaine Wordle
+# Ignite et Scaffolder la chaîne Wordle
 <!-- markdownlint-disable MD013 -->
 
 ## Ignite
 
-Ignite est un outil CLI (Interface de Ligne de Commande) incroyable pour nous aider à construire nos propres blockchains et applications cosmos-sdk. Il fournit de nombreux outils et échaufaudages pour ajouter des messages, types et modules avec bon nombre de bibliothèques cosmos-sdk.
+Ignite est un outil CLI (Interface de Ligne de Commande) incroyable pour nous aider à construire nos propres blockchains et applications cosmos-sdk. Il fournit de nombreux outils et scaffoldages pour ajouter des messages, types et modules avec bon nombre de bibliothèques cosmos-sdk.
 
-Vous pouvez en apprendre davantage sur Ingite [ici](https://docs.ignite.com/).
+Vous pouvez en apprendre davantage sur Ignite [ici](https://docs.ignite.com/).
 
 Pour installer Ignite, vous pouvez exécuter cette commande sur votre terminal :
 
@@ -28,13 +28,13 @@ Si vous exécutez la commande suivante :
 ignite --help
 ```
 
-Vous devriez alors voir une invite de commandes signifiant qu'Ignite a été installé avec succès !
+Vous devriez voir une sortie de commandes d'aide affichant qu'Ignite a été installé avec succès !
 
-## Échafauder la Chaine Wordle
+## Scaffolder la chaîne Wordle
 
 Maintenant vient la partie amusante : créer une nouvelle blockchain ! Avec Ignite, le processus est assez facile et direct.
 
-Ignite CLI vient avec plusieurs échafaudages conçus pour rendre le développement plus direct, en mettant à disposition tout ce dont vous avez besoin pour construire votre blockchain.
+Ignite CLI vient avec plusieurs "scaffoldings" conçus pour rendre le développement plus direct, en mettant à disposition tout ce dont vous avez besoin pour construire votre blockchain.
 
 Premièrement nous allons utiliser Ignite CLI pour construire les fondations d'une nouvelle blockchain Cosmos SDK. Ignite réduit la quantité de code que vous devez écrire vous-même. Si vous venez du monde d'Ethereum et de sa machine virtuelle, vous pouvez voir Ingite comme la version Cosmos-SDK de la Foundry ou de la Hardhat mais spécifiquement conçue pour créer des blockchains.
 
@@ -44,7 +44,7 @@ Nous lançons d'abord la commande ci-dessous pour configurer notre projet de nou
 ignite scaffold chain github.com/YazzyYaz/wordle --no-module
 ```
 
-Cette commande échafaude un nouveau répertoire appelé `wordle` dans votre répertoire local duquel vous avez exécuté la commande. Notez que nous avons entré le drapeau `--no-module`, c'est parce que nous allons créer le module par la suite.
+Cette commande échafaude un nouveau répertoire appelé `wordle` dans votre répertoire local duquel vous avez exécuté la commande. Notez que nous avons entré le drapeau `--no-module`, parce que nous allons créer le module par la suite.
 
 ## Répertoire Wordle
 
@@ -59,7 +59,7 @@ A l'intérieur, vous verrez plusieurs répertoires et architectures pour votre b
 | Fichier/répertoire | Définition                                                                                                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | app/               | Ce sont les fichiers qui relient la blockchain. Le fichier le plus important est `app.go` qui contient la définition du type de blockchain et les fonctions pour la créer et l'initialiser. |
-| cmd/               | Paquet principal responsable du CLI du binaire compilé.                                                                                                                                     |
+| cmd/               | Package principal responsable du CLI du binaire compilé.                                                                                                                                    |
 | docs/              | Répertoire pour toute la documentation relative au projet. Par défaut, une spécification OpenAPI est générée.                                                                               |
 | proto/             | Fichiers tampon du protocole décrivant la structure des données.                                                                                                                            |
 | testutil/          | Fonctions d'aide pour les tests.                                                                                                                                                            |
