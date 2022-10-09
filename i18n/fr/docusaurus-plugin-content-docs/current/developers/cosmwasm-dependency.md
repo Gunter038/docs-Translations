@@ -1,5 +1,5 @@
 ---
-sidebar_label: Les Dépendances à CosmWasm
+sidebar_label: Les Dépendances CosmWasm
 ---
 
 # Installations d'une Dépendance CosmWasm
