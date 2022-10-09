@@ -112,7 +112,7 @@ Ensuite, sélectionnez le réseau que vous souhaitez utiliser pour déléguer à
 
 * [Mamaki](./mamaki-testnet.md#delegate-to-a-validator)
 
-## Deployer le Celestia Node
+## Deployer le Node Celestia
 
 Cette section décrit la partie 2 de l'installation d'un node validateur Celestia : exécuter le daemon Celestia Bridge Node.
 
@@ -148,7 +148,7 @@ Vous avez configuré avec succès un Bridge node qui se synchronise avec le rés
 
 ## Exécuter un Node Validateur
 
-Après avoir terminé toutes les étapes nécessaires, vous êtes maintenant prêt à exécuter un validateur ! Afin de créer votre validateur sur la chaîne, suivez les instructions ci-dessous. Gardez à l'esprit que ces étapes sont nécessaires UNIQUEMENT si vous souhaitez participer au consensus.
+Après avoir terminé toutes les étapes nécessaires, vous êtes maintenant prêts à exécuter un validateur ! Afin de créer votre validateur sur la chaîne, suivez les instructions ci-dessous. Gardez à l'esprit que ces étapes sont nécessaires UNIQUEMENT si vous souhaitez participer au consensus.
 
 Choisissez un nom de `moniker` de votre choix! C'est le nom du validateur qui s'affichera sur les tableaux de bord publics et les explorateurs. `VALIDATOR_WALLET` doit être le même que celui défini précédemment. Le paramètre `--min-self-delegation=1000000` définit la quantité de tokens qui sont auto-délégués depuis votre wallet de validateur.
 
