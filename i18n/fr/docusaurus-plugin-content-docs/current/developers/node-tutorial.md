@@ -5,20 +5,20 @@ sidebar_label : Tutoriel du node
 # Obtenir et envoyer des transactions avec Celestia node
 <!-- markdownlint-enable MD013 -->
 
-Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur identifiant d'espace de noms.
+Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur namespace ID.
 
-Ce tutoriel est adapté à un travail en environnement Linux.
+Ce tutoriel est adapté à un environnement de travail Linux.
 
-> Pour voir un tutoriel vidéo pour la mise en place d'un Celestia Light Node, cliquez sur [ici](./light-node-video.md)
+> Pour voir un tutoriel vidéo pour la mise en place d'un Light Node Celestia, cliquez sur [ici](./light-node-video.md)
 
 ## Hardware Requis
 
 Les exigences matérielles minimales recommandées pour lancer un light node sont les suivantes:
 
 - Mémoire vive : 2GB RAM
-- Processeur : simple cœur
+- CPU: Single Core
 - Disque dur : 5 Go SSD
-- Bande-passante : 56 ko/s download/56ko/s upload
+- Bande passante : 56 kbps pour le téléchargement/56 kbps pour l'upload
 
 ## Configuration des dépendances
 
@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 sudo yum update
 ```
 
-Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du nœud :
+Ce sont des packages essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -46,7 +46,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ### Installer Golang
 
-La Celestia-app et le nœud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les mettre en application.
+La Celestia-app et le nœud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
 
 ```sh
 ver="1.19.1"
@@ -80,7 +80,7 @@ go version go1.18.2 linux/amd64
 
 ### Installer Celestia node
 
-Installez le binaire du nœud Celestia en exécutant les commandes suivantes :
+Installez le binaire du node Celestia en exécutant les commandes suivantes :
 
 ```sh
 cd $HOME
