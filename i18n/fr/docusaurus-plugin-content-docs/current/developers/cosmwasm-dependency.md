@@ -2,7 +2,7 @@
 sidebar_label: Les Dépendances à CosmWasm
 ---
 
-# Installations d'une Dépendance à CosmWasm
+# Installations d'une Dépendance CosmWasm
 
 ## Configuration de l'Environnement
 
