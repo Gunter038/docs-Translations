@@ -1,8 +1,8 @@
-# Celestia Node Metrics
+# Métricas del nodo Celestia
 
-This tutorial is for running metrics for your celestia-node Data Availability instance.
+Este tutorial es para ejecutar métricas para tus datos de instancias de nodos celestia Data Availability.
 
-This tutorial will focus on running metrics for a light-node.
+Este tutorial se centrará en ejecutar métricas para un light-node.
 
 This tutorial assumes you have already setup your light node by following the tutorial in the [Node API tutorial](./node-tutorial.md).
 
