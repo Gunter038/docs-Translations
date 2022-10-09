@@ -35,7 +35,7 @@ Cette section est nécessaire pour le Bridge Node Celestia. Par défaut, `Remote
 
 #### Bootstrap
 
-Les bootstrappers aident les nouveaux nœuds à trouver des pairs plus rapidement dans le réseau. Par défaut, le `Bootstrapper = false` et le `BootstrapPeers` est vide. Si vous voulez que votre node soit un "bootstrapper", activez `Bootstrapper = true`. Les `BootstrapPeers` sont déjà fournis par défaut lors de l'initialisation. Si vous souhaitez ajouter les vôtres manuellement, vous devez fournir le multiadresse des pairs.
+Les bootstrappers aident les nouveaux nœuds à trouver des pairs plus rapidement dans le réseau. Par défaut, le `Bootstrapper = false` et `BootstrapPeers` est vide. Si vous voulez que votre node soit un "bootstrapper", activez `Bootstrapper = true`. Les `BootstrapPeers` sont déjà fournies par défaut lors de l'initialisation. Si vous souhaitez ajouter les vôtres manuellement, vous devez fournir le multiadresse des pairs.
 
 #### Pairs mutuels
 
@@ -45,8 +45,8 @@ Le but de cette configuration est de mettre en place une communication bidirecti
 
 #### TrustedHash et TrustedPeer
 
-`TrustedHash` est nécessaire pour initialiser correctement un Bridge node Celestia avec un Node Celestia Core `Distant` déjà en cours d'exécution. Celestia Light Node Celestia prendra un hash Genesis comme celui de confiance, s'il n'y a pas de hash fourni manuellement lors de la phase d'initialisation.
+`TrustedHash` est nécessaire pour initialiser correctement un Bridge node Celestia avec un Node Celestia Core `Remote` déjà en cours d'exécution. Le Light Node Celestia prendra un hash Genesis comme celui de confiance, s'il n'y a pas de hash fourni manuellement lors de la phase d'initialisation.
 
-`Les TrustedPeers` sont la table des pairs de Bridge Nodes auxquels les lights nodes Celestia font confiance. Par défaut les pairs bootstrap deviennent des pairs de confiance pour les Light Nodes Celestia si un utilisateur ne définit pas les paramètres des pairs de confiance dans le fichier de configuration.
+`Les TrustedPeers` sont la table des pairs de Bridge Nodes auxquels les lights nodes Celestia font confiance. Par défaut les pairs à bootstrap deviennent des pairs de confiance pour les Light Nodes Celestia si un utilisateur ne définit pas les paramètres des pairs de confiance dans le fichier de configuration.
 
 Tout Bridge Node Celestia peut être un pair de confiance pour un Light. Toutefois, par son architecture, un Light Node ne peut pas être un trusted peer pour un autre Light Node.
