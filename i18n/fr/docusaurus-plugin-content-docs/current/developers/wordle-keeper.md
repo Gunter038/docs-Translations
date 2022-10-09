@@ -206,8 +206,8 @@ Dans le code ci-dessus, nous effectuons les choses suivantes :
 
 * Ici, nous effectuons des vérifications initiales sur le mot pour nous assurer qu'il est fait de 5 caractères uniquement alphabétiques, ce qui peut être refactorisé dans le futur ou vérifié dans les commandes CLI.
 * Nous obtenons ensuite le mot du jour en récupérant la chaine de hash du jour actuel.
-* Ensuite, nous créons une chaine de hash du jour courant et l'Emetteur. Cela nous permet de créer un type pour les mots proposés avec un index qui utilise le jour actuel et l'adresse de l'émetteur. Cela nous aide quand nous sommes confrontés à un nouveau jour et qu'une adresse veut deviner ce nouveau mot. La configuration de l'index permet de continuer à essayer de deviner un nouveau mot chaque jour jusqu'à un maximum de 6 essais par jour.
-* Nous vérifions ensuite si le nombre d'essais de l'émetteur a bien atteint 6 pour aujourd'hui. Si ce n'est pas le cas, il incrémente l'essai. Nous vérifions ensuite si la tentative est correcte. Nous stockons le mot essayé avec le nombre d'essais mis à jour.
+* Ensuite, nous créons une chaîne de hash du jour courant et l'Emetteur. Cela nous permet de créer un type de devinette pour les mots proposés avec un index qui utilise le jour actuel et l'adresse de l'émetteur. Cela nous aide quand nous sommes confrontés à un nouveau jour et qu'une adresse veut deviner ce nouveau mot. La configuration de l'index permet de continuer à essayer de deviner un nouveau mot chaque jour jusqu'à un maximum de 6 essais par jour.
+* Nous vérifions ensuite si le nombre d'essais de l'émetteur a bien atteint 6 pour aujourd'hui. Si ce n'est pas le cas, il incrémente l'essai. Nous vérifions ensuite si la tentative est correcte. Nous stockons la devinette avec le nombre d'essais mis à jour.
 
 ## Le fichier Protobuf
 
@@ -226,7 +226,7 @@ message MsgSubmitGuessResponse {
 
 Le fichier suivant est : `x/wordle/types/expected_keepers.go`
 
-Ici, nous avons besoin d'ajouter la méthode SendCoins à l'interface de BankKeeper afin de permettre l'envoi de récompense à la personne qui a deviné.
+Ici, nous avons besoin d'ajouter la méthode SendCoins à l'interface BankKeeper afin de permettre l'envoi de récompense à la personne qui a deviné.
 
 ```go
 type BankKeeper interface {
