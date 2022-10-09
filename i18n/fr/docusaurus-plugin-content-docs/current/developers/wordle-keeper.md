@@ -145,7 +145,6 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
   wordle, isFound := k.GetWordle(ctx, currentTimeHashString)
   if !isFound {
     return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Wordle of The Day Hasn't Been Submitted Yet. Feel Free to Submit One!")
-  Feel Free to Submit One!")
   }
 
   // We Convert Current Day and Guesser to A Hash To Use As An Index For Today's Guesses For That Guesser
@@ -164,7 +163,6 @@ func (k msgServer) SubmitGuess(goCtx context.Context, msg *types.MsgSubmitGuess)
     // Check if Submitter Reached 6 Tries
     if guess.Count == strconv.Itoa(6) {
       return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "You Have Guessed The Maximum Amount of Times for The Day! Try Again Tomorrow With A New Wordle.")
-    Try Again Tomorrow With A New Wordle.")
     }
     currentCount, err := strconv.Atoi(guess.Count)
     if err != nil {
