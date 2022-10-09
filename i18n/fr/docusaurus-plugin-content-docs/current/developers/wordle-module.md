@@ -4,11 +4,11 @@ sidebar_label: Module
 
 # Créer le module Wordle
 
-Pour le module Wordle, nous pouvons ajouter des dépendances offertes par Cosmos-SDK.
+Pour le module Wordle, nous pouvons ajouter des dépendances offertes par le Cosmos-SDK.
 
 À partir de la documentation du Cosmos-SDK, un [module](https://docs.ignite.com/guide/nameservice#cosmos-sdk-modules) est défini comme suit :
 
-> Dans une blockchain de Cosmos SDK, la logique spécifique à l'application est implémentée dans des modules séparés. Les modules gardent le code facile à comprendre et à réutiliser. Chaque module contient son propre message et son processeur de transaction, alors que le Cosmos SDK  est responsable du routage de chaque message vers son module respectif.
+> Dans une blockchain du Cosmos SDK, la logique spécifique à l'application est implémentée dans des modules séparés. Les modules gardent le code facile à comprendre et à réutiliser. Chaque module contient son propre message et son processeur de transaction, alors que le Cosmos SDK  est responsable du routage de chaque message vers son module respectif.
 
 De multiples modules existent pour le slashing, la validation, l'authentification.
 
