@@ -18,7 +18,7 @@ wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 
 Cela initialise une chaine appelée `celeswasm` avec le fichier binaire `wasmd`.
 
-La commande suivante nous aide à configurer des comptes pour genesis :
+La commande suivante nous aide à configurer des comptes pour le genesis :
 
 ```sh
 KEY_NAME=celeswasm-key
@@ -59,7 +59,7 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 
 Remarques:
 
-> NOTE : Dans la commande du dessus, vous avez besoin de fournir une adresse IP d'un nœud Celestia possédant des Arabica Devnet Tokens à la `base_url`. Suivre le tutoriel pour configurer un Light Node Celestia et créer un portefeuille avec les tokens faucet de testnet dans la section nœud de Celestia [ici](./node-tutorial.md).
+> NOTE : Dans la commande du dessus, vous avez besoin de fournir une adresse IP d'un node Celestia possédant des Tokens du Devnet Arabica à `base_url`. Suivre le tutoriel pour configurer un Light Node Celestia et créer un wallet avec les tokens faucet de testnet dans la section node de Celestia [ici](./node-tutorial.md).
 
 Remarques complémentaires :
 
