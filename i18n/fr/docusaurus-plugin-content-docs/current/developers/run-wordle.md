@@ -30,7 +30,7 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Ici la commande a créé un binaire appelé `wordled` et des adresses `alice` et `bob` avec un faucet et un API. Vous êtes libre de quitter le programme avec la fonction CTRL-C. La raison étant que nous allons exécuter séparément le binaire `wordled` avec les drapeaux Optimint intégrés.
+Ici la commande a créé un binaire appelé `wordled` et des adresses `alice` et `bob` avec un faucet et une API. Vous êtes libre de quitter le programme avec la fonction CTRL-C. La raison étant que nous allons exécuter séparément le binaire `wordled` avec les drapeaux Optimint intégrés.
 
 Vous pouvez commencer la chaine avec des configurations Optimint en exécutant la commande suivante :
 
@@ -40,7 +40,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 Remarques :
 
-> NOTE : dans la commande ci-dessus, vous avez besoin de fournir une adresse IP d'un nœud Celestia dont le compte est approvisionné en tokens devnet Arabica à la `base_url`. Nous vous invitons à suivre le tutoriel pour configurer un light node Celestia et créer un portefeuille avec des tokens faucet de testnet, dans la section Nœud Celestia [ici](./node-tutorial.md).
+> NOTE : dans la commande ci-dessus, vous avez besoin de fournir une adresse IP d'un node Celestia dont le compte est approvisionné en tokens du devnet Arabica à la `base_url`. Nous vous invitons à suivre le tutoriel pour configurer un light node Celestia et créer un portefeuille avec des tokens faucet de testnet, dans la section Nœud Celestia [ici](./node-tutorial.md).
 
 Remarques complémentaires :
 
@@ -52,7 +52,7 @@ Dans une autre fenêtre, exécutez la commande suivante pour soumettre un Wordle
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> NOTE : Nous soumettons une transaction asynchrone car nous souhaitons éviter les erreurs de timeout. Optimint remplaçant Tendermint, nous avons besoin d'attendre le réseau de disponibilité des données de Celestia pour nous assurer qu'un bloc a été inclus dans Wordle, avant de passer au bloc suivant. Actuellement dans Optimint, l'agrégateur unique n'avance pas avec le bloc suivant en production tant qu'il tente de soumettre le bloc antérieur au réseau de disponibilité des données. Dans le futur, avec la leader election, la production du bloc et la logique de synchronisation vont s'améliorer considérablement.
+> NOTE : Nous soumettons une transaction asynchrone car nous souhaitons éviter les erreurs de timeout. Optimint remplaçant Tendermint, nous avons besoin d'attendre le réseau de disponibilité des données de Celestia pour nous assurer qu'un bloc a été inclus dans Wordle, avant de passer au bloc suivant. Actuellement dans Optimint, l'agrégateur unique n'avance pas avec le bloc suivant en production tant qu'il tente de soumettre le bloc antérieur au réseau de disponibilité des données. Dans le futur, avec la sélection de leader, la production du bloc et la logique de synchronisation vont s'améliorer considérablement.
 
 Cela vous demandera de confirmer la transaction avec le message suivant :
 
