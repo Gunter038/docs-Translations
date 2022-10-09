@@ -7,7 +7,7 @@ sidebar_label: Interaction de Contrat
 
 Dans les étapes précédentes, nous avons stocké le hash de la transaction du contrat dans un environnement variable pour un usage ultérieur.
 
-Because of the longer time periods of submitting transactions via Optimint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
+Pour cause des périodes plus longues de soumission de transactions via Optimint en raison de l'attente sur la couche de disponibilité de données de Celestia pour confirmer l'inclusion de bloc, nous devrons interroger notre tx hash directement pour obtenir des informations à ce sujet.
 
 ## Interrogation du contrat
 
