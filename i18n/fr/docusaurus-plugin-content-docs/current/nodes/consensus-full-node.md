@@ -1,5 +1,5 @@
 - - -
-Full node de Consensus
+sidebar_label : Full Node de Consensus
 - - -
 
 # Configurer un Full Node de Consensus de Celestia
