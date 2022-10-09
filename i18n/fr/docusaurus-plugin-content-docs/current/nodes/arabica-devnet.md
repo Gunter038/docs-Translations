@@ -7,7 +7,7 @@ sidebar_label: Devnet Arabica
 
 ![arabica-devnet](/img/arabica-devnet.png)
 
-Arabica Devnet est un nouveau testnet de Celestia Labs qui se concentre exclusivement sur la fourniture aux développeurs de performances améliorées et les dernières mises à jour pour tester leurs rollups et applications.
+Le Devnet Arabica est un nouveau testnet de Celestia Labs qui se concentre exclusivement sur la fourniture aux développeurs de performances améliorées et les dernières mises à jour pour tester leurs rollups et applications.
 
 Arabica ne se concentre pas sur les tests de validateurs ou de consensus, c'est plutôt le Testnet Mamaki qui est utilisé pour cela. Si vous êtes un validateur, nous vous recommandons de tester simplement vos opérations de validateur sur Mamaki [ici](./mamaki-testnet.md).
 
