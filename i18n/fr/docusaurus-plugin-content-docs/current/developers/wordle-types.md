@@ -4,7 +4,7 @@ sidebar_label: Types
 
 # Types de Wordle
 
-Dans les prochaines étapes, nous allons créer des types qui seront utilisés par les messages que nous avons créés.
+Durant les prochaines étapes, nous allons créer des types qui seront utilisés par les messages que nous avons créés.
 
 ## Types de Scaffoling Wordle
 
@@ -20,4 +20,4 @@ Le second type est le type `Guess`. Il nous permet de stocker la dernière estim
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Ici, nous allons également stocker `count` pour compter combien de guess cette adresse a soumis.
+Ici, nous allons également stocker `count` pour compter combien de devinettes cette adresse a soumis.
