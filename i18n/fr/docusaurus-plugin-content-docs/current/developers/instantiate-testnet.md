@@ -115,7 +115,7 @@ Ouvrez le fichier suivant `$HOME/.celestia-app/config/config.toml` pour le modif
 À l'intérieur du fichier, ajoutez les autres participants en modifiant la ligne suivante pour inclure d'autres participants en tant que pairs persistants:
 
 ```text
-# Comma separated list of nodes to keep persistent connections to
+# Liste de nodes séparés par des virgules pour garder les connexions persistantes à
 persistent_peers = "[validator_address]@[ip_address]:[port],[validator_address]@[ip_address]:[port]"
 ```
 
