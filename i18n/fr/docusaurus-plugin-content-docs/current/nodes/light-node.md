@@ -198,7 +198,7 @@ celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Clés et portefeuilles
+### Clés et wallets
 
 Vous pouvez créer votre clé pour votre node en exécutant la commande suivante :
 
