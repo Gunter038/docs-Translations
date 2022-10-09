@@ -4,7 +4,7 @@ sidebar_label: Présentation de Wordle
 
 # Application Wordle sur Optimint
 
-![testnet Mamaki](/img/wordle.jpg)
+![mamaki-testnet](/img/wordle.jpg)
 
 Ce tutoriel va aller plus loin dans la construction d'une application du cosmos-sdk pour Optimint, l'implémentation d'Optimistic Rollup de Tendermint, pour le jeu populaire [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
@@ -40,7 +40,7 @@ Pour la simplicité de la conception, nous éviterons ces astuces, bien qu'il y 
 Dans cette conception actuelle, nous implémentons les règles suivantes :
 
 * 1 mot peut être soumis par jour
-* Chaque adresse aura 6 tentatives de deviner le mot
+* Chaque adresse aura 6 tentatives pour deviner le mot
 * Il doit s'agir d'un mot à cinq lettres.
 * Quiconque devine correctement le mot avant leurs 6 essais est supérieur a une récompense de 100 jetons WORDLE.
 
@@ -55,5 +55,5 @@ Le tutoriel suivant est divisé en sections suivantes :
 3. [Modules](./wordle-module.md)
 4. [Messages](./wordle-messages.md)
 5. [Types](./wordle-types.md)
-6. [Keepers](./wordle-keeper.md)
+6. [Gardiens](./wordle-keeper.md)
 7. [Exécution de Wordle](./run-wordle.md)
