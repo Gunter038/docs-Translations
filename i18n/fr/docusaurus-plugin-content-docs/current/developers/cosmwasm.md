@@ -4,9 +4,9 @@ sidebar_label: Aperçu de CosmWasm
 
 # CosmWasm sur Optimint
 
-CosmWasm est une plateforme de contrats intelligents construite pour l'écosystème Cosmos en utilisant la WebAssembly (Wasm) pour construire des contrats intelligents sur le Cosmos-SDK. Dans ce tutoriel, nous allons apprendre la manière d'intégrer le CosmWasm avec la couche de disponibilité des données de Celestia, en utilisant Optimint.
+CosmWasm est une plateforme de contrats intelligents construite pour l'écosystème Cosmos en utilisant la WebAssembly (Wasm) pour construire des contrats intelligents sur le Cosmos-SDK. Dans ce tutoriel, nous allons apprendre la manière d'intégrer CosmWasm avec la couche de disponibilité des données de Celestia, en utilisant Optimint.
 
-> NOTE : ce tutoriel explore le développement sur Optimint, qui est toujours en phase alpha. Si vous rencontrez des bugs, nous vous prions d'écrire un ticket sur la section appropriée de Github ou de nous le faire savoir sur notre Discord. Également, alors qu'Optimint permet de construire des rollups souverains sur Celestia, il ne traite actuellement pas les preuves de fraude et fonctionne donc en mode "pessimiste", dans lequel les nœuds doivent exécuter à nouveau les transactions pour vérifier la validité de la chaine (c-à-d un full node). Enfin, Optimint ne possède actuellement qu'un unique séquenceur.
+> NOTE : ce tutoriel explore le développement sur Optimint, qui est toujours en phase alpha. Si vous rencontrez des bugs, nous vous prions d'écrire un ticket sur la section appropriée de Github ou de nous le faire savoir sur notre Discord. Également, alors qu'Optimint permet de construire des rollups souverains sur Celestia, il ne traite actuellement pas les preuves de fraude et fonctionne donc en mode "pessimiste", dans lequel les nodes doivent exécuter à nouveau les transactions pour vérifier la validité de la chaine (c-à-d un full node). Enfin, Optimint ne possède actuellement qu'un unique séquenceur.
 
 Vous pouvez en apprendre davantage sur CosmWasm [ici](https://docs.cosmwasm.com/docs/1.0/).
 
@@ -22,4 +22,4 @@ Le contrat intelligent que nous utiliserons dans ce tutoriel est un fourni par l
 
 Vous pouvez trouver le contrat [ici](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
 
-Comment écrire le contrat intelligent en Rust pour l'espace de nom ne fait pas l'objet de ce tutoriel. Dans le futur, nous ajouterons davantage de tutoriels pour écrire des contrats intelligents de CosmWasm sur Celestia.
+Comment écrire le contrat intelligent en Rust pour le Nameservice ne fait pas l'objet de ce tutoriel. Dans le futur, nous ajouterons davantage de tutoriels pour écrire des contrats intelligents de CosmWasm sur Celestia.
