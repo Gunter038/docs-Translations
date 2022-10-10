@@ -30,12 +30,12 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 原因是我们将单独运行 `worded` 双进制标记添加了 Optimint 标记。
+此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
-您可以通过运行以下步骤优化配置启动区块链
+You can start the chain with rollmint configurations by running the following:
 
 ```sh
-wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
 请考虑以下方面：
@@ -44,7 +44,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 还需要注意：
 
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 在另一个窗口中，运行以下指令来submit a Wordle：
 
@@ -52,7 +52,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> 注意：为了避免 任何超时错误，我们正在提交异步交易。 在进入下一个区块之前。使用 Optimint 替换 Tendermint ， 我们 需要等待Celestia的数据可用性网络来确保一个区块被包含在 Wordle 中 。 目前在Optimint, 只要单个聚合器试图向DA网络提交当前区块，它就不会生产下一个区块。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
 
 这将要求你确认交易，并发出以下信息。
 
@@ -168,7 +168,7 @@ wordled q wordle list-guess --output json
 
 This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Optimint. Read on to how you can extend the code base.
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Read on to how you can extend the code base.
 
 ## Extending in the Future
 
