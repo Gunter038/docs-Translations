@@ -50,7 +50,7 @@ Trouvez les instructions spécifiques à votre système d'exploitation.
 
 ## Installation de wasmd
 
-Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
+Ici, nous allons dérouler le dépôt `wasmd` et remplacer Tendermint par Rollmint. Rollmint est un le remplaçant idéal de Tendermint qui permet aux applications du Cosmos SDK de connecter le réseau d'accessibilité des données de Celestia.
 
 ```sh
 git clone https://github.com/CosmWasm/wasmd.git
