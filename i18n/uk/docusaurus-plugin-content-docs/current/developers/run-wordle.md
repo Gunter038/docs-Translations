@@ -28,12 +28,12 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Тут команда створила двійковий файл `wordled` та адреси `alice` та `bob`, а також кран і API. Ви впевнені, що хочете вийти з програми з CTRL-C. Причина цього в тому, що ми запускатимемо двійковий файл `wordled` окремо з доданими прапорцями Optimint.
+Тут команда створила двійковий файл `wordled` та адреси `alice` та `bob`, а також кран і API. Ви впевнені, що хочете вийти з програми з CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
-Ви можете почати ланцюжок із конфігурацій optimint, виконавши наступне:
+You can start the chain with rollmint configurations by running the following:
 
 ```sh
-wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
 Будь ласка, зверніть увагу:
@@ -42,7 +42,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 
 Також зверніть увагу:
 
-> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в Arabica Devnet для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://explorer.celestia.observer/arabica). Крім того, для прапора `--optimint.namespace_id` ви можете згенерувати випадковий ідентифікатор простору імен за допомогою ігрового майданчика [тут](https://go.dev/play/p/7ltvaj8lhRl)
+> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в Arabica Devnet для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 В іншому вікні виконайте наступне, щоб надіслати Wordle:
 
@@ -50,7 +50,7 @@ wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> ПРИМІТКА. Ми надсилаємо транзакцію асинхронно, щоб уникнути помилок часу очікування. Завдяки Optimint як заміні Tendermint нам потрібно дочекатися, поки мережа доступності даних Celestia переконається, що блок включено з Wordle, перш ніж переходити до наступного блоку. Наразі в Optimint єдиний агрегатор не просувається вперед зі створенням наступного блоку, доки він намагається надіслати поточний блок до мережі DA. У майбутньому, з вибором лідера, виробництво блоків і логіка синхронізації значно покращуються.
+> ПРИМІТКА. Ми надсилаємо транзакцію асинхронно, щоб уникнути помилок часу очікування. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. У майбутньому, з вибором лідера, виробництво блоків і логіка синхронізації значно покращуються.
 
 Це попросить вас підтвердити транзакцію з таким повідомленням:
 
@@ -166,7 +166,7 @@ wordled q wordle list-guess --output json
 
 Це виведе всі об’єкти Guess, надіслані на цю мить, з індексом, який є сьогоднішньою датою та адресою відправника.
 
-Таким чином, ми реалізували базовий приклад Wordle за допомогою Cosmos-SDK і Ignite та Optimint. Прочитайте далі, як розширити кодову базу.
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Прочитайте далі, як розширити кодову базу.
 
 ## Розширення в майбутньому
 
