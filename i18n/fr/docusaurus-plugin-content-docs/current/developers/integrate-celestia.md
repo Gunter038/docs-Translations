@@ -21,9 +21,9 @@ Celestia prend en charge de nombreux systèmes de gestion des clés existants, c
 
 ### Terminaux RPC et requête
 
-Dans la Celestia App, seuls les terminaux standards RPC pour Tendermint et le Cosmos-SDK sont exposés. Nous n'ajoutons ni ne soustrayons actuellement aucune fonctionnalité de base, mais cela pourrait changer à l'avenir. Il en va de même pour la requête des données de la chaine.
+Dans Celestia App, seuls les terminaux standards RPC pour Tendermint et le Cosmos-SDK sont exposés. Nous n'ajoutons ni ne soustrayons actuellement aucune fonctionnalité de base, mais cela pourrait changer à l'avenir. Il en va de même pour la requête des données de la chaine.
 
-Dans le nœud Celestia, le client du nœud de disponibilité des données précisément, il y a une interface de programmation d'application (API) JSON-RPC qui vous permet d'interagir directement avec la couche de disponibilité des données de Celestia. Le guide pour cela peut être trouvé [ici](https://docs.celestia.org/developers/node-tutorial).
+Dans Celestia-node, le client du node de disponibilité des données, il y a une API JSON-RPC qui vous permet d'interagir directement avec la couche de disponibilité des données de Celestia. Le guide pour cela peut être trouvé [ici](https://docs.celestia.org/developers/node-tutorial).
 
 ### Compatibilité
 
