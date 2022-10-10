@@ -2,7 +2,7 @@
 sidebar_label: Déploiement de contrat
 ---
 
-# Déploiement de contrat sur CosmWasm avec Optimint
+# Contract Deployment on CosmWasm with Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## Compiler le Contrat Intelligent
@@ -53,4 +53,4 @@ Exécuter le code suivant :
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-Cela vous fournira le hash de la transaction pour le déploiement du contrat intelligent. Étant donné que nous utilisons Optimint, il y aura du délai pour inclure la transaction car Optimint est en attente de la couche de disponibilité des données de Celestia qui doit confirmer que le bloc a été inclus avant de soumettre un nouveau bloc.
+Cela vous fournira le hash de la transaction pour le déploiement du contrat intelligent. Étant donné que nous utilisons Rollmint, il y aura un retard dans l'inclusion de la transaction car Rollmint attend sur la couche de disponibilité des données de Celestia pour confirmer que le bloc a été inclus avant de soumettre un nouveau bloc.
