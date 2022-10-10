@@ -2,7 +2,7 @@
 sidebar_label: Optimint ile CosmWasm üzerinde Sözleşme Dağıtımı
 ---
 
-# Contract Deployment on CosmWasm with Optimint
+# Contract Deployment on CosmWasm with Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## Akıllı Sözleşmeyi Derleme
@@ -53,4 +53,4 @@ Bu komutu çalıştırın:
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-Bu size akıllı sözleşme dağıtımı için işlem hash'ini sağlayacaktır. Optimint kullandığımız dikkate alınırsa, Optimint'in yeni bir blok göndermeden önce bloğun dahil edildiğini tasdiklemek için Celestia'nın Veri Kullanılabilirlik Katmanını beklemesi nedeniyle dahil edilen işlemde bir gecikme olacaktır.
+Bu size akıllı sözleşme dağıtımı için işlem hash'ini sağlayacaktır. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
