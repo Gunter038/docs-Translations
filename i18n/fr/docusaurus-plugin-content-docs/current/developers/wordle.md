@@ -6,11 +6,11 @@ sidebar_label: Présentation de Wordle
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+Ce tutoriel va aborder la construction d'une application cosmos sdk pour Optimint, l'implémentation du Rollup souverain à Tendermint, du jeu populaire [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. Le tutoriel va passer en revue la simple conception, ainsi que conclure avec de futures implémentations et idées pour étendre le code.
+Ce tutoriel va aborder comment configurer Optimint dans le CLI Ignite et l'utiliser pour construire le jeu. Le tutoriel va passer en revue la simple conception, ainsi que conclure avec de futures implémentations et idées pour étendre le code.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. Si vous rencontrez des bugs, veuillez écrire une Issue Github ou nous le faire savoir dans notre Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> NOTE : Ce tutoriel va explorer le développement avec Rollmint, qui est encore en phase alpha. Si vous rencontrez des bugs, veuillez écrire une Issue Github ou nous le faire savoir dans notre Discord. De plus, alors que Rollmint vous permettra de construire des rollups souverains sur Celestia, il ne supporte pas encore les preuves de fraude et fonctionne donc en mode "pessimiste", où les noeuds auront besoin de réexécuter les transactions pour vérifier la validité de la chaine (c.à.d. un full node). Enfin, Rollmint ne supporte actuellement qu'un seul séquenceur.
 
 ## Pré-requis
 
