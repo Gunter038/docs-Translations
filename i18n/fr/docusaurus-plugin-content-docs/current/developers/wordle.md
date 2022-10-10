@@ -2,7 +2,7 @@
 sidebar_label: Présentation de Wordle
 ---
 
-# Wordle App on Rollmint
+# Application Wordle sur Optimint
 
 ![mamaki-testnet](/img/wordle.jpg)
 
@@ -51,7 +51,7 @@ Nous irons plus loin dans l'architecture pour atteindre cet objectif dans le gui
 Le tutoriel suivant est divisé en sections suivantes :
 
 1. [Ignite et Scaffolding de la Chaine](./scaffold-wordle.md)
-2. [Installing Rollmint](./install-rollmint.md)
+2. [Installation de Rollmint](./install-rollmint.md)
 3. [Modules](./wordle-module.md)
 4. [Messages](./wordle-messages.md)
 5. [Types](./wordle-types.md)
