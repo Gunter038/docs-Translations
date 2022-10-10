@@ -2,7 +2,7 @@
 sidebar_label: Despliegue del contrato
 ---
 
-# Despliegue del contrato en CosmWasm con Optimint
+# Contract Deployment on CosmWasm with Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## Compilar el Smart Contract
@@ -53,4 +53,4 @@ Ejecuta las siguientes instrucciones:
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-Esto le dará el hash de transacción para el despliegue de smart contract. Dado que estamos usando Optimint, habrá un retraso en la transacción que se incluye debido a la espera de Optimint en la capa de disponibilidad de datos de Celestia para confirmar que el bloque ha sido incluido antes de enviar un nuevo bloque.
+Esto le dará el hash de transacción para el despliegue de smart contract. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
