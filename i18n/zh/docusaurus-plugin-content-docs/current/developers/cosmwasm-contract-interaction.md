@@ -7,7 +7,7 @@ sidebar_label: 合约交互
 
 在前面的步骤中，我们将合约的 tx 哈希存储在一个环境变量里供以后使用。
 
-由于需要等待 Celestia 的数据可用性层确认打包区块，通过 Optimint 提交交易的时间较长，我们需要直接查询我们的交易哈希值来获取相关信息。
+Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
 ## 合约查询
 
