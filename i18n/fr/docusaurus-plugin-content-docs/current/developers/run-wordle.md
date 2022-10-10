@@ -32,7 +32,7 @@ Cosmos SDK's version is: stargate - v0.45.5
 
 Ici la commande a créé un binaire appelé `wordled` et des adresses `alice` et `bob` avec un faucet et une API. Vous êtes libre de quitter le programme avec la fonction CTRL-C. La raison étant que nous allons exécuter séparément le binaire `wordled` avec les drapeaux Rollmint intégrés.
 
-Vous pouvez commencer la chaine avec des configurations Rollmint en exécutant la commande suivante :
+Vous pouvez commencer la chaîne avec des configurations Rollmint en exécutant la commande suivante :
 
 ```sh
 wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
