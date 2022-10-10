@@ -56,7 +56,7 @@ Un NMT est un arbre de Merkle dont les feuilles sont ordonnées par les identifi
 
 Quand une application requiert la donnée pour l'espace de nom 2, la couche d'accessibilité des données doit fournir les morceaux de données `D3`, `D4`, `D5`, et `D6` et les noeuds `N2`,`N8` et `N7` comme preuve (notez que l'application a déjà la racine `N14` provenant de l'en-tête du bloc).
 
-Il en résulte que l'application est en capacité de vérifier que la donnée fournie fait bien partie de la donnée du bloc. De plus, l'application peut vérifier que toute la donnée pour le namespace 2 a été fournie. Si la couche d'accessibilité des données fournit par exemple les morceaux de données `D4` et `D5`, elle doit également fournir les nodes `N12` et `N11` en tant que preuves. Cependant, l'application peut identifier que les données sont incomplètes en vérifiant la plage de l'espace de nom des deux nœuds, c.-à-d. que `N12` et `N11` ont tous les deux des parties descendantes de l'espace de nom 2.
+Il en résulte que l'application est en capacité de vérifier que la donnée fournie fait bien partie de la donnée du bloc. De plus, l'application peut vérifier que toute la donnée pour le namespace 2 a été fournie. Si la couche d'accessibilité des données fournit par exemple les morceaux de données `D4` et `D5`, elle doit également fournir les nodes `N12` et `N11` en tant que preuves. Cependant, l'application peut identifier que les données sont incomplètes en vérifiant la plage du Napespace des deux nodes, c.-à-d. que `N12` et `N11` ont tous les deux des parties descendantes du Namespace 2.
 
 Pour davantage de détails sur les NMTs, vous pouvez consulter cet [article](https://arxiv.org/abs/1905.09274).
 
@@ -64,19 +64,19 @@ Pour davantage de détails sur les NMTs, vous pouvez consulter cet [article](htt
 
 ### Fournir l'Accessibilité des Données
 
-La couche d'accessibilité des données Celestia consiste en une blockchain PoS. Celestia appelle une blockchain "[Celestia App](https://github.com/celestiaorg/celestia-app)" une application qui permet des transactions pour faciliter la couche d'accessibilité des données et est construite en utilisant le [Cosmos SDK](https://docs.cosmos.network/v0.44/). Le schéma suivant montre les différents composants d'une Celestia App.
+La couche d'accessibilité des données Celestia consiste en une blockchain PoS. Celestia appelle une blockchain "[Celestia App](https://github.com/celestiaorg/celestia-app)" une application qui permet des transactions pour faciliter la couche d'accessibilité des données et est construite en utilisant le [Cosmos SDK](https://docs.cosmos.network/v0.44/). Le schéma suivant montre les différents composants de Celestia App.
 
-![Principaux composants de l’app Celestia](/img/concepts/celestia-app.png)
+![Principaux composants de Celestia App](/img/concepts/celestia-app.png)
 
-La Celestia App est construite sur le [Celestia Core](https://github.com/celestiaorg/celestia-core), une version modifiée du [consensus algorithmique Tendermint](https://arxiv.org/abs/1807.04938). Parmi les plus importants changements apportés à Tendermint, Celestia Core:
+Celestia App est construite sur le [Celestia Core](https://github.com/celestiaorg/celestia-core), une version modifiée du [consensus algorithmique Tendermint](https://arxiv.org/abs/1807.04938). Parmi les plus importants changements apportés à Tendermint, Celestia Core:
 
 - Permet le codage d'effacement des données d'un bloc (en utilisant le schéma d'encodage Reed-Solomon en deux dimensions).
 - Replace l'arbre de Merkle habituel utilisé par Tendermint pour stocker les données avec un [arbre de Merkle Namespaced](https://github.com/celestiaorg/nmt) qui permet aux couches d'au-dessus (c.-à-d. d'exécution ou de règlement) de seulement télécharger les données nécessaires (pour plus de détails, voir la section ci-dessous décrivant les cas d'usage).
 
-Pour plus de détails sur les changements par rapport à Tendermint, consulter [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). À noter que les nœuds de Celestia Core utilisent toujours le réseau Tendermint de pair-à-pair.
+Pour plus de détails sur les changements par rapport à Tendermint, consulter [ADRs](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs/celestia-architecture). À noter que les nodes de Celestia Core utilisent toujours le réseau Tendermint en pair-à-pair.
 
 De manière similaire à Tendermint, Celestia Core est connecté à la couche d'application (c.-à-d., la machine d'état) par [ABCI++](https://github.com/tendermint/tendermint/tree/master/spec/abci%2B%2B), une évolution majeure de [ABCI](https://github.com/tendermint/tendermint/tree/master/spec/abci) (Interface d'Application Blockchain).
 
-L'état de machine Celestia App est nécessaire pour exécuter la logique PoS et pour permettre la gouvernance de la couche d'accessibilité des données.
+La State Machine Celestia App est nécessaire pour exécuter la logique PoS et pour permettre la gouvernance de la couche d'accessibilité des données.
 
 Cependant, l’app Celestia est dite agnostique en ce qui concerne les données -- la machine d'état ne valide ni ne stocke les données qui sont rendues accessibles par l’app Celestia.
