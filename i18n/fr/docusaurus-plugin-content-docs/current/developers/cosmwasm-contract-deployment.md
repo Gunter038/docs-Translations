@@ -2,7 +2,7 @@
 sidebar_label: Déploiement de contrat
 ---
 
-# Contract Deployment on CosmWasm with Rollmint
+# Déploiement de contrat sur CosmWasm avec Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## Compiler le Contrat Intelligent
