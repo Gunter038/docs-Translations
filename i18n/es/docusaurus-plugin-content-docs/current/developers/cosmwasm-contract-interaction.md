@@ -7,7 +7,7 @@ sidebar_label: Contrato de interacción
 
 En los pasos anteriores, hemos almacenado el hash tx del contrato en una variable de entorno para su uso posterior.
 
-Debido a los periodos más largos de envío de transacciones a través de Optimint debido a la espera de la disponibilidad de datos de Celestia para confirmar la inclusión de bloques, necesitaremos consultar nuestro hash tx directamente para obtener información sobre él.
+Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
 ## Consulta de Contrato
 
