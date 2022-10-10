@@ -2,7 +2,7 @@
 sidebar_label: 合约部署
 ---
 
-# 使用 Optimint 在 CosmWasm 上部署合约
+# Contract Deployment on CosmWasm with Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## 编译智能合约
@@ -53,4 +53,4 @@ sudo docker run --rm -v "$(pwd)":/code \
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-这将为您提供智能合约部署的交易哈希。 鉴于我们使用的是 Optimint，由于 Optimint 在 Celestia 的数据可用性层上等待确认该块已被包含，然后再提交一个新块，因此包含交易将会有延迟。
+这将为您提供智能合约部署的交易哈希。 Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
