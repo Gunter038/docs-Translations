@@ -4,7 +4,7 @@ sidebar_label: Configurer l'Environnement du Réseau
 
 # Configurer votre environnement pour CosmWasm sur Celestia
 
-Maintenant que le fichier binaire `wasmd` est créé, nous avons besoin de configurer un réseau local qui communiquerait entre `wasmd` et Optimint.
+Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
 
 ## Construire le réseau Wasmd
 
@@ -53,7 +53,7 @@ Nous pouvons exécuter la commande suivante pour lancer le réseau `wasmd` :
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 <!-- markdownlint-enable MD013 -->
 
@@ -63,6 +63,6 @@ Remarques:
 
 Remarques complémentaires :
 
-> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Aussi, pour le drapeau `--optimint.namespace_id`, vous pouvez générer un identifiant d'espace de nom (namespace ID) aléatoire en utilisant l'environnement de test [ici](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 Grâce à cet article, nous avons démarré notre réseau `wasmd` !
