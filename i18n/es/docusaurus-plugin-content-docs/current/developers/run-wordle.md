@@ -28,12 +28,12 @@ Instalando dependencias...
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Aquí el comando creó un binario llamado `wordled` y las direcciones `alice` y `bob`, junto con un faucet y API. Estás listo para salir del programa con CTRL-C. La razón de ello es que ejecutaremos `wordled` por separado con banderas Optimint añadidas.
+Aquí el comando creó un binario llamado `wordled` y las direcciones `alice` y `bob`, junto con un faucet y API. Estás listo para salir del programa con CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
-Puedes iniciar la cadena con configuraciones optimizadas ejecutando lo siguiente:
+You can start the chain with rollmint configurations by running the following:
 
 ```sh
-wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
 Ten en cuenta que:
@@ -42,7 +42,7 @@ Ten en cuenta que:
 
 Ten en cuenta que:
 
-> IMPORTANTE: Además, en el comando anterior, debes especificar la última Altura del bloque en Arabica Devnet para `da_height`. Puedes encontrar el número del último bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). También, para la bandera `--optimint.namespace_id`, puedes generar un ID de Espacio de Nombres aleatorio usando el playground [aquí](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANTE: Además, en el comando anterior, debes especificar la última Altura del bloque en Arabica Devnet para `da_height`. Puedes encontrar el número del último bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 En otra ventana, ejecuta lo siguiente para enviar una Wordle:
 
@@ -50,7 +50,7 @@ En otra ventana, ejecuta lo siguiente para enviar una Wordle:
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> NOTA: Estamos enviando una transacción de forma asincrónica debido a evitar cualquier error de tiempo de espera. Con Optimint como sustituto de Tendermint, necesitamos esperar a la red de disponibilidad de datos de Celestia para asegurar que un bloque fue incluido de Wordle, antes de pasar al siguiente bloque. Actualmente, en Optimint, el único agregador no se está moviendo hacia adelante con el siguiente bloque de producción siempre y cuando esté tratando de enviar el bloque actual a la red DA. En el futuro, con la selección de líderes, la producción de bloques y la lógica de sincronización mejora espectacularmente.
+> NOTA: Estamos enviando una transacción de forma asincrónica debido a evitar cualquier error de tiempo de espera. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. En el futuro, con la selección de líderes, la producción de bloques y la lógica de sincronización mejora espectacularmente.
 
 Esto te pedirá que confirmes la transacción con el siguiente mensaje:
 
@@ -166,7 +166,7 @@ wordled q wordle list-guess --output json
 
 Esto produce todos los objetos Guess enviados hasta ahora, siendo el índice la fecha de hoy y la dirección del envío.
 
-Con eso, implementamos un ejemplo básico de Wordle usando Cosmos-SDK e Ignite y Optimint. Lee cómo puedes extender la base de código.
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Lee cómo puedes extender la base de código.
 
 ## Ampliando en el Futuro
 
