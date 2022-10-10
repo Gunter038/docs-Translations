@@ -2,15 +2,15 @@
 sidebar_label: Wordle 概述
 ---
 
-# Optimint 上的 Wordle 应用程序
+# Wordle App on Rollmint
 
 ![mamaki-测试网](/img/wordle.jpg)
 
-本教程指南将介绍流行游戏[Wordle](https://www.nytimes.com/games/wordle/index.html)构建Optimint（Tendermint 的 Optimistic Rollup 实现）的 cosmos-sdk 应用程序。
+This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-本教程将介绍如何在 Ignite CLI 中设置 Optimint 并使用它来构建游戏。 本教程将介绍简单的设计， 并以未来的实施和想法结束扩展这个代码库。
+This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. 本教程将介绍简单的设计， 并以未来的实施和想法结束扩展这个代码库。
 
-> 注意：本教程将探索使用仍处于 Alpha 阶段的 Optimint 进行开发。 如果您遇到错误，请写一个 Github 问题票或在我们的 Discord 中告诉我们。 此外，虽然 Optimint 允许您在 Celestia 上构建rollups，但它目前还不支持欺诈证明，因此运行在“悲观”模式下，节点需要重新执行交易以检查链的有效性（即一个全节点）。 此外，Optimint 目前仅支持单个定序器。
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. 如果您遇到错误，请写一个 Github 问题票或在我们的 Discord 中告诉我们。 Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
 ## 前置条件
 
@@ -51,7 +51,7 @@ Wordle 的 GUI 向您显示了一些指标：某个位置的字母上的绿色�
 以下教程分为以下几个部分：
 
 1. [点燃和链式脚手架](./scaffold-wordle.md)
-2. [安装 Optimint](./install-optimint.md)
+2. [Installing Rollmint](./install-rollmint.md)
 3. [模块](./wordle-module.md)
 4. [留言](./wordle-messages.md)
 5. [类型](./wordle-types.md)
