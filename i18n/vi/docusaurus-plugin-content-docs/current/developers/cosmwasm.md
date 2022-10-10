@@ -2,18 +2,18 @@
 sidebar_label: Tổng quan về CosmWasm
 ---
 
-# CosmWasm trên Optimint
+# CosmWasm on Rollmint
 
-CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Optimint.
+CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Rollmint.
 
-> NOTE: This tutorial will explore developing with Optimint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Optimint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Optimint currently only supports a single sequencer.
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
 You can learn more about CosmWasm [here](https://docs.cosmwasm.com/docs/1.0/).
 
 In this tutorial, we will going over the following:
 
 * [Setting up your dependencies for your CosmWasm smart contracts](./cosmwasm-dependency.md)
-* [Setting up Optimint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
+* [Setting up Rollmint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
 * [Instantiate a local network for your CosmWasm chain connected to Celestia](./cosmwasm-environment.md)
 * [Deploying a Rust smart contract to CosmWasm chain](./cosmwasm-contract-deployment.md)
 * [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
