@@ -1,15 +1,15 @@
 ---
-sidebar_label: Gardien
+sidebar_label: Keeper
 ---
 
-# Les fonctions du Gardien
+# Les fonctions de Keeper
 <!-- markdownlint-disable MD013 -->
 
-Maintenant, il est temps d'ajouter les fonctions du Gardien pour chaque message. À partir de la documentation du Cosmos-SDK, un [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) est défini de la façon qui suit :
+Maintenant, il est temps d'ajouter les fonctions de keeper pour chaque message. À partir de la documentation du Cosmos-SDK, un [Keeper](https://docs.cosmos.network/master/building-modules/keeper.html) est défini de la façon qui suit :
 
-> Le noyau principal d'un module Cosmos-SDK est une pièce appelée le Gardien. Le gardien gère les intéractions avec le stockage, a des références à d'autres gardiens pour les intéractions entre modules et contient la plupart des fonctionnalités de base d'un module.
+> Le noyau principal d'un module Cosmos-SDK est une pièce appelée le keeper. Le keeper gère les intéractions avec le stockage, a des références à d'autres gardiens pour les intéractions entre modules et contient la plupart des fonctionnalités de base d'un module.
 
-Un Gardien est une abstraction sur Cosmos qui nous permet d'interagir avec le stockage de Key-Value et de changer l'état de la blockchain.
+Keeper est une abstraction sur Cosmos qui nous permet d'interagir avec le stockage de Key-Value et de changer l'état de la blockchain.
 
 Ici, il nous aidera à définir la logique de chaque message que nous créons.
 
@@ -82,7 +82,7 @@ func IsLetter(s string) bool {
 }
 ```
 
-Ici, dans la fonction du Gardien `SubmitWordle`, nous allons faire certaines choses :
+Ici, dans la fonction de keeper `SubmitWordle`, nous allons faire certaines choses :
 
 * Nous nous assurons d'abord que le mot soumis pour le mot du jour est long de 5 caractères et qu'il n'utilise que des lettres. Cela signifie qu'aucun nombre entier ne peut être être soumis dans la chaine.
 * Nous créons ensuite un hash à partir du jour en cours au moment où le mot a été soumis. Nous plaçons ce hash à l'index du type du Wordle. Cela nous permet de rechercher toutes les suppositions de ce mot pour les jeux suivants, que nous allons étudier ensuite.
@@ -91,7 +91,7 @@ Ici, dans la fonction du Gardien `SubmitWordle`, nous allons faire certaines cho
 
 ## La fonction SubmitGuess
 
-La prochaine fonction de Gardien que nous allons ajouter est la suivante : `x/wordle/keeper/msg_server_submit_guess.go`
+La prochaine fonction de keeper que nous allons ajouter est la suivante : `x/wordle/keeper/msg_server_submit_guess.go`
 
 Ouvrez ce fichier et ajoutez le code suivant, que nous allons expliquer un peu plus bas :
 
@@ -232,4 +232,4 @@ type BankKeeper interface {
 }
 ```
 
-Avec cela, nous avons implémenté toutes nos fonctions de Gardien ! Il est temps de compiler la blockchain et de l'exposer pour un galop d'essai.
+Avec cela, nous avons implémenté toutes nos fonctions de Keeper! Il est temps de compiler la blockchain et de l'exposer pour un galop d'essai.
