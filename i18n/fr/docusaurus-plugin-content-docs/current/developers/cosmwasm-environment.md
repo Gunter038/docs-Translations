@@ -4,7 +4,7 @@ sidebar_label: Configurer l'Environnement du Réseau
 
 # Configurer votre environnement pour CosmWasm sur Celestia
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
+Maintenant que le binaire `wasmd` est construit, nous devons configurer un réseau local qui communique entre `wasmd` et Rollmint.
 
 ## Construire le réseau Wasmd
 
@@ -63,6 +63,6 @@ Remarques:
 
 Remarques complémentaires :
 
-> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT : Egalement dans la commande d'au dessus, vous avez besoin de spécifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Aussi, pour le drapeau `--rollmint.namespace_id`, vous pouvez générer un identifiant Namespace en utilisant l'environnement de test [ici](https://go.dev/play/p/7ltvaj8lhRl)
 
 Grâce à cet article, nous avons démarré notre réseau `wasmd` !
