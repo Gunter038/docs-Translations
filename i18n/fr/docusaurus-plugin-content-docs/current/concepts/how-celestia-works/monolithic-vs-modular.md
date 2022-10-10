@@ -4,9 +4,9 @@ sidebar_label : Blockchains Monolithique vs Modulaires
 
 # Blockchains monolithiques vs modulaires
 
-Les Blockchains instancient [les machines d'état répliquées](https://dl.acm.org/doi/abs/10.1145/98163.98167): les nœuds dans un réseau distribué permissionless appliquent une séquence ordonnée de transactions déterministes à un état initial donnant lieu à un état final commun. Cela signifie que les blockchains nécessitent les quatre fonctions suivantes :
+Les Blockchains instancient [les machines d'état répliquées](https://dl.acm.org/doi/abs/10.1145/98163.98167): les nodes dans un réseau distribué permissionless appliquent une séquence ordonnée de transactions déterministes à un état initial donnant lieu à un état final commun. Cela signifie que les blockchains nécessitent les quatre fonctions suivantes :
 
-- __L'exécution__ implique l'exécution de transactions qui mettent à jour l'état correctement. Ainsi, l'exécution doit s'assurer que seules les transactions valides sont exécutées, c'est-à-dire, des transactions qui entraînent des transitions d'état de machine valides.
+- __L'exécution__ implique l'exécution de transactions qui mettent à jour l'état correctement. Ainsi, l'exécution doit s'assurer que seules les transactions valides sont exécutées, c'est-à-dire, des transactions qui entraînent des transitions de state machine valides.
 - __Le règlement__ implique un environnement pour les couches d'exécution pour vérifier les preuves, résoudre les litiges de fraude et faire le lien entre les autres couches d'exécution.
 - __Le consensus__ consiste à se mettre d'accord sur l'ordre des transactions.
 - __La disponibilité des données__ (DA : Data Availability) implique de rendre les données de transaction disponibles. Notez que l'exécution, le règlement et le consensus requièrent une DA.
