@@ -2,15 +2,15 @@
 sidebar_label: Présentation de Wordle
 ---
 
-# Application Wordle sur Optimint
+# Wordle App on Rollmint
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-Ce tutoriel va aller plus loin dans la construction d'une application du cosmos-sdk pour Optimint, l'implémentation d'Optimistic Rollup de Tendermint, pour le jeu populaire [Wordle](https://www.nytimes.com/games/wordle/index.html).
+This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-Ce tutoriel va vous expliquer comment configurer Optimint dans le Ignite CLI et l'utiliser pour construire le jeu. Le tutoriel va passer en revue la simple conception, ainsi que conclure avec de futures implémentations et idées pour étendre le code.
+This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. Le tutoriel va passer en revue la simple conception, ainsi que conclure avec de futures implémentations et idées pour étendre le code.
 
-> NOTE : Ce tutoriel explorera le développement avec Optimint, qui est toujours en phase Alpha. Si vous rencontrez des bugs, veuillez écrire une Issue Github ou nous le faire savoir dans notre Discord. De plus, alors qu'Optimint vous permet de construire des rollups souverains sur Celestia, il ne supporte pas encore les preuves de fraude et fonctionne donc en mode "pessimistique" où les nodes auraient besoin de réexécuter les transactions pour vérifier la validité de la chaîne (c.a.d - un  full node). De plus, Optimint ne prend actuellement en charge qu'un seul séquenceur.
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. Si vous rencontrez des bugs, veuillez écrire une Issue Github ou nous le faire savoir dans notre Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
 ## Pré-requis
 
@@ -51,9 +51,9 @@ Nous irons plus loin dans l'architecture pour atteindre cet objectif dans le gui
 Le tutoriel suivant est divisé en sections suivantes :
 
 1. [Ignite et Scaffolding de la Chaine](./scaffold-wordle.md)
-2. [Installation d'Optimint](./install-optimint.md)
+2. [Installing Rollmint](./install-rollmint.md)
 3. [Modules](./wordle-module.md)
 4. [Messages](./wordle-messages.md)
 5. [Types](./wordle-types.md)
-6. [Gardiens](./wordle-keeper.md)
+6. [Keepers](./wordle-keeper.md)
 7. [Exécution de Wordle](./run-wordle.md)
