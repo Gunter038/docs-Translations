@@ -7,7 +7,7 @@ sidebar_label: Optimint ile CosmWasm üzerinde Sözleşme Dağıtımı
 
 ## Akıllı Sözleşmeyi Derleme
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+Nameservice akıllı sözleşmesini indirip derlemek için aşağıdaki komutları çalıştıracağız:
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,23 +16,23 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Derlenmiş sözleşme şu adrese çıkarılır: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Birim testleri
 
-If we want to run tests, we can do so with the following command:
+Test etmek istiyorsak, aşağıdaki komutla bunu yapabiliriz:
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Optimize Edilmiş Akıllı Sözleşme
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+Derlenmiş akıllı sözleşmeyi `wasmd` 'a yerleştirdiğimiz için, mümkün olduğunca küçük olmasını istiyoruz.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+CosmWasm ekibi, derlemek için Docker'a ihtiyaç duyduğumuz `rust-optimizer` adlı bir araç sağlıyor.
 
-Run the following command:
+Bu komutu çalıştırın:
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -41,16 +41,16 @@ sudo docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+Bu, optimize edilmiş Wasm bayt kodunu `artifacts/cw_nameservice.wasm` 'a yerleştirecektir.
 
-## Contract Deployment
+## Sözleşme Dağıtımı
 
-Let's now deploy our smart contract!
+Şimdi akıllı sözleşmemizi dağıtalım!
 
-Run the following:
+Bu komutu çalıştırın:
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Optimint, there will be a delay on the transaction being included due to Optimint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+Bu size akıllı sözleşme dağıtımı için işlem hash'ini sağlayacaktır. Optimint kullandığımız dikkate alınırsa, Optimint'in yeni bir blok göndermeden önce bloğun dahil edildiğini tasdiklemek için Celestia'nın Veri Kullanılabilirlik Katmanını beklemesi nedeniyle dahil edilen işlemde bir gecikme olacaktır.
