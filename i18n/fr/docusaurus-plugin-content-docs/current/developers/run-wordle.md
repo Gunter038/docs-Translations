@@ -30,9 +30,9 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Ici la commande a créé un binaire appelé `wordled` et des adresses `alice` et `bob` avec un faucet et une API. Vous êtes libre de quitter le programme avec la fonction CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
+Ici la commande a créé un binaire appelé `wordled` et des adresses `alice` et `bob` avec un faucet et une API. Vous êtes libre de quitter le programme avec la fonction CTRL-C. La raison étant que nous allons exécuter séparément le binaire `wordled` avec les drapeaux Rollmint intégrés.
 
-You can start the chain with rollmint configurations by running the following:
+Vous pouvez commencer la chaine avec des configurations Rollmint en exécutant la commande suivante :
 
 ```sh
 wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
@@ -44,7 +44,7 @@ Remarques :
 
 Remarques complémentaires :
 
-> IMPORTANT : Il est également important dans la commande ci-dessus d'identifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT : Il est également important dans la commande ci-dessus d'identifier la dernière position du bloc dans le devnet Arabica par `da_height`. Vous pouvez trouver le numéro du dernier bloc dans l'explorateur [ici](https://explorer.celestia.observer/arabica). Aussi, pour le drapeau `--rollmint.namespace_id`, vous pouvez générer un identifiant Namespace aléatoire en utilisant l'environnement de test [ici](https://go.dev/play/p/7ltvaj8lhRl)
 
 Dans une autre fenêtre, exécutez la commande suivante pour soumettre un Wordle :
 
@@ -52,7 +52,7 @@ Dans une autre fenêtre, exécutez la commande suivante pour soumettre un Wordle
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> NOTE : Nous soumettons une transaction asynchrone car nous souhaitons éviter les erreurs de timeout. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. Dans le futur, avec la sélection de leader, la production du bloc et la logique de synchronisation vont s'améliorer considérablement.
+> NOTE : Nous soumettons une transaction asynchrone car nous souhaitons éviter les erreurs de timeout. Avec Rollmint remplaçant Tendermint, nous avons besoin d'attendre que le réseau de disponibilité des données de Celestia nous assure qu'un bloc a été inclus dans Wordle, avant de passer au bloc suivant. Actuellement dans Rollmint, l'agrégateur unique n'avance pas sur le bloc suivant à produire tant qu'il tente de soumettre le bloc antérieur au réseau de disponibilité des données. Dans le futur, avec la sélection de leader, la production du bloc et la logique de synchronisation vont s'améliorer considérablement.
 
 Cela vous demandera de confirmer la transaction avec le message suivant :
 
@@ -168,7 +168,7 @@ wordled q wordle list-guess --output json
 
 Cela fournit tous les guess soumis jusqu'à présent, l'index étant la date d'aujourd'hui et l'adresse de l'émetteur.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. La prochaine partie sera sur la façon d'étendre la codebase.
+Grâce à cela, nous avons implémenté un example basique de Wordle en utilisant le Cosmos-SDK, Ignite et Rollmint. La prochaine partie sera sur la façon d'étendre la codebase.
 
 ## Étendre dans le futur
 
