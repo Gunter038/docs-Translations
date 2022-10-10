@@ -2,7 +2,7 @@
 sidebar_label: Контрактне розгортання
 ---
 
-# Контрактне розгортання на CosmWasm з Optimint
+# Contract Deployment on CosmWasm with Rollmint
 <!-- markdownlint-disable MD013 -->
 
 ## Компілюйте смартконтракт
@@ -53,4 +53,4 @@ sudo docker run --rm -v "$(pwd)":/code \
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-Це дозволить вам отримати хеш транзакції для розгортання смартконтракту. Оскільки ми використовуємо Optimint, буде затримка включення транзакції через те, що Optimint чекає на рівні доступності даних Celestia, щоб підтвердити, що блок було включено, перш ніж надсилати новий блок.
+Це дозволить вам отримати хеш транзакції для розгортання смартконтракту. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
