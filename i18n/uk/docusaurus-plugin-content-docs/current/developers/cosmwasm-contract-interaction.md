@@ -7,7 +7,7 @@ sidebar_label: Контрактна взаємодія
 
 У попередніх кроках ми зберегли хеш контракту tx у змінній середовища для подальшого використання.
 
-Через триваліші періоди надсилання транзакцій через Optimint через очікування на рівні доступності даних Celestia для підтвердження включення блоку, нам потрібно буде запитати напряму наш хеш передачі, щоб отримати інформацію про це.
+Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
 ## Контрактний запит
 
