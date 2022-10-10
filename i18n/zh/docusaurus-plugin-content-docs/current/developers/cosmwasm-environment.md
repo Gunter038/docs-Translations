@@ -4,7 +4,7 @@ sidebar_label: 设置网络环境
 
 # 在 Celestia 上为 CosmWasm 设置环境
 
-现在 `wasmd` 二进制文件已经构建好了，我们需要设置一个本地网络，在 `wasmd` 和 Optimint 之间进行通信。
+Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
 
 ## 构建 Wasmd 网络
 
@@ -53,7 +53,7 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 <!-- markdownlint-enable MD013 -->
 
@@ -63,6 +63,6 @@ wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.d
 
 还请考虑：
 
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 另外，对于标注-- `--optimint.namespace_id`，你可以用 [这里](https://go.dev/play/p/7ltvaj8lhRl) 的测试版生成一个随机的 Namespace ID 。
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 这样，我们已经启动了我们的 `wasmd` 网络！
