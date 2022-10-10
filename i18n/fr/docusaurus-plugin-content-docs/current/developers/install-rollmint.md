@@ -1,12 +1,12 @@
 ---
-sidebar_label: Installing Rollmint
+sidebar_label: Installer Rollmint
 ---
 
-# Setting Up Rollmint
+# Configurer Rollmint
 
-Before we continue with building our Wordle App, we need to set up Rollmint on our codebase.
+Avant que nous continuions à construire notre application Wordle, nous avons besoin de configurer Rollmint dans notre codebase.
 
-## Installing Rollmint
+## Installer Rollmint
 
 Exécuter la commande suivante dans le répertoire `wordle`.
 
@@ -16,4 +16,4 @@ go mod tidy
 go mod download
 ```
 
-With that, we have Rollmint changes added to the project directory. Maintenant, construisons la Wordle App !
+Grâce à cela, nous avons les changements relatifs à Rollmint intégrés au répertoire du projet. Maintenant, construisons la Wordle App !
