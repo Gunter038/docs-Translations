@@ -7,7 +7,7 @@ sidebar_label: Взаимодействие с контрактом
 
 В предыдущих шагах мы сохранили хеш tx контракта как переменную для последующего использования.
 
-В связи с более длительными сроками отправки транзакций через Optimint из-за ожидания подтверждения о включении блока от Celestia's Data Availability Layer, нам придется напрямую запрашивать наш tx хеш, чтобы получить информацию о нем.
+Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
 ## Запрос контракта
 
