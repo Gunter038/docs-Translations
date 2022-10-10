@@ -30,12 +30,12 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Đây là lệnh tạo một binary gọi là `wordled` và địa chỉ`alice` và `bob`, cùng với một vòi và API. Bạn có thể thoát khỏi chương trình với CTRL-C. Lí do là vì chúng ta sẽ chạy binary `wordled` riêng biệt so với Optimint flags được thêm vào.
+Đây là lệnh tạo một binary gọi là `wordled` và địa chỉ`alice` và `bob`, cùng với một vòi và API. Bạn có thể thoát khỏi chương trình với CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
-Bạn có thể bắt đầu chuỗi với Optimint configurations bằng cách chạy như sau:
+You can start the chain with rollmint configurations by running the following:
 
 ```sh
-wordled start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
 Hãy cân nhắc rằng:
@@ -44,7 +44,7 @@ Hãy cân nhắc rằng:
 
 Đồng thời hãy cân nhắc rằng:
 
-> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Ngoài ra, đối với flag `--optimint.namespace_id`, bạn có thể tạo ID Namespace ngẫu nhiên bằng cách sử dụng playground [tại đây](https://go.dev/play/p/7ltvaj8lhRl)
+> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 Trong một cửa số khác, chạy câu lệnh sau để gửi một Wordle:
 
@@ -52,7 +52,7 @@ Trong một cửa số khác, chạy câu lệnh sau để gửi một Wordle:
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> LƯU Ý: Chúng ta đang gửi một giao dịch không đồng bộ để tránh bất kỳ lỗi thời gian chờ nào. Với Optimint thay thế cho Tendermint, chúng ta cần phải đợi mạng Dữ liệu-Khả dụng của Celestia để đảm bảo khối đã được đưa vào Wordle, trước khi chuyển sang khối tiếp theo. Hiện nay, trong Optimint, bộ tổng hợp duy nhất không tiếp tục với việc sản xuất khối tiếp theo miễn là nó đang cố gắng gửi khối hiện tại đến mạng DA. Trong tương lai, với việc lựa chọn leader, quá trình sản xuất khối và logic đồng bộ được cải thiện đáng kể.
+> LƯU Ý: Chúng ta đang gửi một giao dịch không đồng bộ để tránh bất kỳ lỗi thời gian chờ nào. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. Trong tương lai, với việc lựa chọn leader, quá trình sản xuất khối và logic đồng bộ được cải thiện đáng kể.
 
 Thao tác này sẽ yêu cầu bạn xác nhận giao dịch bằng thông báo sau:
 
@@ -168,7 +168,7 @@ wordled q wordle list-guess --output json
 
 Điều này xuất ra tất cả các Guess objects đã gửi cho đến nay, với mục lục là ngày hôm nay và địa chỉ của người gửi.
 
-Như vậy, chúng tôi đã triển khai một ví dụ cơ bản về Wordle bằng cách sử dụng Cosmos-SDK và Ignite và Optimint. Đọc tiếp cách bạn có thể mở rộng code base.
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Đọc tiếp cách bạn có thể mở rộng code base.
 
 ## Mở rộng trong tương lai
 
