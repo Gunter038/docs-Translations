@@ -50,14 +50,14 @@ Tìm các hướng dẫn phù hợp cụ thể cho hệ điều hành của bạ
 
 ## wasmd Installation
 
-Ở đây, chúng tôi sẽ kéo xuống kho lưu trữ ` wasmd ` và thay thế Tendermint bằng Optimint. Optimint là một drop-in replacemen cho Tendermint cho phép ứng dụng Cosmos-SDK kết nối với mạng tính khả dụng dữ liệu của Celestia.
+Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
 
 ```sh
 git clone https://github.com/CosmWasm/wasmd.git
 cd wasmd
 git fetch --tags
 git checkout v0.27.0
-go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk@v0.45.4-optimint-v0.3.5
+go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
 go mod tidy 
 go mod download
 make install
