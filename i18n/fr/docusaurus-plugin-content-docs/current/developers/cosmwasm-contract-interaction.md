@@ -7,7 +7,7 @@ sidebar_label: Interaction de Contrat
 
 Dans les étapes précédentes, nous avons stocké le hash de la transaction du contrat dans un environnement variable pour un usage ultérieur.
 
-Pour cause des périodes plus longues de soumission de transactions via Optimint en raison de l'attente sur la couche de disponibilité de données de Celestia pour confirmer l'inclusion de bloc, nous devrons interroger notre tx hash directement pour obtenir des informations à ce sujet.
+À cause des périodes plus longues de soumission des transactions via Rollmint en raison de l'attente de la couche de disponibilité des données de Celestia pour confirmer l'inclusion du bloc, nous devrons interroger directement notre hachage tx pour obtenir des informations à ce sujet.
 
 ## Interrogation du contrat
 
