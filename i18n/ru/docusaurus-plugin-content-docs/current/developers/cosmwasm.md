@@ -2,18 +2,18 @@
 sidebar_label: Обзор CosmWasm
 ---
 
-# CosmWasm на Optimint
+# CosmWasm on Rollmint
 
-CosmWasm - это платформа смарт контрактов, предназначенная для экосистемы Cosmos, использующая WebAssembly (Wasm) для создания смарт контрактов для Cosmos-SDK. В этом руководстве мы рассмотрим, как интегрировать CosmWasm с Celestia's Data Availability Layer с помощью Optimint.
+CosmWasm - это платформа смарт контрактов, предназначенная для экосистемы Cosmos, использующая WebAssembly (Wasm) для создания смарт контрактов для Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Rollmint.
 
-> ПРИМЕЧАНИЕ: В этом руководстве рассматривается процесс создания с использованием Optimint, который пока находится на Альфа стадии. Если вы столкнулись с багами (ошибками), пожалуйста создайте тикет на Github или сообщите нам в Discord. Более того, хотя Optimint позволяет создавать независимые роллапы на Celestia, в настоящее время он еще не поддерживает защиту от мошенничества и поэтому работает в "пессимистическом" режиме, при котором нодам потребуется повторно выполнять транзакции для проверки достоверности сети (т.е. фулл ноды). К тому же, Optimint в настоящее время поддерживает только один секвенсор.
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. Если вы столкнулись с багами (ошибками), пожалуйста создайте тикет на Github или сообщите нам в Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
 Вы можете узнать больше о CosmWasm [здесь](https://docs.cosmwasm.com/docs/1.0/).
 
 В этом руководстве мы рассмотрим следующее:
 
 * [Настройка необходимых зависимостей для смарт-контрактов CosmWasm](./cosmwasm-dependency.md)
-* [Настройка Optimint на CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
+* [Setting up Rollmint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
 * [Создайте локальную сеть для вашей сети CosmWasm, подключенной к Celestia](./cosmwasm-environment.md)
 * [Создание смарт контракта на основе Rust в сети CosmWasm](./cosmwasm-contract-deployment.md)
 * [Взаимодействие со смарт контрактом](./cosmwasm-contract-interaction.md)
