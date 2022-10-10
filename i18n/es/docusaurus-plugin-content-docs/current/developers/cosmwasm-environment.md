@@ -4,7 +4,7 @@ sidebar_label: Configurar el entorno de red
 
 # Configurando tu entorno para CosmWasm en Celestia
 
-Ahora el binario `wasmd` está compilado, necesitamos configurar una red local que comunique entre `wasmd` y Optimint.
+Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
 
 ## Construyendo la red de Wasmd
 
@@ -53,7 +53,7 @@ Podemos ejecutar el siguiente código para iniciar la red de `wasmd`:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-wasmd start --optimint.aggregator true --optimint.da_layer celestia --optimint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --optimint.namespace_id 000000000000FFFF --optimint.da_start_height XXXXX
+wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 <!-- markdownlint-enable MD013 -->
 
@@ -63,6 +63,6 @@ Ten en cuenta que:
 
 Ten en cuenta que:
 
-> IMPORTANTE: Además, en el comando anterior, debes especificar la última Altura del bloque en Arabica Devnet para `da_height`. Puedes encontrar el último número de bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). También, para la bandera `--optimint.namespace_id`, puedes generar un ID de nombre de dominio aleatorio usando el playground [aquí](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANTE: Además, en el comando anterior, debes especificar la última Altura del bloque en Arabica Devnet para `da_height`. Puedes encontrar el último número de bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 ¡Con esto, hemos iniciado nuestra red de `wasmd`!
