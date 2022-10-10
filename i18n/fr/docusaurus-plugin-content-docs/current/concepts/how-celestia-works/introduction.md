@@ -1,6 +1,6 @@
 # Introduction
 
-Celestia est un réseau de blockchain modulaire dont le but est de construire [une couche de disponibilité de données](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/) scalable, permettant la prochaine génération d'architectures blockchain scalables - les [blockchains modulaires](https://celestia.org/learn/). Celestia scale en [découplant l'exécution du consensus](https://arxiv.org/abs/1905.09274) et en introduisant une nouvelle primitive, [l'échantillonnage de la disponibilité des données](https://arxiv.org/abs/1809.09044).
+Celestia est un réseau de blockchain modulaire dont le but est de construire [une couche de disponibilité de données](https://blog.celestia.org/celestia-a-scalable-general-purpose-data-availability-layer-for-decentralized-apps-and-trust-minimized-sidechains/) scalable, permettant la prochaine génération d'architectures de blockchains scalables - les [blockchains modulaires](https://celestia.org/learn/). Celestia scale en [découplant l'exécution du consensus](https://arxiv.org/abs/1905.09274) et en introduisant un nouveau paradigme, [l'échantillonnage de la disponibilité des données](https://arxiv.org/abs/1809.09044).
 
 La première implique que Celestia n'est responsable que de l'ordre des transactions et de la garantie de la disponibilité des données ; c'est similaire à [réduire le consensus à la diffusion atomique](https://en.wikipedia.org/wiki/Atomic_broadcast#Equivalent_to_Consensus).
 
