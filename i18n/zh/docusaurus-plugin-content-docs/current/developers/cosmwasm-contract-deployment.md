@@ -2,7 +2,7 @@
 sidebar_label: 合约部署
 ---
 
-# Contract Deployment on CosmWasm with Rollmint
+# CosmWasm与Rollmint的合约部署
 <!-- markdownlint-disable MD013 -->
 
 ## 编译智能合约
@@ -53,4 +53,4 @@ sudo docker run --rm -v "$(pwd)":/code \
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-这将为您提供智能合约部署的交易哈希。 Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+这将为您提供智能合约部署的交易哈希。 鉴于 我们正在使用Rollmint，包括交易会有延迟 由于Rollmint正在等待Celestia的数据可用性层确认数据块 在提交新块之前已包含。
