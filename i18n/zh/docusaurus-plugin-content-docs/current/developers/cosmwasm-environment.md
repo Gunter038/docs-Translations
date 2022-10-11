@@ -4,7 +4,7 @@ sidebar_label: 设置网络环境
 
 # 在 Celestia 上为 CosmWasm 设置环境
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
+现在构建了`wasmd`二进制文件，我们需要设置一个本地网络 在`wasmd`和Rollmint之间通信的。
 
 ## 构建 Wasmd 网络
 
@@ -63,6 +63,6 @@ wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.d
 
 还请考虑：
 
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 而且 对于标志`--rollmint。namespace_id`，您可以生成一个随机名称空间，在这里使用操场的ID [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 这样，我们已经启动了我们的 `wasmd` 网络！
