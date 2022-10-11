@@ -1,16 +1,16 @@
 ---
-sidebar_label: Wordle 概述
+sidebar_label: 文字云概述
 ---
 
-# Wordle App on Rollmint
+# Rollmint上的文字云应用程序
 
 ![mamaki-测试网](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+本教程指南将介绍如何构建cosmossdk应用程序 对于Rollmint，主权汇总实施 Tendermint，流行游戏<a href=“https://www.nytimes.com/games/wordle/index.html“>文字云</a>。
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. 本教程将介绍简单的设计， 并以未来的实施和想法结束扩展这个代码库。
+本教程将介绍如何设置Rollmint 并使用它来构建游戏。 本教程将介绍简单的设计， 并以未来的实施和想法结束扩展这个代码库。
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. 如果您遇到错误，请写一个 Github 问题票或在我们的 Discord 中告诉我们。 Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> 注意：本教程将探索使用Rollmint进行开发， 仍处于Alpha阶段。 如果您遇到错误，请写一个 Github 问题票或在我们的 Discord 中告诉我们。 此外，虽然Rollmint允许您建立主权 Celestia上的汇总，目前不支持欺诈 证明还没有，因此正在“悲观”模式下运行， 其中节点需要重新执行事务以进行检查 链的有效性 (即完整节点) 。 此外Rollmint目前仅支持单个序列器。
 
 ## 前置条件
 
@@ -51,7 +51,7 @@ Wordle 的 GUI 向您显示了一些指标：某个位置的字母上的绿色�
 以下教程分为以下几个部分：
 
 1. [点燃和链式脚手架](./scaffold-wordle.md)
-2. [Installing Rollmint](./install-rollmint.md)
+2. [安装Rollmint](./install-rollmint.md)
 3. [模块](./wordle-module.md)
 4. [留言](./wordle-messages.md)
 5. [类型](./wordle-types.md)
