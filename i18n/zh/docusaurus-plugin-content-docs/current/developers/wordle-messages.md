@@ -25,12 +25,12 @@ sidebar_label: 信息
 ignite scaffold message submit-wordle word
 ```
 
-This creates the `submit-wordle` message that takes in `word` as a parameter.
+这将创建`submit wordle`消息，该消息将`word`>作为参数
 
-We now create the final message, `SubmitGuess`:
+我们现在创建最后一条消息，`SubmitGuess`：
 
 ```sh
-ignite scaffold message submit-guess word
+点燃脚手架消息提交猜测词
 ```
 
-Here, we are passing a word as a guess with `submit-guess`.
+这里，我们用` submit-guess `传递一个单词作为猜测。
