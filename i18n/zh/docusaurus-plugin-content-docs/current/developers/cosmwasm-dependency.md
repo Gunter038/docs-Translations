@@ -50,15 +50,15 @@ rustup target add wasm32-unknown-unknown
 
 ## wasmd 安装
 
-Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
+在这里，我们将删除`wasmd`存储库并使用Rollmint替换Tendermint Rollmint是Tendermint的替代品 Cosmos SDK应用程序连接到Celestia的数据可用性网络。
 
 ```sh
-git clone https://github.com/CosmWasm/wasmd.git
-cd wasmd
-git fetch --tags
-git checkout v0.27.0
-go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
-go mod tidy 
-go mod download
-make install
+git克隆https://github.com/CosmWasm/wasmd.git
+cd wasmd光盘
+git获取--标记
+git检出v0.27.0
+go mod编辑-替换github.com/cosmos/comosos sdk=github.com/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
+保持整洁
+go mod下载
+make安装
 ```
