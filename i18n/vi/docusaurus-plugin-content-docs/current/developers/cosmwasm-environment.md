@@ -4,7 +4,7 @@ sidebar_label: Thiết lập Môi trường Mạng
 
 # Thiết lập môi trường cho CosmWasm trên Celestia
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
+Bây giờ binary `wasmd` đã được tạo, chúng ta cần thiết lập một mạng nội bộ, thứ giao tiếp giữa `wasmd` và Rollmint.
 
 ## Xây dựng mạng Wasmd
 
@@ -63,6 +63,6 @@ Vui lòng xem xét:
 
 Cũng vui lòng xem xét:
 
-> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> QUAN TRỌNG: Hơn nữa, trong lệnh trên, bạn cần chỉ định Block Height mới nhất trong Arabica Devnet cho `da_height`. Bạn có thể tìm thấy số khối mới nhất trong explorer [tại đây](https://explorer.celestia.observer/arabica). Ngoài ra, đối với flag `--rollmint.namespace_id`, bạn có thể tạo ID Namespace ngẫu nhiên bằng cách sử dụng playground ngẫu nhiên [tại đây](https://go.dev/play/p/7ltvaj8lhRl)
 
 Như vậy, chúng ta đã khởi động lại mạng `wasmd` của mình!
