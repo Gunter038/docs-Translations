@@ -36,6 +36,7 @@ Chọn loại node bạn muốn chạy và làm theo hướng dẫn trên mỗi 
 * [https://grpc-1.celestia.nodes.guru:10790](https://grpc-1.celestia.nodes.guru:10790)
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
+* [https://rpc.mamaki.celestia.counterpoint.software](https://rpc.mamaki.celestia.counterpoint.software)
 
 ## Vòi token Mamaki Testnet
 
