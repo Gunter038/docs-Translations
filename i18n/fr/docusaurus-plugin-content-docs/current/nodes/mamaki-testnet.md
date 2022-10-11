@@ -36,6 +36,7 @@ Il y a une liste des terminaux RPC que vous pouvez utiliser pour vous connecter 
 * [https://grpc-1.celestia.nodes.guru:10790](https://grpc-1.celestia.nodes.guru:10790)
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
+* [https://rpc.mamaki.celestia.counterpoint.software](https://rpc.mamaki.celestia.counterpoint.software)
 
 ## Faucet du Testnet Mamaki
 
