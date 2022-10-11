@@ -140,55 +140,55 @@ celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 celestia-appd tx bank send --help
 ```
 
-## Governance
+## 统治
 
-You can vote on a governance proposal with the following command:
+您可以投票在公司管理使用以下命令：
 
 ```sh
-celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
+celestia appd tx gov投票<proposal id><yes or no>--来自<wallet>--链id<chain-id>
 ```
 
-## Claim validator rewards
+## 索赔验证者奖励
 
-You can claim your validator rewards with the following command:
+你可以索赔验证者奖励用以下命令：
 
 ```sh
 celestia-appd tx distribution withdraw-rewards <validator valoper>\
     --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
 ```
 
-## Delegate & undelegate tokens
+## 委派&amp；取消委派令牌
 
-You can `delegate` your tokens to a validator with the following command:
+您可以`delegate` 将您的令牌委托给验证者 使用以下命令：
 
 ```sh
 celestia-appd tx staking delegate <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-You can undelegate tokens to a validator with the `unbond` command:
+您可以将令牌取消委派给验证者 使用`unbond`命令：
 
 ```sh
 celestia-appd tx staking unbond <validator valoper> <amount>\
     --from <wallet> --chain-id <chain-id>
 ```
 
-## Unjailing the validator
+## 解禁验证者
 
-You can unjail your validator with the following command:
+您可以解除监禁验证者使用以下命令：
 
 ```sh
 celestia-appd tx slashing unjail --from <validator wallet>\
     --chain-id <chain-id> --gas auto -y
 ```
 
-## How to export logs with SystemD
+## 如何使用SystemD导出日志
 
-You can export your logs if you are running a SystemD service with the following command:
+如果正在运行，则可以导出日志 使用以下命令的SystemD服务：
 
 ```sh
 sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
 sudo journalctl -u <your systemd service> -S today > node_logs.txt
-# This command outputs the last 1 million lines!
+#此命令输出最后100万行！
 sudo journalctl -u <your systemd service> -n 1000000 > node_logs.txt
 ```
