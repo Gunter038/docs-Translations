@@ -36,6 +36,7 @@ Mamaki是Celestia的一个里程碑，每个人都可以测试网络上的核心
 * [https://rpc-1.celestia.nodes.guru:10790](https://grpc-1.celestia.nodes.guru:10790)
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
+* [https://rpc.mamaki.celestia.counterpoint.software](https://rpc.mamaki.celestia.counterpoint.software)
 
 ## Mamki测试网水龙头
 
