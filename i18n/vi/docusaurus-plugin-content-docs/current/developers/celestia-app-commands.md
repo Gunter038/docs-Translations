@@ -61,34 +61,34 @@ celestia-appd keys delete <KEY_NAME>
 celestia-appd keys rename <CURRENT_KEY_NAME> <NEW_KEY_NAME>
 ```
 
-### Importing and exporting keys
+### Nhập và xuất keys
 
-Import an encrypted and ASCII-armored private key into the local keybase.
+Nhập khóa cá nhân được mã hóa và trang bị ASCII vào keybase nội bộ.
 
 ```sh
 celestia-appd keys import <KEY_NAME> <KEY_FILE>
 ```
 
-Example usage:
+Lệnh ví dụ:
 
 ```sh
 celestia-appd keys import amanda ./keyfile.txt
 ```
 
-Export a private key from the local keyring in encrypted and ASCII-armored format:
+Bạn có thể xuất một private key từ keyring nội bộ ở dạng mã hóa và định dạng ASCII-armored:
 
 ```sh
 celestia-appd keys export <KEY_NAME>
 
-# you will then be prompted to set a password for the encrypted private key:
-Enter passphrase to encrypt the exported key:
+# sau đó bạn sẽ được nhắc đặt mật khẩu cho khóa cá nhân được mã hóa:
+Nhập cụm mật khẩu để mã hóa khóa đã xuất:
 ```
 
-After you set a password, your encrypted key will be displayed.
+Sau khi bạn đặt mật khẩu, khóa được mã hóa của bạn sẽ xuất hiện.
 
-## Querying subcommands
+## Câu lệnh phụ cho mục đích truy vấn
 
-Usage:
+Cách sử dụng:
 
 ```sh
 celestia-appd query <FLAGS> | <COMMAND>
@@ -97,96 +97,96 @@ celestia-appd query <FLAGS> | <COMMAND>
 celestia-appd q <FLAGS> | <COMMAND>
 ```
 
-To see all options:
+Để xem tất cả sự lựa chọn:
 
 ```sh
 celestia-appd q --help
 ```
 
-## Token management
+## Quản lý token
 
-Get token balances:
+Xem số dư token:
 
 ```sh
 celestia-appd q bank balances <ADDRESS> --node <NODE_URI>
 ```
 
-Example usage:
+Lệnh ví dụ:
 
 ```sh
 celestia-appd q bank balances celestia1czpgn3hdh9sodm06d5qk23xzgpq2uyc8ggdqgw \
 --node https://rpc-mamaki.pops.one
 ```
 
-Transfer tokens from one wallet to another:
+Gửi các token từ một ví này đến một ví khác:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 <amount> --node <NODE_URI> --chain-id <CHAIN_ID>
 ```
 
-Example usage:
+Lệnh ví dụ:
 
 ```sh
 celestia-appd tx bank send <FROM_ADDRESS> <TO_ADDRESS> \
 19000000utia --node https://rpc-mamaki.pops.one/ --chain-id mamaki
 ```
 
-To see options:
+Để xem tất cả sự lựa chọn:
 
 ```sh
 celestia-appd tx bank send --help
 ```
 
-## Governance
+## Quản trị
 
-You can vote on a governance proposal with the following command:
+Bạn có thể bỏ phiếu cho một đề xuất quản trị với lệnh sau:
 
 ```sh
 celestia-appd tx gov vote <proposal id> <yes or no> --from <wallet> --chain-id <chain-id>
 ```
 
-## Claim validator rewards
+## Nhận phần thưởng cho validator
 
-You can claim your validator rewards with the following command:
+Bạn có thể nhận phần thưởng validator với câu lệnh sau:
 
 ```sh
 celestia-appd tx distribution withdraw-rewards <validator valoper>\
     --commission --from=<validator wallet> --chain-id <chain-id> --gas auto -y
 ```
 
-## Delegate & undelegate tokens
+## Ủy thác & rút tokens ủy thác
 
-You can `delegate` your tokens to a validator with the following command:
+Bạn có thể `ủy thác` token của bạn cho một validator với câu lệnh sau:
 
 ```sh
 celestia-appd tx staking delegate <validator valoper> <amount>\
-    --from <wallet> --chain-id <chain-id>
+    --from <wallet>  --chain-id <chain-id>
 ```
 
-You can undelegate tokens to a validator with the `unbond` command:
+Bạn có thể rút token ủy thác cho một validator với câu lệnh `unbond`:
 
 ```sh
 celestia-appd tx staking unbond <validator valoper> <amount>\
-    --from <wallet> --chain-id <chain-id>
+    --from <wallet>  --chain-id <chain-id>
 ```
 
-## Unjailing the validator
+## Unjail validator
 
-You can unjail your validator with the following command:
+Bạn có thể unjail validator với câu lệnh sau:
 
 ```sh
 celestia-appd tx slashing unjail --from <validator wallet>\
-    --chain-id <chain-id> --gas auto -y
+    --chain-id<chain-id> --gas auto -y
 ```
 
-## How to export logs with SystemD
+## Cách xuất logs với SystemD
 
-You can export your logs if you are running a SystemD service with the following command:
+Bạn có thể xuất logs nếu bạn chạy service SystemD với những câu lệnh sau:
 
 ```sh
 sudo journalctl -u <your systemd service> -S yesterday > node_logs.txt
 sudo journalctl -u <your systemd service> -S today > node_logs.txt
-# This command outputs the last 1 million lines!
+# Kết quả câu lệnh này sẽ kéo dài 1 triệu dòng!
 sudo journalctl -u <your systemd service> -n 1000000 > node_logs.txt
 ```
