@@ -30,12 +30,12 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
+此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 原因是我们将运行`wordled` 添加了Rollmint标志的二进制文件。
 
-You can start the chain with rollmint configurations by running the following:
+您可以通过以下方式启动rollmint配置的链条 运行以下命令：
 
 ```sh
-wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
+单词开头--rollmint。聚合器true——rollmint。da_layer celestia--rollmint.da_config='{“base_url”：“http://XXX.XXX.XXX.XXX:26658“，”timeout“：6000000000，”gas_limit“：6000000}'-rollmint.namespace_id 000000000000FFFF-rollming.da_start_height XXXXX”
 ```
 
 请考虑以下方面：
@@ -44,15 +44,15 @@ wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint
 
 还需要注意：
 
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 此外，对于旗帜 `--薄荷糖。namespace_id`，可以使用 操场<a href=“https://go.dev/play/p/7ltvaj8lhRl“>这里</a>
 
 在另一个窗口中，运行以下指令来submit a Wordle：
 
 ```sh
-wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
+wordled tx wordle提交wordle巨人--来自alice--keyring后端测试--chain id wordle-b async-y
 ```
 
-> 注意：为了避免 任何超时错误，我们正在提交异步交易。 With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
+> 注意：为了避免 任何超时错误，我们正在提交异步交易。 随着Rollmint取代Tendermint，我们 需要等待Celestia的数据可用性网络来确保数据块 从Wordle中包含，然后继续下一个块。 目前， 在Rollmint中，单个聚合器不会继续执行下一个块 只要它试图将当前块提交给DA网络，就可以进行生产。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
 
 这将要求你确认交易，并发出以下信息。
 
@@ -92,7 +92,7 @@ wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chai
 Cosmos-SDK将要求您在此确认交易：
 
 ```sh
-confirm transaction before signing and broadcasting [y/N]:
+签署和广播前确认交易[y/N]：
 ```
 
 输入 Y 进行确认。
@@ -144,41 +144,41 @@ wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --cha
 
 在确认交易后，采用上面同样的方法查询 `txhash`。 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-Now try to submit another wordle even though one was already submitted
+现在尝试提交另一个wordle，即使其中一个已经提交
 
 ```sh
-wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
+wordled tx wordle提交wordle meter--来自bob--keyring后端测试--chain id wordle-b async-y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+提交交易并确认后，查询`txhash` 就跟你刚才做的一样。 你会得到一个错误，一个单词 已提交当天的。
 
-Now let’s try to guess a five letter word:
+现在让我们试着猜一个五个字母的单词：
 
 ```sh
-wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
+wordled tx wordle提交猜测最少--来自bob--keyring后端测试--chain id wordle-b async-y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+提交交易并确认后，查询`txhash` 就跟你刚才做的一样。 假设你没有猜对 也就是说，它将增加Bob帐户的猜测计数
 
-We can verify this by querying the list:
+我们可以通过查询列表来验证这一点：
 
 ```sh
-wordled q wordle list-guess --output json
+wordled q wordle list guess--输出json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+这将输出到目前为止提交的所有Guess对象，并带有索引 是今天的日期和提交者的地址。
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Read on to how you can extend the code base.
+通过这个，我们使用 Cosmos SDK、Ignite和Rollmint。 继续阅读如何扩展代码库。
 
-## Extending in the Future
+## 在未来扩展
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+您可以通过检查来扩展代码库并改进本教程 存储库外<a href=“https://github.com/celestiaorg/wordle“>此处</a>。
 
-There are many ways this codebase can be extended:
+可以通过多种方式扩展此代码库：
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+1. 当你猜到正确的单词时，你可以改进周围的信息传递。
+2. 您可以在将单词提交到链之前对其进行散列， 确保哈希是本地的，这样就不会通过 在以下情况下由其他人监视纯文本字符串的前端运行 它是通过链接提交的。
+3. 您可以使用一个漂亮的界面来改进终端中的UI 沃德尔。 一些例子[ here](https://github.com/nimblebun/wordle-cli).
+4. 您可以改进当前日期以坚持特定时区。
+5. 您可以创建一个每天在特定时间提交wordle的bot。
+6. 你可以创建一个虚拟世界。使用示例开源的带有Ignite的js前端 存储库<a href=“https://github.com/yyx990803/vue-wordle“>这里</a>和<a href=”https://github.com/xudafeng/wordle“>此处</a>。
