@@ -36,6 +36,7 @@ Hay una lista de puntos finales RPC que puedes utilizar para conectarte a Mamaki
 * [https://grpc-1.celestia.nodes.guru:10790](https://grpc-1.celestia.nodes.guru:10790)
 * [https://celestia-testnet-rpc.polkachu.com/](https://celestia-testnet-rpc.polkachu.com/)
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
+* [https://rpc.mamaki.celestia.counterpoint.software](https://rpc.mamaki.celestia.counterpoint.software)
 
 ## Mamaki Testnet faucet
 
