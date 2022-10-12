@@ -1,23 +1,23 @@
 ---
-sidebar_label: 类型
+sidebar_label: Types
 ---
 
-# Wordle 类型
+# Wordle Types
 
-在接下来的步骤中，我们将通过我们创建的消息创建要使用的类型。
+For the next steps, we will be creating types to be used by the messages we created.
 
-## 拼写 Wordle 类型
+## Scaffolding Wordle Types
 
 ```sh
 ignite scaffold map wordle word submitter --no-message
 ```
 
-这种类型是一个名为 `Wordle` 的映射，具有两个值 `word` 和 `submitter`。 `submitter` 是提交者的地址提交 Wordle 的人。
+This type is a map called `Wordle` with two values of `word` and `submitter`. `submitter` is the address of the person that submitted the Wordle.
 
-第二种类型是 `Guess` 类型。 第二种类型是 ` Guess ` 类型。它允许我们保存对于提交解决方案的每个地址的最新猜测。
+The second type is the `Guess` type. It allows us to store the latest guess for each address that submitted a solution.
 
 ```sh
 ignite scaffold map guess word submitter count --no-message
 ```
 
-这里我们还存储 `count` 来计算这个地址submit了多少猜测
+Here, we are also storing `count` to count how many guesses this address submitted.
