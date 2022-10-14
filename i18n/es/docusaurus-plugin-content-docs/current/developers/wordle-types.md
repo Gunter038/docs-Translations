@@ -14,7 +14,7 @@ ignite scaffold map wordle word submitter --no-message
 
 Este tipo es un mapa llamado `Wordle` con dos valores de `word` y `submitter`. `submitter` es la dirección de la persona que envió el Wordle.
 
-El segundo tipo es el tipo `Guess`. It allows us to store the latest guess for each address that submitted a solution.
+El segundo tipo es el tipo `Guess`. Esto nos permite almacenar la última suposición para cada dirección que presentó una solución.
 
 ```sh
 ignite scaffold map guess word submitter count --no-message
