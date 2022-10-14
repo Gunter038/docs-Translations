@@ -6,7 +6,7 @@ sidebar_label: Tipos
 
 Para los siguientes pasos, crearemos tipos para ser utilizados por los mensajes que creamos.
 
-## Scaffolding Wordle Types
+## Estructura de los Tipos de Wordle
 
 ```sh
 ignite scaffold map wordle word submitter --no-message
@@ -20,4 +20,4 @@ El segundo tipo es el tipo `Guess`. Esto nos permite almacenar la última suposi
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Here, we are also storing `count` to count how many guesses this address submitted.
+Aquí también almacenamos `count` para contar cuántos supuestos enviaron esta dirección.
