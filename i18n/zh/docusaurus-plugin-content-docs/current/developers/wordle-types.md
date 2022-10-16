@@ -9,15 +9,15 @@ sidebar_label: 类型
 ## 脚手架 Wordle 类型
 
 ```sh
-点燃支架地图单词提交者--无消息
+ignite scaffold map wordle word submitter --no-message
 ```
 
-此类型是一个名为`Wordle`的映射，有两个值 `word`和`提交者`。 ` submitter `是 提交Wordle的人。
+这种类型是一个名为 `Wordle` 的映射，具有两个值 `word` 和 `submitter`。 `submitter` 是提交者的地址 提交 Wordle 的人。
 
-第二种类型是`Guess`类型。 它允许我们存储 提交解决方案的每个地址的最新猜测。
+第二种类型是`Guess`类型。 它允许我们存储提交解决方案的每个地址的最新猜测。
 
 ```sh
-点燃支架地图猜测单词提交者计数--无消息
+ignite scaffold map guess word submitter count --no-message
 ```
 
-这里，我们还存储了`count`来计算猜测次数 此地址已提交。
+在这里，我们还存储 `count` 以计算该地址提交了多少猜测。
