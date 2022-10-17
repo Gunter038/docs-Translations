@@ -1,22 +1,22 @@
 ---
-sidebar_label: Recursos de CosmWasm
+sidebar_label: CosmWasm Resources
 ---
 
-# Recursos de CosmWasm
+# CosmWasm Resources
 
-Para obtener más recursos para comenzar a construir smart contracts con CosmWasm que podrás desplegar en Celestia, revisa la lista de recursos en esta sección.
+For more resources on getting started building smart contracts with CosmWasm that you can then deploy on Celestia, check out the list of resources in this section.
 
 ## Tokens
 
-- [Atomic swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
+- [Atomic Swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
 - [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
 - [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
 - [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Misceláneo
+## Miscellaneous
 
 - [NFTs](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
 - [Storage](https://crates.io/crates/cosmwasm-storage)
 - [DAOs](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
 
-Además, echa un vistazo a la lista increíble de CosmWasm [aquí](https://github.com/InterWasm/cw-awesome/)
+Also, check out the CosmWasm Awesome List [here](https://github.com/InterWasm/cw-awesome/)
