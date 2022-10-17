@@ -1,5 +1,5 @@
 ---
-sidebar_label: CosmWasm Resources
+sidebar_label: Recursos para CosmWasm
 ---
 
 # Recursos para CosmWasm
@@ -11,7 +11,7 @@ Para obtener más recursos para comenzar a construir contratos inteligentes con 
 - [Atomic swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
 - [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
 - [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
-- [Excrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
+- [Depósito en garantía (Escrow)](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
 ## Varios
 
