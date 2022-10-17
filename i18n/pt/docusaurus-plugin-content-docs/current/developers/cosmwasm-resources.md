@@ -13,7 +13,7 @@ For more resources on getting started building smart contracts with CosmWasm tha
 - [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
 - [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Miscellanious
+## Miscellaneous
 
 - [NFTs](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
 - [Storage](https://crates.io/crates/cosmwasm-storage)
