@@ -1,8 +1,8 @@
 ---
-sidebar_label: Types
+sidebar_label: Türler
 ---
 
-# Wordle Types
+# Kelime Türleri
 
 For the next steps, we will be creating types to be used by the messages we created.
 
