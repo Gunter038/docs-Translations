@@ -2,21 +2,21 @@
 sidebar_label: CosmWasm Resources
 ---
 
-# CosmWasm Resources
+# CosmWasm Kaynakları
 
-For more resources on getting started building smart contracts with CosmWasm that you can then deploy on Celestia, check out the list of resources in this section.
+İlerleyen zamanlarda Celestia'da CosmWasm ile akıllı sözleşmeler oluşturmaya başlamak ve entegre konusunda daha fazla bilgi edinmek için bu bölümdeki kaynak listesine göz atın.
 
-## Tokens
+## Tokenler
 
-- [Atomic Swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
-- [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
-- [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
-- [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
+- [Atomik Takas](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
+- [Stake etmek](https://docs.rs/cw20-staking/latest/cw20_staking/)
+- [Bond Etmek](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
+- [Emanet](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Miscellaneous
+## Diğerleri
 
-- [NFTs](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
-- [Storage](https://crates.io/crates/cosmwasm-storage)
-- [DAOs](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
+- [NFT'ler](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
+- [Depolama](https://crates.io/crates/cosmwasm-storage)
+- [Merkeziyetsiz Otonom Kuruluşlar](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
 
-Also, check out the CosmWasm Awesome List [here](https://github.com/InterWasm/cw-awesome/)
+Ayrıca, "CosmWasm" Listesine göz atabilirsiniz [buradan](https://github.com/InterWasm/cw-awesome/)
