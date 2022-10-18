@@ -4,7 +4,7 @@ sidebar_label: Recursos para CosmWasm
 
 # Recursos para CosmWasm
 
-Para obtener más recursos para comenzar a construir contratos inteligentes con CosmWasm que podrás desplegar en Celestia, revisa la lista de recursos en esta sección.
+Para obtener más recursos sobre cómo empezar a construir contratos inteligentes con CosmWasm que luego podrás desplegar en Celestia, revisa la lista de recursos en esta sección.
 
 ## Tokens
 
