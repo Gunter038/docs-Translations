@@ -1,5 +1,5 @@
 ---
-sidebar_label: CosmWasm Resources
+sidebar_label: ресурсы CosmWasm
 ---
 
 # CosmWasm Resources
@@ -10,13 +10,13 @@ For more resources on getting started building smart contracts with CosmWasm tha
 
 - [Atomic Swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
 - [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
-- [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
-- [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
+- [прилипание](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
+- [опека](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Miscellaneous
+## смешанный
 
-- [NFTs](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
-- [Storage](https://crates.io/crates/cosmwasm-storage)
-- [DAOs](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
+- [Нефинансовые сделки](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
+- [Досс](https://crates.io/crates/cosmwasm-storage)
+- [Досс](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
 
-Also, check out the CosmWasm Awesome List [here](https://github.com/InterWasm/cw-awesome/)
+Кроме того, проверьте CosmWasm Awesome List [here](https://github.com/InterWasm/cw-awesome/)
