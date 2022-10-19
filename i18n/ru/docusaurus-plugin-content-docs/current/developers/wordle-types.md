@@ -1,10 +1,10 @@
 ---
-sidebar_label: Types
+sidebar_label: тип
 ---
 
-# Wordle Types
+# тип слова
 
-For the next steps, we will be creating types to be used by the messages we created.
+в следующем шаге мы создадим мы создали сообщение.
 
 ## Scaffolding Wordle Types
 
