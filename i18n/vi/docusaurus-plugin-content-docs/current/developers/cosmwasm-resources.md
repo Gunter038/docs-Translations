@@ -1,22 +1,22 @@
 ---
-sidebar_label: CosmWasm Resources
+sidebar_label: Tài nguyên CosmWasm
 ---
 
-# CosmWasm Resources
+# Tài nguyên CosmWasm
 
-For more resources on getting started building smart contracts with CosmWasm that you can then deploy on Celestia, check out the list of resources in this section.
+Để có thêm tài nguyên về cách bắt đầu xây dựng hợp đồng thông minh với CosmWasm mà sau đó bạn có thể triển khai trên Celestia, hãy xem danh sách tài nguyên trong phần này.
 
 ## Tokens
 
-- [Atomic Swap](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
+- [Hoán đổi Atomic](https://docs.rs/cw20-atomic-swap/latest/cw20_atomic_swap/)
 - [Staking](https://docs.rs/cw20-staking/latest/cw20_staking/)
-- [Bonding](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
-- [Escrow](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
+- [Kết nối](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
+- [Ký quỹ](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Miscellaneous
+## Các phần khác
 
-- [NFTs](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
-- [Storage](https://crates.io/crates/cosmwasm-storage)
-- [DAOs](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
+- [NFT](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
+- [Lưu trữ](https://crates.io/crates/cosmwasm-storage)
+- [DAO](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
 
-Also, check out the CosmWasm Awesome List [here](https://github.com/InterWasm/cw-awesome/)
+Ngoài ra, hãy xem Danh sách CosmWasm Awesome [tại đây](https://github.com/InterWasm/cw-awesome/)
