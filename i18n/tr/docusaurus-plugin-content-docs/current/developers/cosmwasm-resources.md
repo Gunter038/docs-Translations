@@ -13,10 +13,10 @@ sidebar_label: CosmWasm Kaynakları
 - [Bond Etmek](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
 - [Emanet](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## Diğerleri
+## Diğer
 
 - [NFT'ler](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
 - [Depolama](https://crates.io/crates/cosmwasm-storage)
 - [Merkeziyetsiz Otonom Kuruluşlar](https://github.com/DA0-DA0/dao-contracts/tree/main/contracts)
 
-Ayrıca, "CosmWasm" Listesine göz atabilirsiniz [buradan](https://github.com/InterWasm/cw-awesome/)
+Ayrıca, "CosmWasm" Listesine [buradan](https://github.com/InterWasm/cw-awesome/)göz atabilirsiniz
