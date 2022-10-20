@@ -2,22 +2,22 @@
 sidebar_label: Types
 ---
 
-# Wordle Types
+# Các loại Wordle
 
-For the next steps, we will be creating types to be used by the messages we created.
+Đối với các bước tiếp theo, chúng tôi sẽ tạo các loại để sử dụng cho các thông điệp chúng tôi đã tạo.
 
-## Scaffolding Wordle Types
+## Các loại Wordle khung
 
 ```sh
 ignite scaffold map wordle word submitter --no-message
 ```
 
-This type is a map called `Wordle` with two values of `word` and `submitter`. `submitter` is the address of the person that submitted the Wordle.
+Loại này là một bản đồ được gọi là `Wordle` với hai giá trị là `word` và `submitter`. `submitter` là địa chỉ của người đã gửi Wordle.
 
-The second type is the `Guess` type. It allows us to store the latest guess for each address that submitted a solution.
+Loại thứ hai là loại `Guess`. Nó cho phép chúng tôi lưu trữ dự đoán mới nhất cho từng địa chỉ đã gửi giải pháp.
 
 ```sh
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Here, we are also storing `count` to count how many guesses this address submitted.
+Tại đây, chúng tôi cũng đang lưu trữ `count` để đếm xem địa chỉ này đã gửi bao nhiêu lượt đoán.
