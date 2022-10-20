@@ -1,23 +1,23 @@
 ---
-sidebar_label: Types
+sidebar_label: Типи
 ---
 
-# Wordle Types
+# Типи Wordle
 
-For the next steps, we will be creating types to be used by the messages we created.
+Для наступних кроків ми створимо типи, які використовуватимуться у створених нами повідомленнях.
 
-## Scaffolding Wordle Types
+## Різноманітні Типи Wordle
 
 ```sh
 ignite scaffold map wordle word submitter --no-message
 ```
 
-This type is a map called `Wordle` with two values of `word` and `submitter`. `submitter` is the address of the person that submitted the Wordle.
+Цей тип є картою `Wordle` з двома значеннями `word` і `submitter`. `submitter` — це адреса особи, яка надіслала Wordle.
 
-The second type is the `Guess` type. It allows us to store the latest guess for each address that submitted a solution.
+Другий тип - це тип `Guess`. Він дозволяє нам зберігати останні припущення для кожної адреси, яка надіслала рішення.
 
 ```sh
 ignite scaffold map guess word submitter count --no-message
 ```
 
-Here, we are also storing `count` to count how many guesses this address submitted.
+Тут ми також зберігаємо `count`, щоб підрахувати, скільки здогадів надіслала ця адреса.
