@@ -1,23 +1,23 @@
 ---
-sidebar_label: Types
+sidebar_label: 유형
 ---
 
-# Wordle Types
+# Тип текста
 
-For the next steps, we will be creating types to be used by the messages we created.
+다음 단계에서는 다음을 작성합니다. 우리가 만든 메시지입니다.
 
-## Scaffolding Wordle Types
-
-```sh
-ignite scaffold map wordle word submitter --no-message
-```
-
-This type is a map called `Wordle` with two values of `word` and `submitter`. `submitter` is the address of the person that submitted the Wordle.
-
-The second type is the `Guess` type. It allows us to store the latest guess for each address that submitted a solution.
+## 비계 단어 유형
 
 ```sh
-ignite scaffold map guess word submitter count --no-message
+비계 맵 점화 wordle 단어 제출자 - 메시지 없음
 ```
 
-여기에 추측 횟수를 계산하기 위해 `count`를 저장했습니다. 이 주소가 제출되었습니다.
+이 유형은 ` Wordle`라는 매핑으로 두 개의 값이 있습니다. `word` 및 `제출자 `. ` 제출자 ` 예 Wordle을 제출한 사람.
+
+두 번째 유형은 `Guess` 유형입니다. 스토리지를 제공합니다. 솔루션의 각 주소에 대한 최신 추측을 제출합니다.
+
+```sh
+비계 지도에 불을 붙여 단어 제출자 수 추측 -- 메시지 없음
+```
+
+여기에는 추측 횟수를 계산하기 위해'code'count'/code'도 저장되어 있습니다. 이 주소가 제출되었습니다.
