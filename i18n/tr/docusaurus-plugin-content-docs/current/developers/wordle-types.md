@@ -2,9 +2,9 @@
 sidebar_label: Türler
 ---
 
-# Wordle (Kelime) Türleri
+# Kelime Türleri
 
-Sonraki adımlar için oluşturduğumuz mesajların kullanacağı tipler oluşturacağız.
+Sonraki adımlar için oluşturduğumuz mesajlar tarafından kullanılacak türler oluşturacağız.
 
 ## Yapı Kelime Türleri
 
@@ -12,7 +12,7 @@ Sonraki adımlar için oluşturduğumuz mesajların kullanacağı tipler oluştu
 ignite scaffold map wordle word submitter --no-message
 ```
 
-Bu tür, `word`  ve `submitter` olmak üzere iki değeri olan  `Wordle`  adlı bir haritadır. `submitter`, Wordle'ı gönderen kişinin adresidir.
+Bu tür, `word`  ve `submitter` olmak üzere iki değeri olan  `Wordle`  adlı bir haritadır. `submitter`, Kelimeyi (Wordle) gönderen kişinin adresidir.
 
 İkinci tip ise  `Guess` (tahmin) tipidir. Çözüm gönderen her adres için en son tahmini saklamamızı sağlar.
 
