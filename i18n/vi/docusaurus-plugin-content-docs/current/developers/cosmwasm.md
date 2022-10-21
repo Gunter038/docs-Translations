@@ -1,5 +1,5 @@
 ---
-sidebar_label: Tổng quan về CosmWasm
+sidebar_label: CosmWasm Overview
 ---
 
 # CosmWasm on Rollmint
