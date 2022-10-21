@@ -1,34 +1,34 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Selanjutnya",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Types of Nodes",
+    "message": "Jenis-Jenis Node",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
-    "message": "Consensus",
+    "message": "Konsensus",
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Data Availability",
+    "message": "Ketersediaan Data",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Participate",
+    "message": "Berpartisipasi",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
-    "message": "Resources",
+    "message": "Sumber Daya",
     "description": "The label for category Resources in sidebar nodes"
   },
   "sidebar.developers.category.Celestia App": {
-    "message": "Celestia App",
+    "message": "Aplikasi Celestia",
     "description": "The label for category Celestia App in sidebar developers"
   },
   "sidebar.developers.category.Celestia Node": {
-    "message": "Celestia Node",
+    "message": "Node Celestia",
     "description": "The label for category Celestia Node in sidebar developers"
   },
   "sidebar.developers.category.Rollmint": {
