@@ -1,5 +1,5 @@
 ---
-sidebar_label: Resumen de Wordle
+sidebar_label: Wordle Overview
 ---
 
 # Wordle App on Rollmint
@@ -8,52 +8,52 @@ sidebar_label: Resumen de Wordle
 
 This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. El tutorial pasará por encima del diseño simple, y concluirá con futuras implementaciones e ideas para extender este código.
+This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. Si encuentras errores, por favor escribe un ticket de Github Issue o háznoslo saber en nuestro Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
-## Pre-requisitos
+## Pre-requisites
 
-Dado que este tutorial está dirigido a desarrolladores con experiencia en Cosmos-SDK, te recomendamos que revises los siguientes tutoriales en Ignite para entender todos los diferentes componentes de Cosmos-SDK antes de continuar con este tutorial.
+Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
-* [Blog y módulos básicos](https://docs.ignite.com/guide/blog)
-* [Tutorial de Nameservice](https://docs.ignite.com/guide/nameservice)
-* [Búsqueda del Tesoro](https://docs.ignite.com/guide/scavenge)
+* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
+* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-No tienes que hacer esas guías para seguir este tutorial de Wordle, pero haciéndolo le ayuda a entender mejor la arquitectura de Cosmos-SDK.
+You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
 
-## Implementación de diseño
+## Design Implementation
 
-Las reglas de Wordle son simples: tienes que adivinar la palabra del día.
+The rules of Wordle are simple: You have to guess the word of the day.
 
-Puntos clave a considerar:
+Key Points to Consider:
 
-* La palabra es de cinco letras.
-* Tienes 6 supuestos.
-* Cada 24 horas hay una nueva palabra.
+* The word is a five-letter word.
+* You have 6 guesses.
+* Every 24 hours, there’s a new word.
 
-El GUI para Wordle te muestra algunos indicadores: un resaltado verde en una letra en una posición determinada significa que es la letra correcta para la Wordle en la posición correcta. Un resaltado amarillo significa que es una letra correcta para la palabra incluida en la posición incorrecta. Un resaltado gris significa que la letra no forma parte de la Palabra.
+The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
 
-Para la simplicidad del diseño, evitaremos esas pistas, aunque hay maneras de extender este código base para implementar eso, que mostraremos al final.
+For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
 
-En este diseño actual, implementamos las siguientes reglas:
+In this current design, we implement the following rules:
 
-* Se puede enviar 1 Wordle por día
-* Cada dirección tendrá 6 intentos de adivinar la palabra
-* Debe ser una palabra de cinco letras.
-* Quien adivine la palabra correctamente antes de que se acaben sus 6 intentos obtenga un premio de 100 tokens WORDLE.
+* 1 Wordle can be submitted per day
+* Every address will have 6 tries to guess the word
+* It must be a five-letter word.
+* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
 
-Analizaremos la arquitectura para lograr esto en la guía. Pero por ahora, empezaremos a configurar nuestro entorno de desarrollo.
+We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
 
-## Tabla de contenidos para este Tutorial
+## Table of Contents For This Tutorial
 
-El siguiente tutorial se divide en las siguientes secciones:
+The following tutorial is broken down into the following sections:
 
-1. [Ignite y Chain Scaffolding](./scaffold-wordle.md)
+1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
 2. [Installing Rollmint](./install-rollmint.md)
-3. [Módulos](./wordle-module.md)
-4. [Mensajes](./wordle-messages.md)
-5. [Tipos](./wordle-types.md)
+3. [Modules](./wordle-module.md)
+4. [Messages](./wordle-messages.md)
+5. [Types](./wordle-types.md)
 6. [Keepers](./wordle-keeper.md)
-7. [Ejecutando Wordle](./run-wordle.md)
+7. [Running Wordle](./run-wordle.md)
