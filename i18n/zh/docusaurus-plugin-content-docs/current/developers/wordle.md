@@ -1,59 +1,59 @@
 ---
-sidebar_label: 文字云概述
+sidebar_label: Wordle Overview
 ---
 
-# Rollmint上的文字云应用程序
+# Wordle App on Rollmint
 
-![mamaki-测试网](/img/wordle.jpg)
+![mamaki-testnet](/img/wordle.jpg)
 
-本教程指南将介绍如何构建cosmossdk应用程序 对于Rollmint，主权汇总实施 Tendermint，流行游戏<a href=“https://www.nytimes.com/games/wordle/index.html“>文字云</a>。
+This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-本教程将介绍如何设置Rollmint 并使用它来构建游戏。 本教程将介绍简单的设计， 并以未来的实施和想法结束扩展这个代码库。
+This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
 
-> 注意：本教程将探索使用Rollmint进行开发， 仍处于Alpha阶段。 如果您遇到错误，请写一个 Github 问题票或在我们的 Discord 中告诉我们。 此外，虽然Rollmint允许您建立主权 Celestia上的汇总，目前不支持欺诈 证明还没有，因此正在“悲观”模式下运行， 其中节点需要重新执行事务以进行检查 链的有效性 (即完整节点) 。 此外Rollmint目前仅支持单个序列器。
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
-## 前置条件
+## Pre-requisites
 
-鉴于本教程面向有 Cosmos-SDK 经验的开发人员，我们建议您在继续本教程之前阅读 Ignite 中的以下教程以了解 Cosmos-SDK 中的所有不同组件。
+Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
 
-* [你好世界](https://docs.ignite.com/guide/hello)
-* [博客和模块基础](https://docs.ignite.com/guide/blog)
-* [名称服务教程](https://docs.ignite.com/guide/nameservice)
-* [寻宝游戏](https://docs.ignite.com/guide/scavenge)
+* [Hello, World](https://docs.ignite.com/guide/hello)
+* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
+* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-您不必按照这些指南来学习此 Wordle 教程，但这样做可以帮助您更好地理解 Cosmos-SDK 的架构。
+You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
 
-## 设计与实现
+## Design Implementation
 
-Wordle 的规则很简单：你必须猜当天的单词。
+The rules of Wordle are simple: You have to guess the word of the day.
 
-需要考虑的要点：
+Key Points to Consider:
 
-* 这个词是一个五个字母的词
-* 你有 6 个猜测
-* 每24小时就会出现一个新的单词
+* The word is a five-letter word.
+* You have 6 guesses.
+* Every 24 hours, there’s a new word.
 
-Wordle 的 GUI 向您显示了一些指标：某个位置的字母上的绿色突出显示表示该字母在正确位置是 Wordle 的正确字母。 黄色突出显示表示它是包含在错误位置的 Wordle 的正确字母。 灰色高亮表示该字母不是 Wordle 的一部分。
+The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
 
-为了设计的简单性，我们将避免这些提示，尽管有一些方法可以扩展这个代码库来实现它，我们将在最后展示。
+For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
 
-在当前的设计中，我们实现了以下规则：
+In this current design, we implement the following rules:
 
-* 每天可以提交 1 个单词
-* 每个地址将有 6 次尝试猜测单词
-* 它必须是一个五个字母的单词
-* 在 6 次尝试结束之前正确猜出单词的人将获得 100 个 WORDLE 代币的奖励
+* 1 Wordle can be submitted per day
+* Every address will have 6 tries to guess the word
+* It must be a five-letter word.
+* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
 
-我们将在指南中详细介绍架构以进一步实现这一点。 但是现在，我们将开始设置我们的开发环境。
+We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
 
-## 本教程的目录
+## Table of Contents For This Tutorial
 
-以下教程分为以下几个部分：
+The following tutorial is broken down into the following sections:
 
-1. [点燃和链式脚手架](./scaffold-wordle.md)
-2. [安装Rollmint](./install-rollmint.md)
-3. [模块](./wordle-module.md)
-4. [留言](./wordle-messages.md)
-5. [类型](./wordle-types.md)
-6. [守护者](./wordle-keeper.md)
-7. [运行单词](./run-wordle.md)
+1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
+2. [Installing Rollmint](./install-rollmint.md)
+3. [Modules](./wordle-module.md)
+4. [Messages](./wordle-messages.md)
+5. [Types](./wordle-types.md)
+6. [Keepers](./wordle-keeper.md)
+7. [Running Wordle](./run-wordle.md)
