@@ -1,52 +1,52 @@
-- - -
-sidebar_label : Hướng dẫn chạy Node
-- - -
+---
+sidebar_label: Node Tutorial
+---
 
-# Nhận và gửi các giao dịch với Celestia Node
+# Getting and Sending Transactions with Celestia Node
 <!-- markdownlint-enable MD013 -->
 
-Trong hướng dẫn này, chúng ta sẽ cùng học cách sử dụng API Celestia Node để gửi và lấy tin nhắn từ lớp Data Availability bằng ID namespace của bạn.
+In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
-Hướng dẫn này mặc định rằng bạn đang sử dụng môi trường Linux.
+This tutorial was assumes you are working in a Linux environment.
 
-> Để xem video hướng dẫn cách thiết lập light node Celestia, bấm [vào đây](./light-node-video.md)
+> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
 
-## Các yêu cầu phần cứng
+## Hardware Requirements
 
-Yêu cầu phần cứng tối thiểu bên dưới đây được khuyến nghị để chạy một light node:
+The following minimum hardware requirements are recommended for running a light node:
 
 - Memory: 2 GB RAM
 - CPU: Single Core
 - Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps đối với Download/56 Kbps đối với Upload
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Thiết lập các phần phụ thuộc
+## Setting Up Dependencies
 
-Đầu tiên, hãy bảo đảm đã cập nhật và nâng cấp OS:
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Nếu bạn đang sử dụng APT package manager
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Nếu bạn đang sử dụng YUM package manager
+# If you are using the YUM package manager
 sudo yum update
 ```
 
-Chúng là những gói thiết yếu, cần thiết để thực thi nhiều tác vụ ví dụ như tải file, biên dịch, và quản lý node:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# Nếu bạn đang sử dụng APT package manager
+# If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# Nếu bạn đang sử dụng YUM package manager
+# If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Cài đặt Golang
+### Install Golang
 
-Celestia-app và celestia-node được viết bằng ngôn ngữ lập trình [Golang](https://go.dev/) do vậy chúng ta phải cài đặt Golang để thiết lập và chạy nó.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.19.1"
@@ -57,20 +57,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Bây giờ chúng ta cần thêm thư mục `/usr/local/go/bin` vào `$PATH`:
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >>$HOME/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Để kiểm tra xem Go đã được cài đặt đúng chưa:
+To check if Go was installed correctly run:
 
 ```sh
 go version
 ```
 
-Đầu ra phải là phiên bản được cài đặt:
+The output should be the version installed:
 
 ```sh
 go version go1.18.2 linux/amd64
@@ -78,9 +78,9 @@ go version go1.18.2 linux/amd64
 
 ## Celestia Node
 
-### Cài đặt Node Celestia
+### Install Celestia Node
 
-Cài đặt celestia-node binary bằng cách chạy các lệnh sau:
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Xác minh rằng binary đang hoạt động và kiểm tra phiên bản bằng lệnh celestia:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -103,29 +103,29 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Khởi tạo Light Node Celestia
+### Instantiate Celestia Light Node
 
-Bây giờ, hãy khởi tạo một node Celestia Light:
+Now, let's instantiate a Celestia Light node:
 
-> Lưu ý: Điểm cuối RPC được hiển thị trong tất cả các loại Node Celestia chẳng hạn như Light, Bridge và Full Nodes.
+> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Kết nối với điểm cuối Public Core
+### Connect To A Public Core Endpoint
 
-Bây giờ chúng ta hãy chạy node Celestia Light với kết nối GRPC cho một ví dụ về Điểm cuối Public Core.
+Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
 
-> Lưu ý: Bạn cũng được khuyến khích tìm một điểm cuối API do cộng đồng điều hành và lưu trữ nhiều trong Discord. Cái này được dùng cho mục đích minh họa. Bạn có thể tìm thấy danh sách các điểm cuối RPC [tại đây](/nodes/arabica-devnet.md#rpc-endpoints)
+> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 9090. You can use the flag to specify another port if you prefer.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
-Ví dụ: lệnh của bạn cùng với điểm cuối RPC có thể trông giống như sau:
+For example, your command along with an RPC endpoint might look like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -133,13 +133,15 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Mã khóa và ví
+### Keys and wallets
 
-Bạn có thể tạo mã khóa cho node của mình bằng cách chạy lệnh sau:
+You can create your key for your node by running the following command:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -147,39 +149,39 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Khi bạn khởi động Light Node, một mã khóa ví sẽ được tạo. Bạn sẽ cần nạp tiền cho địa chỉ ví đó bằng Arabica Devnet tokens nhằm thanh toán cho các giao dịch PayForData.
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
 
-Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục `celestia-node`:
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Nếu bạn muốn nạp vào ví của mình tokens testnet, hãy truy cập kênh Discord của Celestia `#arabica-faucet`.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
-Bạn có thể yêu cầu nạp tiền vào địa chỉ ví của mình bằng lệnh sau trong Discord:
+You can request funds to your wallet address using the following command in Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where ` <Wallet-Address> ` is the ` celestia1 ****** ` được xuất ra khi bạn tạo ví.
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-Với ví được nạp tiền, bạn có thể chuyển sang bước tiếp theo.
+With your wallet funded, you can move on to the next step.
 
 ## Node API Calls
 
-Mở một cửa sổ đầu cuối khác để bắt đầu truy vấn API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Số dư
+### Balance
 
-Bây giờ, hãy truy vấn nodes của chúng ta để biết số dư trong tài khoản mặc định (là tài khoản được liên kết với khóa ` developer ` mà chúng ta đã tạo ra trước đó):
+Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-Nó sẽ xuất ra như sau:
+It will output the following:
 
 ```json
 {
@@ -188,19 +190,19 @@ Nó sẽ xuất ra như sau:
 }
 ```
 
-Nó cho bạn thấy số dư trong ví đó.
+This shows you the balance in that wallet.
 
-### Nhận tiêu đề khối
+### Get Block Header
 
-Bây giờ, hãy lấy thông tin tiêu đề khối.
+Now, let's get the block header information.
 
-Ở đây chúng ta sẽ lấy tiêu đề từ Khối 1:
+Here we will get the header from Block 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-Nó sẽ xuất ra như thế này:
+It will output something like this:
 
 ```json
 {
@@ -370,37 +372,33 @@ Nó sẽ xuất ra như thế này:
       ]
    }
 }
- 
-Text
-XPath: /pre[18]/code
-File: node-tutorial.md
 ```
 
-### Gửi giao dịch PFD
+### Submit a PFD Transaction
 
-Trong ví dụ này, chúng tôi sẽ gửi một giao dịch PayForData tới điểm cuối ` / submit_pfd ` của node.
+In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
 
-Một số điều cần xem xét:
+Some things to consider:
 
-- PFD là một thông điệp PayForData.
-- Điểm cuối cũng nhận các giá trị ` namespace_id ` và ` data `.
-- ID Namespace nên là là 8 byte.
-- Data sẽ nằm trong bytes được mã hóa hex của raw message.
-- `gas_limit` là giới hạn gas được sử dụng cho giao dịch
+- PFD is a PayForData Message.
+- The endpoint also takes in a `namespace_id` and `data` values.
+- Namespace ID should be 8 bytes.
+- Data is in hex-encoded bytes of the raw message.
+- `gas_limit` is the limit of gas to use for the transaction
 
-Chúng ta sẽ sử dụng `namespace_id` của `0000010000000100` và giá trị `data` của `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-Bạn có thể tạo `namespace_id` của riêng bạn, và giá trị data bằng cách sử dụng Playground Golang chúng ta đã tạo [tại đây](https://go.dev/play/p/7ltvaj8lhRl).
+You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
 
-Chạy lệnh sau:
+We run the following:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "data": "f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5",
-  "gas_limit": 60000}' http://localhost:26658/submit_pfd
+  "gas_limit": 70000}' http://localhost:26658/submit_pfd
 ```
 
-Chúng ta sẽ nhận được kết quả như sau:
+We get the following output:
 
 ```json
 {
@@ -617,11 +615,13 @@ Chúng ta sẽ nhận được kết quả như sau:
 }
 ```
 
-Nếu bạn chú ý trong kết quả ở trên, nó trả về một `height` của `2452`, thứ chúng ta sẽ sử dụng trong câu lệnh sau.
+If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
 
-#### Khắc phục sự cố
+Note: To learn more about status response codes, please navigate to [cosmos' code explanation](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
 
-Nếu bạn gặp phải một lỗi như sau:
+#### Troubleshooting
+
+If you encounter an error like:
 
 <!-- markdownlint-disable MD013 -->
 ```console
@@ -630,18 +630,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-Có thể tài khoản bạn đang cố gắng gửi giao dịch PayForData chưa có tokens testnet. Hãy bảo đảm rằng vòi testnet đã nạp vào tài khoản của bạn tokens và thử lại.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
-### Nhận các Namespaced Shares theo Block Height
+### Get Namespaced Shares by Block Height
 
-Sau khi gửi giao dịch PFD của bạn, khi thành công, node sẽ gửi trở lại Block Height mà giao dịch PFD đã được thực hiện. Bạn có thể sử dụng Block Height đó và namespace ID mà bạn đã gửi cùng với giao dịch PFD để nhận lại message shares của bạn. Trong ví dụ sau, Block Height chúng ta sẽ nhận là 589 bằng cách sử dụng câu lệnh sau.
+After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Chúng ta sẽ nhận được kết quả như sau:
+Will generate the following output:
 
 ```json
 {
@@ -652,4 +652,4 @@ Chúng ta sẽ nhận được kết quả như sau:
 }
 ```
 
-Kết quả ở đây được mã hóa base64.
+The output here is base64-encoded.
