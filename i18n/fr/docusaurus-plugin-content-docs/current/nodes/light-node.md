@@ -1,64 +1,64 @@
-- - -
-sidebar_label : Light Node
-- - -
+---
+sidebar_label: Light Node
+---
 
-# Configuration d'un Light Node Celestia
+# Setting up a Celestia Light Node
 
-Ce tutoriel vous guidera à travers la mise en place d'un Light Node Celestia, qui vous permettra d'effectuer des échantillonnages de disponibilité de données sur le réseau de disponibilité de données (Data Availability/DA).
+This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
 
-> Pour voir un tutoriel vidéo sur la mise en place d'un Light Node Celestia, cliquez [ici](../developers/light-node-video.md)
+> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
 
-## Présentation des Light Nodes
+## Overview of light nodes
 
-Les Light nodes s'assurent de la disponibilité des données. C'est le moyen le plus commun d'interagir avec le réseau Celestia.
+Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
 
-![Light Node](/img/nodes/LightNodes.png)
+![light-node](/img/nodes/LightNodes.png)
 
-Les Light Nodes ont le comportement suivant :
+Light nodes have the following behavior:
 
-1. Ils écoutent les ExtendedHeaders, c'est-à-dire les en-têtes « bruts» enveloppés, qui notifient les nodes Celestia des nouveaux en-têtes de blocs et des métadonnées DA pertinentes.
-2. Ils effectuent l'échantillonnage de la disponibilité des données (DAS) sur les en-têtes reçus.
+1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
+2. They perform data availability sampling (DAS) on the received headers
 
-## Hardware Requis
+## Hardware requirements
 
-Les exigences matérielles minimales suivantes sont recommandées pour exécuter un Light node :
+The following minimum hardware requirements are recommended for running a light node:
 
-* Mémoire: 2 Go de RAM
+* Memory: 2 GB RAM
 * CPU: Single Core
-* Disque: 5 Go de stockage SSD
-* Bande passante : 56 Gbps pour le téléchargement/56 Mbps pour l'upload
+* Disk: 5 GB SSD Storage
+* Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Configuration de votre Light Node
+## Setting up your light node
 
-Le tutoriel suivant est fait sur une machine d'instance Linux Ubuntu 20.04 (LTS) x64.
+This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
-### Configurer les dépendances
+### Setup the dependencies
 
-Premièrement vérifiez que votre système d'exploitation est à jour ou mettez-le à jour :
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Si vous utilisez le gestionnaire de package APT
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Si vous utilisez le gestionnaire de package YUM 
+# If you are using the YUM package manager
 sudo yum update
 ```
 
-Ce sont des paquets essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du node:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 ```sh
-# Si vous utilisez le gestionnaire de package APT
+# If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# Si vous utilisez le gestionnaire de package YUM 
+# If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
-### Installer Golang
+### Install Golang
 
-Celestia-app et celestia-node sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.19.1"
@@ -69,34 +69,34 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Maintenant nous devons ajouter le répertoire `/usr/local/go/bin` à `$PATH`:
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Pour vérifier que Go a été installé correctement, lancez :
+To check if Go was installed correctly run:
 
 ```sh
 go version
 ```
 
-Le résultat devrait être la version installée suivante :
+The output should be the version installed:
 
 ```sh
-go version go1.18.2 linux/amd64
+go version go1.19.1 linux/amd64
 ```
 
-### Installer un node Celestia
+### Install Celestia node
 
-Une chose à faire ici est de décider quelle version du nœud Celestia vous décidez de compiler. Le testnet Mamaki requiert v0.3.0-rc2 et le Devnet Arabica requiert v0.3.0.
+One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
 
-Les sections suivantes soulignent comment l'installer pour les deux réseaux.
+The following sections highlight how to install it for the two networks.
 
-#### Installation du devnet Arabica
+#### Arabica Devnet installation
 
-Installez le binaire du node Celestia en exécutant les commandes suivantes :
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -108,7 +108,7 @@ make install
 make cel-key
 ```
 
-Vérifiez que le binaire fonctionne et la version avec la commande Celestia ci-dessous :
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -119,9 +119,9 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-#### Installation du testnet Mamaki
+#### Mamaki Testnet installation
 
-Installez le binaire du node Celestia en exécutant les commandes suivantes :
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -133,7 +133,7 @@ make install
 make cel-key
 ```
 
-Vérifiez que le binaire fonctionne et la version avec la commande Celestia ci-dessous :
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -141,15 +141,15 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Initialiser le Light Node
+## Initialize the light node
 
-Exécutez la commande suivante :
+Run the following command:
 
 ```sh
 celestia light init
 ```
 
-Vous devriez voir quelque chose comme :
+You should see output like:
 
 <!-- markdownlint-disable MD013 -->
 ```output
@@ -160,25 +160,25 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Démarrer le Light Node
+### Start the light node
 
-Démarre le Light node avec une connexion au point de terminaison gRPC d'un node de validateur (qui est généralement exposé sur le port 9090):
+Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
-> REMARQUE : Pour avoir accès à la possibilité d'obtenir/de soumettre des informations relatives à l'état, telles que la possibilité de soumettre des transactions PayForData ou d'interroger solde de compte du node, un point de terminaison gRPC d'un Node Validateur (core) doit être transmis comme montré ci-dessous.
+> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
 
-Concernant les ports :
+For ports:
 
-> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera sur celui-là par défaut. Vous pouvez utiliser le drapeau pour spécifier un autre port si vous le préférez.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-#### Configuration d'Arabica
+#### Arabica Setup
 
-Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./arabica-devnet.md#rpc-endpoints)
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
 
-Par exemple, votre commande pourrait ressembler à cela :
+For example, your command might look something like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -186,25 +186,27 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-#### Configuration de Mamaki
+#### Mamaki Setup
 
-Si vous avez besoin d'une liste de terminaux RPC pour vous connecter, vous pouvez vérifier dans la liste [ici](./mamaki-testnet.md#rpc-endpoints)
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
 
-Par exemple, votre commande pourrait ressembler à cela :
+For example, your command might look something like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
+celestia light start --core.remote https://rpc-mamaki.pops.one
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Clés et wallets
+### Keys and wallets
 
-Vous pouvez créer votre clé pour votre node en exécutant la commande suivante :
+You can create your key for your node by running the following command:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -212,35 +214,35 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Une fois que vous démarrez le Light Node, une clé de wallet sera générée pour vous. Vous aurez besoin d'approvisionner cette adresse avec des jetons du testnet Mamaki pour payer les transactions de type PayForData.
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with testnet tokens to pay for PayForData transactions.
 
-Vous pouvez trouver cette adresse en exécutant la commande suivante dans le répertoire `celestia-node` :
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Vous avez le choix entre deux réseaux pour obtenir des jetons de testnet :
+You have two networks to get testnet tokens from:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE : Si vous souhaitez lancer un light node pour votre rollup souverain, il est hautement recommandé de demander des jetons du devnet Arabica car c'est le devnet qui reçoit les dernières mises à jour utiles au développement de votre rollup souverain. Vous pouvez également utiliser le testnet Mamaki, bien qu'il soit davantage conçu pour les opérations de Validateurs.
+> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
 
-Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante sur Discord :
+You can request funds to your wallet address using the following command in Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Dans laquelle `<Wallet-Address>` est l'adresse `celestia1******` générée quand vous avez créé le wallet.
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-### Optionnel : exécuter le Light Node avec une clé personnalisée
+### Optional: run the light node with a custom key
 
-Afin d'exécuter un Light Node en utilisant une clé personnalisée :
+In order to run a light node using a custom key:
 
-1. La clé personnalisée doit exister dans le répertoire du Light Node Celestia au bon chemin (default: `~/.celestia-light/keys/keyring-test`)
-2. Le nom de la clé personnalisée doit être transmis lors de `start`, comme ceci:
+1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
+2. The name of the custom key must be passed upon `start`, like so:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -248,10 +250,10 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Optionnel : démarrer un light node avec SystemD
+### Optional: start light node with SystemD
 
-Suivez le tutoriel sur la configuration du Light Node en tant que processus d'arrière-plan avec SystemD [ici](./systemd.md#celestia-light-node).
+Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
 
-## Échantillonnage de disponibilité des données (DAS)
+## Data availability sampling (DAS)
 
-Avec votre light node en cours d'exécution, vous pouvez consulter ce tutoriel sur la soumission de transactions `PayForData` [ici](../developers/node-tutorial.md).
+With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
