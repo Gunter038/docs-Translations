@@ -1,14 +1,14 @@
 ---
-sidebar_label: 设置网络环境
+sidebar_label: Setup Network Environment
 ---
 
-# 在 Celestia 上为 CosmWasm 设置环境
+# Setting Up Your Environment for CosmWasm on Celestia
 
-现在构建了`wasmd`二进制文件，我们需要设置一个本地网络 在`wasmd`和Rollmint之间通信的。
+Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
 
-## 构建 Wasmd 网络
+## Building the Wasmd Network
 
-运行以下命令：
+Run the following command:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -16,18 +16,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-这使用 `wasmd` 二进制文件初始化了一个名为 `celeswasm` 的链。
+This initializes a chain called `celeswasm` with `wasmd` binary.
 
-运行以下命令帮助我们设置创世钱包：
+The following command helps us setup accounts for genesis:
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-如果需要，请确保存储生成的钱包输出以供以后参考。
+Make you sure you store the output of the wallet generated for later reference if needed.
 
-现在，让我们添加一个创世钱包并使用它来更新我们的创世文件：
+Now, let's add a genesis account and use it to update our genesis file:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -36,9 +36,9 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-这样，我们就创建了一个本地网络创世文件。
+With that, we created a local network genesis file.
 
-我们可以设置一些更有用的命令：
+Some more useful commands we can setup:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -47,9 +47,9 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 ```
 <!-- markdownlint-enable MD013 -->
 
-## 启动 Wasmd 网络
+## Starting the Wasmd Network
 
-我们可以运行以下命令来启动 `wasmd` 网络：
+We can run the following to start the `wasmd` network:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -57,12 +57,12 @@ wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.d
 ```
 <!-- markdownlint-enable MD013 -->
 
-请考虑以下方面：
+Please consider:
 
-> 注：在上述命令中， 您需要将 Celestia 节点的IP地址 传输到 `base_url` 中一个拥有Arabica开发网代币的账户。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
 
-还请考虑：
+Also please consider:
 
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 而且 对于标志`--rollmint。namespace_id`，您可以生成一个随机名称空间，在这里使用操场的ID [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
-这样，我们已经启动了我们的 `wasmd` 网络！
+With that, we have kickstarted our `wasmd` network!
