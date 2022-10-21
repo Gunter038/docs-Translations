@@ -1,20 +1,20 @@
-- - -
-sidebar_label : Mamaki Testnet
-- - -
+---
+sidebar_label: Mamaki Testnet
+---
 
 # Mamaki Testnet
 
 ![mamaki-testnet](/img/mamaki.png)
 
-Hướng dẫn này gồm các phần liên quan về cách kết nối với Mamaki, tùy thuộc vào loại node bạn đang chạy. Mamaki testnet được thiết kế để giúp các validators thử nghiệm cơ sở hạ tầng và phần mềm node đối với mạng test. Nhà phát triển được khuyến khích để triển khai rollup chuyên dụng của họ trên Mamaki, tuy nhiên, chúng tôi cũng khuyến khích sử dụng [Arabica Devnet](./arabica-devnet.md) để làm việc đó bởi vì nó được thiết kế cho mục đích phát triển.
+This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
 
-Mamaki là một cột mốc của Celestia, cho phép mọi người có thể thử nghiệm cách tính năng cốt lõi trên mạng lưới. Đọc thông báo [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
-Cách tốt nhất để tham gia là trước tiên xác định bạn muốn chạy node nào. Mỗi hướng dẫn node sẽ liên kết đến mạng liên quan để hướng dẫn bạn cách kết nối với chúng.
+Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
 
-Bạn có một danh sách các tùy chọn về loại node bạn có thể chạy để tham gia Mamaki:
+You have a list of options on the type of nodes you can run in order to participate in Mamaki:
 
-Đồng thuận:
+Consensus:
 
 * [Validator Node](./validator-node.md)
 * [Consensus Full Node](./consensus-full-node.md)
@@ -25,11 +25,11 @@ Data Availability:
 * [Full Storage Node](./full-storage-node.md)
 * [Light Node](./light-node.md)
 
-Chọn loại node bạn muốn chạy và làm theo hướng dẫn trên mỗi trang tương ứng. Bất cứ khi nào bạn được yêu cầu chọn loại mạng bạn muốn kết nối trong các hướng dẫn, hãy chọn `Mamaki` để có thể tham khảo hướng dẫn chính xác trên trang này về cách kết nối với Mamaki.
+Select the type of node you would like to run and follow the instructions on each respective page. Whenever you are asked to select the type of network you want to connect to in those guides, select `Mamaki` in order to refer to the correct instructions on this page on how to connect to Mamaki.
 
-## RPC Endpoints
+## RPC endpoints
 
-Đây là danh sách các RPC endpoints bạn có thể sử dụng để kết nối với Mamaki Testnet:
+There is a list of RPC endpoints you can use to connect to Mamaki Testnet:
 
 * [https://rpc-mamaki.pops.one](https://rpc-mamaki.pops.one)
 * [https://rpc-1.celestia.nodes.guru](https://rpc-1.celestia.nodes.guru)
@@ -38,31 +38,31 @@ Chọn loại node bạn muốn chạy và làm theo hướng dẫn trên mỗi 
 * [https://rpc.celestia.testnet.run](https://rpc.celestia.testnet.run/)
 * [https://rpc.mamaki.celestia.counterpoint.software](https://rpc.mamaki.celestia.counterpoint.software)
 
-## Vòi token Mamaki Testnet
+## Mamaki Testnet faucet
 
-> SỬ DỤNG VÒI NÀY SẼ KHÔNG GIÚP BẠN NHẬN BẤT KÌ AIRDROP NÀO HOẶC CÁC ĐỢT PHÂN PHỐI TOKENS CELESTIA MAINNET. TOKENS CELESTIA MAINNET HIỆN KHÔNG TỒN TẠI VÀ HIỆN KHÔNG CÓ BẤT KÌ ĐỢT BÁN CÔNG KHAI HOẶC ĐỢT PHÂN PHỐI TOKEN CELESTIA MAINNET NÀO.
+> USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS.
 
-Bạn có thể yêu cầu từ Vòi Mamaki Testnet trên kênh #mamaki-faucet trong Máy chủ Discord của Celestia với lệnh sau:
+You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
 
 ```text
 $request <CELESTIA-ADDRESS>
 ```
 
-Thay `<CELESTIA-ADDRESS>` bằng địa chỉ `celestia1******` được tạo.
+Where `<CELESTIA-ADDRESS>` is a `celestia1******` generated address.
 
-> Lưu ý: Vòi có giới hạn 10 tokens một tuần đối với mỗi địa chỉ ví/Discord ID
+> Note: Faucet has a limit of 10 tokens per week per address/Discord ID
 
-## Trình khám phá khối
+## Explorers
 
-Có nhiều trình khám phá khối bạn có thể sử dụng cho Mamaki:
+There are several explorers you can use for Mamaki:
 
 * [https://testnet.mintscan.io/celestia-testnet](https://testnet.mintscan.io/celestia-testnet)
 * [https://celestia.explorers.guru/](https://celestia.explorers.guru/)
 * [https://celestiascan.vercel.app/](https://celestiascan.vercel.app/)
 
-## Thiết lập mạng P2P
+## Setup P2P network
 
-Bây giờ chúng ta sẽ thiết lập Mạng P2P bằng cách sao chép repository của mạng:
+Now we will setup the P2P Networks by cloning the networks repository:
 
 ```sh
 cd $HOME
@@ -70,19 +70,19 @@ rm -rf networks
 git clone https://github.com/celestiaorg/networks.git
 ```
 
-Để khởi tạo mạng, hãy chọn "node-name", thứ mô tả node của bạn. Thông số --chain-id chúng ta sẽ sử dụng là `mamaki`. Hãy lưu ý rằng điều này có thể sẽ thay đổi nếu một testnet mới được triển khai.
+To initialize the network pick a "node-name" that describes your node. The --chain-id parameter we are using here is `mamaki`. Keep in mind that this might change if a new testnet is deployed.
 
 ```sh
 celestia-appd init "node-name" --chain-id mamaki
 ```
 
-Sao chép file `genesis.json`. Đối với mamaki chúng ta sẽ sử dụng:
+Copy the `genesis.json` file. For mamaki we are using:
 
 ```sh
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 ```
 
-Chỉnh seeds và peers:
+Set seeds and peers:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -92,11 +92,11 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 ```
 <!-- markdownlint-enable MD013 -->
 
-Ghi chú: Bạn có thể tìm thêm peers [tại đây](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
+Note: You can find more peers [here](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
-## Sync nhanh bằng snapshot
+## Quick-sync with snapshot
 
-Chạy những câu lệnh sau để sync nhanh bằng snapshot của `mamaki`:
+Run the following command to quick-sync from a snapshot for `mamaki`:
 
 ```sh
 cd $HOME
@@ -108,9 +108,9 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
 
-## Ủy thác cho một validator
+## Delegate to a validator
 
-Để ủy thác tokens đến địa chỉ `celestiavaloper` của validator, ví dụ, bạn có thể chạy:
+To delegate tokens to the `celestiavaloper` validator, as an example you can run:
 
 ```sh
 celestia-appd tx staking delegate \
@@ -118,7 +118,7 @@ celestia-appd tx staking delegate \
     --from=$VALIDATOR_WALLET --chain-id=mamaki
 ```
 
-Nếu thành công, bạn sẽ thấy kết quả tương tự như sau:
+If successful, you should see a similar output as:
 
 ```console
 code: 0
@@ -135,11 +135,11 @@ tx: null
 txhash: <tx-hash>
 ```
 
-Bạn có thể kiểm tra xem TX hash đã hoàn thành hay chưa bằng cách sử dụng trình khám phá khối bằng cách nhập ID `txhash` đã được trả về.
+You can check if the TX hash went through using the block explorer by inputting the `txhash` ID that was returned.
 
-## Kết nối Validator
+## Connect validator
 
-Tiếp tục với hướng dẫn thiết lập Validator, đây là các bước để kết nối validator của bạn với Mamaki:
+Continuing the Validator tutorial, here are the steps to connect your validator to Mamaki:
 
 ```sh
 MONIKER="your_moniker"
@@ -158,13 +158,13 @@ celestia-appd tx staking create-validator \
     --keyring-backend=test
 ```
 
-Bạn sẽ được nhắc xác nhận giao dịch:
+You will be prompted to confirm the transaction:
 
 ```console
-xác nhận giao dịch trước khi ký và phát [y / N]: y
+confirm transaction before signing and broadcasting [y/N]: y
 ```
 
-Nhập ` y ` phải cung cấp đầu ra tương tự như:
+Inputting `y` should provide an output similar to:
 
 ```console
 code: 0
@@ -181,4 +181,4 @@ tx: null
 txhash: <tx-hash>
 ```
 
-Bây giờ bạn có thể thấy validator của mình từ block explorer như [ here ](https://celestia.explorers.guru/)
+You should now be able to see your validator from a block explorer like [here](https://celestia.explorers.guru/)
