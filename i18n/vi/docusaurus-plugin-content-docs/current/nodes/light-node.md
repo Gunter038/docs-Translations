@@ -1,64 +1,64 @@
-- - -
-sidebar_label : Light Node
-- - -
+---
+sidebar_label: Light Node
+---
 
-# Thiết lập Light Node Celestia
+# Setting up a Celestia Light Node
 
-Hướng dẫn này sẽ chỉ bạn cách thiết lập một Light Node Celestia. Việc này sẽ cho phép bạn thực hiện việc lấy mẫu Data Availability (DA) trên mạng Data Availability.
+This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
 
-> Để xem video hướng dẫn cách thiết lập light node Celestia, bấm [vào đây](../developers/light-node-video.md)
+> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
 
-## Tổng quan về light node
+## Overview of light nodes
 
-Light Node giúp bảo đảm Data availability. Đây là cách phổ biến nhất để tương tác với mạng Celestia.
+Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light nodes có thực hiện những hành động sau:
+Light nodes have the following behavior:
 
-1. Chúng lắng nghe ExtendedHeaders, ví dụ wrapped “raw” headers, thứ thông báo cho các Celestia node về các block header mới và metadata DA liên quan.
-2. Chúng thực hiện Lấy mẫu Data Availability (DAS) trên các header nhận được
+1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
+2. They perform data availability sampling (DAS) on the received headers
 
-## Yêu cầu phần cứng
+## Hardware requirements
 
-Yêu cầu phần cứng tối thiểu bên dưới đây được khuyến nghị để chạy một light node:
+The following minimum hardware requirements are recommended for running a light node:
 
 * Memory: 2 GB RAM
 * CPU: Single Core
 * Disk: 5 GB SSD Storage
-* Bandwidth: 56 Kbps đối với Download/56 Kbps đối với Upload
+* Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Thiết lập light node của bạn
+## Setting up your light node
 
-Hướng dẫn này sẽ được thực hiện trên thiết bị Ubuntu Linux 20.04 (LTS) x64.
+This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
 
-### Thiết lập các thành phần phụ thuộc
+### Setup the dependencies
 
-Đầu tiên, hãy bảo đảm đã cập nhật và nâng cấp OS:
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Nếu bạn đang sử dụng APT package manager
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Nếu bạn đang sử dụng YUM package manager
+# If you are using the YUM package manager
 sudo yum update
 ```
 
-Chúng là những gói thiết yếu, cần thiết để thực thi nhiều tác vụ ví dụ như tải file, phiên dịch, và quản lý node:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 ```sh
-# Nếu bạn đang sử dụng APT package manager
+# If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# Nếu bạn đang sử dụng YUM package manager
+# If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
-### Cài đặt Golang
+### Install Golang
 
-Celestia-app và celestia-node được viết bằng ngôn ngữ lập trình [Golang](https://go.dev/) do vậy chúng ta phải cài đặt Golang để thiết lập và chạy nó.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.19.1"
@@ -69,34 +69,34 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Bây giờ chúng ta cần thêm thư mục `/usr/local/go/bin` vào `$PATH`:
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Để kiểm tra xem Go đã được cài đặt để chạy đúng chưa:
+To check if Go was installed correctly run:
 
 ```sh
 go version
 ```
 
-Đầu ra phải là phiên bản được cài đặt:
+The output should be the version installed:
 
 ```sh
-go version go1.18.2 linux/amd64
+go version go1.19.1 linux/amd64
 ```
 
-### Cài đặt node Celestia
+### Install Celestia node
 
-Một điều cần lưu ý ở đây là quyết định phiên bản nào của node Celestia bạn muốn biên dịch. Mamaki Testnet yêu cầu v0.3.0-rc2 và Arabica Devnet yêu cầu v0.3.0.
+One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
 
-Phần tiếp theo sẽ cho thấy cách cài đặt nó cho cả 2 mạng.
+The following sections highlight how to install it for the two networks.
 
-#### Cài đặt Devnet Arabica
+#### Arabica Devnet installation
 
-Cài đặt binary nodes celestia bằng cách chạy các lệnh sau:
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -108,7 +108,7 @@ make install
 make cel-key
 ```
 
-Xác minh rằng binary đang hoạt động và kiểm tra phiên bản với lệnh phiên bản celestia:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -119,9 +119,9 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-#### Cài đặt Testnet Mamaki
+#### Mamaki Testnet installation
 
-Cài đặt binary của celestia-node bằng cách chạy các câu lệnh sau:
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -133,7 +133,7 @@ make install
 make cel-key
 ```
 
-Kiểm tra liệu binary đang hoạt động và kiểm tra phiên bản với lệnh celestia version:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -141,15 +141,15 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Khởi tạo light node
+## Initialize the light node
 
-Chạy lệnh sau:
+Run the following command:
 
 ```sh
 celestia light init
 ```
 
-Bạn sẽ thấy kết quả sau:
+You should see output like:
 
 <!-- markdownlint-disable MD013 -->
 ```output
@@ -160,15 +160,15 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Khởi động light node
+### Start the light node
 
-Khởi động Bridge Node bằng kết nối với điểm cuối gRPC của node valiator (thường được hiển thị trên cổng 9090):
+Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
 
-> LƯU Ý: Để có quyền truy cập vào khả năng nhận/ gửi thông tin liên quan đến trạng thái, chẳng hạn như gửi các giao dịch PayForData hoặc truy vấn số dư tài khoản của node, điểm cuối gRPC của node validator (cốt lõi) phải được chuyển như hướng dẫn bên dưới.
+> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
 
-Đối với ports:
+For ports:
 
-> Lưu ý: `Cổng RPC chính` mặc định sẽ là 9090, nên nếu bạn không chọn một port cụ thể      trong câu lệnh, mặc định sẽ là port 26657. Bạn có thể sử dụng flag để chỉ định một port khác nếu bạn thích.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
@@ -176,9 +176,9 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port>
 
 #### Arabica Setup
 
-Nếu bạn cần danh sách các RPC endpoints để kết nối, bạn có thể kiểm tra từ danh sách [tại đây](./arabica-devnet.md#rpc-endpoints)
+If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
 
-Ví dụ: lệnh của bạn có thể trông giống như sau:
+For example, your command might look something like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -194,17 +194,19 @@ For example, your command might look something like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
+celestia light start --core.remote https://rpc-mamaki.pops.one
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Mã khóa và ví
+### Keys and wallets
 
-Bạn có thể tạo mã khóa cho node của mình bằng cách chạy lệnh sau:
+You can create your key for your node by running the following command:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -212,46 +214,46 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Khi bạn khởi động Light Node, một key ví sẽ được tạo. Bạn cần phải nạp tiền cho địa chỉ ví đó với token Testnet để trả gas cho giao dịch PayForData.
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with testnet tokens to pay for PayForData transactions.
 
-Bạn có thể tìm thấy địa chỉ bằng cách chạy lệnh sau trong thư mục ` celestia-node `:
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Bạn có thể nhận tokens testnet từ 2 mạng:
+You have two networks to get testnet tokens from:
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> Lưu ý: Nếu bạn đang chạy một light node cho     rollup chuyên dụng của bạn, bạn nên yêu cầu Arabica devnet tokens     vì Arabica có những thay đổi và cập nhật mới nhất có thể được sử dụng để thử nghiệm cho việc phát triển rollup chuyên dụng của bạn. Bạn vẫn có thể sử dụng    Testnet Mamaki. Nó được sử dụng cho việc vận hành Validator.
+> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
 
-Bạn có thể yêu cầu gửi tiền vào địa chỉ ví của mình bằng lệnh sau trong Discord:
+You can request funds to your wallet address using the following command in Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Với `<Wallet-Address>` là `celestia1****** ` được xuất ra khi bạn tạo ví.
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-### Tùy chọn: chạy light node bằng khóa tùy chỉnh
+### Optional: run the light node with a custom key
 
-Để chạy một light node bằng khóa tùy chỉnh:
+In order to run a light node using a custom key:
 
-1. Khóa tùy chỉnh phải tồn tại bên trong thư mục celestia bridge node tại đúng đường dẫn (default: ` ~ /.celestia-light / keys / keyring-test `)
-2. Tên của khóa tùy chỉnh phải được chuyển khi ` start `, như sau:
+1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
+2. The name of the custom key must be passed upon `start`, like so:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.ip<ip-address> --core.grpc.port <port> --keyring.accname <name_of_custom_key>
+celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.accname <name_of_custom_key>
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Tùy chỉnh: bắt đầu light node với SystemD
+### Optional: start light node with SystemD
 
-Làm theo hướng dẫn về cách thiết lập light node làm quy trình nền với SystemD [ here](./systemd.md#celestia-light-node).
+Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
 
-## Mẫu tính khả dụng của dữ liệu (DAS)
+## Data availability sampling (DAS)
 
-Khi light node đang chạy, bạn có thể xem hướng dẫn này trong việc gửi ` PayForData ` transaction [ here ](../developers/node-tutorial.md).
+With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
