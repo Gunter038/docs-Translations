@@ -1,9 +1,9 @@
 ---
-sidebar_label: What's next
+sidebar_label: Что дальше?
 ---
 
-# 👀 What’s next
+# 👀 Что дальше
 
-Now that you’ve built your first sovereign rollup using the Cosmos SDK, Rollmint Ignite CLI, and Celestia's DA Layer, you are ready to take your skills to the next level!
+Теперь, когда вы создали свой первый суверенный ролик, используя Космос SDK, Rollmint Ignite CLI, и уровень DA Layer Celestia, вы готовы к следующему уровню навыков !
 
-Next, you will learn how to create a more robust rollup in the form of a Wordle game.
+Далее вы узнаете, как создать более надежный накопитель в форме игры Wordle.
