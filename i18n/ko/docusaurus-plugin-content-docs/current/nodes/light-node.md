@@ -1,6 +1,6 @@
-- - -
-sidebar_label : Light Node
-- - -
+---
+sidebar_label: Light Node
+---
 
 # Setting up a Celestia Light Node
 
@@ -85,7 +85,7 @@ go version
 The output should be the version installed:
 
 ```sh
-go version go1.18.2 linux/amd64
+go version go1.19.1 linux/amd64
 ```
 
 ### Install Celestia node
@@ -194,7 +194,7 @@ For example, your command might look something like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-celestia light start --core.ip https://rpc-mamaki.pops.one --core.grpc.port 9090
+celestia light start --core.remote https://rpc-mamaki.pops.one
 ```
 <!-- markdownlint-enable MD013 -->
 
@@ -205,6 +205,8 @@ You can create your key for your node by running the following command:
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
