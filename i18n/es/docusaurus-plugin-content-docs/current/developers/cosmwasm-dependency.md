@@ -1,34 +1,34 @@
 ---
-sidebar_label: Dependencias CosmWasm
+sidebar_label: CosmWasm Dependencies
 ---
 
-# Instalaciones de dependencias de CosmWasm
+# CosmWasm Dependency Installations
 
-## Configuracion de entorno
+## Environment Setup
 
-Para este tutorial, usaremos `curl` y `jq` como herramientas útiles.
+For this tutorial, we will be using `curl` and `jq` as helpful tools.
 
-Puedes seguir la guía sobre cómo instalarlos [aquí](./environment.md#setting-up-dependencies).
+You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
 
-## Dependencia de Golang
+## Golang Dependency
 
-La versión de Golang utilizada para este tutorial es v1.18+
+The Golang version used for this tutorial is v1.18+
 
-Si estás usando una distribución Linux, puedes instalar Golang siguiendo nuestro tutorial [aquí](./environment.md#install-golang).
+If you are using a Linux distribution, you can install Golang by following our tutorial [here](./environment.md#install-golang).
 
-## Instalación de Rust
+## Rust Installation
 
 ### Rustup
 
-Primero, antes de instalar Rust, necesitarás instalar `rustup`.
+First, before installing Rust, you would need to install `rustup`.
 
-En sistemas Mac/Linux, aquí están los comandos para instalarlos:
+On Mac/Linux systems, here are the commands for installing it:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Después de la instalación, sigue los comandos aquí para configurar Rust.
+After installation, follow the commands here to setup Rust.
 
 ```sh
 rustup default stable
@@ -38,17 +38,17 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Guía de instalación de Docker
+## Docker Installation
 
-Utilizaremos Docker más adelante en este tutorial para compilar un smart contract para usar una pequeña huella.
+We will be using Docker later in this tutorial for compiling a smart contract to use a small footprint.
 
-Te recomendamos instalar Docker en tu máquina.
+We recommend installing Docker on your machine.
 
-Los ejemplos sobre cómo instalarlo en Linux se encuentran [aquí](https://docs.docker.com/engine/install/ubuntu/).
+Examples on how to install it on Linux are found [here](https://docs.docker.com/engine/install/ubuntu/).
 
-Encuentra las instrucciones adecuadas específicas para tu sistema operativo.
+Find the right instructions specific for your OS.
 
-## instalación de wasmd
+## wasmd Installation
 
 Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
 
