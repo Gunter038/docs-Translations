@@ -1,34 +1,36 @@
 ---
-sidebar_label: Запустіть ланцюжок Wordle
+sidebar_label: Run The Wordle Chain
 ---
 
-# Запустіть ланцюжок Wordle
+# Run the Wordle Chain
 <!-- markdownlint-disable MD013 -->
 
-## Створення та запуск Wordle Chain
+## Building and Running Wordle Chain
 
-В одному вікні терміналу виконайте таку команду:
+In one terminal window, run the following command:
 
 ```sh
 ignite chain serve 
 ```
 
-Це скомпілює код блокчейну, який ви щойно написали, а також створить файл genesis та кілька облікових записів для використання. Після того, як журнал покаже щось на зразок наступного журналу у вихідних даних:
+This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
 Cosmos SDK's version is: stargate - v0.45.5
-📦 Встановлення залежностей...
-🛠️ Створення блокчейну...
-💿 Ініціалізація програми...
-🙂 Створено обліковий запис "alice" з адресою "cosmos1skalxj42asjhc7dde3lzzawnksnztqmgy6sned" із мнемонікою: "exact arrive betray hawk trim surround exhibit host vibrant sting range robot luxury vague manage settle slide town bread adult pact scene journey elite"
-🙂 Створено обліковий запис "bob" з адресою "cosmos1xe3l8z634frp0ry6qlmzs5vr85x6gcty7tmf0n" із мнемонікою: "wisdom jelly fine boat series time panel real world purchase age area coach eager spot fiber slide apology near endorse flight panel ready torch"
+
+🛠️  Building proto...
+📦 Installing dependencies...
+🛠️  Building the blockchain...
+💿 Initializing the app...
+🙂 Created account "alice" with address "cosmos1skalxj42asjhc7dde3lzzawnksnztqmgy6sned" with mnemonic: "exact arrive betray hawk trim surround exhibit host vibrant sting range robot luxury vague manage settle slide town bread adult pact scene journey elite"
+🙂 Created account "bob" with address "cosmos1xe3l8z634frp0ry6qlmzs5vr85x6gcty7tmf0n" with mnemonic: "wisdom jelly fine boat series time panel real world purchase age area coach eager spot fiber slide apology near endorse flight panel ready torch"
 🌍 Tendermint node: http://0.0.0.0:26657
 🌍 Blockchain API: http://0.0.0.0:1317
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Тут команда створила двійковий файл `wordled` та адреси `alice` та `bob`, а також кран і API. Ви впевнені, що хочете вийти з програми з CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
+Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
 You can start the chain with rollmint configurations by running the following:
 
@@ -36,23 +38,23 @@ You can start the chain with rollmint configurations by running the following:
 wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
-Будь ласка, зверніть увагу:
+Please consider:
 
-> ПРИМІТКА. У наведеній вище команді вам потрібно передати IP-адресу ноди Celestia до `base_url`, що має обліковий запис із токенами Arabica Devnet. Дотримуйтеся посібника з налаштування Celestia Light Node і створення гаманця з тестовими токенами [тут](./node-tutorial.md) у розділі Celestia Node.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
 
-Також зверніть увагу:
+Also please consider:
 
-> ВАЖЛИВО: Крім того, у наведеній вище команді вам потрібно вказати останню висоту блоку в Arabica Devnet для `da_height`. Ви можете знайти останній номер блоку в провіднику [тут](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
-В іншому вікні виконайте наступне, щоб надіслати Wordle:
+In another window, run the following to submit a Wordle:
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> ПРИМІТКА. Ми надсилаємо транзакцію асинхронно, щоб уникнути помилок часу очікування. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. У майбутньому, з вибором лідера, виробництво блоків і логіка синхронізації значно покращуються.
+> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
 
-Це попросить вас підтвердити транзакцію з таким повідомленням:
+This will ask you to confirm the transaction with the following message:
 
 ```json
 {
@@ -87,15 +89,15 @@ wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chai
 }
 ```
 
-Космос-SDK попросить вас підтвердити транзакцію:
+Cosmos-SDK will ask you to confirm the transaction here:
 
 ```sh
 confirm transaction before signing and broadcasting [y/N]:
 ```
 
-Підтвердити за допомогою Y.
+Confirm with a Y.
 
-Ви отримаєте відповідь з хешем транзакції, як показано тут:
+You will then get a response with a transaction hash as shown here:
 
 ```sh
 code: 19
@@ -113,70 +115,70 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Зверніть увагу, це не означає, що транзакція ще була включена в блок. Давайте запитаємо хеш транзакції, щоб перевірити, чи він уже включений у блок, чи є якісь помилки.
+Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-Це має показувати вивід, як наступний результат:
+This should display an output like the following:
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Протестуйте декілька речей для задоволення:
+Test out a few things for fun:
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-Після підтвердження транзакції надішліть запит `txhash`, так само як ви робили вище. Ви побачите, що у відповіді буде повідомлено про недійсну помилку, оскільки ви надіслали цілі числа.
+After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
 
-А тепер спробуйте:
+Now try:
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-Після підтвердження транзакції надішліть запит `txhash`, так само як ви робили вище. Ви побачите, що у відповіді буде повідомлено про недійсну помилку, оскільки ви надіслали слово, яке містить понад 5 символів.
+After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-Тепер спробуйте надіслати інше слово, хоча одне вже було надіслано
+Now try to submit another wordle even though one was already submitted
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-Після надсилання транзакцій і підтвердження надішліть запит `txhash`, так само як ви робили вище. Ви отримаєте повідомлення про помилку, що слово на день уже надіслано.
+After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
 
-Тепер спробуймо вгадати п'ять літер:
+Now let’s try to guess a five letter word:
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-Після надсилання транзакцій і підтвердження надішліть запит `txhash`, так само як ви робили вище. Якщо ви не вгадали правильне слово, це збільшить кількість вгаданих для облікового запису Боба.
+After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
 
-Ми можемо перевірити це, запитавши список:
+We can verify this by querying the list:
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-Це виведе всі об’єкти Guess, надіслані на цю мить, з індексом, який є сьогоднішньою датою та адресою відправника.
+This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Прочитайте далі, як розширити кодову базу.
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Read on to how you can extend the code base.
 
-## Розширення в майбутньому
+## Extending in the Future
 
-Ви можете розширити кодову базу та покращити цей підручник, переглянувши репозиторій [тут](https://github.com/celestiaorg/wordle).
+You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
 
-Є багато способів, як ця кодова база може бути розширена:
+There are many ways this codebase can be extended:
 
-1. Можна поліпшити обмін повідомленнями, якщо вгадати правильне слово.
-2. Ви можете хешувати слово перед тим, як надсилати його в ланцюжок, гарантуючи, що хешування є локальним, щоб воно не було виявлено через переднє виконання іншими користувачами, які відстежують рядок відкритого тексту, коли він надсилається в ланцюжок.
-3. Ви можете покращити інтерфейс терміналу за допомогою приємного інтерфейсу для Wordle. Деякі приклади є [тут](https://github.com/nimblebun/wordle-cli).
-4. Ви можете покращити поточну дату, щоб дотримуватися певної часової зони.
-5. Ви можете створити бота, який надсилає wordle щодня в певний час.
-6. Ви можете створити інтерфейс vue.js за допомогою Ignite, використовуючи приклади репозиторіїв з відкритим кодом [тут](https://github.com/yyx990803/vue-wordle) і [тут](https://github.com/xudafeng/wordle).
+1. You can improve messaging around when you guess the correct word.
+2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
+3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
+4. You can improve current date to stick to a specific timezone.
+5. You can create a bot that submits a wordle every day at a specific time.
+6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
