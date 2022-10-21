@@ -22,30 +22,30 @@ echo $CODE_ID
 
 У нашому випадку, оскільки це перший контракт, розгорнутий у нашій локальній мережі, значення дорівнює `1`.
 
-Now, we can take a look at the contracts instantiated by this Code ID:
+Тепер ми можемо поглянути на контракти, здійснені за допомогою ID Коду:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 ```
 
-We get the following output:
+Ми отримаємо такий вивід:
 
 ```json
 {"contracts":[],"pagination":{"next_key":null,"total":"0"}}
 ```
 
-## Contract Instantiation
+## Створення екземпляра контракту
 
-We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
+Ми починаємо створення екземпляра контракту, написавши наступне повідомлення `INIT` для контракту служби імен. Тут ми вказуємо, що `purchase_price` імені становить `100uwasm`, а `transfer_price` — `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
 wasmd tx wasm instantiate $CODE_ID "$INIT" --from $KEY_NAME --keyring-backend test --label "name service" $TXFLAG -y --no-admin
 ```
 
-## Contract Interaction
+## Контрактна взаємодія
 
-Now that we instantiated it, we can interact further with the contract:
+Тепер, коли ми створили контракт, можна далі взаємодіяти з ним:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
@@ -56,9 +56,9 @@ wasmd query wasm contract $CONTRACT $NODE
 wasmd query bank balances $CONTRACT $NODE
 ```
 
-This allows us to see the contract address, contract details, and bank balances.
+Це дозволяє нам бачити адресу контракту, деталі контракту та банківські баланси.
 
-Now, let's register a name to the contract for our wallet address:
+Тепер зареєструймо ім'я контракту для адреси нашого гаманця:
 
 ```sh
 REGISTER='{"register":{"name":"fred"}}'
@@ -69,4 +69,4 @@ NAME_QUERY='{"resolve_record": {"name": "fred"}}'
 wasmd query wasm contract-state smart $CONTRACT "$NAME_QUERY" $NODE --output json
 ```
 
-With that, we have instantiated and interacted with the CosmWasm nameservice smart contract using Celestia!
+Таким чином, ми створили екземпляр смартконтракту служби імен CosmWasm і взаємодіяли з ним за допомогою Celestia!
