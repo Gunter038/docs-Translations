@@ -1,5 +1,5 @@
 ---
-sidebar_label: Огляд Wordle
+sidebar_label: Wordle Overview
 ---
 
 # Wordle App on Rollmint
@@ -8,52 +8,52 @@ sidebar_label: Огляд Wordle
 
 This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. Підручник розгляне простий дизайн, а також завершить майбутні реалізації та ідеї щодо розширення цієї кодової бази.
+This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. Якщо ви виявите помилки, будь ласка, напишіть заявку на Github Issue або повідомте нам про це в нашому Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
-## Передумови
+## Pre-requisites
 
-Оскільки цей підручник призначений для розробників, які мають досвід роботи з Cosmos-SDK, ми рекомендуємо вам переглянути наступні підручники в Ignite, щоб зрозуміти всі різні компоненти Cosmos-SDK, перш ніж продовжити цей підручник.
+Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
-* [Основи блогу та модуля](https://docs.ignite.com/guide/blog)
-* [Навчальний посібник зі служби імен](https://docs.ignite.com/guide/nameservice)
-* [Полювання на сміття](https://docs.ignite.com/guide/scavenge)
+* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
+* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-Вам не обов’язково виконувати ці посібники, щоб слідувати цьому посібнику Wordle, але це допоможе вам краще зрозуміти архітектуру Cosmos-SDK.
+You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
 
-## Імплементація розробки
+## Design Implementation
 
-Правила Wordle прості: Ви повинні вгадати слово дня.
+The rules of Wordle are simple: You have to guess the word of the day.
 
-Ключові точки для розгляду:
+Key Points to Consider:
 
-* У слові п'ять літер.
-* У вас є 6 здогадок.
-* Кожні 24 години - нове слово.
+* The word is a five-letter word.
+* You have 6 guesses.
+* Every 24 hours, there’s a new word.
 
-Графічний інтерфейс для Wordle показує кілька індикаторів: виділення зеленим кольором літери в певній позиції означає, що це правильна літера для Wordle у правильній позиції. Жовте виділення означає, що це правильна літера для Wordle, але в неправильній позиції. Сіра підсвічування означає, що буква не є частиною Wordle.
+The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
 
-Для простоти дизайну ми уникатимемо цих підказок, хоча є способи розширити цю кодову базу для реалізації того, що ми покажемо наприкінці.
+For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
 
-У поточній розробці ми реалізуємо такі правила:
+In this current design, we implement the following rules:
 
-* На день можна надсилати 1 Wordle;
-* В кожній адресі буде 6 спроб вгадати слово;
-* Це має бути п'ятибуквене слово;
-* Той, хто правильно вгадає слово до закінчення 6 спроб, отримує нагороду в 100 токенів WORDLE.
+* 1 Wordle can be submitted per day
+* Every address will have 6 tries to guess the word
+* It must be a five-letter word.
+* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
 
-Щоб досягти цього, ми розглянемо архітектуру далі в посібнику. Але зараз ми розпочнемо налаштування нашого середовища розробника.
+We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
 
-## Зміст для цього посібника
+## Table of Contents For This Tutorial
 
-Цей підручник розбитий на такі розділи:
+The following tutorial is broken down into the following sections:
 
-1. [Ignite та Scaffolding ланцюга](./scaffold-wordle.md)
+1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
 2. [Installing Rollmint](./install-rollmint.md)
-3. [Модулі](./wordle-module.md)
-4. [Повідомлення](./wordle-messages.md)
-5. [Типи](./wordle-types.md)
-6. [Хранителі](./wordle-keeper.md)
-7. [Запуск Wordle](./run-wordle.md)
+3. [Modules](./wordle-module.md)
+4. [Messages](./wordle-messages.md)
+5. [Types](./wordle-types.md)
+6. [Keepers](./wordle-keeper.md)
+7. [Running Wordle](./run-wordle.md)
