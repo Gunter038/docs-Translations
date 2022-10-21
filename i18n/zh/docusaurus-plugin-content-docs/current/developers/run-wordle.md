@@ -1,19 +1,19 @@
 ---
-sidebar_label: 运行 Wordle 链
+sidebar_label: Run The Wordle Chain
 ---
 
-# 运行 Wordle 链
+# Run the Wordle Chain
 <!-- markdownlint-disable MD013 -->
 
-## 构建和运行 Wordle 链
+## Building and Running Wordle Chain
 
-在一个终端窗口中，运行以下命令：
+In one terminal window, run the following command:
 
 ```sh
 ignite chain serve 
 ```
 
-这将编译您刚刚编写的区块链代码，并创建一个创世文件和一些帐户供您使用。 一旦日志在输出中显示类似于以下日志的内容：
+This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
@@ -30,31 +30,31 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-此命令创建了一个二进制二进制名为`worded` and `Alice` 和 `bob` 地址， 还有一个测试网水龙头 和 API接口。 你可以按CTRL-C确认退出程序 原因是我们将运行`wordled` 添加了Rollmint标志的二进制文件。
+Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
 
-您可以通过以下方式启动rollmint配置的链条 运行以下命令：
-
-```sh
-单词开头--rollmint。聚合器true——rollmint。da_layer celestia--rollmint.da_config='{“base_url”：“http://XXX.XXX.XXX.XXX:26658“，”timeout“：6000000000，”gas_limit“：6000000}'-rollmint.namespace_id 000000000000FFFF-rollming.da_start_height XXXXX”
-```
-
-请考虑以下方面：
-
-> 请注意：在上述命令中，你需要将一个 Celestia 节点的 IP 地址传输给拥有Arabica开发网代币账户的 `base_url`。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
-
-还需要注意：
-
-> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 此外，对于旗帜 `--薄荷糖。namespace_id`，可以使用 操场<a href=“https://go.dev/play/p/7ltvaj8lhRl“>这里</a>
-
-在另一个窗口中，运行以下指令来submit a Wordle：
+You can start the chain with rollmint configurations by running the following:
 
 ```sh
-wordled tx wordle提交wordle巨人--来自alice--keyring后端测试--chain id wordle-b async-y
+wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
-> 注意：为了避免 任何超时错误，我们正在提交异步交易。 随着Rollmint取代Tendermint，我们 需要等待Celestia的数据可用性网络来确保数据块 从Wordle中包含，然后继续下一个块。 目前， 在Rollmint中，单个聚合器不会继续执行下一个块 只要它试图将当前块提交给DA网络，就可以进行生产。 未来，在领先选择的情况下，区块产出和同步逻辑会显著提升 。
+Please consider:
 
-这将要求你确认交易，并发出以下信息。
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+
+Also please consider:
+
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+
+In another window, run the following to submit a Wordle:
+
+```sh
+wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
+```
+
+> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+
+This will ask you to confirm the transaction with the following message:
 
 ```json
 {
@@ -89,15 +89,15 @@ wordled tx wordle提交wordle巨人--来自alice--keyring后端测试--chain id 
 }
 ```
 
-Cosmos-SDK将要求您在此确认交易：
+Cosmos-SDK will ask you to confirm the transaction here:
 
 ```sh
-签署和广播前确认交易[y/N]：
+confirm transaction before signing and broadcasting [y/N]:
 ```
 
-输入 Y 进行确认。
+Confirm with a Y.
 
-然后你会得到一个带有交易哈希值的信息，如图所示：
+You will then get a response with a transaction hash as shown here:
 
 ```sh
 code: 19
@@ -115,70 +115,70 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-注意，这并不意味着该交易包含在此区块中。 我们可以查询交易哈希值，以检查它是否已被包含在区块中或者是否有任何错误。
+Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-应该显示如下信息：
+This should display an output like the following:
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-可以做些测试当做娱乐：
+Test out a few things for fun:
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-在确认交易后，采用上面同样的方法查询 `txhash`。 因为你提交的是整数，你会看到显示无效的错误信息。
+After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
 
-现在试着输入以下：
+Now try:
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-在确认交易后，采用上面同样的方法查询 `txhash`。 After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
 
-现在尝试提交另一个wordle，即使其中一个已经提交
-
-```sh
-wordled tx wordle提交wordle meter--来自bob--keyring后端测试--chain id wordle-b async-y
-```
-
-提交交易并确认后，查询`txhash` 就跟你刚才做的一样。 你会得到一个错误，一个单词 已提交当天的。
-
-现在让我们试着猜一个五个字母的单词：
+Now try to submit another wordle even though one was already submitted
 
 ```sh
-wordled tx wordle提交猜测最少--来自bob--keyring后端测试--chain id wordle-b async-y
+wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-提交交易并确认后，查询`txhash` 就跟你刚才做的一样。 假设你没有猜对 也就是说，它将增加Bob帐户的猜测计数
+After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
 
-我们可以通过查询列表来验证这一点：
+Now let’s try to guess a five letter word:
 
 ```sh
-wordled q wordle list guess--输出json
+wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-这将输出到目前为止提交的所有Guess对象，并带有索引 是今天的日期和提交者的地址。
+After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
 
-通过这个，我们使用 Cosmos SDK、Ignite和Rollmint。 继续阅读如何扩展代码库。
+We can verify this by querying the list:
 
-## 在未来扩展
+```sh
+wordled q wordle list-guess --output json
+```
 
-您可以通过检查来扩展代码库并改进本教程 存储库外<a href=“https://github.com/celestiaorg/wordle“>此处</a>。
+This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
 
-可以通过多种方式扩展此代码库：
+With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Read on to how you can extend the code base.
 
-1. 当你猜到正确的单词时，你可以改进周围的信息传递。
-2. 您可以在将单词提交到链之前对其进行散列， 确保哈希是本地的，这样就不会通过 在以下情况下由其他人监视纯文本字符串的前端运行 它是通过链接提交的。
-3. 您可以使用一个漂亮的界面来改进终端中的UI 沃德尔。 一些例子[ here](https://github.com/nimblebun/wordle-cli).
-4. 您可以改进当前日期以坚持特定时区。
-5. 您可以创建一个每天在特定时间提交wordle的bot。
-6. 你可以创建一个虚拟世界。使用示例开源的带有Ignite的js前端 存储库<a href=“https://github.com/yyx990803/vue-wordle“>这里</a>和<a href=”https://github.com/xudafeng/wordle“>此处</a>。
+## Extending in the Future
+
+You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+
+There are many ways this codebase can be extended:
+
+1. You can improve messaging around when you guess the correct word.
+2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
+3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
+4. You can improve current date to stick to a specific timezone.
+5. You can create a bot that submits a wordle every day at a specific time.
+6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
