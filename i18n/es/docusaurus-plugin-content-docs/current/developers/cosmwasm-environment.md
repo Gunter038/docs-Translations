@@ -1,14 +1,14 @@
 ---
-sidebar_label: Configurar el entorno de red
+sidebar_label: Setup Network Environment
 ---
 
-# Configurando tu entorno para CosmWasm en Celestia
+# Setting Up Your Environment for CosmWasm on Celestia
 
 Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
 
-## Construyendo la red de Wasmd
+## Building the Wasmd Network
 
-Ejecuta el siguiente comando:
+Run the following command:
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -16,18 +16,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-Esto inicializa una cadena llamada `celeswasm` con `wasmd` binario.
+This initializes a chain called `celeswasm` with `wasmd` binary.
 
-El siguiente comando nos ayuda a configurar cuentas para génesis:
+The following command helps us setup accounts for genesis:
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Asegúratee de almacenar la salida de la wallet generada para referencia posterior si es necesario.
+Make you sure you store the output of the wallet generated for later reference if needed.
 
-Ahora, vamos a añadir una cuenta de génesis y utilizarla para actualizar nuestro archivo de génesis:
+Now, let's add a genesis account and use it to update our genesis file:
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -36,9 +36,9 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-Con eso, creamos un archivo de génesis de red local.
+With that, we created a local network genesis file.
 
-Algunos comandos más útiles que podemos configurar:
+Some more useful commands we can setup:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -47,9 +47,9 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Iniciando la red Wasmd
+## Starting the Wasmd Network
 
-Podemos ejecutar el siguiente código para iniciar la red de `wasmd`:
+We can run the following to start the `wasmd` network:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -57,12 +57,12 @@ wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.d
 ```
 <!-- markdownlint-enable MD013 -->
 
-Ten en cuenta que:
+Please consider:
 
-> NOTA: En el comando anterior, necesitas pasar una dirección IP del nodo Celestia al `base_url` que tiene una cuenta con los tokens Arabica Devnet. Sigue el tutorial para configurar un Nodo Celestia Light y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
+> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
 
-Ten en cuenta que:
+Also please consider:
 
-> IMPORTANTE: Además, en el comando anterior, debes especificar la última Altura del bloque en Arabica Devnet para `da_height`. Puedes encontrar el último número de bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
-¡Con esto, hemos iniciado nuestra red de `wasmd`!
+With that, we have kickstarted our `wasmd` network!
