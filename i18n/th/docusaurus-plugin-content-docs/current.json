@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "ถัดไป",
+    "message": "Next",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
@@ -34,6 +34,10 @@
   "sidebar.developers.category.Rollmint": {
     "message": "Rollmint",
     "description": "The label for category Rollmint in sidebar developers"
+  },
+  "sidebar.developers.category.gm world": {
+    "message": "gm world",
+    "description": "The label for category gm world in sidebar developers"
   },
   "sidebar.developers.category.Wordle": {
     "message": "Wordle",
