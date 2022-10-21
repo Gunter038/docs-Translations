@@ -1,10 +1,10 @@
 {
   "version.label": {
-    "message": "Suivant",
+    "message": "Next",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Types de Nodes",
+    "message": "Types of Nodes",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
@@ -12,15 +12,15 @@
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Disponibilité des données",
+    "message": "Data Availability",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Participer",
+    "message": "Participate",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
-    "message": "Ressources",
+    "message": "Resources",
     "description": "The label for category Resources in sidebar nodes"
   },
   "sidebar.developers.category.Celestia App": {
@@ -34,6 +34,10 @@
   "sidebar.developers.category.Rollmint": {
     "message": "Rollmint",
     "description": "The label for category Rollmint in sidebar developers"
+  },
+  "sidebar.developers.category.gm world": {
+    "message": "gm world",
+    "description": "The label for category gm world in sidebar developers"
   },
   "sidebar.developers.category.Wordle": {
     "message": "Wordle",
