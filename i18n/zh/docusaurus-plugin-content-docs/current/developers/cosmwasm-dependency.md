@@ -1,34 +1,34 @@
 ---
-sidebar_label: CosmWasm 依赖项
+sidebar_label: CosmWasm Dependencies
 ---
 
-# CosmWasm 依赖项安装
+# CosmWasm Dependency Installations
 
-## 环境配置
+## Environment Setup
 
-对于本教程，我们将使用 `curl` 和 `jq` 作为有用的工具。
+For this tutorial, we will be using `curl` and `jq` as helpful tools.
 
-您可以按照[这里](./environment.md#setting-up-dependencies)的安装指南进行操作。
+You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
 
-## Golang 依赖
+## Golang Dependency
 
-本教程使用的 Golang 版本是 v1.18+
+The Golang version used for this tutorial is v1.18+
 
-如果您使用的是 Linux 发行版，则可以按照[这里](./environment.md#install-golang)的教程安装 Golang 。
+If you are using a Linux distribution, you can install Golang by following our tutorial [here](./environment.md#install-golang).
 
-## Rust 安装
+## Rust Installation
 
 ### Rustup
 
-首先，在安装Rust之前，您需要安装 `rustup`。
+First, before installing Rust, you would need to install `rustup`.
 
-在 Mac/Linux 系统上，以下是安装它的命令：
+On Mac/Linux systems, here are the commands for installing it:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-安装完成后，按此命令来设置 Rust。
+After installation, follow the commands here to setup Rust.
 
 ```sh
 rustup default stable
@@ -38,27 +38,27 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Docker 安装
+## Docker Installation
 
-我们将在本教程后面使用 Docker 来编译智能合约以使用较小的内存。
+We will be using Docker later in this tutorial for compiling a smart contract to use a small footprint.
 
-我们建议在您的机器上安装 Docker。
+We recommend installing Docker on your machine.
 
-有关如何在 Linux 上安装它的示例，请参见[此处](https://docs.docker.com/engine/install/ubuntu/)。
+Examples on how to install it on Linux are found [here](https://docs.docker.com/engine/install/ubuntu/).
 
-找到您操作系统的正确说明。
+Find the right instructions specific for your OS.
 
-## wasmd 安装
+## wasmd Installation
 
-在这里，我们将删除`wasmd`存储库并使用Rollmint替换Tendermint Rollmint是Tendermint的替代品 Cosmos SDK应用程序连接到Celestia的数据可用性网络。
+Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
 
 ```sh
-git克隆https://github.com/CosmWasm/wasmd.git
-cd wasmd光盘
-git获取--标记
-git检出v0.27.0
-go mod编辑-替换github.com/cosmos/comosos sdk=github.com/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
-保持整洁
-go mod下载
-make安装
+git clone https://github.com/CosmWasm/wasmd.git
+cd wasmd
+git fetch --tags
+git checkout v0.27.0
+go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
+go mod tidy 
+go mod download
+make install
 ```
