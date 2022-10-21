@@ -1,52 +1,52 @@
-- - -
-sidebar_label : Інструкція для ноди
-- - -
+---
+sidebar_label: Node Tutorial
+---
 
-# Отримання та надсилання транзакцій із нодою Celestia
+# Getting and Sending Transactions with Celestia Node
 <!-- markdownlint-enable MD013 -->
 
-У цьому підручнику ми розглянемо, як використовувати Celestia Node API для надсилання та отримання повідомлень із рівня доступності даних за їхнім ідентифікатором простору імен.
+In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
-Цей посібник передбачає, що ви працюєте в середовищі Linux.
+This tutorial was assumes you are working in a Linux environment.
 
-> Для перегляду відеопосібника з налаштування ноди Celestia, натисніть [тут](./light-node-video.md)
+> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
 
-## Вимоги до обладнання
+## Hardware Requirements
 
-Для роботи легкої ноди рекомендуються такі мінімальні вимоги до обладнання:
+The following minimum hardware requirements are recommended for running a light node:
 
-- Розмір оперативної пам’яті: 2 GB
-- CPU: Єдине ядро
-- Диск: 5 Гб SSD сховища
-- Пропускна здатність: 56 Gbps для скачування/56 Mbps для вивантаження
+- Memory: 2 GB RAM
+- CPU: Single Core
+- Disk: 5 GB SSD Storage
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Налаштування залежностей
+## Setting Up Dependencies
 
-Спочатку переконайтеся, що бажаєте оновити та покращити ОС:
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Якщо ви використовуєте менеджер пакетів APT
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Якщо ви використовуєте менеджер пакетів YUM
+# If you are using the YUM package manager
 sudo yum update
 ```
 
-Це основні пакети, необхідні для виконання багатьох завдань, таких як завантаження файлів, компіляція та моніторинг ноди:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# Якщо ви використовуєте менеджер пакетів APT
+# If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# Якщо ви використовуєте менеджер пакетів YUM
+# If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Інсталювати Golang
+### Install Golang
 
-Celestia-app і celestia-node написані мовою [Golang](https://go.dev/), тому ми повинні встановити Golang, щоб створити та запустити їх.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.19.1"
@@ -57,30 +57,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Тепер нам потрібно додати каталог `/usr/local/go/bin` до `$PATH`:
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Щоб перевірити, чи був Go встановлений правильно:
+To check if Go was installed correctly run:
 
 ```sh
-перейти до версії
+go version
 ```
 
-Вихід повинен бути встановленою версією:
+The output should be the version installed:
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-## Нода Celestia
+## Celestia Node
 
-### Встановлення ноди Celestia
+### Install Celestia Node
 
-Встановіть бінарник celestia-node, виконуючи такі команди:
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Переконайтеся, що двійковий файл працює, і перевірте версію за допомогою команди celestia version:
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -103,19 +103,19 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Створення екземпляра легкої ноди Celestia
+### Instantiate Celestia Light Node
 
-Тепер запустімо легку ноду Celestia:
+Now, let's instantiate a Celestia Light node:
 
-> Примітка: RPC Endpoints в усіх типах нод Celestia, таких як Light, Bridge і Full Nodes.
+> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Під'єднайтеся до публічної кінцевої точки ядра
+### Connect To A Public Core Endpoint
 
-Давайте тепер запустимо ноду Celestia Light із підключенням GRPC до прикладу публічної кінцевої точки ядра.
+Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
 
 > Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
@@ -123,9 +123,9 @@ celestia light init
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> ПРИМІТКА: `--core.grpc.port` за замовчуванням має значення 9090, тому, якщо ви не вкажете його в командному рядку, за замовчуванням використовуватиметься цей порт. Можна використовувати прапорець, щоб вказати за бажанням інший порт.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
-Наприклад, ваша команда разом з кінцевою точкою RPC може виглядати так:
+For example, your command along with an RPC endpoint might look like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -133,13 +133,15 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Ключі та гаманці
+### Keys and wallets
 
-Ви можете створити ключ для вашої ноди, запустивши таку команду:
+You can create your key for your node by running the following command:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -147,31 +149,31 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Після запуску ноди Light для вас буде згенеровано ключ гаманця. Вам потрібно буде поповнити цю адресу за допомогою токенів Arabica Devnet для оплати транзакцій PayForData.
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
 
-Ви можете знайти адресу, запустивши таку команду в каталозі `elestia-node`:
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Якщо ви хочете поповнити ваш гаманець тестовими токенами, перейдіть до Discord-каналу Celestia `#faucet`.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
-Ви можете попросити кошти на адресу гаманця за допомогою такої команди в Discord:
+You can request funds to your wallet address using the following command in Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Там, де `<Wallet-Address>` є `celestia1******` адресою, що генерується, коли ви створюєте гаманець.
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-Поповнивши гаманець, ви можете переходити до наступного кроку.
+With your wallet funded, you can move on to the next step.
 
-## Виклики ноди API
+## Node API Calls
 
-Відкрийте інше вікно терміналу, щоб розпочати запит API. `celestia-node` викриває кінцеву точку RPC на порту `26658` за замовчуванням.
+Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Баланс
+### Balance
 
 Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
 
@@ -179,7 +181,7 @@ Now, let's query our node for the balance of its default account (which is the a
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-Виведеться таким чином:
+It will output the following:
 
 ```json
 {
@@ -188,19 +190,19 @@ curl -X GET http://127.0.0.1:26658/balance
 }
 ```
 
-Це покаже ваш баланс на цьому гаманці.
+This shows you the balance in that wallet.
 
-### Отримати заголовок блоку
+### Get Block Header
 
-Тепер відправмо інформацію про блок у заголовку.
+Now, let's get the block header information.
 
-Тут ми отримаємо заголовок від блоку 1:
+Here we will get the header from Block 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-Виведеться щось таке:
+It will output something like this:
 
 ```json
 {
@@ -372,31 +374,31 @@ curl -X GET http://127.0.0.1:26658/header/1
 }
 ```
 
-### Відправлення PFD транзакції
+### Submit a PFD Transaction
 
-У цьому прикладі ми надішлемо транзакцію PayForData до кінцевої точки ноди `/submit_pfd`.
+In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
 
-Кілька речей, які слід врахувати:
+Some things to consider:
 
-- PFD - це повідомлення PayForData.
-- Кінцева точка також приймає значення `namespace_id` і `data`.
-- Ідентифікатор простору імен повинен бути 8 байтів.
-- Дані містяться в байтах із шістнадцятковим кодуванням необробленого повідомлення.
-- `gas_limit` - це ліміт використання газу для транзакції
+- PFD is a PayForData Message.
+- The endpoint also takes in a `namespace_id` and `data` values.
+- Namespace ID should be 8 bytes.
+- Data is in hex-encoded bytes of the raw message.
+- `gas_limit` is the limit of gas to use for the transaction
 
-Ми використовуємо наступні значення `namespace_id` з `0000010000000100` та `data` `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-Ви можете згенерувати власний `namespace_id` і значення даних, використовуючи цей корисний ігровий майданчик Golang, який ми створили, [тут](https://go.dev/play/p/7ltvaj8lhRl).
+You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
 
-Ми виконаємо такі дії:
+We run the following:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "data": "f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5",
-  "gas_limit": 60000}' http://localhost:26658/submit_pfd
+  "gas_limit": 70000}' http://localhost:26658/submit_pfd
 ```
 
-Ми отримаємо такий вивід:
+We get the following output:
 
 ```json
 {
@@ -613,11 +615,13 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
 }
 ```
 
-Якщо ви помітите з наведеного вище виводу, повертається `height` `2452`, що ми будемо використовувати для наступної команди.
+If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
 
-#### Усунення проблем
+Note: To learn more about status response codes, please navigate to [cosmos' code explanation](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
 
-Якщо ви стикаєтеся з помилкою:
+#### Troubleshooting
+
+If you encounter an error like:
 
 <!-- markdownlint-disable MD013 -->
 ```console
@@ -626,18 +630,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-Цілком можливо, що обліковий запис з якого ви намагаєтеся відправити PayForData, ще не має тестових токенів. Переконайтеся, що faucet підтримує ваш обліковий запис з токенами й потім спробуйте знову.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
-### Отримати простори імен за висотою блоку
+### Get Namespaced Shares by Block Height
 
-Після надсилання транзакції PFD у разі успіху вузол поверне висоту блоку, для якого була включена транзакція PFD. Потім ви можете використовувати цю висоту блоку та ідентифікатор простору імен, з яким ви надіслали транзакцію PFD, щоб повернути вам спільні повідомлення. У цьому прикладі висота блоку 589, яку ми отримали, використовуватиметься для наступної команди.
+After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Ми отримаємо такий вивід:
+Will generate the following output:
 
 ```json
 {
@@ -648,4 +652,4 @@ curl -X GET \
 }
 ```
 
-Вивід тут має кодування base64.
+The output here is base64-encoded.
