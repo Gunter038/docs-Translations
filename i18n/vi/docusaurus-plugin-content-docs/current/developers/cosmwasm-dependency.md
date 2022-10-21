@@ -2,33 +2,33 @@
 sidebar_label: CosmWasm Dependencies
 ---
 
-# Cài đặt các thành phần phụ thuộc của CosmWasm
+# CosmWasm Dependency Installations
 
-## Thiết lập môi trường
+## Environment Setup
 
-Đối với hướng dẫn này, chúng ta sẽ sử dụng `curl` và `jq` như là một công cụ hữu ích.
+For this tutorial, we will be using `curl` and `jq` as helpful tools.
 
-Bạn có thể làm theo hướng dẫn sau để cài đặt chúng [tại đây](./environment.md#setting-up-dependencies).
+You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
 
-## Thành phần phụ thuộc Golang
+## Golang Dependency
 
-Phiên bản Golang được sử dụng cho hướng dẫn này là v1.18+
+The Golang version used for this tutorial is v1.18+
 
-Nếu bạn đang sử dụng Linux, bạn có thể cài Golang bằng cách làm theo hướng dẫn sau đây của chúng tôi [tại đây](./environment.md#install-golang).
+If you are using a Linux distribution, you can install Golang by following our tutorial [here](./environment.md#install-golang).
 
-## Cài đặt Rust
+## Rust Installation
 
 ### Rustup
 
-Đầu tiên, trước khi cài đặt Rust, bạn sẽ cần phải cài đặt `rustup`.
+First, before installing Rust, you would need to install `rustup`.
 
-Đối với Mac/Linux, sau đây là câu lệnh để cài đặt nó:
+On Mac/Linux systems, here are the commands for installing it:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Sau khi cài đặt, chạy những câu lệnh sau đây để thiết lập Rust.
+After installation, follow the commands here to setup Rust.
 
 ```sh
 rustup default stable
@@ -38,19 +38,19 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Cài đặt Docker
+## Docker Installation
 
-Chúng tôi sẽ sử dụng Docker sau trong hướng dẫn này soạn hợp đồng thông minh để sử dụng một small footfrint.
+We will be using Docker later in this tutorial for compiling a smart contract to use a small footprint.
 
-Chúng tôi khuyên cài đặt Docker trên máy tính của mình.
+We recommend installing Docker on your machine.
 
-Ví dụ về cách cài đặt nó trên Linux có tại [here ](https://docs.docker.com/engine/install/ubuntu/).
+Examples on how to install it on Linux are found [here](https://docs.docker.com/engine/install/ubuntu/).
 
-Tìm các hướng dẫn phù hợp cụ thể cho hệ điều hành của bạn.
+Find the right instructions specific for your OS.
 
 ## wasmd Installation
 
-Ở đây, chúng tôi sẽ sử dụng kho lưu trữ `wasmd` và thay thế Tendermint bằng Rollmint. Rollmint là một sự thay thế drop-in cho Tendermint cho phép ứng dụng Cosmos-SDK để kết nối với mạng Data Availability của Celestia.
+Here, we are going to pull down the `wasmd` repository and replace Tendermint with Rollmint. Rollmint is a drop-in replacement for Tendermint that allows Cosmos-SDK applications to connect to Celestia's Data Availability network.
 
 ```sh
 git clone https://github.com/CosmWasm/wasmd.git
