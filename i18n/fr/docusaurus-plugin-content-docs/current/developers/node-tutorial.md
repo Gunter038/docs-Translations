@@ -1,52 +1,52 @@
-- - -
-sidebar_label : Tutoriel du node
-- - -
+---
+sidebar_label: Node Tutorial
+---
 
-# Obtenir et envoyer des transactions avec Celestia node
+# Getting and Sending Transactions with Celestia Node
 <!-- markdownlint-enable MD013 -->
 
-Dans ce tutoriel, nous couvrirons comment utiliser l'API Celestia Node pour soumettre et récupérer les messages de la couche de disponibilité de données par leur namespace ID.
+In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
-Ce tutoriel est adapté à un environnement de travail Linux.
+This tutorial was assumes you are working in a Linux environment.
 
-> Pour voir un tutoriel vidéo pour la mise en place d'un Light Node Celestia, cliquez sur [ici](./light-node-video.md)
+> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
 
-## Hardware Requis
+## Hardware Requirements
 
-Les exigences matérielles minimales recommandées pour lancer un light node sont les suivantes:
+The following minimum hardware requirements are recommended for running a light node:
 
-- Mémoire vive : 2GB RAM
+- Memory: 2 GB RAM
 - CPU: Single Core
-- Disque dur : 5 Go SSD
-- Bande passante : 56 kbps pour le téléchargement/56 kbps pour l'upload
+- Disk: 5 GB SSD Storage
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Configuration des dépendances
+## Setting Up Dependencies
 
-Premièrement, vérifiez que votre système d'exploitation est à jour ou mettez le à jour:
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Si vous utilisez le gestionnaire APT 
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Si vous utilisez le gestionnaire YUM
+# If you are using the YUM package manager
 sudo yum update
 ```
 
-Ce sont des packages essentiels pour exécuter de nombreuses tâches comme le téléchargement de fichiers, la compilation et la surveillance du node:
+These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# Si vous utilisez le gestionnaire APT 
+# If you are using the APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# Si vous utilisez le gestionnaire YUM 
+# If you are using the YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Installer Golang
+### Install Golang
 
-La Celestia-app et le nœud Celestia sont codés en [Golang](https://go.dev/) donc nous devons installer Golang pour les construire et les exécuter.
+Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
 ```sh
 ver="1.19.1"
@@ -57,30 +57,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Maintenant nous devons ajouter le répertoire `/usr/local/go/bin` à `$PATH` :
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Pour vérifier que Go a été installé correctement, lancez :
+To check if Go was installed correctly run:
 
 ```sh
 go version
 ```
 
-La sortie doit être la version installée ci-après :
+The output should be the version installed:
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-## Node Celestia
+## Celestia Node
 
-### Installer Celestia node
+### Install Celestia Node
 
-Installez le binaire du node Celestia en exécutant les commandes suivantes :
+Install the celestia-node binary by running the following commands:
 
 ```sh
 cd $HOME
@@ -89,10 +89,10 @@ git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
 git checkout tags/v0.3.1
 make install
-make cel-ke
+make cel-key
 ```
 
-Vérifiez que le binaire fonctionne et la version avec la commande celestia ci-dessous :
+Verify that the binary is working and check the version with the celestia version command:
 
 ```sh
 $ celestia version
@@ -103,29 +103,29 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Instancier un Light Node Celestia
+### Instantiate Celestia Light Node
 
-Maintenant, instancions un Light node Celestia:
+Now, let's instantiate a Celestia Light node:
 
-> Note: Les points de terminaison RPC sont exposés dans tous les types de Nodes Celestia, tels que Light, Bridge et Full Nodes.
+> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
 
 ```sh
 celestia light init
 ```
 
-### Se connecter à un point de terminaison public principal
+### Connect To A Public Core Endpoint
 
-Nous allons maintenant exécuter le Light Node Celestia avec une connexion GRPC à un exemple d'Endpoint noyau public.
+Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
 
-> Remarque : Vous êtes également encouragés à trouver un point de terminaison API de la communauté et il y en a plusieurs dans le Discord. Celui-ci est utilisé à des fins de démonstrations. Vous pouvez trouver une liste de points d'appel à distance (RPC) [ici](/nodes/arabica-devnet.md#rpc-endpoints)
+> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE : Le port `--core.grpc.port` est configuré par défaut à 9090, donc si vous n'en spécifiez pas un autre dans la ligne de commande, il s'exécutera à celui-là par défaut. Vous pouvez utiliser le drapeau (flag) pour spécifier un autre port si vous préférez.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
 
-Par exemple, votre commande avec un point de terminaison RPC (appel de procédure à distance) peut ressembler à ceci :
+For example, your command along with an RPC endpoint might look like this:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -133,13 +133,15 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Clés et wallets
+### Keys and wallets
 
-Vous pouvez créer vos clés pour votre node en lançant la commande suivante :
+You can create your key for your node by running the following command:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -147,39 +149,39 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Lorsque vous lancez le Light Node, une clé de sécurité du wallet sera générée pour vous. Vous aurez besoin d'envoyer des tokens du devnet Arabica à cette adresse pour payer les transactions PayForData.
+Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
 
-Vous pouvez trouver cette adresse en lançant la commande suivante dans le répertoire `celestia-node` :
+You can find the address by running the following command in the `celestia-node` directory:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-Si vous souhaitez approvisionner votre wallet en tokens de testnet, dirigez vous vers le canal Discord `#arabica-faucet`.
+If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
 
-Vous pouvez demander des fonds à l'adresse de votre portefeuille en utilisant la commande suivante sur Discord:
+You can request funds to your wallet address using the following command in Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Où `<Wallet-Address>` est l'adresse `celestia1******` générée à la création du wallet.
+Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-Une fois que tout est configuré, vous pouvez passer à l'étape suivante.
+With your wallet funded, you can move on to the next step.
 
-## Requête d'API du Node
+## Node API Calls
 
-Ouvrez une autre fenêtre de terminal afin de commencer à interroger l'API. `celestia-node` expose son point de terminaison RPC sur le port `26658` par défaut.
+Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Solde
+### Balance
 
-Maintenant, interrogeons notre Node pour connaître le solde de son compte par défaut (qui est le compte associé avec la clé `developer` générée plus tôt):
+Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-Il produira ce qui suit :
+It will output the following:
 
 ```json
 {
@@ -188,19 +190,19 @@ Il produira ce qui suit :
 }
 ```
 
-Cela vous montre le solde de ce wallet.
+This shows you the balance in that wallet.
 
-### Obtenir l'en-tête du bloc
+### Get Block Header
 
-Maintenant, récupérons les informations de l'en-tête de bloc.
+Now, let's get the block header information.
 
-Ici nous allons obtenir l'en-tête du bloc 1:
+Here we will get the header from Block 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-Vous verrez quelque chose comme ceci :
+It will output something like this:
 
 ```json
 {
@@ -372,31 +374,31 @@ Vous verrez quelque chose comme ceci :
 }
 ```
 
-### Soumettre une transaction PFD
+### Submit a PFD Transaction
 
-Dans cet exemple, nous soumettrons une transaction PayForData au point de terminaison `/submit_pfd` du node.
+In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
 
-Quelques éléments à prendre en considération :
+Some things to consider:
 
-- PFD est un message PayForData.
-- Le point de terminaison prend également les valeurs `namespace_id` et `data`.
-- L'identifiant de l'espace de noms doit être de 8 octets.
-- Les données sont en octets codés en hexadécimal du message brut.
-- `gas_limit` est la limite de gaz à utiliser pour la transaction.
+- PFD is a PayForData Message.
+- The endpoint also takes in a `namespace_id` and `data` values.
+- Namespace ID should be 8 bytes.
+- Data is in hex-encoded bytes of the raw message.
+- `gas_limit` is the limit of gas to use for the transaction
 
-Nous utilisons le `namespace_id` suivant de `0000010000000100` et la `data` valeur de `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-Vous pouvez générer vos propres `namespace_id` et valeurs de données en utilisant ce terrain de jeu Golang utile que nous avons créé [ici](https://go.dev/play/p/7ltvaj8lhRl).
+You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
 
-Exécutez ce qui suit :
+We run the following:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "data": "f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5",
-  "gas_limit": 60000}' http://localhost:26658/submit_pfd
+  "gas_limit": 70000}' http://localhost:26658/submit_pfd
 ```
 
-Nous obtenons la sortie suivante :
+We get the following output:
 
 ```json
 {
@@ -613,11 +615,13 @@ Nous obtenons la sortie suivante :
 }
 ```
 
-Si vous remarquez sur la sortie ci-dessus, elle renvoie une `height` de `2452` que nous utiliserons pour la prochaine commande.
+If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
 
-#### Dépannage
+Note: To learn more about status response codes, please navigate to [cosmos' code explanation](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
 
-Si vous rencontrez une erreur telle que :
+#### Troubleshooting
+
+If you encounter an error like:
 
 <!-- markdownlint-disable MD013 -->
 ```console
@@ -626,18 +630,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-Il est possible que le compte auquel vous essayez de soumettre des frais PayForData n'ait pas encore de tokens. Vérifiez que le faucet du testnet a envoyé des tokens sur votre adresse puis réessayez.
+It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
 
-### Obtenir des Namespaced Shares par hauteur de bloc
+### Get Namespaced Shares by Block Height
 
-Après avoir soumis votre transaction PFD, en cas de succès, le node retournera la hauteur de bloc pour laquelle la transaction PFD a été incluse. Vous pouvez ensuite utiliser cette hauteur de bloc et l'ID de namepace avec lesquels vous avez soumis votre transaction PFD pour que vos partages de messages vous soient retournés. Dans cet exemple, la hauteur de bloc que nous avons obtenue était de 589, que nous utiliserons pour la commande suivante.
+After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Génèrera cette sortie :
+Will generate the following output:
 
 ```json
 {
@@ -648,4 +652,4 @@ Génèrera cette sortie :
 }
 ```
 
-La sortie ici est encodée en base64.
+The output here is base64-encoded.
