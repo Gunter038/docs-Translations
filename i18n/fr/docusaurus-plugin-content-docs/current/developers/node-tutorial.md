@@ -2,7 +2,7 @@
 sidebar_label: Node Tutorial
 ---
 
-# Getting and Sending Transactions with Celestia Node
+# Recevoir et envoyer des transactions avec un nœud Celestia
 <!-- markdownlint-enable MD013 -->
 
 In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
