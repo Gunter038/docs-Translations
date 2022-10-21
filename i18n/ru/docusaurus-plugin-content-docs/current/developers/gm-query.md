@@ -1,27 +1,27 @@
 ---
-sidebar_label: Query your Rollup
+sidebar_label: Запросите свой накопительный пакет
 ---
 
-# 💬 Say “gm world!”
+# Скажи «доброе утро мир!»
 
-Now, we’re going to get our blockchain to say `gm world` and in order to do so we need to make the following changes:
+Теперь мы собираемся заставить наш блокчейн говорить gm world, и для этого нам нужно внести следующие изменения:
 
-- Modify a protocol buffer file
-- Create a keeper query function that returns data
-- Register a query function
+- Изменить файл буфера протокола
+- Создать функцию запроса хранителя, которая возвращает данные
+- Зарегистрировать функцию запроса
 
-Protocol buffer files contain proto RPC calls that define Cosmos SDK queries and message handlers, and proto messages that define Cosmos SDK types. The RPC calls are also responsible for exposing an HTTP API.
+Файлы буфера протокола содержат вызовы proto RPC, определяющие запросы Cosmos SDK и обработчики сообщений, а также proto сообщения, определяющие типы Cosmos SDK. Вызовы RPC также отвечают за раскрытие HTTP API.
 
-The Keeper is required for each Cosmos SDK module and is an abstraction for modifying the state of the blockchain. Keeper functions allow you to query or write to the state. After you add a query to your chain, you need to register the query. You’ll only need to register a query once.
+Keeper требуется для каждого модуля Cosmos SDK и представляет собой абстракцию для изменения состояния блокчейна. Функции Keeper позволяют запрашивать или записывать состояние в систему. После добавления запроса в цепочку, вам необходимо зарегистрировать запрос. Вам нужно зарегистрировать запрос только один раз.
 
-The typical Cosmos blockchain developer workflow looks something like this:
+Типичный рабочий процесс разработчика блокчейна Cosmos выглядит так:
 
-- Start with proto files to define Cosmos SDK [messages](https://docs.cosmos.network/master/building-modules/msg-services.html)
-- Define and register [queries](https://docs.cosmos.network/master/building-modules/query-services.html)
-- Define message handler logic
-- Finally, implement the logic of these queries and message handlers in keeper functions
+- Начинается с proto файлов для определения сообщений Cosmos SDK[](https://docs.cosmos.network/master/building-modules/msg-services.html)
+- Определение и регистрация[ запросов](https://docs.cosmos.network/master/building-modules/query-services.html)
+- Определение логики обработчика сообщений
+- И наконец, внедрить логику этих запросов и обработчиков сообщений в функции keeper
 
-## ✋ Create your first query
+## ✋ Создайте свой первый запрос
 
 **For this part of the tutorial, open a new terminal window that is not the same that you started the chain in.**
 
