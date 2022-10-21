@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcelestia_docs=self.webpackChunkcelestia_docs||[]).push([[1860],{9478:function(e){e.exports=JSON.parse('{"title":"Wordle","slug":"/category/wordle","permalink":"/fr/category/wordle","navigation":{"previous":{"title":"Rollmint","permalink":"/fr/developers/rollmint"},"next":{"title":"Wordle Overview","permalink":"/fr/developers/wordle"}}}')}}]);
