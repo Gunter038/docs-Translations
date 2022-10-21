@@ -2,7 +2,7 @@
 sidebar_label: Light Node
 ---
 
-# Setting up a Celestia Light Node
+# Configuration d'un Light Node Celestia
 
 This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
 
