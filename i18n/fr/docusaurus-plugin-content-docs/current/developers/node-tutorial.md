@@ -5,19 +5,19 @@ sidebar_label: Node Tutorial
 # Recevoir et envoyer des transactions avec un nœud Celestia
 <!-- markdownlint-enable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+Dans ce tutoriel, nous allons découvrir comment utiliser l'API d'un nœud Celestia pour soumettre et récupérer des messages de la couche de disponibilité des données grâce à leur identifiant d'espace de nom.
 
-This tutorial was assumes you are working in a Linux environment.
+Ce tutoriel est adapté au système d'exploitation Linux.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> Pour voir un tutoriel vidéo sur la configuration d'un Light Node Celestia, cliquez [ici](./light-node-video.md)
 
-## Hardware Requirements
+## Configuration matérielle requise
 
-The following minimum hardware requirements are recommended for running a light node:
+La configuration matérielle minimum requise pour lancer un light node est la suivante :
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
+- Mémoire : 2 Go de RAM
+- Processeur : Simple cœur
+- Disque dur : 5 Go de stockage SSD
 - Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
 ## Setting Up Dependencies
