@@ -4,6 +4,6 @@ sidebar_label: Apa selanjutnya
 
 # 👀 Apa selanjutnya
 
-Now that you’ve built your first sovereign rollup using the Cosmos SDK, Rollmint Ignite CLI, and Celestia's DA Layer, you are ready to take your skills to the next level!
+Sekarang kamu harus membangun sovereign rollup dahulu menggunakan Cosmos SDK, Rollmint Ignite CLI, dan Celestia's DA Layer, kamu siap untuk gunakan kemampuanmu ke tingkat selanjutnya!
 
-Next, you will learn how to create a more robust rollup in the form of a Wordle game.
+Selanjutnya, kamu akan belajar untuk membuat lebih dari robust rollup dalam bentuk permainan Wordle.
