@@ -2,25 +2,25 @@
 sidebar_label: Contract Interaction
 ---
 
-# Contract Interaction on CosmWasm with Celestia
+# Контрактна взаємодія на CosmWasm із Celestia
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
+У попередніх кроках ми зберегли хеш контракту tx у змінній середовища для подальшого використання.
 
-Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
+Через триваліші періоди надсилання транзакцій через Rollmint через очікування на рівні доступності даних Celestia для підтвердження включення блоку, нам потрібно буде запитати напряму наш хеш передачі, щоб отримати інформацію про це.
 
-## Contract Querying
+## Контрактний запит
 
-Let's start by querying our transaction hash for its code ID:
+Розпочнімо з запиту хешу нашої транзакції для свого коду:
 
 ```sh
 CODE_ID=$(wasmd query tx --type=hash $TX_HASH $NODE --output json | jq -r '.logs[0].events[-1].attributes[0].value')
 echo $CODE_ID
 ```
 
-This will give us back the Code ID of the deployed contract.
+Ми повернемося до ID коду розгорнутого контракту.
 
-In our case, since it's the first contract deployed on our local network, the value is `1`.
+У нашому випадку, оскільки це перший контракт, розгорнутий у нашій локальній мережі, значення дорівнює `1`.
 
 Now, we can take a look at the contracts instantiated by this Code ID:
 
