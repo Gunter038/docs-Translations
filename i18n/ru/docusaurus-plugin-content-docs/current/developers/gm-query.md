@@ -23,15 +23,15 @@ Keeper требуется для каждого модуля Cosmos SDK и пр�
 
 ## ✋ Создайте свой первый запрос
 
-**For this part of the tutorial, open a new terminal window that is not the same that you started the chain in.**
+**Для этой части руководства откройте новое окно терминала, отличное от того, в котором вы начали цепочку.**
 
-In your new terminal, `cd` into the `gm` directory and run this command to create the `gm` query:
+В новом терминале, перейдите в каталог `cd` и запустите команду `gm` для создания запроса `gm` :
 
 ```bash
-ignite scaffold query gm --response text
+ignite scaffold query gm -- текст ответа
 ```
 
-Response:
+Ответ:
 
 ```bash
 modify proto/gm/query.proto
