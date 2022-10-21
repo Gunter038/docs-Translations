@@ -1,26 +1,26 @@
 {
   "version.label": {
-    "message": "Kế tiếp",
+    "message": "Next",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Các loại Node",
+    "message": "Types of Nodes",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
-    "message": "Đồng thuận",
+    "message": "Consensus",
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Tính khả dụng dữ liệu",
+    "message": "Data Availability",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Tham gia",
+    "message": "Participate",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
-    "message": "Nguồn tài liệu",
+    "message": "Resources",
     "description": "The label for category Resources in sidebar nodes"
   },
   "sidebar.developers.category.Celestia App": {
@@ -34,6 +34,10 @@
   "sidebar.developers.category.Rollmint": {
     "message": "Rollmint",
     "description": "The label for category Rollmint in sidebar developers"
+  },
+  "sidebar.developers.category.gm world": {
+    "message": "gm world",
+    "description": "The label for category gm world in sidebar developers"
   },
   "sidebar.developers.category.Wordle": {
     "message": "Wordle",
