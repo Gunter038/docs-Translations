@@ -1,34 +1,34 @@
-- - -
-sidebar_label : Node Tutorial
-- - -
+---
+sidebar_label: Node Tutorial
+---
 
-# Получение и отправка транзакций с нодой Celestia
+# Getting and Sending Transactions with Celestia Node
 <!-- markdownlint-enable MD013 -->
 
 In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
 
-В этом руководстве предполагается, что вы работаете в среде Linux.
+This tutorial was assumes you are working in a Linux environment.
 
-> Чтобы просмотреть видео по настройке Callestia Light Node нажмите [здесь](./light-node-video.md)
+> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
 
-## Требования к оборудованию
+## Hardware Requirements
 
-Для запуска Light ноды рекомендуются следующие минимальные требования к оборудованию:
+The following minimum hardware requirements are recommended for running a light node:
 
-- Память: 2 Гб RAM
-- ЦП: 1 ядро
-- Диск: 5 Гб SSD
-- Пропускная способность: 56 кбит/с в обе стороны
+- Memory: 2 GB RAM
+- CPU: Single Core
+- Disk: 5 GB SSD Storage
+- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 
-## Установка зависимостей
+## Setting Up Dependencies
 
-Во-первых, необходимо обновить ОС:
+First, make sure to update and upgrade the OS:
 
 ```sh
-# Если вы используете менеджер пакетов APT
+# If you are using the APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# Если вы используете менеджер пакетов YUM
+# If you are using the YUM package manager
 sudo yum update
 ```
 
@@ -44,7 +44,7 @@ sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Установка Golang
+### Install Golang
 
 Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
 
@@ -57,20 +57,20 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Теперь нужно добавить `/usr/local/go/bin` каталог в переменную `$PATH`:
+Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-Чтобы убедиться, что Go был правильно установлен проверим версию:
+To check if Go was installed correctly run:
 
 ```sh
 go version
 ```
 
-Вывод должен показать установленную версию:
+The output should be the version installed:
 
 ```sh
 go version go1.18.2 linux/amd64
@@ -140,6 +140,8 @@ You can create your key for your node by running the following command:
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
+
+You can start your light node with the key created above by running the following command:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -393,7 +395,7 @@ We run the following:
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "data": "f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5",
-  "gas_limit": 60000}' http://localhost:26658/submit_pfd
+  "gas_limit": 70000}' http://localhost:26658/submit_pfd
 ```
 
 We get the following output:
@@ -614,6 +616,8 @@ We get the following output:
 ```
 
 If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
+
+Note: To learn more about status response codes, please navigate to [cosmos' code explanation](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
 
 #### Troubleshooting
 
