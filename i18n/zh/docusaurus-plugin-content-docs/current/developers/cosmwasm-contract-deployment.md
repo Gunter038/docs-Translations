@@ -18,21 +18,21 @@ cargo wasm
 
 编译后的合约输出到： `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`。
 
-## Unit Tests
+## 单元测试
 
-If we want to run tests, we can do so with the following command:
+如果我们想运行测试，我们可以使用以下命令：
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Optimized 智能合约
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+因为我们正在将编译后的智能合约部署到 `wasmd `，所以我们希望它的空间尽可能的小。
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+CosmWasm 团队为我们提供了一个叫做`rust-optimizer`的工具 ，我们需要 Docker 才能编译它。
 
-Run the following command:
+运行以下命令：
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -41,16 +41,16 @@ sudo docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+这会将优化好的 Wasm 字节码放置在 `artifacts/cw_nameservice.wasm`。
 
-## Contract Deployment
+## 合约部署
 
-Let's now deploy our smart contract!
+现在让我们部署我们的智能合约！
 
-Run the following:
+运行以下命令：
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+这将为您提供智能合约部署的交易哈希。 鉴于我们使用的是 Rollmint，所以 Rollmint 在 Celestia 的数据可用性层上等待确认该块已被包含，然后再提交新块，因此包含交易将会有延迟。
