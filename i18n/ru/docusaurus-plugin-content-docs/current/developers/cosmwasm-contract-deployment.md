@@ -1,13 +1,13 @@
 ---
-sidebar_label: Contract Deployment
+sidebar_label: Развертывание контракта
 ---
 
-# Contract Deployment on CosmWasm with Rollmint
+# Развертывание контрактов на CosmWasm с Rollmint
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## Компиляция смарт-контракта
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+Мы выполним следующие команды, чтобы вызвать смарт-контракт Nameservice и скомпилировать его:
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,23 +16,23 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Вывод скомпилированного контракта: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Модульные тесты
 
-If we want to run tests, we can do so with the following command:
+Если мы хотим провести тесты, мы можем сделать это с помощью следующей команды:
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Оптимизированный смарт контракт
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+Поскольку мы развертываем скомпилированный смарт контракт на `wasmd`, то хотелось б, чтобы он был как можно меньше.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+Команда CosmWasm предоставляет инструмент под названием `rust-optimizer`, для запуска которого нам необходим Docker.
 
-Run the following command:
+Выполните следующую команду:
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -41,16 +41,16 @@ sudo docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+Это позволит поместить оптимизированный байт-код Wasm в `artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## Развертывание контракта
 
-Let's now deploy our smart contract!
+Давайте теперь развернем наш смарт контракт!
 
-Run the following:
+Выполните следующее:
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+Это позволит вам получить хэш транзакции для развертывания смарт контракта. Учитывая, что мы используем Rollmint, транзакция будет включена с задержкой из-за того, что Rollmint ожидает на уровне доступности данных Celestia подтверждения включения блока перед отправкой нового блока.
