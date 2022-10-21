@@ -1,13 +1,13 @@
 ---
-sidebar_label: Contract Deployment
+sidebar_label: 合约部署
 ---
 
-# Contract Deployment on CosmWasm with Rollmint
+# 使用 Rollmint 在 CosmWasm 上部署合约
 <!-- markdownlint-disable MD013 -->
 
-## Compile the Smart Contract
+## 编译智能合约
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+我们将运行以下命令来拉取命名服务智能合约并进行编译：
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,7 +16,7 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+编译后的合约输出到： `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`。
 
 ## Unit Tests
 
