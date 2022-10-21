@@ -1,51 +1,51 @@
 ---
-sidebar_label: Contrato de interacción
+sidebar_label: Contract Interaction
 ---
 
-# Contrato de interacción en CosmWasm con Celestia
+# Contract Interaction on CosmWasm with Celestia
 <!-- markdownlint-disable MD013 -->
 
-En los pasos anteriores, hemos almacenado el hash tx del contrato en una variable de entorno para su uso posterior.
+In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
 
 Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
 
-## Consulta de Contrato
+## Contract Querying
 
-Empecemos por consultar nuestro hash de transacción para su ID de código:
+Let's start by querying our transaction hash for its code ID:
 
 ```sh
 CODE_ID=$(wasmd query tx --type=hash $TX_HASH $NODE --output json | jq -r '.logs[0].events[-1].attributes[0].value')
 echo $CODE_ID
 ```
 
-Esto nos devolverá el Código ID del contrato desplegado.
+This will give us back the Code ID of the deployed contract.
 
-En nuestro caso, ya que es el primer contrato implementado en nuestra red local, el valor es `1`.
+In our case, since it's the first contract deployed on our local network, the value is `1`.
 
-Ahora, podemos echar un vistazo a los contratos instanciados por este código ID:
+Now, we can take a look at the contracts instantiated by this Code ID:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 ```
 
-Obtenemos la siguiente salida:
+We get the following output:
 
 ```json
 {"contracts":[],"pagination":{"next_key":null,"total":"0"}}
 ```
 
-## Contrato Instanciación
+## Contract Instantiation
 
-Empezamos a instanciar el contrato escribiendo el siguiente `mensaje` INIT para el contrato nameservice. Aquí, especificamos que `purchase_price` de un nombre es `100uwasm` y `transfer_price` es `999uwasm`.
+We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
 wasmd tx wasm instantiate $CODE_ID "$INIT" --from $KEY_NAME --keyring-backend test --label "name service" $TXFLAG -y --no-admin
 ```
 
-## Contrato de interacción
+## Contract Interaction
 
-Ahora que lo instanciamos, podemos interactuar más con el contrato:
+Now that we instantiated it, we can interact further with the contract:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
@@ -56,9 +56,9 @@ wasmd query wasm contract $CONTRACT $NODE
 wasmd query bank balances $CONTRACT $NODE
 ```
 
-Esto nos permite ver la dirección del contrato, los detalles del contrato y saldos bancarios.
+This allows us to see the contract address, contract details, and bank balances.
 
-Ahora, vamos a registrar un nombre al contrato para nuestra dirección de wallet:
+Now, let's register a name to the contract for our wallet address:
 
 ```sh
 REGISTER='{"register":{"name":"fred"}}'
@@ -69,4 +69,4 @@ NAME_QUERY='{"resolve_record": {"name": "fred"}}'
 wasmd query wasm contract-state smart $CONTRACT "$NAME_QUERY" $NODE --output json
 ```
 
-¡Con eso, hemos instanciado e interactuado con el smart contract de nameservice de CosmWasm usando Celestia!
+With that, we have instantiated and interacted with the CosmWasm nameservice smart contract using Celestia!
