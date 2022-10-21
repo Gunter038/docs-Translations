@@ -18,5 +18,6 @@ The following tutorials will help you get started building Cosmos-SDK applicatio
 
 You can get started with the following tutorials:
 
+- [gm world](./gm-world.md)
 - [Wordle Game](./wordle.md)
 - [CosmWasm Tutorial](./cosmwasm.md)
