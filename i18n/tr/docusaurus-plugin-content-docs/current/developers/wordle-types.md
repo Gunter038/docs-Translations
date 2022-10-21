@@ -2,7 +2,7 @@
 sidebar_label: Türler
 ---
 
-# Kelime Türleri
+# Wordle (Kelime) Türleri
 
 Sonraki adımlar için oluşturduğumuz mesajların kullanacağı tipler oluşturacağız.
 
