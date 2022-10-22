@@ -1,23 +1,23 @@
 ---
-sidebar_label: Setup
+sidebar_label: Configuración
 ---
 
-# 💻 Setup
+# 💻Configuración
 
-- Operating systems: GNU/Linux, macOS, or Windows Subsystem for Linux (WSL). Recommended GNU/Linux or macOS.
+- Sistemas operativos: GNU/Linux, macOS o subsistema Windows para Linux (WSL). Recomendado GNU/Linux or macOS.
 
-> This tutorial was made on an M2 Mac with macOS Monterey Version 12.6.
+> Este tutorial fue realizado en un Mac M2 con la versión 12.6 de macOS Monterey.
 
 - [Golang v1.18.2](https://go.dev/)
 - [Ignite CLI v0.24.0](https://github.com/ignite/cli/releases/tag/v0.24.0)
 - [Homebrew](https://brew.sh/)
 - [wget](https://www.gnu.org/software/wget/)
 - [jq](https://stedolan.github.io/jq/)
-- [A Celestia Light Node](https://docs.celestia.org/nodes/light-node/)
+- [Un Light Node de Celestia](https://docs.celestia.org/nodes/light-node/)
 
-## 🏃 Install Golang
+## 🏃Instalando Golang
 
-Celestia-App, Celestia-Node, and Cosmos-SDK are written in the Golang programming language. We’ll need Golang to build and run them. Celestia’s Mamaki testnet requires Golang v1.18.2 to build and run correctly.
+Celestia-App, Celestia-Node, y Cosmos-SDK están escritos en el lenguaje de programación de Golang. Necesitaremos Golang para construirlos y ejecutarlos. La red de pruebas Mamaki de Celestia requiere que Golang v1.18.2 compile y ejecute correctamente.
 
 ```bash
 cd
@@ -28,7 +28,7 @@ sudo tar -C /usr/local -xzf "go$ver.darwin-arm64.tar.gz"
 rm "go$ver.darwin-arm64.tar.gz"
 ```
 
-Add `/usr/local/go/bin` directory to [set your $PATH variables correctly](https://go.dev/doc/gopath_code#GOPATH):
+Añade el directorio `/usr/local/go/bin` a [establece correctamente tus variables $PATH](https://go.dev/doc/gopath_code#GOPATH):
 
 ```bash
 # If using bash
