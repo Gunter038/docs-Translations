@@ -90,13 +90,13 @@ go version
 
 ### 安装 Celestia 节点
 
-One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
+这里需要注意的是，你要决定哪个版本的celestia-node是你想要编译的。 Mamaki Testnet要求v0.3.0-rc2，Arabica Devnet要求 v0.3.0。
 
-The following sections highlight how to install it for the two networks.
+接下来的部分将着重于介绍如何为两个网络安装各自所需的版本。
 
-#### Arabica Devnet installation
+#### Arabica Devnet安装
 
-Install the celestia-node binary by running the following commands:
+通过运行以下指令来安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -108,7 +108,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否正常工作，并用celestia version命令检查版本
 
 ```sh
 $ celestia version
@@ -119,9 +119,9 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-#### Mamaki Testnet installation
+#### Mamaki Testnet 安装
 
-Install the celestia-node binary by running the following commands:
+通过运行以下指令来安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -133,7 +133,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否正常工作，并用celestia version命令检查版本：
 
 ```sh
 $ celestia version
@@ -141,15 +141,15 @@ Semantic version: v0.3.0-rc2
 Commit: 89892d8b96660e334741987d84546c36f0996fbe
 ```
 
-## Initialize the light node
+## 初始化轻节点
 
-Run the following command:
+运行以下指令：
 
 ```sh
 celestia light init
 ```
 
-You should see output like:
+指令运行后，你应该可以看到以下输出：
 
 <!-- markdownlint-disable MD013 -->
 ```output
@@ -160,25 +160,25 @@ $ celestia light init
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Start the light node
+### 开启轻节点
 
-Start the light node with a connection to a validator node's gRPC endpoint (which is usually exposed on port 9090):
+开启轻节点并连接到一个验证者节点的gRPC端点（通常在端口9090上显示)：
 
-> NOTE: In order for access to the ability to get/submit state-related information, such as the ability to submit PayForData transactions, or query for the node's account balance, a gRPC endpoint of a validator (core) node must be passed as directed below.
+> 注意：为了获取得到/提交状态相关信息的能力，例如提交PayForData交易，或者查询节点账户余额，一个验证者（核心）节点的gPRC端点必须按照以下方式传递。
 
-For ports:
+对于端口：
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> 注意：这个 `--core.grpc.port` 默认为9090，所以如果你在命令行不具体指定端口，它将被默认设置为该端口。 你可以使用标准来指定你喜欢的另一个端口。
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-#### Arabica Setup
+#### Arabica 设置
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./arabica-devnet.md#rpc-endpoints)
+如果你需要连接到RPC端点列表，你可以查看这个列表 [这里](./arabica-devnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+例如，你的命令可能如下所示：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -186,11 +186,11 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-#### Mamaki Setup
+#### Mamaki 设置
 
-If you need a list of RPC endpoints to connect to, you can check from the list [here](./mamaki-testnet.md#rpc-endpoints)
+如果你需要连接到RPC端点列表，你可以查看这个列表[这里](./mamaki-testnet.md#rpc-endpoints)
 
-For example, your command might look something like this:
+例如，你的命令可能如下所示：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -198,15 +198,15 @@ celestia light start --core.remote https://rpc-mamaki.pops.one
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Keys and wallets
+### 密钥和钱包
 
-You can create your key for your node by running the following command:
+你可以通过运行以下命令为你的节点创建自己的密钥：
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-You can start your light node with the key created above by running the following command:
+通过运行以下指令你可以用上面创建的密钥启动你的轻节点：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -214,7 +214,7 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with testnet tokens to pay for PayForData transactions.
+只要你启动了轻节点，将会为你生成一个钱包密钥。 你需要用测试网代币为该地址注资，以支付PayForData交易。
 
 You can find the address by running the following command in the `celestia-node` directory:
 
