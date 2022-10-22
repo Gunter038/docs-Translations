@@ -1,12 +1,12 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: Configurar el entorno de red
 ---
 
 # Configurando tu entorno para CosmWasm en Celestia
 
 Ahora que el binario `wasmd` está construido, necesitamos configurar una red local que se comunique entre `wasmd` y Optimint.
 
-## Construyendo la red de Wasmd
+## Construyendo la red Wasmd
 
 Ejecuta el siguiente comando:
 
@@ -59,10 +59,10 @@ wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.d
 
 Ten en cuenta que:
 
-> NOTA: En el comando anterior, necesitas pasar una dirección IP del nodo Celestia al `base_url` que tiene una cuenta con los tokens de la Devmet Arabica. Sigue el tutorial para configurar un Light Node de Celestia y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
+> NOTA: En el comando anterior, necesitas pasar una dirección IP del nodo Celestia al `base_url` que tiene una cuenta con los tokens de la Arabica Devnet. Sigue el tutorial para configurar un Light Node de Celestia y crear una wallet con dinero de la faucet de testnet [aquí](./node-tutorial.md) en la sección de Celestia Node.
 
 También ten en cuenta que:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> IMPORTANTE: Además, en el comando anterior, debes especificar el último Height del bloque en Arabica Devnet para `da_height`. Puedes encontrar el número del último bloque en el explorador [aquí](https://explorer.celestia.observer/arabica). También, para el parámetro `--rollmint.namespace_id`, puedes generar un ID de nombre de dominio aleatorio usando el playground [aquí](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+¡Con esto, hemos iniciado nuestra red de `wasmd`!
