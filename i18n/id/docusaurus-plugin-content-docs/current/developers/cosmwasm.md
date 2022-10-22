@@ -1,25 +1,25 @@
 ---
-sidebar_label: CosmWasm Overview
+sidebar_label: Ikhtisar CosmWasm
 ---
 
-# CosmWasm on Rollmint
+# CosmWasm pada Rollmint
 
-CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Rollmint.
+CosmWasm adalah platform kontrak pintar yang dibangun untuk ekosistem Cosmos dengan memanfaatkan WebAssembly (Wasm) untuk membangun kontrak pintar untuk Cosmos-SDK. untuk Cosmos-SDK. Dalam tutorial ini, kita akan mengeksplorasi cara mengintegrasikan CosmWasm dengan Lapisan Ketersediaan Data Celestia menggunakan Rollmint.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> CATATAN: Tutorial ini akan mengeksplorasi pengembangan dengan Rollmint, yang masih dalam tahap Alpha. Jika Anda mengalami bug, silakan tulis tiket Masalah Github atau beri tahu kami di Discord kami. Selain itu, sementara Rollmint memungkinkan Anda untuk membangun rollup berdaulat di Celestia, saat ini belum mendukung bukti penipuan dan oleh karena itu oleh karena itu berjalan dalam mode "pesimis", di mana node perlu jalankan kembali transaksi untuk memeriksa validitas rantai (yaitu simpul penuh). Lebih jauh lagi, Rollmint saat ini hanya mendukung sequencer tunggal.
 
-You can learn more about CosmWasm [here](https://docs.cosmwasm.com/docs/1.0/).
+Anda dapat mempelajari lebih lanjut tentang CosmWasm [di sini](https://docs.cosmwasm.com/docs/1.0/).
 
-In this tutorial, we will going over the following:
+Dalam tutorial ini, kita akan membahas hal-hal berikut ini:
 
-* [Setting up your dependencies for your CosmWasm smart contracts](./cosmwasm-dependency.md)
-* [Setting up Rollmint on CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
-* [Instantiate a local network for your CosmWasm chain connected to Celestia](./cosmwasm-environment.md)
-* [Deploying a Rust smart contract to CosmWasm chain](./cosmwasm-contract-deployment.md)
-* [Interacting with the smart contract](./cosmwasm-contract-interaction.md)
+* [Menyiapkan dependensi Anda untuk kontrak pintar CosmWasm Anda](./cosmwasm-dependency.md)
+* [Menyiapkan Rollmint pada CosmWasm](./cosmwasm-dependency.md#wasmd-installation)
+* [Instantiate jaringan lokal untuk rantai CosmWasm Anda yang terhubung ke Celestia](./cosmwasm-environment.md)
+* [Menyebarkan kontrak pintar Rust ke rantai CosmWasm](./cosmwasm-contract-deployment.md)
+* [Berinteraksi dengan kontrak pintar](./cosmwasm-contract-interaction.md)
 
-The smart contract we will use for this tutorial is one provided by the CosmWasm team for Nameservice purchasing.
+Smart contract yang akan kita gunakan untuk tutorial ini adalah yang disediakan oleh tim CosmWasm untuk pembelian Nameservice.
 
-You can check out the contract [here](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
+Anda bisa melihat kontrak [di sini](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice).
 
-How to write the Rust smart contract for Nameservice is outside the scope of this tutorial. In the future we will add more tutorials for writing CosmWasm smart contracts for Celestia.
+Bagaimana menulis kontrak pintar Rust untuk Nameservice berada di luar cakupan tutorial ini. Di masa mendatang kami akan menambahkan lebih banyak tutorial untuk menulis CosmWasm kontrak pintar untuk Celestia.
