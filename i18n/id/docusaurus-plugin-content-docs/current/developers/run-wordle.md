@@ -150,35 +150,35 @@ Sekarang coba untuk mengirim wordle lainnya selain salah satu yang telah dikirim
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. You will get an error that a wordle has already been submitted for the day.
+Setelah mengirim transaksi dan mengkonfirmasinya, query `txhash` diberikan dengan cara sama yang kamu lakukan diatas. Kamu akan dapat sebuah kesalahan pada wordle yang telah dikirim untuk hari ini.
 
-Now let’s try to guess a five letter word:
+Sekarang mari coba untuk menebak lima huruf kata:
 
 ```sh
 wordled tx wordle submit-guess least --from bob --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After submitting the transactions and confirming, query the `txhash` given the same way you did above. Given you didn’t guess the correct word, it will increment the guess count for Bob’s account.
+Setelah mengirim transaksi dan mengkonfirmasinya, query <0>txhash</0> diberikan dengan cara sama yang kamu lakukan diatas. Memberikanmu tebakan kata yang salah, ini akan menambah jumlah tebakan akun Bob.
 
-We can verify this by querying the list:
+Kita dapat memverifikasi ini dengan daftar query:
 
 ```sh
 wordled q wordle list-guess --output json
 ```
 
-This outputs all Guess objects submitted so far, with the index being today’s date and the address of the submitter.
+Ini hasil semua objek tebakan yang dikirim sampai saat ini, dengan indeks berwujud tanggal hari dan alamat pengirim.
 
-With that, we implemented a basic example of Wordle using Cosmos-SDK and Ignite and Rollmint. Read on to how you can extend the code base.
+Dengan itu, kita mengimplementasikan contoh dasar dari Wordle menggunakan Cosmos_SDK dan Ignite dan Rollmint. Baca lebih lanjut bagaimana kamu dapat memperluas basis kode.
 
-## Extending in the Future
+## Perluasan dimasa depan
 
-You can extend the codebase and improve this tutorial by checking out the repository [here](https://github.com/celestiaorg/wordle).
+Kamu dapat memperluas basis data dan meningkatkan tata cara ini dengan memeriksa repositori yang ada [disini](https://github.com/celestiaorg/wordle).
 
-There are many ways this codebase can be extended:
+Disana banyak cara kode basis ini dapat diperluas:
 
-1. You can improve messaging around when you guess the correct word.
-2. You can hash the word prior to submitting it to the chain, ensuring the hashing is local so that it’s not revealed via front-running by others monitoring the plaintext string when it’s submitted on-chain.
-3. You can improve the UI in terminal using a nice interface for Wordle. Some examples are [here](https://github.com/nimblebun/wordle-cli).
-4. You can improve current date to stick to a specific timezone.
-5. You can create a bot that submits a wordle every day at a specific time.
-6. You can create a vue.js front-end with Ignite using example open-source repositories [here](https://github.com/yyx990803/vue-wordle) and [here](https://github.com/xudafeng/wordle).
+1. Kamu dapat meningkatkan perpesanan antara dimana kamu menebak kata yang benar.
+2. Kamu dapat hash kata utama untuk dikirim ke chain, pastikan hashing secara lokal jadi itu tidak akan terbuka melalui front yang berjalan dengan pemantau string teks biasa lainnya ketika itu dikirim ke chain.
+3. Kamu dapat meningkatkan UI di terminal mengunakan tata letak yang bagus untuk Wordle. Beberapa contoh [disini](https://github.com/nimblebun/wordle-cli).
+4. Kamu dapat meningkatkan tanggal saat ini untuk menetapkan zona waktu spesifik.
+5. Kamu dapat membuat bot yang mengirim wordle setiap hari di jam tertentu.
+6. Kamu dapat membuat vue.js front-end dengan Ignite menggunakan repositori open-source contoh [disini](https://github.com/yyx990803/vue-wordle) dan [disini](https://github.com/xudafeng/wordle).
