@@ -31,42 +31,42 @@ rm "go$ver.darwin-arm64.tar.gz"
 Añade el directorio `/usr/local/go/bin` a [establece correctamente tus variables $PATH](https://go.dev/doc/gopath_code#GOPATH):
 
 ```bash
-# If using bash
+# Si usas bash
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-# If using zsh
+# Si usas zsh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.zshrc
 source $HOME/.zshrc
 ```
 
-To check if Go was installed correctly run:
+Para comprobar si Go fue instalado correctamente ejecuta el comando:
 
 ```bash
 go version
 ```
 
-The output should be the version installed:
+El resultado debe ser la versión instalada:
 
 ```bash
 go version go1.18.2 darwin/arm64
 ```
 
-## 🔥 Install Ignite CLI
+## 🔥 Instalar Ignite CLI
 
-First, you will need to create `/usr/local/bin` if you have not already:
+Primero, necesitarás crear `/usr/local/bin` si aún no lo tienes:
 
 ```bash
 sudo mkdir -p -m 775 /usr/local/bin
 ```
 
-Run this command in your terminal to install Ignite CLI:
+Ejecuta este comando en tu terminal para instalar Ignite CLI:
 
 ```bash
 curl https://get.ignite.com/cli! | bash
 ```
 
-> ✋ On some machines, you may run into permissions errors like the one below. You can resolve this error by following the guidance [here](https://docs.ignite.com/guide/install#write-permission) and below.
+> ✋ En algunas máquinas, se pueden encontrar errores de permisos como el de abajo. Puedes resolver este error siguiendo la guía [aquí](https://docs.ignite.com/guide/install#write-permission) y abajo.
 
 ```bash
 # Error
@@ -82,13 +82,13 @@ Installing ignite v0.24.0.....
 jcs @ ~ %
 ```
 
-The following command should resolve the permissions error:
+El siguiente comando debe resolver el error de permisos:
 
 ```bash
 sudo curl https://get.ignite.com/cli! | sudo bash
 ```
 
-A successful installation will return something similar the response below:
+Una instalación exitosa devolverá algo similar a la siguiente respuesta:
 
 ```bash
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -99,13 +99,13 @@ Installing ignite v0.22.2.....
 Installed at /usr/local/bin/ignite
 ```
 
-Verify you’ve installed Ignite CLI by running:
+Verifica que has instalado Ignite CLI ejecutando:
 
 ```bash
 ignite version
 ```
 
-The response that you receive should look something like this:
+La respuesta que recibas debería ser algo así:
 
 <!-- markdownlint-disable MD010 -->
 <!-- markdownlint-disable MD013 -->
@@ -124,15 +124,15 @@ Is on Gitpod:       false
 <!-- markdownlint-enable MD013 -->
 <!-- markdownlint-enable MD010 -->
 
-## 🍺 Install Homebrew
+## 🍺 Instalar Homebrew
 
-Homebrew will allow us to install dependencies for our Mac:
+Homebrew nos permitirá instalar dependencias para nuestro Mac:
 
 ```jsx
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Be sure to run the commands similar to the output below from the successful installation:
+Asegúrate de ejecutar los comandos similares a la salida de abajo después de que la instalación haya sido exitosa:
 
 ```jsx
 ==> Next steps:
@@ -142,9 +142,9 @@ Be sure to run the commands similar to the output below from the successful inst
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-## 🏃 Install wget and jq
+## 🏃 Instalar wget y jq
 
-wget is an Internet file retriever and jq is a lightweight and flexible command-line JSON processor.
+wget es un recuperador de archivos de Internet y jq es un procesador de JSON flexible y ligero de línea de comandos.
 
 ```bash
 brew install wget && brew install jq
