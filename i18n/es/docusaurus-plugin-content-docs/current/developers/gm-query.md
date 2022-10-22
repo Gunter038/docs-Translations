@@ -1,37 +1,37 @@
 ---
-sidebar_label: Query your Rollup
+sidebar_label: Consultar tu Rollup
 ---
 
-# 💬 Say “gm world!”
+# 💬 Di “¡hola mundo!”
 
-Now, we’re going to get our blockchain to say `gm world` and in order to do so we need to make the following changes:
+Ahora, vamos a hacer que nuestra blockchain diga `¡Hola mundo!` y para ello necesitamos hacer los siguientes cambios:
 
-- Modify a protocol buffer file
-- Create a keeper query function that returns data
-- Register a query function
+- Modificar un archivo búfer de protocolo
+- Crear una función de consulta keeper que devuelva datos
+- Registrar una función de consulta
 
-Protocol buffer files contain proto RPC calls that define Cosmos SDK queries and message handlers, and proto messages that define Cosmos SDK types. The RPC calls are also responsible for exposing an HTTP API.
+Los archivos de búfer de protocolo contienen llamadas proto RPC que definen consultas SDK de Cosmos y manejadores de mensajes, y mensajes proto que definen tipos de SDK de Cosmos. Las llamadas RPC también son responsables de exponer una API HTTP.
 
-The Keeper is required for each Cosmos SDK module and is an abstraction for modifying the state of the blockchain. Keeper functions allow you to query or write to the state. After you add a query to your chain, you need to register the query. You’ll only need to register a query once.
+El Keeper es requerido para cada módulo Cosmos SDK y es una abstracción para modificar el estado de la blockchain. Las funciones de Keeper te permiten consultar o escribir el estado. Después de agregar una consulta a tu cadena, necesitas registrar la consulta. Sólo tendrás que registrar una consulta una vez.
 
-The typical Cosmos blockchain developer workflow looks something like this:
+El típico flujo de trabajo del desarrollador de blockchain de Cosmos es algo así:
 
-- Start with proto files to define Cosmos SDK [messages](https://docs.cosmos.network/master/building-modules/msg-services.html)
-- Define and register [queries](https://docs.cosmos.network/master/building-modules/query-services.html)
-- Define message handler logic
-- Finally, implement the logic of these queries and message handlers in keeper functions
+- Comienza con los archivos prototipo para definir [mensajes](https://docs.cosmos.network/master/building-modules/msg-services.html) Cosmos SDK
+- Definir y registrar [consultas](https://docs.cosmos.network/master/building-modules/query-services.html)
+- Definir la lógica del manejador de mensajes
+- Finalmente, implementar la lógica de estas consultas y manejadores de mensajes en las funciones del keeper
 
-## ✋ Create your first query
+## ✋ Crea tu primera consulta
 
-**For this part of the tutorial, open a new terminal window that is not the same that you started the chain in.**
+**Para esta parte del tutorial, abre una nueva ventana de terminal que no sea la misma en la que iniciaste la cadena.**
 
-In your new terminal, `cd` into the `gm` directory and run this command to create the `gm` query:
+En tu nuevo terminal, `cd` en el directorio `gm` y ejecuta este comando para crear la consulta `gm`:
 
 ```bash
 ignite scaffold query gm --response text
 ```
 
-Response:
+Respuesta:
 
 ```bash
 modify proto/gm/query.proto
@@ -39,12 +39,12 @@ modify x/gm/client/cli/query.go
 create x/gm/client/cli/query_gm.go
 create x/gm/keeper/grpc_query_gm.go
 
-🎉 Created a query `gm`.
+🎉 Creada una consulta `gm`.
 ```
 
-What just happened? `query` accepts the name of the query (`gm`), an optional list of request parameters (empty in this tutorial), and an optional comma-separated list of response field with a `--response` flag (`text` in this tutorial).
+¿Qué ha pasado? `query` acepta el nombre de la consulta (`gm`), una lista opcional de parámetros de solicitud (vacía en este tutorial), y una lista opcional separada por comas de campos de respuesta con una bandera `--response` (`text` en este tutorial).
 
-Navigate to the `proto/gm/query.proto` file, you’ll see that `Gm` RPC has been added to the `Query` service:
+Ve al archivo `proto/gm/query.proto`, verás que `Gm` RPC ha sido añadido al servicio `Query`:
 
 <!-- markdownlint-disable MD010 -->
 <!-- markdownlint-disable MD013 -->
@@ -61,19 +61,19 @@ service Query {
 <!-- markdownlint-enable MD013 -->
 <!-- markdownlint-enable MD010 -->
 
-The `Gm` RPC for the `Query` service:
+El `Gm` RPC para el servicio `Query`:
 
-- is responsible for returning a `text` string
-- Accepts request parameters (`QueryGmRequest`)
-- Returns response of type `QueryGmResponse`
-- The `option` defines the endpoint that is used by gRPC to generate an HTTP API
+- es responsable de devolver una `cadena de texto`
+- Acepta los parámetros de la solicitud (`QueryGmRequest`)
+- Devuelve la respuesta del tipo `QueryGmResponse`
+- `option` define el endpoint que utiliza gRPC para generar una API HTTP
 
-## 📨 Query request and response types
+## 📨 Tipos de solicitud y respuesta
 
-In the same file, we will find:
+En el mismo archivo, encontraremos:
 
-- `QueryGmRequest` is empty because it does not require parameters
-- `QueryGmResponse` contains `text` that is returned from the chain
+- `QueryGmRequest` está vacío porque no requiere parámetros
+- `QueryGmResponse` contiene `texto` que se devuelve desde la cadena
 
 ```protobuf
 message QueryGmRequest {
@@ -84,9 +84,9 @@ message QueryGmResponse {
 }
 ```
 
-## 👋 Gm keeper function
+## 👋 Función Gm keeper
 
-The `x/gm/keeper/grpc_query_gm.go` file contains the `Gm` keeper function that handles the query and returns data.
+El archivo `x/gm/keeper/grpc_query_gm.go` contiene la función keeper de `Gm` que gestiona la consulta y devuelve datos.
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD010 -->
