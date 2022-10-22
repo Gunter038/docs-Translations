@@ -1,42 +1,42 @@
 ---
-sidebar_label: Contract Interaction
+sidebar_label: Interaction de Contrat
 ---
 
-# Contract Interaction on CosmWasm with Celestia
+# Interaction de contrat avec Celestia sur CosmWasm
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
+Dans les étapes précédentes, nous avons stocké le hash de la transaction du contrat dans un environnement variable pour un usage ultérieur.
 
-Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
+À cause des périodes plus longues de soumission des transactions via Rollmint en raison de l'attente de la couche de disponibilité des données de Celestia pour confirmer l'inclusion du bloc, nous devrons interroger directement notre hachage tx pour obtenir des informations à ce sujet.
 
-## Contract Querying
+## Interrogation du contrat
 
-Let's start by querying our transaction hash for its code ID:
+Commençons par questionner notre hash de transaction pour son code d'identification:
 
 ```sh
 CODE_ID=$(wasmd query tx --type=hash $TX_HASH $NODE --output json | jq -r '.logs[0].events[-1].attributes[0].value')
 echo $CODE_ID
 ```
 
-This will give us back the Code ID of the deployed contract.
+Cela va nous retourner le code d'identification du contrat déployé.
 
-In our case, since it's the first contract deployed on our local network, the value is `1`.
+Dans notre cas, puisque c'est le premier contrat déployé sur notre réseau local, la valeur est `1`.
 
-Now, we can take a look at the contracts instantiated by this Code ID:
+Maintenant, nous pouvons jeter un œil aux contrats générés par ce code d'identification :
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 ```
 
-We get the following output:
+Nous obtenons la sortie suivante :
 
 ```json
 {"contracts":[],"pagination":{"next_key":null,"total":"0"}}
 ```
 
-## Contract Instantiation
+## Instanciation du contrat
 
-We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
+Nous commençons à instancier le contrat en écrivant le message `INIT` pour le contrat nameservice. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
