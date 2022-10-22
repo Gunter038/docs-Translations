@@ -1,10 +1,10 @@
 ---
-sidebar_label: Run a Light Node
+sidebar_label: Ejecuta un Light Node
 ---
 
-# 🪶 Run a Celestia DA Light Node
+# 🪶 Ejecutar un DA Light Node de Celestia
 
-A Celestia Light Node on the Mamaki Testnet is required to complete this tutorial. Run the following commands to install Celestia-Node:
+Se requiere un Light Node de Celestia en Mamaki Testnet para completar este tutorial. Ejecuta el siguiente comando para instalar el Celestia-Node:
 
 <!-- markdownlint-disable MD010 -->
 ```bash
@@ -18,17 +18,17 @@ make install
 
 ![1.png](/img/gm/1.png)
 
-Inside the celestia-node repository is a utility named `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general.
+Dentro del repositorio de celestia-node se encuentra una utilidad llamada `cel-key` que usa la utilidad key proporcionada por Cosmos-SDK bajo el capó. La utilidad puede ser usada para `add`, `delete`, y administrar las claves para cualquier nodo DA tipo `(bridge || full || light)`, o simplemente claves en general.
 
-## 🗝 Create a key
+## 🗝 Crear una clave
 
-Create your key for the node:
+Crea tu clave para el nodo:
 
 ```bash
 make cel-key
 ```
 
-Verify the version of your Celestia-Node with the `celestia version` command, it should be `v0.3.0-rc2`:
+Verifica la versión de tu Celestia-Node con el comando `celestia version`, debería ser `v0.3.0-rc2`:
 
 ```bash
 celestia version
@@ -44,15 +44,15 @@ celestia version
 #Golang version: go1.18.2
 ```
 
-## 🟢 Initialize Light Node
+## 🟢 Inicializar el light node
 
-Now, we’re ready to initialize the Celestia Light Node. You can do so by running:
+Ahora estamos listos para inicializar el Light Node de Celestia. Puedes hacerlo ejecutando:
 
 ```bash
 celestia light init
 ```
 
-Query our key's address using `cel-key` :
+Consulta la dirección de nuestra clave usando `cel-key`:
 
 ```bash
 ./cel-key list --node.type light --keyring-backend test
@@ -60,15 +60,15 @@ Query our key's address using `cel-key` :
 
 ![2.png](/img/gm/2.png)
 
-## 🚰 Visit Faucet
+## 🚰 Visita el Faucet
 
-Use the `#mamaki-faucet` channel in the Celestia Discord to request testnet tokens:
+Usa el canal `#mamaki-faucet` en el Discord de Celestia para solicitar tokens de testnet:
 
 ```bash
 $request <Wallet-Address>
 ```
 
-Start Celestia Light node with a connection to a public Core Endpoint:
+Iniciar el Light node de Celestia con una conexión a un Core Endpoint público:
 
 <!-- markdownlint-disable MD013 -->
 ```bash
@@ -78,16 +78,16 @@ celestia light start --core.grpc https://rpc-mamaki.pops.one:9090 --keyring.accn
 
 ![3.png](/img/gm/3.png)
 
-In another terminal window, check the balance from our visit to the faucet:
+En otra ventana de terminal, comprueba el saldo de nuestra visita al faucet:
 
 ```bash
 curl -X GET http://localhost:26658/balance
 ```
 
-Your response should look like this, denominated in `utia` in JSON format.
+Tu respuesta debería verse así, denominada en `utia` en formato JSON.
 
 ```bash
 {"denom":"utia","amount":"100000000"}
 ```
 
-Now that we are set with Go and Ignite CLI installed, and our Celestia Light Node running on our machine, we’re ready to build, test, and launch our own sovereign rollup.
+Ahora que estamos preparados con Go e Ignite CLI instalado, y nuestro Light Node de Celestia funcionando en nuestra máquina, estamos listos para construir, probar y lanzar nuestro propio rollup soberano.
