@@ -69,4 +69,4 @@ NAME_QUERY='{"resolve_record": {"name": "fred"}}'
 wasmd query wasm contract-state smart $CONTRACT "$NAME_QUERY" $NODE --output json
 ```
 
-With that, we have instantiated and interacted with the CosmWasm nameservice smart contract using Celestia!
+Grâce à cela, nous avons généré des exemples et interagi avec le contrat intelligent du nom de domaine CosmWasm en utilisant Celestia !
