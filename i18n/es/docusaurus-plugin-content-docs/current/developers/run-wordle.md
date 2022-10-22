@@ -1,25 +1,23 @@
 ---
-sidebar_label: Run The Wordle Chain
+sidebar_label: Ejecutar la cadena Wordle
 ---
 
-# Run the Wordle Chain
+# Ejecutar la cadena Wordle
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## Construir y ejecutar la cadena Wordle
 
-In one terminal window, run the following command:
+Abre una nueva terminal y ejecuta los siguientes comandos:
 
 ```sh
 ignite chain serve 
 ```
 
-This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
+Esto compilará el código de la blockchain que acabas de escribir y también creará un archivo génesis y algunas cuentas para que utilices. Una vez que el registro muestra algo como el siguiente log de la salida:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
 Cosmos SDK's version is: stargate - v0.45.5
-
-🛠️  Building proto...
 📦 Installing dependencies...
 🛠️  Building the blockchain...
 💿 Initializing the app...
