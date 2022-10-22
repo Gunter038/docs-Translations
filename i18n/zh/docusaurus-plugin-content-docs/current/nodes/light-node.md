@@ -8,57 +8,57 @@ sidebar_label: Light Node
 
 > 要查看设置 Celestia 轻节点的视频教程，请单击[此处](../developers/light-node-video.md)
 
-## Overview of light nodes
+## 轻节点概述
 
-Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
+轻节点确保数据的可用性。 这是与 Celestia 网络交互的最常见方式。
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light nodes have the following behavior:
+轻节点具备以下行为：
 
-1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
-2. They perform data availability sampling (DAS) on the received headers
+1. 他们监听 ExtendedHeaders，即包装的“原始”区块头，通知 Celestia 节点新的区块头和相关的 DA 元数据。
+2. 他们对接收到的区块头执行数据可用性采样 (DAS)
 
-## Hardware requirements
+## 硬件要求
 
-The following minimum hardware requirements are recommended for running a light node:
+运行轻节点建议满足以下最低硬件要求：
 
-* Memory: 2 GB RAM
-* CPU: Single Core
-* Disk: 5 GB SSD Storage
-* Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+* 内存：2 GB RAM
+* CPU：单核
+* 磁盘：5 GB SSD 存储
+* 带宽：56 Kbps 下载/56 Kbps 上传
 
-## Setting up your light node
+## 设置你的轻节点
 
-This tutorial was performed on an Ubuntu Linux 20.04 (LTS) x64 instance machine.
+本教程在 Ubuntu Linux 20.04 (LTS) x64 实例机器上执行。
 
-### Setup the dependencies
+### 设置依赖项
 
-First, make sure to update and upgrade the OS:
+首先，确认更新和升级操作系统：
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用的是 APT 包管理器
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
-sudo yum update
+# 如果你使用的是 YUM 软件包管理器
+ sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+这些是执行多项任务（如下载文件、编译和监控节点）所必需的基本软件包：
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用的是 APT 软件包管理器
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 
-# If you are using the YUM package manager
+# 如果你使用的是 YUM 软件包管理器
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential \
 git make ncdu -y
 ```
 
-### Install Golang
+### 安装 Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app 和 celestia-node 都是用 [Golang](https://go.dev/) 编写的，所以我们必须 安装 Golang 来构建和运行它们。
 
 ```sh
 ver="1.19.1"
@@ -69,26 +69,26 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+现在我们需要将 `/usr/local/go/bin` 目录添加到 `$PATH` 中：
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+要检查 Go 是否安装正确，请运行：
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+输出应该是已安装的版本：
 
 ```sh
-go version go1.19.1 linux/amd64
+跳转版本 go1.19.1 linux/amd64
 ```
 
-### Install Celestia node
+### 安装 Celestia 节点
 
 One thing to note here is deciding which version of celestia-node you wish to compile. Mamaki Testnet requires v0.3.0-rc2 and Arabica Devnet requires v0.3.0.
 
