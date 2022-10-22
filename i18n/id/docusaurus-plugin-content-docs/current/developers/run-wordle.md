@@ -44,15 +44,15 @@ Mohon pertimbangkan:
 
 Juga mohon dipertimbangkan:
 
-> PENTING: Selain itu, perintah diatas, kamu butuh tinggi block terakhir yang spesifik di Devnet Arabica untuk `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> PENTING: Selain itu, perintah diatas, kamu butuh tinggi block terakhir yang spesifik di Devnet Arabica untuk `da_height`. Kamu dapat menemukan nomor block terakhir di explorer [disini](https://explorer.celestia.observer/arabica). Juga, untuk bendera `--rollmint.namespace_id`, kamu dapat menghasilkan ID Namespace acak menggunakan permainan [disini](https://go.dev/play/p/7ltvaj8lhRl)
 
-In another window, run the following to submit a Wordle:
+Di window lainnya, jalankan berikut untuk mengirim Wordle:
 
 ```sh
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> NOTE: We are submitting a transaction asynchronously due to avoiding any timeout errors. With Rollmint as a replacement to Tendermint, we need to wait for Celestia's Data-Availability network to ensure a block was included from Wordle, before proceeding to the next block. Currently, in Rollmint, the single aggregator is not moving forward with the next block production as long as it is trying to submit the current block to the DA network. In the future, with leader selection, block production and sync logic improves dramatically.
+> CATATAN: Kita mengirim transaksi secara tidak sinkron yang disebabkan setiap kesalahan batas waktu. Dengan Rollmint sebagai pengganti Tendermint, kita butuh untuk menunggu jaringan Ketersediaan Data Celestia untuk memastikan block yang sudah masuk dalam Wordle, sebelum diproses ke block selanjutnya. Saat ini, di Rollmint, agregator tunggal tidak bergerak maju dengan produksi block selanjutnya selama percobaan pengiriman saat ini ke jaringan DA. In the future, with leader selection, block production and sync logic improves dramatically.
 
 This will ask you to confirm the transaction with the following message:
 
