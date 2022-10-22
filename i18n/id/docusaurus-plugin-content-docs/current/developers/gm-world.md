@@ -1,11 +1,11 @@
 ---
-sidebar_label: gm world Overview
+sidebar_label: gambaran Umum dunia gm
 ---
 
-# ☀️ Introduction
+# ☀️Pendahuluan
 
-In this tutorial, we will build a sovereign `gm world` rollup using rollmint and Celestia’s data availability and consensus layer to submit rollmint blocks.
+Dalam tutorial ini, kita akan membangun rollup `gm world` berdaulat menggunakan rollmint dan ketersediaan data Celestia dan lapisan konsensus untuk mengirimkan blok rollmint.
 
-This tutorial will cover setting up a Celestia Light Node, Ignite CLI, and building a Cosmos-SDK application-specific rollup blockchain on top of Celestia.
+Tutorial ini akan mencakup pengaturan Celestia Light Node, Ignite CLI, dan membangun blockchain rollup khusus aplikasi Cosmos-SDK di atas Celestia.
 
-The [Cosmos SDK](https://github.com/cosmos/cosmos-sdk) is a framework for building blockchain applications. The Cosmos Ecosystem uses [Inter-Blockchain Communication (IBC)](https://github.com/cosmos/ibc-go) to allow blockchains to communicate with one another.
+[Cosmos SDK](https://github.com/cosmos/cosmos-sdk) adalah kerangka kerja untuk membangun aplikasi blockchain. The Cosmos Ecosystem uses [Inter-Blockchain Communication (IBC)](https://github.com/cosmos/ibc-go) to allow blockchains to communicate with one another.
