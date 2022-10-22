@@ -1,5 +1,5 @@
 ---
-sidebar_label: Node Tutorial
+sidebar_label: Tutoriel sur les Nœuds
 ---
 
 # Recevoir et envoyer des transactions avec un nœud Celestia
@@ -18,11 +18,11 @@ La configuration matérielle minimum requise pour lancer un light node est la su
 - Mémoire : 2 Go de RAM
 - Processeur : Simple cœur
 - Disque dur : 5 Go de stockage SSD
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- Bande passante : 56 Kbps (7 Ko/s) en download / 56 Kbps (7 Ko/s) en upload
 
-## Setting Up Dependencies
+## Configuration des dépendances
 
-First, make sure to update and upgrade the OS:
+Tout d'abord, assurez-vous de mettre à jour et à niveau le système d'exploitation :
 
 ```sh
 # If you are using the APT package manager
