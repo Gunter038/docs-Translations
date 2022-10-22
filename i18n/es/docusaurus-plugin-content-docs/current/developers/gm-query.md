@@ -103,15 +103,15 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
 <!-- markdownlint-enable MD010 -->
 <!-- markdownlint-enable MD013 -->
 
-The `Gm` function performs the following actions:
+La función `Gm` realiza las siguientes acciones:
 
-- Makes a basic check on the request and throws an error if it’s `nil`
-- Stores context in a `ctx` variable that contains information about the environment of the request
-- Returns a response of type `QueryGmResponse`
+- Hace una comprobación básica de la solicitud y lanza un error si es `nil`
+- Almacena contexto en una variable `ctx` que contiene información sobre el entorno de la solicitud
+- Devuelve la respuesta del tipo `QueryGmResponse`
 
-Currently, the response is empty. Let’s update the keeper function.
+Actualmente, la respuesta está vacía. Actualicemos la función de mantenimiento.
 
-Our `query.proto` file defines that the response accepts `text`. Use your text editor to modify the keeper function in `x/gm/keeper/grpc_query_gm.go` .
+Nuestro archivo `query.proto` define que la respuesta acepta `texto`. Usa tu editor de texto para modificar la función keeper en `x/gm/keeper/grpc_query_gm.go`.
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD010 -->
@@ -122,30 +122,30 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
     }
     ctx := sdk.UnwrapSDKContext(goCtx)
     _ = ctx
-    return &types.QueryGmResponse{Text: "gm world!"}, nil
+    return &types.QueryGmResponse{Text: "¡Hola mundo!"}, nil
 }
 ```
 <!-- markdownlint-enable MD010 -->
 <!-- markdownlint-enable MD010 -->
 
-## 🟢 Start your Sovereign Rollup
+## 🟢 Comienza tu Rollup Soberano
 
 ```bash
 gmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"[http://localhost:26658](http://134.209.70.139:26658/)","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height 100783
 ```
 
-The `query` command has also scaffolded `x/gm/client/cli/query_gm.go` that implements a CLI equivalent of the gm query and mounted this command in `x/gm/client/cli/query.go`. Run the following command and get the following JSON response:
+El comando `query` tiene también la estructura `x/gm/client/cli/query_gm.go`que implementa una equivalencia CLI a la solicitud de gm y monta este comando en `x/gm/client/cli/query.go`. Ejecuta el siguiente comando y obtén la siguiente respuesta JSON:
 
 ```bash
 gmd q gm gm
 ```
 
-Response:
+Respuesta:
 
 ```bash
-text: gm world!
+texto: ¡Hola mundo!
 ```
 
 ![4.png](/img/gm/4.png)
 
-Congratulations 🎉 you've successfully built your first rollup and queried it!
+¡Enhorabuena 🎉 has construido con éxito tu primer rollup y lo has consultado!
