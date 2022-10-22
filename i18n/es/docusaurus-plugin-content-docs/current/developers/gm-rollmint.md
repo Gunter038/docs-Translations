@@ -1,18 +1,18 @@
 ---
-sidebar_label: Build a Sovereign Rollup
+sidebar_label: Construyendo un Rollup Soberano
 ---
 
-# 🗞 Building a Sovereign Rollup
+# 🗞Construyendo un Rollup Soberano
 
-The Ignite CLI comes with scaffolding commands to make development of blockchains quicker by creating everything that is needed to start a new Cosmos SDK blockchain.
+El CLI de Ignite viene con comandos de andamiaje para hacer que el desarrollo de blockchains sea más rápido creando todo lo necesario para iniciar una nueva blockchain de Cosmos SDK.
 
-Open a new tab or window in your terminal and run this command to scaffold your rollup:
+Abre una nueva pestaña o ventana en tu terminal y ejecuta este comando para andamiar el rollup:
 
 ```bash
 ignite scaffold chain gm
 ```
 
-The response will look similar to below:
+La respuesta se verá similar a la siguiente:
 
 ```bash
 jcs @ ~ % ignite scaffold chain gm
@@ -22,30 +22,28 @@ jcs @ ~ % ignite scaffold chain gm
 
  % cd gm
  % ignite chain serve
-
-Documentation: https://docs.ignite.com
 ```
 
-This command has created a Cosmos SDK blockchain in the `gm` directory. The `gm` directory contains a fully functional blockchain. The following standard Cosmos SDK [modules](https://docs.cosmos.network/master/modules/) have been imported:
+Este comando ha creado una blockchain de Cosmos SDK en el directorio `gm`. El directorio `gm` contiene una blockchain completamente funcional. Los siguientes [módulos](https://docs.cosmos.network/master/modules/) de estándares Cosmos SDK han sido importados:
 
-- `staking` - for delegated Proof-of-Stake (PoS) consensus mechanism
-- `bank` - for fungible token transfers between accounts
-- `gov` - for on-chain governance
-- `mint` - for minting new units of staking token
-- `nft` - for creating, transferring, and updating NFTs
-- and [more](https://docs.cosmos.network/master/architecture/adr-043-nft-module.html)
+- `staking` - para mecanismo de consenso delegado de Proof-of-Stake (PoS)
+- `bank` - para transferencias de tokens fungibles entre cuentas
+- `gov` - para la gobernanza on-chain
+- `mint` - para mintear nuevas unidades de token de staking
+- `nft` - para crear, transferir y actualizar NFTs
+- y [más](https://docs.cosmos.network/master/architecture/adr-043-nft-module.html)
 
-Change to the `gm` directory:
+Cambiar al directorio `gm`:
 
 ```bash
 cd gm
 ```
 
-You can learn more about the `gm` directory’s file structure [here](https://docs.ignite.com/guide/hello#blockchain-directory-structure). Most of our work in this tutorial will happen in the `x` directory.
+Puedes aprender más sobre la estructura de archivos del directorio `gm` [aquí](https://docs.ignite.com/guide/hello#blockchain-directory-structure). La mayor parte del trabajo del tutorial se desarrollará dentro del directorio `x`.
 
-## 💎 Installing Rollmint
+## 💎Instalando Rollmint
 
-To swap out Tendermint for Rollmint, run the following command:
+Para cambiar Tendermint por Rollmint, ejecuta el siguiente comando:
 
 ```bash
 go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
@@ -53,20 +51,20 @@ go mod tidy
 go mod download
 ```
 
-## 🎬 Starting the blockchain
+## 🎬 Iniciando la blockchain
 
-Now that we have our fully-functional rollup scaffolded, we can start our chain on our machine by running this command in the `gm` directory:
+Ahora que tenemos nuestro andamio desplegablo y totalmente funcional, podemos iniciar nuestra cadena en nuestra máquina ejecutando este comando en el directorio `gm`:
 
 ```bash
 ignite chain serve
 ```
 
-The response in your terminal will look similar to below:
+La respuesta se verá similar a la siguiente:
 
 ```bash
-Cosmos SDK's version is: stargate - v0.46.1
+La versión de Cosmos SDK es: stargate - v0.46.1
 
-🛠️  Building proto...
+🛠️ Building proto...
 📦 Installing dependencies...
 🛠️  Building the blockchain...
 💿 Initializing the app...
@@ -85,8 +83,8 @@ learn wool"
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-The `ignite chain serve` command downloads dependencies and compiles the source code into a binary called `gmd` (repo + `d`). From now on, you will use `gmd` to run all of your chain commands.
+El comando `ignite chain serve` descarga las dependencias y compila el código fuente en un binario llamado `gmd` (repo + `d`). A partir de ahora, usarás `gmd` para ejecutar todos los comandos de cadena.
 
-### 🛑 Stopping your blockchain
+### 🛑 Deteniendo tu blockchain
 
-To stop your blockchain, press `Ctrl + C` in the terminal window where it is running. We’re ready to prepare our first Sovereign Rollup query and connect to Celestia’s DA layer.
+Para detener tu blockchain, pulsa `Ctrl + C` en la ventana de terminal donde está ejecutándose. Estamos listos para preparar nuestra primera consulta de Rollup Soberano y conectar a la capa DA de Celestia.
