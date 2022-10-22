@@ -38,7 +38,7 @@ wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend tes
 
 Con esto, hemos creado un archivo de génesis de red local.
 
-Algunos comandos útiles más que podemos configurar:
+Más comandos útiles que podemos configurar:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -49,7 +49,7 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 
 ## Iniciando la red Wasmd
 
-Podemos ejecutar lo siguiente para iniciar la red de `wasmd`:
+Podemos ejecutar lo siguiente para iniciar la red `wasmd`:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
