@@ -1,19 +1,19 @@
 ---
-sidebar_label: Run The Wordle Chain
+sidebar_label: Jalankan Chain Wordle
 ---
 
-# Run the Wordle Chain
+# Jalankan Chain Wordle
 <!-- markdownlint-disable MD013 -->
 
-## Building and Running Wordle Chain
+## Bangun dan Jalankan Chain Wordle
 
-In one terminal window, run the following command:
+Di windows terminal, jalankan perintah berikut:
 
 ```sh
 ignite chain serve 
 ```
 
-This will compile the blockchain code you just wrote and also create a genesis file and some accounts for you to use. Once the log shows something like the following log in the output:
+Ini akan menyatukan kode blockchain kamu hanya menulis dan juga membuat file genesis dan beberapa akun untuk kamu gunakan. Sesudah log menampilkan yang keluar seperti log berikut:
 
 ```sh
 root@yaz-workshop:~/wordle# ignite chain serve
