@@ -30,21 +30,21 @@ Cosmos SDK's version is: stargate - v0.45.5
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-Here the command created a binary called `wordled` and the `alice` and `bob` addresses, along with a faucet and API. You are clear to exit the program with CTRL-C. The reason for that is because we will run `wordled` binary separately with Rollmint flags added.
+Disini perintah dibuat binary yang disebut `wordled` dan alamat `alice` and `bob`, serta dengan faucet dan API. Pastikan kamu menutup program dengan CTRL-C. Alasannya untuk itu karena kita akan menjalankan binary `wordled` secara terpisah dengan bendera Rollmint yang ditambahkan.
 
-You can start the chain with rollmint configurations by running the following:
+Kamu dapat memulai chain dari konfigurasi rollmint dengan menjalankan berikut:
 
 ```sh
 wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://XXX.XXX.XXX.XXX:26658","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height XXXXX
 ```
 
-Please consider:
+Mohon pertimbangkan:
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> CATATAN: Perintah diatas, kamu membutuhkan melewati alamat IP Node Celestia untuk `base_url` akun yang telah dimiliki dengan token devnet Arabica. Ikuti tata cara untuk mengatur Node Light Celestia dan membuat dompet dengan uang faucet testnet [disini](./node-tutorial.md) dalam pilihan Node Celestia.
 
-Also please consider:
+Juga mohon dipertimbangkan:
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> PENTING: Selain itu, perintah diatas, kamu butuh tinggi block terakhir yang spesifik di Devnet Arabica untuk `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
 
 In another window, run the following to submit a Wordle:
 
