@@ -43,9 +43,9 @@ INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amou
 wasmd tx wasm instantiate $CODE_ID "$INIT" --from $KEY_NAME --keyring-backend test --label "name service" $TXFLAG -y --no-admin
 ```
 
-## Contract Interaction
+## Interaction avec le contrat
 
-Now that we instantiated it, we can interact further with the contract:
+Maintenant que nous l'avons instancié, nous pouvons interagir davantage avec le contrat :
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
@@ -56,9 +56,9 @@ wasmd query wasm contract $CONTRACT $NODE
 wasmd query bank balances $CONTRACT $NODE
 ```
 
-This allows us to see the contract address, contract details, and bank balances.
+Cela nous permet de voir l'adresse du contrat, les détails de celui-ci et des soldes bancaires.
 
-Now, let's register a name to the contract for our wallet address:
+Maintenant, inscrivons un nom au contrat de notre adresse de portefeuille :
 
 ```sh
 REGISTER='{"register":{"name":"fred"}}'
