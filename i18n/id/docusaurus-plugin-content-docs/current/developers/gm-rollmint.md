@@ -1,18 +1,18 @@
 ---
-sidebar_label: Build a Sovereign Rollup
+sidebar_label: Bangun Sovereign Rollup
 ---
 
-# 🗞 Building a Sovereign Rollup
+# 🗞 Membangun Sovereign Rollup
 
-The Ignite CLI comes with scaffolding commands to make development of blockchains quicker by creating everything that is needed to start a new Cosmos SDK blockchain.
+Ignite CLI datang dengan peerintah scaffolding untuk membuat pengembangan dari blockchain lebih cepat dengan membuat semua yang dibutuhkan untuk memulai sebuah blockchain Cosmos SDK baru.
 
-Open a new tab or window in your terminal and run this command to scaffold your rollup:
+Buka tab baru atau windows di terminalmu dan jalankan perintah ini ke scaffold rollupmu:
 
 ```bash
 ignite scaffold chain gm
 ```
 
-The response will look similar to below:
+Respon akan seperti dibawah ini:
 
 ```bash
 jcs @ ~ % ignite scaffold chain gm
@@ -26,26 +26,26 @@ jcs @ ~ % ignite scaffold chain gm
 Documentation: https://docs.ignite.com
 ```
 
-This command has created a Cosmos SDK blockchain in the `gm` directory. The `gm` directory contains a fully functional blockchain. The following standard Cosmos SDK [modules](https://docs.cosmos.network/master/modules/) have been imported:
+Perintah ini telah membuat blockchain Cosmos SDK di direktori `gm`. Direktori `gm` mengandung blockchain yang sepenuhnya berfungsi. Berikut standar [modul](https://docs.cosmos.network/master/modules/) Cosmos SDK yang telah diimpor:
 
-- `staking` - for delegated Proof-of-Stake (PoS) consensus mechanism
-- `bank` - for fungible token transfers between accounts
-- `gov` - for on-chain governance
-- `mint` - for minting new units of staking token
-- `nft` - for creating, transferring, and updating NFTs
-- and [more](https://docs.cosmos.network/master/architecture/adr-043-nft-module.html)
+- `staking` - untuk delegasi konsensus mekanisme Proof-of-Stake (PoS)
+- `bank` - untuk transfer token yang berfungsi antara akun
+- `gov` - untuk governance di chain
+- `mint` - untuk mencetak unit baru dari token staking
+- `nft` - untuk membuat, mentransfer, dan memperbarui NFT
+- dan [lebih banyak lagi](https://docs.cosmos.network/master/architecture/adr-043-nft-module.html)
 
-Change to the `gm` directory:
+Ubah direktori `gm`:
 
 ```bash
 cd gm
 ```
 
-You can learn more about the `gm` directory’s file structure [here](https://docs.ignite.com/guide/hello#blockchain-directory-structure). Most of our work in this tutorial will happen in the `x` directory.
+Kamu dapat belajar lebih lanjut tentang stuktur file direktori `gm` [disini](https://docs.ignite.com/guide/hello#blockchain-directory-structure). Sebagian besar kami kerjakan dalam tata cara ini yang akan muncul di direktori `x`.
 
-## 💎 Installing Rollmint
+## 💎 Instalasi Rollmint
 
-To swap out Tendermint for Rollmint, run the following command:
+Untuk berpindah Tendermint ke Rollmint, Jalankan perintah berikut:
 
 ```bash
 go mod edit -replace github.com/cosmos/cosmos-sdk=github.com/celestiaorg/cosmos-sdk-rollmint@v0.46.1-rollmint-v0.4.0
@@ -53,15 +53,15 @@ go mod tidy
 go mod download
 ```
 
-## 🎬 Starting the blockchain
+## 🎬 Memulai blockchain
 
-Now that we have our fully-functional rollup scaffolded, we can start our chain on our machine by running this command in the `gm` directory:
+Sekarang kita memiliki scaffolded rollup yang berfunsi sepenuhnya, kita dapat memulai chain kita pada mesin kita dengan menjalankan perintah ini dalam direktori `gm`:
 
 ```bash
 ignite chain serve
 ```
 
-The response in your terminal will look similar to below:
+Respon di terminalmu akan seperti dibawah ini:
 
 ```bash
 Cosmos SDK's version is: stargate - v0.46.1
@@ -85,8 +85,8 @@ learn wool"
 🌍 Token faucet: http://0.0.0.0:4500
 ```
 
-The `ignite chain serve` command downloads dependencies and compiles the source code into a binary called `gmd` (repo + `d`). From now on, you will use `gmd` to run all of your chain commands.
+Perintah `ignite chain serve` menggunduh dependensi dan menyatukan source code kedalam binary yang disebut `gmd` (repo + `d`). Mulai sekarang, kamu akan menggunakan `gmd` untuk menjalankan semua perintah chainmu.
 
-### 🛑 Stopping your blockchain
+### 🛑 Berhentikan blockchainmu
 
-To stop your blockchain, press `Ctrl + C` in the terminal window where it is running. We’re ready to prepare our first Sovereign Rollup query and connect to Celestia’s DA layer.
+Untuk memberhentikan blockchainmu, tekan `Ctrl + C` di window terminal yang mana sedang berjalan. Kita siap untuk mempersiapkan query Sovereign Rollup pertama kita dan menghubungkan ke layer Ketersediaan Data Celestia (DA).
