@@ -18,7 +18,7 @@ CosmWasm是一个为Comos生态搭建的智能合约平台，通过运用WebAsse
 * [部署一个Rust的智能合约到CosmWasm链](./cosmwasm-contract-deployment.md)
 * [和智能合约交互](./cosmwasm-contract-interaction.md)
 
-我们本次教程使用的智能合约，是由CosmWasm团队为购买域名服务提供的。
+我们本次教程使用的智能合约，是由CosmWasm团队为Nameserive购买提供的。
 
 你可以在这里查看合约 [这里](https://github.com/InterWasm/cw-contracts/tree/main/contracts/nameservice)。
 
