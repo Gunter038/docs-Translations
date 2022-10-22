@@ -1,34 +1,34 @@
 ---
-sidebar_label: CosmWasm Dependencies
+sidebar_label: CosmWasm依赖
 ---
 
 # CosmWasm Dependency Installations
 
-## Environment Setup
+## 环境配置
 
-For this tutorial, we will be using `curl` and `jq` as helpful tools.
+在本教程中，我们会使用 `curl` 和 `jq` 作为有效工具。
 
-You can follow the guide on installing them [here](./environment.md#setting-up-dependencies).
+你可以按照这个指南进行安装 [这里](./environment.md#setting-up-dependencies).。
 
-## Golang Dependency
+## Golang依赖
 
-The Golang version used for this tutorial is v1.18+
+本教程使用的Golong版本是 v1.18+
 
-If you are using a Linux distribution, you can install Golang by following our tutorial [here](./environment.md#install-golang).
+如果你用的是Linux发行版，你可以通过关注我们教程来安装GoLang [这里](./environment.md#install-golang)。
 
-## Rust Installation
+## Rust安装
 
 ### Rustup
 
-First, before installing Rust, you would need to install `rustup`.
+首先，在安装Rust之前，你需要安装 `rustup`。
 
-On Mac/Linux systems, here are the commands for installing it:
+对于Mac/Linux系统，这里是它们的安装命令：
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-After installation, follow the commands here to setup Rust.
+安装之后，按这个命令来设置Rust。
 
 ```sh
 rustup default stable
@@ -38,7 +38,7 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
 
-## Docker Installation
+## Docker安装
 
 We will be using Docker later in this tutorial for compiling a smart contract to use a small footprint.
 
