@@ -1,5 +1,5 @@
 ---
-sidebar_label: Light Node
+sidebar_label: 轻节点
 ---
 
 # 设置 Celestia 轻节点
@@ -12,7 +12,7 @@ sidebar_label: Light Node
 
 轻节点确保数据的可用性。 这是与 Celestia 网络交互的最常见方式。
 
-![light-node](/img/nodes/LightNodes.png)
+![轻节点](/img/nodes/LightNodes.png)
 
 轻节点具备以下行为：
 
@@ -216,33 +216,33 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 
 只要你启动了轻节点，将会为你生成一个钱包密钥。 你需要用测试网代币为该地址注资，以支付PayForData交易。
 
-You can find the address by running the following command in the `celestia-node` directory:
+你可以通过在`celestia-node`目录中运行以下指令来找到地址：
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-You have two networks to get testnet tokens from:
+你有两个网络可以获得测试网代币：
 
 * [Arabica](./arabica-devnet.md#arabica-devnet-faucet)
 * [Mamaki](./mamaki-testnet.md#mamaki-testnet-faucet)
 
-> NOTE: If you are running a light node for your sovereign rollup, it is highly recommended to request Arabica devnet tokens as Arabica has the latest changes that can be used to test for developing your sovereign rollup. You can still use Mamaki Testnet as well, it is just used for Validator operations.
+> 注意：如果你正在为你的sovereign rollup运行一个轻节点，强烈建议你要求 Arabica开发网的代币，因为Arabica有最新版本，可以用于测试你开发的sovereign rollup。 你仍然可以使用 Mamaki 测试网，但它仅用于验证者操作。
 
-You can request funds to your wallet address using the following command in Discord:
+你可以在Discord中用以下指令向你的钱包地址要求资金：
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+当你创建钱包时，生成的地址`<Wallet-Address>`形如 `celestia1******` 。
 
-### Optional: run the light node with a custom key
+### 可选项：用自定义密钥运行轻节点
 
-In order to run a light node using a custom key:
+为了使用自定义密钥运行轻节点：
 
-1. The custom key must exist inside the celestia light node directory at the correct path (default: `~/.celestia-light/keys/keyring-test`)
-2. The name of the custom key must be passed upon `start`, like so:
+1. 自定义密钥必须以正确的路径存在celestia轻节点目录中 (default: `~/.celestia-light/keys/keyring-test`)
+2. 自定义密钥的名称必须以 `start`,，就像这样：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -250,10 +250,10 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Optional: start light node with SystemD
+### 可选项：以 SystemD 启动轻节点
 
-Follow the tutorial on setting up the light node as a background process with SystemD [here](./systemd.md#celestia-light-node).
+按照教程[这里](./systemd.md#celestia-light-node)，通过 SystemD设置轻节点作为后台进程 。
 
-## Data availability sampling (DAS)
+## 数据可用性采样 (DAS)
 
-With your light node running, you can check out this tutorial on submitting `PayForData` transactions [here](../developers/node-tutorial.md).
+随着你的轻节点的运行，你可以查看本教程提交的 `PayForData`交易，在 [这里](../developers/node-tutorial.md)。
