@@ -1,59 +1,59 @@
 ---
-sidebar_label: Wordle Overview
+sidebar_label: Resumen de Wordle
 ---
 
-# Wordle App on Rollmint
+# Wordle App en Rollmint
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+Esta guía de tutoriales irá construyendo una app cosmos-sdk para Rollmint, la implementación de Sovereign-Rollup de Tendermint, para el popular juego [Wordle](https://www. nytimes. com/games/wordle/index. html).
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
+Este tutorial explicará cómo configurar Rollmint en Ignite CLI y usarlo para construir el juego. El tutorial pasará por encima el diseño simple, y concluirá con futuras implementaciones e ideas para extender este código.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> NOTA: Este tutorial explorará el desarrollo con Rollmint, que todavía está en fase Alfa. Si te encuentras con errores, por favor escribe un ticket de Github Issue o háznoslo saber en nuestro Discord. Además, mientras que Optimint te permite crear rollups soberanos en Celestia, actualmente no soporta pruebas de fraude aún y está por lo tanto funcionando en modo "pesimista", donde los nodos necesitarían volver a ejecutar las transacciones para comprobar la validez de la cadena (p.e. un nodo completo). Además, Rollmint actualmente soporta un solo secuenciador.
 
-## Pre-requisites
+## Pre-requisitos
 
-Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
+Dado que este tutorial está dirigido a desarrolladores con experiencia en Cosmos-SDK, te recomendamos que revises los siguientes tutoriales en Ignite para entender todos los diferentes componentes de Cosmos-SDK antes de continuar con este tutorial.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
 * [Blog and Module Basics](https://docs.ignite.com/guide/blog)
-* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Tutorial de Nameservice](https://docs.ignite.com/guide/nameservice)
 * [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
+No tienes que hacer esas guías para seguir este tutorial de Wordle, pero haciéndolo te ayuda a entender mejor la arquitectura de Cosmos-SDK.
 
-## Design Implementation
+## Implementación de diseño
 
-The rules of Wordle are simple: You have to guess the word of the day.
+Las reglas de Wordle son simples: tienes que adivinar la palabra del día.
 
-Key Points to Consider:
+Puntos clave a considerar:
 
-* The word is a five-letter word.
-* You have 6 guesses.
-* Every 24 hours, there’s a new word.
+* La palabra es de cinco letras.
+* Tiene 6 suposiciones.
+* Cada 24 horas hay una nueva palabra.
 
-The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
+El GUI para Wordle te muestra algunos indicadores: un resaltado verde en una letra en una posición determinada significa que es la letra correcta para la Wordle en la posición correcta. Un resaltado amarillo significa que es una letra correcta para la palabra incluida en la posición incorrecta. Un resaltado gris significa que la letra no forma parte de la Palabra.
 
-For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
+Para la simplicidad del diseño, evitaremos esas pistas, aunque hay maneras de extender este código base para implementar eso, que mostraremos al final.
 
-In this current design, we implement the following rules:
+En este diseño actual, implementamos las siguientes reglas:
 
-* 1 Wordle can be submitted per day
-* Every address will have 6 tries to guess the word
-* It must be a five-letter word.
-* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
+* 1 Palabra puede ser enviada por día
+* Cada dirección tendrá 6 intentos de adivinar la palabra
+* Debe ser una palabra de cinco letras.
+* Quien adivine la palabra correctamente antes de que se acaben sus 6 intentos obtenga un premio de 100 tokens WORDLE.
 
-We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
+Analizaremos la arquitectura para lograr esto en la guía. Pero por ahora, empezaremos a configurar nuestro entorno de desarrollo.
 
-## Table of Contents For This Tutorial
+## Tabla de contenidos para este Tutorial
 
-The following tutorial is broken down into the following sections:
+El siguiente tutorial se divide en las siguientes secciones:
 
-1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
-2. [Installing Rollmint](./install-rollmint.md)
-3. [Modules](./wordle-module.md)
-4. [Messages](./wordle-messages.md)
-5. [Types](./wordle-types.md)
+1. [Ignite y Chain Scaffolding](./scaffold-wordle.md)
+2. [Instalando Rollmint](./install-rollmint.md)
+3. [Módulos](./wordle-module.md)
+4. [Mensajes](./wordle-messages.md)
+5. [Tipos](./wordle-types.md)
 6. [Keepers](./wordle-keeper.md)
-7. [Running Wordle](./run-wordle.md)
+7. [Ejecutando Wordle](./run-wordle.md)
