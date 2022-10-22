@@ -632,7 +632,7 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 
 Es posible que la cuenta desde la que estás intentando enviar un PayForData no tenga tokens de testnet todavía. Asegúrate de que el faucet de la testnet ha financiado tu cuenta con tokens y luego vuelve a intentarlo.
 
-### Get Namespaced Shares by Block Height
+### Consigue espacios de nombres compartidos por Block Height
 
 Después de enviar tu transacción PFD, una vez realizada con éxito, el nodo devolverá la altura del bloque para la cual se incluyó la transacción PFD. Entonces puedes usar la altura del bloque y el ID del espacio de nombres con el que enviaste tu transacción PFD para que los mensajes compartidos te sean devueltos. En este ejemplo, la altura del bloque que obtuvimos era de 589 que usaremos para el siguiente comando.
 
