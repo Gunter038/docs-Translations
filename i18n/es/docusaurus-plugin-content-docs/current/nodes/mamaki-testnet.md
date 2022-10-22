@@ -6,30 +6,30 @@ sidebar_label: Mamaki Testnet
 
 ![mamaki-testnet](/img/mamaki.png)
 
-This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Esta guía contiene las secciones relevantes sobre cómo conectarse a Mamaki, dependiendo del tipo de nodo que esté ejecutando. Mamaki Testnet está diseñado para ayudar a los validadores a probar su infraestructura y software de nodos con la testnet. Se anima a los desarrolladores a desplegar sus rollups soberanos en Mamaki, pero también recomendamos [Arabica Devnet](./arabica-devnet.md) para eso ya que está diseñado para fines de desarrollo.
 
-Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
+Mamaki es un hito en Celestia, permitiendo a todos probar las funcionalidades principales de la red. Lee el anuncio [aquí](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
-Your best approach to participating is to first determine which node you would like to run. Each node guides will link to the relevant network in order to show you how to connect to them.
+Tu mejor enfoque para participar es determinar primero qué nodo deseas ejecutar. Cada guía de nodo se enlazará a la red relevante para mostrarte cómo conectarse a ellos.
 
-You have a list of options on the type of nodes you can run in order to participate in Mamaki:
+Tienes una lista de opciones sobre el tipo de nodos que puedes ejecutar para participar en Mamaki:
 
-Consensus:
+Consenso:
 
-* [Validator Node](./validator-node.md)
-* [Consensus Full Node](./consensus-full-node.md)
+* [Nodo Validador](./validator-node.md)
+* [Full Node](./consensus-full-node.md)
 
-Data Availability:
+Nodos de disponibilidad de datos:
 
 * [Bridge Node](./bridge-node.md)
 * [Full Storage Node](./full-storage-node.md)
 * [Light Node](./light-node.md)
 
-Select the type of node you would like to run and follow the instructions on each respective page. Whenever you are asked to select the type of network you want to connect to in those guides, select `Mamaki` in order to refer to the correct instructions on this page on how to connect to Mamaki.
+Selecciona el tipo de nodo que deseas ejecutar y sigue las instrucciones en cada página correspondiente. Cada vez que se te pida que selecciones el tipo de red a la que desea conectarse en esas guías, selecciona `Mamaki` para referir a las instrucciones correctas en esta página sobre cómo conectarse a Mamaki.
 
 ## RPC endpoints
 
-There is a list of RPC endpoints you can use to connect to Mamaki Testnet:
+Hay una lista de RPC endpoints que puedes utilizar para conectarte a Mamaki Testnet:
 
 * [https://rpc-mamaki.pops.one](https://rpc-mamaki.pops.one)
 * [https://rpc-1.celestia.nodes.guru](https://rpc-1.celestia.nodes.guru)
@@ -40,29 +40,29 @@ There is a list of RPC endpoints you can use to connect to Mamaki Testnet:
 
 ## Mamaki Testnet faucet
 
-> USING THIS FAUCET DOES NOT ENTITLE YOU TO ANY AIRDROP OR OTHER DISTRIBUTION OF MAINNET CELESTIA TOKENS. MAINNET CELESTIA TOKENS DO NOT CURRENTLY EXIST AND THERE ARE NO PUBLIC SALES OR OTHER PUBLIC DISTRIBUTIONS OF ANY MAINNET CELESTIA TOKENS.
+> USAR ESTE FAUCER NO TE DA ACCESO A NINGÚN AIRDROP U OTRA DISTRIBUCIÓN DE TOKENS DE LA MAINNET DE CELESTIA. LOS TOKENS DE MAINNET DE CELESTIA ACTUALMENTE NO EXISTEN NI SE HACEN VENTAS PÚBLICAS U OTRAS DISTRIBUCIONES PÚBLICAS DE CUALQUIER TOKEN DE MAINNET DE CELESTIA.
 
-You can request from Mamaki Testnet Faucet on the #mamaki-faucet channel on Celestia's Discord server with the following command:
+Puedes solicitar desde Mamaki Testnet Faucet en el canal #faucet en el servidor de Discord de Celestia con el siguiente comando:
 
 ```text
 $request <CELESTIA-ADDRESS>
 ```
 
-Where `<CELESTIA-ADDRESS>` is a `celestia1******` generated address.
+Donde `<CELESTIA-ADDRESS>` es una `celestia1******` dirección generada.
 
-> Note: Faucet has a limit of 10 tokens per week per address/Discord ID
+> Nota: Faucet tiene un límite de 10 tokens por semana por dirección/Discord ID
 
-## Explorers
+## Exploradores
 
-There are several explorers you can use for Mamaki:
+Hay varios exploradores que puedes usar para Mamaki:
 
 * [https://testnet.mintscan.io/celestia-testnet](https://testnet.mintscan.io/celestia-testnet)
 * [https://celestia.explorers.guru/](https://celestia.explorers.guru/)
 * [https://celestiascan.vercel.app/](https://celestiascan.vercel.app/)
 
-## Setup P2P network
+## Configurar la red P2P
 
-Now we will setup the P2P Networks by cloning the networks repository:
+Ahora configuraremos las redes P2P clonando el repositorio de redes:
 
 ```sh
 cd $HOME
@@ -70,19 +70,19 @@ rm -rf networks
 git clone https://github.com/celestiaorg/networks.git
 ```
 
-To initialize the network pick a "node-name" that describes your node. The --chain-id parameter we are using here is `mamaki`. Keep in mind that this might change if a new testnet is deployed.
+Para inicializar la red elige un "node-name" que describa tu nodo. El parámetro --chain-id que estamos usando aquí es `mamaki`. Ten en cuenta que esto podría cambiar si se despliega una nueva testnet.
 
 ```sh
 celestia-appd init "node-name" --chain-id mamaki
 ```
 
-Copy the `genesis.json` file. For mamaki we are using:
+Copie el archivo `genesis.json`. Para mamaki estamos usando:
 
 ```sh
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 ```
 
-Set seeds and peers:
+Establecer seeds y peers:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -92,11 +92,11 @@ sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" 
 ```
 <!-- markdownlint-enable MD013 -->
 
-Note: You can find more peers [here](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
+Nota: Puedes encontrar más peers [aquí](https://github.com/celestiaorg/networks/blob/master/mamaki/peers.txt).
 
-## Quick-sync with snapshot
+## Sincronización rápida con snapshot
 
-Run the following command to quick-sync from a snapshot for `mamaki`:
+Ejecuta el siguiente comando para sincronizar rápidamente desde un snapshot para `mamaki`:
 
 ```sh
 cd $HOME
@@ -108,9 +108,9 @@ wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
     -C ~/.celestia-app/data/
 ```
 
-## Delegate to a validator
+## Delegar a un validador
 
-To delegate tokens to the `celestiavaloper` validator, as an example you can run:
+Para delegar tokens al validador de `celestiavaloper`, como un ejemplo puedes ejecutar:
 
 ```sh
 celestia-appd tx staking delegate \
@@ -118,7 +118,7 @@ celestia-appd tx staking delegate \
     --from=$VALIDATOR_WALLET --chain-id=mamaki
 ```
 
-If successful, you should see a similar output as:
+Si se ha ejecutado con éxito, deberías ver una salida similar a esta:
 
 ```console
 code: 0
@@ -135,14 +135,14 @@ tx: null
 txhash: <tx-hash>
 ```
 
-You can check if the TX hash went through using the block explorer by inputting the `txhash` ID that was returned.
+Puedes comprobar si el hash TX fue enviado usando el explorador de bloques ingresando el ID de `txhash` que fue devuelto.
 
-## Connect validator
+## Conectar validador
 
-Continuing the Validator tutorial, here are the steps to connect your validator to Mamaki:
+Continuando con el tutorial Validator, aquí están los pasos para conectar tu validador a Mamaki:
 
 ```sh
-MONIKER="your_moniker"
+MONIKER="tu_moniker"
 VALIDATOR_WALLET="validator"
 
 celestia-appd tx staking create-validator \
@@ -158,13 +158,13 @@ celestia-appd tx staking create-validator \
     --keyring-backend=test
 ```
 
-You will be prompted to confirm the transaction:
+Se te pedirá que confirmes la transacción:
 
 ```console
 confirm transaction before signing and broadcasting [y/N]: y
 ```
 
-Inputting `y` should provide an output similar to:
+La entrada `y` debe proporcionar una salida similar a:
 
 ```console
 code: 0
@@ -181,4 +181,4 @@ tx: null
 txhash: <tx-hash>
 ```
 
-You should now be able to see your validator from a block explorer like [here](https://celestia.explorers.guru/)
+Ahora deberías poder ver a tu validador desde un explorador de bloques como [aquí](https://celestia.explorers.guru/)
