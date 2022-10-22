@@ -1,51 +1,51 @@
 ---
-sidebar_label: Contract Interaction
+sidebar_label: Interaksi kontrak
 ---
 
-# Contract Interaction on CosmWasm with Celestia
+# Interaksi Kontrak pada CosmWasm dengan Celestia
 <!-- markdownlint-disable MD013 -->
 
-In the previous steps, we have stored out contract's tx hash in an environment variable for later use.
+Pada langkah-langkah sebelumnya, kita telah menyimpan hash tx kontrak dalam sebuah variabel lingkungan variabel lingkungan untuk digunakan nanti.
 
-Because of the longer time periods of submitting transactions via Rollmint due to waiting on Celestia's Data Availability Layer to confirm block inclusion, we will need to query our  tx hash directly to get information about it.
+Karena periode waktu yang lebih lama untuk mengirimkan transaksi melalui Rollmint karena menunggu Lapisan Ketersediaan Data Celestia untuk mengonfirmasi penyertaan blok, kita perlu menanyakan hash tx kita secara langsung untuk mendapatkan informasi tentangnya.
 
-## Contract Querying
+## Pencarian Kontrak
 
-Let's start by querying our transaction hash for its code ID:
+Mari kita mulai dengan menanyakan hash transaksi kita untuk ID kodenya:
 
 ```sh
 CODE_ID=$(wasmd query tx --type=hash $TX_HASH $NODE --output json | jq -r '.logs[0].events[-1].attributes[0].value')
 echo $CODE_ID
 ```
 
-This will give us back the Code ID of the deployed contract.
+Ini akan mengembalikan ID Kode dari kontrak yang digunakan.
 
 In our case, since it's the first contract deployed on our local network, the value is `1`.
 
-Now, we can take a look at the contracts instantiated by this Code ID:
+Sekarang, kita bisa melihat kontrak yang diinstansiasi oleh Code ID ini:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
 ```
 
-We get the following output:
+Kita mendapatkan output berikut ini:
 
 ```json
 {"contracts":[],"pagination":{"next_key":null,"total":"0"}}
 ```
 
-## Contract Instantiation
+## Instansiasi kontrak
 
-We start instantiating the contract by writing up the following `INIT` message for nameservice contract. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
+Kita mulai menginstansiasi kontrak dengan menuliskan pesan `INIT` berikut ini untuk kontrak layanan nama. Here, we are specifying that `purchase_price` of a name is `100uwasm` and `transfer_price` is `999uwasm`.
 
 ```sh
 INIT='{"purchase_price":{"amount":"100","denom":"uwasm"},"transfer_price":{"amount":"999","denom":"uwasm"}}'
 wasmd tx wasm instantiate $CODE_ID "$INIT" --from $KEY_NAME --keyring-backend test --label "name service" $TXFLAG -y --no-admin
 ```
 
-## Contract Interaction
+## Interaksi kontrak
 
-Now that we instantiated it, we can interact further with the contract:
+Sekarang setelah kita menginstansikannya, kita bisa berinteraksi lebih lanjut dengan kontrak:
 
 ```sh
 wasmd query wasm list-contract-by-code $CODE_ID $NODE --output json
@@ -56,9 +56,9 @@ wasmd query wasm contract $CONTRACT $NODE
 wasmd query bank balances $CONTRACT $NODE
 ```
 
-This allows us to see the contract address, contract details, and bank balances.
+Hal ini memungkinkan kita untuk melihat alamat kontrak, rincian kontrak, dan saldo bank.
 
-Now, let's register a name to the contract for our wallet address:
+Sekarang, mari kita daftarkan nama ke kontrak untuk alamat dompet kita:
 
 ```sh
 REGISTER='{"register":{"name":"fred"}}'
@@ -69,4 +69,4 @@ NAME_QUERY='{"resolve_record": {"name": "fred"}}'
 wasmd query wasm contract-state smart $CONTRACT "$NAME_QUERY" $NODE --output json
 ```
 
-With that, we have instantiated and interacted with the CosmWasm nameservice smart contract using Celestia!
+Dengan itu, kita telah menginstansiasi dan berinteraksi dengan nameservice CosmWasm menggunakan Celestia!
