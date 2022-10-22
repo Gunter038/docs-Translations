@@ -2,11 +2,11 @@
 sidebar_label: Light Node
 ---
 
-# Setting up a Celestia Light Node
+# 设置 Celestia 轻节点
 
-This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
+本教程将指导您设置 Celestia 轻节点，这将允许您在数据可用性 (DA) 网络上执行数据可用性采样。
 
-> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
+> 要查看设置 Celestia 轻节点的视频教程，请单击[此处](../developers/light-node-video.md)
 
 ## Overview of light nodes
 
