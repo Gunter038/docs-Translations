@@ -52,9 +52,9 @@ Di window lainnya, jalankan berikut untuk mengirim Wordle:
 wordled tx wordle submit-wordle giant --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-> CATATAN: Kita mengirim transaksi secara tidak sinkron yang disebabkan setiap kesalahan batas waktu. Dengan Rollmint sebagai pengganti Tendermint, kita butuh untuk menunggu jaringan Ketersediaan Data Celestia untuk memastikan block yang sudah masuk dalam Wordle, sebelum diproses ke block selanjutnya. Saat ini, di Rollmint, agregator tunggal tidak bergerak maju dengan produksi block selanjutnya selama percobaan pengiriman saat ini ke jaringan DA. In the future, with leader selection, block production and sync logic improves dramatically.
+> CATATAN: Kita mengirim transaksi secara tidak sinkron yang disebabkan setiap kesalahan batas waktu. Dengan Rollmint sebagai pengganti Tendermint, kita butuh untuk menunggu jaringan Ketersediaan Data Celestia untuk memastikan block yang sudah masuk dalam Wordle, sebelum diproses ke block selanjutnya. Saat ini, di Rollmint, agregator tunggal tidak bergerak maju dengan produksi block selanjutnya selama percobaan pengiriman saat ini ke jaringan DA. Dimasa depan, dengan pilihan pemimpin, produksi block dan meningkatkan logika sinkron secara dramatis.
 
-This will ask you to confirm the transaction with the following message:
+Ini akan memintamu mengkonfirmasi transaksi dengan pesan berikut:
 
 ```json
 {
@@ -89,15 +89,15 @@ This will ask you to confirm the transaction with the following message:
 }
 ```
 
-Cosmos-SDK will ask you to confirm the transaction here:
+Cosmos-SDK memintamu untuk mengkonfirmasi transaksi disini:
 
 ```sh
-confirm transaction before signing and broadcasting [y/N]:
+konfirmasi transaksi sebelum masuk dan disiarkan [y/N]:
 ```
 
-Confirm with a Y.
+Konfirmasi dengan Y.
 
-You will then get a response with a transaction hash as shown here:
+Kamu akan mendapatkan respon dengan hash transaksi yang muncul disini:
 
 ```sh
 code: 19
@@ -115,36 +115,36 @@ tx: null
 txhash: F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128
 ```
 
-Note, this does not mean the transaction was included in the block yet. Let's query the transaction hash to check whether it has been included in the block yet or if there are any errors.
+Catatan, ini tidak berarti transaksi telah masuk dalam block. Mari query hash transksi untuk memeriksa apakah sudah masuk dalam block atau disana ada beberapa kesalahan.
 
 ```sh
 wordled query tx --type=hash F70C04CE5E1EEC5B7C0E5050B3BEDA39F74C33D73ED504E42A9E317E7D7FE128 --chain-id wordle --output json | jq -r '.raw_log'
 ```
 
-This should display an output like the following:
+Ini yang ditampilkan harus keluar seperti berikut:
 
 ```json
 [{"events":[{"type":"message","attributes":[{"key":"action","value":"submit_wordle"
 }]}]}]
 ```
 
-Test out a few things for fun:
+Uji coba beberapa hal untuk kesenangan:
 
 ```sh
 wordled tx wordle submit-guess 12345 --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted integers.
+Setelah konfirmasi transaksi, query `txhash` diberikan cara sama yang kamu lalukan diatas. Kamu akan melihat respon yang menunjukkan kesalahan tak valid karena kamu mengirim bilangan bulat.
 
-Now try:
+Sekarang coba:
 
 ```sh
 wordled tx wordle submit-guess ABCDEFG --from alice --keyring-backend test --chain-id wordle -b async -y
 ```
 
-After confirming the transaction, query the `txhash` given the same way you did above. You will see the response shows an Invalid Error because you submitted a word larger than 5 characters.
+Setelah konfirmasi transaksi, query `txhash` diberikan dengan cara sama yang kamu lakukan diatas. Kamu akan melihat respon menunjukkan kesalahan tak valid karena kamu mengirim huruf lebih dari 5 karakter.
 
-Now try to submit another wordle even though one was already submitted
+Sekarang coba untuk mengirim wordle lainnya selain salah satu yang telah dikirim
 
 ```sh
 wordled tx wordle submit-wordle meter --from bob --keyring-backend test --chain-id wordle -b async -y
