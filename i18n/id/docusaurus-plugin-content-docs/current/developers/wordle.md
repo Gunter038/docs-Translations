@@ -1,39 +1,39 @@
 ---
-sidebar_label: Wordle Overview
+sidebar_label: Ikhtisar Wordle
 ---
 
-# Wordle App on Rollmint
+# Aplikasi Wordle pada Rollmint
 
 ![mamaki-testnet](/img/wordle.jpg)
 
-This tutorial guide will go over building a cosmos-sdk app for Rollmint, the Sovereign-Rollup implementation of Tendermint, for the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+Panduan tata cara ini akan menuju pembanggunan sebuah aplikasi cosmos-sdk untuk Rollmint, implementasi tendermint dari Sovereign-Rollup, untuk permainan terkenal [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
-This tutorial will go over how to setup Rollmint in the Ignite CLI and use it to build the game. The tutorial will go over the simple design, as well as conclude with future implementations and ideas to extend this codebase.
+Panduan ini akan menunju bagaimana cara mengatur Rollmint di Ignite CLI dan menggunakannya untuk membuat permainan. Panduan ini akan menuju desain sederhana, yang mana termasuk dengan implementasi masa depan dan ide untuk memperluas basis kode ini.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> CATATAN: panduan ini akan menjelajahi pengembangan dengan Rollmint, yang mana masih dalam tahap Alpha. Jika kamu menemukan bug, tolong tulis tiket masalah Github atau beritahu kami di Discord kami. Selain itu, ketika Rollmint mengizinkanmu untuk mambangun sovereign rollups di Celestia, saat ini belum mendukung fraud proofs dan karena itu dijalankan dalam mode "pessimistic", yang dimana node butuh untuk eksekusi ulang transaksi untuk memeriksa validasi dari chain (yaitu full node). Selanjutnya, Rollmint saat ini hanya mendukung sequencer tunggal.
 
-## Pre-requisites
+## Prasyarat
 
-Given this tutorial is targeted for developers who are experienced in Cosmos-SDK, we recommend you go over the following tutorials in Ignite to understand all the different components in Cosmos-SDK before proceeding with this tutorial.
+Tata cara ini diberikan bertujuan untuk pengembang yang berpengalaman dalam Cosmos-SDK, kita merekomendasikanmu tata cara yang bisa kamu ikuti dalam Ignite agar semua komponen yang berbeda dapat dipahami pada Cosmos-SDK sebelum melakukan dengan tata cara ini.
 
 * [Hello, World](https://docs.ignite.com/guide/hello)
-* [Blog and Module Basics](https://docs.ignite.com/guide/blog)
-* [Nameservice Tutorial](https://docs.ignite.com/guide/nameservice)
+* [Dasar Blog dan Modul](https://docs.ignite.com/guide/blog)
+* [Tata cara Nameservice](https://docs.ignite.com/guide/nameservice)
 * [Scavenger Hunt](https://docs.ignite.com/guide/scavenge)
 
-You do not have to do those guides in order to follow this Wordle tutorial, but doing so helps you understand the architecture of Cosmos-SDK better.
+Kamu tidak perlu melakukan panduan tersebut untuk mengikuti tata cara Wordle ini, tapi akan sangat membantu jika kamu memahami arsitektur Cosmos-SDK.
 
-## Design Implementation
+## Implementasi Desain
 
-The rules of Wordle are simple: You have to guess the word of the day.
+Aturan Wordle sederhana: Kamu hanya menebak kata hari ini.
 
-Key Points to Consider:
+Titik Kunci untuk dipertimbangkan:
 
-* The word is a five-letter word.
-* You have 6 guesses.
-* Every 24 hours, there’s a new word.
+* Kata berisi kata lima huruf.
+* Kamu punya 6 kesempatan menebak.
+* Setiap 24 jam, ada kata baru.
 
-The GUI for Wordle shows you a few indicators: a green highlight on a letter in a certain position means that’s the correct letter for the Wordle in the right position. A yellow highlight means it’s a correct letter for the Wordle included in the wrong position. A grey highlight means the letter isn’t part of the Wordle.
+GUI pada Wordle menunjukkanmu beberapa indikator: sorotan hijau pada huruf diposisi tersebut bermakna huruf tersebut benar untuk posisi Wordle yang benar. Sorotan kuning bermakna huruf tersebut benar untuk Wordle dalam posisi yang salah. Sorotan abu-abu bermakna huruf bukan bagian dari Wordle.
 
 For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
 
@@ -46,14 +46,14 @@ In this current design, we implement the following rules:
 
 We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
 
-## Table of Contents For This Tutorial
+## Daftar Isi Tata Cara ini
 
-The following tutorial is broken down into the following sections:
+Tata cara telah dipecah kedalam pilihan sebagai berikut:
 
-1. [Ignite and Chain Scaffolding](./scaffold-wordle.md)
-2. [Installing Rollmint](./install-rollmint.md)
-3. [Modules](./wordle-module.md)
-4. [Messages](./wordle-messages.md)
-5. [Types](./wordle-types.md)
-6. [Keepers](./wordle-keeper.md)
-7. [Running Wordle](./run-wordle.md)
+1. [Ignite dan Chain Scaffolding](./scaffold-wordle.md)
+2. [Instalasi Rollmint](./install-rollmint.md)
+3. [Modul](./wordle-module.md)
+4. [Pesan](./wordle-messages.md)
+5. [Tipe](./wordle-types.md)
+6. [Penjaga](./wordle-keeper.md)
+7. [Menjalankan Wordle](./run-wordle.md)
