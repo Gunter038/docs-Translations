@@ -1,8 +1,8 @@
 ---
-sidebar_label: Run a Light Node
+sidebar_label: 运行一个轻节点
 ---
 
-# 🪶 Run a Celestia DA Light Node
+# 🪶 运行一个 Celestia DA 轻节点
 
 A Celestia Light Node on the Mamaki Testnet is required to complete this tutorial. Run the following commands to install Celestia-Node:
 
