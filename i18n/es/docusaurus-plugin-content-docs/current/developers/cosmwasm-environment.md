@@ -16,7 +16,7 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-Esto inicializa una cadena llamada `celeswasm` con `wasmd` binario.
+Esto inicia una cadena llamada `celeswasm` con `wasmd` binario.
 
 El siguiente comando nos ayuda a configurar cuentas para génesis:
 
@@ -25,7 +25,7 @@ KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Asegúrese de almacenar el resultado del monedero generado para referencia posterior si es necesario.
+Asegúrate de almacenar el resultado de la wallet generada para referencia posterior si es necesario.
 
 Ahora, vamos a añadir una cuenta de génesis y utilizarla para actualizar nuestro archivo de génesis:
 
