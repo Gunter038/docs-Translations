@@ -1,22 +1,22 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "下一页",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Types of Nodes",
+    "message": "节点类型",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
-    "message": "Consensus",
+    "message": "共识",
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Data Availability",
+    "message": "数据可用性",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Participate",
+    "message": "参与",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
@@ -28,7 +28,7 @@
     "description": "The label for category Celestia App in sidebar developers"
   },
   "sidebar.developers.category.Celestia Node": {
-    "message": "Celestia Node",
+    "message": "Celestia 节点",
     "description": "The label for category Celestia Node in sidebar developers"
   },
   "sidebar.developers.category.Rollmint": {
