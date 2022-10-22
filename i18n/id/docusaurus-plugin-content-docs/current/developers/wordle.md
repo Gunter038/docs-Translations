@@ -35,16 +35,16 @@ Titik Kunci untuk dipertimbangkan:
 
 GUI pada Wordle menunjukkanmu beberapa indikator: sorotan hijau pada huruf diposisi tersebut bermakna huruf tersebut benar untuk posisi Wordle yang benar. Sorotan kuning bermakna huruf tersebut benar untuk Wordle dalam posisi yang salah. Sorotan abu-abu bermakna huruf bukan bagian dari Wordle.
 
-For simplicity of the design, we will avoid those hints, although there are ways to extend this codebase to implement that, which we will show at the end.
+Untuk Desain sederhana, kita melarang petunjuknya, walaupun jalan untuk memperluas basis kode ini untuk implementasinya, yang mana kita akan menunjukkan diakhir.
 
-In this current design, we implement the following rules:
+Desain saat ini, kita mengimplementasikan aturan berikut:
 
-* 1 Wordle can be submitted per day
-* Every address will have 6 tries to guess the word
-* It must be a five-letter word.
-* Whoever guesses the word correctly before their 6 tries are over gets an award of 100 WORDLE tokens.
+* 1 Wordle dapat dikirim sekali sehari
+* Setiap alamat memiliki 6 kali percobaan menebak kata
+* Ini harus lima huruf kata.
+* Siapa saja yang menebak kata benar sebelum 6 percobaan selesai mendapat penghargaan dari 100 Token WORDLE.
 
-We will go over the architecture to achieve this further in the guide. But for now, we will get started setting up our development environment.
+Kita akan menuju arsitektur untuk mencapai lebih lanjut di panduan ini. Tetapi sekarang, kita akan memulai mengatur development environment kami.
 
 ## Daftar Isi Tata Cara ini
 
