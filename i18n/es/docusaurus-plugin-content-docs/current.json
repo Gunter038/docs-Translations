@@ -1,26 +1,26 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Siguiente",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Types of Nodes",
+    "message": "Tipos de Nodos",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
-    "message": "Consensus",
+    "message": "Consensos",
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Data Availability",
+    "message": "Disponibilidad de Datos",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Participate",
+    "message": "Participar",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
-    "message": "Resources",
+    "message": "Recursos",
     "description": "The label for category Resources in sidebar nodes"
   },
   "sidebar.developers.category.Celestia App": {
@@ -28,7 +28,7 @@
     "description": "The label for category Celestia App in sidebar developers"
   },
   "sidebar.developers.category.Celestia Node": {
-    "message": "Celestia Node",
+    "message": "Nodo Celestia",
     "description": "The label for category Celestia Node in sidebar developers"
   },
   "sidebar.developers.category.Rollmint": {
@@ -36,7 +36,7 @@
     "description": "The label for category Rollmint in sidebar developers"
   },
   "sidebar.developers.category.gm world": {
-    "message": "gm world",
+    "message": "hola mundo",
     "description": "The label for category gm world in sidebar developers"
   },
   "sidebar.developers.category.Wordle": {
