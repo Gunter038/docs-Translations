@@ -1,9 +1,9 @@
 ---
-sidebar_label: What's next
+sidebar_label: Qué es lo siguiente
 ---
 
-# 👀 What’s next
+# 👀 Qué es lo siguiente
 
-Now that you’ve built your first sovereign rollup using the Cosmos SDK, Rollmint Ignite CLI, and Celestia's DA Layer, you are ready to take your skills to the next level!
+Ahora que has construido tu primer rollup soberano usando el Cosmos SDK, Rollmint Ignite CLI, y la Capa DA de Celestia, estás listo para llevar tus habilidades al siguiente nivel!
 
-Next, you will learn how to create a more robust rollup in the form of a Wordle game.
+A continuación, aprenderás cómo crear un rollup más robusto mediante un juego de Wordle.
