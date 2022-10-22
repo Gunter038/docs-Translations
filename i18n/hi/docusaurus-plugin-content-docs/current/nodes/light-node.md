@@ -1,5 +1,5 @@
 ---
-sidebar_label: Light Node
+sidebar_label: लाइट नोड
 ---
 
 # Setting up a Celestia Light Node
