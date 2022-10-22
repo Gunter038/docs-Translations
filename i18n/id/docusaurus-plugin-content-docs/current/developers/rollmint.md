@@ -2,22 +2,22 @@
 
 ![rollmint](/img/rollmint.png)
 
-[Rollmint](https://github.com/celestiaorg/rollmint) is an ABCI (Application Blockchain Interface) implementation for sovereign rollups to deploy on top of Celestia.
+[Rollmint](https://github.com/celestiaorg/rollmint) adalah ABCI (Aplikasi Antarmuka Blockchain) mengimplementasikan untuk sovereign rollups yang diluncurkan ke atas Celestia.
 
-It is built by replacing Tendermint, the Cosmos-SDK consensus layer, with a drop-in replacement that communicates directly with Celestia's Data Availability layer.
+Ini dibangun dengan menganti Tendermint, layer konsensus Cosmos-SDK, dengan jatuhnya kedalam pengganti yang berkomunikasi secara langsung dengan layer Ketersediaan Data Celestia.
 
-It spins up a sovereign rollup, which collects transactions into blocks and posts them onto Celestia for consensus and data availability.
+Sovereign rollup ini berputar, yang mana mengumpulkan transaksi ke block dan mengirimnya kedalam Celestia untuk konsensus dan ketersediaan data.
 
-The goal of Rollmint is to enable anyone to design and deploy a sovereign rollup on Celestia in minutes.
+Tujuan Rollmint adalah mengizinkan siapapun untuk mendesain dan meluncurkan sovereign rollup pada Celestia dalam beberapa menit.
 
-Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+Selain itu, ketika Rollmint mengizinkanmu untuk membangun sovereign rollup pada Celestia, saat ini tidak mendukung fraud proof dan oleh karena itu berjalan dalam mode "pessimistic", dimana node butuh mengeksekusi ulang transaksi untuk memeriksa validasi dari chain (yaitu full node). Selanjutnya, Rollmint saat ini hanya mendukung sequencer tunggal.
 
-## Tutorials
+## Tata cara
 
-The following tutorials will help you get started building Cosmos-SDK applications that connect to Celestia's Data Availability Layer via Rollmint. We call those chains Sovereign Rollups.
+Mengikuti tata cara akan membantumu dalam memulai membangun aplikasi Cosmos-SDK yang terhubung ke Layer Ketersediaan Data Celestia melalui Rollmint. Kita menyebutnya chain Sovereign Rollups.
 
-You can get started with the following tutorials:
+Kamu dapat memulai dengan mengikuti tata cara berikut:
 
 - [gm world](./gm-world.md)
-- [Wordle Game](./wordle.md)
-- [CosmWasm Tutorial](./cosmwasm.md)
+- [Permainan Wordle](./wordle.md)
+- [Tata cara CosmWasm](./cosmwasm.md)
