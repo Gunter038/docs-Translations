@@ -2,11 +2,11 @@
 sidebar_label: CosmWasm Overview
 ---
 
-# CosmWasm on Rollmint
+# Rollmint'te CosmWasm
 
-CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. In this tutorial, we will be exploring how to integrate CosmWasm with Celestia's Data Availability Layer using Rollmint.
+CosmWasm is a smart contracting platform built for the Cosmos ecosystem by making use of WebAssembly (Wasm) to build smart contracts for Cosmos-SDK. Bu rehberde, Rollmint kullanarak  Celestia'nın Veri Kullanılabilirlik Katmanı ile CosmWasm'ı nasıl entegre edeceğimizi keşfedeceğiz.
 
-> NOTE: This tutorial will explore developing with Rollmint, which is still in Alpha stage. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
+> NOT: Bu rehber Alfa evresinde olan Rollmint ile geliştirmeyi keşfedecektir. If you run into bugs, please write a Github Issue ticket or let us know in our Discord. Furthermore, while Rollmint allows you to build sovereign rollups on Celestia, it currently does not support fraud proofs yet and is therefore running in "pessimistic" mode, where nodes would need to re-execute the transactions to check the validity of the chain (i.e. a full node). Furthermore, Rollmint currently only supports a single sequencer.
 
 You can learn more about CosmWasm [here](https://docs.cosmwasm.com/docs/1.0/).
 
