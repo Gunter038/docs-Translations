@@ -4,7 +4,7 @@ sidebar_label: 运行一个轻节点
 
 # 🪶 运行一个 Celestia DA 轻节点
 
-A Celestia Light Node on the Mamaki Testnet is required to complete this tutorial. Run the following commands to install Celestia-Node:
+一个在 Mamaki 测试网上运行的Celestia轻节点需要完成这个教程。 运行以下的指令去安装Celestia-Node：
 
 <!-- markdownlint-disable MD010 -->
 ```bash
@@ -54,20 +54,20 @@ celestia light init
 使用 `cel-key` 查询我们的密钥地址：
 
 ```bash
-./cel-key list --node.type light --keyring-backend test
+/cel-key list --node.type light --keyring-backend test
 ```
 
 ![2.png](/img/gm/2.png)
 
-## 🚰 Visit Faucet
+## 访问Faucet
 
-Use the `#mamaki-faucet` channel in the Celestia Discord to request testnet tokens:
+在Celstia Discord中用 `#mamaki-faucet`频道去请求测试网代币：
 
 ```bash
 $request <Wallet-Address>
 ```
 
-Start Celestia Light node with a connection to a public Core Endpoint:
+用公共核心端点连接去启动Celestia轻节点
 
 <!-- markdownlint-disable MD013 -->
 ```bash
@@ -77,16 +77,16 @@ celestia light start --core.grpc https://rpc-mamaki.pops.one:9090 --keyring.accn
 
 ![3.png](/img/gm/3.png)
 
-In another terminal window, check the balance from our visit to the faucet:
+在另一个终端窗中，从我们访问的faucet去检查余额：
 
 ```bash
 curl -X GET http://localhost:26658/balance
 ```
 
-Your response should look like this, denominated in `utia` in JSON format.
+你的回复看起来应该是这样的，以 JSON 格式表述 `utia`。
 
 ```bash
 {"denom":"utia","amount":"100000000"}
 ```
 
-Now that we are set with Go and Ignite CLI installed, and our Celestia Light Node running on our machine, we’re ready to build, test, and launch our own sovereign rollup.
+现在我们设置安装了Go和 Ignite CLI，且我们的Celestia轻节点运行在我们的机器上，我们已经准备好建造、测试和启动我们的sovereign rollup。
