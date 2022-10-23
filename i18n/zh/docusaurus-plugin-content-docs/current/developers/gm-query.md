@@ -6,11 +6,11 @@ sidebar_label: 查询你的Rollup
 
 现在，我们要让我们的区块链说 `gm world `，为了做到这一点，我们需要做以下修改。
 
-- 修改协议的缓冲区文件
+- 修改protocol buffer文件
 - 创建一个返回数据的 Keeper 查询函数
 - 注册一个查询函数
 
-协议缓冲区文件包含定义了Cosmos SDK查询和消息处理程序的proto RPC调用，以及定义了Cosmos SDK类型的proto消息。 RPC调用也负责导出一个HTTP的API
+Protocol buffer文件包含定义了Cosmos SDK查询和消息处理程序的proto RPC调用，以及定义了Cosmos SDK类型的proto消息。 RPC调用也负责导出一个HTTP的API
 
 每个Cosmos的SDK模块中都需要有Keeper，这个是一个用于修改区块链状态的抽象模块。 Keeper函数允许你查询和写入状态。 在你添加一个查询到你的链后，你需要注册这个查询 你只需要注册一次查询
 
