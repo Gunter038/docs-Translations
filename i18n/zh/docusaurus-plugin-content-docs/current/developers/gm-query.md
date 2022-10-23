@@ -2,13 +2,13 @@
 sidebar_label: Query your Rollup
 ---
 
-# 💬 Say “gm world!”
+# 说“早上好，世界”
 
-Now, we’re going to get our blockchain to say `gm world` and in order to do so we need to make the following changes:
+现在，我们要让我们的区块链说成是`早上好 世界 `，为了做到这一点，我们需要做以下修改。
 
-- Modify a protocol buffer file
-- Create a keeper query function that returns data
-- Register a query function
+- 修改协议的缓冲区文件
+- 创建一个返回数据的 Keeper 查询函数
+- 注册查询功能
 
 Protocol buffer files contain proto RPC calls that define Cosmos SDK queries and message handlers, and proto messages that define Cosmos SDK types. The RPC calls are also responsible for exposing an HTTP API.
 
