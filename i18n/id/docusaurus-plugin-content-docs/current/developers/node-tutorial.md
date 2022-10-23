@@ -1,52 +1,52 @@
 ---
-sidebar_label: Node Tutorial
+sidebar_label: Tata cara Node
 ---
 
-# Getting and Sending Transactions with Celestia Node
+# Mendapatkan dan Mengirim Transaksi dengan Node Celestia
 <!-- markdownlint-enable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+Dalam ata cara ini, kita akan menjelaskan bagaimana menggunakan API node Celestia untuk mengirim dan mendapatkan kembali pesan dari layer Ketersedian Data dengan ID namaspacenya.
 
-This tutorial was assumes you are working in a Linux environment.
+Tata cara ini berasumsi kamu bekerja di environment Linux.
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> Untuk melihat tata cara video dalam mengatur Node Light Celestia, klik [disini](./light-node-video.md)
 
-## Hardware Requirements
+## Spesifikasi Hardware
 
-The following minimum hardware requirements are recommended for running a light node:
+Berikut minimal spesifikasi hardware yang direkomendasikan untuk menjalankan node light:
 
-- Memory: 2 GB RAM
+- Memori: 2 GB RAM
 - CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- Disk: Penyimpanan 5 GB SSD
+- Bandwidth: 56 Kbps untuk Unduh/56 Kbps untuk Unggah
 
-## Setting Up Dependencies
+## Atur Dependensi
 
-First, make sure to update and upgrade the OS:
+Pertama, pastikan untuk memperbarui dan meningkatkan versi OS:
 
 ```sh
-# If you are using the APT package manager
+# Jika kamu menggunakan APT package manager
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
+# Jika kamu menggunakan YUM package manager
 sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Itu ialah paket tambahan yang diperlukan untuk mengeksekusi banyak tugas seperti penggunduhan file, penyatuan, dan pemantauan node:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# Jika kamu menggunakan APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# Jika kamu menggunakan YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
 ### Install Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Aplikasi-Celestia dan node-celestia ditulis dalam [Golang](https://go.dev/) jadi kita harus install Golang untuk membangun dan menjalankannya.
 
 ```sh
 ver="1.19.1"
@@ -57,30 +57,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+Jadi kita butuh menambahkan direktori `/usr/local/go/bin` ke `$PATH`:
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+Untuk memeriksa jika Go yang terinstall berjalan dengan benar:
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+Versi yang terinstall harusnya keluar seperti:
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Node Celestia
 
-### Install Celestia Node
+### Install Node Celestia
 
-Install the celestia-node binary by running the following commands:
+Install binary node-celestia dengan menjalankan perintah berikut:
 
 ```sh
 cd $HOME
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+Verifikasi binary berjalan dan periksa versi dengan perintah versi celestia:
 
 ```sh
 $ celestia version
@@ -103,29 +103,29 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Instantiate Celestia Light Node
+### Instansiasi Node Light Celestia
 
-Now, let's instantiate a Celestia Light node:
+Sekarang, mari instansiasi node Light Celestia:
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> Catatan: RPC endpoint terungkap di semua tipe Node Celestia seperti Light, Bridge dan Full node.
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### Hubungkan ke Enpoint Inti Publik
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+Mari sekarang jalankan node Light Celestia dengan koneksi GRPC contoh Endpoint inti publik.
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> Catatan: Kamu juga didorong untuk menemukan komunitas yang menjalankan endpoint API dan beberapa disana di Discord. Salah satunya digunakan untuk bertujuan demontrasi. Kamu dapat menemukan daftar RPC endpoint [disini](/nodes/arabica-devnet.md#rpc-endpoints)
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> CATATAN: Port bawaan `--core.grpc.port` 9090, jadi jika kamu tidak menentukannya di baris perintah, itu akan menjadi port bawaan. Kamu dapat menggunakan bendera untuk menentukan port lainnya jika kamu ingin.
 
-For example, your command along with an RPC endpoint might look like this:
+Sebagai contoh, perintahmu ke RPC endpoint mungkin terlihat seperti ini:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -133,7 +133,7 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Keys and wallets
+### Kunci dan Dompet
 
 You can create your key for your node by running the following command:
 
