@@ -149,31 +149,31 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+Ketika kamu memulai Node Light, kunci dompet akan dihasilkan untukmu. Kamu akan butuh mendanai alamat dengan token Devnet Arabica untuk membayar transaksi PayForData.
 
-You can find the address by running the following command in the `celestia-node` directory:
+Kamu dapat menemukan alamat dengan menjalankan perintah berikut di direktori `celestia-node`:
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
+Jika kamu ingin mendanai dompetmu dengan token testnet, beralihlah ke saluran Discord Celestia `#arabica-faucet`.
 
-You can request funds to your wallet address using the following command in Discord:
+Kamu dapat meminta dana untuk alamat dompetmu menggunakan perintah berikut di Discord:
 
 ```console
 $request <Wallet-Address>
 ```
 
-Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
+Yang mana `<Wallet-Address>` ialah alamat `celestia1******` yang dihasilkan ketika kamu membuat dompet.
 
-With your wallet funded, you can move on to the next step.
+Dengan dompetmu yang telah terdanai, kamu dapat berpindah ke langkat berikutnya.
 
-## Node API Calls
+## API Call Node
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+Buka window terminal lain untuk memulai proses query API. `celestia-node` mengungkap RPC endpoint pada port bawaan `26658`.
 
-### Balance
+### Saldo
 
 Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
 
