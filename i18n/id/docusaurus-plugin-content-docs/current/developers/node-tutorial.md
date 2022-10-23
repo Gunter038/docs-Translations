@@ -5,7 +5,7 @@ sidebar_label: Tata cara Node
 # Mendapatkan dan Mengirim Transaksi dengan Node Celestia
 <!-- markdownlint-enable MD013 -->
 
-Dalam ata cara ini, kita akan menjelaskan bagaimana menggunakan API node Celestia untuk mengirim dan mendapatkan kembali pesan dari layer Ketersedian Data dengan ID namaspacenya.
+Dalam tata cara ini, kita akan menjelaskan bagaimana menggunakan API node Celestia untuk mengirim dan mendapatkan kembali pesan dari layer Ketersedian Data dengan ID namaspacenya.
 
 Tata cara ini berasumsi kamu bekerja di environment Linux.
 
@@ -382,15 +382,15 @@ Beberapa hal yang dipertimbangkan:
 
 - PFD ialah Pesan PayForData.
 - Endpoint juga mengambil `namespace_id` dan nilai `data`.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- ID Namespace harus 8 byte.
+- Data ialah hex byte yang terkode dalam mentahan pesan.
+- `gas_limit` ialah batas gas yang digunakan untuk transaksi
 
-We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+Kita menggunakan `namespace_id` berikut dari `0000010000000100` dan nilai `data` dari `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
 
-You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
+Kamu dapat menghasilkan `namespace_id` milikmu sendiri dan nilai data menggunakan Golang Playground yang sangat membantu kita membuatnya [disini](https://go.dev/play/p/7ltvaj8lhRl).
 
-We run the following:
+Kita menjalankan berikut ini:
 
 ```sh
 curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
@@ -398,7 +398,7 @@ curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
   "gas_limit": 70000}' http://localhost:26658/submit_pfd
 ```
 
-We get the following output:
+Hasil yang kita dapatkan seperti:
 
 ```json
 {
@@ -615,13 +615,13 @@ We get the following output:
 }
 ```
 
-If you notice from the above output, it returns a `height` of `2452` which we will use for the next command.
+Jika kamu memperhatikan dari hasil diatas, `height` kembali dari `2452` yang mana kita akan menggunakannya di perintah selanjutnya.
 
-Note: To learn more about status response codes, please navigate to [cosmos' code explanation](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
+Catatan: Untuk memperlajari lebih lanjut status respon kode, mohon berpindah ke [penjelasan kode cosmos](https://github.com/cosmos/cosmos-sdk/blob/main/types/errors/errors.go)
 
-#### Troubleshooting
+#### Penyelesaian Masalah
 
-If you encounter an error like:
+Jika kamu menemukan kesalahan seperti ini:
 
 <!-- markdownlint-disable MD013 -->
 ```console
@@ -630,18 +630,18 @@ $ curl -X POST -d '{"namespace_id": "c14da9d459dc57f5", "data": "4f7a3f1aadd8325
 ```
 <!-- markdownlint-enable MD013 -->
 
-It is possible that the account you are trying to submit a PayForData from doesn't have testnet tokens yet. Ensure the testnet faucet has funded your account with tokens and then try again.
+Ini mungkin akunmu mencoba mengirim PayForData yang mana tidak memiliki token testnet. Pastikan faucet testnet telah mendanai akunmu dengan token dan coba lagi nanti.
 
-### Get Namespaced Shares by Block Height
+### Dapatkan Bagian Namespaced dengan Tinggi Block
 
-After submitting your PFD transaction, upon success, the node will return the block height for which the PFD transaction was included. You can then use that block height and the namespace ID with which you submitted your PFD transaction to get your message shares returned to you. In this example, the block height we got was 589 which we will use for the following command.
+Setelah mengirim transaksi PFDmu, setelah berhasil, node akan mengembalikan tinggi block untuk transaksi PFD mana saja yang telah masuk. Kamu kemudian dapat menggunakan tinggi block dan ID namespace dengan mana saha transaksi yang kamu kirim untuk mendapatkan bagian pesan yang kemabali kepadamu. Sebagai contoh, tinggi block yang kita dapat 589 yang mana kita akan menggunakannya untuk perintah berikut.
 
 ```sh
 curl -X GET \
   http://localhost:26658/namespaced_shares/0c204d39600fddd3/height/2452
 ```
 
-Will generate the following output:
+Hasil yang akan dikeluarkan seperti:
 
 ```json
 {
@@ -652,4 +652,4 @@ Will generate the following output:
 }
 ```
 
-The output here is base64-encoded.
+Hasil disini ialah base64-terkode.
