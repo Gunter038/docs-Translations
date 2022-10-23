@@ -44,7 +44,7 @@ create x/gm/keeper/grpc_query_gm.go
 
 刚刚发生了什么？ `query` 命令接受的参数有，查询名称 (`gm`), 一个可选的参数列表 (本教程中为空), 和一个可选的响应字段列表 `--response` (`text` 本教程中为)。
 
-Navigate to the `proto/gm/query.proto` file, you’ll see that `Gm` RPC has been added to the `Query` service:
+打开 `proto/gm/query.proto` 文件, 你可以看到 `Gm` RPC 被添加到 `Query` service中:
 
 <!-- markdownlint-disable MD010 -->
 <!-- markdownlint-disable MD013 -->
@@ -61,19 +61,19 @@ service Query {
 <!-- markdownlint-enable MD013 -->
 <!-- markdownlint-enable MD010 -->
 
-The `Gm` RPC for the `Query` service:
+`Gm` RPC 在 `Query` service中的作用:
 
-- is responsible for returning a `text` string
-- Accepts request parameters (`QueryGmRequest`)
-- Returns response of type `QueryGmResponse`
-- The `option` defines the endpoint that is used by gRPC to generate an HTTP API
+- 负责返回一个 `text` 字符串
+- 接收请求参数 (`QueryGmRequest`)
+- 返回类型为 `QueryGmResponse` 的响应
+- `option` 定义了使用gRPC去生成一个HTTP API的端点
 
-## 📨 Query request and response types
+## 📨 查询请求和响应类型
 
-In the same file, we will find:
+在同一个文件中，我们可以看到
 
-- `QueryGmRequest` is empty because it does not require parameters
-- `QueryGmResponse` contains `text` that is returned from the chain
+- `QueryGmRequest` 是空的因为它不需要参数
+- `QueryGmResponse` 有一个 `text` 表示从链中返回的数据
 
 ```protobuf
 message QueryGmRequest {
@@ -84,9 +84,9 @@ message QueryGmResponse {
 }
 ```
 
-## 👋 Gm keeper function
+## 👋 Gm keeper 函数
 
-The `x/gm/keeper/grpc_query_gm.go` file contains the `Gm` keeper function that handles the query and returns data.
+`x/gm/keeper/grpc_query_gm.go` 文件包含了 `Gm` keeper 函数用于处理请求和返回类型。
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD010 -->
@@ -103,7 +103,7 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
 <!-- markdownlint-enable MD010 -->
 <!-- markdownlint-enable MD013 -->
 
-The `Gm` function performs the following actions:
+`Gm` 函数执行以下操作：
 
 - Makes a basic check on the request and throws an error if it’s `nil`
 - Stores context in a `ctx` variable that contains information about the environment of the request
