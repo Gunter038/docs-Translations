@@ -13,7 +13,7 @@ CosmWasm과 스마트 계약을 시작하고 Celestia에 배포하는 추가 리
 - [접착](https://docs.rs/cw20-bonding/latest/cw20_bonding/)
 - [호스팅](https://docs.rs/cw20-escrow/latest/cw20_escrow/)
 
-## 혼잡했어
+## 기타 등등
 
 - [비금융 거래.](https://github.com/CosmWasm/cw-nfts/tree/main/contracts)
 - [스토리지](https://crates.io/crates/cosmwasm-storage)
