@@ -8,9 +8,10 @@ A Celestia Light Node on the Mamaki Testnet is required to complete this tutoria
 
 <!-- markdownlint-disable MD010 -->
 ```bash
-cd && rm -rf celestia-node
+cd $HOME
+rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
-cd celestia-node
+cd celestia-node/
 git checkout tags/v0.3.0-rc2
 make install
 ```
@@ -18,35 +19,33 @@ make install
 
 ![1.png](/img/gm/1.png)
 
-Inside the celestia-node repository is a utility named `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general.
+在 celestia-节点 存储库内是一个名为 `cel-key`的工具，它使用了 Cosmos-SDK 在地平线下提供的 关键工具。 工具可以用于 `添加`,`删除`并管理任何 DA 节点的密钥 类型`(ridge || full || light)`, 或一般密钥。
 
-## 🗝 Create a key
+## :old_key : 创建密钥
 
-Create your key for the node:
-
-```bash
-make cel-key
-```
-
-Verify the version of your Celestia-Node with the `celestia version` command, it should be `v0.3.0-rc2`:
+为节点创建密钥：
 
 ```bash
-celestia version
+制作cel键
+```
+
+使用`celestiaversion`命令验证Celestia节点的版本， 它应该是＜code＞v0.3.0-rc2＜/code＞：
+
+```bash
+Celestia版本
 ```
 
 ```bash
-# OUTPUT
-
-#Semantic version: v0.3.0-rc2
-#Commit: 89892d8b96660e334741987d84546c36f0996fbe
-#Build Date: Fri Oct  7 01:08:14 UTC 2022
-#System version: amd64/linux
-#Golang version: go1.18.2
+#语义版本：v0.3.0-rc2
+#提交：89892d8b96660e334741987d84546c36f0996fbe
+#构建日期：2022年10月7日星期五01:08:14 UTC
+#系统版本：amd64/linux
+#Golang版本：go1.18.2
 ```
 
-## 🟢 Initialize Light Node
+## 🟢 初始化轻节点
 
-Now, we’re ready to initialize the Celestia Light Node. You can do so by running:
+现在，我们准备初始化Celestia灯光节点。 You can do so by running:
 
 ```bash
 celestia light init
