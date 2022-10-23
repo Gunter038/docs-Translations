@@ -135,13 +135,13 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 
 ### Kunci dan Dompet
 
-You can create your key for your node by running the following command:
+Kamu dapat membuat kuncimu untuk nodemu dengan menjalankan perintah berikut:
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-You can start your light node with the key created above by running the following command:
+Kamu dapat memulai node lightmu dengan kunci yang dibuat dengan menjalankan perintah diatas:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
