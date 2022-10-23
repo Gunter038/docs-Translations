@@ -381,7 +381,7 @@ Sebagai contoh, kita akan memngirim transaksi PayForData ke node endpoint `/subm
 Beberapa hal yang dipertimbangkan:
 
 - PFD ialah Pesan PayForData.
-- The endpoint also takes in a `namespace_id` and `data` values.
+- Endpoint juga mengambil `namespace_id` dan nilai `data`.
 - Namespace ID should be 8 bytes.
 - Data is in hex-encoded bytes of the raw message.
 - `gas_limit` is the limit of gas to use for the transaction
