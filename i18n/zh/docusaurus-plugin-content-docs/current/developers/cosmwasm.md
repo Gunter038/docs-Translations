@@ -2,9 +2,9 @@
 sidebar_label: CosmWasm概述
 ---
 
-# CosmWasm在Rollmint上
+# Rollmint上的CosmWasm
 
-CosmWasm是一个为Comos生态搭建的智能合约平台，通过运用WebAssembly（Wasm）为Cosmos-SDK构建智能合约。 在本教程中，我们会探索如何用Rollmint整和CosmWasm和数据可用层。
+CosmWasm是一个为Comos生态搭建的智能合约平台，使用WebAssembly（Wasm）为Cosmos-SDK构建智能合约。 在本教程中，我们将探索如何使用Rollmint将CosmWasm整合到Celestia的数据可用性层。
 
 > 注意：这个教程会使用仍处于Alpha阶段的Rollmint进行探索开发。 如果你遇到bugs，请用提交一个Github问题单，或者在我们的Discord中告知我们。 此外，Rollmint允许你在Celestia上构建sovereign rollups，它现在还不支持欺诈证明，所以仍旧在节点需要重复执行交易去检查链的有效性的“悲观”模式下运行（即.全节点模式）。 此外，Rollmint目前仅支持单个序列器。
 
