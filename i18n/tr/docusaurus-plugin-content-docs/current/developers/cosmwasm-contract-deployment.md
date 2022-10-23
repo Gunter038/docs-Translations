@@ -7,7 +7,7 @@ sidebar_label: Contract Deployment
 
 ## Compile the Smart Contract
 
-Nameservice akıllı sözleşmesini çekmek ve  bunu derlemek için aşağıdaki komutları çalıştıracağız: git clone https://github.com/InterWasm/cw-contracts cd cw-contracts cd contracts/nameservice cargo wasm
+Nameservice akıllı sözleşmesini indirip derlemek için aşağıdaki komutları çalıştıracağız:
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,19 +16,19 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Derlenmiş sözleşme şu adrese çıkarılır: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Birim testleri
 
-Testleri çalıştırmak istiyorsak eğer, aşağıdaki komutla bunu yapabiliriz: cargo unit-test
+Test etmek istiyorsak, aşağıdaki komutla bunu yapabiliriz:
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Optimize Edilmiş Akıllı Sözleşme
 
-Derlenmiş akıllı sözleşmeyi `wasmd` 'a yerleştirdiğimiz için, mümkün olduğunca bunun küçük olmasını istiyoruz.
+Derlenmiş akıllı sözleşmeyi `wasmd` 'a yerleştirdiğimiz için, mümkün olduğunca küçük olmasını istiyoruz.
 
 CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
 
