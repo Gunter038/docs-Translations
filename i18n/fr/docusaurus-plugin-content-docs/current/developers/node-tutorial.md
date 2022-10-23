@@ -25,46 +25,44 @@ La configuration matérielle minimum requise pour lancer un light node est la su
 Tout d'abord, assurez-vous de mettre à jour et à niveau le système d'exploitation :
 
 ```sh
-# If you are using the APT package manager
-sudo apt update && sudo apt upgrade -y
-
-# If you are using the YUM package manager
-sudo yum update
+Si vous utilisez APT Package Manager
+Sudoapt Update & amp; Amp; Sudo APT Upgrade - y
+Si vous utilisez le gestionnaire de paquets Yum
+Mise à jour de sudo Yum
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+Ce sont les paquets de base nécessaires pour accomplir de nombreuses tâches Télécharger des fichiers, compiler et surveiller des tâches telles que les noeuds:
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
-
-# If you are using the YUM package manager
-sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
+Si vous utilisez APT Package Manager
+Sudo APT install Curl Tar wget clong pkg configuration libssl Dev JQ Build necessary GIT make ncdu - y
+Si vous utilisez le gestionnaire de paquets Yum
+Sudo Yum install Curl Tar wget clong pkg config libssl Dev JQ Build necessary GIT make ncdu - y
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Install Golang
+### Installer Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
-
-```sh
-ver="1.19.1"
-cd $HOME
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-```
-
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+L'application celestia et le noeud celestia sont situés à < a href = " https://go.dev/ "> gorang < / a > Nous devons donc installer golang pour les construire et les exécuter.
 
 ```sh
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
+Version = "1.19.1"
+CD $HOME
+Wget " https://golang.org/dl/go $ver.linux-amd64.tar.gz "
+Sudo RM RF / usr / local / go
+Sudotar - C / usr / local - xzf "go $ver.linux-amd64.tar.gz"
+RM "go to $ver.linux-amd64.tar.gz"
 ```
 
-To check if Go was installed correctly run:
+Nous devons maintenant ajouter le répertoire < Code > / usr / local / go / bin < / code > à < Code > $PATH < / code >:
+
+```sh
+Echo "Export path = $PATH: / usr / local / go / bin: $home / go / bin" & gt GT $ Page d'accueil /.Bash profile
+Source $home /.Bash profile
+```
+
+Pour vérifier que go est correctement installé, lancez:
 
 ```sh
 go version
