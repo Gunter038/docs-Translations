@@ -1,23 +1,23 @@
 ---
-sidebar_label: Setup
+sidebar_label: Atur
 ---
 
-# 💻 Setup
+# 💻 Atur
 
-- Operating systems: GNU/Linux, macOS, or Windows Subsystem for Linux (WSL). Recommended GNU/Linux or macOS.
+- Sistem operasi: GNU/Linux, macOS, atau Windows Subsystem untuk Linux (WSL). Rekomendasi GNU/Linux atau macOS.
 
-> This tutorial was made on an M2 Mac with macOS Monterey Version 12.6.
+> Tata cara ini dibuat pada M2 Mac dengan macOS Monterey Versi 12.6.
 
 - [Golang v1.18.2](https://go.dev/)
 - [Ignite CLI v0.24.0](https://github.com/ignite/cli/releases/tag/v0.24.0)
 - [Homebrew](https://brew.sh/)
 - [wget](https://www.gnu.org/software/wget/)
 - [jq](https://stedolan.github.io/jq/)
-- [A Celestia Light Node](https://docs.celestia.org/nodes/light-node/)
+- [Node Light Celestia](https://docs.celestia.org/nodes/light-node/)
 
-## 🏃 Install Golang
+## 🏃 Instalasi Golang
 
-Celestia-App, Celestia-Node, and Cosmos-SDK are written in the Golang programming language. We’ll need Golang to build and run them. Celestia’s Mamaki testnet requires Golang v1.18.2 to build and run correctly.
+Aplikasi-Celestia, Node-Celestia, dan Cosmos-SDK ditulis dengan bahasa pemrograman Golang. Kita butuh Golang untuk membuat dan menjalankannya. Testnet Mamaki Celestia membutuhkan Golang v1.18.2 untuk membuat dan menjalankannya dengan benar.
 
 ```bash
 cd
@@ -31,42 +31,42 @@ rm "go$ver.darwin-arm64.tar.gz"
 Add `/usr/local/go/bin` directory to [set your $PATH variables correctly](https://go.dev/doc/gopath_code#GOPATH):
 
 ```bash
-# If using bash
+# Jika menggunakan bash
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-# If using zsh
+# Jika menggunakan zsh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.zshrc
 source $HOME/.zshrc
 ```
 
-To check if Go was installed correctly run:
+Untuk memeriksa Go yang terinstall berjalan dengan baik:
 
 ```bash
 go version
 ```
 
-The output should be the version installed:
+Hasil yang keluar harusnya versi terinstall:
 
 ```bash
 go version go1.18.2 darwin/arm64
 ```
 
-## 🔥 Install Ignite CLI
+## 🔥 Instalasi Ignite CLI
 
-First, you will need to create `/usr/local/bin` if you have not already:
+Pertama, kamu butuh untuk membuat `/usr/local/bin` jika kamu tidak memilikinya:
 
 ```bash
 sudo mkdir -p -m 775 /usr/local/bin
 ```
 
-Run this command in your terminal to install Ignite CLI:
+Jalankan perintah ini di terminalmu untuk instalasi Ignite CLI:
 
 ```bash
 curl https://get.ignite.com/cli! | bash
 ```
 
-> ✋ On some machines, you may run into permissions errors like the one below. You can resolve this error by following the guidance [here](https://docs.ignite.com/guide/install#write-permission) and below.
+> ✋ Dibeberapa mesin, kamu hanya bisa menjalankan sampai kesalahan perizinan seperti salah satu dibawah ini. Kamu dapat memperbaiki kesalahan ini dengan mengikuti panduan [disini](https://docs.ignite.com/guide/install#write-permission) dan dibawah ini.
 
 ```bash
 # Error
@@ -82,13 +82,13 @@ Installing ignite v0.24.0.....
 jcs @ ~ %
 ```
 
-The following command should resolve the permissions error:
+Berikut perintah yang harusnya memperbaiki kesalahan perizinan:
 
 ```bash
 sudo curl https://get.ignite.com/cli! | sudo bash
 ```
 
-A successful installation will return something similar the response below:
+Instalasi yang berhasil akan kembali dengan respon yang sama seperti dibawah ini:
 
 ```bash
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -99,13 +99,13 @@ Installing ignite v0.22.2.....
 Installed at /usr/local/bin/ignite
 ```
 
-Verify you’ve installed Ignite CLI by running:
+Verifikasi Iginite CLI yang telah kamu install dengan menjalankan:
 
 ```bash
 ignite version
 ```
 
-The response that you receive should look something like this:
+Kamu akan mendapat respon seperti ini:
 
 <!-- markdownlint-disable MD010 -->
 <!-- markdownlint-disable MD013 -->
@@ -124,15 +124,15 @@ Is on Gitpod:       false
 <!-- markdownlint-enable MD013 -->
 <!-- markdownlint-enable MD010 -->
 
-## 🍺 Install Homebrew
+## 🍺 Instalasi Homebrew
 
-Homebrew will allow us to install dependencies for our Mac:
+Homebrew akan mengizinkan kita install depedensi untuk Mac kita:
 
 ```jsx
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Be sure to run the commands similar to the output below from the successful installation:
+Pastikan jalankan perintah agar hasil keluar sama seperti instalasi yang berhasil dibawah:
 
 ```jsx
 ==> Next steps:
@@ -142,9 +142,9 @@ Be sure to run the commands similar to the output below from the successful inst
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-## 🏃 Install wget and jq
+## 🏃 Instalasi wget dan jq
 
-wget is an Internet file retriever and jq is a lightweight and flexible command-line JSON processor.
+wget ialah pemburu file Internet dan jq ialah otak baris perintah JSON yang ringan dan fleksibel.
 
 ```bash
 brew install wget && brew install jq
