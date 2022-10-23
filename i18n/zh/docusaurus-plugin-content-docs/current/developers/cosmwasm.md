@@ -2,7 +2,7 @@
 sidebar_label: CosmWasm概述
 ---
 
-# CosmWasm on Rollmint
+# CosmWasm在Rollmint上
 
 CosmWasm是一个为Comos生态搭建的智能合约平台，通过运用WebAssembly（Wasm）为Cosmos-SDK构建智能合约。 在本教程中，我们会探索如何用Rollmint整和CosmWasm和数据可用层。
 
