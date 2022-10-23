@@ -1,37 +1,37 @@
 ---
-sidebar_label: Query your Rollup
+sidebar_label: 查询你的Rollup
 ---
 
-# 说“早上好，世界”
+# 💬 说“gm world!”
 
-现在，我们要让我们的区块链说成是`早上好 世界 `，为了做到这一点，我们需要做以下修改。
+现在，我们要让我们的区块链说 `gm world `，为了做到这一点，我们需要做以下修改。
 
 - 修改协议的缓冲区文件
 - 创建一个返回数据的 Keeper 查询函数
-- 注册查询功能
+- 注册一个查询函数
 
-Protocol buffer files contain proto RPC calls that define Cosmos SDK queries and message handlers, and proto messages that define Cosmos SDK types. The RPC calls are also responsible for exposing an HTTP API.
+协议缓冲区文件包含定义了Cosmos SDK查询和消息处理程序的proto RPC调用，以及定义了Cosmos SDK类型的proto消息。 RPC调用也负责导出一个HTTP的API
 
-The Keeper is required for each Cosmos SDK module and is an abstraction for modifying the state of the blockchain. Keeper functions allow you to query or write to the state. After you add a query to your chain, you need to register the query. You’ll only need to register a query once.
+每个Cosmos的SDK模块中都需要有Keeper，这个是一个用于修改区块链状态的抽象模块。 Keeper函数允许你查询和写入状态。 在你添加一个查询到你的链后，你需要注册这个查询 你只需要注册一次查询
 
-The typical Cosmos blockchain developer workflow looks something like this:
+一个典型的Cosmos区块链开发者的工作流应该像这样：
 
-- Start with proto files to define Cosmos SDK [messages](https://docs.cosmos.network/master/building-modules/msg-services.html)
-- Define and register [queries](https://docs.cosmos.network/master/building-modules/query-services.html)
-- Define message handler logic
-- Finally, implement the logic of these queries and message handlers in keeper functions
+- 创建proto文件用于定义Cosmos SDK的 [消息内容](https://docs.cosmos.network/master/building-modules/msg-services.html)
+- 定义并且注册 [查询](https://docs.cosmos.network/master/building-modules/query-services.html)
+- 定义消息处理逻辑
+- 最后，在keeper函数中实现这些查询和消息处理逻辑
 
-## ✋ Create your first query
+## ✋ 创建你的第一个查询
 
-**For this part of the tutorial, open a new terminal window that is not the same that you started the chain in.**
+**为了体验该教程，请在打开另外一个终端窗口，而不是你启动链的窗口。**
 
-In your new terminal, `cd` into the `gm` directory and run this command to create the `gm` query:
+在你的新终端窗口, `cd` 进入 `gm` 目录 并且执行此命令 去创建 `gm` 查询:
 
 ```bash
 ignite scaffold query gm --response text
 ```
 
-Response:
+返回结果：
 
 ```bash
 modify proto/gm/query.proto
@@ -42,7 +42,7 @@ create x/gm/keeper/grpc_query_gm.go
 🎉 Created a query `gm`.
 ```
 
-What just happened? `query` accepts the name of the query (`gm`), an optional list of request parameters (empty in this tutorial), and an optional comma-separated list of response field with a `--response` flag (`text` in this tutorial).
+刚刚发生了什么？ `query` 命令接受的参数有，查询名称 (`gm`), 一个可选的参数列表 (本教程中为空), 和一个可选的响应字段列表 `--response` (`text` 本教程中为)。
 
 Navigate to the `proto/gm/query.proto` file, you’ll see that `Gm` RPC has been added to the `Query` service:
 
