@@ -175,13 +175,13 @@ Buka window terminal lain untuk memulai proses query API. `celestia-node` mengun
 
 ### Saldo
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+Sekarang, mari query node kita untuk saldo akun bawaan ini (yang mana akun berasosiasi dengan kunci `developer` yang kita hasilkan diawal):
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+Ini akan keluar sebagai berikut:
 
 ```json
 {
@@ -190,19 +190,19 @@ It will output the following:
 }
 ```
 
-This shows you the balance in that wallet.
+Ini menunjukkanmu saldo di dompet.
 
-### Get Block Header
+### Dapatkan Header Block
 
-Now, let's get the block header information.
+Sekarang, mari mendapatkan informasi header block.
 
-Here we will get the header from Block 1:
+Disini kita akan mendapatkan header dari Block 1:
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+Ini akan keluar seperti ini:
 
 ```json
 {
@@ -374,13 +374,13 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### Kirim Transaksi PFD
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+Sebagai contoh, kita akan memngirim transaksi PayForData ke node endpoint `/submit_pfd`.
 
-Some things to consider:
+Beberapa hal yang dipertimbangkan:
 
-- PFD is a PayForData Message.
+- PFD ialah Pesan PayForData.
 - The endpoint also takes in a `namespace_id` and `data` values.
 - Namespace ID should be 8 bytes.
 - Data is in hex-encoded bytes of the raw message.
