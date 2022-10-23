@@ -45,13 +45,13 @@ Celestia版本
 
 ## 🟢 初始化轻节点
 
-现在，我们准备初始化Celestia灯光节点。 You can do so by running:
+现在，我们准备初始化Celestia灯光节点。 您可以通过运行：
 
 ```bash
 celestia light init
 ```
 
-Query our key's address using `cel-key` :
+使用 `cel-key` 查询我们的密钥地址：
 
 ```bash
 ./cel-key list --node.type light --keyring-backend test
