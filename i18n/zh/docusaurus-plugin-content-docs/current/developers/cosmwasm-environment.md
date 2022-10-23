@@ -1,14 +1,14 @@
 ---
-sidebar_label: Setup Network Environment
+sidebar_label: 设置网络环境
 ---
 
-# Setting Up Your Environment for CosmWasm on Celestia
+# 在 Celestia 上为 CosmWasm 设置环境
 
-Now the `wasmd` binary is built, we need to setup a local network that communicates between `wasmd` and Rollmint.
+现在构建了`wasmd`二进制文件，我们需要设置一个本地网络 在`wasmd`和Rollmint之间通信的。
 
-## Building the Wasmd Network
+## 构建 Wasmd 网络
 
-Run the following command:
+运行以下命令：
 
 ```sh
 VALIDATOR_NAME=validator1
@@ -16,18 +16,18 @@ CHAIN_ID=celeswasm
 wasmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 ```
 
-This initializes a chain called `celeswasm` with `wasmd` binary.
+这使用 `wasmd` 二进制文件初始化了一个名为 `celeswasm` 的链。
 
-The following command helps us setup accounts for genesis:
+运行以下命令帮助我们设置创世钱包：
 
 ```sh
 KEY_NAME=celeswasm-key
 wasmd keys add $KEY_NAME --keyring-backend test
 ```
 
-Make you sure you store the output of the wallet generated for later reference if needed.
+如果需要，请确保存储生成的钱包输出以供以后参考。
 
-Now, let's add a genesis account and use it to update our genesis file:
+现在，让我们添加一个创世钱包并使用它来更新我们的创世文件：
 
 ```sh
 TOKEN_AMOUNT="10000000000000000000000000uwasm"
@@ -36,9 +36,9 @@ STAKING_AMOUNT=1000000000uwasm
 wasmd gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
 ```
 
-With that, we created a local network genesis file.
+这样，我们就创建了一个本地网络创世文件。
 
-Some more useful commands we can setup:
+我们可以设置一些更有用的命令：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -47,9 +47,9 @@ export TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjus
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Starting the Wasmd Network
+## 启动 Wasmd 网络
 
-We can run the following to start the `wasmd` network:
+我们可以运行以下命令来启动 `wasmd` 网络：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
