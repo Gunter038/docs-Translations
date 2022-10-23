@@ -1,34 +1,34 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "다음",
     "description": "The label for version current"
   },
   "sidebar.nodes.category.Types of Nodes": {
-    "message": "Types of Nodes",
+    "message": "문서 종류",
     "description": "The label for category Types of Nodes in sidebar nodes"
   },
   "sidebar.nodes.category.Consensus": {
-    "message": "Consensus",
+    "message": "합의",
     "description": "The label for category Consensus in sidebar nodes"
   },
   "sidebar.nodes.category.Data Availability": {
-    "message": "Data Availability",
+    "message": "데이터 가용성",
     "description": "The label for category Data Availability in sidebar nodes"
   },
   "sidebar.nodes.category.Participate": {
-    "message": "Participate",
+    "message": "협력",
     "description": "The label for category Participate in sidebar nodes"
   },
   "sidebar.nodes.category.Resources": {
-    "message": "Resources",
+    "message": "자료",
     "description": "The label for category Resources in sidebar nodes"
   },
   "sidebar.developers.category.Celestia App": {
-    "message": "Celestia App",
+    "message": "셀레스티아 앱",
     "description": "The label for category Celestia App in sidebar developers"
   },
   "sidebar.developers.category.Celestia Node": {
-    "message": "Celestia Node",
+    "message": "셀레스티아 문서",
     "description": "The label for category Celestia Node in sidebar developers"
   },
   "sidebar.developers.category.Rollmint": {
