@@ -57,12 +57,12 @@ wasmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.d
 ```
 <!-- markdownlint-enable MD013 -->
 
-Please consider:
+请考虑以下方面：
 
-> NOTE: In the above command, you need to pass a Celestia Node IP address to the `base_url` that has an account with Arabica Devnet tokens. Follow the tutorial for setting up a Celestia Light Node and creating a wallet with testnet faucet money [here](./node-tutorial.md) in the Celestia Node section.
+> 注：在上述命令中， 您需要将 Celestia 节点的IP地址 传输到 `base_url` 中一个拥有Arabica开发网代币的账户。 按照此[教程](./node-tutorial.md)在 Celestia 节点部分设置 Celestia 轻节点并使用测试网水龙头资金创建钱包。
 
-Also please consider:
+还请考虑：
 
-> IMPORTANT: Furthermore, in the above command, you need to specify the latest Block Height in Arabica Devnet for `da_height`. You can find the latest block number in the explorer [here](https://explorer.celestia.observer/arabica). Also, for the flag `--rollmint.namespace_id`, you can generate a random Namespace ID using the playground [here](https://go.dev/play/p/7ltvaj8lhRl)
+> 重要提示：此外，在上述命令中，您需要在 Arabica开发网中指定最新的 区块高度为 `da_height` 您可以在[浏览器](https://explorer.celestia.observer/arabica) 中找到最新的区块编号 。 而且 对于标志`--rollmint。namespace_id`，您可以生成一个随机名称空间，在这里使用操场的ID [here](https://go.dev/play/p/7ltvaj8lhRl)
 
-With that, we have kickstarted our `wasmd` network!
+这样，我们已经启动了我们的 `wasmd` 网络！
