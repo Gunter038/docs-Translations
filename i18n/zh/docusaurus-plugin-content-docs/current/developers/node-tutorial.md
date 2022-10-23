@@ -1,5 +1,5 @@
 ---
-sidebar_label: Node Tutorial
+sidebar_label: 节点教程
 ---
 
 # Getting and Sending Transactions with Celestia Node
