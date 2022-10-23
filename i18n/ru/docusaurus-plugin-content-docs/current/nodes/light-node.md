@@ -2,19 +2,19 @@
 sidebar_label: Light Node
 ---
 
-# Setting up a Celestia Light Node
+# Запуск лайт ноды Celestia
 
-This tutorial will guide you through setting up a Celestia light node, which will allow you to perform data availability sampling on the data availability (DA) network.
+Этот видеоролик поможет вам запустить лайт ноду Celestia, которая позволит вам осуществлять отбор данных в сети Data Availability (DA).
 
-> To view a video tutorial for setting up a Celestia light node, click [here](../developers/light-node-video.md)
+> Чтобы просмотреть видео по запуску лайт ноды Celestia перейдите по ссылке [здесь](../developers/light-node-video.md)
 
-## Overview of light nodes
+## Описание лайт ноды
 
-Light nodes ensure data availability. This is the most common way to interact with the Celestia network.
+Лайт ноды обеспечивают доступность данных. Это самый распространенный способ взаимодействия с сетью Celestia.
 
 ![light-node](/img/nodes/LightNodes.png)
 
-Light nodes have the following behavior:
+Лайт ноды имеют следующие характеристики:
 
 1. They listen for ExtendedHeaders, i.e. wrapped “raw” headers, that notify Celestia nodes of new block headers and relevant DA metadata.
 2. They perform data availability sampling (DAS) on the received headers
