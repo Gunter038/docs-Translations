@@ -1,13 +1,13 @@
 ---
-sidebar_label: Contract Deployment
+sidebar_label: Պայմանագրի տեղակայումը
 ---
 
 # Պայմանագրի տեղակայում CosmWasm-ում Rollmint-ի հետ
 <!-- markdownlint-disable MD013 -->
 
-## Կազմել Սմարթ Կոնտրակտ
+## Կազմել Սմարթ-Պայմանագիր
 
-We will run the following commands to pull down the Nameservice smart contract and compile it:
+Մենք կկատարենք հետևյալ հրամանները՝ Nameservice-ի սմարթ-պայմանագիր հանելու և այն կազմելու համար:
 
 ```sh
 git clone https://github.com/InterWasm/cw-contracts
@@ -16,23 +16,23 @@ cd contracts/nameservice
 cargo wasm
 ```
 
-The compiled contract is outputted to: `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
+Կազմված պայմանագիրը դուրս է բերվում դեպի `target/wasm32-unknown-unknown/release/cw_nameservice.wasm`.
 
-## Unit Tests
+## Մոդուլային թեստ
 
-If we want to run tests, we can do so with the following command:
+Եթե մենք ուզում ենք թեստեր թողարկել, մենք կարող ենք դա անել հետեւյալ հրամանի միջոցով:
 
 ```sh
 cargo unit-test
 ```
 
-## Optimized Smart Contract
+## Օպտիմիզացված սմարթ պայմանագիր
 
-Because we are deploying the compiled smart contract to `wasmd`, we want it to be as small as possible.
+Քանի որ մենք հավաքում ենք սմարթ-պայմանագիր `wasmd`, մենք ուզում ենք, որ այն հնարավորինս փոքր լինի.
 
-CosmWasm team provides a tool called `rust-optimizer` which we need Docker for in order to compile.
+CosmWasm թիմը տրամադրում է գործիք, որը կոչվում է `rust-optimizer`, որի կազմման համար մեզ անհրաժեշտ է Docker.
 
-Run the following command:
+Հետեւեք հետեւյալ հրամանին:
 
 ```sh
 sudo docker run --rm -v "$(pwd)":/code \
@@ -41,16 +41,16 @@ sudo docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-This will place the optimized Wasm bytecode at `artifacts/cw_nameservice.wasm`.
+Արդյունքում, օպտիմիզացված բայթկոդ Wasm- ը հասանելի կլինի այստեղ `artifacts/cw_nameservice.wasm`.
 
-## Contract Deployment
+## Պայմանագրի տեղակայումը
 
-Let's now deploy our smart contract!
+Եկեք հիմա տեղակայենք մեր սմարթ-պայմանագիրը!
 
-Run the following:
+Կատարեք հետեւյալը:
 
 ```sh
 TX_HASH=$(wasmd tx wasm store artifacts/cw_nameservice.wasm --from $KEY_NAME --keyring-backend test $TXFLAG --output json -y | jq -r '.txhash') 
 ```
 
-This will get you the transaction hash for the smart contract deployment. Given we are using Rollmint, there will be a delay on the transaction being included due to Rollmint waiting on Celestia's Data Availability Layer to confirm the block has been included before submitting a new block.
+Սա ձեզ թույլ կտա խեշ-գործարք ձեռք բերել սմարթ-պայմանագիր կնքելու համար. Հաշվի առնելով, որ մենք օգտագործում ենք Rollmint- ը, գործարքը հետաձգվելու է այն պատճառով, որ Rollmint- ը ակնկալում է, որ Celestia- ի տվյալների առկայության շերտը հաստատմանը, որ նոր բլոկը ուղարկվել է.
