@@ -1,10 +1,10 @@
 ---
-sidebar_label: Run a Light Node
+sidebar_label: Запуск узла Light
 ---
 
-# 🪶 Run a Celestia DA Light Node
+# Запуск узла Celestia DA Light
 
-A Celestia Light Node on the Mamaki Testnet is required to complete this tutorial. Run the following commands to install Celestia-Node:
+Для выполнения этого руководства требуется узел Celestia Light в сети Mamaki Testnet. Выполните следующие команды для установки узла Celestia:
 
 <!-- markdownlint-disable MD010 -->
 ```bash
@@ -18,14 +18,14 @@ make install
 
 ![1.png](/img/gm/1.png)
 
-Inside the celestia-node repository is a utility named `cel-key` that uses the key utility provided by Cosmos-SDK under the hood. The utility can be used to `add`, `delete`, and manage keys for any DA node type `(bridge || full || light)`, or just keys in general.
+Внутри репозитория celestia-node находится утилита `cel-key`, которая использует ключевую утилиту, предоставляемую Cosmos-SDK под капотом. Утилита может быть использована для команд `add`, `delete`, и управлять ключами для любого типа узла DA `(bridge || full || light)`, или просто ключами в целом.
 
-## 🗝 Create a key
+## 🗝 Создайте ключ
 
-Create your key for the node:
+Создайте Ваш ключ для узла:
 
 ```bash
-make cel-key
+<code>make cel-key<code>
 ```
 
 Verify the version of your Celestia-Node with the `celestia version` command, it should be `v0.3.0-rc2`:
