@@ -2,51 +2,51 @@
 sidebar_label: 节点教程
 ---
 
-# Getting and Sending Transactions with Celestia Node
+# 使用Celestia节点获取和发送交易
 <!-- markdownlint-enable MD013 -->
 
-In this tutorial, we will cover how to use the Celestia Node API to submit and retrieve messages from the Data Availability Layer by their namespace ID.
+在本教程中，我们将介绍如何使用 Celestia 节点 API 通过命名空间 ID 从数据可用性层提交和检索消息。
 
-This tutorial was assumes you are working in a Linux environment.
+本教程假定您在 Linux 环境中工作。
 
-> To view a video tutorial for setting up a Celestia Light Node, click [here](./light-node-video.md)
+> 要查看设置 Celestia 轻节点的视频教程，请单击[此处](./light-node-video.md)
 
-## Hardware Requirements
+## 硬件要求
 
-The following minimum hardware requirements are recommended for running a light node:
+建议运行轻节点的最低硬件要求如下：
 
-- Memory: 2 GB RAM
-- CPU: Single Core
-- Disk: 5 GB SSD Storage
-- Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+- 内存：2 GB RAM
+- CPU：单核
+- 磁盘：5 GB SSD 存储
+- 带宽：56 Kbps 下载/56 Kbps 上传
 
-## Setting Up Dependencies
+## 设置依赖项
 
-First, make sure to update and upgrade the OS:
+首先，确保更新和升级操作系统：
 
 ```sh
-# If you are using the APT package manager
+# 如果你使用的是 APT 包管理器
 sudo apt update && sudo apt upgrade -y
 
-# If you are using the YUM package manager
-sudo yum update
+# 如果你使用的是 YUM 软件包管理器
+ sudo yum update
 ```
 
-These are essential packages that are necessary to execute many tasks like downloading files, compiling, and monitoring the node:
+这些是执行许多任务（如下载文件、编译和监控节点）所必需的基本安装包。
 
 <!-- markdownlint-disable MD013 -->
 ```sh
-# If you are using the APT package manager
+# 如果你使用 APT package manager
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
-# If you are using the YUM package manager
+# 如果你使用 YUM package manager
 sudo yum install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Install Golang
+### 安装 Golang
 
-Celestia-app and celestia-node are written in [Golang](https://go.dev/) so we must install Golang to build and run them.
+Celestia-app和celestia-node是用[Golang](https://go.dev/)编写的，所以我们必须安装Golang来构建和运行它们。
 
 ```sh
 ver="1.19.1"
@@ -57,30 +57,30 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 ```
 
-Now we need to add the `/usr/local/go/bin` directory to `$PATH`:
+现在我们需要将 `/usr/local/go/bin` 目录添加到 `$PATH`
 
 ```sh
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-To check if Go was installed correctly run:
+要检查Go是否被正确安装，请运行。
 
 ```sh
 go version
 ```
 
-The output should be the version installed:
+你将会看见当前已安装的版本：
 
 ```sh
 go version go1.18.2 linux/amd64
 ```
 
-## Celestia Node
+## Celestia 节点
 
-### Install Celestia Node
+### 安装 Celestia 节点
 
-Install the celestia-node binary by running the following commands:
+通过运行以下命令安装celestia-node二进制文件：
 
 ```sh
 cd $HOME
@@ -92,7 +92,7 @@ make install
 make cel-key
 ```
 
-Verify that the binary is working and check the version with the celestia version command:
+验证二进制文件是否工作，用celestia version命令检查版本：
 
 ```sh
 $ celestia version
@@ -103,19 +103,19 @@ System version: amd64/linux
 Golang version: go1.19.1
 ```
 
-### Instantiate Celestia Light Node
+### 实例化Celestia轻节点
 
-Now, let's instantiate a Celestia Light node:
+现在，让我们实例化一个Celestia轻节点：
 
-> Note: RPC Endpoints are exposed in all Celestia Node types such as Light, Bridge and Full Nodes.
+> 注意：所有Celestia节点类型都会暴露RPC端点，包括但不限于轻节点、桥接结点和全节点。
 
 ```sh
 celestia light init
 ```
 
-### Connect To A Public Core Endpoint
+### 连接到公共端点
 
-Let's now run the Celestia Light node with a GRPC connection to an example public Core Endpoint.
+现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
 > Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
 
