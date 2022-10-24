@@ -1,12 +1,12 @@
 ---
-sidebar_label: Mamaki Testnet
+sidebar_label: Testnet Mamaki
 ---
 
-# Mamaki Testnet
+# Testnet Mamaki
 
 ![mamaki-testnet](/img/mamaki.png)
 
-This guide contains the relevant sections for how to connect to Mamaki, depending on the type of node you are running. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
+Panduan ini berisi pilihan-pilihan yang relevan untuk bagaimana cara menghubungkan ke Mamaki, berdasarkan pada tipe node yang kamu jalankan. Mamaki Testnet is designed to help validators test out their infrastructure and node software with the test network. Developers are encouraged to deploy their sovereign rollups on Mamaki, but we also recommend [Arabica Devnet](./arabica-devnet.md) for that as it is designed for development purposes.
 
 Mamaki is a milestone in Celestia, allowing everyone to test out core functionalities on the network. Read the anouncement [here](https://blog.celestia.org/celestia-testnet-introduces-alpha-data-availability-api/).
 
