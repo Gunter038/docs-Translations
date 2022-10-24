@@ -1,8 +1,8 @@
 ---
-sidebar_label: Build a Sovereign Rollup
+sidebar_label: 构建一个主权汇总
 ---
 
-# 🗞 Building a Sovereign Rollup
+# 🗞构建一个主权汇总
 
 The Ignite CLI comes with scaffolding commands to make development of blockchains quicker by creating everything that is needed to start a new Cosmos SDK blockchain.
 
