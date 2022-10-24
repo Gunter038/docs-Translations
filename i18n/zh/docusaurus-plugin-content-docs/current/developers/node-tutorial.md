@@ -117,15 +117,15 @@ celestia light init
 
 现在让我们运行 Celestia轻节点，并通过GRPC连接到示例公共核心端点。
 
-> Note: You are also encouraged to find a community-run API endpoint and there are several in the Discord. This one is used for demonstration purposes. You can find a list of RPC endpoints [here](/nodes/arabica-devnet.md#rpc-endpoints)
+> 注意： Discord中有几个社区运行的 API 端点, 我们鼓励你们去找到它们. 这个是的目的是用作演示. 您可以在[此处](/nodes/arabica-devnet.md#rpc-endpoints)找到 RPC 端点列表
 
 ```sh
 celestia light start --core.ip <ip-address> --core.grpc.port <port>
 ```
 
-> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. You can use the flag to specify another port if you prefer.
+> NOTE: The `--core.grpc.port` defaults to 9090, so if you do not specify it in the command line, it will default to that port. 如果您愿意，您可以使用标志指定另一个端口。
 
-For example, your command along with an RPC endpoint might look like this:
+例如，您的命令与 RPC 端点可能如下所示：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -133,15 +133,15 @@ celestia light start --core.ip https://limani.celestia-devops.dev --core.grpc.po
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Keys and wallets
+### 私钥和钱包
 
-You can create your key for your node by running the following command:
+您可以通过运行以下命令为您的节点创建私钥：
 
 ```sh
 ./cel-key add <key_name> --keyring-backend test --node.type light
 ```
 
-You can start your light node with the key created above by running the following command:
+您可以使用上面创建的密钥启动轻节点，方法是运行 以下命令：
 
 <!-- markdownlint-disable MD013 -->
 ```sh
@@ -149,17 +149,17 @@ celestia light start --core.ip <ip-address> --core.grpc.port <port> --keyring.ac
 ```
 <!-- markdownlint-enable MD013 -->
 
-Once you start the Light Node, a wallet key will be generated for you. You will need to fund that address with Arabica Devnet tokens to pay for PayForData transactions.
+启动轻节点后，将为您生成一个钱包密钥。 您需要使用Arabica Devnet 令牌为该地址提供资金以支付 用于 PayForData 交易。
 
-You can find the address by running the following command in the `celestia-node` directory:
+您可以通过在中运行以下命令找到地址 `celestia-node` 目录：
 
 ```sh
 ./cel-key list --node.type light --keyring-backend test
 ```
 
-If you would like to fund your wallet with testnet tokens, head over to the Celestia Discord channel `#arabica-faucet`.
+如果您想用测试网代币为您的钱包充值，请前往 到 Celestia Discord 频道 `#arabica-faucet`。
 
-You can request funds to your wallet address using the following command in Discord:
+您可以在 Discord 中使用以下命令向您的钱包地址请求资金：
 
 ```console
 $request <Wallet-Address>
@@ -167,42 +167,40 @@ $request <Wallet-Address>
 
 Where `<Wallet-Address>` is the `celestia1******` address generated when you created the wallet.
 
-With your wallet funded, you can move on to the next step.
+有了您的钱包资金，您可以继续下一步。
 
-## Node API Calls
+## 节点 API 调用
 
-Open up another terminal window in order to begin querying the API. `celestia-node` exposes its RPC endpoint on port `26658` by default.
+打开另一个终端窗口以开始查询 API。 `celestia-node` exposes its RPC endpoint on port `26658` by default.
 
-### Balance
+### 余额
 
-Now, let's query our node for the balance of its default account (which is the account associated with the `developer` key we generated earlier):
+打开另一个终端窗口以开始查询 Api。
 
 ```sh
 curl -X GET http://127.0.0.1:26658/balance
 ```
 
-It will output the following:
+它将输出以下内容：
 
 ```json
-{
-   "denom":"utia",
-   "amount":"999995000000000"
-}
+"denom":"utia",
+"amount":"999995000000000"
 ```
 
-This shows you the balance in that wallet.
+这会显示该钱包中的余额。
 
-### Get Block Header
+### 获取区块抬头
 
-Now, let's get the block header information.
+现在, 让我们获取区块抬头.
 
-Here we will get the header from Block 1:
+现在我们将会从区块1中获取抬头.
 
 ```sh
 curl -X GET http://127.0.0.1:26658/header/1
 ```
 
-It will output something like this:
+它将输出如下内容：
 
 ```json
 {
@@ -374,19 +372,19 @@ It will output something like this:
 }
 ```
 
-### Submit a PFD Transaction
+### 提交一个PFD的交易
 
-In this example, we will be submitting a PayForData transaction to the node's `/submit_pfd` endpoint.
+在这个例子中，我们将提交一个 PayForData 交易到节点的 `/submit_pfd` 端点。
 
-Some things to consider:
+注意事项：
 
-- PFD is a PayForData Message.
-- The endpoint also takes in a `namespace_id` and `data` values.
-- Namespace ID should be 8 bytes.
-- Data is in hex-encoded bytes of the raw message.
-- `gas_limit` is the limit of gas to use for the transaction
+- PFD是一个PayForData 讯息.
+- 这个端点也接受`namespace_id` and `data` 的值.
+- 命名空间 ID 应该是 8 个字节。
+- 数据是原始消息的十六进制编码字节。
+- `gas_limit` 是用于交易的气体限制
 
-We use the following `namespace_id` of `0000010000000100` and the `data` value of `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5`.
+我们使用 `0000010000000100` 的以下 `namespace_id` 和 `f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5` 的 `data` 值。
 
 You can generate your own `namespace_id` and data values using this useful Golang Playground we created [here](https://go.dev/play/p/7ltvaj8lhRl).
 
