@@ -105,9 +105,9 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
 
 `Gm` 函数执行以下操作：
 
-- Makes a basic check on the request and throws an error if it’s `nil`
-- Stores context in a `ctx` variable that contains information about the environment of the request
-- Returns a response of type `QueryGmResponse`
+- 对请求进行基本检查，如果它是 nil则报错。
+- 将上下文存储到ctx变量中，这个变量包含有关请求的环境信息。
+- 返回类型为 `QueryGmResponse` 的响应
 
 Currently, the response is empty. Let’s update the keeper function.
 
