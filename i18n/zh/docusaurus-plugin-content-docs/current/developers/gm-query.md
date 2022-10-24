@@ -105,13 +105,13 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
 
 `Gm` 函数执行以下操作：
 
-- 对请求进行基本检查，如果它是 nil则报错。
-- 将上下文存储到ctx变量中，这个变量包含有关请求的环境信息。
+- 对请求进行基本检查，如果它是`nil`则报错。
+- 将上下文存储到`ctx`变量中，这个变量包含有关请求的环境信息。
 - 返回类型为 `QueryGmResponse` 的响应
 
-Currently, the response is empty. Let’s update the keeper function.
+目前，这个响应是空的。 让我们更新keeper函数。
 
-Our `query.proto` file defines that the response accepts `text`. Use your text editor to modify the keeper function in `x/gm/keeper/grpc_query_gm.go` .
+我们的 `query.proto` 文件定义响应接受 `文本`。 使用您的文本编辑器在 `x/gm/keeper/grpc_query_gm.go` 中修改keeper函数。
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD010 -->
@@ -128,19 +128,19 @@ func (k Keeper) Gm(goCtx context.Context, req *types.QueryGmRequest) (*types.Que
 <!-- markdownlint-enable MD010 -->
 <!-- markdownlint-enable MD010 -->
 
-## 🟢 Start your Sovereign Rollup
+## 🟢 启动你的Sovereign Rollup
 
 ```bash
 gmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"[http://localhost:26658](http://134.209.70.139:26658/)","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id 000000000000FFFF --rollmint.da_start_height 100783
 ```
 
-The `query` command has also scaffolded `x/gm/client/cli/query_gm.go` that implements a CLI equivalent of the gm query and mounted this command in `x/gm/client/cli/query.go`. Run the following command and get the following JSON response:
+`查询` 命令还搭建了`x/gm/client/cli/query_gm.go` 的脚手架，它实现了 gm 查询的 CLI 等效项，并将此命令安装在 `x/gm/client/cli/query.go`中。 运行以下命令并获得如下JSON响应：
 
 ```bash
 gmd q gm gm
 ```
 
-Response:
+响应:
 
 ```bash
 text: gm world!
@@ -148,4 +148,4 @@ text: gm world!
 
 ![4.png](/img/gm/4.png)
 
-Congratulations 🎉 you've successfully built your first rollup and queried it!
+恭喜你 🎉 您已成功建立了您的首个rollup并查询了它!
